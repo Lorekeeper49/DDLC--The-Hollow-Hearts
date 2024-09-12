@@ -1,0 +1,78 @@
+#Name: The Nightmare Mansion
+label act2_ch4_main:
+    stop music fadeout 2.0
+    play ambience mansion
+    scene bg mansion
+    with dissolve_scene_full
+    call showlocation("Wraith Mansion","October 11, 2023",23*60+14+57/60.0,"bg tree")
+    k "We're here."
+    "Welp, here we go..."
+    a "Everyone got their flashlights?"
+    "Everyone shows their flashlights."
+    a "Good."
+    "*Deep breath*"
+    "I've seen this place before, but I've never been inside."
+    a "Here goes nothing."
+    "We all walk inside."
+    scene bg foyer
+    show screen flashlight 
+    with wipeleft_scene
+    "...{w=1}Huh?"
+    show kotonoha turned casual curi om zorder 2 at t11
+    k "Something wrong?"
+    a "No?  Just thought... this place looked familiar..."
+    show tina turned curi om zorder 2 at l21
+    show kotonoha at t22
+    ti "Huh?  I thought the Kamiyama family was the only one that lived here."
+    show tina at t21
+    a "So that's why you wanted to come here!"
+    "Do these people seriously not question any plans?"
+    ti neut "Yeah, this won't tell us where he is...  But this may give us a hint as to why he's doing everything's he's doing."
+    k rhip anno "Alright, Aoruguri, let's see how you are with arrangements!"
+    hide tina
+    hide kotonoha
+    a "Alright.  Since this is a big place, we'll split up!"
+    show kotonoha turned casual anno rhip zorder 2 at t22
+    show akira 4ad zorder 2 at t21
+    a "Kotonoha and Akira will take this floor,"
+    hide akira
+    hide kotonoha
+    show mari crossed b hat zorder 2 at t22
+    show tina turned suit cross anno zorder 2 at t21
+    a "Mari and Tina will search upstairs,"
+    hide tina
+    hide mari
+    show lilly norm se zorder 2 at t11
+    a "and Lilly and I will head to the basement."
+    hide lilly
+    show tina turned suit cross anno om zorder 2 at t11
+    ti "The basement's been blocked for God knows how long, good luck finding it."
+    show tina cm
+    a "I'm sure we'll find it easily."
+    hide tina
+    scene bg dining
+    show screen flashlight 
+    with wipeleft_scene
+    "..."
+    "Why does this place look so...?"
+    lil "Behind you!"
+    show wraith
+    "Stay calm!  Gotta hold my flashlight on it's face!"
+    hide wraith
+    "Whew."
+    show lilly c2e zorder 2 at t11
+    lil "Are you okay?"
+    a "Yeah, thanks."
+    a "Why aren't you using your true form?"
+    lil c2c2 "Normally I would, but then I wouldn't be able to use my flashlight, the only thing that works on these."
+    a "Oh."
+    "Not sure how that works, but I don't know how dolls work, I've never had one in my life."
+    "I didn't even know one could be alive!"
+    a "Well anyway, come on.  I found the basement back here."
+    scene bg mbasement
+    show screen flashlight 
+    with wipeleft_scene
+    "Well, here we go."
+    call explore("mansion")
+   
+    return

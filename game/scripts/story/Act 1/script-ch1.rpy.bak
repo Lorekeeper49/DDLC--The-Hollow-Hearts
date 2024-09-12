@@ -1,0 +1,202 @@
+label act1_ch1_main:
+    stop music fadeout 2.0
+    scene bg shouse_day
+    with dissolve_scene_full
+    play music t2
+    call showlocation("Shinamonpan House","September 29, 2023",515.2,"bg shouse_day")
+    "Another day, another venture!"
+    "I'm in front of the Shinamonpans' house right now because, since the time her parents divorced, Sayori never checks her mailbox anymore."
+    "Not sure why, but either way I open the mailbox."
+    "There's an envelope in here, to which I open to make sure it's not a spam."
+    "I know it's addressed to Sayori but so many people know her name--for reasons I'll get into later--that she gets many spams in the mail."
+    "I read the paper inside."
+    stop music fadeout 3
+    "{cps=1}..."
+    t "{w=0.5}Impossible."
+    ha "I am NOT letting anything hinder our secret operation!"
+    "My disbelief is interrupted by some arguing to my right."
+    scene bg residential_day with wipeleft
+    show hanato day casual anno om zorder 3 at t21
+    show inari 1a zorder 2 at t22
+    play music argument
+    ha "Seriously Inari, did you even {i}listen{/i} to what Kirinani told {i}each{/i} of us to do?"
+    "Okay so, after my parents died I looked at Sakura Academy's student list to check if anyone from there caused it."
+    "My father was the principal of that school so I was able to do so."
+    "None of the faces on the list matched that of the killer so I opted to give up on that idea and maybe look elsewhere."
+    "But if I remember correctly, the girl on the left is Kamiyama Hanato and the boy on the right is Kamiyama Inari."
+    $ hanato = "Kamiyama Hanato"
+    $ inari = "Kamiyama Inari"
+    show hanato cm
+    ina "Really, I only listened my part."
+    ha om "Well, {i}he{/i} told {i}me{/i} to come up with a backup plan in the unlikely event that-"
+    stop music fadeout 1
+    show hanato ma
+    t "Uh guys, if your talking about a 'secret operation'..."
+    t "You might want to keep it down a bit."
+    t "I could hear you from 3 houses down."
+    ha neut ce "You're right."
+    t "Besides Hanato, aren't you a dreamer?  Can't you just talk about this in your dreams?"
+    ha oe om "Well- we {i}did{/i} but we can't really go back to sleep in the morning, can we?"
+    show hanato cm
+    t "True."
+    ina "Look, we're gonna go discuss this somewhere else, you go back to doing whatever you were doing."
+    t "Just try to be quieter, okay?"
+    ha "We will."
+    hide hanato
+    hide inari
+    "With that, they leave off to somewhere hopefully more private, and I go over to my house while reading the document again to make sure I wasn't going crazy about it's contents."
+    scene bg bedroom with wipeleft_scene
+    call showlocation("Taiyen's room","September 29, 2023",599.95,"bg bedroom")
+    "I've read this document over and over again."
+    "I just can't believe what I'm reading here."
+    "We fought against that for so long, I thought we won when it disappeared."
+    "So how..."
+    "..."
+    show kotonoha turned casual lup happ om zorder 2 at t11
+    k "Ohayou, Tai-kun!"
+    k ldown "Whatcha got there?"
+    show kotonoha cm
+    "That cheery mood is gonna go away real fast."
+    t "This was in Sayori's mailbox."
+    "My sister takes the document and begins to read it."
+    t "She doesn't know about it yet."
+    $ pause(1)
+    show kotonoha surp
+    $ pause(1)
+    show kotonoha b1b
+    k "She has..."
+    play music depressed
+    k "Depression?"
+    t "I'm in as much disbelief as you are..."
+    k sad ce "*Sigh*"
+    t "I want to tell her, but I don't know if she'll absolutely lose her mind or not!"
+    k e1a om "Well we gotta tell her anyway!"
+    show kotonoha cm
+    t "That'll end up in her telling the others and we don't want them to worry, do we?"
+    k om "Then, what should we do?"
+    show kotonoha cm
+    menu:
+        t "*Sigh*"
+
+        "[change]Tell her and everyone else":
+            t "Let's tell her and everyone else at club time tomorrow." #correct choice
+            $ clubtell = True
+        "[change]Tell her and no one else":
+            t "Let's tell her and no one else."
+            $ onlytell = True
+        "[change]Don't tell her.":
+            t "Let's not tell her."
+            call .depsurity
+    k om "Okay, if you're sure."
+    show kotonoha cm
+    t "For sure."
+    if onlytell:
+        t "After I finish up my plans for today, I'll head over to her house and talk to her."
+    "I have a study session with Akira-kun today, so at least that'll be able to take my mind off this for a little while."
+    k lup om "Just- make sure things don't get out of hand!"
+    k lchest e1c "Wouldn't want compliticated things to happen just because of your choice."
+    k ldown e1a mf "I've got plans, so I'm gonna get going."
+    k om "Take care, onii-chan."
+    show kotonoha cm
+    t "You too, sis."
+    hide kotonoha
+    stop music fadeout .5
+    "With that, Koto-chan leaves."
+    "Huh, we rarely ever call each other 'sis' or 'onii-chan'."
+    "Wonder why."
+    dev "I don't like how I wrote Sayori's depression so I'm gonna cut it out eventually."
+    "Disregarding that, I hear a knock on the door shortly after my sister leaves the house."
+    "I know who it is."
+    scene bg entrance with wipeleft_scene
+    play music t8
+    call showlocation("Sakura Household","September 29, 2023",610.45,"bg house")
+    "Looking in the glass to confirm my insights (I don't know if that's the right word), I see Akira-kun and let him in."
+    $ akira = "Kamiyama Akira"
+    show akira 1cj at t11
+    ak "Ohayou, Taiyen!"
+    ak 2cb "Ready for study today?"
+    show akira 2ca
+    "Something's bothering me about his voice."
+    t "Sure am!  But before that..."
+    ak 4cl "What's up?"
+    t "I didn't make it to the dream world last night, but on my attempt to, I heard some voices..."
+    t "-like every time-but this time around,\n{i}you{/i} were one of those voices."
+    t "Something about taking over the school?"
+    ak 4cf "Huh."
+    ak 3cl "I don't remember talking about something so... ambitious."
+    ak 1cl "Perhaps it was someone else?"
+    "Nope, it was definitely you."
+    "But I'm gonna lie, just in case."
+    t "Probably was."
+    ak 2cl "Hm."
+    t "Let's just move on."
+    scene bg tlivingroom
+    show akira 1bb at t11
+    with wipeleft
+    ak "By the way..."
+    ak 4bb "How'd {rb}Sayori's{/rb}{rt}Sai-yori{/rt} club treat ya."
+    t "Still pronouncing her name like that?"
+    ak 3bb "What?  It's how it's spelled, right?"
+    t "Sure, but even {i}she{/i} said that it's more natural to say 'Say-yori' and not 'Sai-yori'."
+    ak 4bm "*Sigh* Whatever you say, Taiyen."
+    show akira 4bn
+    t "But to answer the question, they treated me like an everyday club member."
+    t "They even asked about one of my books."
+    ak 2bb "Cool."
+    show akira 2ba
+    "We each take a seat across from each other."
+    ak 1bb "Just out of curiosity, where's the clubroom located?"
+    menu:
+        "[change]Tell him.":
+            t "Class 5-A." #incorrect choice but still possible to get true ending
+            $ class5a = True
+            ak 4bl "That big room at the top floor?"
+            t "It's not that unusual."
+            ak 2bl "Right."
+        "[change]Don't know.": 
+            t "They never told me." #correct choice
+            $ dontknow = True
+            t "But that's fine, I can find out later."
+        "[change]Lie about location.":
+            t "Class 4-C." #gaurentees No One/Suicide ending
+            $ locationlie = True
+    ak 4bb "Alright, cool."
+    t "We should get to studying."
+    ak 4bl "Correct."
+    scene bg tlivingroom with wipeleft_scene
+    call showlocation("7 Hours Later","September 29, 2023",1050.42)
+    "Like always, studying took longer than we thought it would."
+    "But, as always, Akira-kun made it fun while it lasted."
+    show akira 1bb at t11
+    ak  "Let's call it a day."
+    t "Yeah, I'm exhausted."
+    show kotonoha turned casual lup happ om at l41
+    k "Oh hey!  Whatcha guys doing?"
+    show kotonoha ldown cm
+    show akira 1cb with wipeleft
+    ak "I was actually just taking my leave, Kotonoha."
+    ak "I'll see you later."
+    show akira 1ca
+    t "{rb}Mata na{/rb}{rt}See you{/rt}, Akira-kun."
+    show akira at lhide
+    hide akira
+    "With that, he leaves."
+    show kotonoha at t11
+    k e1c om n2 b1b "He never talks to me outside of school anymore."
+    k e1a "wonder why."
+    show kotonoha cm n1
+    t "I know you like him, Koto-chan."
+    k lup b1a om "That obvious, huh?"
+    k ldown "I don't know what it is about him..."
+    k lchest rhip ce "But something manages to make my heart race."
+    if onlytell:
+        t "Nevermind that for now, let's tell Sayori about her depression."
+        k ldown rdown surp b1b oe mb "Right."
+        stop music fadeout 1
+        call .tellSayori
+    else:
+        t "Nevermind that for now, I'm quite hungry."
+        t "Let's cook dinner."
+        show kotonoha ldown rdown oe cm
+        "We do so, and when it comes time to do so, we go to bed."
+    return

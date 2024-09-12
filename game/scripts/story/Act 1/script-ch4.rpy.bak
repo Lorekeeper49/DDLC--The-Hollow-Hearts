@@ -1,0 +1,48 @@
+label act1_ch4_main:
+    stop music fadeout 2.0
+    scene bg residential_day
+    with dissolve_scene_full
+    play music t2
+    call showlocation("Residential Street","Monday, September 30, 2023",6,45,12)
+   
+    return
+
+label act1_ch4_end:
+    
+    "Where am I?"
+    "Why am I here?"
+    ha "I talked with him."
+    show hanato day casual neut ce rhip zorder 2 at t11
+    t "Huh?"
+    ha oe om "I talked with Kirinani."
+    ha ce rup "I don't know how he did it."
+    ha oe rdown "But he's a copycat."
+    t "But... he was born a-"
+    ha rhip lhip "I know, it doesn't make sense!"
+    ha dist ce rdown ldown "And I work with him?"
+    ha oe "But, I don't like how things are anymore."
+    ha neut rhip "After hearing your story, and finding out with he's so mad with you..."
+    ha dist rup "I don't know if I can trust him anymore."
+    ha ce rdown "Especially with whatever he could possibly be planning to do with breaker."
+    show hanato cm
+    t "B-Breaker?!"
+    ha curi oe "You know what that is?"
+    t "A special substance originally made to voluntarily remove someone's attribute so they can safely switch to another one."
+    t "However, at some point during the manufactoring process, only 3 out of the 5 tests scheduled were processed, the others were cancelled because something went horribly wrong with each test."
+    t "Turns out that the substance not only removes the attribute, but it also destroys the frontal lobe to the point where the person ends up suffering for the rest of their life."
+    t "You don't wanna know the details, but it's pretty horrible..."
+    ha om "Jesus!  Now I know why he wants it."
+    show hanato cm
+    t "Actually, I just remembered..."
+    t "He was one of the test subjects...\nAnd I thought we put them all out of their misery..."
+    ha rhip om "So... he's not himself..."
+    t "Yeah... and he never will be again..."
+    ha rdown ce "Good fuck!"
+    ha laug lup "And that officially marks the first time I've sweared."
+    ha neut rhip "But, I'm really not liking this anymore..."
+    ha ldown "So, from this point onward, I am now spying on my own family...\nNever thought I'd say that."
+    ha lup "Since I know you can lucid dream, I'm allowing you to come here at anytime.  Just be aware that my family may be here at the same time as you, so pick your times carefully."
+    ha ldown rdown "I'll let you off now while I look for backup on this."
+    t "Okay."
+    "Things just got a whole lot harder..."
+    return
