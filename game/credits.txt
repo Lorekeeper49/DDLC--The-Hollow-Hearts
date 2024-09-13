@@ -26,7 +26,6 @@ KAMIYAMA AKIRA - MasterTri
 -- ART --
 
 - CHARACTERS -
-
 SAKURA KOTONOHA - Cyrke (Special thanks to Danko for releasing the sprites!) [https://www.reddit.com/r/DDLCMods/comments/hq8c09/the_kotonoha_sprites_are_now_available/] (MPT by Redleader [https://www.reddit.com/r/DDLCMods/comments/vhoamv/kotonoha_mpt_guide_and_update/])
 KAMIYAMA AKIRA - LvcyLu
 MURIKO MONIKA (CASUAL) - DestinyPvEGal (reddit) [https://drive.google.com/drive/folders/1yTohcOnGV6Kw6Lru1cITWt-zwRoGSCm_?usp=sharing]
@@ -84,6 +83,10 @@ ENTRANCE - Minikle with edits by Nuxill
 SAKURA LIVING ROOM - Minikle with edits by Nuxill
 NATSUKI'S BEDROOM - Minikle with edits by Nuxill
 SEWER HALL - Minikle with edits by Nuxill
+
+- MISC -
+MAIN LOGO - LvcyLu
+ACT 1, 2, AND 3 LOGOS - Leomonade33
 
 
 
