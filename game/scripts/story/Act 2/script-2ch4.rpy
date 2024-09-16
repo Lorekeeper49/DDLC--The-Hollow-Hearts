@@ -79,5 +79,19 @@ label act2_ch4_main:
     return
 
 label act2_ch4_alt:
+    stop music fadeout 2.0
+    play ambience mansion
+    a "{cps=3}...?{/cps}"
+    scene bg final_room
+    with dissolve_scene_full
+    call showlocation("???","October 11, 2023",0*60+0+0/60.0,"bg final_room")
+    a "Huh?  Where am I?"
+    "Why is there blood?"
+    a "Hey, what the fuck?"
+    "I immediately try the door."
+    a "*Struggling* Hey!  Let me out!  *Bangs door*"
+    "..."
+    a "No answer."
+    "Why do I even try?  That never works..."
 
     return
