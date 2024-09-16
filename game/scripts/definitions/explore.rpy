@@ -105,7 +105,7 @@ screen code_input:
     style_prefix "explore"
     add "vignette"
     text "[dial]" xcenter 640 ycenter 140
-    button xcenter 750 ycenter 580 xysize (75, 75) action [If(dial == code, AddToSet(codes, to_input)), Call("next_location", prev_loc, False)]
+    button xcenter 750 ycenter 580 xysize (75, 75) action [If(dial == code, AddToSet(codes, to_input)), Call("next_location", prev_loc, transition=False)]
     text "ENTER" xcenter 750 ycenter 580
     button xcenter 530 ycenter 580 xysize (75, 75) action SetVariable("dial", "")
     text "CLEAR" xcenter 530 ycenter 580
