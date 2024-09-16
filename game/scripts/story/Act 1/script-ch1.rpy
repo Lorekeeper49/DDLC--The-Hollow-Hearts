@@ -172,5 +172,9 @@ label act1_ch1_main:
     t "Can't imagine what the experiment did to them."
     t "..."
     "Her chat is not confused at all; I don't think this is the first time she's said anything."
+    s neut "I'm probably gonna ruin my reputation if I keep talking."
+    t "Yeah, let's just take this on a date later."
+    "No one ask what that means, please."
+    scene bg deep_forest with wipeleft_scene
 
     return
