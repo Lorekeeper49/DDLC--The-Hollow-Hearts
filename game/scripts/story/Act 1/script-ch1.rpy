@@ -176,5 +176,7 @@ label act1_ch1_main:
     t "Yeah, let's just take this on a date later."
     "No one ask what that means, please."
     scene bg deep_forest with wipeleft_scene
+    call showlocation("Deep Forest","September 29, 2023",10*60+0+0/60.0,"bg deep_forest")
+    "They did."
 
     return
