@@ -303,5 +303,22 @@ label act2_ch2_main:
     return
 
 label act2_ch2_alt:
-
+    stop music fadeout 2.0
+    play ambience forest
+    scene bg tree
+    with dissolve_scene_full
+    a "*Sigh*"
+    "I don't know why I keep coming back here..."
+    scene bg pasteur_day with wipeleft
+    t "Hey..."
+    a "Hello...?"
+    a "You don't sound too good..."
+    t "..."
+    a "Something wrong?"
+    t "Something bad happened last night..."
+    t "She's dead."
+    t "My sister's dead!"
+    t "He killed her..."
+    t "He fucking killed her!"
+    
     return
