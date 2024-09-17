@@ -75,6 +75,7 @@ label act2_ch4_main:
     with wipeleft_scene
     "Well, here we go."
     call explore("first_room") from _call_explore_2
+    call act2_ch4_alt
    
     return
 
@@ -93,5 +94,23 @@ label act2_ch4_alt:
     "..."
     a "No answer."
     "Why do I even try?  That never works..."
+    $ pla = "???"
+    general "YOU KNOW THIS PLACE."
+    a "Who's there?"
+    "My memory's all fuzzy."
+    general "YOU DON'T KNOW US."
+    a "What?"
+    general "WE KNOW YOU."
+    a "Cut the bullshit!"
+    a "Tell me who you are!"
+    stop ambience
+    show wraith_black at t11
+    show wraith_black1 at t21
+    show wraith_black2 at t22
+    show wraith_black3 at t41
+    show wraith_black4 at t44
+    general "YOUR SISTER."
+    a "Huh?"
+    
 
     return
