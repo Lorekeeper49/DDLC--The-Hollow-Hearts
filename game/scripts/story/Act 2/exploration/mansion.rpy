@@ -242,7 +242,9 @@ label mansion_end:
     show screen show_text with Dissolve(2.0)
     $ pause(1.0)
     hide screen show_text with Dissolve(2.0)
-    $ pause()
+    $ pause(1.0)
+    stop music
+    stop ambience
     return
 
 screen show_text:

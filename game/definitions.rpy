@@ -1569,7 +1569,7 @@ define st = DynamicCharacter('st_name', what_prefix='“', what_suffix='”', ct
 define a = DynamicCharacter('aoruguri', image='aoruguri', what_prefix='“', what_suffix='”', ctc="ctc", ctc_position="fixed")
 define mi = DynamicCharacter('mio', image='mio', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define ti = DynamicCharacter('tina', image='tina', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
-define i = DynamicCharacter('i_name', image="ida", what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
+define en = DynamicCharacter('en_name', image="engeki", what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define ma = DynamicCharacter('mari', image="mari", what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define d = DynamicCharacter('dominion', image="dominion", what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define dev = Character('demomode', ctc="ctc", ctc_position="fixed") #delete for full release
@@ -1627,7 +1627,7 @@ default st_name = "Us"
 default aoruguri = "Hidden Girl"
 default mio = "Mio"
 default tina = "Tina"
-default i_name = "Ms. Ida"
+default en_name = "Luna Engeki"
 default mari = "Kusanoki Mari"
 default dominion = "Luna Dominion"
 default pla = "General Name"

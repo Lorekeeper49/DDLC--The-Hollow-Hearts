@@ -6,7 +6,7 @@ label act2_ch4_main:
     play ambience mansion
     scene bg mansion
     with dissolve_scene_full
-    call showlocation("Wraith Mansion","October 11, 2023",23*60+14+57/60.0,"bg tree") from _call_showlocation_43
+    call showlocation("Wraith Mansion","October 11, 2023",21*60+14+57/60.0,"bg tree") from _call_showlocation_43
     k "We're here."
     "Welp, here we go..."
     a "Everyone got their flashlights?"
@@ -81,11 +81,11 @@ label act2_ch4_main:
 
 label act2_ch4_alt:
     stop music fadeout 2.0
-    play ambience mansion
+    play ambience mansion fadein 1.0
     a "{cps=3}...?{/cps}"
     scene bg final_room
     with dissolve_scene_full
-    call showlocation("???","October 11, 2023",0*60+0+0/60.0,"bg final_room")
+    call showlocation("???","October 11, 2023",23*60+59+57/60.0,"bg final_room")
     a "Huh?  Where am I?"
     "Why is there blood?"
     a "Hey, what the fuck?"
@@ -111,6 +111,19 @@ label act2_ch4_alt:
     show wraith_black4 at t44
     general "YOUR SISTER."
     a "Huh?"
-    
+    $ pause(0.5)
+    show wraith_black1 at t11
+    show wraith_black2 at t11
+    show wraith_black3 at t11
+    show wraith_black4 at t11
+    with None
+    hide wraith_black 
+    hide wraith_black1
+    hide wraith_black2
+    hide wraith_black3
+    hide wraith_black4
+    show engeki turned zorder 2 at t11
+    with Fade(0.25, 0.0, 1.0, color="#fff")
+    general "Hello."
 
     return
