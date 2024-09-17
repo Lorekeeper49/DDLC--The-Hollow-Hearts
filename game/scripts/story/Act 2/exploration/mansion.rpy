@@ -1,9 +1,9 @@
 default wraith_beaten = False
-image wraith_black = silhouetted("mod_assets/MPT/mari/body.png",0,0,0)
-image wraith_black1 = silhouetted("mod_assets/MPT/mari/body.png",0,0,0)
-image wraith_black2 = silhouetted("mod_assets/MPT/mari/body.png",0,0,0)
-image wraith_black3 = silhouetted("mod_assets/MPT/mari/body.png",0,0,0)
-image wraith_black4 = silhouetted("mod_assets/MPT/mari/body.png",0,0,0)
+image wraith_black = silhouetted("mod_assets/MPT/engeki/body.png",0,0,0)
+image wraith_black1 = silhouetted("mod_assets/MPT/engeki/body.png",0,0,0)
+image wraith_black2 = silhouetted("mod_assets/MPT/engeki/body.png",0,0,0)
+image wraith_black3 = silhouetted("mod_assets/MPT/engeki/body.png",0,0,0)
+image wraith_black4 = silhouetted("mod_assets/MPT/engeki/body.png",0,0,0)
 screen wraith:
     add "wraith_black"
     button xcenter 500 ycenter 200 xysize (200, 200) hovered SetVariable("wraith_beaten", True) unhovered SetVariable("wraith_beaten", False) action NullAction()
