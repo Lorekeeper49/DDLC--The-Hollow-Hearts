@@ -76,6 +76,8 @@ label act2_ch4_main:
     "Well, here we go."
     call explore("first_room") from _call_explore_2
     call act2_ch4_alt
+    scene bg mansion with wipeleft_scene
+    "We're out!"
     show kotonoha turned casual curi om zorder 2 at t11
     "..."
     a "!!!"
@@ -122,7 +124,20 @@ label act2_ch4_main:
     a "Wait a second."
     "They can see her?"
     a "Did something happen while I was-"
-   
+    window hide 
+    hide lilly
+    with Shake((0, 0, 0, 0), 0.1, dist=50)
+    a "FUCK!"
+    a "What happened?"
+    ma "Everyone okay?  What was that?"
+    a "A-"
+    scene black with dissolve
+    a "*Exasperated gasp*"
+    a "..."
+    "He's back..."
+    a "Sis..."
+    a "Take care of Lilly."
+    en "What are you...?"
     return
 
 label act2_ch4_alt:
@@ -169,7 +184,7 @@ label act2_ch4_alt:
     hide wraith_black3
     hide wraith_black4
     show engeki turned zorder 2 at t11
-    with Fade(0.25, 0.0, 1.0, color="#fff")
+    with blink
     general "Hello."
     general "It's me."
     en "Engeki."
