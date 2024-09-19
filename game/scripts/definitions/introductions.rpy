@@ -153,10 +153,18 @@ init python:
 
     intro_j = Intro(
         kan = "ギリアムジェーコブ",
-        name = "GUILLIAM JACOB",
+        name = "Guilliam Jacob",
         attr = "- Ordinary: He has no special abilities, he's just a normal person",
         bio = "",
         img = "jacob 1a"
+    )
+
+    intro_en = Intro(
+        kan = "ルナ演劇",
+        name = "Luna Engeki",
+        attr = "[[UNIDENTIFIED]",
+        bio = "Aoruguri's mysterious sister, No one's seen her since she turned one, no one knows who she is...",
+        img = "engeki turned"
     )
 
 

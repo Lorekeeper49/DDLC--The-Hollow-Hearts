@@ -125,5 +125,12 @@ label act2_ch4_alt:
     show engeki turned zorder 2 at t11
     with Fade(0.25, 0.0, 1.0, color="#fff")
     general "Hello."
+    general "It's me."
+    en "Engeki."
+    a "Engeki?"
+    call showintro(intro_en)
+    "I swear, my family gets the weirdest names.  And I'm no exception."
+    a "Are you merged with the wraiths?"
+    en "Essentially."
 
     return
