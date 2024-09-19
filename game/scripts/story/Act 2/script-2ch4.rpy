@@ -76,6 +76,52 @@ label act2_ch4_main:
     "Well, here we go."
     call explore("first_room") from _call_explore_2
     call act2_ch4_alt
+    show kotonoha turned casual curi om zorder 2 at t11
+    "..."
+    a "!!!"
+    "My memory fades back."
+    a "Hey, guys!  I made it!"
+    k lsur cm "!!!"
+    k om "Hey guys, she's back!"
+    hide kotonoha
+    ti "Thank God!"
+    "Akira and Tina are way in the back."
+    show mari forward happ zorder 2 at t11
+    ma om "Aoruguri!"
+    a "Mom!"
+    show mari cm ce at face
+    "..."
+    show mari oe at t11
+    ma om "I'm glad you're okay, you have no idea how worried I was!"
+    show mari cm
+    a "I can imagine."
+    a "My sister is here too."
+    show mari curi at t21
+    show engeki turned at t22
+    en "Mother!"
+    ma "Engeki?"
+    ma happ om "Oh my God!"
+    ma tears "I'm sorry, I... completely forgot about."
+    en "No, I'm sorry!  I've been gone too long!"
+    ma "Engeki..."
+    show mari cm at t31
+    show engeki cm at t32
+    "..."
+    hide mari
+    hide engeki
+    a "Where's Lilly?"
+    show lilly doll zorder 2 at t11
+    a "!!!"
+    "On the ground?"
+    a "Lilly!"
+    "She's not okay, she's barely stable!"
+    k "Don't worry about that, that's just a doll!  We gotta-"
+    a "No, you don't understand!  This {i}is{/i} her!"
+    k "What?"
+    a "We gotta..."
+    a "Wait a second."
+    "They can see her?"
+    a "Did something happen while I was-"
    
     return
 
@@ -131,6 +177,9 @@ label act2_ch4_alt:
     call showintro(intro_en)
     "I swear, my family gets the weirdest names.  And I'm no exception."
     a "Are you merged with the wraiths?"
-    en "Essentially."
+    en "Kind of..."
+    en "I didn't think it would happen."
+    en "But it allowed me escape."
+    en "Somewhat..."
 
     return
