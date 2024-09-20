@@ -218,5 +218,8 @@ label act2_ch4_alt:
     scene bg dark_bathroom with wipeleft
     a "Jesus fucking Christ!"
     "So much blood!"
+    en "Don't worry, he's dead."
+    "Evidently."
+    "What the fuck happened?"
 
     return
