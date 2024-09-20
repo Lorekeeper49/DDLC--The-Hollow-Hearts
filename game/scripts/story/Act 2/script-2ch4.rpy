@@ -229,5 +229,6 @@ label act2_ch4_alt:
     hide tetsuo
     play ambience hb
     show veins zorder 10 at heartbeat
+    play sound "sfx/s_kill_glitch1.ogg"
 
     return
