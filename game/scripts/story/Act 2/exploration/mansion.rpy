@@ -8,7 +8,14 @@ screen wraith:
     add "wraith_black"
     button xcenter 500 ycenter 200 xysize (200, 200) hovered SetVariable("wraith_beaten", True) unhovered SetVariable("wraith_beaten", False) action NullAction()
     timer 1.8 action Show("wraith_blink")
-    timer 3.0 action [Hide("wraith_blink"), Hide("black_screen"), If(wraith_beaten, Hide("wraith"))]
+    timer 3.0 action [Hide("wraith_blink"), Hide("black_screen"), If(wraith_beaten, Hide("wraith"), Call("failure"))]
+
+screen wraith_tut:
+    add "wraith_black"
+    style_prefix "explore"
+    button xcenter 450 ycenter 200 xysize (200, 200) hovered SetVariable("wraith_beaten", True) unhovered SetVariable("wraith_beaten", False) action NullAction()
+    timer 1.8 action Show("wraith_blink")
+    timer 3.0 action If(wraith_beaten, [Hide("wraith_blink"), Hide("black_screen"), Hide("wraith_tut"), SetVariable("wraith_beaten", False)]) repeat True
 
 screen black_screen:
     add Solid("#000", xsize=2000, ysize=2000)
@@ -16,6 +23,17 @@ screen black_screen:
 screen wraith_blink:
     timer 0.1 repeat True action Show("black_screen", _zorder=200)
     timer 0.075 repeat True action Hide("black_screen")
+
+label failure:
+    hide screen wraith
+    hide screen flashlight
+    play sound jumpscare
+    show wraith_black zorder 1000 at face
+    $ pause(0.25)
+    scene black with None
+    stop sound fadeout 3.0
+    $ pause(3.0)
+    return
 
 screen first_room:
     style_prefix "explore"

@@ -58,7 +58,7 @@ label act2_ch4_main:
     "..."
     "Why does this place look so...?"
     lil "Behind you!"
-    show screen wraith
+    show screen wraith_tut
     "Stay calm!  Gotta hold my flashlight on it's face!"
     "Whew."
     show lilly c2e zorder 2 at t11
@@ -195,6 +195,6 @@ label act2_ch4_alt:
     en "Kind of..."
     en "I didn't think it would happen."
     en "But it allowed me escape."
-    en "Somewhat..."
+    en "It's a common misconception that all wraiths are evil."
 
     return

@@ -79,6 +79,7 @@ label next_location(loc, *, transition=True, t=False, f=False, w=False):
     if transition:
         with Fade(0.25, 0.0, 0.25)
     if w:
+        $ wraith_beaten = False
         if random_chance(50):
             show screen wraith
     $ renpy.call_screen(loc)
