@@ -221,5 +221,13 @@ label act2_ch4_alt:
     en "Don't worry, he's dead."
     "Evidently."
     "What the fuck happened?"
+    show tetsuo towards ce zorder 2 at t11
+    "He's just..."
+    a "!!!"
+    show tetsuo oe at face
+    $ pause(0.1)
+    hide tetsuo
+    play ambience hb
+    show veins zorder 10 at heartbeat
 
     return
