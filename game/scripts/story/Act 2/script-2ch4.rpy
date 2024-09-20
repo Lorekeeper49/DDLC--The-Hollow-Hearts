@@ -103,8 +103,8 @@ label act2_ch4_main:
     en "Mother!"
     ma "Engeki?"
     ma happ om "Oh my God!"
-    ma tears "I'm sorry, I... completely forgot about."
-    en "No, I'm sorry!  I've been gone too long!"
+    ma tears "I knew it, you're alive!"
+    en "I'm sorry!  I've been gone too long!"
     ma "Engeki..."
     show mari cm at t31
     show engeki cm at t32
@@ -196,5 +196,27 @@ label act2_ch4_alt:
     en "I didn't think it would happen."
     en "But it allowed me escape."
     en "It's a common misconception that all wraiths are evil."
+    "Guess that's why they didn't kill me."
+    en "Actually, most wraiths will do no harm to you."
+    a "Then where did the misconception come from?"
+    en "People can have the weirdest gossip sometimes..."
+    a "Don't get me started."
+    en "Yeah, I'd rather get your memory back."
+    a "My memory?"
+    en "Come with me to the bathroom."
+    en "I hope you're not squeamish..."
+    a "Sis, I have an iron stomach."
+    en "'Sis'?"
+    a "You said you're my sister, right?"
+    en "Well yeah, but..."
+    en "I didn't expect to be called 'Sis' so soon!"
+    a "Honestly, I just wanted to see how it would feel."
+    en "And?"
+    a "It felt nice... to know I have family that cares for me."
+    "She smiles."
+    en "We shouldn't waste anymore time."
+    scene bg dark_bathroom with wipeleft
+    a "Jesus fucking Christ!"
+    "So much blood!"
 
     return

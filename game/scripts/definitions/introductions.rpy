@@ -136,16 +136,16 @@ init python:
     )
 
     intro_mari = Intro(
-    kan = "草の期まり",
-    name = "Kusanoki Mari",
+    kan = "楠まり",
+    name = "Kusunoki Mari",
     attr = "- Emotional Trainwreck: ",
     bio = "",
     img = ""
     )
 
     intro_ndad = Intro(
-    kan = "哲夫哲夫",
-    name = "Tetsuo Tetsuo",
+    kan = "ルナ哲夫",
+    name = "Luna Tetsuo",
     attr = "- ",
     bio = "",
     img = ""

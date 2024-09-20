@@ -1628,7 +1628,7 @@ default aoruguri = "Hidden Girl"
 default mio = "Mio"
 default tina = "Tina"
 default en_name = "Luna Engeki"
-default mari = "Kusanoki Mari"
+default mari = "Kusunoki Mari"
 default dominion = "Luna Dominion"
 default pla = "General Name"
 
