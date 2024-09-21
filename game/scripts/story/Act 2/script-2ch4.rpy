@@ -225,7 +225,7 @@ label act2_ch4_alt:
     "He's just..."
     a "!!!"
     show tetsuo oe at face
-    play sound "sfx/s_kill_glitch1.ogg"
+    play sound "sfx/monikapound.ogg"
     $ pause(0.1)
     hide tetsuo
     play ambience hb
