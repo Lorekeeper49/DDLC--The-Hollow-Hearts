@@ -152,11 +152,11 @@ init python:
     )
 
     intro_j = Intro(
-        kan = "ギリアムジェーコブ",
-        name = "Guilliam Jacob",
+        kan = "窃盗精鋭",
+        name = "Settou Seiei",
         attr = "- Ordinary: He has no special abilities, he's just a normal person",
         bio = "",
-        img = "jacob 1a"
+        img = "seiei 1a"
     )
 
     intro_en = Intro(
