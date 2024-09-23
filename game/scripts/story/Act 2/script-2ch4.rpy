@@ -126,6 +126,7 @@ label act2_ch4_main:
     a "Did something happen while I was-"
     window hide 
     hide lilly
+    play sound "sfx/monikapound.ogg"
     with Shake((0, 0, 0, 0), 0.1, dist=50)
     a "FUCK!"
     a "What happened?"

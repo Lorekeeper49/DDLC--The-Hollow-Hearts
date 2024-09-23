@@ -103,25 +103,10 @@ init python:
     img = "aoruguri crossed storm"
     )
     
-    intro_mi = Intro(
-    kan = "澪",
-    name = "Mio",
-    attr = "- ",
-    bio = "While somewhat reserved, it's not out of shyness - she's just quite proper and ladylike.  She tends to be a \"mom friend\" and frets about people around her.  She's a member of her school's go club and is quite skilled at the game.  (Competition being the one thing that brings out her less-than-ladylike side.)\n\nHer favorite books are classic Japanese literature, and she writes haiku. (Or otherwise short but evocative poems.)\nHer words tend to relate to nature, Japanese culture, and \"classy\"/traditional things.",
-    img = ""
-    )
 
     intro_ti = Intro(
     kan = "ティナ",
     name = "Tina",
-    attr = "- ",
-    bio = "",
-    img = ""
-    )
-
-    intro_hime = Intro(
-    kan = "戸型姫",
-    name = "Togata Hime",
     attr = "- ",
     bio = "",
     img = ""
@@ -151,7 +136,7 @@ init python:
     img = ""
     )
 
-    intro_j = Intro(
+    intro_sei = Intro(
         kan = "窃盗精鋭",
         name = "Settou Seiei",
         attr = "- Ordinary: He has no special abilities, he's just a normal person",

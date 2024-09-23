@@ -28,71 +28,71 @@ label kstory_ch2:
     "The game I was playing is hard as balls trapped in an air fryer!"
     "{cps=3}...{/cps}"
     "That is officially the weirdest thing I've ever said, especially in my head."
-    k "*Sigh* Jacob?"
+    k "*Sigh* Seiei?"
     "He comes out."
-    show jacob 1bh1 zorder 2 at t11
+    show seiei 1bh1 zorder 2 at t11
     $ pause(0.5)
-    call showintro(intro_j) from _call_showintro_3
-    j "*Sigh* That is an embarrasing death."
+    call showintro(intro_sei) from _call_showintro_3
+    sei "*Sigh* That is an embarrasing death."
     k "They were swarming us!"
-    j 1be "Wanna do another attempt?"
+    sei 1be "Wanna do another attempt?"
     k "We can't, it's late and the club's probably worried."
-    j 2ba "Right.  Let's head back to HQ."
-    hide jacob
+    sei 2ba "Right.  Let's head back to HQ."
+    hide seiei
     "We walk for a bit."
     $ pause(3.0)
     "I stop."
-    show jacob 2ba zorder 2 at t11
+    show seiei 2ba zorder 2 at t11
     k "It's...  It's not right!"
-    j "What?  Me being here?"
+    sei "What?  Me being here?"
     k "No-"
-    j 1bh1 "I get it.  There's no way an Ordinary man like me-"
+    sei 1bh1 "I get it.  There's no way an Ordinary man like me-"
     k "That's not what I'm talking about!"
-    show jacob 1ba
+    show seiei 1ba
     k "We're breaking into so many abandoned places..."
     k "going through so many dangers..."
     k "meeting so many fates...!"
     k "It's not right!  None of this is right!"
     k "So many people have died!"
-    k "Ian...  Himari...  Charlotte...  Shiro...!"
+    k "Mio...  Hime...  Himari...!"
     k "Not to mention all the people who went missing and never came back!"
     k "And for what?  To get at an overgrown mimic who's to powerful for his own good?"
-    k "Face it, Jacob!"
+    k "Face it, Seiei!"
     k "We're never gonna kill Kirinani!"
     k "It's impossible!"
     k "*Sob*"
     $ pause(1.0)
-    show jacob 2ba
-    j "Maybe so..."
-    j "{i}If{/i} we didn't have help from his own family."
+    show seiei 2ba
+    sei "Maybe so..."
+    sei "{i}If{/i} we didn't have help from his own family."
     k "What?"
-    j "Follow me, I know where he is."
+    sei "Follow me, I know where he is."
     scene bg shed_night with wipeleft_scene
     call showlocation("Shed Hideout","September 29, 2023",20*60+14+57/60.0,"bg shed_night") from _call_showlocation_18
     show akira 1ac zorder 2 at t11
     "...{w=1}Huh?"
     hide akira
-    show jacob 2ba zorder 2 at t11
+    show seiei 2ba zorder 2 at t11
     k "Akira?  Why him?  He's like Kirinani's right hand man!"
-    j 1ba "Well, why do {i}you{/i} like him?"
+    sei 1ba "Well, why do {i}you{/i} like him?"
     k "Uh-?  *Flustered noise*\n...Fair point..."
-    j 2ba "He's a spy, and a good one at that."
-    j 1be "Oi!  Akira!"
+    sei 2ba "He's a spy, and a good one at that."
+    sei 1be "Oi!  Akira!"
     k "Eh-W-Wait!"
     show akira 1ac zorder 2 at t22
-    show jacob at t21
+    show seiei at t21
     "Akira comes over."
     k "I wanted you to at least explain things before calling him over!"
     "No one takes notice of me."
-    ak 4ac "Jacob...  Did you do it again?"
-    j 2bh1 "*Sigh*"
-    ak 2ae "Ugh!  Jacob, I told you not to use STASIS to train!  It is unhealthy and doesn't actually do anything to the physical body.\n{{While he is yelling, He is not shouting STASIS, that's just the capitalisation of the device}"
-    j 2be "Yeah, yeah...  Listen, Kotonoha's here, say hi."
+    ak 4ac "Seiei...  Did you do it again?"
+    sei 2bh1 "*Sigh*"
+    ak 2ae "Ugh!  Seiei, I told you not to use STASIS to train!  It is unhealthy and doesn't actually do anything to the physical body.\n{{While he is yelling, He is not shouting STASIS, that's just the capitalisation of the device}"
+    sei 2be "Yeah, yeah...  Listen, Kotonoha's here, say hi."
     show akira 4ae
     "He looks at me."
     ak 4ag "So... we're finally telling {i}her{/i} about me, huh?"
     ak 1ag "Good, I don't have to hide anymore."
-    hide jacob
+    hide seiei
     show akira at t11
     ak "Hi Kotonoha, it's me.  I spy on my family."
     k "You sound like you're tired of this job."
@@ -116,24 +116,24 @@ label kstory_ch3:
     call showlocation("Kanzen Academy Ruins","September 30, 2023",60*23+59+57/60.0,"bg pasteur_night") from _call_showlocation_19
     k "You sure we'll be able find anything here?"
     k "The place is completely destroyed."
-    show jacob 2ba zorder 2 at t11
-    j "Yeah, Luna really did a number on this place."
+    show seiei 2ba zorder 2 at t11
+    sei "Yeah, Luna really did a number on this place."
     k "Not to mention the fact that they cleaned up the place so well it's almost like it never existed."
-    j 1ba "Which means we're going underground!"
+    sei 1ba "Which means we're going underground!"
     scene bg sewer_hall with wipeleft_scene
     "Shit..."
     "I can barely see."
     "Don't like the sewers already, but {i}this{/i} is worse!"
-    show jacob 2ba zorder 2 at t11
-    j 2ba "We could get lost in here if we're not careful."
+    show seiei 2ba zorder 2 at t11
+    sei 2ba "We could get lost in here if we're not careful."
     "No need to state the obvious..."
-    j 1ba "If I'm correct about this, there should be a factory nearby..."
-    hide jacob
+    sei 1ba "If I'm correct about this, there should be a factory nearby..."
+    hide seiei
     "We look around."
     k "Found it!"
     "Convenient that the door's labeled."
     k "Locked!"
-    j "There's another door that leads to a business room, it might have a spare key they left behind. {{Calling out}"
+    sei "There's another door that leads to a business room, it might have a spare key they left behind. {{Calling out}"
     k "Okay, I'll stay here!"
     "{cps=1}...{/cps}"
     "It's so quiet..."
@@ -142,17 +142,17 @@ label kstory_ch3:
     $ pause(1.0)
     k "Eh?"
     "Am I... being watched?"
-    show jacob 1ba zorder 2 at r11
-    j "I'm back!"
+    show seiei 1ba zorder 2 at r11
+    sei "I'm back!"
     k "Ah!  Jesus Christ!"
     k "Ha...  Hi!"
     k "You scared the shit out of me!  Jesus!"
-    j 2bb "Tehehe, sorry!"
+    sei 2bb "Tehehe, sorry!"
     "Sure sounds like it!"
-    j 1ba "Anyway, let's get moving."
-    show jacob 2ba at lhide 
+    sei 1ba "Anyway, let's get moving."
+    show seiei 2ba at lhide 
     $ pause(1.0)
-    hide jacob
+    hide seiei
     $ pause(1.0)
     scene bg sewer_hall with dissolve_scene
     $ pause(1.0)

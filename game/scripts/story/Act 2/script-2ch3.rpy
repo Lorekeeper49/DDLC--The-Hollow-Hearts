@@ -108,7 +108,7 @@ label act2_ch3_main:
     show mari cm
     a "Jesus..."
     a "Who were the others?"
-    ma anno "Guilliam Jacob was the other cancelled one, he was our old leader."
+    ma anno "Settou Seiei was the other cancelled one, he was our old leader."
     ma "The other processed ones were Kamiyama Kirinani..."
     ma dist "And... Yandere Lilly..."
     show mari cm
