@@ -465,7 +465,8 @@ init -501 screen navigation():
             else:
                 textbutton _("Main Menu") action MainMenu() xcenter 550 ycenter 150 
             textbutton _("History") action [ShowMenu("history"), SensitiveIf(renpy.get_screen("history") == None)] xcenter 1050 ycenter 75
-                
+            textbutton _("Auto Advance") action Preference("auto-forward", "toggle")
+            textbutton _("Fast Forward") action Skip()
 
             
 
