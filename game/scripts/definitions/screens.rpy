@@ -404,26 +404,11 @@ init -1 style choice_button_text is default:
 init -501 screen quick_menu():
 
 
-    zorder 100
+    zorder 2000
 
     if quick_menu:
-
-
-        hbox:
-            style_prefix "quick"
-
-            xalign 0.5
-            yalign 0.995
-
-
-            textbutton _("History") action ShowMenu('history')
-            textbutton _("Skip") action Skip()
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Save") action ShowMenu('save')
-            textbutton _("Load") action ShowMenu('load')
-
-
-            textbutton _("Settings") action ShowMenu('preferences')
+        imagebutton insensitive "mod_assets/gui/menu_button.png" action ShowMenu("game_menu")
+        key "K_ESCAPE" action ShowMenu("game_menu")
 
 
 
@@ -432,18 +417,6 @@ init -501 screen quick_menu():
 
 
 default -1 quick_menu = True
-
-
-
-
-init -1 style quick_button:
-    properties gui.button_properties("quick_button")
-    activate_sound gui.activate_sound
-
-init -1 style quick_button_text:
-    properties gui.button_text_properties("quick_button")
-    outlines []
-
 
 
 
