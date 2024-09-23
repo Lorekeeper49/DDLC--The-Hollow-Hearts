@@ -213,5 +213,7 @@ label kstory_ch5:
     call showlocation("???","October 2, 2023",23,59,57) from _call_showlocation_21
     k "That son of a...!"
     k "Why didn't anyone tell me!?"
+    k "I trusted him..."
+    k "And all this time, he's been stealing for profit!?"
 
     return
