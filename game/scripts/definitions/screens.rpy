@@ -448,7 +448,7 @@ init -501 screen navigation():
         if main_menu:
             textbutton _("New Game") action Function(StartGame) xcenter 460 ycenter 245
             textbutton _("Load Game") action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None)] xcenter 640 ycenter 203
-            textbutton _("Settings") action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)] xcenter 370 ycenter 195
+            textbutton _("Options") action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)] xcenter 370 ycenter 195
             if renpy.variant("pc"):
                 textbutton _("Help") action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))] xcenter 590 ycenter 155
                 textbutton _("Quit") action Quit(confirm=not main_menu) xcenter 770 ycenter 113
@@ -456,7 +456,7 @@ init -501 screen navigation():
         else:
             textbutton _("Save Game") action [ShowMenu("save"), SensitiveIf(renpy.get_screen("save") == None)] xcenter 460 ycenter 285
             textbutton _("Load Game") action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None)] xcenter 640 ycenter 243
-            textbutton _("Settings") action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)] xcenter 370 ycenter 235
+            textbutton _("Options") action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)] xcenter 370 ycenter 235
             if renpy.variant("pc"):
                 textbutton _("Help") action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))] xcenter 590 ycenter 195
                 textbutton _("Quit") action Quit(confirm=not main_menu) xcenter 770 ycenter 153
