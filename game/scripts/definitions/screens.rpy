@@ -407,7 +407,7 @@ init -501 screen quick_menu():
     zorder 2000
 
     if quick_menu:
-        imagebutton insensitive "mod_assets/gui/menu_button.png" action ShowMenu("navigation")
+        imagebutton idle "mod_assets/gui/menu_button.png" action ShowMenu("navigation")
         key "K_ESCAPE" action ShowMenu("navigation")
 
 
