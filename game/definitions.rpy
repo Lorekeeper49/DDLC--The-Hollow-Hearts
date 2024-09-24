@@ -259,11 +259,13 @@ image glitch_color2:
         alpha 0.7
         linear 0.45 alpha 0
 
+define -501 bgs = []
 # - mod backgrounds
-init python:
+init -501 python:
     def capture_images(prefix, filt):
         for file in filter(filt, renpy.list_files()):
             renpy.image(" ".join([prefix, os.path.splitext(os.path.split(file)[1])[0]]), file)
+            bgs.append(" ".join([prefix, os.path.splitext(os.path.split(file)[1])[0]]))
 
     capture_images("bg", lambda x: x.startswith("mod_assets/bg/"))
     

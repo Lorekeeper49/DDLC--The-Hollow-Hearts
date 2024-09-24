@@ -407,7 +407,7 @@ init -501 screen quick_menu():
     zorder 2000
 
     if quick_menu:
-        imagebutton idle "mod_assets/gui/menu_button.png" action [Preference("auto-forward", "disable"), Show("navigation"),]
+        imagebutton idle "mod_assets/gui/menu_button.png" action [SetVariable("aa_status", "OFF"), SetVariable("option_index", 0), Preference("auto-forward", "disable"), Show("navigation_border"), Show("navigation")]
         key "K_ESCAPE" action ShowMenu("navigation")
 
 default -1 quick_menu = True
@@ -426,42 +426,61 @@ default -1 aa_status = "OFF"
 
 init -501 screen navigation():
     zorder 3000
-    text _(str(option_index)) style "navigation_center_text" xcenter 270 ycenter 360
-    frame:
+    vbox at navigation_transform:
+        style_prefix "navigation"
+        spacing 25
+        if main_menu:
+            textbutton _("BACK") hovered [SetVariable("option_index", 0), Show("navigation_highlight")] action [Hide("navigation_border"), Hide("navigation_highlight"), Hide("navigation")]
+            textbutton _("NEW GAME") hovered [SetVariable("option_index", 1), Show("navigation_highlight")] action Function(StartGame)
+            textbutton _("BOOKMARKS") hovered [SetVariable("option_index", 2), Show("navigation_highlight")] action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None)]
+            textbutton _("OPTIONS") hovered [SetVariable("option_index", 3), Show("navigation_highlight")] action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
+            if renpy.variant("pc"):
+                textbutton _("HELP") hovered [SetVariable("option_index", 4), Show("navigation_highlight")]  action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))]
+                textbutton _("QUIT") hovered [SetVariable("option_index", 5), Show("navigation_highlight")] action Quit(confirm=not main_menu)
+            textbutton _("ACT 3") hovered [SetVariable("option_index", 6), Show("navigation_highlight")] action Function(Act3)
+        else:
+            textbutton _("BACK") hovered [SetVariable("option_index", 0), Show("navigation_highlight")] action Hide("navigation")
+            textbutton _("HISTORY") hovered [SetVariable("option_index", 1), Show("navigation_highlight")] action [ShowMenu("history"), SensitiveIf(renpy.get_screen("history") == None)]
+            textbutton _("AUTO ADVANCE") hovered [SetVariable("option_index", 2), Show("navigation_highlight")] action [Preference("auto-forward", "toggle"), If(aa_status == "OFF", SetVariable("aa_status", "ON"), SetVariable("aa_status", "OFF"))]
+            textbutton _("FAST FORWARD") hovered [SetVariable("option_index", 3), Show("navigation_highlight")] action Skip()
+            textbutton _("SAVE GAME") hovered [SetVariable("option_index", 4), Show("navigation_highlight")] action [ShowMenu("save"), SensitiveIf(renpy.get_screen("save") == None)]
+            textbutton _("LOAD GAME") hovered [SetVariable("option_index", 4), Show("navigation_highlight")] action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None)]
+            textbutton _("OPTIONS") hovered [SetVariable("option_index", 5), Show("navigation_highlight")] action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
+            if _in_replay:
+                textbutton _("END REPLAY") hovered [SetVariable("option_index", 6), Show("navigation_highlight")] action EndReplay(confirm=True)
+            else:
+                textbutton _("MAIN MENU") hovered [SetVariable("option_index", 6), Show("navigation_highlight")] action MainMenu()
+            if renpy.variant("pc"):
+                textbutton _("HELP") hovered [SetVariable("option_index", 7), Show("navigation_highlight")] action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))]
+                textbutton _("QUIT") hovered [SetVariable("option_index", 8), Show("navigation_highlight")] action Quit(confirm=not main_menu) 
+        text _(aa_status) ycenter -470 xpos 430
+            
+init -501 screen navigation_border():
+    zorder 2500
+    text _(str(option_index)) style "navigation_center_text" at navigation_transform(120, 20)
+    frame at navigation_transform:
         ysize 720
         xsize 540
-        background Solid("#ffffff8f")
-        vbox:
-            style_prefix "navigation"
+        background Solid("#ffffff8f")            
 
-            spacing 25
-            if main_menu:
-                textbutton _("BACK") hovered SetVariable("option_index", 0) action Hide("navigation")
-                textbutton _("NEW GAME") hovered SetVariable("option_index", 1) action Function(StartGame)
-                textbutton _("BOOKMARKS") hovered SetVariable("option_index", 2) action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None)]
-                textbutton _("OPTIONS") hovered SetVariable("option_index", 3) action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
-                if renpy.variant("pc"):
-                    textbutton _("HELP") hovered SetVariable("option_index", 4)  action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))]
-                    textbutton _("QUIT") hovered SetVariable("option_index", 5) action Quit(confirm=not main_menu)
-                textbutton _("ACT 3") hovered SetVariable("option_index", 6) action Function(Act3)
-            else:
-                textbutton _("BACK") hovered SetVariable("option_index", 0) action Hide("navigation")
-                textbutton _("HISTORY") hovered SetVariable("option_index", 1) action [ShowMenu("history"), SensitiveIf(renpy.get_screen("history") == None)]
-                textbutton _("AUTO ADVANCE") hovered SetVariable("option_index", 2) action [Preference("auto-forward", "toggle"), If(aa_status == "OFF", SetVariable("aa_status", "ON"), SetVariable("aa_status", "OFF"))]
-                textbutton _("FAST FORWARD") hovered SetVariable("option_index", 3) action Skip()
-                textbutton _("SAVE GAME") hovered SetVariable("option_index", 4) action [ShowMenu("save"), SensitiveIf(renpy.get_screen("save") == None)]
-                textbutton _("LOAD GAME") hovered SetVariable("option_index", 4) action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None)]
-                textbutton _("OPTIONS") hovered SetVariable("option_index", 5) action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
-                if _in_replay:
-                    textbutton _("END REPLAY") hovered SetVariable("option_index", 6) action EndReplay(confirm=True)
-                else:
-                    textbutton _("MAIN MENU") hovered SetVariable("option_index", 6) action MainMenu()
-                if renpy.variant("pc"):
-                    textbutton _("HELP") hovered SetVariable("option_index", 7) action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))]
-                    textbutton _("QUIT") hovered SetVariable("option_index", 8) action Quit(confirm=not main_menu)
-            text _(aa_status) ycenter -470 xpos 430
-            
-            
+init -501 screen navigation_highlight():
+    zorder 2750
+    frame at navigation_transform:
+        ysize 50
+        xsize 540
+        background Solid("#000")     
+
+init -501 transform navigation_transform(xo=0,yo=0):
+    on show:
+        xpos -640
+        ypos (50*option_index)+yo
+        easeout .25 xpos 0+xo
+    on replace:
+        linear .25 ypos 50*option_index
+    on hide:
+        xpos 0+xo
+        easein .25 xpos -640
+
 
 
 init -1 style navigation_button is gui_button
@@ -495,12 +514,12 @@ init -1 style navigation_center_text:
 
 
 
-
+default -501 dynamics = random_list(bgs)[0]
 
 init -501 screen main_menu(): 
     tag menu
     style_prefix "main_menu"
-    add "menu_bg"
+    add dynamics at bg_transform
     if persistent.ytrueending or persistent.ygood:
         add "menu_art_y_good"
     else:
@@ -542,6 +561,16 @@ init -501 screen main_menu():
     add "menu_fade"
 
     key "K_ESCAPE" action Quit(confirm=False)
+
+    timer 5.0 repeat True action SetVariable("dynamics", random_list(bgs)[0])
+
+init -501 transform bg_transform:
+    alpha 0.0
+    parallel:
+        linear 1.0 alpha 1.0
+        3.0
+        linear 1.0 alpha 0.0
+        repeat
 
 init -1 style main_menu_frame is empty
 init -1 style main_menu_vbox is vbox

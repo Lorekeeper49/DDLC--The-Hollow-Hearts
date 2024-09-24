@@ -105,15 +105,15 @@ image menu_logo:
     "mod_assets/logo.png"
     subpixel True
     xcenter 640
-    ycenter 120
-    zoom 0.40
+    ycenter 360
+    zoom 1.0
     parallel:
         0.5
-        easein 0.05 zoom 0.45
-        easeout 0.05 zoom 0.40
+        easein 0.05 zoom 1.05
+        easeout 0.05 zoom 1.0
         0.2
-        easein 0.05 zoom 0.45
-        easeout 0.05 zoom 0.40
+        easein 0.05 zoom 1.05
+        easeout 0.05 zoom 1.0
         0.5
         repeat
 
