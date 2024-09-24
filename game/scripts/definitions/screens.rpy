@@ -525,7 +525,7 @@ init -501 screen main_menu():
     add "menu_art_n" at angle_t(90)
     add "menu_art_s" at angle_t(15)
     add "menu_art_m"
-    add "menu_art_a" at angle_t(165)
+    add "menu_art_a" at angle_t(150)
     use quick_menu
 
     if gui.show_name:

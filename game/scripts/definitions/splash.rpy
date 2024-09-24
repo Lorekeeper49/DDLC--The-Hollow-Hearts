@@ -52,7 +52,7 @@ image menu_art_s:
 image menu_art_m:
     subpixel True
     im.Composite((960, 960), (0, 0), "monika/1l.png", (0, 0), "monika/1r.png", (0, 0), "monika/q.png")
-    xcenter 600
+    xcenter 610
     ycenter 100
     zoom 0.25
 
@@ -83,12 +83,18 @@ image menu_logo:
     parallel:
         0.5
         easein 0.05 zoom 0.65
-        easeout 0.05 zoom 0.6
+        easeout 0.05 zoom 0.6 
         0.2
         easein 0.05 zoom 0.65
         easeout 0.05 zoom 0.6
         0.5
         repeat
+    parallel:
+        ease 3.0 rotate 15
+        0.1
+        ease 3.0 rotate -15
+        repeat
+
 
 transform menu_bg_loop:
     subpixel True
