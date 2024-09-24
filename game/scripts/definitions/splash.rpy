@@ -206,6 +206,7 @@ label splashscreen:
         "Also:"
         "This mod contains disturbing dialogue and visuals, suggestive dialogue and visuals, violence, flashing lights, and other things that may affect certain people."
         "If you have any issues with these factors, it is recommended that you either stop playing or take the necessary precautions before you continue."
+        "It is also important to note that while Act 2 may be entirely about The Midnight Club, this mod holds no affiliation with DDNC or any drama involving that community.\n{a=https://youtube.com/playlist?list=PLIYMgSUPYxVcPokdZpmekzk_9pGlxwNUj&si=Oz-xiJNZokVrqgoZ}Click here for more info.{/a}"
         menu:
             "By clicking the button above, you agree that you are aware of these factors and wish to proceed with this in mind."
             "I agree.":
