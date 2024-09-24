@@ -31,72 +31,45 @@ image menu_fade:
 image menu_art_y:
     subpixel True
     im.Composite((960, 960), (0, 0), "yuri/1l.png", (0, 0), "yuri/2r.png", (0, 0), "yuri/o.png")
-    xcenter 1150
-    ycenter 450
-    zoom 0.50
+    xcenter 500
+    ycenter 250
+    zoom 0.25
 
 image menu_art_n:
     subpixel True
     im.Composite((960, 960), (0, 0), "natsuki/1l.png", (0, 0), "natsuki/1r.png", (0, 0), "natsuki/2tf.png")
-    xcenter 940
-    ycenter 440
-    zoom 0.55
+    xcenter 840
+    ycenter 340
+    zoom 0.25
 
 image menu_art_s:
     subpixel True
     im.Composite((960, 960), (0, 0), "sayori/1l.png", (0, 0), "sayori/1r.png", (0, 0), "sayori/k.png")
-    xcenter 360
-    ycenter 440
-    zoom 0.55
+    xcenter 700
+    ycenter 200
+    zoom 0.25
 
 image menu_art_m:
     subpixel True
     im.Composite((960, 960), (0, 0), "monika/1l.png", (0, 0), "monika/1r.png", (0, 0), "monika/q.png")
-    xcenter 640
-    ycenter 430
-    zoom 0.60
+    xcenter 600
+    ycenter 100
+    zoom 0.25
 
 image menu_art_k:
     subpixel True
     im.Composite((960, 960), (0, 0), "mod_assets/characters/kotonoha/1.png", (0, 0), "mod_assets/characters/kotonoha/o.png")
-    xcenter 100
-    ycenter 450
-    zoom 0.50
-
-image menu_art_y_good:
-    subpixel True
-    im.Composite((960, 960), (0, 0), "yuri/1l.png", (0, 0), "yuri/2r.png", (0, 0), "yuri/u.png")
-    xcenter 1150
-    ycenter 450
-    zoom 0.50
-
-image menu_art_n_good:
-    subpixel True
-    im.Composite((960, 960), (0, 0), "natsuki/1l.png", (0, 0), "natsuki/1r.png", (0, 0), "natsuki/t.png")
-    xcenter 940
-    ycenter 440
-    zoom 0.55
-
-image menu_art_s_good:
-    subpixel True
-    im.Composite((960, 960), (0, 0), "sayori/1l.png", (0, 0), "sayori/1r.png", (0, 0), "sayori/d.png")
-    xcenter 360
-    ycenter 440
-    zoom 0.55
-
-image menu_art_m_good:
-    subpixel True
-    im.Composite((960, 960), (0, 0), "monika/1l.png", (0, 0), "monika/1r.png", (0, 0), "monika/e.png")
     xcenter 640
-    ycenter 430
-    zoom 0.60
+    ycenter 600
+    zoom 0.25
 
-image menu_art_k_good:
+image menu_art_a:
     subpixel True
-    im.Composite((960, 960), (0, 0), "mod_assets/characters/kotonoha/1.png", (0, 0), "mod_assets/characters/kotonoha/a.png")
-    xcenter 100
-    ycenter 450
-    zoom 0.50
+    "mod_assets/MPT/aoruguri/example.png"
+    xcenter 800
+    ycenter 600
+    zoom 0.25
+
 
 image menu_nav:
     "mod_assets/gui/main_menu.png"
@@ -106,14 +79,14 @@ image menu_logo:
     subpixel True
     xcenter 640
     ycenter 360
-    zoom 1.0
+    zoom 0.6
     parallel:
         0.5
-        easein 0.05 zoom 1.05
-        easeout 0.05 zoom 1.0
+        easein 0.05 zoom 0.65
+        easeout 0.05 zoom 0.6
         0.2
-        easein 0.05 zoom 1.05
-        easeout 0.05 zoom 1.0
+        easein 0.05 zoom 0.65
+        easeout 0.05 zoom 0.6
         0.5
         repeat
 

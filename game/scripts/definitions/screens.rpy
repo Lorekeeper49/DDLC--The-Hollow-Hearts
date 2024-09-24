@@ -520,31 +520,12 @@ init -501 screen main_menu():
     tag menu
     style_prefix "main_menu"
     add dynamics at bg_transform
-    if persistent.ytrueending or persistent.ygood:
-        add "menu_art_y_good"
-    else:
-        add "menu_art_y"
-    if persistent.ytrueending or persistent.strueending or persistent.ntrueending or persistent.mtrueending:
-        add "menu_art_k_good"
-    else:
-        add "menu_art_k"
-    if persistent.ntrueending or persistent.ngood:
-        add "menu_art_n_good"
-    else:
-        add "menu_art_n"
-    if persistent.strueending or persistent.sgood:
-        add "menu_art_s_good"
-    else:
-        add "menu_art_s"
-    if persistent.mtrueending or persistent.mgood:
-        add "menu_art_m_good"
-    else:
-        add "menu_art_m"
-    add "menu_nav"
-
-
-
-
+    add "menu_art_y" at angle_t(-15)
+    add "menu_art_k" at angle_t(180)
+    add "menu_art_n" at angle_t(90)
+    add "menu_art_s" at angle_t(15)
+    add "menu_art_m"
+    add "menu_art_a" at angle_t(165)
     use quick_menu
 
     if gui.show_name:
@@ -564,12 +545,20 @@ init -501 screen main_menu():
 
     timer 5.0 repeat True action SetVariable("dynamics", random_list(bgs)[0])
 
+init -501 transform angle_t(a):
+    rotate a
+
 init -501 transform bg_transform:
     alpha 0.0
+    zoom 1.0
     parallel:
         linear 1.0 alpha 1.0
         3.0
         linear 1.0 alpha 0.0
+        repeat
+    parallel:
+        easein_quint 10.0 zoom 1.2
+        easein_quint 10.0 zoom 1.0
         repeat
 
 init -1 style main_menu_frame is empty
@@ -669,7 +658,7 @@ init -501 screen game_menu(title, scroll=None):
 
                 transclude
 
-    use navigation
+    use quick_menu
 
 
     textbutton _("Return"):
