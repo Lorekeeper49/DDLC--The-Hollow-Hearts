@@ -407,25 +407,10 @@ init -501 screen quick_menu():
     zorder 2000
 
     if quick_menu:
-        imagebutton idle "mod_assets/gui/menu_button.png" action ShowMenu("navigation")
+        imagebutton idle "mod_assets/gui/menu_button.png" action [Preference("auto-forward", "disable"), Show("navigation")]
         key "K_ESCAPE" action ShowMenu("navigation")
 
-
-
-
-
-
-
 default -1 quick_menu = True
-
-
-
-
-
-
-
-
-
 
 init -1 python:
     def StartGame():
@@ -446,30 +431,27 @@ init -501 screen navigation():
 
         spacing gui.navigation_spacing
         if main_menu:
-            textbutton _("New Game") action Function(StartGame) xcenter 460 ycenter 245
-            textbutton _("Load Game") action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None)] xcenter 640 ycenter 203
-            textbutton _("Options") action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)] xcenter 370 ycenter 195
+            textbutton _("NEW GAME") action Function(StartGame) xcenter 460 ycenter 245
+            textbutton _("LOAD GAME") action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None)] xcenter 640 ycenter 203
+            textbutton _("OPTIONS") action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)] xcenter 370 ycenter 195
             if renpy.variant("pc"):
-                textbutton _("Help") action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))] xcenter 590 ycenter 155
-                textbutton _("Quit") action Quit(confirm=not main_menu) xcenter 770 ycenter 113
-            textbutton _("Act 3") action Function(Act3) xcenter 580 ycenter 110
+                textbutton _("HELP") action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))] xcenter 590 ycenter 155
+                textbutton _("QUIT") action Quit(confirm=not main_menu) xcenter 770 ycenter 113
+            textbutton _("ACT 3") action Function(Act3) xcenter 580 ycenter 110
         else:
-            textbutton _("Save Game") action [ShowMenu("save"), SensitiveIf(renpy.get_screen("save") == None)] xcenter 460 ycenter 285
-            textbutton _("Load Game") action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None)] xcenter 640 ycenter 243
-            textbutton _("Options") action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)] xcenter 370 ycenter 235
-            if renpy.variant("pc"):
-                textbutton _("Help") action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))] xcenter 590 ycenter 195
-                textbutton _("Quit") action Quit(confirm=not main_menu) xcenter 770 ycenter 153
+            textbutton _("HISTORY") action [ShowMenu("history"), SensitiveIf(renpy.get_screen("history") == None)]
+            textbutton _("AUTO ADVANCE") action Preference("auto-forward", "toggle")
+            textbutton _("FAST FORWARD") action Skip()
+            textbutton _("SAVE GAME") action [ShowMenu("save"), SensitiveIf(renpy.get_screen("save") == None)]
+            textbutton _("LOAD GAME") action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None)]
+            textbutton _("OPTIONS") action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
             if _in_replay:
-                textbutton _("End Replay") action EndReplay(confirm=True) xcenter 550 ycenter 150 
+                textbutton _("END REPLAY") action EndReplay(confirm=True)
             else:
-                textbutton _("Main Menu") action MainMenu() xcenter 550 ycenter 150 
-            textbutton _("History") action [ShowMenu("history"), SensitiveIf(renpy.get_screen("history") == None)] xcenter 1050 ycenter 75
-            textbutton _("Auto Advance") action Preference("auto-forward", "toggle")
-            textbutton _("Fast Forward") action Skip()
-
-            
-
+                textbutton _("MAIN MENU") action MainMenu()
+            if renpy.variant("pc"):
+                textbutton _("HELP") action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))]
+                textbutton _("QUIT") action Quit(confirm=not main_menu)
             
 
 
