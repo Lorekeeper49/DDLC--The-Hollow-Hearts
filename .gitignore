@@ -7,3 +7,5 @@ DDLC.sh
 errors.txt
 log.txt
 traceback.txt
+game/cache
+game/saves
