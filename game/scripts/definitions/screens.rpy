@@ -407,7 +407,7 @@ init -501 screen quick_menu():
     zorder 2000
 
     if quick_menu:
-        imagebutton idle "mod_assets/gui/menu_button.png" action [Preference("auto-forward", "disable"), Show("navigation")]
+        imagebutton idle "mod_assets/gui/menu_button.png" action [Preference("auto-forward", "disable"), Show("navigation"),]
         key "K_ESCAPE" action ShowMenu("navigation")
 
 default -1 quick_menu = True
@@ -421,37 +421,46 @@ init -1 python:
     def Act3():
         renpy.jump_out_of_context("act3")
 
+default -1 option_index = "0"
+default -1 aa_status = "OFF"
+
 init -501 screen navigation():
+    zorder 3000
+    text _(option_index) style "navigation_center_text" xcenter 270 ycenter 360
+    frame:
+        ysize 720
+        xsize 540
+        background Solid("#ffffff8f")
+        vbox:
+            style_prefix "navigation"
 
-    vbox:
-        style_prefix "navigation"
-
-        xpos gui.navigation_xpos
-        yalign 0.8
-
-        spacing gui.navigation_spacing
-        if main_menu:
-            textbutton _("NEW GAME") action Function(StartGame) xcenter 460 ycenter 245
-            textbutton _("LOAD GAME") action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None)] xcenter 640 ycenter 203
-            textbutton _("OPTIONS") action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)] xcenter 370 ycenter 195
-            if renpy.variant("pc"):
-                textbutton _("HELP") action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))] xcenter 590 ycenter 155
-                textbutton _("QUIT") action Quit(confirm=not main_menu) xcenter 770 ycenter 113
-            textbutton _("ACT 3") action Function(Act3) xcenter 580 ycenter 110
-        else:
-            textbutton _("HISTORY") action [ShowMenu("history"), SensitiveIf(renpy.get_screen("history") == None)]
-            textbutton _("AUTO ADVANCE") action Preference("auto-forward", "toggle")
-            textbutton _("FAST FORWARD") action Skip()
-            textbutton _("SAVE GAME") action [ShowMenu("save"), SensitiveIf(renpy.get_screen("save") == None)]
-            textbutton _("LOAD GAME") action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None)]
-            textbutton _("OPTIONS") action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
-            if _in_replay:
-                textbutton _("END REPLAY") action EndReplay(confirm=True)
+            spacing 25
+            if main_menu:
+                textbutton _("BACK") hovered SetVariable("option_index", "0") action Hide("navigation")
+                textbutton _("NEW GAME") hovered SetVariable("option_index", "1") action Function(StartGame)
+                textbutton _("BOOKMARKS") hovered SetVariable("option_index", "2") action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None)]
+                textbutton _("OPTIONS") hovered SetVariable("option_index", "3") action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
+                if renpy.variant("pc"):
+                    textbutton _("HELP") hovered SetVariable("option_index", "4")  action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))]
+                    textbutton _("QUIT") hovered SetVariable("option_index", "5") action Quit(confirm=not main_menu)
+                textbutton _("ACT 3") hovered SetVariable("option_index", "6") action Function(Act3)
             else:
-                textbutton _("MAIN MENU") action MainMenu()
-            if renpy.variant("pc"):
-                textbutton _("HELP") action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))]
-                textbutton _("QUIT") action Quit(confirm=not main_menu)
+                textbutton _("BACK") hovered SetVariable("option_index", "0") action Hide("navigation")
+                textbutton _("HISTORY") hovered SetVariable("option_index", "1") action [ShowMenu("history"), SensitiveIf(renpy.get_screen("history") == None)]
+                textbutton _("AUTO ADVANCE") hovered SetVariable("option_index", "2") action [Preference("auto-forward", "toggle"), If(aa_status == "OFF", SetVariable("aa_status", "ON"), SetVariable("aa_status", "OFF"))]
+                textbutton _("FAST FORWARD") hovered SetVariable("option_index", "3") action Skip()
+                textbutton _("SAVE GAME") hovered SetVariable("option_index", "4") action [ShowMenu("save"), SensitiveIf(renpy.get_screen("save") == None)]
+                textbutton _("LOAD GAME") hovered SetVariable("option_index", "4") action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None)]
+                textbutton _("OPTIONS") hovered SetVariable("option_index", "5") action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
+                if _in_replay:
+                    textbutton _("END REPLAY") hovered SetVariable("option_index", "6") action EndReplay(confirm=True)
+                else:
+                    textbutton _("MAIN MENU") hovered SetVariable("option_index", "6") action MainMenu()
+                if renpy.variant("pc"):
+                    textbutton _("HELP") hovered SetVariable("option_index", "7") action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))]
+                    textbutton _("QUIT") hovered SetVariable("option_index", "8") action Quit(confirm=not main_menu)
+            text _(aa_status) ycenter -470 xpos 430
+            
             
 
 
@@ -466,12 +475,21 @@ init -1 style navigation_button:
 
 init -1 style navigation_button_text:
     properties gui.button_text_properties("navigation_button")
-    font "gui/font/RifficFree-Bold.ttf"
-    color "#fff"
-    outlines [(4, "#7c7b7b", 0, 0), (2, "#7c7b7b", 2, 2)]
-    hover_outlines [(4, "#696868", 0, 0), (2, "#696868", 2, 2)]
-    insensitive_outlines [(4, "#cacaca", 0, 0), (2, "#cacaca", 2, 2)]
+    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
+    color "#000"
+    hover_color "#fff"
+    size 50
 
+init -1 style navigation_text:
+    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
+    color "#000"
+    size 50
+    text_align 1.0
+
+init -1 style navigation_center_text:
+    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
+    color "#000"
+    size 500
 
 
 
@@ -508,7 +526,7 @@ init -501 screen main_menu():
 
 
 
-    use navigation
+    use quick_menu
 
     if gui.show_name:
 
