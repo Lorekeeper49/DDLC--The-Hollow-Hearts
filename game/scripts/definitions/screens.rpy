@@ -421,12 +421,12 @@ init -1 python:
     def Act3():
         renpy.jump_out_of_context("act3")
 
-default -1 option_index = "0"
+default -1 option_index = 0
 default -1 aa_status = "OFF"
 
 init -501 screen navigation():
     zorder 3000
-    text _(option_index) style "navigation_center_text" xcenter 270 ycenter 360
+    text _(str(option_index)) style "navigation_center_text" xcenter 270 ycenter 360
     frame:
         ysize 720
         xsize 540
@@ -436,29 +436,29 @@ init -501 screen navigation():
 
             spacing 25
             if main_menu:
-                textbutton _("BACK") hovered SetVariable("option_index", "0") action Hide("navigation")
-                textbutton _("NEW GAME") hovered SetVariable("option_index", "1") action Function(StartGame)
-                textbutton _("BOOKMARKS") hovered SetVariable("option_index", "2") action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None)]
-                textbutton _("OPTIONS") hovered SetVariable("option_index", "3") action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
+                textbutton _("BACK") hovered SetVariable("option_index", 0) action Hide("navigation")
+                textbutton _("NEW GAME") hovered SetVariable("option_index", 1) action Function(StartGame)
+                textbutton _("BOOKMARKS") hovered SetVariable("option_index", 2) action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None)]
+                textbutton _("OPTIONS") hovered SetVariable("option_index", 3) action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
                 if renpy.variant("pc"):
-                    textbutton _("HELP") hovered SetVariable("option_index", "4")  action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))]
-                    textbutton _("QUIT") hovered SetVariable("option_index", "5") action Quit(confirm=not main_menu)
-                textbutton _("ACT 3") hovered SetVariable("option_index", "6") action Function(Act3)
+                    textbutton _("HELP") hovered SetVariable("option_index", 4)  action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))]
+                    textbutton _("QUIT") hovered SetVariable("option_index", 5) action Quit(confirm=not main_menu)
+                textbutton _("ACT 3") hovered SetVariable("option_index", 6) action Function(Act3)
             else:
-                textbutton _("BACK") hovered SetVariable("option_index", "0") action Hide("navigation")
-                textbutton _("HISTORY") hovered SetVariable("option_index", "1") action [ShowMenu("history"), SensitiveIf(renpy.get_screen("history") == None)]
-                textbutton _("AUTO ADVANCE") hovered SetVariable("option_index", "2") action [Preference("auto-forward", "toggle"), If(aa_status == "OFF", SetVariable("aa_status", "ON"), SetVariable("aa_status", "OFF"))]
-                textbutton _("FAST FORWARD") hovered SetVariable("option_index", "3") action Skip()
-                textbutton _("SAVE GAME") hovered SetVariable("option_index", "4") action [ShowMenu("save"), SensitiveIf(renpy.get_screen("save") == None)]
-                textbutton _("LOAD GAME") hovered SetVariable("option_index", "4") action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None)]
-                textbutton _("OPTIONS") hovered SetVariable("option_index", "5") action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
+                textbutton _("BACK") hovered SetVariable("option_index", 0) action Hide("navigation")
+                textbutton _("HISTORY") hovered SetVariable("option_index", 1) action [ShowMenu("history"), SensitiveIf(renpy.get_screen("history") == None)]
+                textbutton _("AUTO ADVANCE") hovered SetVariable("option_index", 2) action [Preference("auto-forward", "toggle"), If(aa_status == "OFF", SetVariable("aa_status", "ON"), SetVariable("aa_status", "OFF"))]
+                textbutton _("FAST FORWARD") hovered SetVariable("option_index", 3) action Skip()
+                textbutton _("SAVE GAME") hovered SetVariable("option_index", 4) action [ShowMenu("save"), SensitiveIf(renpy.get_screen("save") == None)]
+                textbutton _("LOAD GAME") hovered SetVariable("option_index", 4) action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None)]
+                textbutton _("OPTIONS") hovered SetVariable("option_index", 5) action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
                 if _in_replay:
-                    textbutton _("END REPLAY") hovered SetVariable("option_index", "6") action EndReplay(confirm=True)
+                    textbutton _("END REPLAY") hovered SetVariable("option_index", 6) action EndReplay(confirm=True)
                 else:
-                    textbutton _("MAIN MENU") hovered SetVariable("option_index", "6") action MainMenu()
+                    textbutton _("MAIN MENU") hovered SetVariable("option_index", 6) action MainMenu()
                 if renpy.variant("pc"):
-                    textbutton _("HELP") hovered SetVariable("option_index", "7") action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))]
-                    textbutton _("QUIT") hovered SetVariable("option_index", "8") action Quit(confirm=not main_menu)
+                    textbutton _("HELP") hovered SetVariable("option_index", 7) action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))]
+                    textbutton _("QUIT") hovered SetVariable("option_index", 8) action Quit(confirm=not main_menu)
             text _(aa_status) ycenter -470 xpos 430
             
             
