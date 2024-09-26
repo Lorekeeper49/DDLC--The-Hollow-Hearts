@@ -2,13 +2,13 @@ init python:
     import datetime
     menu_trans_time = 1
     splash_messages = [
-    "ENDINGS FOUND: " + str(persistent.endings) + "/14\nPLAYTHROUGHS: " + str(persistent.playthrough),
-    "Try to save them all\nbefore it's too late.",
+    "Welcome to horror.",
+    "This story is not what it seems",
     "They all have their own problems.\nHELP THEM!",
-    "You persue 1,\nthe rest die.",
+    "You can't save her.\nYou won't save her.",
     "This game is not suitable for children\nor those who are easily disturbed",
-    "If even 1 dies,\nRESET.",
-    "Make one wrong choice,\nand it's over!",
+    "They're each hiding something,\nit won't be easy to work with them.",
+    "Too many branching paths!",
     "This is {b}not{/b} an easy mod."
     ]
 
