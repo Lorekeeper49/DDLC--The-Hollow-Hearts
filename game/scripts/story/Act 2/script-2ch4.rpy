@@ -52,7 +52,7 @@ label act2_ch4_main:
     show tina cm
     a "I'm sure we'll find it easily."
     hide tina
-    scene bg dining
+    scene bg dark_dining
     show screen flashlight 
     with wipeleft_scene
     "..."
