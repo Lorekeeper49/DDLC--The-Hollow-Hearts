@@ -215,7 +215,7 @@ label act2_ch4_alt:
     en "And?"
     a "It felt nice... to know I have family that cares for me."
     "She smiles."
-    en "We shouldn't waste anymore time."
+    en "We shouldn't waste any more time."
     scene bg dark_bathroom with wipeleft
     a "Jesus fucking Christ!"
     "So much blood!"
@@ -232,5 +232,7 @@ label act2_ch4_alt:
     play ambience hb
     show veins zorder 10 at heartbeat
     a "Ah!"
+    en "Are you-"
+    a "I'm fine!"
 
     return
