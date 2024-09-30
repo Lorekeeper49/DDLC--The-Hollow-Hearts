@@ -231,5 +231,6 @@ label act2_ch4_alt:
     hide tetsuo
     play ambience hb
     show veins zorder 10 at heartbeat
+    a "Ah!"
 
     return
