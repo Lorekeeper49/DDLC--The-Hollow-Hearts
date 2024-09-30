@@ -91,7 +91,7 @@ label act2_ch4_main:
     show mari forward happ zorder 2 at t11
     ma om "Aoruguri!"
     a "Mom!"
-    show mari cm ce at face
+    show mari cm at face
     "..."
     show mari oe at t11
     ma om "I'm glad you're okay, you have no idea how worried I was!"
@@ -99,7 +99,7 @@ label act2_ch4_main:
     a "I can imagine."
     a "My sister is here too."
     show mari curi at t21
-    show engeki turned at t22
+    show engeki turned sweater at t22
     en "Mother!"
     ma "Engeki?"
     ma happ om "Oh my God!"
@@ -107,12 +107,12 @@ label act2_ch4_main:
     en "I'm sorry!  I've been gone too long!"
     ma "Engeki..."
     show mari cm at t31
-    show engeki cm at t32
+    show engeki at t32
     "..."
     hide mari
     hide engeki
     a "Where's Lilly?"
-    show lilly casual doll zorder 2 at t11
+    show lilly casual doll a0 zorder 2 at t11
     a "!!!"
     "On the ground?"
     a "Lilly!"
