@@ -82,7 +82,7 @@ label act2_ch4_main:
     show kotonoha turned casual curi om zorder 2 at t11
     "..."
     a "!!!"
-    "My memory fades back."
+    "My other memory fades back."
     a "Hey, guys!  I made it!"
     k curi cm "!!!"
     k om "Hey guys, she's back!"
@@ -235,5 +235,20 @@ label act2_ch4_alt:
     a "Ah!"
     en "Are you-"
     a "I'm fine!"
+
+    stop ambience
+    a "I'm okay... I'm okay..."
+    a "I remember everything."
+    show engeki turned sweater zorder 2 at t11
+    en "Are you sure?"
+    a "Yes."
+    en "I thought that would be more difficult."
+    a "Maybe it was that easy because I've been seeing visions of these memories for a few months now."
+    en "I think I started those."
+    a "Not surprised."
+    en "..."
+    a "Sorry, can I... step outside?  I don't think I wanna look at this anymore."
+    en "*Nod*"
+    scene bg foyer with wipeleft_scene
 
     return
