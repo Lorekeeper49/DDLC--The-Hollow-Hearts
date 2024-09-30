@@ -81,6 +81,7 @@ label next_location(loc, *, transition=True, t=False, f=False, w=False):
     if w:
         $ wraith_beaten = False
         if random_chance(50):
+            play sound "sfx/giggle.ogg"
             show screen wraith
     $ renpy.call_screen(loc)
     return

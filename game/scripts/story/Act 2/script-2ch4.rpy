@@ -58,6 +58,7 @@ label act2_ch4_main:
     "..."
     "Why does this place look so...?"
     lil "Behind you!"
+    play sound "sfx/giggle.ogg"
     show screen wraith_tut
     "Stay calm!  Gotta hold my flashlight on it's face!"
     "Whew."
