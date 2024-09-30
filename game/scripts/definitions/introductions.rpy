@@ -10,7 +10,7 @@ init python:
     intro_m = Intro(
     kan = "無理高モニカ",
     name = "Murikou Monika",
-    attr = "[[UNIDENTIFIED]",
+    attr = "[UNIDENTIFIED]",
     bio = "",
     img = "monika 4"
     )
@@ -147,9 +147,9 @@ init python:
     intro_en = Intro(
         kan = "ルナ演劇",
         name = "Luna Engeki",
-        attr = "[[UNIDENTIFIED]",
+        attr = "[UNIDENTIFIED]",
         bio = "Aoruguri's mysterious sister, No one's seen her since she turned one, no one knows who she is...",
-        img = "engeki turned"
+        img = "engeki turned sweater"
     )
 
 

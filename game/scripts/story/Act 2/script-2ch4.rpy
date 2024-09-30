@@ -39,12 +39,12 @@ label act2_ch4_main:
     a "Kotonoha and Akira will take this floor,"
     hide akira
     hide kotonoha
-    show mari crossed b hat zorder 2 at t22
+    show mari forward angr zorder 2 at t22
     show tina turned suit cross anno zorder 2 at t21
     a "Mari and Tina will search upstairs,"
     hide tina
     hide mari
-    show lilly norm se zorder 2 at t11
+    show lilly casual norm se zorder 2 at t11
     a "and Lilly and I will head to the basement."
     hide lilly
     show tina turned suit cross anno om zorder 2 at t11
@@ -61,7 +61,7 @@ label act2_ch4_main:
     show screen wraith_tut
     "Stay calm!  Gotta hold my flashlight on it's face!"
     "Whew."
-    show lilly c2e zorder 2 at t11
+    show lilly casual c2e zorder 2 at t11
     lil "Are you okay?"
     a "Yeah, thanks."
     a "Why aren't you using your true form?"
@@ -112,7 +112,7 @@ label act2_ch4_main:
     hide mari
     hide engeki
     a "Where's Lilly?"
-    show lilly doll zorder 2 at t11
+    show lilly casual doll zorder 2 at t11
     a "!!!"
     "On the ground?"
     a "Lilly!"
@@ -184,7 +184,7 @@ label act2_ch4_alt:
     hide wraith_black2
     hide wraith_black3
     hide wraith_black4
-    show engeki turned zorder 2 at t11
+    show engeki turned sweater zorder 2 at t11
     with blink
     general "Hello."
     general "It's me."

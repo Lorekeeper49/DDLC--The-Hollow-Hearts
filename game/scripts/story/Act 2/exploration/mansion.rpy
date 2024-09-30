@@ -5,14 +5,14 @@ image wraith_black2 = silhouetted("mod_assets/MPT/engeki/body.png",0,0,0)
 image wraith_black3 = silhouetted("mod_assets/MPT/engeki/body.png",0,0,0)
 image wraith_black4 = silhouetted("mod_assets/MPT/engeki/body.png",0,0,0)
 screen wraith:
+    zorder 200
     add "wraith_black"
-    button xcenter 500 ycenter 200 xysize (200, 200) hovered SetVariable("wraith_beaten", True) unhovered SetVariable("wraith_beaten", False) action NullAction()
+    button xcenter 450 ycenter 200 xysize (200, 200) hovered SetVariable("wraith_beaten", True) unhovered SetVariable("wraith_beaten", False) action NullAction()
     timer 1.8 action Show("wraith_blink")
     timer 3.0 action [Hide("wraith_blink"), Hide("black_screen"), If(wraith_beaten, Hide("wraith"), Call("failure"))]
 
 screen wraith_tut:
     add "wraith_black"
-    style_prefix "explore"
     button xcenter 450 ycenter 200 xysize (200, 200) hovered SetVariable("wraith_beaten", True) unhovered SetVariable("wraith_beaten", False) action NullAction()
     timer 1.8 action Show("wraith_blink")
     timer 3.0 action If(wraith_beaten, [Hide("wraith_blink"), Hide("black_screen"), Hide("wraith_tut"), SetVariable("wraith_beaten", False)]) repeat True
@@ -37,200 +37,79 @@ label failure:
 
 screen first_room:
     style_prefix "explore"
-    button xcenter 425 ycenter 250 xysize (75, 500) action [Play("sound", audio.door), Call("next_location", "bedroom1", w=True)]
-    text "L\nE\nF\nT" xcenter 425 ycenter 250
-    button xcenter 750 ycenter 200 xysize (300, 300) action [Play("sound", audio.footsteps), Call("next_location", "hall1", w=True)]
-    text "FORWARD" xcenter 750 ycenter 200
+    button xcenter 500 ycenter 300 xysize (200, 500) action [Play("sound", audio.door), Call("next_location", "bedroom1", w=True)]
+    text "B\nE\nD\nR\nO\nO\nM" xcenter 500 ycenter 300
+    button xcenter 1000 ycenter 300 xysize (300, 300) action [Play("sound", audio.footsteps), Call("next_location", "hall1", w=True)]
+    text "FORWARD" xcenter 1000 ycenter 300
 
 screen bedroom1:
     style_prefix "explore"
-    if "box open" in explored and not "spare key" in inventory:
-        button xcenter 920 ycenter 300 xysize (100, 100) action AddToSet(inventory, "spare key")
-        text "SPARE\nKEY" xcenter 920 ycenter 300
-    elif not "spare key" in inventory:
-        button xcenter 920 ycenter 300 xysize (100, 100) action Call("break_lock")
-        text "LOCKED\nBOX" xcenter 920 ycenter 300
     button xcenter 640 ycenter 695 xysize (1280, 50) action [Play("sound", audio.door), Call("next_location", "first_room", w=True)]
     text "HALL" xcenter 640 ycenter 695
 
-label break_lock:
-    "That lock was easy to break."
-    $ explored.append("box open")
-    call screen bedroom1
-    return
-
 screen bedroom2:
     style_prefix "explore"
-    button xcenter 640 ycenter 695 xysize (1280, 50) action [Play("sound", audio.door), Call("next_location", "hall3", w=True)]
-    text "HALL" xcenter 640 ycenter 695
-
-screen bedroom3:
-    style_prefix "explore"
-    button xcenter 640 ycenter 695 xysize (1280, 50) action [Play("sound", audio.door), Call("next_location", "hall6", w=True)]
+    button xcenter 500 ycenter 500 xysize (100, 150) action Call("nothing", "bedroom2")
+    text "SEARCH" xcenter 500 ycenter 500
+    button xcenter 640 ycenter 695 xysize (1280, 50) action [Play("sound", audio.door), Call("next_location", "hall1", w=True)]
     text "HALL" xcenter 640 ycenter 695
 
 screen hall1:
     style_prefix "explore"
-    button xcenter 640 ycenter 250 xysize (300, 300) action [Play("sound", audio.footsteps), Call("next_location", "hall2", w=True)]
-    text "FORWARD" xcenter 640 ycenter 250
+    button xcenter 1000 ycenter 300 xysize (300, 300) action [Play("sound", audio.footsteps), Call("next_location", "hall2", w=True)]
+    text "FORWARD" xcenter 1000 ycenter 300
     button xcenter 640 ycenter 695 xysize (1280, 50) action [Play("sound", audio.footsteps), Call("next_location", "first_room", w=True)]
     text "BACK" xcenter 640 ycenter 695
+    button xcenter 500 ycenter 300 xysize (200, 500) action [Play("sound", audio.door), Call("next_location", "bedroom2", w=True)]
+    text "B\nE\nD\nR\nO\nO\nM" xcenter 500 ycenter 300
+    button xcenter 700 ycenter 300 xysize (200, 500) action [Play("sound", audio.door), Call("next_location", "dark_kitchen", w=True)]
+    text "K\nI\nT\nC\nH\nE\nN" xcenter 700 ycenter 300
+    button xcenter 1200 ycenter 300 xysize (75, 500) action [Play("sound", audio.footsteps), Call("next_location", "storage", w=True)]
+    text "S\nT\nO\nR\nA\nG\nE" xcenter 1200 ycenter 300
 
 screen hall2:
     style_prefix "explore"
-    button xcenter 600 ycenter 250 xysize (300, 300) action [Play("sound", audio.footsteps), Call("next_location", "hall3", w=True)]
-    text "FORWARD" xcenter 600 ycenter 250
+    button xcenter 150 ycenter 150 xysize (300, 300) action If("broken key" in inventory, [Play("sound", audio.door), Call("mansion_end")]) 
+    text "FAMILIAR ROOM" xcenter 150 ycenter 150
     button xcenter 640 ycenter 695 xysize (1280, 50) action [Play("sound", audio.footsteps), Call("next_location", "hall1", w=True)]
     text "BACK" xcenter 640 ycenter 695
 
-screen hall3:
-    style_prefix "explore"
-    button xcenter 600 ycenter 300 xysize (200, 300) action [Play("sound", audio.footsteps), Call("next_location", "hall4", w=True)]
-    text "FORWARD" xcenter 600 ycenter 300
-    button xcenter 640 ycenter 695 xysize (1280, 50) action [Play("sound", audio.footsteps), Call("next_location", "hall2", w=True)]
-    text "BACK" xcenter 640 ycenter 695
-    button xcenter 325 ycenter 300 xysize (75, 500) action [Play("sound", audio.footsteps), Call("next_location", "bedroom2", w=True)]
-    text "B\nE\nD\nR\nO\nO\nM" xcenter 325 ycenter 300
-    button xcenter 425 ycenter 300 xysize (75, 500) action If("spare key" in inventory, [Play("sound", audio.door), Call("next_location", "dark_kitchen", w=True)])
-    text "K\nI\nT\nC\nH\nE\nN" xcenter 425 ycenter 300
-    button xcenter 825 ycenter 300 xysize (75, 500) action [Play("sound", audio.footsteps), Call("next_location", "machine_room", w=True)]
-    text "M\nA\nC\nH\nI\nN\nE\n \nR\nO\nO\nM" xcenter 825 ycenter 300
-    button xcenter 950 ycenter 300 xysize (75, 500) action [Play("sound", audio.footsteps), Call("next_location", "home_office", w=True)]
-    text "O\nF\nF\nI\nC\nE" xcenter 950 ycenter 300
-
-screen hall4:
-    style_prefix "explore"
-    button xcenter 640 ycenter 300 xysize (200, 300) action [Play("sound", audio.footsteps), Call("next_location", "hall5", w=True)]
-    text "FORWARD" xcenter 640 ycenter 300
-    button xcenter 640 ycenter 695 xysize (1280, 50) action [Play("sound", audio.footsteps), Call("next_location", "hall3", w=True)]
-    text "BACK" xcenter 640 ycenter 695
-    button xcenter 850 ycenter 300 xysize (75, 500) action [Play("sound", audio.footsteps), Call("next_location", "storage1", w=True)]
-    text "S\nT\nO\nR\nA\nG\nE" xcenter 850 ycenter 300
-
-screen hall5:
-    style_prefix "explore"
-    button xcenter 640 ycenter 250 xysize (300, 300) action [Play("sound", audio.footsteps), Call("next_location", "hall6", w=True)]
-    text "FORWARD" xcenter 640 ycenter 250
-    button xcenter 640 ycenter 695 xysize (1280, 50) action [Play("sound", audio.footsteps), Call("next_location", "hall4", w=True)]
-    text "BACK" xcenter 640 ycenter 695
-
-screen hall6:
-    style_prefix "explore"
-    button xcenter 680 ycenter 250 xysize (200, 400) action Call("blocked", "hall6")
-    text "FORWARD" xcenter 680 ycenter 250
-    button xcenter 640 ycenter 695 xysize (1280, 50) action [Play("sound", audio.footsteps), Call("next_location", "hall4", w=True)]
-    text "BACK" xcenter 640 ycenter 695
-    button xcenter 900 ycenter 250 xysize (200, 400) action [Play("sound", audio.footsteps), Call("next_location", "storage6", w=True)]
-    text "STORAGE" xcenter 900 ycenter 250
-    button xcenter 375 ycenter 250 xysize (200, 400) action [Play("sound", audio.footsteps), Call("next_location", "bedroom3", w=True)]
-    text "BEDROOM" xcenter 375 ycenter 250
-
-screen hall7:
-    style_prefix "explore"
-    button xcenter 640 ycenter 250 xysize (300, 300) action [Play("sound", audio.footsteps), Call("next_location", "final_hall", w=True)]
-    text "FORWARD" xcenter 640 ycenter 250
-    button xcenter 640 ycenter 695 xysize (1280, 50) action [Play("sound", audio.door), Call("next_location", "storage6", w=True)]
-    text "BACK" xcenter 640 ycenter 695
-
-screen final_hall:
-    style_prefix "explore"
-    button xcenter 540 ycenter 350 xysize (300, 300) action If("broken key" in inventory, [Play("sound", audio.door), Call("mansion_end")]) 
-    text "FAMILIAR ROOM" xcenter 540 ycenter 350
-    button xcenter 640 ycenter 695 xysize (1280, 50) action [Play("sound", audio.footsteps), Call("next_location", "hall7", w=True)]
-    text "BACK" xcenter 640 ycenter 695
-
-screen machine_room:
-    style_prefix "explore"
-    button xcenter 640 ycenter 695 xysize (1280, 50) action [Play("sound", audio.door), Call("next_location", "hall3", w=True)]
-    text "HALL" xcenter 640 ycenter 695
-
 screen dark_kitchen:
     style_prefix "explore"
-    button xcenter 935 ycenter 100 xysize (50, 200) action If("broken key" in inventory, Call("nothing", "dark_kitchen"), Call("something", "broken key", "dark_kitchen"))
-    text "S\nE\nA\nR\nC\nH" xcenter 935 ycenter 100
-    button xcenter 640 ycenter 695 xysize (1280, 50) action [Play("sound", audio.door), Call("next_location", "hall3", w=True)]
+    button xcenter 450 ycenter 200 xysize (175, 400) action Call("nothing", "dark_kitchen")
+    text "SEARCH" xcenter 450 ycenter 200
+    button xcenter 650 ycenter 200 xysize (225, 400) action Call("nothing", "dark_kitchen")
+    text "SEARCH" xcenter 650 ycenter 200
+    button xcenter 915 ycenter 100 xysize (300, 200) action Call("nothing", "dark_kitchen")
+    text "SEARCH" xcenter 915 ycenter 100
+    button xcenter 300 ycenter 200 xysize (100, 400) action Call("nothing", "dark_kitchen")
+    text "S\nE\nA\nR\nC\nH" xcenter 300 ycenter 200
+    button xcenter 1175 ycenter 200 xysize (200, 350) action If("broken key" in inventory, Call("nothing", "dark_kitchen"), Call("something", "broken key", "dark_kitchen"))
+    text "SEARCH" xcenter 1175 ycenter 200
+    button xcenter 640 ycenter 695 xysize (1280, 50) action [Play("sound", audio.door), Call("next_location", "hall1", w=True)]
     text "HALL" xcenter 640 ycenter 695
 
-screen home_office:
+screen storage:
     style_prefix "explore"
-    button xcenter 640 ycenter 695 xysize (1280, 50) action [Play("sound", audio.door), Call("next_location", "hall3", w=True)]
-    text "HALL" xcenter 640 ycenter 695
-    button xcenter 25 ycenter 360 xysize (50, 720) action [Play("sound", audio.door), Call("next_location", "lab", w=True)]
-    text "L\nA\nB\nO\nR\nA\nT\nO\nR\nY" xcenter 25 ycenter 360
-
-screen lab:
-    style_prefix "explore"
-    button xcenter 640 ycenter 695 xysize (1280, 50) action [Play("sound", audio.door), Call("next_location", "home_office", w=True)]
-    text "OFFICE" xcenter 640 ycenter 695
-
-screen storage1:
-    style_prefix "explore"
-    button xcenter 750 ycenter 250 xysize (300, 300) action [Play("sound", audio.footsteps), Call("next_location", "storage2", w=True)]
-    text "FORWARD" xcenter 750 ycenter 250
-    button xcenter 640 ycenter 695 xysize (1280, 50) action [Play("sound", audio.footsteps), Call("next_location", "hall4", w=True)]
-    text "HALL" xcenter 640 ycenter 695
-
-screen storage2:
-    style_prefix "explore"
-    button xcenter 750 ycenter 250 xysize (300, 300) action [Play("sound", audio.footsteps), Call("next_location", "storage3", w=True)]
-    text "FORWARD" xcenter 750 ycenter 250
-    button xcenter 640 ycenter 695 xysize (1280, 50) action [Play("sound", audio.footsteps), Call("next_location", "storage1", w=True)]
+    button xcenter 640 ycenter 695 xysize (1280, 50) action [Play("sound", audio.footsteps), Call("next_location", "hall1", w=True)]
     text "BACK" xcenter 640 ycenter 695
+    button xcenter 100 ycenter 400 xysize (100, 300) action [Play("sound", audio.footsteps), Call("next_location", "room", w=True)]
+    text "R\nO\nO\nM" xcenter 100 ycenter 400
 
-screen storage3:
+screen room:
     style_prefix "explore"
-    button xcenter 750 ycenter 250 xysize (300, 300) action [Play("sound", audio.footsteps), Call("next_location", "storage4", w=True)]
-    text "FORWARD" xcenter 750 ycenter 250
-    button xcenter 640 ycenter 695 xysize (1280, 50) action [Play("sound", audio.footsteps), Call("next_location", "storage2", w=True)]
-    text "BACK" xcenter 640 ycenter 695
-    button xcenter 300 ycenter 300 xysize (50, 300) action [Play("sound", audio.footsteps), Call("next_location", "room1", w=True)]
-    text "ROOM" xcenter 300 ycenter 300
-
-screen storage4:
-    style_prefix "explore"
-    button xcenter 640 ycenter 695 xysize (1280, 50) action [Play("sound", audio.footsteps), Call("next_location", "storage3", w=True)]
-    text "BACK" xcenter 640 ycenter 695
-    button xcenter 300 ycenter 300 xysize (50, 300) action [Play("sound", audio.footsteps), Call("next_location", "room2", w=True)]
-    text "ROOM" xcenter 300 ycenter 300
-
-screen storage5:
-    style_prefix "explore"
-    button xcenter 640 ycenter 695 xysize (1280, 50) action [Play("sound", audio.footsteps), Call("next_location", "storage6", w=True)]
-    text "BACK" xcenter 640 ycenter 695
-
-screen storage6:
-    style_prefix "explore"
-    button xcenter 1255 ycenter 360 xysize (50, 720) action [Play("sound", audio.footsteps), Call("next_location", "hall6", w=True)]
-    text "B\nA\nC\nK" xcenter 1255 ycenter 360
-    button xcenter 450 ycenter 300 xysize (200, 500) action [Play("sound", audio.footsteps), Call("next_location", "hall7", w=True)]
-    text "HALL" xcenter 450 ycenter 300
-    button xcenter 925 ycenter 200 xysize (200, 500) action [Play("sound", audio.footsteps), Call("next_location", "storage5", w=True)]
-    text "FORWARD" xcenter 925 ycenter 200
-
-screen room1:
-    style_prefix "explore"
-    button xcenter 640 ycenter 695 xysize (1280, 50) action [Play("sound", audio.door), Call("next_location", "storage3", w=True)]
+    button xcenter 640 ycenter 695 xysize (1280, 50) action [Play("sound", audio.door), Call("next_location", "storage", w=True)]
     text "STORAGE" xcenter 640 ycenter 695
-
-screen room2:
-    style_prefix "explore"
-    button xcenter 640 ycenter 695 xysize (1280, 50) action [Play("sound", audio.door), Call("next_location", "storage4", w=True)]
-    text "STORAGE" xcenter 640 ycenter 695
-
-label blocked(r):
-    "BLOCKED"
-    $ renpy.call_screen(r)
-    return
 
 label nothing(r):
     "Nothing here."
-    $ renpy.call_screen(r)
+    call next_location(r, transition=False, w=True)
     return
 
 label something(i, r):
     "Found something."
     $ inventory.append(i)
-    $ renpy.call_screen(r)
+    call next_location(r, transition=False, w=True)
     return
 
 label mansion_end:
