@@ -83,7 +83,7 @@ label act2_ch4_main:
     a "!!!"
     "My memory fades back."
     a "Hey, guys!  I made it!"
-    k lsur cm "!!!"
+    k curi cm "!!!"
     k om "Hey guys, she's back!"
     hide kotonoha
     ti "Thank God!"
