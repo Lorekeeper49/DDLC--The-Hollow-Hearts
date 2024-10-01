@@ -202,12 +202,27 @@ label act2_ch4_alt:
     menu:
         "Encourage them.":
             $ en_out = True
-            $ persistent.choices_made.append("Engeki Outside")
+            $ persistent.choices_made.append("Engeki Left")
             a "No..."
             a "That's not what's stopping you."
             a "They're not scared of the outside..."
             a "They're scared of themselves."
-
+            en "Huh?"
+            a "They're scared of what they'll do to the outside."
+            en "What do you..."
+            a "It's okay.  I was the same once."
+            a "But I know that I can't do what I'm about to do alone."
+            en "Who are you even talking about?"
+            a "Kamiyama Kirinani."
+            en "!!!"
+            en "That's our uncle!"
+            "I step back."
+            a "He's- our-"
+            a "OH!  FUCK OFF!!"
+            "So he was bad from the start, it wasn't just about Breaker."
+            a "That settles it!"
+            en "Yes it does!"
+            a "Come on!"
         "Understand them.":
             $ en_out = False
             $ persistent.choices_made.append("Engeki Stayed")
@@ -300,7 +315,6 @@ label act2_ch4_alt_end:
     "Well..."
     "It's time to-{nw}"
     window hide 
-    hide lilly
     play sound "sfx/monikapound.ogg"
     with Shake((0, 0, 0, 0), 0.1, dist=50)
     a "FUCK!"
