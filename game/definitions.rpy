@@ -1681,15 +1681,13 @@ default m_appeal = 0
 # - trust values
 default k_trust = 10
 
-# - choices (booleans are used as placeholders for the purpose of making sure each choice has an outcome if for both true and false.  For the full release, these will be placed into persistent.choices_made)
+# - choices
 default change = "*"
-default class5a = False
-default dontknow = False
-default locationlie = False
 default cute = False
 default known = False
 default found_breaker = False
 default secrets = False
+default en_out = False
 default persistent.choices_made = []
 
 # - miscellaneous

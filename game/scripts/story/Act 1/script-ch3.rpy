@@ -49,9 +49,10 @@ label act1_ch3_main:
         t "(Umm...)"
 
         "[change]Ask her.":
-            $ known = True
+            $ persistent.choices_made.append("Hidden Girl Revealed")
             call introaoruguri from _call_introaoruguri #correct choice
         "[change]Don't ask.":
+            $ persistent.choices_made.append("Hidden Girl Kept Secret")
             "No."
             pass
     a om "Well, I should get going."
@@ -470,6 +471,7 @@ label act1_ch3_end:
     k "Are you talking to someone in there?"
     menu(mouse=240, time=5, force=1):
         "Yes":
+            $ persistent.choices_made.append("Hanato Ratted Out")
             $ secrets = True
             t "Hanato broke in."
             hamind "No!"

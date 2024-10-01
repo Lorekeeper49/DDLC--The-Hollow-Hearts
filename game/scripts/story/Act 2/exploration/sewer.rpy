@@ -130,5 +130,6 @@ label found_something:
     ha "Well good, 'cause we better get the hell out of here!"
     a "Right behind you!"
     $ found_breaker = True
+    $ persistent.choices_made.append("")
     call screen secret_room
     return

@@ -201,11 +201,29 @@ label act2_ch4_alt:
     a "..."
     menu:
         "Encourage them.":
+            $ en_out = True
+            $ persistent.choices_made.append("Engeki Outside")
+            a "No..."
+            a "That's not what's stopping you."
+            a "They're not scared of the outside..."
+            a "They're scared of themselves."
 
         "Understand them.":
+            $ en_out = False
+            $ persistent.choices_made.append("Engeki Stayed")
             a "I understand."
             a "Guess that's it then..."
-
+            a "*Sigh*"
+            "..."
+            en "Will you-"
+            a "I'll come back, I promise I'll come back."
+            en "Okay..."
+            a "Until then, See you later."
+            "I step out the door."
+    if known:
+        call act2_ch4_main_end
+    else:
+        call act2_ch4_alt_end
     return
 
 label act2_ch4_main_end:
@@ -216,7 +234,7 @@ label act2_ch4_main_end:
     a "!!!"
     "My other memory fades back."
     a "Hey, guys!  I made it!"
-    k curi cm "!!!"
+    k surp cm "!!!"
     k om "Hey guys, she's back!"
     hide kotonoha
     ti "Thank God!"
@@ -230,20 +248,23 @@ label act2_ch4_main_end:
     ma om "I'm glad you're okay, you have no idea how worried I was!"
     show mari cm
     a "I can imagine."
-    a "My sister is here too."
-    show mari curi at t21
-    show engeki turned sweater at t22
-    en "Mother!"
-    ma "Engeki?"
-    ma happ om "Oh my God!"
-    ma tears "I knew it, you're alive!"
-    en "I'm sorry!  I've been gone too long!"
-    ma "Engeki..."
-    show mari cm at t31
-    show engeki at t32
-    "..."
+    if en_out:
+        a "My sister is here too."
+        show mari curi at t21
+        show engeki turned sweater at t22
+        en "Mother!"
+        ma "Engeki?"
+        ma happ om "Oh my God!"
+        ma tears "I knew it, you're alive!"
+        en "I'm sorry!  I've been gone too long!"
+        ma "Engeki..."
+        show mari cm at t31
+        show engeki at t32
+        "..."
+        hide engeki
+    else:
+        "I choose not to mention Engeki."
     hide mari
-    hide engeki
     a "Where's Lilly?"
     show lilly casual doll a0 zorder 2 at t11
     a "!!!"
@@ -256,7 +277,7 @@ label act2_ch4_main_end:
     a "We gotta..."
     a "Wait a second."
     "They can see her?"
-    a "Did something happen while I was-"
+    a "Did something happen while I was-{nw}"
     window hide 
     hide lilly
     play sound "sfx/monikapound.ogg"
@@ -269,7 +290,25 @@ label act2_ch4_main_end:
     a "*Exasperated gasp*"
     a "..."
     "He's back..."
-    a "Sis..."
+    a "Guys..."
     a "Take care of Lilly."
-    en "What are you...?"
+    k "What are you...?"
+    return
+
+label act2_ch4_alt_end:
+    scene bg mansion with wipeleft_scene
+    "Well..."
+    "It's time to-{nw}"
+    window hide 
+    hide lilly
+    play sound "sfx/monikapound.ogg"
+    with Shake((0, 0, 0, 0), 0.1, dist=50)
+    a "FUCK!"
+    a "What happened?"
+    ma "Everyone okay?  What was that?"
+    a "A-"
+    scene black with dissolve
+    a "*Exasperated gasp*"
+    a "..."
+    "He's back..."
     return
