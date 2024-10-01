@@ -119,6 +119,7 @@ label mansion_end:
     play ambience hb
     show veins zorder 10 at heartbeat
     play music jumpscare fadein 8.0
+    show noise zorder 10 at noisefade(5.0)
     $ pause(0.144)
     show wraith_black at t11
     $ pause(1.479)
