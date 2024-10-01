@@ -1,12 +1,10 @@
-# Name: The Mission
+# Name: A Club That Works at Night
 label act2_ch1_main:
     $ style.say_window = style.window
     $ nb = "namebox"
     call showintro(intro_a) from _call_showintro_4
     stop music fadeout 2.0
     scene black with dissolve_scene
-    dev "This is meant to be a video cutscene, I haven't finished it yet."
-    # $ renpy.movie_cutscene("") #remember to uncomment later
     scene bg kamihallday with dissolve_scene 
     $ pause(1)
     play sound lightswitch

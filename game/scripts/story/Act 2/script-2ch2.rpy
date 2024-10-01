@@ -1,4 +1,4 @@
-#Name: Paranormal Terror
+#Name: Dark Discoveries
 label act2_ch2_main:
     if not known:
         jump act2_ch2_alt

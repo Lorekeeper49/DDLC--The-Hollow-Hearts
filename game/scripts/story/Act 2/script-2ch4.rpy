@@ -1,4 +1,4 @@
-#Name: The Nightmare Mansion
+#Name: A Past Regained
 label act2_ch4_main:
     if not known:
         jump act2_ch4_alt
@@ -77,69 +77,6 @@ label act2_ch4_main:
     "Well, here we go."
     call explore("first_room") from _call_explore_2
     call act2_ch4_alt
-    scene bg mansion with wipeleft_scene
-    "We're out!"
-    show kotonoha turned casual curi om zorder 2 at t11
-    "..."
-    a "!!!"
-    "My other memory fades back."
-    a "Hey, guys!  I made it!"
-    k curi cm "!!!"
-    k om "Hey guys, she's back!"
-    hide kotonoha
-    ti "Thank God!"
-    "Akira and Tina are way in the back."
-    show mari forward happ zorder 2 at t11
-    ma om "Aoruguri!"
-    a "Mom!"
-    show mari cm at face
-    "..."
-    show mari oe at t11
-    ma om "I'm glad you're okay, you have no idea how worried I was!"
-    show mari cm
-    a "I can imagine."
-    a "My sister is here too."
-    show mari curi at t21
-    show engeki turned sweater at t22
-    en "Mother!"
-    ma "Engeki?"
-    ma happ om "Oh my God!"
-    ma tears "I knew it, you're alive!"
-    en "I'm sorry!  I've been gone too long!"
-    ma "Engeki..."
-    show mari cm at t31
-    show engeki at t32
-    "..."
-    hide mari
-    hide engeki
-    a "Where's Lilly?"
-    show lilly casual doll a0 zorder 2 at t11
-    a "!!!"
-    "On the ground?"
-    a "Lilly!"
-    "She's not okay, she's barely stable!"
-    k "Don't worry about that, that's just a doll!  We gotta-"
-    a "No, you don't understand!  This {i}is{/i} her!"
-    k "What?"
-    a "We gotta..."
-    a "Wait a second."
-    "They can see her?"
-    a "Did something happen while I was-"
-    window hide 
-    hide lilly
-    play sound "sfx/monikapound.ogg"
-    with Shake((0, 0, 0, 0), 0.1, dist=50)
-    a "FUCK!"
-    a "What happened?"
-    ma "Everyone okay?  What was that?"
-    a "A-"
-    scene black with dissolve
-    a "*Exasperated gasp*"
-    a "..."
-    "He's back..."
-    a "Sis..."
-    a "Take care of Lilly."
-    en "What are you...?"
     return
 
 label act2_ch4_alt:
@@ -250,5 +187,89 @@ label act2_ch4_alt:
     a "Sorry, can I... step outside?  I don't think I wanna look at this anymore."
     en "*Nod*"
     scene bg foyer with wipeleft_scene
+    "As I realize I decision I want to make, I stop at the door."
+    show engeki turned sweater zorder 2 at t11
+    a "Sis..."
+    a "I have an enemy outside that I am looking for, I know he survived what I did to him."
+    a "Once I step out this door, I won't be coming back for a long time, I may never come back at all."
+    a "Do you want to come with me?"
+    en "I'm sorry, I can't..."
+    a "What's stopping you?"
+    en "They are..."
+    en "They are afraid of what's out there..."
+    en "It's why I've stayed here for many years."
+    a "..."
+    menu:
+        "Encourage them.":
 
+        "Understand them.":
+            a "I understand."
+            a "Guess that's it then..."
+
+    return
+
+label act2_ch4_main_end:
+    scene bg mansion with wipeleft_scene
+    "We're out!"
+    show kotonoha turned casual curi om zorder 2 at t11
+    "..."
+    a "!!!"
+    "My other memory fades back."
+    a "Hey, guys!  I made it!"
+    k curi cm "!!!"
+    k om "Hey guys, she's back!"
+    hide kotonoha
+    ti "Thank God!"
+    "Akira and Tina are way in the back."
+    show mari forward happ zorder 2 at t11
+    ma om "Aoruguri!"
+    a "Mom!"
+    show mari cm at face
+    "..."
+    show mari oe at t11
+    ma om "I'm glad you're okay, you have no idea how worried I was!"
+    show mari cm
+    a "I can imagine."
+    a "My sister is here too."
+    show mari curi at t21
+    show engeki turned sweater at t22
+    en "Mother!"
+    ma "Engeki?"
+    ma happ om "Oh my God!"
+    ma tears "I knew it, you're alive!"
+    en "I'm sorry!  I've been gone too long!"
+    ma "Engeki..."
+    show mari cm at t31
+    show engeki at t32
+    "..."
+    hide mari
+    hide engeki
+    a "Where's Lilly?"
+    show lilly casual doll a0 zorder 2 at t11
+    a "!!!"
+    "On the ground?"
+    a "Lilly!"
+    "She's not okay, she's barely stable!"
+    k "Don't worry about that, that's just a doll!  We gotta-"
+    a "No, you don't understand!  This {i}is{/i} her!"
+    k "What?"
+    a "We gotta..."
+    a "Wait a second."
+    "They can see her?"
+    a "Did something happen while I was-"
+    window hide 
+    hide lilly
+    play sound "sfx/monikapound.ogg"
+    with Shake((0, 0, 0, 0), 0.1, dist=50)
+    a "FUCK!"
+    a "What happened?"
+    ma "Everyone okay?  What was that?"
+    a "A-"
+    scene black with dissolve
+    a "*Exasperated gasp*"
+    a "..."
+    "He's back..."
+    a "Sis..."
+    a "Take care of Lilly."
+    en "What are you...?"
     return

@@ -1,4 +1,4 @@
-#Name: Into the Dark Field
+#Name: The Aftermath
 label act2_ch3_main:
     if not known:
         jump act2_ch3_alt
