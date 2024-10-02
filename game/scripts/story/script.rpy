@@ -118,7 +118,7 @@ label dev:
         $ cute = False
         $ tellfans = False
         $ dontfans = False
-        $ known = True
+        $ known = False
         $ act = 1
         $ style.say_window = style.window_fake
         $ nb = "namebox_fake"
@@ -303,6 +303,13 @@ label dev:
                 $ style.say_window = style.window
                 $ nb = "namebox"
                 $ aoruguri = "Luna Aoruguri"
+                menu:
+                    "WHICH PATH?"
+
+                    "NORMAL":
+                        $ known = True
+                    "ALTERNATE":
+                        $ known = False
                 menu:
                     "SELECT A CHAPTER:"
 

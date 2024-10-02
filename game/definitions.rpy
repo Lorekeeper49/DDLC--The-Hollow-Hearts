@@ -113,6 +113,7 @@ define audio.closet_open = "sfx/closet-open.ogg"
 define audio.closet_close = "sfx/closet-close.ogg"
 define audio.page_turn = "sfx/pageflip.ogg"
 define audio.fall = "sfx/fall.ogg"
+define audio.fall2 = "sfx/fall2.ogg"
 
 # - mod music
 define audio.confession = "mod_assets/music/Confession.mp3"

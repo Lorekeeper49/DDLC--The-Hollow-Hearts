@@ -122,38 +122,44 @@ label act2_ch4_alt:
     hide wraith_black2
     hide wraith_black3
     hide wraith_black4
-    show engeki turned sweater zorder 2 at t11
+    show engeki turned sweater rchest zorder 2 at t11
     with blink
+    show engeki mb
     general "Hello."
     general "It's me."
     en "Engeki."
+    show engeki ma
     a "Engeki?"
     call showintro(intro_en)
     "I swear, my family gets the weirdest names.  And I'm no exception."
     a "Are you merged with the wraiths?"
-    en "Kind of..."
-    en "I didn't think it would happen."
+    en ec mf bb "Kind of..."
+    en ea ba "I didn't think it would happen."
     en "But it allowed me escape."
-    en "It's a common misconception that all wraiths are evil."
+    en rdown "It's a common misconception that all wraiths are evil."
+    show engeki mj
     "Guess that's why they didn't kill me."
-    en "Actually, most wraiths will do no harm to you."
+    en lchest mb "Actually, most wraiths will do no harm to you."
+    show engeki ma
     a "Then where did the misconception come from?"
-    en "People can have the weirdest gossip sometimes..."
+    en ec me ldown bb "People can have the weirdest gossip sometimes..."
     a "Don't get me started."
-    en "Yeah, I'd rather get your memory back."
+    en ea mh rchest ba "Yeah, I'd rather get your memory back."
     a "My memory?"
-    en "Come with me to the bathroom."
-    en "I hope you're not squeamish..."
+    en mb "Come with me to the bathroom."
+    en mh bb "I hope you're not squeamish..."
     a "Sis, I have an iron stomach."
-    en "'Sis'?"
+    en me ba ee "'Sis'?"
     a "You said you're my sister, right?"
-    en "Well yeah, but..."
-    en "I didn't expect to be called 'Sis' so soon!"
+    en mh "Well yeah, but..."
+    en mf "I didn't expect to be called 'Sis' so soon!"
     a "Honestly, I just wanted to see how it would feel."
-    en "And?"
+    en mb ea "And?"
+    show engeki ma
     a "It felt nice... to know I have family that cares for me."
+    show engeki lchest
     "She smiles."
-    en "We shouldn't waste any more time."
+    en ldown rdown mh "We shouldn't waste any more time."
     scene bg dark_bathroom 
     show darkred
     with wipeleft
@@ -178,37 +184,126 @@ label act2_ch4_alt:
     scene noise with None
     $ pause(0.25)
     stop sound
-    scene bg room1
+    scene bg room
     show darkred
+    show veins zorder 10 at heartbeat
     show tetsuo towards zorder 2 at t11
     with None
     $ pause(1.0)
-
+    play sound static
+    scene noise with None
+    $ pause(0.25)
+    stop sound
+    scene bg dark_kitchen
+    show darkred
+    show veins zorder 10 at heartbeat
+    show tetsuo towards zorder 2 at t11
+    with None
+    $ pause(0.5)
+    play sound "sfx/slap.ogg"
+    hide tetsuo
+    $ pause(0.5)
+    play sound static
+    scene noise with None
+    $ pause(0.25)
+    stop sound
+    scene bg bedroom1
+    show darkred zorder 9
+    show veins zorder 10 at heartbeat
+    play sound fall
+    $ pause(1.0)
+    show tetsuo towards cross zorder 2 at t11
+    with None
+    $ pause(1.0)
+    play sound static
+    scene noise with None
+    $ pause(0.25)
+    stop sound
+    scene bg hall2
+    show darkred zorder 9
+    show veins zorder 10 at heartbeat
+    play sound fall2
+    $ pause(1.0)
+    show tetsuo towards cross zorder 2 at t11
+    with None
+    $ pause(1.0)
+    play sound static
+    scene noise with None
+    $ pause(0.25)
+    stop sound
+    scene bg dark_bathroom
+    show darkred zorder 9
+    show veins zorder 10 at heartbeat
+    show tetsuo towards zorder 2 at t11
+    with None
+    $ pause(0.5)
+    show testuo shoc
+    play sound static
+    show noise zorder 12 with None
+    $ pause(0.1)
+    stop sound
+    hide noise
+    $ pause(0.1)
+    play sound static
+    show noise zorder 12 with None
+    $ pause(0.1)
+    stop sound
+    hide noise
+    $ pause(0.1)
+    play sound static
+    show noise zorder 12 with None
+    $ pause(0.1)
+    stop sound
+    hide noise
+    $ pause(0.1)
+    play sound static
+    show noise zorder 12 with None
+    $ pause(0.1)
+    stop sound
+    hide noise
+    $ pause(0.1)
+    play sound static
+    show noise zorder 12 with None
+    $ pause(0.25)
+    stop sound
+    hide noise
+    $ pause(0.25)
+    play sound static
+    scene noise with None
+    $ pause(1.0)
+    stop sound
     stop ambience
+    stop music
+    scene bg dark_bathroom
+    show vignette zorder 10
+    show engeki turned sweater rchest mi zorder 2 at t11
+    play ambience mansion fadein 3.0
+    hide vignette with Dissolve(3.0)
     a "I'm okay... I'm okay..."
     a "I remember everything."
-    show engeki turned sweater zorder 2 at t11
-    en "Are you sure?"
+    en mh "Are you sure?"
+    show engeki mi
     a "Yes."
-    en "I thought that would be more difficult."
+    en mf ec rdown "I thought that would be more difficult."
     a "Maybe it was that easy because I've been seeing visions of these memories for a few months now."
-    en "I think I started those."
+    en ea "I think I started those."
     a "Not surprised."
-    en "..."
+    en mi lchest rchest "..."
     a "Sorry, can I... step outside?  I don't think I wanna look at this anymore."
     en "*Nod*"
     scene bg foyer with wipeleft_scene
     "As I realize I decision I want to make, I stop at the door."
-    show engeki turned sweater zorder 2 at t11
+    show engeki turned sweater mi rchest bb zorder 2 at t11
     a "Sis..."
     a "I have an enemy outside that I am looking for, I know he survived what I did to him."
     a "Once I step out this door, I won't be coming back for a long time, I may never come back at all."
     a "Do you want to come with me?"
-    en "I'm sorry, I can't..."
+    en eb mh lchest "I'm sorry, I can't..."
     a "What's stopping you?"
-    en "They are..."
-    en "They are afraid of what's out there..."
-    en "It's why I've stayed here for many years."
+    en ed "They are..."
+    en eb "They are afraid of what's out there..."
+    en ldown "It's why I've stayed here for many years."
+    show engeki mi
     a "..."
     menu:
         "Encourage them.":
@@ -218,22 +313,22 @@ label act2_ch4_alt:
             a "That's not what's stopping you."
             a "They're not scared of the outside..."
             a "They're scared of themselves."
-            en "Huh?"
+            en ee mh "Huh?"
             a "They're scared of what they'll do to the outside."
-            en "What do you..."
+            en ba rdown "What do you..."
             a "It's okay.  I was the same once."
-            a "But I know that I can't do what I'm about to do alone."
-            en "Who are you even talking about?"
-            a "Kamiyama Kirinani."
-            en "!!!"
-            en "That's our uncle!"
-            "I step back."
-            a "He's- our-"
-            a "OH!  FUCK OFF!!"
-            "So he was bad from the start, it wasn't just about Breaker."
-            a "That settles it!"
-            en "Yes it does!"
-            a "Come on!"
+            a "But think about this: our mother's out there!"
+            en ea "Our mother?"
+            a "Yeah!"
+            a "And I'm sure she's dying to see you again!"
+            en eb mb rchest "I can't believe it!"
+            en "Our mother..."
+            en ej mj lchest "*Sniff*"
+            "I give her a minute."
+            en eb mb ldown "I'm fine, I'm okay."
+            en rdown "Let's go."
+            show engeki ma
+            "We step out the door."
         "Understand them.":
             $ en_out = False
             $ persistent.choices_made.append("Engeki Stayed")
@@ -241,11 +336,14 @@ label act2_ch4_alt:
             a "Guess that's it then..."
             a "*Sigh*"
             "..."
-            en "Will you-"
+            en mh "Will you-"
             a "I'll come back, I promise I'll come back."
-            en "Okay..."
+            en ec mf "Okay..."
+            show engeki mi
             a "Until then, See you later."
+            show engeki ei
             "I step out the door."
+    stop ambience fadeout 1.0
     if known:
         call act2_ch4_main_end
     else:
@@ -277,15 +375,17 @@ label act2_ch4_main_end:
     if en_out:
         a "My sister is here too."
         show mari curi at t21
-        show engeki turned sweater at t22
-        en "Mother!"
+        show engeki turned sweater rchest eb at r22
+        en mb "Mother!"
+        show engeki 
         ma "Engeki?"
         ma happ om "Oh my God!"
         ma tears "I knew it, you're alive!"
-        en "I'm sorry!  I've been gone too long!"
+        en mb "I'm sorry!  I've been gone too long!"
+        show engeki ma
         ma "Engeki..."
-        show mari cm at t31
-        show engeki at t32
+        show mari cm at t22
+        show engeki ej at t33
         "..."
         hide engeki
     else:
@@ -330,7 +430,6 @@ label act2_ch4_alt_end:
     with Shake((0, 0, 0, 0), 0.1, dist=50)
     a "FUCK!"
     a "What happened?"
-    ma "Everyone okay?  What was that?"
     a "A-"
     scene black with dissolve
     a "*Exasperated gasp*"
