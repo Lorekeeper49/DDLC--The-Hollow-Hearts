@@ -430,16 +430,17 @@ init -501 screen navigation():
         style_prefix "navigation"
         spacing 25
         if main_menu:
-            textbutton _("BACK") hovered [SetVariable("option_index", 0), Show("navigation_highlight")] action [Hide("navigation_border"), Hide("navigation_highlight"), Hide("navigation")]
+            textbutton _("CLOSE") hovered [SetVariable("option_index", 0), Show("navigation_highlight")] action [Hide("navigation_border"), Hide("navigation_highlight"), Hide("navigation")]
             textbutton _("NEW GAME") hovered [SetVariable("option_index", 1), Show("navigation_highlight")] action Function(StartGame)
             textbutton _("BOOKMARKS") hovered [SetVariable("option_index", 2), Show("navigation_highlight")] action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None)]
             textbutton _("OPTIONS") hovered [SetVariable("option_index", 3), Show("navigation_highlight")] action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
             if renpy.variant("pc"):
                 textbutton _("HELP") hovered [SetVariable("option_index", 4), Show("navigation_highlight")]  action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))]
                 textbutton _("QUIT") hovered [SetVariable("option_index", 5), Show("navigation_highlight")] action Quit(confirm=not main_menu)
-            textbutton _("ACT 3") hovered [SetVariable("option_index", 6), Show("navigation_highlight")] action Function(Act3)
+            if not persistent.demo:
+                textbutton _("ACT 3") hovered [SetVariable("option_index", 6), Show("navigation_highlight")] action Function(Act3)
         else:
-            textbutton _("BACK") hovered [SetVariable("option_index", 0), Show("navigation_highlight")] action Hide("navigation")
+            textbutton _("CLOSE") hovered [SetVariable("option_index", 0), Show("navigation_highlight")] action Hide("navigation")
             textbutton _("HISTORY") hovered [SetVariable("option_index", 1), Show("navigation_highlight")] action [ShowMenu("history"), SensitiveIf(renpy.get_screen("history") == None)]
             textbutton _("AUTO ADVANCE") hovered [SetVariable("option_index", 2), Show("navigation_highlight")] action [Preference("auto-forward", "toggle"), If(aa_status == "OFF", SetVariable("aa_status", "ON"), SetVariable("aa_status", "OFF"))]
             textbutton _("FAST FORWARD") hovered [SetVariable("option_index", 3), Show("navigation_highlight")] action Skip()
