@@ -404,7 +404,6 @@ label act2_ch4_main_end:
     a "Wait a second."
     "They can see her?"
     a "Did something happen while I was-{nw}"
-    window hide 
     hide lilly
     play sound "sfx/monikapound.ogg"
     with Shake((0, 0, 0, 0), 0.1, dist=50)
@@ -425,7 +424,6 @@ label act2_ch4_alt_end:
     scene bg mansion with wipeleft_scene
     "Well..."
     "It's time to-{nw}"
-    window hide 
     play sound "sfx/monikapound.ogg"
     with Shake((0, 0, 0, 0), 0.1, dist=50)
     a "FUCK!"
