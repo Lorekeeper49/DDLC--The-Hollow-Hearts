@@ -154,7 +154,9 @@ label act2_ch4_alt:
     a "It felt nice... to know I have family that cares for me."
     "She smiles."
     en "We shouldn't waste any more time."
-    scene bg dark_bathroom with wipeleft
+    scene bg dark_bathroom 
+    show darkred
+    with wipeleft
     a "Jesus fucking Christ!"
     "So much blood!"
     en "Don't worry, he's dead."
@@ -172,6 +174,15 @@ label act2_ch4_alt:
     a "Ah!"
     en "Are you-"
     a "I'm fine!"
+    play sound static
+    scene noise with None
+    $ pause(0.25)
+    stop sound
+    scene bg room1
+    show darkred
+    show tetsuo towards zorder 2 at t11
+    with None
+    $ pause(1.0)
 
     stop ambience
     a "I'm okay... I'm okay..."

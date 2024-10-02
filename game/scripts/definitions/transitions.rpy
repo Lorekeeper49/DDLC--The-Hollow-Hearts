@@ -59,17 +59,3 @@ label deadfast(new_scene=""):
     play sound deadmantransout
     hide veins with blink
     $ renpy.music.stop(channel="ambience", fadeout=0.5)
-
-transform StaticTransition(new_widget, old_widget, t=0.1):
-    old_widget
-    function static_noise_start
-    noise
-    t
-    function static_noise_stop
-    new_widget
-
-init python:
-    def static_noise_start(trans, st, at):
-        renpy.sound.play(audio.static)
-    def static_noise_stop(trans, st, at):
-        renpy.sound.stop()
