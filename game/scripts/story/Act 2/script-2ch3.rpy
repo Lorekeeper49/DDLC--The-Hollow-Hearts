@@ -242,7 +242,7 @@ label act2_ch3_main:
     lil c2e "I'm sorry, I didn't know you were involved..."
     show lilly a1e
     ha rdown "Of course I was involved!"
-    ha "I have been here protecting the Yandere's with my life and you just want to throw that away and put yourself in danger!?"
+    ha "I have been here protecting the Yanderes with my life and you just want to throw that away and put yourself in danger!?"
     ha sad "How could you do this to me?"
     "Guess she was listening in."
     "Though, how far away was she that she just now got here?"
