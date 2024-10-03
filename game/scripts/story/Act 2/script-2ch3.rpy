@@ -315,5 +315,10 @@ label act2_ch3_alt:
     play sound footsteps
     a "!!!"
     a "Oh, I am so dead."
+    "Well, wish me luck."
+    scene bg dark_dining
+    show dark zorder 10 
+    with wipeleft_scene
+    "I hate this!"
 
     return
