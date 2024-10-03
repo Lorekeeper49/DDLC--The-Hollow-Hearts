@@ -295,5 +295,11 @@ label act2_ch3_main:
     return
 
 label act2_ch3_alt:
+    stop music fadeout 2.0
+    play ambience mansion
+    scene bg foyer
+    with dissolve_scene_full
+    a "..."
+    "I honestly don't know what I'm doing here."
 
     return
