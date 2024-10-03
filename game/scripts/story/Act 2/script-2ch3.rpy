@@ -312,5 +312,8 @@ label act2_ch3_alt:
     a "Eh?"
     "That might've been my imagination..."
     "I didn't bring a flashlight, I'm a fucking idiot."
+    play sound footsteps
+    a "!!!"
+    a "Oh, I am so dead."
 
     return
