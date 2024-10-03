@@ -299,7 +299,8 @@ label act2_ch3_alt:
     play ambience mansion
     scene bg foyer
     with dissolve_scene_full
+    call showlocation("Converse Park","October 10, 2023",19*60+14+57/60.0,"bg tree") from _call_showlocation_41
     a "..."
-    "I honestly don't know what I'm doing here."
+    "I honestly have no idea what I'm doing here."
 
     return
