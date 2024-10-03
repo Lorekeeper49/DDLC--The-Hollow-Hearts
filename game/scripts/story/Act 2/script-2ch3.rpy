@@ -307,5 +307,9 @@ label act2_ch3_alt:
     "I should get out of here while I can!"
     "Yet why does this place look so..." 
     "...familiar?"
+    play sound "sfx/giggle.ogg"
+    $ pause(1.0)
+    a "Eh?"
+    "That might've been my imagination..."
 
     return
