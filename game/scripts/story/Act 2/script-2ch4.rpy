@@ -84,6 +84,7 @@ label act2_ch4_alt:
     play ambience mansion fadein 1.0
     a "{cps=3}...?{/cps}"
     scene bg final_room
+    show dark zorder 100
     with dissolve_scene_full
     call showlocation("???","October 11, 2023",23*60+59+57/60.0,"bg final_room")
     a "Huh?  Where am I?"
