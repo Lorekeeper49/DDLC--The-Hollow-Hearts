@@ -233,10 +233,10 @@ label act2_ch3_main:
     hide mari
     "Something's still bothering me..."
     "Right, Lilly!"
-    ha "LILLY!"
-    "Someone had the same mind."
     show lilly zorder 1 at t21
     show hanato day anno rhip zorder 2 at t22
+    ha "LILLY!"
+    "Someone had the same mind."
     "Wait, what's Hanato doing here?"
     ha om "Why didn't you tell me anything?"
     lil c2e "I'm sorry, I didn't know you were involved..."
