@@ -103,7 +103,7 @@ label act2_ch3_main:
     ma "I'll tell you that I was one of the cancelled test subjects during production."
     ma "And because of that, I know of the other test subjects."
     ma dist "And, as you might have guessed, Dominion was one of the three that actually went through."
-    ma anno "Someone was assigned with putting the three processed test subjects out of their misery...  But I guess he didn't have the strength to kill them."
+    ma anno "Someone was assigned with putting the three processed test subjects out of their misery...  But I guess they didn't have the strength to kill them."
     ma dist "Either that, or they escaped before it happened."
     show mari cm
     a "Jesus..."
