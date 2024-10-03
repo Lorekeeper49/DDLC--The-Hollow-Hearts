@@ -298,6 +298,7 @@ label act2_ch3_alt:
     stop music fadeout 2.0
     play ambience mansion
     scene bg foyer
+    show dark zorder 10
     with dissolve_scene_full
     call showlocation("Wraith Mansion","October 10, 2023",21*60+14+57/60.0,"bg mansion")
     a "..."
