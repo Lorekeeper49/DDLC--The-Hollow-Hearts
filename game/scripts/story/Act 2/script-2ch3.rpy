@@ -303,5 +303,9 @@ label act2_ch3_alt:
     call showlocation("Wraith Mansion","October 10, 2023",21*60+14+57/60.0,"bg mansion")
     a "..."
     "I honestly have no idea what I'm doing here."
+    "This is stupid!  This is reckless!"
+    "I should get out of here while I can!"
+    "Yet why does this place look so..." 
+    "...familiar?"
 
     return
