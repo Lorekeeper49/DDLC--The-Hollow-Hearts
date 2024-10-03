@@ -311,5 +311,6 @@ label act2_ch3_alt:
     $ pause(1.0)
     a "Eh?"
     "That might've been my imagination..."
+    "I didn't bring a flashlight, I'm a fucking idiot."
 
     return
