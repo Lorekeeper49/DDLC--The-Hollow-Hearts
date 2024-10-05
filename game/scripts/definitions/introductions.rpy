@@ -16,7 +16,7 @@ init python:
     )
 
     intro_s = Intro(
-    kan = "シナモンパンさより",
+    kan = "シナモンパン佐代里",
     name = "Shinamonpan Sayori",
     attr = "- Happy Life: She can do many things to lighten the mood of people.\n- Dead Woman: She can turn herself into a ghost to do many paranormal things.",
     bio = "One of the few people with 2 attributes, she's a cheerful ball of sunshine who aspires to make everyone in the world happy through any means necessary.",
