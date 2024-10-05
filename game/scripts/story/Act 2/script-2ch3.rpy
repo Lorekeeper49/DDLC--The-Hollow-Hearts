@@ -315,10 +315,19 @@ label act2_ch3_alt:
     play sound footsteps
     a "!!!"
     a "Oh, I am so dead."
-    "Well, wish me luck."
     scene bg dark_dining
     show dark zorder 10 
     with wipeleft_scene
     "I hate this!"
+    "This place is so barren!"
+    "And there's decade old blood everywhere!"
+    $ pla = "???"
+    general "THAT'S YOURS."
+    a "!!!"
+    "..."
+    a "It's fine."
+    a "Everything's fine."
+    a "This isn't terrifying at all."
+    "Oh, who am I kidding?  You know it's bad if I'm this scared!"
 
     return
