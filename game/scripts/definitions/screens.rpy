@@ -400,7 +400,7 @@ init -501 screen quick_menu():
     zorder 2000
 
     if quick_menu:
-        imagebutton idle "mod_assets/gui/menu_button.png" action [SetVariable("aa_status", "OFF"), SetVariable("option_index", 0), Preference("auto-forward", "disable"), Show("navigation_border"), Show("navigation")]
+        imagebutton idle "mod_assets/gui/menu_button.png" action [FileTakeScreenshot(), SetVariable("aa_status", "OFF"), SetVariable("option_index", 0), Preference("auto-forward", "disable"), Show("navigation_border"), Show("navigation")]
         key "K_ESCAPE" action ShowMenu("navigation")
 
 default -1 quick_menu = True
@@ -783,6 +783,7 @@ init -1 python:
     def FileActionMod(name, page=None, **kwargs):
         return FileAction(name)
 
+init -501 default slot_selected = 0
 
 init -501 screen file_slots(title):
 
@@ -809,7 +810,13 @@ init -501 screen file_slots(title):
                     value page_name_value
 
 
-            grid gui.file_slot_cols gui.file_slot_rows:
+            viewport id "vp":
+                child_size (710, None)
+                mousewheel True
+                draggable True
+                has vbox
+                null height 40
+        
                 style_prefix "slot"
 
                 xcenter 330
@@ -817,12 +824,12 @@ init -501 screen file_slots(title):
 
                 spacing gui.slot_spacing
 
-                for i in range(gui.file_slot_cols * gui.file_slot_rows):
+                for i in range(99):
 
                     $ slot = i + 1
 
                     button:
-                        action FileActionMod(slot)
+                        action SetVariable("slot_selected", slot)
 
                         alternate FileDelete(slot)
 
@@ -837,6 +844,8 @@ init -501 screen file_slots(title):
                             style "slot_name_text"
 
                         key "save_delete" action FileDelete(slot)
+                vbar value YScrollValue(viewport="vp")
+                    
 
                         
 
@@ -846,18 +855,21 @@ init -501 screen file_slots(title):
 
                 xcenter 330
                 ycenter -100
+                
+                if not main_menu:
+                    button:
+                        background "#1eff0080"
+                        text "SAVE"
+                        action FileSave(slot_selected)
+                button:
+                    background "#ff000080"
+                    text "DELETE"
+                    action FileDelete(slot_selected)
+                button:
+                    background "#ffffff80"
+                    text "LOAD"
+                    action FileLoad(slot_selected)
 
-                spacing gui.page_spacing
-
-
-
-
-
-
-
-
-                for page in range(1, 10):
-                    textbutton "[page]" action FilePage(page)
 
 
 
