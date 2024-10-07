@@ -898,17 +898,6 @@ init -1 style slot_button_text:
     color "#666"
     outlines []
 
-
-
-
-
-
-init -1 python:
-    def ResetToDefaultVolume():
-        _preferences.music_volume = 0.75
-        _preferences.sfx_volume = 0.75
-        _preferences.voice_volume = 1.50
-
 init -501 screen preferences():
     tag menu
     if renpy.mobile:
