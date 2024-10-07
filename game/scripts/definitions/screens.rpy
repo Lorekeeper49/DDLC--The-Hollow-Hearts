@@ -946,7 +946,7 @@ init -501 screen preferences():
                 #     style_prefix "radio"
                 #     label _("Language")
                 #     textbutton "English" action Language("english")
-                #     textbutton "Igpay Atinlay" action Language("japanese")
+                #     textbutton "日本語" action Language("japanese")
 
 
 
