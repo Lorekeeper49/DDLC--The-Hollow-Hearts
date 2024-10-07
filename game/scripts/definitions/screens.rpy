@@ -850,10 +850,11 @@ init -501 screen file_slots(title):
                         
 
             if slot_selected > 0:
+                input default FileSaveName(slot_selected) value VariableInputValue("save_name") length 24
                 hbox:
                     xcenter 330
                     ycenter -100
-    
+
                     if not main_menu:
                         button:
                             background "#1eff0080"
