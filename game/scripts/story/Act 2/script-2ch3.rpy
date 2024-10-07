@@ -330,5 +330,8 @@ label act2_ch3_alt:
     a "Everything's fine."
     a "This isn't terrifying at all."
     "Oh, who am I kidding?  You know it's bad if I'm this scared!"
+    general "YOU DON'T HAVE TO REASSURE YOURSELF..."
+    general "WE WON'T HURT YOU!"
+    a "Yeah, right."
 
     return
