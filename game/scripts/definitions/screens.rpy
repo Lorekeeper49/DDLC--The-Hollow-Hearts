@@ -849,24 +849,24 @@ init -501 screen file_slots(title):
 
                         
 
-
-            hbox:
-                xcenter 330
-                ycenter -100
-
-                if not main_menu:
+            if slot_selected > 0:
+                hbox:
+                    xcenter 330
+                    ycenter -100
+    
+                    if not main_menu:
+                        button:
+                            background "#1eff0080"
+                            text "SAVE"
+                            action FileSave(slot_selected)
                     button:
-                        background "#1eff0080"
-                        text "SAVE"
-                        action FileSave(slot_selected)
-                button:
-                    background "#ff000080"
-                    text "DELETE"
-                    action FileDelete(slot_selected)
-                button:
-                    background "#ffffff80"
-                    text "LOAD"
-                    action FileLoad(slot_selected)
+                        background "#ff000080"
+                        text "DELETE"
+                        action FileDelete(slot_selected)
+                    button:
+                        background "#ffffff80"
+                        text "LOAD"
+                        action FileLoad(slot_selected)
 
 
 
