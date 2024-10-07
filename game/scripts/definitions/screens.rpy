@@ -851,11 +851,9 @@ init -501 screen file_slots(title):
 
 
             hbox:
-                style_prefix "page"
-
                 xcenter 330
                 ycenter -100
-                
+
                 if not main_menu:
                     button:
                         background "#1eff0080"
