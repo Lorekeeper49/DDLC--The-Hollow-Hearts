@@ -345,6 +345,8 @@ init -1 style choice_button is default:
 
 init -1 style choice_button_text is default:
     properties gui.button_text_properties("choice_button")
+    font "mod_assets/fonts/AlexBrush-Regular.ttf"
+    color "#fff"
     outlines []
 
 init -1 style choice_text is default:
@@ -359,15 +361,6 @@ init -1 python:
         targetpos = [640, 345]
         if currentpos[1] < targetpos[1]:
             renpy.display.draw.set_mouse_pos((currentpos[0] * 9 + targetpos[0]) / 10.0, (currentpos[1] * 9 + targetpos[1]) / 10.0)
-
-init -501 screen rigged_choice(items):
-    style_prefix "choice"
-
-    vbox:
-        for i in items:
-            textbutton i.caption action i.action
-
-    timer 1.0/30.0 repeat True action Function(RigMouse)
 
 
 
