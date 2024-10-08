@@ -487,19 +487,19 @@ init -1 style navigation_button:
 
 init -1 style navigation_button_text:
     properties gui.button_text_properties("navigation_button")
-    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
+    font "mod_assets/fonts/Unitblock-mLAwm.ttf"
     color "#000"
     hover_color "#fff"
     size 50
 
 init -1 style navigation_text:
-    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
+    font "mod_assets/fonts/Unitblock-mLAwm.ttf"
     color "#000"
     size 50
     text_align 1.0
 
 init -1 style navigation_center_text:
-    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
+    font "mod_assets/fonts/Unitblock-mLAwm.ttf"
     color "#000"
     size 500
 
