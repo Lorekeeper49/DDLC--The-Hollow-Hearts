@@ -1,4 +1,4 @@
-# DDLC: The-Hollow-Hearts
+# DDLC: The Hollow Hearts
  
 # INSTALLATION INSTRUCTIONS
 
