@@ -423,34 +423,34 @@ init -501 screen navigation():
     vbox at navigation_transform:
         style_prefix "navigation"
         spacing 25
-        textbutton _("CLOSE") hovered [SetVariable("option_index", 0), Show("navigation_highlight")] action Return()
+        textbutton _("CLOSE") hovered [SetVariable("option_index", 0)] action Return()
         if main_menu:
-            textbutton _("BEGIN") hovered [SetVariable("option_index", 1), Show("navigation_highlight")] action Function(StartGame)
-            textbutton _("BOOKMARKS") hovered [SetVariable("option_index", 2), Show("navigation_highlight")] action ShowMenu("file_slots", "BOOKMARKS")
-            textbutton _("OPTIONS") hovered [SetVariable("option_index", 3), Show("navigation_highlight")] action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
+            textbutton _("BEGIN") hovered [SetVariable("option_index", 1)] action Function(StartGame)
+            textbutton _("BOOKMARKS") hovered [SetVariable("option_index", 2)] action ShowMenu("file_slots", "BOOKMARKS")
+            textbutton _("OPTIONS") hovered [SetVariable("option_index", 3)] action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
             if renpy.variant("pc"):
-                textbutton _("HELP") hovered [SetVariable("option_index", 4), Show("navigation_highlight")]  action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))]
-                textbutton _("QUIT") hovered [SetVariable("option_index", 5), Show("navigation_highlight")] action Quit(confirm=not main_menu)
+                textbutton _("HELP") hovered [SetVariable("option_index", 4)]  action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))]
+                textbutton _("QUIT") hovered [SetVariable("option_index", 5)] action Quit(confirm=not main_menu)
             if not persistent.demo:
-                textbutton _("ACT 3") hovered [SetVariable("option_index", 6), Show("navigation_highlight")] action Function(Act3)
+                textbutton _("ACT 3") hovered [SetVariable("option_index", 6)] action Function(Act3)
         else:
-            textbutton _("HISTORY") hovered [SetVariable("option_index", 1), Show("navigation_highlight")] action [ShowMenu("history"), SensitiveIf(renpy.get_screen("history") == None)]
-            textbutton _("AUTO ADVANCE") hovered [SetVariable("option_index", 2), Show("navigation_highlight")] action [Preference("auto-forward", "toggle"), If(aa_status == "OFF", SetVariable("aa_status", "ON"), SetVariable("aa_status", "OFF"))]
-            textbutton _("FAST FORWARD") hovered [SetVariable("option_index", 3), Show("navigation_highlight")] action Skip()
-            textbutton _("BOOKMARKS") hovered [SetVariable("option_index", 4), Show("navigation_highlight")] action ShowMenu("file_slots", "BOOKMARKS")
-            textbutton _("OPTIONS") hovered [SetVariable("option_index", 5), Show("navigation_highlight")] action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
+            textbutton _("HISTORY") hovered [SetVariable("option_index", 1)] action [ShowMenu("history"), SensitiveIf(renpy.get_screen("history") == None)]
+            textbutton _("AUTO ADVANCE") hovered [SetVariable("option_index", 2)] action [Preference("auto-forward", "toggle"), If(aa_status == "OFF", SetVariable("aa_status", "ON"), SetVariable("aa_status", "OFF"))]
+            textbutton _("FAST FORWARD") hovered [SetVariable("option_index", 3)] action Skip()
+            textbutton _("BOOKMARKS") hovered [SetVariable("option_index", 4)] action ShowMenu("file_slots", "BOOKMARKS")
+            textbutton _("OPTIONS") hovered [SetVariable("option_index", 5)] action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
             if _in_replay:
-                textbutton _("END REPLAY") hovered [SetVariable("option_index", 6), Show("navigation_highlight")] action EndReplay(confirm=True)
+                textbutton _("END REPLAY") hovered [SetVariable("option_index", 6)] action EndReplay(confirm=True)
             else:
-                textbutton _("MAIN MENU") hovered [SetVariable("option_index", 6), Show("navigation_highlight")] action MainMenu()
+                textbutton _("MAIN MENU") hovered [SetVariable("option_index", 6)] action MainMenu()
             if renpy.variant("pc"):
-                textbutton _("HELP") hovered [SetVariable("option_index", 7), Show("navigation_highlight")] action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))]
-                textbutton _("QUIT") hovered [SetVariable("option_index", 8), Show("navigation_highlight")] action Quit(confirm=not main_menu) 
+                textbutton _("HELP") hovered [SetVariable("option_index", 7)] action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))]
+                textbutton _("QUIT") hovered [SetVariable("option_index", 8)] action Quit(confirm=not main_menu) 
             text _(aa_status) ycenter -410 xpos 430
             
 init -501 screen navigation_border():
     zorder 2500
-    text _(str(option_index)) style "navigation_center_text" at navigation_transform(120, 20)
+    text _(str(option_index)) style "navigation_center_text" at navigation_transform(120, -75)
     frame at navigation_transform:
         ysize 720
         xsize 540
@@ -466,7 +466,7 @@ init -501 screen navigation_highlight():
 init -501 transform navigation_transform(xo=0,yo=0):
     on show:
         xpos -640
-        ypos (50*option_index)+yo
+        ypos yo
         easeout .25 xpos 0+xo
     on replace:
         linear .25 ypos 50*option_index
@@ -490,18 +490,18 @@ init -1 style navigation_button_text:
     font "mod_assets/fonts/Unitblock-mLAwm.ttf"
     color "#000"
     hover_color "#fff"
-    size 50
+    size 75
 
 init -1 style navigation_text:
     font "mod_assets/fonts/Unitblock-mLAwm.ttf"
     color "#000"
-    size 50
+    size 75
     text_align 1.0
 
 init -1 style navigation_center_text:
     font "mod_assets/fonts/Unitblock-mLAwm.ttf"
     color "#000"
-    size 500
+    size 750
 
 
 
