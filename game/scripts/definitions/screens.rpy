@@ -914,28 +914,24 @@ init -501 screen preferences():
                     action [Preference("music volume", 0.75), Preference("sound volume", 0.75), Preference("voice volume", 1.50)] 
                     hovered SetLocalVariable("settinginfo", "Resets the volume settings to default. (Not sure why it's always white with an X next to it.)") unhovered SetLocalVariable("settinginfo", "Hover over an option to view info about it.")
             yoffset -10
-            hbox:
-                box_wrap True
 
-                if renpy.variant("pc"):
-
-                    vbox:
-                        style_prefix "radio"
-                        label _("Display")
-                        textbutton _("Window") action Preference("display", "window") hovered [SetLocalVariable("settinginfo", "How the game's window is displayed on your screen."), SetLocalVariable("settingdef", "Default: Window")] unhovered [SetLocalVariable("settinginfo", "Hover over an option to view info about it."), SetLocalVariable("settingdef", "")]
-                        textbutton _("Fullscreen") action Preference("display", "fullscreen") hovered [SetLocalVariable("settinginfo", "How the game's window is displayed on your screen."), SetLocalVariable("settingdef", "Default: Window")] unhovered [SetLocalVariable("settinginfo", "Hover over an option to view info about it."), SetLocalVariable("settingdef", "")]
-
+            if renpy.variant("pc"):
                 vbox:
-                    style_prefix "check"
-                    label _("Skip")
-                    textbutton _("Unseen Text") action Preference("skip", "toggle")
-                    textbutton _("After Choices") action Preference("after choices", "toggle")
-                
-                # vbox:
-                #     style_prefix "radio"
-                #     label _("Language")
-                #     textbutton "English" action Language("english")
-                #     textbutton "日本語" action Language("japanese")
+                    style_prefix "radio"
+                    label _("Display")
+                    textbutton _("Window") action Preference("display", "window") hovered [SetLocalVariable("settinginfo", "How the game's window is displayed on your screen."), SetLocalVariable("settingdef", "Default: Window")] unhovered [SetLocalVariable("settinginfo", "Hover over an option to view info about it."), SetLocalVariable("settingdef", "")]
+                    textbutton _("Fullscreen") action Preference("display", "fullscreen") hovered [SetLocalVariable("settinginfo", "How the game's window is displayed on your screen."), SetLocalVariable("settingdef", "Default: Window")] unhovered [SetLocalVariable("settinginfo", "Hover over an option to view info about it."), SetLocalVariable("settingdef", "")]
+            vbox:
+                style_prefix "check"
+                label _("Skip")
+                textbutton _("Unseen Text") action Preference("skip", "toggle")
+                textbutton _("After Choices") action Preference("after choices", "toggle")
+            
+            # vbox:
+            #     style_prefix "radio"
+            #     label _("Language")
+            #     textbutton "English" action Language("english")
+            #     textbutton "日本語" action Language("japanese")
 
 
 
