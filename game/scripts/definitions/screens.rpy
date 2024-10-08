@@ -447,27 +447,6 @@ init -501 screen navigation():
                 textbutton _("HELP") hovered [SetVariable("option_index", 7), Show("navigation_highlight")] action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))]
                 textbutton _("QUIT") hovered [SetVariable("option_index", 8), Show("navigation_highlight")] action Quit(confirm=not main_menu) 
             text _(aa_status) ycenter -410 xpos 430
-        if config.has_music:
-            label _("Music Volume")
-            hbox:
-                bar value Preference("music volume") hovered [SetLocalVariable("settinginfo", "The volume of the music within the game."), SetLocalVariable("settingdef", "Default: 75%")] unhovered [SetLocalVariable("settinginfo", "Hover over an option to view info about it."), SetLocalVariable("settingdef", "")] xsize 540
-        if config.has_sound:
-            label _("Sound Volume")
-            hbox:
-                bar value Preference("sound volume") hovered [SetLocalVariable("settinginfo", "The volume of the sound within the game."), SetLocalVariable("settingdef", "Default: 75%")] unhovered [SetLocalVariable("settinginfo", "Hover over an option to view info about it."), SetLocalVariable("settingdef", "")] xsize 540
-                if config.sample_sound:
-                    textbutton _("Test") action Play("sound", config.sample_sound)
-        if config.has_voice:
-            label _("Voice Volume")
-            hbox:
-                bar range 2.00 value Preference("voice volume") hovered [SetLocalVariable("settinginfo", "The volume of the voicelines within the game.  (Ren'py only allows range of 0% to 100% even though 150% volume works fine.)"), SetLocalVariable("settingdef", "Default: 150%")] unhovered [SetLocalVariable("settinginfo", "Hover over an option to view info about it."), SetLocalVariable("settingdef", "")] xsize 540
-                if config.sample_voice:
-                    textbutton _("Test") action Play("voice", config.sample_voice)
-        if config.has_music or config.has_sound or config.has_voice:
-            null height gui.pref_spacing
-            textbutton _("Reset"):
-                action [Preference("music volume", 0.75), Preference("sound volume", 0.75), Preference("voice volume", 1.50)] 
-                hovered SetLocalVariable("settinginfo", "Resets the volume settings to default. (Not sure why it's always white with an X next to it.)") unhovered SetLocalVariable("settinginfo", "Hover over an option to view info about it.")
             
 init -501 screen navigation_border():
     zorder 2500
@@ -916,6 +895,24 @@ init -501 screen preferences():
     use game_menu(_("Settings"), scroll="viewport"):
         
         vbox:
+            if config.has_music:
+                label _("Music Volume")
+                hbox:
+                    bar value Preference("music volume") hovered [SetLocalVariable("settinginfo", "The volume of the music within the game."), SetLocalVariable("settingdef", "Default: 75%")] unhovered [SetLocalVariable("settinginfo", "Hover over an option to view info about it."), SetLocalVariable("settingdef", "")] xsize 440
+            if config.has_sound:
+                label _("Sound Volume")
+                hbox:
+                    bar value Preference("sound volume") hovered [SetLocalVariable("settinginfo", "The volume of the sound within the game."), SetLocalVariable("settingdef", "Default: 75%")] unhovered [SetLocalVariable("settinginfo", "Hover over an option to view info about it."), SetLocalVariable("settingdef", "")] xsize 440
+            if config.has_voice:
+                label _("Voice Volume")
+                hbox:
+                    bar range 2.00 value Preference("voice volume") hovered [SetLocalVariable("settinginfo", "The volume of the voicelines within the game.  (Ren'py only allows range of 0% to 100% even though 150% volume works fine.)"), SetLocalVariable("settingdef", "Default: 150%")] unhovered [SetLocalVariable("settinginfo", "Hover over an option to view info about it."), SetLocalVariable("settingdef", "")] xsize 440
+                    if config.sample_voice:
+                        textbutton _("Test") action Play("voice", config.sample_voice)
+            if config.has_music or config.has_sound or config.has_voice:
+                textbutton _("Reset"):
+                    action [Preference("music volume", 0.75), Preference("sound volume", 0.75), Preference("voice volume", 1.50)] 
+                    hovered SetLocalVariable("settinginfo", "Resets the volume settings to default. (Not sure why it's always white with an X next to it.)") unhovered SetLocalVariable("settinginfo", "Hover over an option to view info about it.")
             yoffset -10
             hbox:
                 box_wrap True
