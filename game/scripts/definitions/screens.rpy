@@ -425,7 +425,7 @@ init -501 screen navigation():
         spacing 25
         if main_menu:
             textbutton _("CLOSE") hovered [SetVariable("option_index", 0), Show("navigation_highlight")] action Return()
-            textbutton _("NEW GAME") hovered [SetVariable("option_index", 1), Show("navigation_highlight")] action Function(StartGame)
+            textbutton _("BEGIN") hovered [SetVariable("option_index", 1), Show("navigation_highlight")] action Function(StartGame)
             textbutton _("BOOKMARKS") hovered [SetVariable("option_index", 2), Show("navigation_highlight")] action ShowMenu("file_slots", "BOOKMARKS")
             textbutton _("OPTIONS") hovered [SetVariable("option_index", 3), Show("navigation_highlight")] action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
             if renpy.variant("pc"):
