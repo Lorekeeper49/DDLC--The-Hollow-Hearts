@@ -468,7 +468,6 @@ init -501 screen navigation():
             textbutton _("Reset"):
                 action [Preference("music volume", 0.75), Preference("sound volume", 0.75), Preference("voice volume", 1.50)] 
                 hovered SetLocalVariable("settinginfo", "Resets the volume settings to default. (Not sure why it's always white with an X next to it.)") unhovered SetLocalVariable("settinginfo", "Hover over an option to view info about it.")
-                style "mute_all_button"
             
 init -501 screen navigation_border():
     zorder 2500
