@@ -906,11 +906,6 @@ init -501 screen preferences():
                         label _("Display")
                         textbutton _("Window") action Preference("display", "window") hovered [SetLocalVariable("settinginfo", "How the game's window is displayed on your screen."), SetLocalVariable("settingdef", "Default: Window")] unhovered [SetLocalVariable("settinginfo", "Hover over an option to view info about it."), SetLocalVariable("settingdef", "")]
                         textbutton _("Fullscreen") action Preference("display", "fullscreen") hovered [SetLocalVariable("settinginfo", "How the game's window is displayed on your screen."), SetLocalVariable("settingdef", "Default: Window")] unhovered [SetLocalVariable("settinginfo", "Hover over an option to view info about it."), SetLocalVariable("settingdef", "")]
-                    # if not main_menu:
-                    #     vbox:
-                    #         style_prefix "radio"
-                    #         label "Name: [save_name]"
-                    #         textbutton _("Change name") action Show(screen="name_input", message="Please enter a name", ok_action=Hide("name_input")) hovered SetLocalVariable("settinginfo", "Changes the name that's shown on saves.") unhovered SetLocalVariable("settinginfo", "Hover over an option to view info about it.")
 
                 vbox:
                     style_prefix "check"
