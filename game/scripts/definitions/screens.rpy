@@ -420,7 +420,7 @@ default -1 aa_status = "OFF"
 init -501 screen navigation():
     zorder 3000
     use navigation_border
-    vbox at navigation_transform:
+    vbox at navigation_transform(0, 10):
         style_prefix "navigation"
         spacing 25
         textbutton _("CLOSE") hovered [SetVariable("option_index", 0)] action Return()
