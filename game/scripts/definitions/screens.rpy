@@ -923,7 +923,7 @@ init -501 screen preferences():
                     textbutton _("Fullscreen") action Preference("display", "fullscreen") hovered [SetLocalVariable("settinginfo", "How the game's window is displayed on your screen."), SetLocalVariable("settingdef", "Default: Window")] unhovered [SetLocalVariable("settinginfo", "Hover over an option to view info about it."), SetLocalVariable("settingdef", "")]
             vbox:
                 style_prefix "check"
-                label _("Skip")
+                label _("Fast Forward")
                 textbutton _("Unseen Text") action Preference("skip", "toggle")
                 textbutton _("After Choices") action Preference("after choices", "toggle")
             
