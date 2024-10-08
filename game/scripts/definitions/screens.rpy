@@ -456,20 +456,11 @@ init -501 screen navigation_border():
         xsize 540
         background Solid("#ffffff8f")            
 
-init -501 screen navigation_highlight():
-    zorder 2750
-    frame at navigation_transform:
-        ysize 50
-        xsize 540
-        background Solid("#000")     
-
 init -501 transform navigation_transform(xo=0,yo=0):
     on show:
         xpos -640
         ypos yo
         easeout .25 xpos 0+xo
-    on replace:
-        linear .25 ypos 50*option_index
     on hide:
         xpos 0+xo
         easein .25 xpos -640
