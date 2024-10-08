@@ -400,8 +400,8 @@ init -501 screen quick_menu():
     zorder 2000
 
     if quick_menu:
-        imagebutton idle "mod_assets/gui/menu_button.png" action [FileTakeScreenshot(), SetVariable("aa_status", "OFF"), SetVariable("option_index", 0), Preference("auto-forward", "disable"), Show("navigation_border"), Show("navigation")]
-        key "K_ESCAPE" action ShowMenu("navigation")
+        imagebutton idle "mod_assets/gui/menu_button.png" action [SetVariable("option_index", 0), ShowMenu("navigation")]
+        key "K_ESCAPE" action [SetVariable("option_index", 0), ShowMenu("navigation")]
 
 default -1 quick_menu = True
 
@@ -419,13 +419,14 @@ default -1 aa_status = "OFF"
 
 init -501 screen navigation():
     zorder 3000
+    use navigation_border
     vbox at navigation_transform:
         style_prefix "navigation"
         spacing 25
         if main_menu:
-            textbutton _("CLOSE") hovered [SetVariable("option_index", 0), Show("navigation_highlight")] action [Hide("navigation_border"), Hide("navigation_highlight"), Hide("navigation")]
+            textbutton _("CLOSE") hovered [SetVariable("option_index", 0), Show("navigation_highlight")] action Return()
             textbutton _("NEW GAME") hovered [SetVariable("option_index", 1), Show("navigation_highlight")] action Function(StartGame)
-            textbutton _("BOOKMARKS") hovered [SetVariable("option_index", 2), Show("navigation_highlight")] action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None)]
+            textbutton _("BOOKMARKS") hovered [SetVariable("option_index", 2), Show("navigation_highlight")] action ShowMenu("file_slots", "BOOKMARKS")
             textbutton _("OPTIONS") hovered [SetVariable("option_index", 3), Show("navigation_highlight")] action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
             if renpy.variant("pc"):
                 textbutton _("HELP") hovered [SetVariable("option_index", 4), Show("navigation_highlight")]  action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))]
@@ -433,12 +434,11 @@ init -501 screen navigation():
             if not persistent.demo:
                 textbutton _("ACT 3") hovered [SetVariable("option_index", 6), Show("navigation_highlight")] action Function(Act3)
         else:
-            textbutton _("CLOSE") hovered [SetVariable("option_index", 0), Show("navigation_highlight")] action [Hide("navigation_border"), Hide("navigation_highlight"), Hide("navigation")]
+            textbutton _("CLOSE") hovered [SetVariable("option_index", 0), Show("navigation_highlight")] action Return()
             textbutton _("HISTORY") hovered [SetVariable("option_index", 1), Show("navigation_highlight")] action [ShowMenu("history"), SensitiveIf(renpy.get_screen("history") == None)]
             textbutton _("AUTO ADVANCE") hovered [SetVariable("option_index", 2), Show("navigation_highlight")] action [Preference("auto-forward", "toggle"), If(aa_status == "OFF", SetVariable("aa_status", "ON"), SetVariable("aa_status", "OFF"))]
             textbutton _("FAST FORWARD") hovered [SetVariable("option_index", 3), Show("navigation_highlight")] action Skip()
-            textbutton _("SAVE GAME") hovered [SetVariable("option_index", 4), Show("navigation_highlight")] action [ShowMenu("save"), SensitiveIf(renpy.get_screen("save") == None)]
-            textbutton _("LOAD GAME") hovered [SetVariable("option_index", 4), Show("navigation_highlight")] action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None)]
+            textbutton _("BOOKMARKS") hovered [SetVariable("option_index", 4), Show("navigation_highlight")] action ShowMenu("file_slots", "BOOKMARKS")
             textbutton _("OPTIONS") hovered [SetVariable("option_index", 5), Show("navigation_highlight")] action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
             if _in_replay:
                 textbutton _("END REPLAY") hovered [SetVariable("option_index", 6), Show("navigation_highlight")] action EndReplay(confirm=True)
@@ -447,7 +447,7 @@ init -501 screen navigation():
             if renpy.variant("pc"):
                 textbutton _("HELP") hovered [SetVariable("option_index", 7), Show("navigation_highlight")] action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))]
                 textbutton _("QUIT") hovered [SetVariable("option_index", 8), Show("navigation_highlight")] action Quit(confirm=not main_menu) 
-        text _(aa_status) ycenter -470 xpos 430
+        text _(aa_status) ycenter -410 xpos 430
             
 init -501 screen navigation_border():
     zorder 2500
@@ -755,29 +755,6 @@ init -1 style about_text is gui_text
 
 init -1 style about_label_text:
     size gui.label_text_size
-
-
-
-
-
-
-
-
-
-
-
-init -501 screen save():
-    tag menu
-
-
-    use file_slots(_("Save    Right click to delete a file."))
-
-
-init -501 screen load():
-    tag menu
-
-
-    use file_slots(_("Load    Right click to delete a file."))
 
 init -1 python:
     def FileActionMod(name, page=None, **kwargs):
