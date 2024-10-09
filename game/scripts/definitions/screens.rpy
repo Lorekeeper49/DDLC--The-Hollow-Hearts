@@ -400,8 +400,8 @@ init -501 screen quick_menu():
     zorder 2000
 
     if quick_menu:
-        imagebutton idle "mod_assets/gui/menu_button.png" action [SetVariable("option_index", 0), ShowMenu("navigation")]
-        key "K_ESCAPE" action [SetVariable("option_index", 0), ShowMenu("navigation")]
+        imagebutton idle "mod_assets/gui/menu_button.png" action [SetVariable("option_index", 0), ShowMenu("navigation"), SensitiveIf(renpy.get_screen("navigation") == None)]
+        key "K_ESCAPE" action [SetVariable("option_index", 0), ShowMenu("navigation"), SensitiveIf(renpy.get_screen("navigation") == None)]
 
 default -1 quick_menu = True
 
@@ -418,27 +418,29 @@ default -1 option_index = 0
 default -1 aa_status = "OFF"
 
 init -501 screen navigation():
+    
     zorder 3000
     use navigation_border
     vbox at navigation_transform(0, 10):
         style_prefix "navigation"
         spacing 25
-        textbutton _("CLOSE") hovered [SetVariable("option_index", 0)] action Return()
         if main_menu:
+            textbutton _("CLOSE") hovered [SetVariable("option_index", 0)] action [Hide("preferences"), Hide("file_slots"), Hide("navigation")]
             textbutton _("BEGIN") hovered [SetVariable("option_index", 1)] action Function(StartGame)
-            textbutton _("BOOKMARKS") hovered [SetVariable("option_index", 2)] action ShowMenu("file_slots", "BOOKMARKS")
-            textbutton _("OPTIONS") hovered [SetVariable("option_index", 3)] action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
+            textbutton _("BOOKMARKS") hovered [SetVariable("option_index", 2)] action [Hide("preferences"), ShowMenu("file_slots"), SensitiveIf(renpy.get_screen("file_slots") == None)]
+            textbutton _("OPTIONS") hovered [SetVariable("option_index", 3)] action [Hide("file_slots"), ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
             if renpy.variant("pc"):
                 textbutton _("HELP") hovered [SetVariable("option_index", 4)]  action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))]
                 textbutton _("QUIT") hovered [SetVariable("option_index", 5)] action Quit(confirm=not main_menu)
             if not persistent.demo:
                 textbutton _("ACT 3") hovered [SetVariable("option_index", 6)] action Function(Act3)
         else:
+            textbutton _("CLOSE") hovered [SetVariable("option_index", 0)] action Return()
             textbutton _("HISTORY") hovered [SetVariable("option_index", 1)] action [ShowMenu("history"), SensitiveIf(renpy.get_screen("history") == None)]
             textbutton _("AUTO ADVANCE") hovered [SetVariable("option_index", 2)] action [Preference("auto-forward", "toggle"), If(aa_status == "OFF", SetVariable("aa_status", "ON"), SetVariable("aa_status", "OFF"))]
             textbutton _("FAST FORWARD") hovered [SetVariable("option_index", 3)] action Skip()
-            textbutton _("BOOKMARKS") hovered [SetVariable("option_index", 4)] action ShowMenu("file_slots", "BOOKMARKS")
-            textbutton _("OPTIONS") hovered [SetVariable("option_index", 5)] action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
+            textbutton _("BOOKMARKS") hovered [SetVariable("option_index", 4)] action [Hide("preferences"), ShowMenu("file_slots"), SensitiveIf(renpy.get_screen("file_slots") == None)]
+            textbutton _("OPTIONS") hovered [SetVariable("option_index", 5)] action [Hide("file_slots"), ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
             if _in_replay:
                 textbutton _("END REPLAY") hovered [SetVariable("option_index", 6)] action EndReplay(confirm=True)
             else:
@@ -545,177 +547,21 @@ init -501 transform bg_transform:
         easein_quint 10.0 zoom 1.0
         repeat
 
-init -1 style main_menu_frame is empty
-init -1 style main_menu_vbox is vbox
-init -1 style main_menu_text is gui_text
-init -1 style main_menu_title is main_menu_text
-init -1 style main_menu_version is main_menu_text:
-    color "#000000"
-    size 16
-    outlines []
-
-init -1 style main_menu_frame:
-    xsize 310
-    yfill True
-
-    background "menu_nav"
-
-init -1 style main_menu_vbox:
-    xalign 1.0
-    xoffset -20
-    xmaximum 800
-    yalign 1.0
-    yoffset -20
-
-init -1 style main_menu_text:
-    xalign 1.0
-
-    layout "subtitle"
-    text_align 1.0
-    color gui.accent_color
-
-init -1 style main_menu_title:
-    size gui.title_text_size
-
-
-
-
-
-
-
-
-
-
-
-
-init -501 screen game_menu(title, scroll=None):
-
-
-    if main_menu:
-        add gui.main_menu_background
-    else:
-        key "mouseup_3" action Return()
-        add gui.game_menu_background
-
-    style_prefix "game_menu"
-
-    frame:
-        style "game_menu_outer_frame"
-
-        has hbox
-
-
-        frame:
-            style "game_menu_navigation_frame"
-
-        frame:
-            style "game_menu_content_frame"
-
-            if scroll == "viewport":
-
-                viewport:
-                    scrollbars "vertical"
-                    mousewheel True
-                    draggable True
-                    yinitial 1.0
-
-                    side_yfill True
-
-                    has vbox
-                    transclude
-
-            elif scroll == "vpgrid":
-
-                vpgrid:
-                    cols 1
-                    yinitial 1.0
-
-                    scrollbars "vertical"
-                    mousewheel True
-                    draggable True
-
-                    side_yfill True
-
-                    transclude
-
-            else:
-
-                transclude
-
-    use quick_menu
-
-
-    textbutton _("Return"):
-        style "return_button"
-
-        action Return()
-
-    label title
-
-    if main_menu:
-        key "game_menu" action ShowMenu("main_menu")
-
-
-init -1 style game_menu_outer_frame is empty
-init -1 style game_menu_navigation_frame is empty
-init -1 style game_menu_content_frame is empty
-init -1 style game_menu_viewport is gui_viewport
-init -1 style game_menu_side is gui_side
-init -1 style game_menu_scrollbar is gui_vscrollbar
-
-init -1 style game_menu_label is gui_label
-init -1 style game_menu_label_text is gui_label_text
-
-init -1 style return_button is navigation_button
-init -1 style return_button_text is navigation_button_text
-
-init -1 style game_menu_outer_frame:
-    bottom_padding 30
-    top_padding 120
-
-    background "mod_assets/gui/game_menu.png"
-
-init -1 style game_menu_navigation_frame:
-    xsize 280
-    yfill True
-
-init -1 style game_menu_content_frame:
-    left_margin 40
-    right_margin 20
-    top_margin 10
-
-init -1 style game_menu_viewport:
-    xsize 920
-
-init -1 style game_menu_vscrollbar:
-    unscrollable gui.unscrollable
-
-init -1 style game_menu_side:
-    spacing 10
-
-init -1 style game_menu_label:
-    xpos 50
-    ysize 120
-
-init -1 style game_menu_label_text:
-    font "gui/font/RifficFree-Bold.ttf"
-    size gui.title_text_size
-    color "#fff"
-    outlines [(6, "#b59", 0, 0), (3, "#b59", 2, 2)]
-    yalign 0.5
-
-init -1 style return_button:
-    xpos gui.navigation_xpos
-    yalign 1.0
-    yoffset -30
-
-
-
-
-
-
-
-
+init -501 screen game_menu():
+
+    frame at game_menu_transform:
+        ysize 800
+        xsize 540
+        background Solid("#ffffff8f") 
+
+init -501 transform game_menu_transform(xo=0,yo=0):
+    on show:
+        xpos 1280
+        ypos yo
+        easeout .25 xpos 740+xo
+    on hide:
+        xpos 740+xo
+        easein .25 xpos 1280
 
 init -501 screen about():
     tag menu
@@ -752,114 +598,64 @@ init -1 python:
 
 init -501 default slot_selected = 0
 
-init -501 screen file_slots(title):
+init -501 screen file_slots():
 
     default page_name_value = FilePageNameInputValue()
 
-    use game_menu(title):
+    use game_menu
 
-        fixed:
-            yoffset -10
+    fixed at game_menu_transform:
+        yoffset -10
+        order_reverse True
+        viewport id "vp":
+            mousewheel True
+            draggable True
+            has vbox
+            null height 40
 
-
-            order_reverse True
-
-
-
-            button:
-                style "page_label"
-
-                xcenter 330
-                ycenter -20
-
-                input:
-                    style "page_label_text"
-                    value page_name_value
-
-
-            viewport id "vp":
-                child_size (710, None)
-                mousewheel True
-                draggable True
-                has vbox
-                null height 40
-        
-                style_prefix "slot"
-
-                xcenter 330
-                ycenter 220
-
-                spacing gui.slot_spacing
-
-                for i in range(99):
-
-                    $ slot = i + 1
-
-                    button:
-                        action SetVariable("slot_selected", slot)
-
-                        alternate FileDelete(slot)
-
-                        has vbox
-
-                        add FileScreenshot(slot) 
-
-                        text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("empty slot")):
-                            style "slot_time_text"
-
-                        text FileSaveName(slot):
-                            style "slot_name_text"
-
-                        key "save_delete" action FileDelete(slot)
-                vbar value YScrollValue(viewport="vp")
+            style_prefix "slot"
+            spacing gui.slot_spacing
+            for i in range(99):
+                $ slot = i + 1
+                button:
+                    action SetVariable("slot_selected", slot)
+                    alternate FileDelete(slot)
+                    has vbox
+                    add FileScreenshot(slot) 
+                    text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("empty slot")):
+                        style "slot_time_text"
+                    text FileSaveName(slot):
+                        style "slot_name_text"
+                    key "save_delete" action FileDelete(slot)
+            vbar value YScrollValue(viewport="vp")
                     
-
-                        
-
-            if slot_selected > 0:
-                input default FileSaveName(slot_selected) value VariableInputValue("save_name") length 24
-                hbox:
-                    xcenter 330
-                    ycenter -100
-
-                    if not main_menu:
+        if slot_selected > 0:
+            frame:
+                xcenter 400
+                ycenter 100
+                background "#ffffff8a"
+                vbox:
+                    
+                    input default FileSaveName(slot_selected) value VariableInputValue("save_name") length 24 font "mod_assets/fonts/Unitblock-mLAwm.ttf"
+                    hbox:
+                        if not main_menu:
+                            button:
+                                background "#1eff0080"
+                                text "SAVE" font "mod_assets/fonts/Unitblock-mLAwm.ttf"
+                                action FileSave(slot_selected)
                         button:
-                            background "#1eff0080"
-                            text "SAVE"
-                            action FileSave(slot_selected)
-                    button:
-                        background "#ff000080"
-                        text "DELETE"
-                        action FileDelete(slot_selected)
-                    button:
-                        background "#ffffff80"
-                        text "LOAD"
-                        action FileLoad(slot_selected)
-
-
-
-
-
-init -1 style page_label is gui_label
-init -1 style page_label_text is gui_label_text
-init -1 style page_button is gui_button
-init -1 style page_button_text is gui_button_text
+                            background "#ff000080"
+                            text "DELETE" font "mod_assets/fonts/Unitblock-mLAwm.ttf"
+                            action FileDelete(slot_selected)
+                        button:
+                            background "#ffffff80"
+                            text "LOAD" font "mod_assets/fonts/Unitblock-mLAwm.ttf"
+                            action FileLoad(slot_selected)
 
 init -1 style slot_button is gui_button
 init -1 style slot_button_text is gui_button_text
 init -1 style slot_time_text is slot_button_text
 init -1 style slot_name_text is slot_button_text
-
-init -1 style page_label:
-    xpadding 50
-    ypadding 3
-
-init -1 style page_label_text:
-    color "#000"
-    outlines []
-    text_align 0.5
-    layout "subtitle"
-    hover_color gui.hover_color
 
 init -1 style page_button:
     properties gui.button_properties("page_button")
@@ -877,35 +673,40 @@ init -1 style slot_button_text:
     outlines []
 
 init -501 screen preferences():
-    tag menu
-    if renpy.mobile:
-        $ cols = 2
-    else:
-        $ cols = 4
 
-    use game_menu(_("Settings"), scroll="viewport"):
+    use game_menu
         
-        vbox:
+    fixed at game_menu_transform:
+        yoffset -10
+        order_reverse True
+        viewport id "vp":
+            mousewheel True
+            draggable True
+            has vbox
+            null height 40
             if config.has_music:
+                style_prefix "slider"
                 label _("Music Volume")
                 hbox:
                     bar value Preference("music volume") hovered [SetLocalVariable("settinginfo", "The volume of the music within the game."), SetLocalVariable("settingdef", "Default: 75%")] unhovered [SetLocalVariable("settinginfo", "Hover over an option to view info about it."), SetLocalVariable("settingdef", "")] xsize 440
             if config.has_sound:
+                style_prefix "slider"
                 label _("Sound Volume")
                 hbox:
                     bar value Preference("sound volume") hovered [SetLocalVariable("settinginfo", "The volume of the sound within the game."), SetLocalVariable("settingdef", "Default: 75%")] unhovered [SetLocalVariable("settinginfo", "Hover over an option to view info about it."), SetLocalVariable("settingdef", "")] xsize 440
             if config.has_voice:
+                style_prefix "slider"
                 label _("Voice Volume")
                 hbox:
-                    bar range 2.00 value Preference("voice volume") hovered [SetLocalVariable("settinginfo", "The volume of the voicelines within the game.  (Ren'py only allows range of 0% to 100% even though 150% volume works fine.)"), SetLocalVariable("settingdef", "Default: 150%")] unhovered [SetLocalVariable("settinginfo", "Hover over an option to view info about it."), SetLocalVariable("settingdef", "")] xsize 440
+                    bar range 2.00 value Preference("voice volume") hovered [SetLocalVariable("settinginfo", "The volume of the voicelines within the game."), SetLocalVariable("settingdef", "Default: 150%")] unhovered [SetLocalVariable("settinginfo", "Hover over an option to view info about it."), SetLocalVariable("settingdef", "")] xsize 440
                     if config.sample_voice:
                         textbutton _("Test") action Play("voice", config.sample_voice)
             if config.has_music or config.has_sound or config.has_voice:
                 textbutton _("Reset"):
                     action [Preference("music volume", 0.75), Preference("sound volume", 0.75), Preference("voice volume", 1.50)] 
-                    hovered SetLocalVariable("settinginfo", "Resets the volume settings to default. (Not sure why it's always white with an X next to it.)") unhovered SetLocalVariable("settinginfo", "Hover over an option to view info about it.")
+                    hovered SetLocalVariable("settinginfo", "Resets the volume settings to default.") unhovered SetLocalVariable("settinginfo", "Hover over an option to view info about it.")
+                    style "ui_text"
             yoffset -10
-
             if renpy.variant("pc"):
                 vbox:
                     style_prefix "radio"
@@ -915,36 +716,24 @@ init -501 screen preferences():
             vbox:
                 style_prefix "check"
                 label _("Fast Forward")
-                textbutton _("Unseen Text") action Preference("skip", "toggle")
-                textbutton _("After Choices") action Preference("after choices", "toggle")
-            
+                textbutton _("Unseen Text") hovered [SetLocalVariable("settinginfo", "Fast Forward skips over text you haven't seen yet"), SetLocalVariable("settingdef", "Default: False")] action Preference("skip", "toggle")
+                textbutton _("After Choices") hovered [SetLocalVariable("settinginfo", "Fast Forward persists after you make a choice"), SetLocalVariable("settingdef", "Default: False")] action Preference("after choices", "toggle")
             # vbox:
             #     style_prefix "radio"
             #     label _("Language")
             #     textbutton "English" action Language("english")
             #     textbutton "日本語" action Language("japanese")
-
-
-
-
-
             null height (4 * gui.pref_spacing)
-
             hbox:
                 style_prefix "slider"
                 box_wrap True
-
                 vbox:
-
                     label _("Information")
-
-
                     text _("[settinginfo]")
                     text _("[settingdef]")
     text "v[config.version]":
         xalign 1.0 yalign 1.0
         xoffset -10 yoffset -10
-        style "main_menu_version"
 
 init -1 style pref_label is gui_label
 init -1 style pref_label_text is gui_label_text
@@ -977,10 +766,10 @@ init -1 style pref_label:
     bottom_margin 2
 
 init -1 style pref_label_text:
-    font "gui/font/RifficFree-Bold.ttf"
+    font "mod_assets/fonts/Unitblock-mLAwm.ttf"
     size 24
     color "#fff"
-    outlines [(3, "#b59", 0, 0), (1, "#b59", 1, 1)]
+    outlines [(3, "#585858", 0, 0), (1, "#585858", 1, 1)]
     yalign 1.0
 
 init -1 style pref_vbox:
@@ -1024,7 +813,8 @@ init -1 style slider_button_text:
 init -1 style slider_vbox:
     xsize 450
 
-
+init -1 style ui_text:
+    font "mod_assets/fonts/Unitblock-mLAwm.ttf"
 
 
 
