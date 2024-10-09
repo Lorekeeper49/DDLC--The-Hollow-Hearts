@@ -118,6 +118,7 @@ FOOTSTEPS - Sound Effect from Pixabay [https://pixabay.com/?utm_source=link-attr
 SCRIPT - TypeSETit (Alex Brush) [https://www.1001fonts.com/legible+handwriting-fonts.html]
 JPFONT - Noto Serif [https://fonts.google.com/noto/specimen/Noto+Serif+JP?subset=japanese&noto.script=Hira]
 7-SEGMENT - Krafti Lab [https://www.dafont.com/seven-segment.font]
+UI - Unitblock [https://www.fontspace.com/unitblock-font-f104834]
 
 
 -- MISC --
