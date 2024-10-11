@@ -336,7 +336,7 @@ label act2_ch3_alt:
     scene bg top_kitchen
     show dark zorder 10 
     with wipeleft_scene
-
+    ""
 
     scene bg bad_bedroom
     show dark zorder 10 
