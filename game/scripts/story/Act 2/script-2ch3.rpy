@@ -296,7 +296,7 @@ label act2_ch3_main:
 
 label act2_ch3_alt:
     stop music fadeout 2.0
-    play ambience mansion
+    #play ambience mansion
     scene bg foyer
     show dark zorder 10
     with dissolve_scene_full
@@ -333,5 +333,25 @@ label act2_ch3_alt:
     general "YOU DON'T HAVE TO REASSURE YOURSELF..."
     general "WE WON'T HURT YOU!"
     a "Yeah, right."
+    scene bg top_kitchen
+    show dark zorder 10 
+    with wipeleft_scene
 
+
+    scene bg bad_bedroom
+    show dark zorder 10 
+    with wipeleft_scene
+    "I'm so lost..."
+    "This room has the least amount of blood."
+    general "OUR ROOM."
+    play sound "sfx/giggle.ogg"
+    show wraith_black zorder 2 at t11
+    a "!!!"
+    a "I don't have a...{nw}"
+    play sound jumpscare
+    show wraith_black zorder 1000 at face
+    $ pause(0.25)
+    scene black with None
+    stop sound fadeout 3.0
+    $ pause(3.0)
     return
