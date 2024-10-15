@@ -76,10 +76,89 @@ label act2_ch4_main:
     with wipeleft_scene
     "Well, here we go."
     call explore("first_room") from _call_explore_2
-    call act2_ch4_alt
+    call act2_ch4_common
     return
 
 label act2_ch4_alt:
+    stop music fadeout 2.0
+    #play ambience mansion
+    scene bg foyer
+    show dark zorder 10
+    with dissolve_scene_full
+    call showlocation("Wraith Mansion","October 11, 2023",21*60+14+57/60.0,"bg mansion")
+    a "..."
+    "I honestly have no idea what I'm doing here."
+    "This is stupid!  This is reckless!"
+    "I should get out of here while I can!"
+    "Yet why does this place look so..." 
+    "...familiar?"
+    play sound "sfx/giggle.ogg"
+    $ pause(1.0)
+    a "Eh?"
+    "That might've been my imagination..."
+    "I didn't bring a flashlight, I'm a fucking idiot."
+    play sound footsteps
+    a "!!!"
+    a "Oh, I am so dead."
+    scene bg dark_dining
+    show dark zorder 10 
+    with wipeleft_scene
+    "I hate this!"
+    "This place is so barren!"
+    "And there's decade old blood everywhere!"
+    "The fuck happened here?  Whose is this?"
+    $ pla = "???"
+    general "YOURS."
+    a "!!!"
+    "..."
+    a "It's fine."
+    a "Everything's fine."
+    a "This isn't terrifying at all."
+    "Oh, who am I kidding?  You know it's bad if I'm this scared!"
+    general "YOU DON'T HAVE TO REASSURE YOURSELF..."
+    general "WE WON'T HURT YOU!"
+    a "Yeah, right."
+    scene bg top_kitchen
+    show dark zorder 10 
+    with wipeleft_scene
+    "I don't know how I haven't been attacked yet."
+    "With every step I take, I regret this more."
+    a "Damnit, just kill me already!"
+    general "NOW THAT WOULDN'T BE VERY LOVING OF US, WOULD IT?"
+    "I don't trust them in the slightest."
+    "I check the drawers and cabinets."
+    "..."
+    a "Ugh!  There's nothing in these!"
+    general "YOU'LL FIND SOMETHING IN YOUR RO-"
+    a "Fuck off!  I'm leaving!"
+    "I should've never gone in here in the first place"
+    scene bg bedroom1
+    show dark zorder 10 
+    with wipeleft_scene
+    a "Huh?!"
+    a "This isn't the foyer!"
+    a "Did I take a wrong turn?"
+    a "Oh God!"
+    scene bg bad_bedroom
+    show dark zorder 10 
+    with wipeleft_scene
+    "I'm so lost..."
+    "This room has the least amount of blood."
+    general "OUR ROOM."
+    play sound "sfx/giggle.ogg"
+    show wraith_black zorder 2 at t11
+    a "!!!"
+    a "I don't have a...{nw}"
+    play sound jumpscare
+    show wraith_black zorder 1000 at face
+    $ pause(0.25)
+    scene black with None
+    stop sound fadeout 3.0
+    $ pause(3.0)
+    call act2_ch4_common
+    return
+
+label act2_ch4_common:
     stop music fadeout 2.0
     play ambience mansion fadein 1.0
     a "{cps=3}...?{/cps}"
