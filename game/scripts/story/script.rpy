@@ -34,64 +34,76 @@ label start:
         "No":
             $ change = ""
     "Understood."
-    call screen name_input(message="Please enter a name.\nThis will not be used for the MC's name but rather, the name shown on save files so you can organize your choices.", ok_action=Return())
-    "You can change your name at any time in the options menu."
     "That's all!  So without further ado, let's begin DDLC: The Hollow Hearts!"
 
     $ act = 0
 
     $ chapter = 0
+    show location_text "Prologue:\nClub Order" zorder 10000 at center_zoom(0.5, 1.0, 6.0) with Dissolve(2.0)
+    $ pause(1.0)
+    hide location_text with Dissolve(2.0)
     call ch0_main from _call_ch0_main
     call storyresponse_start from _call_storyresponse_start
     call ch0_end from _call_ch0_end
 
     $ act = 1
-
+    call act_trans
     $ chapter = 1
+    call chapter_trans("Breaker")
     call act1_ch1_main from _call_act1_ch1_main
 
     $ chapter = 2
+    call chapter_trans("The Precursors")
     call act1_ch2_main from _call_act1_ch2_main
     call tstory from _call_tstory
     call storyresponse_start from _call_storyresponse_start_1
     call act1_ch2_end from _call_act1_ch2_end
 
     $ chapter = 3
+    call chapter_trans("Bearing Secrets")
     call act1_ch3_main from _call_act1_ch3_main
     call tstory from _call_tstory_1
     call storyresponse_start from _call_storyresponse_start_2
     call act1_ch3_end from _call_act1_ch3_end
 
     $ chapter = 4
+    call chapter_trans("")
     call act1_ch4_main from _call_act1_ch4_main
     call tstory from _call_tstory_2
     call storyresponse_start from _call_storyresponse_start_3
     call act1_ch4_end from _call_act1_ch4_end
 
     $ chapter = 5
+    call chapter_trans("")
     call act1_ch5_main from _call_act1_ch5_main
     call tstory from _call_tstory_3
     call storyresponse_start from _call_storyresponse_start_4
     call act1_ch5_end from _call_act1_ch5_end
 
     $ chapter = 6
+    call chapter_trans("The Enemy")
     call act1_ch6_main
 
     $ act = 2
-
+    call act_trans
     $ chapter = 1
+    call chapter_trans("A Club That Works at Night")
     call act2_ch1_main from _call_act2_ch1_main
 
     $ chapter = 2
+    call chapter_trans("Dark Discoveries")
     call act2_ch2_main from _call_act2_ch2_main
     
     $ chapter = 3
+    call chapter_trans("The Aftermath")
     call act2_ch3_main from _call_act2_ch3_main
 
     $ chapter = 4
+    call chapter_trans("A Past Regained")
     call act2_ch4_main from _call_act2_ch4_main
 
     $ chapter = 5
+    call chapter_trans("It Begins")
     call act2_ch5_main from _call_act2_ch5_main
     
     return
@@ -138,6 +150,9 @@ label dev:
                     "MAIN":
                         "BEGINNING PROLOGUE"
                         $ chapter = 0
+                        show location_text "Prologue:\nClub Order" zorder 10000 at center_zoom(0.5, 1.0, 6.0) with Dissolve(2.0)
+                        $ pause(1.0)
+                        hide location_text with Dissolve(2.0)
                         call ch0_main from _call_ch0_main_1
                         call storyresponse_start from _call_storyresponse_start_5
                         call ch0_end from _call_ch0_end_1
@@ -256,17 +271,20 @@ label dev:
                         jump dev_loop
             "ACT 1":
                 $ act = 1
+                call act_trans
                 menu:
                     "SELECT A CHAPTER:"
 
                     "CHAPTER 1":
                         "BEGINNING CHAPTER 1"
                         $ chapter = 1
+                        call chapter_trans("Breaker")
                         call act1_ch1_main from _call_act1_ch1_main_1
                     "CHAPTER 2":
                         $ chapter = 2
                         "BEGINNING CHAPTER 2"
                         $ hanato = "Kamiyama Hanato"
+                        call chapter_trans("The Precursors")
                         call act1_ch2_main from _call_act1_ch2_main_1
                         call tstory                        
                         call storyresponse_start from _call_storyresponse_start_6
@@ -275,6 +293,7 @@ label dev:
                         $ chapter = 3
                         "BEGINNING CHAPTER 3"
                         $ hanato = "Kamiyama Hanato"
+                        call chapter_trans("Bearing Secrets")
                         call act1_ch3_main from _call_act1_ch3_main_1
                         call tstory 
                         call storyresponse_start from _call_storyresponse_start_7
@@ -283,6 +302,7 @@ label dev:
                         $ chapter = 4
                         "BEGINNING CHAPTER 4"
                         $ hanato = "Kamiyama Hanato"
+                        call chapter_trans("")
                         call act1_ch4_main from _call_act1_ch4_main_1
                         call tstory 
                         call storyresponse_start from _call_storyresponse_start_8
@@ -291,6 +311,7 @@ label dev:
                         $ chapter = 5
                         "BEGINNING CHAPTER 5"
                         $ hanato = "Kamiyama Hanato"
+                        call chapter_trans("")
                         call act1_ch5_main from _call_act1_ch5_main_1
                         call tstory 
                         call storyresponse_start from _call_storyresponse_start_9
@@ -303,6 +324,7 @@ label dev:
                 $ style.say_window = style.window
                 $ nb = "namebox"
                 $ aoruguri = "Luna Aoruguri"
+                call act_trans
                 menu:
                     "WHICH PATH?"
 
@@ -316,22 +338,27 @@ label dev:
                     "CHAPTER 1":
                         "BEGINNING CHAPTER 1"
                         $ chapter = 1
+                        call chapter_trans("A Club That Works at Night")
                         call act2_ch1_main from _call_act2_ch1_main_1
                     "CHAPTER 2":
                         $ chapter = 2
                         "BEGINNING CHAPTER 2"
+                        call chapter_trans("Dark Discoveries")
                         call act2_ch2_main from _call_act2_ch2_main_1
                     "CHAPTER 3":
                         $ chapter = 3
                         "BEGINNING CHAPTER 3"
+                        call chapter_trans("The Aftermath")
                         call act2_ch3_main from _call_act2_ch3_main_1
                     "CHAPTER 4":
                         $ chapter = 4
                         "BEGINNING CHAPTER 4"
+                        call chapter_trans("A Past Regained")
                         call act2_ch4_main from _call_act2_ch4_main_1
                     "CHAPTER 5":
                         $ chapter = 5
                         "BEGINNING CHAPTER 5"
+                        call chapter_trans("It Begins")
                         call act2_ch5_main from _call_act2_ch5_main_1
                     "BACK":
                         jump dev_loop

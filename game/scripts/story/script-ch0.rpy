@@ -1,4 +1,6 @@
 label ch0_main:
+    $ style.say_window = style.window
+    $ nb = "namebox"
     stop music fadeout 2.0
     call showintro(intro_t) from _call_showintro_6
     scene bg house
@@ -106,14 +108,16 @@ label ch0_main:
     "I walk into my kitchen and spot my medication lying on the counter and promptly take it."
     "The hallucinations disappear almost immediately."
     "Now I'm off to go buy some groceries."
-    scene bg store with fade
+    $ style.say_window = style.window_fake
+    $ nb = "namebox_fake"
+    scene bg store with wipeleft_scene
     play music t2
     "Goodness gracious!  This place is packed!"
     "I might get lost in here."
     "On the plus side, I don't have any prescription to pick up today."
     "But that doesn't account for the massive amount of people within this store."
     "Let's just grab everything before it gets worse."
-    scene bg kitchen with fade
+    scene bg kitchen with wipeleft_scene
     "I managed to grab everything within 15 minutes and drop them off at my house in the kitchen."
     t "I'll organize everything later."
     stop music fadeout 3
@@ -225,8 +229,8 @@ label ch0_main:
     "After a while, we release."
     m rhip lpoint mb "Let's change the subject to something less deppressing, shall we?"
     k happ oe b1b "Yeah."
-    $ yref()
-    $ mref()
+    $ layeredimage_ref("yuri")
+    $ layeredimage_ref("monika")
     show kotonoha b1a 
     show monika casual happ 
     show natsuki b1a
@@ -330,7 +334,7 @@ label ch0_end:
     m happ e1a om "Sure, we'll call it that."
     kmind "3... 2..."
     "Does she know that I can hear her as well?"
-    $ mref()
+    $ layeredimage_ref("monika")
     show sayori ce om at h21
     show monika casual happ ce om at h11
     show kotonoha lchest happ ce mc at h41
@@ -476,7 +480,7 @@ label ch0_end:
     mom "You really like that tea, don't you?"
     y nerv e1a "Eh!  I'm sorry!  I didn't mean to bring up something depressing!"
     t "It's fine..."
-    $ yref()
+    $ layeredimage_ref("yuri")
     y casual curi om b1b "That didn't sound very reassuring."
     show yuri cm
     t "I'll be alright, I promise."
@@ -566,7 +570,7 @@ label ch0_end:
     k casual om "That was strange."
     show kotonoha cm
     m 2d "Let's just move on."
-    $ nref()
+    $ layeredimage_ref("natsuki")
     show kotonoha happ
     show natsuki casual happ
     hide monika 

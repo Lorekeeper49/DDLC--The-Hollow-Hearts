@@ -88,10 +88,11 @@ label tstory_ch5:
     return
 
 label storyresponse_start:
-    $ yref()
-    $ sref()
-    $ nref()
-    $ kotoref()
+    $ layeredimage_ref("yuri")
+    $ layeredimage_ref("sayori")
+    $ layeredimage_ref("natsuki")
+    $ layeredimage_ref("kotonoha")
+    $ layeredimage_ref("Monika")
     $ storysread = 0
     $ skip_transition = False
     label storyresponse_loop:

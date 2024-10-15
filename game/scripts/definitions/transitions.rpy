@@ -46,7 +46,7 @@ transform ZoomTransition(new_widget, old_widget, t=.5, glitch_amt=1.0):
     easein_circ t * 1.75 zoom 1.1 blur 0 matrixcolor BrightnessMatrix(0) u_rx 0 u_bx 0
     ease_cubic t zoom 1
 
-label deadfast(new_scene=""): 
+label deadfast(new_scene): 
     window hide
     $ audio.deadamb = "mod_assets/sounds/deadamb.ogg"
     play sound deadmantrans
@@ -59,3 +59,28 @@ label deadfast(new_scene=""):
     play sound deadmantransout
     hide veins with blink
     $ renpy.music.stop(channel="ambience", fadeout=0.5)
+    return
+
+transform center_zoom(start=1.0, end=2.0, t=1.0):
+    truecenter
+    zoom start
+    linear t zoom end
+
+label chapter_trans(name):
+    scene black with dissolve_scene_full
+    window hide
+    show location_text "Chapter [chapter]:\n[name]" zorder 10000 at center_zoom(0.5, 1.0, 5.0) with Dissolve(2.0)
+    $ pause(1.0)
+    hide location_text with Dissolve(2.0)
+    return
+
+image act1_logo = "mod_assets/Act1_logo.png"
+image act2_logo = "mod_assets/Act2_logo.png"
+
+label act_trans:
+    scene black with dissolve_scene_full
+    window hide
+    show expression "act[act]_logo" as show_logo zorder 10000 at center_zoom(0.5, 1.0, 5.0) with Dissolve(2.0)
+    $ pause(1.0)
+    hide show_logo with Dissolve(2.0)
+    return
