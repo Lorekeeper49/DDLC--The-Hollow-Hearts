@@ -336,7 +336,9 @@ label act2_ch3_alt:
     scene bg top_kitchen
     show dark zorder 10 
     with wipeleft_scene
-    ""
+    "I don't know how I haven't been attacked yet."
+    "With every step I take, I regret this more."
+    a "Damnit, just kill me already!"
 
     scene bg bad_bedroom
     show dark zorder 10 
