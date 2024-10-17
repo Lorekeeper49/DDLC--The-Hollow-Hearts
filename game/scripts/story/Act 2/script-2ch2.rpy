@@ -309,7 +309,7 @@ label act2_ch2_alt:
     with dissolve_scene_full
     a "*Sigh*"
     "I don't know why I keep coming back here..."
-    scene bg pasteur_day with wipeleft
+    scene bg pasteur_day with wiperight
     t "Hey..."
     a "Hello...?"
     a "You don't sound too good..."
@@ -320,5 +320,49 @@ label act2_ch2_alt:
     t "My sister's dead!"
     t "He killed her..."
     t "He fucking killed her!"
+    a "fuck... fuck... fuck... FUCK... FUCK..."
+    t "Doesn't exactly help, but you said it."
+    a "Sorry..."
+    a "I've never been good at these types of things."
+    a "I don't even know why I come here anymore..."
+    t "You and me both."
+    t "But..."
+    t "..."
+    t "Damn it!"
+    t "Sorry, I'm ruining our usual."
+    t "I should've cancelled for today."
+    "..."
+    scene bg wilderness with wipeleft
+    "Without knowing why, I go to the other side and give him a hug."
+    "If I can't even communicate with people, I might as well comfort the only person I've ever been able to regularly talk with."
+    scene black with dissolve
+    t "..."
+    a "..."
+    $ pause(1.0)
+    scene wilderness with dissolve
+    "We release..."
+    show taiyen zorder 2 at t11
+    t "Thank you, I really needed that."
+    a "You shouldn't go to school today."
+    t "I actually cancelled school today thanks to the incident."
+    a "Right, you and your family own that school."
+    t "Yeah..."
+    t "But you've still got school, right?"
+    a "Hm..."
+    "I'm considering something."
+    a "Call me crazy, but..."
+    "What am I doing?"
+    a "I don't think you should be alone today."
+    "?"
+    t "Huh?  You sure?"
+    "Confused, I snap out of whatever trance I was in."
+    a "Sorry.  I have no idea what the fuck I am doing!"
+    t "No no, it's fine!  You just surprised me is all."
+    a "No I truly have no idea what I'm-"
+    t "If you're truly sure about this, then follow me home.  I trust you with my location."
+    a "But don't blame me if this ends up hurting your grade!"
+    "He starts walking away."
+    a "Ah! Fuck it!"
+    "I begin following him."
     
     return
