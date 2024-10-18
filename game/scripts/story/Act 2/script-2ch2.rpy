@@ -412,6 +412,15 @@ label act2_ch2_follow:
     a "Be back in an hour."
     scene bg bathroom with wipeleft_scene
     call showlocation("55 minutes later","October 9, 2023",13*60+54+57/60.0,"bg house")
+    a "*Big exhale*"
+    "I set my tools down."
+    "I've been working very hard."
+    a "Hope I at least helped out if not made things easier."
+    a "..."
+    a "Huh?"
+    "I spot something on the floor."
+    a "The hell is this?"
+    call playlog(log1, "", "bg bathroom")
 
     return
 
