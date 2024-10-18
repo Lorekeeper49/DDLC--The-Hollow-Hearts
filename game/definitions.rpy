@@ -1690,6 +1690,7 @@ default known = False
 default found_breaker = False
 default secrets = False
 default en_out = False
+default followed = False
 default persistent.choices_made = []
 
 # - miscellaneous

@@ -362,7 +362,24 @@ label act2_ch2_alt:
     t "If you're truly sure about this, then follow me home.  I trust you with my location."
     a "But don't blame me if this ends up hurting your grade!"
     "He starts walking away."
-    a "Ah! Fuck it!"
-    "I begin following him."
+    menu(time=5,force=1):
+        "Follow him":
+            a "Ah! Fuck it!"
+            "I begin following him."
+            $ followed = True
+            $ persistent.choices_made.append("Followed Taiyen")
+            call act2_ch2_follow
+        "Run away":
+            $ followed = False
+            $ persistent.choices_made.append("Ran away from Taiyen")
+            call act2_ch2_run
     
+    return
+
+label act2_ch2_follow:
+
+    return
+
+label act2_ch2_run:
+
     return
