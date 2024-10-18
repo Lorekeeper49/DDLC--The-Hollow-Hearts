@@ -302,6 +302,7 @@ label act2_ch2_main:
 
 label act2_ch2_alt:
     stop music fadeout 2.0
+    play music confdep
     play ambience forest
     scene bg tree
     with dissolve_scene_full
