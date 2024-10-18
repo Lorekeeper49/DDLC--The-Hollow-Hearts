@@ -408,6 +408,8 @@ label act2_ch2_follow:
     "I'm supposed to have woodshop class today, so..."
     "I may not know the wanted result, but I may be able to continue some of the renovations."
     a "Be back in an hour."
+    scene bg bathroom with wipeleft_scene
+    call showlocation("55 minutes later","October 9, 2023",13*60+54+57/60.0,"bg house")
 
     return
 
