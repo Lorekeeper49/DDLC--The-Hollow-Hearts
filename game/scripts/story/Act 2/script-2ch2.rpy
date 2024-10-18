@@ -334,11 +334,11 @@ label act2_ch2_alt:
     scene bg wilderness with wipeleft
     "Without knowing why, I go to the other side and give him a hug."
     "If I can't even communicate with people, I might as well comfort the only person I've ever been able to regularly talk with."
-    scene black with dissolve
+    scene black with dissolve_scene
     t "..."
     a "..."
     $ pause(1.0)
-    scene wilderness with dissolve
+    scene bg wilderness with dissolve_scene
     "We release..."
     show taiyen zorder 2 at t11
     t "Thank you, I really needed that."
@@ -360,6 +360,7 @@ label act2_ch2_alt:
     a "No I truly have no idea what I'm-"
     t "If you're truly sure about this, then follow me home.  I trust you with my location."
     a "But don't blame me if this ends up hurting your grade!"
+    hide taiyen
     "He starts walking away."
     menu(time=5,force=1):
         "Follow him":
