@@ -29,7 +29,7 @@ screen log(currentlog):
         draggable True
         has vbox
         null height 40
-        text "[currentlog.title]\n\n[currentlog.text]" style "monika_text"
+        text "[currentlog.title]\n\n[currentlog.text]"
         null height 100
     vbar value YScrollValue(viewport="vp") style "log_vbar"
 
