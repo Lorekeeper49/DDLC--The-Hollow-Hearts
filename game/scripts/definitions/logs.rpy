@@ -10,17 +10,6 @@ init python:
     """
     )
 
-    
-
-transform paper_in:
-    truecenter
-    alpha 0
-    linear 1.0 alpha 1
-
-transform paper_out:
-    alpha 1
-    linear 1.0 alpha 0
-
 screen log(currentlog):
     style_prefix "log"
     viewport id "vp":
@@ -32,8 +21,6 @@ screen log(currentlog):
         text "[currentlog.title]\n\n[currentlog.text]"
         null height 100
     vbar value YScrollValue(viewport="vp") style "log_vbar"
-
-
 
 style log_vbox:
     xalign 0.5
@@ -61,11 +48,9 @@ label playlog(currentlog=None, logaudio=None, bgreturn=""):
     play sound logaudio
     window hide
     $ renpy.game.preferences.afm_enable = False
-    show screen log(currentlog)
-    with Dissolve(1)
+    show screen log(currentlog) with Dissolve(1)
     $ pause()
-    hide screen log
-    with Dissolve(.5)
+    hide screen log with Dissolve(.5)
     window auto
     scene expression bgreturn with dissolve_scene
     return
