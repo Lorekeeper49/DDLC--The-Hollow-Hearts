@@ -266,9 +266,7 @@ label act2_ch2_main:
     a "Okay...  What do you think he's say...\nEh?"
     hide hanato
     a "Do you... hear that?"
-    window hide 
-    with Shake((0, 0, 0, 0), 5.0, dist=50)
-    "Both" "*Screaming*{w=2}{nw}"
+    "Both" "*Screaming*{w=2}{nw}" with Shake((0, 0, 0, 0), 5.0, dist=50)
     scene bg sewer_hall with wipeleft_scene
     stop ambience
     a "*Huff* *Puff*\nWhere are we?"
@@ -366,10 +364,12 @@ label act2_ch2_alt:
         "Follow him":
             a "Ah! Fuck it!"
             "I begin following him."
+            stop ambience fadeout 1.0
             $ followed = True
             $ persistent.choices_made.append("Followed Taiyen")
             call act2_ch2_follow
         "Run away":
+            stop ambience fadeout 1.0
             $ followed = False
             $ persistent.choices_made.append("Ran away from Taiyen")
             call act2_ch2_run
@@ -397,11 +397,17 @@ label act2_ch2_follow:
     a "This place is nice."
     t "No, it's not."
     t "It's under indefinitely delayed renovation."
-    t "You can see that beyond the stairs."
+    t "You can see that beyond the stairs back there."
     "Behind the stairs, the walls and floor are covered in white paper."
     a "Well, besides that, I really like the place."
     t "Thanks, it's where I was born, and I don't plan on moving anytime soon."
     a "*Chuckle*"
+    hide taiyen
+    "Huh?  There's a blueprint here."
+    t "What are you doing with that?"
+    "I'm supposed to have woodshop class today, so..."
+    "I may not know the wanted result, but I may be able to continue some of the renovations."
+    a "Be back in an hour."
 
     return
 
