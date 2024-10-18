@@ -373,10 +373,35 @@ label act2_ch2_alt:
             $ followed = False
             $ persistent.choices_made.append("Ran away from Taiyen")
             call act2_ch2_run
-    
     return
 
 label act2_ch2_follow:
+    scene bg house with wipeleft_scene
+    "I don't know what's drawing me to him, but it's too late to turn back now."
+    show taiyen zorder 2 at t11
+    t "Please, come in."
+    a "Sorry...  I just..."
+    a "I don't..."
+    a "I-I-I-"
+    a "I've never been... social... with anyone before..."
+    t "That's fine."
+    t "Why do you think I've talked to you behind a tree all this time?"
+    a "You've... got a point."
+    a "But I honestly don't know why I keep coming back there..."
+    t "Well, it brought you here."
+    t "So come on."
+    "Wordlessly, I walk in."
+    scene bg tlivingroom
+    show taiyen zorder 2 at t11 
+    with wipeleft
+    a "This place is nice."
+    t "No, it's not."
+    t "It's under indefinitely delayed renovation."
+    t "You can see that beyond the stairs."
+    "Behind the stairs, the walls and floor are covered in white paper."
+    a "Well, besides that, I really like the place."
+    t "Thanks, it's where I was born, and I don't plan on moving anytime soon."
+    a "*Chuckle*"
 
     return
 
