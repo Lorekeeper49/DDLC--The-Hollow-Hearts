@@ -420,7 +420,23 @@ label act2_ch2_follow:
     a "Huh?"
     "I spot something on the floor."
     a "The hell is this?"
+    stop music
     call playlog(log1, "", "bg bathroom")
+    a "The fuck?"
+    play sound "sfx/monikapound.ogg"
+    show bg factory with Fade(0.1, 0.0, 0.1, color="#fff")
+    $ pause(0.25)
+    hide bg factory 
+    show veins
+    with Fade(0.1, 0.0, 0.1, color="#fff")
+    a "Agh!"
+    a "I'm alright!"
+    a "*Steadied breathing*"
+    hide veins with dissolve_scene
+    a "I'm okay."
+    "I should head back."
+    play music confdep
+    scene bg tlivingroom with wipeleft_scene
 
     return
 
