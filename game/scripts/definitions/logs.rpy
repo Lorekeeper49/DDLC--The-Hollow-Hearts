@@ -45,7 +45,7 @@ label playlog(currentlog=None, logaudio=None, bgreturn=""):
     scene black with dissolve_scene
     if currentlog == None or logaudio == None:
         return
-    play sound logaudio
+    play sound "mod_assets/logs/" + logaudio + ".ogg"
     window hide
     $ renpy.game.preferences.afm_enable = False
     show screen log(currentlog) with Dissolve(1)
