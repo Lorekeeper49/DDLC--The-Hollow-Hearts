@@ -480,7 +480,7 @@ label act2_ch2_follow:
     t "Besides, looks don't do it for me."
     t "It's {i}personality{/i} that matters."
     a "That's good."
-    "At least {i}some{/i} men are sensible about girls."
+    "At least {i}some{/i} men are considerate about girls."
     scene bg tlivingroom with wipeleft_scene
     call showlocation("9 hours later","October 9, 2023",20*60+59+57/60.0,"bg tlivingroom")
 
