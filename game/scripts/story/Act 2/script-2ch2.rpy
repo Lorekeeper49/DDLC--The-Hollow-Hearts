@@ -481,13 +481,19 @@ label act2_ch2_follow:
     t "It's {i}personality{/i} that matters."
     a "That's good."
     "At least {i}some{/i} men are considerate about girls."
-    scene bg tlivingroom_night with wipeleft_scene
+    call playlog(log2, "", "bg tlivingroom_night")
     call showlocation("9 hours later","October 9, 2023",20*60+59+57/60.0,"bg tlivingroom_night")
     "Late at night."
     show taiyen zorder 2 at t11
     t "Well, I'm gonna head to bed."
     t "Thank you for today.  You really helped me out."
-    
+    t "Get home safe, okay?"
+    t "Have a good night."
+    hide taiyen
+    "He begins to walk off."
+    a "Wait!"
+    "He stops."
+    a "I don't...  I don't have a home..."
 
     return
 
