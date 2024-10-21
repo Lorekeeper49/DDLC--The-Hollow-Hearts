@@ -484,6 +484,10 @@ label act2_ch2_follow:
     scene bg tlivingroom_night with wipeleft_scene
     call showlocation("9 hours later","October 9, 2023",20*60+59+57/60.0,"bg tlivingroom_night")
     "Late at night."
+    show taiyen zorder 2 at t11
+    t "Well, I'm gonna head to bed."
+    t "Thank you for today.  You really helped me out."
+    
 
     return
 

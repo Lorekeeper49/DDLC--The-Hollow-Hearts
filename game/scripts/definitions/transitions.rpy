@@ -67,6 +67,7 @@ transform center_zoom(start=1.0, end=2.0, t=1.0):
     linear t zoom end
 
 label chapter_trans(name):
+    stop music fadeout 2.0
     scene black with dissolve_scene_full
     window hide
     show location_text "Chapter [chapter]:\n[name]" zorder 10000 at center_zoom(0.5, 1.0, 5.0) with Dissolve(2.0)
@@ -78,6 +79,7 @@ image act1_logo = "mod_assets/Act1_logo.png"
 image act2_logo = "mod_assets/Act2_logo.png"
 
 label act_trans:
+    stop music fadeout 2.0
     scene black with dissolve_scene_full
     window hide
     show expression "act[act]_logo" as show_logo zorder 10000 at center_zoom(0.5, 1.0, 5.0) with Dissolve(2.0)
