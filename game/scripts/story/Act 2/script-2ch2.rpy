@@ -436,7 +436,33 @@ label act2_ch2_follow:
     a "I'm okay."
     "I should head back."
     play music confdep
-    scene bg tlivingroom with wipeleft_scene
+    scene bg kitchen with wipeleft_scene
+    a "I'm back."
+    show taiyen zorder 2 at t11
+    t "..."
+    a "Taiyen?"
+    t "Huh?"
+    t "Oh, sorry."
+    t "Forgive me, I was thinking about a lot of stuff at once."
+    a "Can you talk about it?"
+    t "It would be... unpleasent for you to learn..."
+    a "I understand."
+    "I really don't, but I don't wanna press further."
+    t "You worked hard back there?"
+    a "Besides the design, I finished up most of the renovations."
+    "I decide not to mention the voice log."
+    t "Do you mind if I check your work?"
+    a "Not at all, I gotta get evaluation for woodshop make-up anyway."
+    t "Is there a paper for that."
+    a "There is, but I can't print that."
+    a "So instead, just record it with my phone."
+    "I say as I willingly hand him my phone."
+    a "Feel free to put your number on there as well, I wanna open opportunities to talk more."
+    t "I'll be right back."
+    hide taiyen
+    "He walks off."
+    "I realize how risky that might've been; giving him my phone."
+    "But hey, I trust him."
 
     return
 
