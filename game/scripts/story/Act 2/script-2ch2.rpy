@@ -467,13 +467,22 @@ label act2_ch2_follow:
     "Just eating the lunch he cooked up."
     show taiyen zorder 2 at t11
     t "I've finished with the evaluation."
+    "He hands back my phone."
     t "You did a great job."
-    t "With your help, this place could actually be finsihed up soon."
+    t "With your help, this place could actually be finished up soon."
     a "Thanks."
-    "Glad to appreciation of my work."
+    "Glad to have appreciation of my work."
     t "Can I just say..."
     t "You're kinda cute."
     a "Eh, What?"
+    a "No no.  I'm not cute.  I'm just a shy girl, no one special."
+    t "It's fine, it's okay."
+    t "Besides, looks don't do it for me."
+    t "It's {i}personality{/i} that matters."
+    a "That's good."
+    "At least {i}some{/i} men are sensible about girls."
+    scene bg tlivingroom with wipeleft_scene
+    call showlocation("9 hours later","October 9, 2023",20*60+59+57/60.0,"bg tlivingroom")
 
     return
 
