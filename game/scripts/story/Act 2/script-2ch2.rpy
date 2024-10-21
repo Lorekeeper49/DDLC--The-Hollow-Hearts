@@ -463,6 +463,17 @@ label act2_ch2_follow:
     "He walks off."
     "I realize how risky that might've been; giving him my phone."
     "But hey, I trust him."
+    scene bg kitchen with wipeleft_scene
+    "Just eating the lunch he cooked up."
+    show taiyen zorder 2 at t11
+    t "I've finished with the evaluation."
+    t "You did a great job."
+    t "With your help, this place could actually be finsihed up soon."
+    a "Thanks."
+    "Glad to appreciation of my work."
+    t "Can I just say..."
+    t "You're kinda cute."
+    a "Eh, What?"
 
     return
 
