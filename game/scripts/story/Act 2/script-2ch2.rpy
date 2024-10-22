@@ -506,6 +506,8 @@ label act2_ch2_follow:
     show dark zorder 1
     with wipeleft_scene
 
+    call playlog(log3, "", "black")
+    "Unfortunately, it did..."
     return
 
 label act2_ch2_run:

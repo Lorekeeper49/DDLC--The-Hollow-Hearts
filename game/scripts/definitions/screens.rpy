@@ -824,36 +824,44 @@ init -1 style ui_text:
 
 
 init -501 screen history():
-    tag menu
     predict False
 
-    use game_menu(_("History"), scroll=("vpgrid" if gui.history_height else "viewport")):
-        style_prefix "history"
+    use game_menu
 
-        for h in _history_list:
+    fixed at game_menu_transform:
+        yoffset -10
+        viewport id "vp":
+            mousewheel True
+            draggable True
+            has vbox
+            null height 40
+            style_prefix "history"
 
-            window:
-                yoffset -100
+            for h in _history_list:
 
-                has fixed:
-                    yfit True
+                window:
+                    
 
-                if h.who:
+                    has fixed:
+                        yfit True
 
-                    label h.who:
-                        style "history_name"
+                    if h.who:
+
+                        label h.who:
+                            style "history_name"
 
 
 
-                        if "color" in h.who_args:
-                            text_color h.who_args["color"]
+                            if "color" in h.who_args:
+                                text_color h.who_args["color"]
 
-                text h.what
-                if renpy.exists("mod_assets/voicelines/[h.id].ogg"):
-                    textbutton PLAY action Play("voice", "mod_assets/voicelines/[h.id].ogg")
+                    text h.what
+                    if renpy.exists("mod_assets/voicelines/[h.id].ogg"):
+                        textbutton "PLAY" action Play("voice", "mod_assets/voicelines/[h.id].ogg")
 
-        if not _history_list:
-            label _("The dialogue history is empty.")
+            if not _history_list:
+                label _("The dialogue history is empty.")
+            vbar value YScrollValue(viewport="vp")
 
 
 init -1 style history_window is empty

@@ -9,6 +9,18 @@ init python:
         text = """\
     """
     )
+    log2 = Log(
+        title = "Log 2", 
+        text = """\
+    """
+    )
+    log3 = Log(
+        title = "Final log", 
+        text = """\
+        The experiment failed, they're completely different people now, I've destroyed them.
+        What we failed to realize was 
+    """
+    )
 
 screen log(currentlog):
     style_prefix "log"
