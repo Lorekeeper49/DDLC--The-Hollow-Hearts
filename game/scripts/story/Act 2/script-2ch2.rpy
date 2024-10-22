@@ -421,7 +421,7 @@ label act2_ch2_follow:
     "I spot something on the floor."
     a "The hell is this?"
     stop music
-    call playlog(log1, "", "bg bathroom")
+    call playlog(log1, "bg bathroom")
     a "The fuck?"
     play sound "sfx/monikapound.ogg"
     show bg factory with Fade(0.1, 0.0, 0.1, color="#fff")
@@ -481,7 +481,7 @@ label act2_ch2_follow:
     t "It's {i}personality{/i} that matters."
     a "That's good."
     "At least {i}some{/i} men are considerate about girls."
-    call playlog(log2, "", "bg tlivingroom_night")
+    call playlog(log2, "bg tlivingroom_night")
     call showlocation("9 hours later","October 9, 2023",20*60+59+57/60.0,"bg tlivingroom_night")
     "Late at night."
     show taiyen zorder 2 at t11
@@ -506,7 +506,7 @@ label act2_ch2_follow:
     show dark zorder 1
     with wipeleft_scene
 
-    call playlog(log3, "", "black")
+    call playlog(log3, "black")
     "Unfortunately, it did..."
     return
 
