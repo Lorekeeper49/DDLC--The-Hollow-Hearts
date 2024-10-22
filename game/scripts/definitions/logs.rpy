@@ -15,10 +15,11 @@ init python:
     """
     )
     log3 = Log(
-        title = "Final log", 
+        title = "Final Log", 
         text = """\
         The experiment failed, they're completely different people now, I've destroyed them.
-        What we failed to realize was 
+        What we failed to realize was that every attribute was tied to the person's personality.  To change one's attribute, you must change their personality.  What we were essentially trying to do without realizing it is allow them to change their attribute without changing their personality.  You can imagine how mcuh of an issue that can become when you attempt to put it into practice.
+
     """
     )
 
@@ -32,7 +33,15 @@ screen log(currentlog):
         null height 40
         text "[currentlog.title]\n\n[currentlog.text]"
         null height 100
+    frame at duration_transform:
+        xsize 1280
+        ysize 720
+        background Solid("#00f7ff50")
     vbar value YScrollValue(viewport="vp") style "log_vbar"
+
+transform duration_transform:
+    ypos -720
+    linear renpy.music.get_duration(channel='sound') ypos 0
 
 style log_vbox:
     xalign 0.5
@@ -51,7 +60,6 @@ style log_text:
     size 34
     color "#ffffff"
     outlines []
-    text_align 0.5
 
 label playlog(currentlog=None, logaudio=None, bgreturn=""):
     scene black with dissolve_scene
