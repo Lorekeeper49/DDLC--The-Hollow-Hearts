@@ -7,20 +7,27 @@ init python:
     log1 = Log(
         title = "Log 1", 
         text = """\
+    The purpose of these logs is to give information about the Breaker experiment and how exactly it went in the process of production.  The reason why these are physical logs not saved onto my computer is because I don't want this information to be leaked before we can release this for public use.
+    The purpose of Breaker is to allow people to remove their current attribute amnd either exchange it for another one, or stay without it and be ordinary, whatever that means.
+    Five test subjects have volunteered to take the substance: Kamiyama Kirinani, Luna Dominion, Yandere Lilly, Kusanoki Mari, and Settou Seiei.  Tests begin tomorrow, let's hope this goes well.
     """
     )
     log2 = Log(
         title = "Log 2", 
         text = """\
+    TESTS ONE AND TWO COMPLETE.  AWAITING RESULTS...
+    The tests are going smoothly, that or my son is lying to me.  I always worry about lies, even if they're from my own family...
+    That's off-topic.  What's on-topic is that the tests seem to be going off without a hitch.  I'm still waiting on accurate results, but our volunteers might just be in store for a better future, here's hoping.
+    TEST THREE is tonight, results should come by then.
     """
     )
     log3 = Log(
         title = "Final Log", 
         text = """\
-        The experiment failed, they're completely different people now, I've destroyed them.
-        What we failed to realize was that every attribute was tied to the person's personality.  To change one's attribute, you must change their personality.  What we were essentially trying to do without realizing it is allow them to change their attribute without changing their personality.  You can imagine how mcuh of an issue that can become when you attempt to put it into practice.
-        Now they are suffering, and it's all because of me!  I know I should do it myself, but I want someone to end their suffering before it escalates for the worse.  I am not a killer, but I know I can't let them live like this!  Damnit!  This is all my fault!
-        I just hope... that this won't come back to bite me.
+    The experiment failed, they're completely different people now, I've destroyed them.
+    What we failed to realize was that every attribute was tied to the person's personality.  To change one's attribute, you must change their personality.  What we were essentially trying to do without realizing it is allow them to change their attribute without changing their personality.  You can imagine how mcuh of an issue that can become when you attempt to put it into practice.
+    Now they are suffering, and it's all because of me!  I know I should do it myself, but I want someone to end their suffering before it escalates for the worse.  I am not a killer, but I know I can't let them live like this!  Damnit!  This is all my fault!
+    I just hope... that this won't come back to bite me.
     """
     )
 
