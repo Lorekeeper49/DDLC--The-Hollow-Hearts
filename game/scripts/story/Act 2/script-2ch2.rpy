@@ -521,7 +521,30 @@ label act2_ch2_follow:
     a "I'm sorry?"
     t "Nothing."
     t "Not much else I can do for you.  I'm outta practice."
-
+    a "Don't worry about it."
+    a "This is enough."
+    a "Thank you."
+    "I'm smiling."
+    t "..."
+    t "Well, I'm off to bed."
+    t "Have a good night."
+    a "You too."
+    hide taiyen
+    "He leaves and I try on the clothes he gave me."
+    scene bg kotoroom
+    show dark zorder 1
+    with wipeleft_scene
+    show aoruguri crossed casual zorder 2 at t11
+    "Not bad."
+    "Feels nice to have different clothes on for once."
+    hide aoruguri
+    "I've let Mari know what's going on because she tends to get worried when I'm gone for extended periods of time."
+    "I don't find that annoying at all, though."
+    "She treats me like her daughter and I'm grateful for that."
+    a "..."
+    a "What to do...  What to do..."
+    "I remember the voice logs"
+    "Got one more in here."
     call playlog(log3, "black")
     "Unfortunately, it did..."
     return
