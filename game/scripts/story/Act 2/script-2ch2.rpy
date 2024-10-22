@@ -505,5 +505,14 @@ label act2_ch2_run:
     "I'll have to apologize to him later..."
     scene bg kamiclassday with wipeleft_scene
     call showlocation("Woodshop Class","October 9, 2023",12*60+54+57/60.0,"bg kamiclassnight")
+    "Having trouble staying focused."
+    show akira 1a zorder 2 at t11
+    ak "Aoruguri, let's talk."
+    a "Not now.  I need to focus."
+    ak "You need a distraction."
+    a "Look, Taiyen just told me he lost his sister, I'm not in the right mindset for casual conversation."
+    ak "Actually, that's what this is about."
+    a "..."
+    a "Fine, continue."
 
     return
