@@ -495,6 +495,16 @@ label act2_ch2_follow:
     "He stops."
     a "I don't...  I don't have a home..."
     t "What?!"
+    a "You might've noticed that I never changed out my uniform."
+    t "Well I just assumed that was because..."
+    t "Are you serious?"
+    "I nod."
+    t "Hmm."
+    t "Head to Koto-chan's room, it's up the stairs at the front.  I'll get you some casual clothing."
+    a "Okay."
+    scene bg kotoroom
+    show dark zorder 1
+    with wipeleft_scene
 
     return
 
