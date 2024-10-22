@@ -481,8 +481,10 @@ label act2_ch2_follow:
     t "It's {i}personality{/i} that matters."
     a "That's good."
     "At least {i}some{/i} men are considerate about girls."
+    stop music
     call playlog(log2, "bg tlivingroom_night")
     call showlocation("9 hours later","October 9, 2023",20*60+59+57/60.0,"bg tlivingroom_night")
+    play music confdep
     "Late at night."
     show taiyen zorder 2 at t11
     t "Well, I'm gonna head to bed."
@@ -492,6 +494,7 @@ label act2_ch2_follow:
     hide taiyen
     "He begins to walk off."
     a "Wait!"
+    show taiyen zorder 2 at t11
     "He stops."
     a "I don't...  I don't have a home..."
     t "What?!"
@@ -505,6 +508,19 @@ label act2_ch2_follow:
     scene bg kotoroom
     show dark zorder 1
     with wipeleft_scene
+    "It feels weirdly wrong to be in a deceased girl's room."
+    "I don't even want to wear her clothes..."
+    "Not that they fit me in the first place."
+    show taiyen zorder 2 at t11
+    t "Here."
+    "Speaking of clothes."
+    t "You can wear those after school tomorrow."
+    t "They're duplicates of the exact outfit I'm wearing."
+    a "I can try them on now.  You know storms don't sleep, right?"
+    t "Right...  (Should've known that after I...)"
+    a "I'm sorry?"
+    t "Nothing."
+    t "Not much else I can do for you.  I'm outta practice."
 
     call playlog(log3, "black")
     "Unfortunately, it did..."
