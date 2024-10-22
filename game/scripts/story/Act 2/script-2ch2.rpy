@@ -494,6 +494,7 @@ label act2_ch2_follow:
     a "Wait!"
     "He stops."
     a "I don't...  I don't have a home..."
+    t "What?!"
 
     return
 
