@@ -545,7 +545,7 @@ label act2_ch2_follow:
     a "What to do...  What to do..."
     "I remember the voice logs"
     "Got one more in here."
-    call playlog(log3, "black")
+    call playlog(finallog, "black")
     "Unfortunately, it did..."
     return
 
