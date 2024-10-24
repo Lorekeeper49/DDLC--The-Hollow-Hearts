@@ -482,7 +482,7 @@ label act2_ch2_follow:
     a "That's good."
     "At least {i}some{/i} men are considerate about girls."
     stop music
-    call playlog(log2, "bg tlivingroom_night")
+    call playlog(log5, "bg tlivingroom_night")
     call showlocation("9 hours later","October 9, 2023",20*60+59+57/60.0,"bg tlivingroom_night")
     play music confdep
     "Late at night."

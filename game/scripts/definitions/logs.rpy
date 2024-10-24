@@ -9,11 +9,17 @@ init python:
         text = """\
     The purpose of these logs is to give information about the Breaker experiment and how exactly it went in the process of production.  The reason why these are physical logs not saved onto my computer is because I don't want this information to be leaked before we can release this for public use.
     The purpose of Breaker is to allow people to remove their current attribute amnd either exchange it for another one, or stay without it and be ordinary, whatever that means.
-    Five test subjects have volunteered to take the substance: Kamiyama Kirinani, Luna Dominion, Yandere Lilly, Kusanoki Mari, and Settou Seiei.  Tests begin tomorrow, let's hope this goes well.
+    Five test subjects have volunteered to take the substance: Kamiyama Kirinani, Luna Dominion, Yandere Lilly, Kusunoki Mari, and Settou Seiei.  We'll supply these logs with tutorials on how to perform the procedure safely.
+
+    Another thing, this is off-topic but important, my son seems to be taking care of a peculiar storm for the time being.  DNA tests reveal she is the daughter of Kusunoki Mari.  That girl never had a good family... 
+    Taiyen...
+    Please...
+    If your hearing this...
+    Take care of her daughter.
     """
     )
-    log2 = Log(
-        title = "Log 2", 
+    log5 = Log(
+        title = "Log 5", 
         text = """\
     TESTS ONE AND TWO COMPLETE.  AWAITING RESULTS...
     The tests are going smoothly, that or my son is lying to me.  I always worry about lies, even if they're from my own family...
@@ -21,7 +27,7 @@ init python:
     TEST THREE is tonight, results should come by then.
     """
     )
-    log3 = Log(
+    finallog = Log(
         title = "Final Log", 
         text = """\
     The experiment failed, they're completely different people now, I've destroyed them.
