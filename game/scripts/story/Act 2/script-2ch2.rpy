@@ -421,7 +421,7 @@ label act2_ch2_follow:
     "I spot something on the floor."
     a "The hell is this?"
     stop music
-    call playlog(log1, "bg bathroom")
+    call playlog(log1, "bg bathroom", 84.0)
     a "The fuck?"
     play sound "sfx/monikapound.ogg"
     show bg factory with Fade(0.1, 0.0, 0.1, color="#fff")
@@ -482,7 +482,7 @@ label act2_ch2_follow:
     a "That's good."
     "At least {i}some{/i} men are considerate about girls."
     stop music
-    call playlog(log5, "bg tlivingroom_night")
+    call playlog(log5, "bg tlivingroom_night", 35.0)
     call showlocation("9 hours later","October 9, 2023",20*60+59+57/60.0,"bg tlivingroom_night")
     play music confdep
     "Late at night."
@@ -545,7 +545,7 @@ label act2_ch2_follow:
     a "What to do...  What to do..."
     "I remember the voice logs"
     "Got one more in here."
-    call playlog(finallog, "black")
+    call playlog(finallog, "black", 75.0)
     "Unfortunately, it did..."
     return
 
