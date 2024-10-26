@@ -79,11 +79,16 @@ label playlog(currentlog=None, bgreturn=""):
     scene black with dissolve_scene
     if currentlog == None:
         return
-    play sound "mod_assets/logs/" + currentlog.title + ".ogg"
+    if renpy.exists("mod_assets/logs/" + currentlog.title + ".ogg"):
+        play sound "mod_assets/logs/" + currentlog.title + ".ogg"
+    else:
+        play ambience static
     window hide
     $ renpy.game.preferences.afm_enable = False
     show screen log(currentlog) with Dissolve(1)
     $ pause()
+    stop ambience
+    stop sound
     hide screen log with Dissolve(.5)
     window auto
     scene expression bgreturn with dissolve_scene
