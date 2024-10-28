@@ -82,7 +82,7 @@ label act2_ch1_main:
     a "Fuck it, take me there!"
     ak 1ab "Come on then!"
     scene bg kamihallnight with wipeleft_scene
-    call showlocation("Kamiyama Academy 3F","October 8, 2023",659.95) from _call_showlocation_38
+    call showlocation("Kamiyama Academy 3F","October 8, 2023",659.95,"bg kamihallnight") from _call_showlocation_38
     "Why do they always put the night atmosphere on during clubtime?"
     "Like I like the the illusion, but most find it unusual."
     show akira 1ab zorder 2 at t11
@@ -117,7 +117,7 @@ label act2_ch1_main:
     a "Until midnight?"
     a "Well, lucky for you, storms don't sleep."
     scene bg kamiclassnight with wipeleft_scene
-    call showlocation("Midnight", "Monday, October 8, 2023",0.0,"night") from _call_showlocation_39
+    call showlocation("Midnight", "Monday, October 8, 2023",0.0,"black") from _call_showlocation_39
     "Very glad storms don't get tired because I have been training for 8 hours straight, only stopping to go to the bathroom."
     show kotonoha turned casual anno rhip om zorder 5 at t11
     k "Everyone!  Places at the table!"
@@ -217,5 +217,18 @@ label act2_ch1_alt:
     a "I'm sorry...  I couldn't do it!"
     ma sad "Aoruguri..."
     scene black with dissolve_scene
+    ma "Hey, honey...  It's okay."
+    ma "You're okay."
+    ma "Here..."
+    play sound static
+    scene noise with None
+    $ pause(0.1)
+    stop sound
+    scene bg office with None
+    ma "Let's head to my office, okay?"
+    a "Okay..."
+    scene bg mari_office with dissolve_scene_full
+    call showlocation("Kamiyama Academy\nPrincipal's Office", "Monday, October 8, 2023",659.95,"bg mari_office")
+    call showintro(intro_mari)
     
     return
