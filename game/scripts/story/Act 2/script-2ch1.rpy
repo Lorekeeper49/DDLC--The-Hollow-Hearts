@@ -203,9 +203,19 @@ label act2_ch1_main:
 
 label act2_ch1_alt:
     a "...{w=2}*Inhale*"
+    stop music
     a "I'm sorry, I can't..."
     ak 1al "!!!"
     hide akira
     ak "Aoruguri?  Aoruguri!"
+    scene bg kamihallnight with wipeleft_scene
+    a "*Huff* *Puff*"
+    a "Damnit!  WHY!?"
+    show mari forward worr zorder 2 at t11
+    ma "Aoruguri?"
+    a "Mari..."
+    a "I'm sorry...  I couldn't do it!"
+    ma sad "Aoruguri..."
+    scene black with dissolve_scene
     
     return
