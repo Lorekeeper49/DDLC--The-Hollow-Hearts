@@ -222,7 +222,7 @@ label act2_ch1_alt:
     ma "Here..."
     play sound static
     scene noise with None
-    $ pause(0.1)
+    $ pause(0.15)
     stop sound
     scene bg office with None
     ma "Let's head to my office, okay?"
