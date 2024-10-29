@@ -2,8 +2,8 @@
 label act2_ch1_main:
     $ style.say_window = style.window
     $ nb = "namebox"
-    call showintro(intro_a) from _call_showintro_4
     stop music fadeout 2.0
+    call showintro(intro_a) from _call_showintro_4
     scene black with dissolve_scene
     play music confdep
     scene bg kamihallday with dissolve_scene 
