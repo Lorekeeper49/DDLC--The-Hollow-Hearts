@@ -11,8 +11,8 @@ init python:
     kan = "無理高モニカ",
     name = "Murikou Monika",
     attr = "[UNIDENTIFIED]",
-    bio = "",
-    img = "monika 4"
+    bio = "The president of the literature club, she is a responsible leader with a good heart",
+    img = "monika forward casual happ rhip lpoint"
     )
 
     intro_s = Intro(
@@ -28,7 +28,7 @@ init python:
     name = "Luna Natsuki",
     attr = "- Party Crasher: She can summon and manipulate party props at will.",
     bio = "The tsundere of the literature club, she is a giddy extrovert who--despite many cheerful events from it--doesn't really like her attribute much.",
-    img = "natsuki crossed happ"
+    img = "natsuki crossed casual happ"
     )
 
     intro_y = Intro(
