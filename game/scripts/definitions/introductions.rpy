@@ -125,7 +125,7 @@ init python:
     name = "Kusunoki Mari",
     attr = "- Emotional Trainwreck: ",
     bio = "",
-    img = "mari forward"
+    img = "mari forward happ"
     )
 
     intro_ndad = Intro(

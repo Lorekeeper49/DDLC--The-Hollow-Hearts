@@ -3,8 +3,8 @@ label act2_ch1_main:
     $ style.say_window = style.window
     $ nb = "namebox"
     call showintro(intro_a) from _call_showintro_4
-    scene black with dissolve_scene
     play music confdep
+    scene black with dissolve_scene
     scene bg kamihallday with dissolve_scene 
     $ pause(1)
     play sound lightswitch
@@ -116,7 +116,7 @@ label act2_ch1_main:
     a "Until midnight?"
     a "Well, lucky for you, storms don't sleep."
     scene bg kamiclassnight with wipeleft_scene
-    call showlocation("Midnight", "Monday, October 8, 2023",0.0,"black") from _call_showlocation_39
+    call showlocation("Midnight", "October 8, 2023",0.0,"black") from _call_showlocation_39
     "Very glad storms don't get tired because I have been training for 8 hours straight, only stopping to go to the bathroom."
     show kotonoha turned casual anno rhip om zorder 5 at t11
     k "Everyone!  Places at the table!"
@@ -219,15 +219,15 @@ label act2_ch1_alt:
     ma "Hey, honey...  It's okay."
     ma "You're okay."
     ma "Here..."
-    play sound static
     scene noise with None
+    play sound static
     $ pause(0.15)
     stop sound
     scene bg office with None
     ma "Let's head to my office, okay?"
     a "Okay..."
     scene bg mari_office with dissolve_scene_full
-    call showlocation("Kamiyama Academy\nPrincipal's Office", "Monday, October 8, 2023",659.95,"bg mari_office")
+    call showlocation("Principal's Office", "October 8, 2023",659.95,"bg mari_office")
     call showintro(intro_mari)
     
     return
