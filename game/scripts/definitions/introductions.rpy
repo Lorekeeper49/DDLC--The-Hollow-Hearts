@@ -26,16 +26,16 @@ init python:
     intro_n = Intro(
     kan = "ルナ菜月",
     name = "Luna Natsuki",
-    attr = "- Party Crasher: ",
-    bio = "",
-    img = ""
+    attr = "- Party Crasher: She can summon and manipulate party props at will.",
+    bio = "The tsundere of the literature club, she is a giddy extrovert who--despite many cheerful events from it--doesn't really like her attribute much.",
+    img = "natsuki crossed happ"
     )
 
     intro_y = Intro(
     kan = "ヤンデレ百合",
     name = "Yandere Yuri",
     attr = "- Yangire: A stronger version of the Yandere, along with the ability to summon knives she can also cut herself into pieces to create clones of herself.",
-    bio = "",
+    bio = "The nicest yangire you'll ever meet, she is a calm introvert who's rumored to have a secret dark side.",
     img = "yuri turned casual happ rup"
     )
 
@@ -108,8 +108,8 @@ init python:
     kan = "ティナ",
     name = "Tina",
     attr = "- ",
-    bio = "",
-    img = ""
+    bio = "Lilly's close friend, She is an impetuous, crass, rebellious, but very friendly woman who always looks out for people.",
+    img = "tina turned suit cross happ om"
     )
 
     intro_lil = Intro(
@@ -123,17 +123,17 @@ init python:
     intro_mari = Intro(
     kan = "楠まり",
     name = "Kusunoki Mari",
-    attr = "- Emotional Trainwreck: ",
-    bio = "",
+    attr = "- Emotional Trainwreck: Her abilities are based on her current emotions.",
+    bio = "The Principal of Kamiyama Academy, she is a calm and collected woman despite her attribute, and she loves children.  She treats Aoruguri like her daughter and wants the best for her no matter what.",
     img = "mari forward happ"
     )
 
     intro_ndad = Intro(
     kan = "ルナ哲夫",
     name = "Luna Tetsuo",
-    attr = "- ",
-    bio = "",
-    img = ""
+    attr = "- Copycat: He can copy attributes for a certain amount of time.",
+    bio = "Natsuki's father...  Just look at how bad he is...",
+    img = "tetsuo towards cross"
     )
 
     intro_sei = Intro(
