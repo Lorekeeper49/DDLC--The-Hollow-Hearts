@@ -11,7 +11,7 @@ init python:
     kan = "無理高モニカ",
     name = "Murikou Monika",
     attr = "[UNIDENTIFIED]",
-    bio = "The president of the literature club, she is a responsible leader with a good heart",
+    bio = "The president of the literature club, she is a responsible leader with a good heart.  She aspires to be a historical writer and a reliable woman people can look up to for support.",
     img = "monika forward casual happ rhip lpoint"
     )
 
@@ -107,7 +107,7 @@ init python:
     intro_ti = Intro(
     kan = "ティナ",
     name = "Tina",
-    attr = "- ",
+    attr = "- Ordinary: She has no special abilities, just a normal person.",
     bio = "Lilly's close friend, She is an impetuous, crass, rebellious, but very friendly woman who always looks out for people.",
     img = "tina turned suit cross happ om"
     )
@@ -140,7 +140,7 @@ init python:
         kan = "窃盗精鋭",
         name = "Settou Seiei",
         attr = "- Ordinary: He has no special abilities, he's just a normal person",
-        bio = "",
+        bio = "The leader of the midnight club, he's a determined individual who claims to want to make peace to the world.",
         img = "seiei 1a"
     )
 
