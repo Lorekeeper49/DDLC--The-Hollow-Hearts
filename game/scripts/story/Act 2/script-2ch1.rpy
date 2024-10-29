@@ -229,5 +229,8 @@ label act2_ch1_alt:
     scene bg mari_office with dissolve_scene_full
     call showlocation("Principal's Office", "October 8, 2023",659.95,"bg mari_office")
     call showintro(intro_mari)
+    show mari forward worr zorder 2 at t11
+    ma "So it was the Midnight Club that offered you to join them."
+    a "Yes..."
     
     return
