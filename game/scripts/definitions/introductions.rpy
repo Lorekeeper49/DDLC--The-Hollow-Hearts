@@ -91,8 +91,8 @@ init python:
     kan = "神山霧何",
     name = "Kamiyama Kirinani",
     attr = "- Copycat: He can copy attributes for a certain amount of time, though people say it's for longer than the average Copycat.",
-    bio = "",
-    img = ""
+    bio = "The oldest of the Kamiyama family, he's changed for the worse.\nHe's trying to corrupt the world.\nHis suffering must be ended.",
+    img = "kirinani"
     )
 
     intro_a = Intro(
@@ -128,11 +128,11 @@ init python:
     img = "mari forward happ"
     )
 
-    intro_ndad = Intro(
+    intro_tetsuo = Intro(
     kan = "ルナ哲夫",
     name = "Luna Tetsuo",
     attr = "- Copycat: He can copy attributes for a certain amount of time.",
-    bio = "Natsuki's father...  Just look at how bad he is...",
+    bio = "Natsuki's father...\nJust look at how bad he is...\nI hate this man so much I don't even wanna describe him.",
     img = "tetsuo towards cross"
     )
 

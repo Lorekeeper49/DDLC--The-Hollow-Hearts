@@ -101,6 +101,7 @@ label start:
     $ chapter = 4
     call chapter_trans("A Past Regained")
     call act2_ch4_main from _call_act2_ch4_main
+    call showintro(intro_kiri)
 
     $ chapter = 5
     call chapter_trans("It Begins")
