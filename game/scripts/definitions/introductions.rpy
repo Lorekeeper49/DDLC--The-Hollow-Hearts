@@ -24,8 +24,8 @@ init python:
     )
 
     intro_n = Intro(
-    kan = "哲夫菜月",
-    name = "Tetsuo Natsuki",
+    kan = "ルナ菜月",
+    name = "Luna Natsuki",
     attr = "- Party Crasher: ",
     bio = "",
     img = ""

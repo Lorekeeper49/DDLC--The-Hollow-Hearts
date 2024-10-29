@@ -256,9 +256,9 @@ label ch0_main:
     hide yuri
     show natsuki turned casual happ zorder 2 at t11
     "Next is a short pink-haired girl."
-    n lhip om "I am Tetsuo Natsuki, class 2-B, the tsundere of the group."
+    n lhip om "I am Luna Natsuki, class 2-B, the tsundere of the group."
     show natsuki cm
-    $ n_name = "Tetsuo Natsuki"
+    $ n_name = "Luna Natsuki"
     t "Most tsundere don't like to admit that about themselves."
     "Actually, I don't think I've seen a single tsundere admit that they are as such."
     n cross happ om "Well, I'm quite different from the ones you see in anime or manga."
@@ -939,7 +939,7 @@ label n_favorite:
 label y_favorite:
     y rup lup e1b om "I'm gonna be honest even though it's a little embarrassing."
     y "Slice of Life isn't something I'm usually into..."
-    y e1a "But my favorite book from the club is Jumping Idol Bakers by Tetsuo Natsuki." #mixing Parfait Girls with my favorite game here
+    y e1a "But my favorite book from the club is Jumping Idol Bakers by Luna Natsuki." #mixing Parfait Girls with my favorite game here
     show yuri cm
     "That name sort of reminds me of a certain rhythm game I've become obsessed with lately."
     y ce om "The story is really charming and beautiful, and it made me cry more times than I can count."
