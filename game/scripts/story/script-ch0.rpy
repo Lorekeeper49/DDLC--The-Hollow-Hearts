@@ -39,6 +39,11 @@ label ch0_main:
     t "It's fine..."
     t "You being here is enough, my friend."
     y ma "..."
+    "Yuri-chan is training to be a therapist, so I'm glad she's here to try and help me through this."
+    $ layeredimage_ref("yuri")
+    show yuri turned casual worr rup
+    y om "Here, maybe I can help take your mind off things."
+    y rdown "Follow me."
     
     return
 
