@@ -55,7 +55,42 @@ label ch0_main:
     show yuri cm
     t "Need I remind you that I am not your boyfriend?"
     y rup om "You don't need to be."
+    stop music fadeout 1.0
     scene bg park_01 with wipeleft_scene
+    y "We're here."
+    t "And where is-{nw}"
+    $ style.say_window = style.window_fake
+    $ nb = "namebox_fake"
+    play music t2
+    show sayori turned casual happ rup lup ce om zorder 2 at t11
+    s "Ah!  Yuri-chan!  Brought a friend?"
+    t "Sayori?"
+    s oe "Ah!  Taiyen!"
+    call showintro(intro_s)
+    t "What are you doing here?  This isn't a livestream, is it?"
+    s ldown "Sort of is, sort of isn't."
+    s "See the camera?"
+    show yuri turned casual nerv rup lup om zorder 2 at l21
+    show sayori at t22
+    y "Wait, Sayori!  We're doing that now?"
+    s lup "Of course!  Gotta tell my fans about all my friends!"
+    y shy casual "But, I haven't had time to ready myself yet!"
+    t "How can you be a therapist when you're this shy about showing yourself to people?"
+    y "That's not..."
+    s rdown ldown "Come on, Yuri-chan!"
+    show sayori cry cm rup at t11
+    s "Don't you wanna take care of people like me?"
+    "How does she change emotion so fast like that?"
+    kmind "Because yes."
+    "?"
+    show sayori at lhide
+    show yuri at lhide
+    hide yuri
+    hide sayori
+    show kotonoha turned casual happ lup zorder 2 at t11
+    k om "Hiya Tai-kun!"
+    t "Koto-chan?  You're here too?"
+    call showintro(intro_k)
     
     return
 

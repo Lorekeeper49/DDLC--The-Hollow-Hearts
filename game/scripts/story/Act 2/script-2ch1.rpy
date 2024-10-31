@@ -103,7 +103,6 @@ label act2_ch1_main:
     k curi om "Oh!"
     k rhip happ "Well this is a surprise!  I didn't think I'd be meeting you in here."
     k rdown lchest "I'm Kotonoha, Sakura Kotonoha.  And please, let's go on a first name basis since you seem to do the same with my brother."
-    call showintro(intro_k) from _call_showintro_5
     show kotonoha lup
     "Taiyen's sister!  In the flesh!"
     "Alright, I think I can get along with her."
