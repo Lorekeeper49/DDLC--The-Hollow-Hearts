@@ -91,6 +91,19 @@ label ch0_main:
     k om "Hiya Tai-kun!"
     t "Koto-chan?  You're here too?"
     call showintro(intro_k)
+    show kotonoha cm
+    t "Did the Midnight Club get some new recruits?  What's happening here?"
+    k ldown rhip om "Well first of all, no.  Just thought I'd join a club from my actual school."
+    t "And that club is...?"
+    show kotonoha at t11
+    hide kotonoha
+    show monika forward casual happ lpoint rhip zorder 2 at t11 
+    m om "The Literature Club!"
+    m ldown "Hello there, Student Council President!"
+    t "Murikou-san?"
+    m lpoint sedu "Ah ah!  If you're gonna be participating in club activites, you gotta call everyone by their first name."
+    m "Especially the president."
+    call showintro(intro_m)
     
     return
 
