@@ -35,6 +35,7 @@ label start:
             $ change = ""
     "Understood."
     "That's all!  So without further ado, let's begin DDLC: The Hollow Hearts!"
+    window hide
 
     $ act = 0
 
@@ -151,6 +152,7 @@ label dev:
                     "MAIN":
                         "BEGINNING PROLOGUE"
                         $ chapter = 0
+                        window hide
                         show location_text "Prologue:\nClub Order" zorder 10000 at center_zoom(0.5, 1.0, 6.0) with Dissolve(2.0)
                         $ pause(1.0)
                         hide location_text with Dissolve(2.0)

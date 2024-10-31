@@ -14,18 +14,19 @@ label ch0_main:
     "My parents are dead and all you can is try and humiliate me?"
     general "..."
     "That's what I thought!"
+    play sound door
     scene bg house with wipeleft_scene
     call showlocation("Sakura Home","September 28, 2023",7*60+59+57/60.0,"bg house")
     t "*Sigh*"
-    show yuri turned casual worr rup zorder 2 at t11
+    show yuri turned casual curi rup zorder 2 at t11
     y om "Taiyen?"
     t "Hey Yuri-chan..."
     call showintro(intro_y)
     y "You doing alright?"
     t "Take a guess..."
-    y ce rdown "My guess is no..."
+    y worr ce rdown "My guess is no..."
     t "You're correct..."
-    y oe "Wanna talk about it?"
+    y e1a "Wanna talk about it?"
     t "Well, they're shouting at me again..."
     "My parents were murdered a month ago and ever since then, I've been shouted at by voices telling me it's all my fault."
     y rup "Think you're ever going to get used to it?"
@@ -35,7 +36,7 @@ label ch0_main:
     t "You wanna know what's not helping?"
     t "The fact that the murderer looked a lot like ONE."
     y dist lup om "You've said this before..."
-    y worr "If what you say is true, then I don't know how to help you..."
+    y sad "If what you say is true, then I don't know how to help you..."
     t "It's fine..."
     t "You being here is enough, my friend."
     y ma "..."
@@ -44,6 +45,17 @@ label ch0_main:
     show yuri turned casual worr rup
     y om "Here, maybe I can help take your mind off things."
     y rdown "Follow me."
+    scene bg street1 with wipeleft_scene
+    show yuri turned casual happ rup zorder 2 at t11
+    t "Yuri-chan, where are you taking me?"
+    y om "Just keep going."
+    show yuri cm
+    t "You realize I can run super fast, right?  Just send me the location and I'd be there in seconds."
+    y om rdown "I don't wanna ruin the surprise, though."
+    show yuri cm
+    t "Need I remind you that I am not your boyfriend?"
+    y rup om "You don't need to be."
+    scene bg park_01 with wipeleft_scene
     
     return
 
