@@ -28,7 +28,7 @@ init python:
     name = "Luna Natsuki",
     attr = "- Party Crasher: She can summon and manipulate party props at will.",
     bio = "The tsundere of the literature club, she is a giddy extrovert who--despite many cheerful events from it--doesn't really like her attribute much.",
-    img = "natsuki crossed casual happ"
+    img = "natsuki cross casual happ"
     )
 
     intro_y = Intro(

@@ -131,14 +131,15 @@ label ch0_main:
     t "I'm sure she did, we are really close twins after all."
     show sayori turned casual laug rup zorder 2 at l21 
     show monika at t22
-    s "'Really close' is an understatement."
+    s om "'Really close' is an understatement."
     show sayori at t22
     hide sayori
     hide monika
-    show natsuki turned nerv om zorder 2 at t11
+    show natsuki turned casual nerv om zorder 2 at t11
     n "Hey guys!  I'm here!  Sorry that took so long!"
     m "Ah, there she is!"
     show yuri turned casual worr ce om rup lup zorder 2 at l21
+    show natsuki at t22
     y "Natsuki, you really gotta work on getting these priorities straight."
     n angr rhip "Hey, we had a ton of plans for today and I had a lot of things to grab so it was hard to keep track of them!"
     call showintro(intro_n)
