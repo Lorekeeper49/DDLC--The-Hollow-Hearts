@@ -153,6 +153,7 @@ label ch0_main:
     $ style.say_window = style.window
     $ nb = "namebox"
     "Everyone's having so much fun together."
+    a "..."
     
     return
 

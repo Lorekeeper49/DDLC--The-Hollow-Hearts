@@ -1,4 +1,5 @@
 label act1_ch1_main:
+    $ aoruguri = "Hidden Girl"
     stop music fadeout 2.0
     scene bg tlivingroom
     with dissolve_scene_full
