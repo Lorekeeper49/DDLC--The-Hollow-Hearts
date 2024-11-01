@@ -74,32 +74,7 @@ label act1_ch3_main:
     "Good, cause it's all you'll hear from me."
     play sound bell
     scene bg class_day with wipeleft_scene
-    $ pla = "Junior Third Year"
-    "The more I look at this school, the more I realize just how weird it is compared to other Japanese schools!"
-    "We've got the class numbers in reverse order, years on all different floors, and to top it off..."
-    "If and when you get through all 3 years, you have the option to take a 4th year (which I took by the way) in case you want extra education before college."
-    "How we managed to get away with the first 2 things I mentioned, I have no idea.  Though it seems Sakura Academy being a private academy allowed for the 3rd thing to go through."
-    "My family's strange..."
-    "And they say that's a good thing."
-    "Anyway, what's important here is the class representative election."
-    t "And the class 1-A representative is..."
-    general "You.  Like always."
-    t "Actually no, Junior; you're it."
-    t "I got downed by 1 vote!"
-    "They are shocked."
-    general "Wow, this is not what I expected.  I'm sorry, Senpai."
-    t "It's fine.  In fact, I wanted this to happen, I needed a break from the amount work I did in the last 3 years being class rep."
-    general "Uh..{w=1}I'm not gonna regret this, am I?"
-    menu(mouse=240):
-        "Yes":
-            t "Ye{w=0.5}ah, no."
-        "No":
-            t "No."
-    hamind "Dammit!"
-    t "Don't worry."
-    "Yeah, I can resist that, thank you!"
-    hamind "Clearly!"
-    "After that triumphant showing, I notice that I nothing left to do, so I head outside the room to see if I can help out in the halls since classes never really do much teaching on this day."
+    
     stop music fadeout 0.5
     scene bg corridor with wipeleft
     $ pause(0.5)
@@ -331,7 +306,7 @@ label act1_ch3_main:
     m "Next is..."
     call expression order[3] from _call_expression_3
     show monika forward happ rhip om zorder 2 at t11 
-    m "Next is Imfamous Book Writing Taiyen-senpai!"
+    m "Next is Imfamous Book Writing Taiyen!"
     show kotonoha turned happ zorder 1 at t41
     show natsuki turned happ rhip zorder 3 at t22
     show monika cm zorder 5 at t11

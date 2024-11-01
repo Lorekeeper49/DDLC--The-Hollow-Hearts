@@ -244,7 +244,7 @@ label act1_ch2_main:
     t "In fact, I did."
     show natsuki happ
     m forward happ rhip om "In that case, we'll go by tradition today."
-    m rdown "So you're up, the Imfamous Book Writing Taiyen-senpai!"
+    m rdown "So you're up, the Imfamous Book Writing Taiyen!"
     "I get my own title, nice."
     show kotonoha turned happ zorder 1 at t41
     show natsuki ldown zorder 3 at t22

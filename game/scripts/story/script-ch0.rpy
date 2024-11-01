@@ -107,7 +107,27 @@ label ch0_main:
     show monika cm
     t "Right, sorry."
     t "Monika-chan, right?"
-    m nerv om ldown "Not sure about that honorific, but yeah."
+    m nerv om ldown "Not sure about that honorific, but sure!"
+    t "Alright."
+    show monika happ cm
+    t "So, I haven't had time to approve clubs yet so I don't know which members are in which club."
+    m lpoint om "Well, everyone you see here is a member of the literature club."
+    m "We have our president, Murikou Monika, me,"
+    hide monika
+    show sayori turned casual happ rup zorder 2 at t11
+    m "our vice president, Shinamonpan Sayori,"
+    hide sayori
+    show yuri turned casual happ rup zorder 2 at t11
+    m "our club secretary, Yandere Yuri,"
+    hide yuri
+    show kotonoha turned casual happ rhip zorder 2 at t11
+    m "our newest member, Sakura Kotonoha,"
+    hide kotonoha
+    m "and our tsundere type member, Luna Natsuki...\nwho is late today because she's having trouble gathering the essentials."
+    show monika forward casual happ lpoint rhip zorder 2 at t11 
+    t "Alright, well I guess I should introduce myself."
+    t "You probably already know this, but I am Sakura Taiyen, the Student Council President and the son of the school's founder."
+    m ldown "Well hello there Taiyen, your sister has told us all about you."
 
     stop music fadeout 1.0
     scene bg park_01 with dissolve_scene_full
