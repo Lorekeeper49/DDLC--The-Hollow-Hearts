@@ -70,7 +70,7 @@ label ch0_main:
     t "What are you doing here?  This isn't a livestream, is it?"
     s ldown "Sort of is, sort of isn't."
     s "See the camera?"
-    show yuri turned casual nerv rup lup om zorder 2 at l21
+    show yuri turned casual pani rup lup om zorder 2 at l21
     show sayori at t22
     y "Wait, Sayori!  We're doing that now?"
     s lup "Of course!  Gotta tell my fans about all my friends!"
@@ -87,7 +87,7 @@ label ch0_main:
     show yuri at lhide
     hide yuri
     hide sayori
-    show kotonoha turned casual happ lup zorder 2 at t11
+    show kotonoha turned casual happ lup zorder 2 at r11
     k om "Hiya Tai-kun!"
     t "Koto-chan?  You're here too?"
     call showintro(intro_k)
@@ -104,6 +104,17 @@ label ch0_main:
     m lpoint sedu "Ah ah!  If you're gonna be participating in club activites, you gotta call everyone by their first name."
     m "Especially the president."
     call showintro(intro_m)
+    show monika cm
+    t "Right, sorry."
+    t "Monika-chan, right?"
+    m nerv om ldown "Not sure about that honorific, but yeah."
+
+    stop music fadeout 1.0
+    scene bg park_01 with dissolve_scene_full
+    play music confdep
+    $ style.say_window = style.window
+    $ nb = "namebox"
+    "Everyone's having so much fun together."
     
     return
 
