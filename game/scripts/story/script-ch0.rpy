@@ -127,8 +127,25 @@ label ch0_main:
     show monika forward casual happ lpoint rhip zorder 2 at t11 
     t "Alright, well I guess I should introduce myself."
     t "You probably already know this, but I am Sakura Taiyen, the Student Council President and the son of the school's founder."
-    m ldown "Well hello there Taiyen, your sister has told us all about you."
-
+    m ldown om "Well hello there Taiyen, your sister has told us all about you."
+    t "I'm sure she did, we are really close twins after all."
+    show sayori turned casual laug rup zorder 2 at l21 
+    show monika at t22
+    s "'Really close' is an understatement."
+    show sayori at t22
+    hide sayori
+    hide monika
+    show natsuki turned nerv om zorder 2 at t11
+    n "Hey guys!  I'm here!  Sorry that took so long!"
+    m "Ah, there she is!"
+    show yuri turned casual worr ce om rup lup zorder 2 at l21
+    y "Natsuki, you really gotta work on getting these priorities straight."
+    n angr rhip "Hey, we had a ton of plans for today and I had a lot of things to grab so it was hard to keep track of them!"
+    call showintro(intro_n)
+    show yuri at lhide
+    hide yuri
+    show natsuki at t11
+    n happ "Now if you'll excuse me, let's get this party started!"
     stop music fadeout 1.0
     scene bg park_01 with dissolve_scene_full
     play music confdep
