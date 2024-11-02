@@ -152,8 +152,17 @@ label ch0_main:
     play music confdep
     $ style.say_window = style.window
     $ nb = "namebox"
-    "Everyone's having so much fun together."
+    "Everyone's having so much fun together..."
+    "I wish I could have fun like that..."
+    "I just..."
+    "I can't!"
+    "I'm such a coward!"
     a "..."
+    stop music fadeout 1.0
+    scene bg park_01 with dissolve_scene_full
+    play music t4
+    $ style.say_window = style.window_fake
+    $ nb = "namebox_fake"
     
     return
 
