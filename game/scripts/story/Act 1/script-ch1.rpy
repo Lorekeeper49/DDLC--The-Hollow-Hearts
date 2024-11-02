@@ -1,10 +1,11 @@
 label act1_ch1_main:
-    $ aoruguri = "Hidden Girl"
-    stop music fadeout 2.0
-    scene bg tlivingroom
-    with dissolve_scene_full
     $ style.say_window = style.window
     $ nb = "namebox"
+    $ aoruguri = "Hidden Girl"
+    stop music fadeout 2.0
+    call showintro(intro_t)
+    scene bg tlivingroom
+    with dissolve_scene_full
     call showlocation("Sakura Household","September 29, 2023",7*60+0+0/60.0,"bg tlivingroom")
     t "Agh!  I can't focus!"
     "Been trying to play my favorite game to get my mind off it, but it's bothering me so much!"

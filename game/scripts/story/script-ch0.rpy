@@ -2,7 +2,6 @@ label ch0_main:
     $ style.say_window = style.window
     $ nb = "namebox"
     stop music fadeout 2.0
-    call showintro(intro_t) from _call_showintro_6
     play music confdep
     scene bg tlivingroom
     with dissolve_scene_full
