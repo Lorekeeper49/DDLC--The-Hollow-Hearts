@@ -295,5 +295,13 @@ label act2_ch3_main:
     return
 
 label act2_ch3_alt:
-    
+    stop music fadeout 2.0
+    play ambience forest
+    scene bg park_night
+    with dissolve_scene_full
+    call showlocation("Converse Park","October 10, 2023",19*60+14+57/60.0,"bg tree")
+    "I have absolutely no idea why I'm going to the exact place an anonymous number has told me to go."
+    "Even said they know me?"
+    "Ah well, it's not like I've got anything left to lose anyway."
+
     return
