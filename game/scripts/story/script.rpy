@@ -18,23 +18,13 @@ label start:
     $ config.allow_skipping = True
     $ af_enabled = True
 
-    if persistent.demo:
-        "INFORMATION:"
-        "Since this is a demo, everything you see is subject to change.  That said, many things will remain the same, but I will not reveal what those are."
-        "If you'd like to support the mod, {a=https://discord.gg/Q3CcJW4Ag2}click here to join the discord server.{/a}"
-        "For Dokitubers: Please do not use auto-advance, the mod is meant to be fully voice-acted and the non-voiced lines advance too fast to read as of now, so please don't use it."
-        "With all that said, please enjoy the mod!"
+    stop music fadeout 2.0
+    scene black with dissolve_scene_full
+    window hide
+    show menu_logo as show_logo zorder 10000 at center_zoom(0.5, 1.0, 5.0) with Dissolve(2.0)
+    $ pause(1.0)
+    hide show_logo with Dissolve(2.0)
 
-    "This mod features a lot of choices that could drastically change the story if you're not careful..."
-    menu:
-        "Would you like these choices to be marked with an asterisk (*) at the start of each such choice?"
-
-        "Yes":
-            pass
-        "No":
-            $ change = ""
-    "Understood."
-    "That's all!  So without further ado, let's begin DDLC: The Hollow Hearts!"
     window hide
 
     $ act = 0

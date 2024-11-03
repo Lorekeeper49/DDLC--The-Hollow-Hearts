@@ -1,4 +1,4 @@
-define persistent.demo = True
+define persistent.demo = False
 define persistent.steam = ("steamapps" in config.basedir.lower())
 define config.developer = True
 default entirestory = False

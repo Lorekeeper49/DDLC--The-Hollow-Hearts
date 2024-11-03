@@ -290,7 +290,6 @@ label autoload:
     $ allow_skipping = True
     $ config.allow_skipping = True
     $ af_enabled = True
-    "This mod starts immediately when you first open it without going to the title screen, so it is recommended that you set you're options now."
     jump start
 
 label before_main_menu:
