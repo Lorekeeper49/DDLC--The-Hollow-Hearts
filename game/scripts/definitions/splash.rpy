@@ -136,7 +136,7 @@ image tos2 = "bg/warning2.png"
 
 
 label splashscreen:
-
+    
     python:
         process_list = []
         currentuser = ""
@@ -245,6 +245,7 @@ label splashscreen:
     hide splash_warning with Dissolve(max(0, 6.5 - (datetime.datetime.now() - starttime).total_seconds()), alpha=True)
     $ pause(6.5 - (datetime.datetime.now() - starttime).total_seconds())
     $ config.allow_skipping = True
+    $ quick_menu = True
     if startnow:
         $ startnow = False
         jump autoload
