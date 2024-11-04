@@ -231,5 +231,21 @@ label act2_ch1_alt:
     show mari forward worr zorder 2 at t11
     ma "So it was the Midnight Club that offered you to join them."
     a "Yes..."
+    ma ea "*Sigh*"
+    ma ef "You know, I'm affiliated with that club.  I participate in some of the endeavors they go through."
+    a "What?"
+    a "Mari, you daredevil!  Do you how many dangerous situations they get themselves into?"
+    ma ed "I am not a daredevil, we both know those are more reckless than this club."
+    a "I'm not so sure about 'both'."
+    ma ef "Well, at least I know."
+    ma ea "And the rest of the club..."
+    ma ef "Going in circles."
+    ma "Look, what I want to get at is that they could use you."
+    a "Just because you want me there with you?"
+    ma ed "No..."
+    ma ec "Here."
+    hide mari
+    "Mari goes to the computers on the left which show the classroom cameras and focuses the one for 3-B onto the projector."
+    "I watch as the members talk about what I just did."
     
     return
