@@ -2,14 +2,23 @@ init python:
     import datetime
     menu_trans_time = 1
     splash_messages = [
-    "Welcome to horror.",
-    "This story is not what it seems",
-    "They all have their own problems.\nHELP THEM!",
-    "You can't save her.\nYou won't save her.",
-    "This game is not suitable for children\nor those who are easily disturbed",
-    "They're each hiding something,\nit won't be easy to work with them.",
-    "Too many branching paths!",
-    "This is {b}not{/b} an easy mod."
+    "He likes everyone.\nHe's the cause.",
+    "She is very happy.\nShe can't do it.",
+    "She is peppy.\nShe was distressed.",
+    "She is vicious.\nShe is scared.",
+    "She knows everything.\nShe knows nothing.",
+    "She can't be saved.\nShe won't be saved.",
+    "She is hidden.\nShe has amnesia.",
+    "She is kind.\nShe's a punk."
+    "She's not normal.\nShe's not human.",
+    "She is a mother.\nShe can't find her.",
+    "She is alive.\nShe is dead.",
+    "He is a monster.\nHe can't be fixed.",
+    "He is trusted\nHe's a spy.",
+    "She can find.\nShe can lure.",
+    "He's an artist.\nHe reigns supreme.",
+    "She breaks help.\nShe's the mind.",
+    "He has changed.\nHe is broken."
     ]
 
 image splash_warning = ParameterizedText(style="splash_text", xalign=0.5, yalign=0.5)
