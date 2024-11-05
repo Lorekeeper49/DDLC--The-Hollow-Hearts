@@ -130,3 +130,4 @@ CAMERA SHAKE - [https://www.renpy.org/wiki/renpy/doc/cookbook/Shake_effect]
 osumashi LICENSE - [https://creativecommons.org/licenses/by/2.0/deed.en]
 ZOOM TRANSITION - Celeste [https://discord.com/channels/339272843327963136/373669030747308032/1063225703266537502]
 SILHOUETTE CODE - https://www.renpy.org/wiki/renpy/doc/cookbook/Turn_an_image_into_a_silhouette
+AUTO BACKGROUND CODE - 「N E K O L A I S」 [https://discord.com/channels/339272843327963136/373669030747308032/1224937520932847768]
