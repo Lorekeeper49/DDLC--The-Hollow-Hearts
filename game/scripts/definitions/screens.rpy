@@ -431,9 +431,10 @@ init -501 screen navigation():
             textbutton _("OPTIONS") hovered [SetVariable("option_index", 3)] action [Hide("file_slots"), ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
             if renpy.variant("pc"):
                 textbutton _("HELP") hovered [SetVariable("option_index", 4)]  action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))]
-                textbutton _("QUIT") hovered [SetVariable("option_index", 5)] action Quit(confirm=not main_menu)
+                textbutton _("DISCORD") hovered [SetVariable("option_index", 5)] action OpenURL("https://discord.gg/Q3CcJW4Ag2")
+                textbutton _("QUIT") hovered [SetVariable("option_index", 6)] action Quit(confirm=not main_menu)
             if not persistent.demo:
-                textbutton _("ACT 3") hovered [SetVariable("option_index", 6)] action Function(Act3)
+                textbutton _("ACT 3") hovered [SetVariable("option_index", 7)] action Function(Act3)
         else:
             textbutton _("CLOSE") hovered [SetVariable("option_index", 0)] action Return()
             textbutton _("HISTORY") hovered [SetVariable("option_index", 1)] action [ShowMenu("history"), SensitiveIf(renpy.get_screen("history") == None)]
