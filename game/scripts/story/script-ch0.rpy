@@ -86,7 +86,7 @@ label ch0_main:
     show yuri at lhide
     hide yuri
     hide sayori
-    show kotonoha turned casual happ lup zorder 2 at r11
+    show kotonoha turned casual happ lchest zorder 2 at r11
     k om "Hiya Tai-kun!"
     t "Koto-chan?  You're here too?"
     call showintro(intro_k)
@@ -162,12 +162,19 @@ label ch0_main:
     play music t4
     $ style.say_window = style.window_fake
     $ nb = "namebox_fake"
-    show natsuki turned happ rhip lhip zorder 2 at t11
+    show natsuki turned casual happ rhip lhip zorder 2 at t11
     n om "Alright newbie!  Let's see what you're here for!"
     t "I wouldn't call myself a newbie.  Yuri-chan practically dragged me here so I don't really know if I want to join yet."
     n ldown "Oh, come on!"
     n sedu "Down't you wanna join a club full of incredibly cute girls?"
     t "Wha- Hey!  I am the Student Council President, you know I'm better than that!"
+    n cm "Sure."
+    show natsuki at t22
+    show kotonoha turned casual laug lup om zorder 2 at r21
+    k "Hey, Natsuki, maybe don't tease my twin brother."
+    n lsur "Oh."
+    n flus "Yeah, sorry about that.  Didn't realize who I was talking to."
+    t "It's fine.  I can take it."
     
     return
 
