@@ -222,9 +222,10 @@ label act2_ch1_alt:
     play sound static
     $ pause(0.15)
     stop sound
-    scene bg office with None
+    show bg office at center_zoom(1.0, 2.0, 5.0)
     ma "Let's head to my office, okay?"
     a "Okay..."
+    play ambience clock
     scene bg mari_office with dissolve_scene_full
     call showlocation("Principal's Office", "October 8, 2023",659.95,"bg mari_office")
     call showintro(intro_mari)
@@ -247,5 +248,7 @@ label act2_ch1_alt:
     hide mari
     "Mari goes to the computers on the left which show the classroom cameras and focuses the one for 3-B onto the projector."
     "I watch as the members talk about what I just did."
+    stop ambience fadeout 1.0
+    scene bg kamiclassnight with wipeleft_scene
     
     return
