@@ -172,9 +172,10 @@ label ch0_main:
     show natsuki at t22
     show kotonoha turned casual laug lup om zorder 2 at r21
     k "Hey, Natsuki, maybe don't tease my twin brother."
+    show kotonoha cm
     n lsur "Oh."
     n flus "Yeah, sorry about that.  Didn't realize who I was talking to."
-    t "It's fine.  I can take it."
+    t "It's fine.  I can take it.  My parents used to tease me every two seconds."
     
     return
 
