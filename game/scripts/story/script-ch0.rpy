@@ -148,10 +148,11 @@ label ch0_main:
     show natsuki at t11
     n happ "Now if you'll excuse me, let's get this party started!"
     stop music fadeout 1.0
-    scene bg park_01 with dissolve_scene_full
-    play music confdep
     $ style.say_window = style.window
     $ nb = "namebox"
+    scene bg park_01 with dissolve_scene_full
+    play music confdep
+    
     "Everyone's having so much fun together..."
     "I wish I could have fun like that..."
     "I just..."
@@ -159,10 +160,11 @@ label ch0_main:
     "I'm such a coward!"
     a "..."
     stop music fadeout 1.0
-    scene bg park_01 with dissolve_scene_full
-    play music t3
     $ style.say_window = style.window_fake
     $ nb = "namebox_fake"
+    scene bg park_01 with dissolve_scene_full
+    play music t3
+    
     show natsuki turned casual happ rhip lhip zorder 2 at t11
     n om "Alright newbie!  Let's see what you're here for!"
     t "I wouldn't call myself a newbie.  Yuri-chan practically dragged me here so I don't really know if I want to join yet."
@@ -172,11 +174,47 @@ label ch0_main:
     n cm "Sure."
     show natsuki at t22
     show kotonoha turned casual laug lup om zorder 2 at l21
-    k "Hey, Natsuki, maybe don't tease my twin brother."
-    show kotonoha cm
+    k "Hey, Natsuki?  Maybe don't tease my twin brother."
+    show kotonoha cm at t21
     n lsur "Oh."
     n flus "Yeah, sorry about that.  Didn't realize who I was talking to."
     t "It's fine.  I can take it.  My parents used to tease me every two seconds."
+    hide kotonoha
+    hide natsuki
+    "Sayori has started livestreaming now and everyone seems to be handling it nicely."
+    show yuri shy casual ce zorder 2 at t11
+    "I worry about Yuri-chan though.  She's not used to being shown to hundreds of people."
+    show yuri happ oe
+    "But it seems like she's holding strong."
+    hide yuri
+    show monika forward casual happ rpoint rhip zorder 2 at t11
+    m om "Hey, Sayori!  Move that camera over here, I wanna tell you're fans what we're about to do."
+    hide monika
+    show sayori turned casual happ rup zorder 2 at t11
+    s om "Okay!"
+    hide sayori
+    "Glad everyone's having fun!"
+    "I might actually join this!"
+    t "Hm?"
+    $ style.say_window = style.window
+    $ nb = "namebox"
+    scene bg park_01 with wipeleft_scene
+    a "..."
+    "That was close."
+    "Why does that boy sound so familiar?"
+    a "Hm."
+    "I should move somewhere else."
+    $ style.say_window = style.window_fake
+    $ nb = "namebox_fake"
+    scene bg park_01 with wipeleft_scene
+    t "What was..."
+    show kotonoha turned curi om lup zorder 2 at t11
+    k "Something wrong Tai-kun?"
+    t "Oh, no.  Just thought someone else was watching us."
+    k rhip ldown cm e1c "..."
+    hide kotonoha
+    show monika forward casual happ rpoint rhip zorder 2 at t11
+    m om "Okay everyone!  Let's start the first activity!"
     
     return
 
