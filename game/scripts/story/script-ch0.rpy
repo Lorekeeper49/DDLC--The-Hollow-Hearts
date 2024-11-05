@@ -162,6 +162,12 @@ label ch0_main:
     play music t4
     $ style.say_window = style.window_fake
     $ nb = "namebox_fake"
+    show natsuki turned happ rhip lhip zorder 2 at t11
+    n om "Alright newbie!  Let's see what you're here for!"
+    t "I wouldn't call myself a newbie.  Yuri-chan practically dragged me here so I don't really know if I want to join yet."
+    n ldown "Oh, come on!"
+    n sedu "Down't you wanna join a club full of incredibly cute girls?"
+    t "Wha- Hey!  I am the Student Council President, you know I'm better than that!"
     
     return
 
