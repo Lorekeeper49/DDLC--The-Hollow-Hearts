@@ -9,7 +9,7 @@ init python:
     "She knows everything.\nShe knows nothing.",
     "She can't be saved.\nShe won't be saved.",
     "She is hidden.\nShe has amnesia.",
-    "She is kind.\nShe's a punk."
+    "She is kind.\nShe's a punk.",
     "She's not normal.\nShe's not human.",
     "She is a mother.\nShe can't find her.",
     "She is alive.\nShe is dead.",
