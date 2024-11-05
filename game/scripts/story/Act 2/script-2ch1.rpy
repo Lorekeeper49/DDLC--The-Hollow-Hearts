@@ -222,7 +222,7 @@ label act2_ch1_alt:
     play sound static
     $ pause(0.15)
     stop sound
-    show bg office at center_zoom(1.0, 2.0, 5.0)
+    show bg office at center_zoom(1.0, 2.0, 100.0)
     ma "Let's head to my office, okay?"
     a "Okay..."
     play ambience clock
