@@ -264,6 +264,15 @@ init -501 python:
         for file in filter(filt, renpy.list_files()):
             renpy.image(" ".join([prefix, os.path.splitext(os.path.split(file)[1])[0]]), file)
             bgs.append(" ".join([prefix, os.path.splitext(os.path.split(file)[1])[0]]))
+        bgs.append("bg sayori_bedroom")
+        bgs.append("bg house")
+        bgs.append("bg residential_day")
+        bgs.append("bg class_day")
+        bgs.append("bg corridor")
+        bgs.append("bg club_day")
+        bgs.append("bg bedroom")
+        bgs.append("bg closet")
+        bgs.append("bg kitchen")
 
     capture_images("bg", lambda x: x.startswith("mod_assets/bg/"))
     
