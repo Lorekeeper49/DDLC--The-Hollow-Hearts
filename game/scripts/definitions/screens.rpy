@@ -635,7 +635,7 @@ init -501 screen file_slots():
                 ycenter 100
                 background "#ffffff8a"
                 vbox:
-                    
+                    text _("NAME THIS BOOKMARK")
                     input default FileSaveName(slot_selected) value VariableInputValue("save_name") length 24 font "mod_assets/fonts/Unitblock-mLAwm.ttf"
                     hbox:
                         if not main_menu:
