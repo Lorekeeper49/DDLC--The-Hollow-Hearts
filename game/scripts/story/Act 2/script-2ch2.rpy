@@ -246,7 +246,7 @@ label act2_ch2_main:
     a "You wanted to talk?  Let's talk."
     ha lhip rhip angr om "Yes, let's!"
     ha lup "First of all, elephant in the room, I'm working with the guy who killed your friend's parents."
-    ha ce "Well actually, I'm his sister."
+    ha ce "Well actually, I'm his daughter."
     show hanato cm
     "That's a surprise!"
     "Wait, does that mean...?"
@@ -255,7 +255,7 @@ label act2_ch2_main:
     ha rdown "He's planning something, and I don't like what I'm reading off of him."
     ha rup lhip "You won't understand this, but..."
     ha rdown "He plans to attack and destroy the school your friend goes to.\n{{Said normally but editted to sound backwards}" # Ot seog rouy loohcs eht yortsed dna kcatta ot snalp eh.
-    show hanato cm    
+    show hanato cm
     a "De-"
     "What? {{confused}"
     ha ce om "Yeah, that's what he's done to keep the plan secret."
