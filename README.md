@@ -67,15 +67,15 @@ TINA - JohnRDVSMarston
 
 YANDERE LILLY - JohnRDVSMarston
 
-    CHIBI - JohnRDVSMarston, AJtheYandere, & CPG Yuri
+>CHIBI - JohnRDVSMarston, AJtheYandere, & CPG Yuri
 
-    MENU - depressedjoanna a.k.a. staticquit
+>MENU - depressedjoanna a.k.a. staticquit
 
-    [CASUAL - Z. Awesomeness](https://discord.com/channels/339272843327963136/373669252554686464/1268162213735039108)
+>[CASUAL - Z. Awesomeness](https://discord.com/channels/339272843327963136/373669252554686464/1268162213735039108)
 
-    [https://drive.google.com/drive/folders/1i3z-HYM7ibOc9RvXee_RcY5kJIudXgCC?usp=sharing]
+>[https://drive.google.com/drive/folders/1i3z-HYM7ibOc9RvXee_RcY5kJIudXgCC?usp=sharing]
 
-[MIO - yagamirai10](https://drive.google.com/drive/folders/1qU3Z6k81VQgQMmMwomZ0c-85E7pdky5f?usp=sharing]
+[MIO - yagamirai10](https://drive.google.com/drive/folders/1qU3Z6k81VQgQMmMwomZ0c-85E7pdky5f?usp=sharing)
 
     [MPT - RedLeader](https://www.reddit.com/r/DDLCMods/comments/ucxgcx/kotonoha_mio_and_dadsuki_mpts/?utm_source=share&utm_medium=ios_app&utm_name=ioscss&utm_content=1&utm_term=1)
 
@@ -84,9 +84,10 @@ TETSUO TETSUO - SovietSpartan
     MPT - RedLeader 
 
     [https://www.reddit.com/r/DDLCMods/comments/ucxgcx/kotonoha_mio_and_dadsuki_mpts/?utm_source=share&utm_medium=ios_app&utm_name=ioscss&utm_content=1&utm_term=1]
-[KUSANOKI MARI - Nekolais](https://drive.google.com/file/d/1rAgY9Ijoyib2W9Hh6FJZaFYg0RDGR7ey/view]
 
-[SETTOU SEIEI - StormBlazed76 and Satchley](https://www.reddit.com/r/DDLCMods/comments/ofkf3s/canon_mc_sprites_are_here_ladies_and_gentlemen/]
+[KUSANOKI MARI - Nekolais](https://drive.google.com/file/d/1rAgY9Ijoyib2W9Hh6FJZaFYg0RDGR7ey/view)
+
+[SETTOU SEIEI - StormBlazed76 and Satchley](https://www.reddit.com/r/DDLCMods/comments/ofkf3s/canon_mc_sprites_are_here_ladies_and_gentlemen/)
 
 LUNA ENGEKI (SAYURI) - Hoeruko
     
@@ -101,7 +102,7 @@ LUNA ENGEKI (SAYURI) - Hoeruko
 
 [KAMIYAMA PARK - osumashi](http://www7b.biglobe.ne.jp/~osumashi/free_bg.html)
 
-[SHINAMONPAN LIVING ROOM & KOTONOHA'S ROOM - tropicalmonsoon](https://lemmasoft.renai.us/forums/viewtopic.php?f=52&t=22595]
+[SHINAMONPAN LIVING ROOM & KOTONOHA'S ROOM - tropicalmonsoon](https://lemmasoft.renai.us/forums/viewtopic.php?f=52&t=22595)
 
 [OUTSIDE SHINAMONPAN HOUSE - Kimagure After](https://gakaisozai.seesaa.net/index-6.html)
 
@@ -123,7 +124,7 @@ SHINAMONPAN KITCHEN - LvcyLu
 
 [KOTONOHA'S BEDROOM - Uncle Mugen](https://lemmasoft.renai.us/forums/viewtopic.php?f=52&t=17302)
 
-[FOREST - Uncle Mugen](https://lemmasoft.renai.us/forums/viewtopic.php?f=52&t=33203#p379740]
+[FOREST - Uncle Mugen](https://lemmasoft.renai.us/forums/viewtopic.php?f=52&t=33203#p379740)
 
 [LOCKER ROOM - Kimagure After](https://gakaisozai.seesaa.net/index-6.html)
 
@@ -143,17 +144,17 @@ SHINAMONPAN KITCHEN - LvcyLu
 
 [FACTORY SECRET - Min-Chiri](https://min-chi.material.jp/category/fm/bg_c/)
 
-[BUSTLING STREETS - Kimagure After](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing]
+[BUSTLING STREETS - Kimagure After](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing)
 
-[SHED HIDEOUT - Kimagure After](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing]
+[SHED HIDEOUT - Kimagure After](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing)
 
-[KAMIYAMA RUINS - Uncle Mugen](https://lemmasoft.renai.us/forums/viewtopic.php?f=52&t=33203#p379740]
+[KAMIYAMA RUINS - Uncle Mugen](https://lemmasoft.renai.us/forums/viewtopic.php?f=52&t=33203#p379740)
 
 [DEEP FOREST - osumashi](https://ayaemo.skr.jp/material_mountain.html)
 
 [OUTSIDE MANSION - Uncle Mugen](https://lemmasoft.renai.us/forums/viewtopic.php?f=52&t=17302)
 
-[INSIDE MANSION - osumashi](https://ayaemo.skr.jp/materials.html#material_background]
+[INSIDE MANSION - osumashi](https://ayaemo.skr.jp/materials.html#material_background)
 
 [BATHROOM - Uncle Mugen](https://lemmasoft.renai.us/forums/viewtopic.php?f=52&t=17302)
 
@@ -208,11 +209,11 @@ DDMC_Track_Series_Lost_In_Emotion - Luma
 ### FONTS
 [SCRIPT - TypeSETit (Alex Brush)](https://www.1001fonts.com/legible+handwriting-fonts.html)
 
-[JPFONT - Noto Serif](https://fonts.google.com/noto/specimen/Noto+Serif+JP?subset=japanese&noto.script=Hira]
+[JPFONT - Noto Serif](https://fonts.google.com/noto/specimen/Noto+Serif+JP?subset=japanese&noto.script=Hira)
 
-[7-SEGMENT - Krafti Lab](https://www.dafont.com/seven-segment.font]
+[7-SEGMENT - Krafti Lab](https://www.dafont.com/seven-segment.font)
 
-[UI - Unitblock](https://www.fontspace.com/unitblock-font-f104834]
+[UI - Unitblock](https://www.fontspace.com/unitblock-font-f104834)
 
 
 ### MISC
