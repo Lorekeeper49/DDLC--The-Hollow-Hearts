@@ -53,7 +53,7 @@ KAMIYAMA AKIRA - LvcyLu
 
 [MURIKO MONIKA (CASUAL) - DestinyPvEGal (reddit)](https://drive.google.com/drive/folders/1yTohcOnGV6Kw6Lru1cITWt-zwRoGSCm_?usp=sharing)
 
-TINA - JohnRDVSMarston
+[TINA - JohnRDVSMarston](https://drive.google.com/drive/folders/10Z_W8AEi_wuq-de1UcgSpqoYn_SYmue0?usp=sharing)
 
 >CHIBI - JohnRDVSMarston, AJtheYandere, & CPG Yuri
 
@@ -63,9 +63,7 @@ TINA - JohnRDVSMarston
 
 >SUIT & MPT ADOPTION - Frithian
 
->[https://drive.google.com/drive/folders/10Z_W8AEi_wuq-de1UcgSpqoYn_SYmue0?usp=sharing]
-
-YANDERE LILLY - JohnRDVSMarston
+[YANDERE LILLY - JohnRDVSMarston](https://drive.google.com/drive/folders/1i3z-HYM7ibOc9RvXee_RcY5kJIudXgCC?usp=sharing)
 
 >CHIBI - JohnRDVSMarston, AJtheYandere, & CPG Yuri
 
@@ -73,29 +71,23 @@ YANDERE LILLY - JohnRDVSMarston
 
 >[CASUAL - Z. Awesomeness](https://discord.com/channels/339272843327963136/373669252554686464/1268162213735039108)
 
->[https://drive.google.com/drive/folders/1i3z-HYM7ibOc9RvXee_RcY5kJIudXgCC?usp=sharing]
-
 [MIO - yagamirai10](https://drive.google.com/drive/folders/1qU3Z6k81VQgQMmMwomZ0c-85E7pdky5f?usp=sharing)
 
 >[MPT - RedLeader](https://www.reddit.com/r/DDLCMods/comments/ucxgcx/kotonoha_mio_and_dadsuki_mpts/?utm_source=share&utm_medium=ios_app&utm_name=ioscss&utm_content=1&utm_term=1)
 
-TETSUO TETSUO - SovietSpartan
+[TETSUO TETSUO - SovietSpartan](https://www.reddit.com/r/DDLCMods/comments/ucxgcx/kotonoha_mio_and_dadsuki_mpts/?utm_source=share&utm_medium=ios_app&utm_name=ioscss&utm_content=1&utm_term=1)
 
 >MPT - RedLeader 
-
->[https://www.reddit.com/r/DDLCMods/comments/ucxgcx/kotonoha_mio_and_dadsuki_mpts/?utm_source=share&utm_medium=ios_app&utm_name=ioscss&utm_content=1&utm_term=1]
 
 [KUSANOKI MARI - Nekolais](https://drive.google.com/file/d/1rAgY9Ijoyib2W9Hh6FJZaFYg0RDGR7ey/view)
 
 [SETTOU SEIEI - StormBlazed76 and Satchley](https://www.reddit.com/r/DDLCMods/comments/ofkf3s/canon_mc_sprites_are_here_ladies_and_gentlemen/)
 
-LUNA ENGEKI (SAYURI) - Hoeruko
->
+[LUNA ENGEKI (SAYURI) - Hoeruko](https://drive.google.com/drive/folders/1P0MJt2YYwGrlgtQo4AnriWN_540NCifq?usp=sharing)
+
 >SPRITE SET - Ian Suller_Blogger
->
+
 >SPRITE EDITS, CASUAL, MPT - Matic
->
->[https://drive.google.com/drive/folders/1P0MJt2YYwGrlgtQo4AnriWN_540NCifq?usp=sharing]
 
 #### BACKGROUNDS
 [KAMIYAMA PARK BATHROOM - Uncle Mugen](https://lemmasoft.renai.us/forums/viewtopic.php?f=52&t=17302)
