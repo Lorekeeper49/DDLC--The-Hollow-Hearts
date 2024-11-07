@@ -178,7 +178,7 @@ Depressed - MC.Dummy.Composer
 
 Argument - MC.Dummy.Composer
 
-DDMC_Track_Series_Lost_In_Emotion - Luma
+[DDMC_Track_Series_Lost_In_Emotion - Luma](https://discord.com/channels/339272843327963136/452642679831134209/1093158379423277137)
 
 [STORM, FOREST, CLOCK - Fesliyan Studios](https://www.fesliyanstudios.com)
 
