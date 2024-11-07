@@ -61,7 +61,7 @@ label act1_ch4_end:
     ha rhip lhip "I know, it doesn't make sense!"
     ha dist ce rdown ldown "And I work with him?"
     ha oe "But, I don't like how things are anymore."
-    ha neut rhip "After hearing your story, and finding out with he's so mad with you..."
+    ha neut rhip "After hearing your story, and finding out why he's so mad with you..."
     ha dist rup "I don't know if I can trust him anymore."
     ha ce rdown "Especially with whatever he could possibly be planning to do with breaker."
     show hanato cm
@@ -81,7 +81,7 @@ label act1_ch4_end:
     ha laug lup "And that officially marks the first time I've sweared."
     ha neut rhip "But, I'm really not liking this anymore..."
     ha ldown "So, from this point onward, I am now spying on my own family...\nNever thought I'd say that."
-    ha lup "Since I know you can lucid dream, I'm allowing you to come here at anytime.  Just be aware that my family may be here at the same time as you, so pick your times carefully."
+    ha lup "Since I know you can lucid dream, I'm allowing you to come here at any time.  Just be aware that my family may be here at the same time as you, so pick your times carefully."
     ha ldown rdown "I'll let you off now while I look for backup on this."
     t "Okay."
     "Things just got a whole lot harder..."
