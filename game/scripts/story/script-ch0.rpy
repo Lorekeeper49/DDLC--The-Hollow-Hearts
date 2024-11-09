@@ -152,7 +152,6 @@ label ch0_main:
     $ nb = "namebox"
     scene bg park_01 with dissolve_scene_full
     play music confdep
-    
     "Everyone's having so much fun together..."
     "I wish I could have fun like that..."
     "I just..."
@@ -163,8 +162,7 @@ label ch0_main:
     $ style.say_window = style.window_fake
     $ nb = "namebox_fake"
     scene bg park_01 with dissolve_scene_full
-    play music t3
-    
+    play music t8
     show natsuki turned casual happ rhip lhip zorder 2 at t11
     n om "Alright newbie!  Let's see what you're here for!"
     t "I wouldn't call myself a newbie.  Yuri-chan practically dragged me here so I don't really know if I want to join yet."
