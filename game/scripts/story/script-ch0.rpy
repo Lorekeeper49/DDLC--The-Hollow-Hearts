@@ -212,7 +212,7 @@ label ch0_main:
     k rhip ldown cm e1c "..."
     hide kotonoha
     show monika forward casual happ rpoint rhip zorder 2 at t11
-    m om "Okay everyone!  Let's start the first activity!"
+    m om "Okay, everyone!  Let's start the first activity!"
     
     return
 
