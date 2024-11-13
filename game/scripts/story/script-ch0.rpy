@@ -211,8 +211,15 @@ label ch0_main:
     t "Oh, no.  Just thought someone else was watching us."
     k rhip ldown cm e1c "..."
     hide kotonoha
-    show monika forward casual happ rpoint rhip zorder 2 at t11
+    show monika forward casual happ lpoint rhip zorder 2 at t11
     m om "Okay, everyone!  Let's start the first activity!"
+    m ldown "Since we have a couple new members here, let's play 20 Questions and learn about them!"
+    "Hardly literature related, but I'll allow it."
+    hide monika
+    show kotonoha turned happ zorder 2 at t11
+    "My sister takes the stage."
+    y "Taiyen, you count too."
+    t "Huh?  But I haven't made any-"
     
     return
 
