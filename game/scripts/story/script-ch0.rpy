@@ -216,10 +216,20 @@ label ch0_main:
     m ldown "Since we have a couple new members here, let's play 20 Questions and learn about them!"
     "Hardly literature related, but I'll allow it."
     hide monika
-    show kotonoha turned happ zorder 2 at t11
-    "My sister takes the stage."
-    y "Taiyen, you count too."
+    show kotonoha turned casual happ zorder 2 at t11
+    "Koto-chan takes the stage."
+    hide kotonoha
+    show yuri turned casual happ rup zorder 2 at t11
+    y om "Taiyen, you count too."
+    show yuri cm
     t "Huh?  But I haven't made any-"
+    y om rdown "You made the decision to be here."
+    show yuri cm
+    "She has a point."
+    t "Fine."
+    hide yuri 
+    show kotonoha turned casual happ zorder 2 at t11
+    "I join my sister on the stage."
     
     return
 
