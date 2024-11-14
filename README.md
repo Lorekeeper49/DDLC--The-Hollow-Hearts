@@ -170,7 +170,7 @@ ACT 1, 2, AND 3 LOGOS - Leomonade33
 
 
 ### MUSIC & AMBIENCE
-[After Dark Piano Cover (Title Screen song) - AbyssalKnight949](https://youtu.be/Ue_G9O7AQA4)
+[After Dark Piano Cover (Title Screen song) - 949](https://www.reddit.com/r/DDLCMods/comments/y0zla2/free_to_use_song_for_ddlc_mods/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
 
 Confesssion - MC.Dummy.Composer
 
