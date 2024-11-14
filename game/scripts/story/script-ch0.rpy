@@ -230,6 +230,8 @@ label ch0_main:
     hide yuri 
     show kotonoha turned casual happ zorder 2 at t11
     "I join my sister on the stage."
+    "...That doesn't exist."
+    kmind rhip anno "Just pretend it's there."
     
     return
 
