@@ -275,12 +275,16 @@ label ch0_end:
     m ce rdown "..."
     m neut oe "Honestly, I'm scared to write mine."
     m dist rhip "But I'm in a similar situation to Natsuki; I {i}should{/i} do this."
-    
-
+    m neut lpoint "Alright.  Let's come back on Monday with the first chapters of our stories complete."
+    everyone "Got it."
     stop music fadeout 1.0
     scene black with dissolve_scene_full
     play music ghostmenu
-    $ akira = "???"
+    $ akira = "Voice 4"
+    $ hanato = "Voice 1"
+    $ kirinani = "Voice 5"
+    $ itsomi = "Voice 2"
+    $ inari = "Voice 3"
     ha "Seems like your boyfriend has joined that club you despise."
     its "Well, how infuriating."
     ina "Seems like {i}we'll{/i} need to up our game a bit if we want to take over the school."

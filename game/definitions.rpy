@@ -1513,15 +1513,11 @@ define ina = DynamicCharacter('inari', image='inari', what_prefix='“', what_su
 define kmind = DynamicCharacter('k_name', image='kotonoha', what_prefix='(', what_suffix=')', ctc="ctc", ctc_position="fixed")
 define everyone = DynamicCharacter('everyone', what_prefix='“', what_suffix='”', ctc="ctc", ctc_position="fixed")
 define mom = DynamicCharacter('mom', what_prefix='“', what_suffix='”', ctc="ctc", ctc_position="fixed")
-define st = DynamicCharacter('st_name', what_prefix='“', what_suffix='”', ctc="ctc", ctc_position="fixed")
 define a = DynamicCharacter('aoruguri', image='aoruguri', what_prefix='“', what_suffix='”', ctc="ctc", ctc_position="fixed")
-define mi = DynamicCharacter('mio', image='mio', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define ti = DynamicCharacter('tina', image='tina', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define en = DynamicCharacter('en_name', image="engeki", what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define ma = DynamicCharacter('mari', image="mari", what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define d = DynamicCharacter('dominion', image="dominion", what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
-define dev = Character('demomode', ctc="ctc", ctc_position="fixed") #delete for full release
-default demomode = "Developer"
 define general = DynamicCharacter('pla', what_prefix='“', what_suffix='”', ctc="ctc", ctc_position="fixed")
 
 define _dismiss_pause = config.developer
@@ -1564,16 +1560,14 @@ default n_name = "Luna Natsuki"
 default y_name = "Yandere Yuri"
 default k_name = "Sakura Kotonoha"
 default akira = "Kamiyama Akira"
-default hanato = "???"
-default kirinani = "???"
-default itsomi = "???"
-default inari = "???"
+default hanato = "Kamiyama Hanato"
+default kirinani = "Kamiyama Kirinani"
+default itsomi = "Kamiyama Itsomi"
+default inari = "Kamiyama Inari"
 default mom = "Mother"
 default everyone = "Everyone"
 default lilly = "Yandere Lilly"
-default st_name = "Us"
 default aoruguri = "Luna Aoruguri"
-default mio = "Mio"
 default tina = "Tina"
 default en_name = "Luna Engeki"
 default mari = "Kusunoki Mari"
