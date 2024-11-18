@@ -74,7 +74,7 @@ label act1_ch4_end:
     ha om "Jesus!  Now I know why he wants it."
     show hanato cm
     t "Actually, I just remembered..."
-    t "He was one of the test subjects...\nAnd I thought we put them all out of their misery..."
+    t "He was one of the test subjects..."
     ha rhip om "So... he's not himself..."
     t "Yeah... and he never will be again..."
     ha rdown ce "Good fuck!"
