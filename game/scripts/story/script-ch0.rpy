@@ -263,7 +263,19 @@ label ch0_end:
     k worr n1 lup om "The problem with this topic is: it goes into subjects that can be really personal for the author."
     k ldown rhip e1d "But if everyone's in agreement, then I have nothing to say."
     show kotonoha cm
-    t "Sayori?"
+    t "Sayori?  Are you in on this?"
+    s rdown ce "..."
+    s neut oe om "I'll do it."
+    hide kotonoha
+    hide sayori
+    hide natsuki
+    hide yuri
+    show monika forward casual dist rhip zorder 2 at t11
+    m om "Seems like we have a majority..."
+    m ce rdown "..."
+    m neut oe "Honestly, I'm scared to write mine."
+    m dist rhip "But I'm in a similar situation to Natsuki; I {i}should{/i} do this."
+    
 
     stop music fadeout 1.0
     scene black with dissolve_scene_full
