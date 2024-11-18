@@ -115,7 +115,7 @@ define audio.fall2 = "sfx/fall2.ogg"
 define audio.confession = "mod_assets/music/Confession.mp3"
 define audio.depressed = "mod_assets/music/Depressed.mp3"
 define audio.argument = "mod_assets/music/Argument.mp3"
-define audio.itsomitheme = "mod_assets/music/Itsomi's Theme.mp3"
+define audio.itsomitheme = "mod_assets/music/Itsomi_s Theme.mp3"
 define audio.confdep = "<from 2>mod_assets/music/DDMC_Track_Series_Lost_In_Emotion.mp3"
 
 # - ambience
