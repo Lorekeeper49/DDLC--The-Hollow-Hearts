@@ -236,9 +236,36 @@ label ch0_main:
     return
 
 label ch0_end:
-    
+    show monika forward casual happ rhip zorder 2 at t11
+    m om "Okay, everyone!  We are running out of time here, so let's decide on what we should write for this year."
+    m lpoint "As some of you may know, this is a literature club.  And in this literature club, we are tasked to write about one topic for each year."
+    m ldown "Last year, we agreed on drawing from a hat to decide on the topic."
+    m rdown "So..."
+    "She grabs the hat she mentioned."
+    m "We still got a lot of suggestions in here."
+    m lpoint "The topic of this year is..."
+    show monika cm
+    stop music fadeout 1.0
+    $ pause(1.0)
+    show monika dist
+    $ pause(1.0)
+    m ce ldown rhip "*Sigh*\nOh boy..."
+    m oe lpoint "'Write about a true experience, past or present, that has made a significant impact on your life.  Preferably, a dramatically long experience.'\n*Sigh*"
+    m neut "Does anyone want to reroll?"
+    show kotonoha turned casual dist zorder 2 at t41
+    show sayori turned casual dist rup zorder 2 at t42
+    show natsuki turned casual dist rhip zorder 2 at t43
+    show yuri turned casual dist rup zorder 2 at t44
+    "..."
+    t "I don't."
+    y neut om "Me neither."
+    n om rdown "I kinda do, but...  I know I shouldn't."
+    k worr n1 lup om "The problem with this topic is: it goes into subjects that can be really personal for the author."
+    k ldown rhip e1d "But if everyone's in agreement, then I have nothing to say."
+    show kotonoha cm
+    t "Sayori?"
 
-    stop music fadeout 1
+    stop music fadeout 1.0
     scene black with dissolve_scene_full
     play music ghostmenu
     $ akira = "???"
