@@ -178,8 +178,11 @@ label act1_ch1_main:
     t "Yeah, let's just take this on a date later."
     "No one ask what that means, please."
     scene bg deep_forest with wipeleft_scene
+    play music t2
     call showlocation("Deep Forest","September 29, 2023",10*60+0+0/60.0,"bg deep_forest")
     "They did."
     "And we spent an hour trying to explain that it just means to talk about it another day."
+    "*Sigh* The terminology of boy and girl..."
+    "That sounds worse now that I hear that in my head."
 
     return
