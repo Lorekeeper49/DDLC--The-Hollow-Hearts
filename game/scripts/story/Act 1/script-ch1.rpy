@@ -180,5 +180,6 @@ label act1_ch1_main:
     scene bg deep_forest with wipeleft_scene
     call showlocation("Deep Forest","September 29, 2023",10*60+0+0/60.0,"bg deep_forest")
     "They did."
+    "And we spent an hour trying to explain that it just means to talk about it another day."
 
     return
