@@ -38,7 +38,7 @@ label act1_ch4_main:
     s om "I have to."
     s dist rdown "I don't... know her name..."
     t "..."
-    "I choose not to press further."
+    "I decide not to press further."
     t "Well, I'm out of arrows, wanna head to school early?"
     s neut rup "Sure."
     scene bg school_day with wipeleft_scene
