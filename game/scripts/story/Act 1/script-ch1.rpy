@@ -183,6 +183,6 @@ label act1_ch1_main:
     "They did."
     "And we spent an hour trying to explain that it just means to talk about it another day."
     "*Sigh* The terminology of boy and girl..."
-    "That sounds worse now that I hear that in my head."
+    "That sounds worse now that I hear it in my head."
 
     return
