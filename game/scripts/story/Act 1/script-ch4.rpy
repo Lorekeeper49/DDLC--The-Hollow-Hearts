@@ -1,5 +1,6 @@
 label act1_ch4_main:
     stop music fadeout 2.0
+    play music confdep
     scene bg park_01
     with dissolve_scene_full
     call showlocation("Kamiyama Park","October 2, 2023",5*60+0+0/60.0,"bg park_01") from _call_showlocation_15
@@ -25,9 +26,6 @@ label act1_ch4_main:
     "She puts away her bow and changes the subject."
     s rdown "You remember prelife?"
     t "How could I forget when we were at war with that storm for the entire century that we were in there!"
-    "I suddenly remember Sayori's story."
-    t "Oh!  That's what you've been writing your story about!  How could I not realize?"
-    s "It's fine."
     s worr rup "You know, I'm worried about her."
     "What?"
     s "Apparently, the war didn't start deliberately."

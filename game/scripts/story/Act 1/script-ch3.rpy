@@ -142,7 +142,7 @@ label act1_ch3_end:
     show lilly at t21
     y "Father, I'll handle her!"
     show yuri at t22
-    kmind "I know what this is.  Tai-kun, everyone else knows what to do here, just follow their lead."
+    m "I know what this is.  Taiyen, everyone else knows what to do here, just follow their lead."
     hide yuri
     hide lilly
     "Got it."
@@ -203,7 +203,7 @@ label act1_ch3_end:
     hide lilly
     show yuri turned dist rup om zorder 2 at t11
     y "Guys, I should tell you somehting."
-    y neut "I've been writing my story in secret, especially since it's real."
+    y neut "I've been writing my story in secret."
     y dist "And for the next chapter..."
     y ce rdown "I'm gonna be telling you what made my father so... messed up."
     show yuri cm
