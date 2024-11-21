@@ -359,7 +359,7 @@ label act2_ch2_alt:
     t "No no, it's fine!  You just surprised me is all."
     a "No I truly have no idea what I'm-"
     t "If you're truly sure about this, then follow me home.  I trust you with my location."
-    a "But don't blame me if this ends up hurting your grade!"
+    t "But don't blame me if this ends up hurting your grade!"
     hide taiyen
     "He starts walking away."
     menu(time=5,force=1):
