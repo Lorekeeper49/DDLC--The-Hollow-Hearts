@@ -356,7 +356,7 @@ label act2_ch4_common:
     scene bg dark_bathroom
     show vignette zorder 10
     show engeki turned sweater rchest mi zorder 2 at t11
-    play ambience mansion fadein 3.0
+    play music confdep
     hide vignette with Dissolve(3.0)
     a "I'm okay... I'm okay..."
     a "I remember everything."
@@ -371,7 +371,7 @@ label act2_ch4_common:
     a "Sorry, can I... step outside?  I don't think I wanna look at this anymore."
     en "*Nod*"
     scene bg foyer with wipeleft_scene
-    "As I realize I decision I want to make, I stop at the door."
+    "As I realize a decision I want to make, I stop at the door."
     show engeki turned sweater mi rchest bb zorder 2 at t11
     a "Sis..."
     a "I have an enemy outside that I am looking for, I know he survived what I did to him."
