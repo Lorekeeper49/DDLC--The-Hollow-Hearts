@@ -1574,53 +1574,6 @@ default mari = "Kusunoki Mari"
 default dominion = "Luna Dominion"
 default pla = "General Name"
 
-default s_readstory = False
-default s_first = False
-default s_second = False
-default s_third = False
-default s_fourth = False
-default s_last = False
-default n_readstory = False
-default n_first = False
-default n_second = False
-default n_third = False
-default n_fourth = False
-default n_last = False
-default y_readstory = False
-default y_first = False
-default y_second = False
-default y_third = False
-default y_fourth = False
-default y_last = False
-default m_readstory = False
-default m_first = False
-default m_second = False
-default m_third = False
-default m_fourth = False
-default m_last = False
-default k_readstory = False
-default k_first = False
-default k_second = False
-default k_third = False
-default k_fourth = False
-default k_last = False
-
-
-default storysread = 0
-
-default sectext = ""
-default minutext = ""
-default hourtext = ""
-
-# - appeals
-default n_appeal = 0
-default s_appeal = 0
-default y_appeal = 0
-default m_appeal = 0
-
-# - trust values
-default k_trust = 10
-
 # - choices
 default change = "*"
 default cute = False
