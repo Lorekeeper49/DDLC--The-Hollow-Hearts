@@ -105,8 +105,8 @@ init python:
     
 
     intro_ti = Intro(
-    kan = "ティナ",
-    name = "Tina",
+    kan = "高佐氏ティナ",
+    name = "Takasashi Tina",
     attr = "- Ordinary: She has no special abilities, just a normal person.",
     bio = "Lilly's close friend, She is an impetuous, crass, rebellious, but very friendly woman who always looks out for people.",
     img = "tina turned suit cross happ om"
