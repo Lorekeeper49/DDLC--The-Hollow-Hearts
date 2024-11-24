@@ -5,10 +5,7 @@ label act1_ch2_main:
     play music t2
     call showlocation("Residential Street","September 30, 2023",405.2, "bg residential") from _call_showlocation_4
     
-    return
 
-label act1_ch2_end:
-    
     stop music fadeout 1
     scene black with dissolve_scene_full
     play music ghostmenu

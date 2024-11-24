@@ -34,8 +34,6 @@ label start:
     $ pause(1.0)
     hide location_text with Dissolve(2.0)
     call ch0_main from _call_ch0_main
-    call storyresponse_start from _call_storyresponse_start
-    call ch0_end from _call_ch0_end
 
     $ act = 1
     call act_trans
@@ -46,30 +44,18 @@ label start:
     $ chapter = 2
     call chapter_trans("The Precursors")
     call act1_ch2_main from _call_act1_ch2_main
-    call tstory from _call_tstory
-    call storyresponse_start from _call_storyresponse_start_1
-    call act1_ch2_end from _call_act1_ch2_end
 
     $ chapter = 3
     call chapter_trans("Bearing Secrets")
     call act1_ch3_main from _call_act1_ch3_main
-    call tstory from _call_tstory_1
-    call storyresponse_start from _call_storyresponse_start_2
-    call act1_ch3_end from _call_act1_ch3_end
 
     $ chapter = 4
     call chapter_trans("")
     call act1_ch4_main from _call_act1_ch4_main
-    call tstory from _call_tstory_2
-    call storyresponse_start from _call_storyresponse_start_3
-    call act1_ch4_end from _call_act1_ch4_end
 
     $ chapter = 5
     call chapter_trans("")
     call act1_ch5_main from _call_act1_ch5_main
-    call tstory from _call_tstory_3
-    call storyresponse_start from _call_storyresponse_start_4
-    call act1_ch5_end from _call_act1_ch5_end
 
     $ chapter = 6
     call chapter_trans("The Enemy")

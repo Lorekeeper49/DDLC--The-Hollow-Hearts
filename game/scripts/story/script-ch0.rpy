@@ -232,10 +232,26 @@ label ch0_main:
     "I join my sister on the stage."
     "...That doesn't exist."
     kmind rhip anno "Just pretend it's there."
-    
-    return
+    hide kotonoha
+    show monika forward casual happ lpoint rhip zorder 2 at t11
+    m om "The rules are simple;"
+    m ldown "You both will get 10 questions each, you get to choose who asks each question, but you will not be able to choose the same person twice consecutively."
+    m lpoint "However, I will be asking the first question this time just to give everyone time to think of their questions."
+    m "I will be asking you both this question, so that will leave 9 for each of you."
+    show monika zorder 2 at t41
+    show sayori turned casual happ rup zorder 2 at t42
+    show natsuki turned casual happ rhip zorder 2 at t43
+    show yuri turned casual happ rup zorder 2 at t44
+    m "So!  First, a literature question:"
+    m ldown "In your opinion (assuming you have written something), what's the best thing you've written?"
+    $ last_chosen = "monika"
 
-label ch0_end:
+    menu:
+        "Next Question."
+        
+        "Monika" if last_chosen != "monika":
+    
+
     show monika forward casual happ rhip zorder 2 at t11
     m om "Okay, everyone!  We are running out of time here, so let's decide on what we should write for this year."
     m lpoint "As some of you may know, this is a literature club.  And in this literature club, we are tasked to write about one topic for each year."

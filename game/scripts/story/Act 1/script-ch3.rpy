@@ -68,56 +68,8 @@ label act1_ch3_main:
     $ style.say_window = style.window_fake
     $ nb = "namebox_fake"
     call showlocation("Sakura Academy","October 1, 2023",479.95,"bg school_day") from _call_showlocation_9
-    
-    return
 
-label introaoruguri:
-    t "Can I ask you something?"
-    a "Sure."
-    t "So, we've sort of known each other for quite a while, right?"
-    a "Just not names or what we look like."
-    t "Yes, I'd like to change that."
-    a "Eh?"
-    "She seems surprised!"
-    a "Geuss I should've expected that."
-    a "I'll agree to this, but just know; I'm a little shy when it comes to things like this."
-    a "So I'll try to go at your pace, but I may be slow."
-    t "Then let's start by taking a look at each other."
-    "I say as I stand up and begin to turn around."
-    a "Okay..."
-    scene bg tree with wiperight
-    "She stands up, slowly."
-    show aoruguri turned dist zorder 2 at t11
-    "..."
-    a md "{cps=5}Uh...{nw}{/cps}"
-    show aoruguri ea
-    extend "  Hi..."
-    show aoruguri ma
-    "I'll admit, she does look cute but I'm not one to pay attention to looks, I only use looks to recognize someone or something familiar."
-    t "Hi..."
-    t "Here, I'll start, I'm Sakura Taiyen, and my higher generation runs the school I go to.{w=1}\n(Why did I never tell that to you before?)"
-    a md "I-I'm Luna Aoruguri... and there's currently nothing special about me."
-    $ aoruguri = "Luna Aoruguri"
-    a "So you're... Sakura-san."
-    show aoruguri ma
-    t "I think we're past using family names to address each other, Aoruguri."
-    a md "R-right... Taiyen..."
-    show aoruguri ma
-    "She's so nervous..."
-    "But don't worry, I know what to do in these situations.\nAnd that is to ease her into the situation."
-    t "Look I understand why you might've hidden yourself from everyone around you."
-    t "But, I'm sure that if you just try to introduce yourself to more people, like you're doing with me, then I'm sure people will warm up to you for who you are."
-    t "Though who am I to talk?  I'm the exact opposite of shy."
-    $ layeredimage_ref("aoruguri")
-    show aoruguri crossed
-    a dist om "I never would've guessed."
-    show aoruguri cm
-    "She said that sarcastically."
-    a neut "I'll try to take what you said into consideration..."
-    t "Good."
-    return
 
-label act1_ch3_end:
     show monika forward happ rhip om zorder 2 at t11 
     m "And last is Cherry Blossom Kotonoha!"
     hide monika
@@ -229,4 +181,50 @@ label act1_ch3_end:
     s "I'll explain things later, when the situation's less tense."
     s rup "For now, let's tend to Yuri-chan's sister."
     s "We can call it a day when we know she's fine."
+    return
+
+label introaoruguri:
+    t "Can I ask you something?"
+    a "Sure."
+    t "So, we've sort of known each other for quite a while, right?"
+    a "Just not names or what we look like."
+    t "Yes, I'd like to change that."
+    a "Eh?"
+    "She seems surprised!"
+    a "Geuss I should've expected that."
+    a "I'll agree to this, but just know; I'm a little shy when it comes to things like this."
+    a "So I'll try to go at your pace, but I may be slow."
+    t "Then let's start by taking a look at each other."
+    "I say as I stand up and begin to turn around."
+    a "Okay..."
+    scene bg tree with wiperight
+    "She stands up, slowly."
+    show aoruguri turned dist zorder 2 at t11
+    "..."
+    a md "{cps=5}Uh...{nw}{/cps}"
+    show aoruguri ea
+    extend "  Hi..."
+    show aoruguri ma
+    "I'll admit, she does look cute but I'm not one to pay attention to looks, I only use looks to recognize someone or something familiar."
+    t "Hi..."
+    t "Here, I'll start, I'm Sakura Taiyen, and my higher generation runs the school I go to.{w=1}\n(Why did I never tell that to you before?)"
+    a md "I-I'm Luna Aoruguri... and there's currently nothing special about me."
+    $ aoruguri = "Luna Aoruguri"
+    a "So you're... Sakura-san."
+    show aoruguri ma
+    t "I think we're past using family names to address each other, Aoruguri."
+    a md "R-right... Taiyen..."
+    show aoruguri ma
+    "She's so nervous..."
+    "But don't worry, I know what to do in these situations.\nAnd that is to ease her into the situation."
+    t "Look I understand why you might've hidden yourself from everyone around you."
+    t "But, I'm sure that if you just try to introduce yourself to more people, like you're doing with me, then I'm sure people will warm up to you for who you are."
+    t "Though who am I to talk?  I'm the exact opposite of shy."
+    $ layeredimage_ref("aoruguri")
+    show aoruguri crossed
+    a dist om "I never would've guessed."
+    show aoruguri cm
+    "She said that sarcastically."
+    a neut "I'll try to take what you said into consideration..."
+    t "Good."
     return

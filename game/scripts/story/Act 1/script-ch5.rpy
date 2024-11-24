@@ -14,7 +14,3 @@ label act1_ch5_main:
     "Welp, time to start the day."
    
     return
-
-label act1_ch5_end:
-   
-    return

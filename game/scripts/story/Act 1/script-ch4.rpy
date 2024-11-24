@@ -42,11 +42,8 @@ label act1_ch4_main:
     t "Well, I'm out of arrows, wanna head to school early?"
     s neut rup "Sure."
     scene bg school_day with wipeleft_scene
-   
-    return
 
-label act1_ch4_end:
-    
+
     "Where am I?"
     "Why am I here?"
     ha "I talked with him."
