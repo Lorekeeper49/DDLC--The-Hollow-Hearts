@@ -264,6 +264,9 @@ label ch0_main:
         
         "Yuri" if last_chosen != "yuri":
             $ last_chosen = "yuri"
+        
+        "Sayori's chat" if last_chosen != "chat":
+            $ last_chosen = "chat"
     
     show monika zorder 2 at t41
     show sayori turned casual happ rup zorder 2 at t42
@@ -284,24 +287,8 @@ label ch0_main:
         "Yuri" if last_chosen != "yuri":
             $ last_chosen = "yuri"
 
-    show monika zorder 2 at t41
-    show sayori turned casual happ rup zorder 2 at t42
-    show natsuki turned casual happ rhip zorder 2 at t43
-    show yuri turned casual happ rup zorder 2 at t44
-    menu:
-        "Next Question."
-        
-        "Monika" if last_chosen != "monika":
-            $ last_chosen = "monika"
-        
-        "Sayori" if last_chosen != "sayori":
-            $ last_chosen = "sayori"
-        
-        "Natsuki" if last_chosen != "natsuki":
-            $ last_chosen = "natsuki"
-        
-        "Yuri" if last_chosen != "yuri":
-            $ last_chosen = "yuri"
+        "Sayori's chat" if last_chosen != "chat":
+            $ last_chosen = "chat"
 
     show monika zorder 2 at t41
     show sayori turned casual happ rup zorder 2 at t42
@@ -322,24 +309,8 @@ label ch0_main:
         "Yuri" if last_chosen != "yuri":
             $ last_chosen = "yuri"
 
-    show monika zorder 2 at t41
-    show sayori turned casual happ rup zorder 2 at t42
-    show natsuki turned casual happ rhip zorder 2 at t43
-    show yuri turned casual happ rup zorder 2 at t44
-    menu:
-        "Next Question."
-        
-        "Monika" if last_chosen != "monika":
-            $ last_chosen = "monika"
-        
-        "Sayori" if last_chosen != "sayori":
-            $ last_chosen = "sayori"
-        
-        "Natsuki" if last_chosen != "natsuki":
-            $ last_chosen = "natsuki"
-        
-        "Yuri" if last_chosen != "yuri":
-            $ last_chosen = "yuri"
+        "Sayori's chat" if last_chosen != "chat":
+            $ last_chosen = "chat"
 
     show monika zorder 2 at t41
     show sayori turned casual happ rup zorder 2 at t42
@@ -360,24 +331,8 @@ label ch0_main:
         "Yuri" if last_chosen != "yuri":
             $ last_chosen = "yuri"
 
-    show monika zorder 2 at t41
-    show sayori turned casual happ rup zorder 2 at t42
-    show natsuki turned casual happ rhip zorder 2 at t43
-    show yuri turned casual happ rup zorder 2 at t44
-    menu:
-        "Next Question."
-        
-        "Monika" if last_chosen != "monika":
-            $ last_chosen = "monika"
-        
-        "Sayori" if last_chosen != "sayori":
-            $ last_chosen = "sayori"
-        
-        "Natsuki" if last_chosen != "natsuki":
-            $ last_chosen = "natsuki"
-        
-        "Yuri" if last_chosen != "yuri":
-            $ last_chosen = "yuri"
+        "Sayori's chat" if last_chosen != "chat":
+            $ last_chosen = "chat"
 
     show monika zorder 2 at t41
     show sayori turned casual happ rup zorder 2 at t42
@@ -398,6 +353,9 @@ label ch0_main:
         "Yuri" if last_chosen != "yuri":
             $ last_chosen = "yuri"
 
+        "Sayori's chat" if last_chosen != "chat":
+            $ last_chosen = "chat"
+
     show monika zorder 2 at t41
     show sayori turned casual happ rup zorder 2 at t42
     show natsuki turned casual happ rhip zorder 2 at t43
@@ -416,10 +374,79 @@ label ch0_main:
         
         "Yuri" if last_chosen != "yuri":
             $ last_chosen = "yuri"
+
+        "Sayori's chat" if last_chosen != "chat":
+            $ last_chosen = "chat"
+
+    show monika zorder 2 at t41
+    show sayori turned casual happ rup zorder 2 at t42
+    show natsuki turned casual happ rhip zorder 2 at t43
+    show yuri turned casual happ rup zorder 2 at t44
+    menu:
+        "Next Question."
+        
+        "Monika" if last_chosen != "monika":
+            $ last_chosen = "monika"
+        
+        "Sayori" if last_chosen != "sayori":
+            $ last_chosen = "sayori"
+        
+        "Natsuki" if last_chosen != "natsuki":
+            $ last_chosen = "natsuki"
+        
+        "Yuri" if last_chosen != "yuri":
+            $ last_chosen = "yuri"
+
+        "Sayori's chat" if last_chosen != "chat":
+            $ last_chosen = "chat"
+
+    show monika zorder 2 at t41
+    show sayori turned casual happ rup zorder 2 at t42
+    show natsuki turned casual happ rhip zorder 2 at t43
+    show yuri turned casual happ rup zorder 2 at t44
+    menu:
+        "Next Question."
+        
+        "Monika" if last_chosen != "monika":
+            $ last_chosen = "monika"
+        
+        "Sayori" if last_chosen != "sayori":
+            $ last_chosen = "sayori"
+        
+        "Natsuki" if last_chosen != "natsuki":
+            $ last_chosen = "natsuki"
+        
+        "Yuri" if last_chosen != "yuri":
+            $ last_chosen = "yuri"
+
+        "Sayori's chat" if last_chosen != "chat":
+            $ last_chosen = "chat"
+
+    show monika zorder 2 at t41
+    show sayori turned casual happ rup zorder 2 at t42
+    show natsuki turned casual happ rhip zorder 2 at t43
+    show yuri turned casual happ rup zorder 2 at t44
+    menu:
+        "Next Question."
+        
+        "Monika" if last_chosen != "monika":
+            $ last_chosen = "monika"
+        
+        "Sayori" if last_chosen != "sayori":
+            $ last_chosen = "sayori"
+        
+        "Natsuki" if last_chosen != "natsuki":
+            $ last_chosen = "natsuki"
+        
+        "Yuri" if last_chosen != "yuri":
+            $ last_chosen = "yuri"
+
+        "Sayori's chat" if last_chosen != "chat":
+            $ last_chosen = "chat"
     
 
     "With the question quota met, we step down from the non-existent stage."
-    
+
     show monika forward casual happ rhip zorder 2 at t11
     m om "Okay, everyone!  We are running out of time here, so let's decide on what we should write for this year."
     m lpoint "As some of you may know, this is a literature club.  And in this literature club, we are tasked to write about one topic for each year."
