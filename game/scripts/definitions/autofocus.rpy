@@ -1,4 +1,4 @@
-python early in autofocus:
+init -501 python in autofocus:
     from renpy import store
     from store import Transform, _warper, config
 

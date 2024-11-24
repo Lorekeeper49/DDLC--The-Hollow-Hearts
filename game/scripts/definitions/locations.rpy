@@ -142,10 +142,13 @@ label showlocation(place="",date="",time=0.0,face="#000000"):
     show location_text "[place]" as ltext zorder 101 at text_transform
     $ pause(1)
     $ minutes += (1/60.0)
+    show screen clock(face,date,minutes)
     $ pause(1)
     $ minutes += (1/60.0)
+    show screen clock(face,date,minutes)
     $ pause(1)
     $ minutes += (1/60.0)
+    show screen clock(face,date,minutes)
     $ pause(1)
     hide screen clock
     hide ltext
