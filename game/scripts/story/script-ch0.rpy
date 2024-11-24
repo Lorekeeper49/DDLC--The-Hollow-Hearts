@@ -418,8 +418,8 @@ label ch0_main:
             $ last_chosen = "yuri"
     
 
+    "With the question quota met, we step down from the non-existent stage."
     
-
     show monika forward casual happ rhip zorder 2 at t11
     m om "Okay, everyone!  We are running out of time here, so let's decide on what we should write for this year."
     m lpoint "As some of you may know, this is a literature club.  And in this literature club, we are tasked to write about one topic for each year."
