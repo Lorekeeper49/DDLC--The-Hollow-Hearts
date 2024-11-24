@@ -111,9 +111,7 @@ screen clock(bg="",date="",minutes=0.0):
         python:
             hour = int(minutes / 60)
             minu = int(minutes % 60)
-            seco = int((int(minutes)-minutes) * 60)
-            if seco < 0:
-                seco = -seco
+            seco = int((minutes-int(minutes)) * 60)
             if seco < 10:
                 sectext = "0" + str(seco)
             else:
@@ -144,13 +142,10 @@ label showlocation(place="",date="",time=0.0,face="#000000"):
     show location_text "[place]" as ltext zorder 101 at text_transform
     $ pause(1)
     $ minutes += (1/60.0)
-    show screen clock(face,date,minutes)
     $ pause(1)
     $ minutes += (1/60.0)
-    show screen clock(face,date,minutes)
     $ pause(1)
     $ minutes += (1/60.0)
-    show screen clock(face,date,minutes)
     $ pause(1)
     hide screen clock
     hide ltext
