@@ -206,7 +206,7 @@ label ch0_main:
     $ nb = "namebox_fake"
     scene bg park_01 with wipeleft_scene
     t "What was..."
-    show kotonoha turned curi om lup zorder 2 at t11
+    show kotonoha turned casual curi om lup zorder 2 at t11
     k "Something wrong Tai-kun?"
     t "Oh, no.  Just thought someone else was watching us."
     k rhip ldown cm e1c "..."
