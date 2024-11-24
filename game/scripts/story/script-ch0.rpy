@@ -444,7 +444,10 @@ label ch0_main:
         "Sayori's chat" if last_chosen != "chat":
             $ last_chosen = "chat"
     
-
+    hide monika
+    hide sayori turned casual happ rup
+    hide natsuki turned casual happ rhip
+    hide yuri turned casual happ rup
     "With the question quota met, we step down from the non-existent stage."
 
     show monika forward casual happ rhip zorder 2 at t11
@@ -456,13 +459,14 @@ label ch0_main:
     m "We still got a lot of suggestions in here."
     m lpoint "The topic of this year is..."
     show monika cm
-    stop music fadeout 1.0
-    $ pause(1.0)
+    stop music fadeout 3.0
+    $ pause(3.0)
     show monika dist
     $ pause(1.0)
     m ce ldown rhip "*Sigh*\nOh boy..."
     m oe lpoint "'Write about a true experience, past or present, that has made a significant impact on your life.  Preferably, a dramatically long experience.'\n*Sigh*"
     m neut "Does anyone want to reroll?"
+    hide monika
     show kotonoha turned casual dist zorder 2 at t41
     show sayori turned casual dist rup zorder 2 at t42
     show natsuki turned casual dist rhip zorder 2 at t43
@@ -490,6 +494,8 @@ label ch0_main:
     everyone "Got it."
     stop music fadeout 1.0
     scene black with dissolve_scene_full
+    $ style.say_window = style.window
+    $ nb = "namebox"
     play music ghostmenu
     $ akira = "Voice 4"
     $ hanato = "Voice 1"

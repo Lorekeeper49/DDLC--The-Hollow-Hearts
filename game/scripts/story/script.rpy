@@ -133,8 +133,6 @@ label dev:
                         $ pause(1.0)
                         hide location_text with Dissolve(2.0)
                         call ch0_main from _call_ch0_main_1
-                        call storyresponse_start from _call_storyresponse_start_5
-                        call ch0_end from _call_ch0_end_1
                     "SAYORI":
                         menu:
                             "SELECT A CHAPTER:"
@@ -265,36 +263,24 @@ label dev:
                         $ hanato = "Kamiyama Hanato"
                         call chapter_trans("The Precursors")
                         call act1_ch2_main from _call_act1_ch2_main_1
-                        call tstory                        
-                        call storyresponse_start from _call_storyresponse_start_6
-                        call act1_ch2_end from _call_act1_ch2_end_1
                     "CHAPTER 3":
                         $ chapter = 3
                         "BEGINNING CHAPTER 3"
                         $ hanato = "Kamiyama Hanato"
                         call chapter_trans("Bearing Secrets")
                         call act1_ch3_main from _call_act1_ch3_main_1
-                        call tstory 
-                        call storyresponse_start from _call_storyresponse_start_7
-                        call act1_ch3_end from _call_act1_ch3_end_1
                     "CHAPTER 4":
                         $ chapter = 4
                         "BEGINNING CHAPTER 4"
                         $ hanato = "Kamiyama Hanato"
                         call chapter_trans("")
                         call act1_ch4_main from _call_act1_ch4_main_1
-                        call tstory 
-                        call storyresponse_start from _call_storyresponse_start_8
-                        call act1_ch4_end from _call_act1_ch4_end_1
                     "CHAPTER 5":
                         $ chapter = 5
                         "BEGINNING CHAPTER 5"
                         $ hanato = "Kamiyama Hanato"
                         call chapter_trans("")
                         call act1_ch5_main from _call_act1_ch5_main_1
-                        call tstory 
-                        call storyresponse_start from _call_storyresponse_start_9
-                        call act1_ch5_end from _call_act1_ch5_end_1
                     "BACK":
                         jump dev_loop
             "ACT 2":
