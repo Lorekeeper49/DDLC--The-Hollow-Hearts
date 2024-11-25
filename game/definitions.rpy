@@ -61,6 +61,10 @@ init python:
     def random_chance(chance):
         n = random.uniform(1.0, 100.0)
         return n < chance
+    def sound_start(trans, st, at):
+        renpy.sound.play(audio.static)
+    def sound_stop(trans, st, at):
+        renpy.sound.stop()
 default filepathFound = ""
 
 
@@ -306,7 +310,7 @@ image bg vision_background:
             "bg hall2"
         choice:
             "bg final_room"
-        1.0
+        5.0
         choice:
             0.0
         choice:
@@ -375,6 +379,34 @@ image bg vision_background:
         choice:
             0.1
         function sound_stop
+        repeat
+    parallel:
+        zoom 1.0
+        choice:
+            linear 5.0 zoom 1.05
+        choice:
+            linear 6.0 zoom 1.05
+        choice:
+            linear 7.0 zoom 1.05
+        choice:
+            linear 8.0 zoom 1.05
+        choice:
+            linear 9.0 zoom 1.05
+        choice:
+            linear 10.0 zoom 1.05
+        0.0
+        choice:
+            linear 5.0 zoom 1.0
+        choice:
+            linear 6.0 zoom 1.0
+        choice:
+            linear 7.0 zoom 1.0
+        choice:
+            linear 8.0 zoom 1.0
+        choice:
+            linear 9.0 zoom 1.0
+        choice:
+            linear 10.0 zoom 1.0
         repeat
 
 
