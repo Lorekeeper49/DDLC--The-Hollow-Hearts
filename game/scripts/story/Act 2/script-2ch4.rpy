@@ -3,7 +3,7 @@ label act2_ch4_main:
     if not known:
         jump act2_ch4_alt
     stop music fadeout 2.0
-    play ambience mansion
+    #play ambience mansion
     scene bg mansion
     with dissolve_scene_full
     call showlocation("Wraith Mansion","October 11, 2023",21*60+14+57/60.0,"bg mansion") from _call_showlocation_43
@@ -160,7 +160,7 @@ label act2_ch4_alt:
 
 label act2_ch4_common:
     stop music fadeout 2.0
-    play ambience mansion fadein 1.0
+    #play ambience mansion fadein 1.0
     a "{cps=3}...?{/cps}"
     scene bg final_room
     with dissolve_scene_full
@@ -204,8 +204,10 @@ label act2_ch4_common:
     show engeki turned sweater rchest zorder 2 at t11
     with blink
     show engeki mb
-    general "Hello."
-    general "It's me."
+    $ en_name = "???"
+    en "Hello."
+    en "It's me."
+    $ en_name = "Luna Engeki"
     en "Engeki."
     show engeki ma
     a "Engeki?"
@@ -472,6 +474,7 @@ label act2_ch4_main_end:
     hide mari
     a "Where's Lilly?"
     show lilly casual doll a0 zorder 2 at t11
+    stop music
     a "!!!"
     "On the ground?"
     a "Lilly!"
@@ -500,6 +503,7 @@ label act2_ch4_main_end:
     return
 
 label act2_ch4_alt_end:
+    stop music fadeout 1.0
     scene bg mansion with wipeleft_scene
     "Well..."
     "It's time to-{nw}"
