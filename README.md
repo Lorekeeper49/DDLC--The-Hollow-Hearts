@@ -224,3 +224,5 @@ SOME MINIGAME CODE - ShadowyJaw
 [SILHOUETTE CODE - Ren'Py cookbook](https://www.renpy.org/wiki/renpy/doc/cookbook/Turn_an_image_into_a_silhouette)
 
 [AUTO BACKGROUND CODE - 「N E K O L A I S」](https://discord.com/channels/339272843327963136/373669030747308032/1224937520932847768)
+
+[AUTOFOCUS - Elckarow, Ayowel](https://github.com/Elckarow/Autofocus/tree/v1.0.1)
