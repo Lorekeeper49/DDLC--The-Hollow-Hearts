@@ -309,7 +309,7 @@ label act2_ch3_alt:
     a "Are you Natsuki?"
     n ce "..."
     n cross neut oe om "Hey Sis..."
-    show bg vision_background
+    show bg vision_background zorder 1
     n "Do you... remember me?"
     show natsuki cm
     "Something doesn't feel right..."
