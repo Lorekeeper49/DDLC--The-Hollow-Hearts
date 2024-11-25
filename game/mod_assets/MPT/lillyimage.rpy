@@ -1,4 +1,6 @@
 layeredimage lilly:
+    at AutofocusDisplayable(name="lilly")
+
     group outfit:
         attribute uniform default null
         attribute casual null

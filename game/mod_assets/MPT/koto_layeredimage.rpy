@@ -1,4 +1,6 @@
 layeredimage kotonoha turned:
+    at AutofocusDisplayable(name="kotonoha")
+
     group outfit:
 
         attribute uniform default null

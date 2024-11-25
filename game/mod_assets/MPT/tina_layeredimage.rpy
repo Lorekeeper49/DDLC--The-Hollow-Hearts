@@ -19,6 +19,7 @@ init python:
 
 
 layeredimage tina turned: #turned definitions.
+    at AutofocusDisplayable(name="tina")
     
     always "mod_assets/MPT/tina/tina_turned_facebase.png" #Always need this face.
     

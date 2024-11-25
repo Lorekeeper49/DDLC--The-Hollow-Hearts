@@ -180,7 +180,7 @@ image nat_fs_b3:
 
 
 layeredimage natsuki turned:
-    
+    at AutofocusDisplayable(name="natsuki")
     
     
     group outfit:
@@ -686,7 +686,7 @@ layeredimage natsuki turned:
 
 
 layeredimage natsuki cross:
-    
+    at AutofocusDisplayable(name="natsuki")
     
     
     group outfit:

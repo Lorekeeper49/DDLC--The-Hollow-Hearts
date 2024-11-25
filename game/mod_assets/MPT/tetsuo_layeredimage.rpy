@@ -1,4 +1,5 @@
 layeredimage tetsuo towards:
+    at AutofocusDisplayable(name="tetsuo")
 
     always "mod_assets/MPT/tetsuo/base.png"
 

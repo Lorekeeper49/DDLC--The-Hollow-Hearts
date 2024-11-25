@@ -1,4 +1,5 @@
 layeredimage sayori turned: #turned definitions.
+    at AutofocusDisplayable(name="sayori")
     
     always "mod_assets/MPT/sayori/sayori_turned_facebase.png" #Always need this face.
     
@@ -322,6 +323,7 @@ layeredimage sayori turned: #turned definitions.
 
 
 layeredimage sayori tap: #tapping definitions.
+    at AutofocusDisplayable(name="sayori")
     
     group outfit:
         attribute uniform default:

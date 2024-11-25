@@ -94,7 +94,9 @@ image en_blink_shy:
 
 #engeki turned layered image (a.k.a. normal pose)
 layeredimage engeki turned:
-    at renpy.partial(Flatten, drawable_resolution=False)
+    at AutofocusDisplayable(name="engeki")
+
+    #at renpy.partial(Flatten, drawable_resolution=False)
 
     #Face base
     always "mod_assets/MPT/engeki/expression/base_turned.png"
@@ -283,8 +285,9 @@ layeredimage engeki turned:
 
 #engeki's shy layered image (looking away)
 layeredimage engeki shy:
+    at AutofocusDisplayable(name="engeki")
 
-    at renpy.partial(Flatten, drawable_resolution=False)
+    #at renpy.partial(Flatten, drawable_resolution=False)
 
     #Face base
     always "mod_assets/MPT/engeki/expression/base_shy.png"

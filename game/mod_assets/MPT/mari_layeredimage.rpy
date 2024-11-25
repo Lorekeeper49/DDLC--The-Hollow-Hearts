@@ -1,4 +1,6 @@
 layeredimage mari forward:
+    at AutofocusDisplayable(name="mari")
+
     always:
         "mod_assets/MPT/mari/body.png"
     

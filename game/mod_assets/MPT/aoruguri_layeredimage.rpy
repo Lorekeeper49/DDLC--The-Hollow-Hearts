@@ -1,4 +1,6 @@
 layeredimage aoruguri turned:
+    at AutofocusDisplayable(name="aoruguri")
+
     group outfit: 
         attribute uniform default null
         attribute casual null

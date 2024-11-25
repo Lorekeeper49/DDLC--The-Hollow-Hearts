@@ -1,4 +1,5 @@
 layeredimage hanato day:
+    at AutofocusDisplayable(name="hanato")
     
     always "mod_assets/MPT/hanato/Day/face_base.png"
     

@@ -1,5 +1,6 @@
 layeredimage yuri turned:
-    
+    at AutofocusDisplayable(name="yuri")
+
     always "mod_assets/MPT/yuri/yuri_turned_facebase.png"
     
     
@@ -378,6 +379,7 @@ layeredimage yuri turned:
 
 
 layeredimage yuri shy:
+    at AutofocusDisplayable(name="yuri")
     
     always "mod_assets/MPT/yuri/yuri_shy_facebase.png"
     
