@@ -278,6 +278,106 @@ init -501 python:
     
     print(renpy.display.image.list_images())
 
+image bg vision_background:
+    function sound_start
+    "noise"
+    0.15
+    function sound_stop
+    parallel:
+        choice:
+            "bg bad_bedroom"
+        choice:
+            "bg bedroom1"
+        choice:
+            "bg bedroom2"
+        choice:
+            "bg bedroom3"
+        choice:
+            "bg dark_dining"
+        choice:
+            "bg dark_kitchen"
+        choice:
+            "bg dark_bathroom"
+        choice:
+            "bg foyer"
+        choice:
+            "bg hall1"
+        choice:
+            "bg hall2"
+        choice:
+            "bg final_room"
+        1.0
+        choice:
+            0.0
+        choice:
+            0.1
+        choice:
+            0.2
+        choice:
+            0.3
+        choice:
+            0.4
+        choice:
+            0.5
+        choice:
+            0.6
+        choice:
+            0.7
+        choice:
+            0.8
+        choice:
+            0.9
+        choice:
+            1.0
+        choice:
+            1.1
+        choice:
+            1.2
+        choice:
+            1.3
+        choice:
+            1.4
+        choice:
+            1.5
+        choice:
+            1.6
+        choice:
+            1.7
+        choice:
+            1.8
+        choice:
+            1.9
+        choice:
+            2.0
+        function sound_start
+        "noise"
+        0.05
+        choice:
+            0.0
+        choice:
+            0.01
+        choice:
+            0.02
+        choice:
+            0.03
+        choice:
+            0.04
+        choice:
+            0.05
+        choice:
+            0.06
+        choice:
+            0.07
+        choice:
+            0.08
+        choice:
+            0.09
+        choice:
+            0.1
+        function sound_stop
+        repeat
+
+
 # - characters
 image sayori 1 = im.Composite((960, 960), (0, 0), "sayori/1l.png", (0, 0), "sayori/1r.png", (0, 0), "sayori/a.png")
 image sayori 1a = im.Composite((960, 960), (0, 0), "sayori/1l.png", (0, 0), "sayori/1r.png", (0, 0), "sayori/a.png")
