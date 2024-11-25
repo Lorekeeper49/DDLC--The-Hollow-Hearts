@@ -300,8 +300,19 @@ label act2_ch3_alt:
     scene bg park_night
     with dissolve_scene_full
     call showlocation("Converse Park","October 10, 2023",19*60+14+57/60.0,"bg tree")
-    "I have absolutely no idea why I'm going to the exact place an anonymous number has told me to go."
+    "I have absolutely no idea why I'm going to the exact place an 'unkown' number has told me to go."
     "Even said they know me?"
     "Ah well, it's not like I've got anything left to lose anyway."
+    show natsuki turned casual dist rhip zorder 2 at t11
+    n "..."
+    a "Hello?"
+    a "Are you Natsuki?"
+    n ce "..."
+    n cross neut oe om "Hey Sis..."
+    show bg vision_background
+    n "Do you... remember me?"
+    show natsuki cm
+    "Something doesn't feel right..."
+    a "No?"
 
     return
