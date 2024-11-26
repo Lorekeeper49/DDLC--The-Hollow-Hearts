@@ -331,6 +331,12 @@ label act2_ch3_alt:
     n dist "The others, well..."
     n cross neut "There's an old monsion on the west side of town about 50 blocks from your school."
     hide bg vision_background
+    play sound static
+    show noise zorder 1
+    $ pause(0.15)
+    stop sound
+    hide noise 
+    show bg park_night zorder 1
     play ambience forest fadein 5.0
     n "I suggest you start there."
     "Is she crazy?"
