@@ -343,7 +343,7 @@ label act2_ch3_alt:
     hide natsuki
     "She begins walking away."
     a "Wait!"
-    show natuski cross casual neut zorder 2 at t11
+    show natsuki cross casual neut zorder 2 at t11
     "She stops."
     a "You said my mother can't find me, can you find her?"
     "I'm just assuming what she's saying is true without a second thought."
