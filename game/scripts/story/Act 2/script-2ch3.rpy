@@ -333,7 +333,7 @@ label act2_ch3_alt:
     hide bg vision_background
     play sound static
     show noise zorder 1
-    $ pause(0.15)
+    n "{w=0.15}{nw}"
     stop sound
     hide noise 
     show bg park_night zorder 1
