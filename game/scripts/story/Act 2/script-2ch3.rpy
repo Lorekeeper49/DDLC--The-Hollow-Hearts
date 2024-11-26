@@ -329,7 +329,7 @@ label act2_ch3_alt:
     n dist "That is a sentence I just said." 
     n ldown neut "But in all seriousness, he exists in most of those memories of yours."
     n dist "The others, well..."
-    n cross neut "There's an old monsion on the west side of town about 50 blocks from your school."
+    n cross neut "There's an old mansion on the west side of town about 50 blocks from your school."
     hide bg vision_background
     play sound static
     show noise zorder 1
@@ -356,5 +356,17 @@ label act2_ch3_alt:
     a "I should consult Mari."
     scene bg mari_office with wipeleft_scene
     call showlocation("Principal's Office", "October 10, 2023",19*60+59+57/60.0,"bg mari_office")
+    a "Mari?"
+    show mari forward curi zorder 2 at t11
+    ma om "Yes, honey?"
+    show mari cm
+    a "Well..."
+    "Fuck it, let's test this."
+    a "Mother..."
+    ma happ "!!!"
+    a "(Holy fuck!)"
+    "I got her?"
+    ma tears "Daughter?  You remember?!"
+    a "Mother!"
 
     return
