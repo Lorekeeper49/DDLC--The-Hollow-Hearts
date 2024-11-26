@@ -309,6 +309,10 @@ image bg vision_background:
         choice:
             "bg hall2"
         choice:
+            "bg top_kitchen"
+        choice:
+            "bg storage"
+        choice:
             "bg final_room"
         5.0
         choice:
