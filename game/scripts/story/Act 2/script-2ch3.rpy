@@ -315,5 +315,17 @@ label act2_ch3_alt:
     show natsuki cm
     "Something doesn't feel right..."
     a "No?"
+    n om "Of course..."
+    n dist "Hello amnesia, how are you?"
+    n turned neut rhip "Mom not able to find you?"
+    "'Mom'?"
+    a "I don't know my mother."
+    n dist "Of course you don't!"
+    n anno rdown ce "Damnit!"
+    n oe "You know Taiyen, right?"
+    a "Sort of..."
+    n neut "I know what you're thinking about."
+    n anno rhip lhip "It's fuck him or dump him!  I say fuck him!"
+    n dist "That is a sentence I just said." 
 
     return
