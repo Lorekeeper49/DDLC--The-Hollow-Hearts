@@ -412,6 +412,12 @@ image bg vision_background:
         choice:
             linear 10.0 zoom 1.0
         repeat
+    on hide:
+        function sound_start
+        "noise"
+        0.15
+        function sound_stop
+        alpha 0
 
 
 # - characters

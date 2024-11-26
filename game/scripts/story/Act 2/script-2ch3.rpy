@@ -327,5 +327,28 @@ label act2_ch3_alt:
     n neut "I know what you're thinking about."
     n anno rhip lhip "It's fuck him or dump him!  I say fuck him!"
     n dist "That is a sentence I just said." 
+    n ldown neut "But in all seriousness, he exists in most of those memories of yours."
+    n dist "The others, well..."
+    n cross neut "There's an old monsion on the west side of town about 50 blocks from your school."
+    hide bg vision_background
+    play ambience forest fadein 5.0
+    n "I suggest you start there."
+    "Is she crazy?"
+    hide natsuki
+    "She begins walking away."
+    a "Wait!"
+    show natuski cross casual neut zorder 2 at t11
+    "She stops."
+    a "You said my mother can't find me, can you find her?"
+    "I'm just assuming what she's saying is true without a second thought."
+    "If this girl really is my sister, then she'd know how to find mother."
+    n om "I don't need to."
+    n "You already have."
+    "The fuck is that supposed to mean?"
+    hide natsuki
+    "She walks away."
+    a "I should consult Mari."
+    scene bg mari_office with wipeleft_scene
+    call showlocation("Principal's Office", "October 8, 2023",19*60+59+57/60.0,"bg mari_office")
 
     return
