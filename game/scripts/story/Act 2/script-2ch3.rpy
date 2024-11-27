@@ -366,7 +366,22 @@ label act2_ch3_alt:
     ma happ "!!!"
     a "(Holy fuck!)"
     "I got her?"
-    ma tears "Daughter?  You remember?!"
+    ma tears om "Daughter?  You remember?!"
+    "She's always been right in front of me!"
     a "Mother!"
+    show mari ce cm at face
+    "..."
+    ma oe om "I finally found you!"
+    show mari cm
+    "She kisses my forehead lovingly."
+    show mari at t11
+    a "I wouldn't say you've found me per se, I think I've still got amnesia."
+    ma om "Well, it's a start, is it not?"
+    show mari none
+    "She wipes her tears."
+    a "So, why didn't you tell me about all this before?  I feel like things would've been the same, if not a lot happier."
+    ma dist "They would not have been..."
+    ma om "It's a lot of things to take in."
+    ma ee "Not to mention how little I actually want to recall."
 
     return
