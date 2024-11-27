@@ -104,7 +104,7 @@ label act1_ch1_main:
             show sayori cm
             t "But, to answer the question..."
     show sayori happ cm
-    "Well, I saw you starting your stream how you usually do and since I had nothing to do today I thought, why not?  I'll come by and join the stream!"
+    t "Well, I saw you starting your stream how you usually do and since I had nothing to do today I thought, why not?  I'll come by and join the stream!"
     s rup "Ah!  Well it's nice to have you here!"
     "As usual, her chat is shipping us."
     "It's like a Vtuber's chat."
