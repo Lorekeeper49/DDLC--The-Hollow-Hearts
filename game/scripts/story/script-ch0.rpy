@@ -427,14 +427,16 @@ label ch0_main:
     show natsuki turned casual happ rhip zorder 2 at t43
     show yuri turned casual happ rup zorder 2 at t44
     menu:
-        "Next Question."
+        t "Lastly..."
         
         "Monika" if last_chosen != "monika":
             $ last_chosen = "monika"
         
         "Sayori" if last_chosen != "sayori":
             $ last_chosen = "sayori"
-        
+            s om "Alright!"
+            s "I'm sure everyone's wondering this."
+            s lup "Are you joining the literature club?"
         "Natsuki" if last_chosen != "natsuki":
             $ last_chosen = "natsuki"
         
