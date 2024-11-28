@@ -720,7 +720,7 @@ label ch0_main:
     $ pause(3.0)
     show monika dist
     $ pause(1.0)
-    m ce ldown rhip "*Sigh*\nOh boy..."
+    m ce ldown rhip om "*Sigh*\nOh boy..."
     m oe lpoint "'Write about a true experience, past or present, that has made a significant impact on your life.  Preferably, a dramatically long experience.'\n*Sigh*"
     m neut "Does anyone want to reroll?"
     hide monika
@@ -731,7 +731,9 @@ label ch0_main:
     "..."
     t "I don't."
     y neut om "Me neither."
+    show yuri cm
     n om rdown "I kinda do, but...  I know I shouldn't."
+    show natsuki cm
     k worr n1 lup om "The problem with this topic is: it goes into subjects that can be really personal for the author."
     k ldown rhip e1d "But if everyone's in agreement, then I have nothing to say."
     show kotonoha cm
