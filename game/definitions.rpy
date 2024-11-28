@@ -18,6 +18,7 @@ init python:
     config.keymap['toggle_skip'] = []
     renpy.music.register_channel("ambience", mixer="music", tight=True)
     renpy.music.register_channel("music_swap", mixer="music", tight=True)
+    renpy.music.register_channel("music_poem", mixer="music", tight=True)
     def get_pos(channel='music'):
         pos = renpy.music.get_pos(channel=channel)
         if pos: return pos
