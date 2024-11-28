@@ -707,10 +707,14 @@ label ch0_main:
     $ nb = "namebox"
     scene bg park_01 with dissolve_scene_full
     play music confdep
-    "I'm heading back, I can't do this anymore!"
-    "Everyone's having too much fun."
-    "I can't have any fun."
-    "*Sigh*"
+    ak "Aoruguri, where are you going?"
+    a "I'm heading back, I can't do this anymore!"
+    a "Everyone's having too much fun."
+    ak "This is your oppurtunity to be social, you can't back out now!"
+    a "Shut up!"
+    a "I can't have any fun."
+    a "You know that!"
+    a "*Sigh*"
     a "I should never have come here..."
     stop music fadeout 1.0
     $ style.say_window = style.window_fake
