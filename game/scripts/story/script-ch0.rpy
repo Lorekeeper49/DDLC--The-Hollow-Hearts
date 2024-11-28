@@ -692,6 +692,21 @@ label ch0_main:
 
     call showpoem(poem_s)
 
+    stop music fadeout 1.0
+    $ style.say_window = style.window
+    $ nb = "namebox"
+    scene bg park_01 with dissolve_scene_full
+    play music confdep
+    "I'm heading back, I can't do this anymore!"
+    "Everyone's having too much fun."
+    "I can't have any fun."
+    "*Sigh*"
+    a "I should never have come here..."
+    stop music fadeout 1.0
+    $ style.say_window = style.window_fake
+    $ nb = "namebox_fake"
+    scene bg park_01 with dissolve_scene_full
+    play music t3
     show monika forward casual happ rhip zorder 2 at t11
     m om "Okay, everyone!  We are running out of time here, so let's decide on what we should write for this year."
     m lpoint "As some of you may know, this is a literature club.  And in this literature club, we are tasked to write about one topic for each year."
