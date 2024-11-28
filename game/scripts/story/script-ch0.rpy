@@ -245,6 +245,8 @@ label ch0_main:
     m "So!  First, a literature question:"
     m ldown "In your opinion (assuming you have written something), what's the best thing you've written?"
     $ last_chosen = "monika"
+    $ koto_chosen = "monika"
+    $ choice_list = ["monika", "sayori", "natsuki", "yuri", "chat"]
 
     show monika forward casual happ rhip zorder 2 at t41
     show sayori turned casual happ rup zorder 2 at t42
@@ -252,7 +254,7 @@ label ch0_main:
     show yuri turned casual happ rup zorder 2 at t44
     m om lpoint "Alright, now you can choose."
     m ldown "And to make things more interesting, let's allow Sayori's chat ask questions as well."
-    m lpoint "And since you can't the same person twice, I'm not in the first selection."
+    m lpoint "And since you can't choose the same person twice, I'm not in the first selection."
     menu:
         m ldown "So, who will you choose?"
         
@@ -270,28 +272,26 @@ label ch0_main:
         
         "Sayori's chat" if last_chosen != "chat":
             $ last_chosen = "chat"
+    hide yuri
+    hide sayori
+    hide monika
+    hide natsuki
+    show kotonoha turned casual happ lup zorder 2 at t11
+    $ koto_chosen = renpy.random.choice([person_chosen for person_chosen in choice_list if person_chosen not in [koto_chosen]])
+    if koto_chosen == "monika":
+        k om "I'll choose Monika."
+        "Ignore this, this option never happens, it's just to make copying the menu easier."
+    if koto_chosen == "sayori":
+        k om "I'll choose Sayori."
+
+    if koto_chosen == "natsuki":
+        k om "I'll choose Natsuki."
+
+    if koto_chosen == "yuri":
+        k om "I'll choose Yuri."
     
-    show monika zorder 2 at t41
-    show sayori turned casual happ rup zorder 2 at t42
-    show natsuki turned casual happ rhip zorder 2 at t43
-    show yuri turned casual happ rup zorder 2 at t44
-    menu:
-        "Next Question."
-        
-        "Monika" if last_chosen != "monika":
-            $ last_chosen = "monika"
-        
-        "Sayori" if last_chosen != "sayori":
-            $ last_chosen = "sayori"
-        
-        "Natsuki" if last_chosen != "natsuki":
-            $ last_chosen = "natsuki"
-        
-        "Yuri" if last_chosen != "yuri":
-            $ last_chosen = "yuri"
-
-        "Sayori's chat" if last_chosen != "chat":
-            $ last_chosen = "chat"
+    if koto_chosen == "chat":
+        k om "I'll choose Sayori's chat."
 
     show monika zorder 2 at t41
     show sayori turned casual happ rup zorder 2 at t42
@@ -314,6 +314,26 @@ label ch0_main:
 
         "Sayori's chat" if last_chosen != "chat":
             $ last_chosen = "chat"
+    hide yuri
+    hide sayori
+    hide monika
+    hide natsuki
+    show kotonoha turned casual happ lup zorder 2 at t11
+    $ koto_chosen = renpy.random.choice([person_chosen for person_chosen in choice_list if person_chosen not in [koto_chosen]])
+    if koto_chosen == "monika":
+        k om "I'll choose Monika."
+        
+    if koto_chosen == "sayori":
+        k om "I'll choose Sayori."
+
+    if koto_chosen == "natsuki":
+        k om "I'll choose Natsuki."
+
+    if koto_chosen == "yuri":
+        k om "I'll choose Yuri."
+    
+    if koto_chosen == "chat":
+        k om "I'll choose Sayori's chat."
 
     show monika zorder 2 at t41
     show sayori turned casual happ rup zorder 2 at t42
@@ -336,6 +356,26 @@ label ch0_main:
 
         "Sayori's chat" if last_chosen != "chat":
             $ last_chosen = "chat"
+    hide yuri
+    hide sayori
+    hide monika
+    hide natsuki
+    show kotonoha turned casual happ lup zorder 2 at t11
+    $ koto_chosen = renpy.random.choice([person_chosen for person_chosen in choice_list if person_chosen not in [koto_chosen]])
+    if koto_chosen == "monika":
+        k om "I'll choose Monika."
+        
+    if koto_chosen == "sayori":
+        k om "I'll choose Sayori."
+
+    if koto_chosen == "natsuki":
+        k om "I'll choose Natsuki."
+
+    if koto_chosen == "yuri":
+        k om "I'll choose Yuri."
+    
+    if koto_chosen == "chat":
+        k om "I'll choose Sayori's chat."
 
     show monika zorder 2 at t41
     show sayori turned casual happ rup zorder 2 at t42
@@ -358,6 +398,26 @@ label ch0_main:
 
         "Sayori's chat" if last_chosen != "chat":
             $ last_chosen = "chat"
+    hide yuri
+    hide sayori
+    hide monika
+    hide natsuki
+    show kotonoha turned casual happ lup zorder 2 at t11
+    $ koto_chosen = renpy.random.choice([person_chosen for person_chosen in choice_list if person_chosen not in [koto_chosen]])
+    if koto_chosen == "monika":
+        k om "I'll choose Monika."
+        
+    if koto_chosen == "sayori":
+        k om "I'll choose Sayori."
+
+    if koto_chosen == "natsuki":
+        k om "I'll choose Natsuki."
+
+    if koto_chosen == "yuri":
+        k om "I'll choose Yuri."
+    
+    if koto_chosen == "chat":
+        k om "I'll choose Sayori's chat."
 
     show monika zorder 2 at t41
     show sayori turned casual happ rup zorder 2 at t42
@@ -380,6 +440,26 @@ label ch0_main:
 
         "Sayori's chat" if last_chosen != "chat":
             $ last_chosen = "chat"
+    hide yuri
+    hide sayori
+    hide monika
+    hide natsuki
+    show kotonoha turned casual happ lup zorder 2 at t11
+    $ koto_chosen = renpy.random.choice([person_chosen for person_chosen in choice_list if person_chosen not in [koto_chosen]])
+    if koto_chosen == "monika":
+        k om "I'll choose Monika."
+        
+    if koto_chosen == "sayori":
+        k om "I'll choose Sayori."
+
+    if koto_chosen == "natsuki":
+        k om "I'll choose Natsuki."
+
+    if koto_chosen == "yuri":
+        k om "I'll choose Yuri."
+    
+    if koto_chosen == "chat":
+        k om "I'll choose Sayori's chat."
 
     show monika zorder 2 at t41
     show sayori turned casual happ rup zorder 2 at t42
@@ -402,6 +482,26 @@ label ch0_main:
 
         "Sayori's chat" if last_chosen != "chat":
             $ last_chosen = "chat"
+    hide yuri
+    hide sayori
+    hide monika
+    hide natsuki
+    show kotonoha turned casual happ lup zorder 2 at t11
+    $ koto_chosen = renpy.random.choice([person_chosen for person_chosen in choice_list if person_chosen not in [koto_chosen]])
+    if koto_chosen == "monika":
+        k om "I'll choose Monika."
+        
+    if koto_chosen == "sayori":
+        k om "I'll choose Sayori."
+
+    if koto_chosen == "natsuki":
+        k om "I'll choose Natsuki."
+
+    if koto_chosen == "yuri":
+        k om "I'll choose Yuri."
+    
+    if koto_chosen == "chat":
+        k om "I'll choose Sayori's chat."
 
     show monika zorder 2 at t41
     show sayori turned casual happ rup zorder 2 at t42
@@ -424,6 +524,68 @@ label ch0_main:
 
         "Sayori's chat" if last_chosen != "chat":
             $ last_chosen = "chat"
+    hide yuri
+    hide sayori
+    hide monika
+    hide natsuki
+    show kotonoha turned casual happ lup zorder 2 at t11
+    $ koto_chosen = renpy.random.choice([person_chosen for person_chosen in choice_list if person_chosen not in [koto_chosen]])
+    if koto_chosen == "monika":
+        k om "I'll choose Monika."
+        
+    if koto_chosen == "sayori":
+        k om "I'll choose Sayori."
+
+    if koto_chosen == "natsuki":
+        k om "I'll choose Natsuki."
+
+    if koto_chosen == "yuri":
+        k om "I'll choose Yuri."
+    
+    if koto_chosen == "chat":
+        k om "I'll choose Sayori's chat."
+
+    show monika zorder 2 at t41
+    show sayori turned casual happ rup zorder 2 at t42
+    show natsuki turned casual happ rhip zorder 2 at t43
+    show yuri turned casual happ rup zorder 2 at t44
+    menu:
+        "Next Question."
+        
+        "Monika" if last_chosen != "monika":
+            $ last_chosen = "monika"
+        
+        "Sayori" if last_chosen != "sayori":
+            $ last_chosen = "sayori"
+        
+        "Natsuki" if last_chosen != "natsuki":
+            $ last_chosen = "natsuki"
+        
+        "Yuri" if last_chosen != "yuri":
+            $ last_chosen = "yuri"
+
+        "Sayori's chat" if last_chosen != "chat":
+            $ last_chosen = "chat"
+    hide yuri
+    hide sayori
+    hide monika
+    hide natsuki
+    show kotonoha turned casual happ lup zorder 2 at t11
+    $ koto_chosen = renpy.random.choice([person_chosen for person_chosen in choice_list if person_chosen not in [koto_chosen]])
+    if koto_chosen == "monika":
+        k om "I'll choose Monika."
+        
+    if koto_chosen == "sayori":
+        k om "I'll choose Sayori."
+
+    if koto_chosen == "natsuki":
+        k om "I'll choose Natsuki."
+
+    if koto_chosen == "yuri":
+        k om "I'll choose Yuri."
+    
+    if koto_chosen == "chat":
+        k om "I'll choose Sayori's chat."
 
     show monika zorder 2 at t41
     show sayori turned casual happ rup zorder 2 at t42
@@ -468,7 +630,7 @@ label ch0_main:
     hide sayori
     hide monika
     hide natsuki
-    show kotonoha turned happ lup rhip zorder 2 at t11
+    show kotonoha turned casual happ lup rhip zorder 2 at t11
     k om "Before anyone asks, I am too."
     k ldown "Though I believe that still counts towards the quota."
     m "Yes it does."
