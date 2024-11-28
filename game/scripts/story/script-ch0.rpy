@@ -246,12 +246,15 @@ label ch0_main:
     m ldown "In your opinion (assuming you have written something), what's the best thing you've written?"
     $ last_chosen = "monika"
 
-    show monika zorder 2 at t41
+    show monika forward casual happ rhip zorder 2 at t41
     show sayori turned casual happ rup zorder 2 at t42
     show natsuki turned casual happ rhip zorder 2 at t43
     show yuri turned casual happ rup zorder 2 at t44
+    m om lpoint "Alright, now you can choose."
+    m ldown "And to make things more interesting, let's allow Sayori's chat ask questions as well."
+    m lpoint "And since you can't the same person twice, I'm not in the first selection."
     menu:
-        "Next Question."
+        m ldown "So, who will you choose?"
         
         "Monika" if last_chosen != "monika":
             $ last_chosen = "monika"
@@ -431,25 +434,46 @@ label ch0_main:
         
         "Monika" if last_chosen != "monika":
             $ last_chosen = "monika"
-        
+            m om "Alright!"
+            m lpoint "I'm sure everyone's wondering this."
+            m ldown "Are you joining the literature club?"
+            show monika cm
         "Sayori" if last_chosen != "sayori":
             $ last_chosen = "sayori"
             s om "Alright!"
             s "I'm sure everyone's wondering this."
             s lup "Are you joining the literature club?"
+            show sayori cm
         "Natsuki" if last_chosen != "natsuki":
             $ last_chosen = "natsuki"
-        
+            n om "Well new guy, I would like to know if you are joining the literature club."
+            show natsuki cm
         "Yuri" if last_chosen != "yuri":
             $ last_chosen = "yuri"
-
+            y om "Well my humble patient, I would like to know if you are joining the literature club."
+            show yuri cm
         "Sayori's chat" if last_chosen != "chat":
             $ last_chosen = "chat"
-    
+            s "They would like to know if you're joining the literature club."
+            show sayori cm
+    t "Well, this club seems to be a lot of fun, even with only four members."
+    show yuri at f44
+    show sayori at f42
+    t "Not to mention, some of my closest friends are here."
+    show yuri at t44
+    show sayori at t42
+    t "So, final verdict:"
+    t "I'm joining the literature club."
+    hide yuri
+    hide sayori
     hide monika
-    hide sayori turned casual happ rup
-    hide natsuki turned casual happ rhip
-    hide yuri turned casual happ rup
+    hide natsuki
+    show kotonoha turned happ lup rhip zorder 2 at t11
+    k om "Before anyone asks, I am too."
+    k ldown "Though I believe that still counts towards the quota."
+    m "Yes it does."
+    k rdown "Alright!"
+    hide kotonoha
     "With the question quota met, we step down from the non-existent stage."
 
     show monika forward casual happ rhip zorder 2 at t11
