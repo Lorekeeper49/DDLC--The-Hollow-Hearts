@@ -437,7 +437,7 @@ init -501 screen navigation():
                 textbutton _("ACT 3") hovered [SetVariable("option_index", 7)] action Function(Act3)
         else:
             textbutton _("CLOSE") hovered [SetVariable("option_index", 0)] action Return()
-            textbutton _("HISTORY") hovered [SetVariable("option_index", 1)] action [ShowMenu("history"), SensitiveIf(renpy.get_screen("history") == None)]
+            textbutton _("LOG") hovered [SetVariable("option_index", 1)] action [ShowMenu("history"), SensitiveIf(renpy.get_screen("history") == None)]
             textbutton _("AUTO ADVANCE") hovered [SetVariable("option_index", 2)] action [Preference("auto-forward", "toggle"), If(aa_status == "OFF", SetVariable("aa_status", "ON"), SetVariable("aa_status", "OFF"))]
             textbutton _("FAST FORWARD") hovered [SetVariable("option_index", 3)] action Skip()
             textbutton _("BOOKMARKS") hovered [SetVariable("option_index", 4)] action [Hide("preferences"), ShowMenu("file_slots"), SensitiveIf(renpy.get_screen("file_slots") == None)]
@@ -830,12 +830,13 @@ init -501 screen history():
     use game_menu
 
     fixed at game_menu_transform:
-        yoffset -10
         viewport id "vp":
             mousewheel True
             draggable True
             has vbox
             null height 40
+            xmaximum 300
+            xoffset -200
             style_prefix "history"
 
             for h in _history_list:
@@ -862,7 +863,6 @@ init -501 screen history():
 
             if not _history_list:
                 label _("The dialogue history is empty.")
-            vbar value YScrollValue(viewport="vp")
 
 
 init -1 style history_window is empty
