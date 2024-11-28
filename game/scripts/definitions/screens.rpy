@@ -435,7 +435,7 @@ init -501 screen navigation():
                 textbutton _("DISCORD\n{size=20}ディスコード{/size}") hovered [SetVariable("option_index", 5)] action OpenURL("https://discord.gg/Q3CcJW4Ag2")
                 textbutton _("QUIT\n{size=20}クイット{/size}") hovered [SetVariable("option_index", 6)] action Quit(confirm=not main_menu)
             if not persistent.demo:
-                textbutton _("ACT 3\n{size=20}アクト３{/size}") hovered [SetVariable("option_index", 7)] action Function(Act3)
+                textbutton _("ACT 3\n{size=20}アクト３{/size}") hovered If(renpy.variant("pc"), SetVariable("option_index", 7), SetVariable("option_index", 4)) action Function(Act3)
         else:
             textbutton _("CLOSE\n{size=20}閉じる{/size}") hovered [SetVariable("option_index", 0)] action Return()
             textbutton _("LOG\n{size=20}ログ{/size}") hovered [SetVariable("option_index", 1)] action [ShowMenu("history"), SensitiveIf(renpy.get_screen("history") == None)]
