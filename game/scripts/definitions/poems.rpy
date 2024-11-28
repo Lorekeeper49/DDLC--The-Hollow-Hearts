@@ -7,37 +7,129 @@ init python:
 
     poem_y = Poem(
     author = "yuri",
-    title = "",
+    title = "Dead Life",
     text = """\
-"""
+Oh life so tangent,
+why did you hurt me so?
+why art thou have a pure life
+for great myths of old?
+
+I may be broken.
+I may be oblivious.
+Yandere life.
+Yandere way.
+
+Dead life.
+Dead wars.
+Dead promises.
+
+I just have one question,
+why?"""
     )
 
     poem_n = Poem(
     author = "natsuki",
-    title = "",
+    title = "Unknown Feelings",
     text = """\
-"""
+Where is she?
+I may be lost but...
+she's in the woods.
+She is death.
+She is forgotten.
+She is broken.
+She is storming.
+She is...
+Nothing.
+Nothing to help her.
+Nothing to lead her.
+Nothing to guide her.
+She is gone.
+And she doesn't know it."""
     )
 
     poem_s = Poem(
     author = "sayori",
-    title = "",
+    title = "Before the Past",
     text = """\
-"""
+Before the past,
+what is there?
+After the future,
+what exists?
+
+Nothing can exist
+before the past.
+Nothing can exist
+after the future.
+
+So what is there?
+
+I know the prefix
+before the prefix.
+I know the suffix
+after the suffix.
+
+Before life
+we were none.
+Before the past
+we were war
+
+After life
+we are none.
+After the future
+we are war.
+
+It's all the same
+in an endless cycle."""
     )
 
     poem_m = Poem(
     author = "monika",
-    title = "",
+    title = "A Perfect Girl",
     text = """\
-"""
+A perfect girl is supposed to be stable.
+A perfect girl is supposed to be calm.
+A perfect girl is supposed to be happy.
+A perfect girl is supposed to be pretty.
+A perfect girl is supposed to be perfect.
+
+Perfection doesn't exist.
+
+A perfect girl is not stable.
+A perfect girl is not calm.
+A perfect girl is not happy.
+A perfect girl is not pretty.
+A perfect girl is not perfect.
+
+Nobody is."""
     )
 
     poem_k = Poem(
     author = "kotonoha",
-    title = "",
+    title = "Contradicting Correlation",
     text = """\
-"""
+What do you get while your asleep?
+Nightmares.
+What do you get while your awake?
+Halluncinations.
+They may be different, but they're the same.
+
+What is amazing, but unbelievable?
+Myths.
+What is amazing and believable?
+Legends.
+They may be different, but they're the same.
+
+What stays hidden while afar?
+Snipers.
+What stays hidden while up close?
+Spies.
+They may be different, but they're the same.
+
+What is at the front of a coin?
+Heads.
+What is at the back of a coin?
+Tails.
+They may be different, but they're the same."""
     )
 
     poem_t = Poem(
@@ -168,10 +260,8 @@ label showpoem(poem=None, music=True, track=None, revert_music=True, img=None, w
         $ currentpos = get_pos()
         if track:
             $ audio.t5b = "<from " + str(currentpos) + " loop 4.444>" + track
-        elif renpy.exists("bgm/5_" + poem.author + ".ogg"):
-            $ audio.t5b = "<from " + str(currentpos) + " loop 4.444>bgm/5_" + poem.author + ".ogg"
         else:
-            $ audio.t5b = "<from " + str(currentpos) + " loop 4.444>bgm/5.ogg"
+            $ audio.t5b = "<from " + str(currentpos) + " loop 4.444>bgm/5_" + poem.author + ".ogg"
         stop music fadeout 2.0
         $ renpy.music.play(audio.t5b, channel="music_poem", fadein=2.0, tight=True)
     window hide
