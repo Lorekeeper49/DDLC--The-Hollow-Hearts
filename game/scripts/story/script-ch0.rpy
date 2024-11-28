@@ -645,10 +645,25 @@ label ch0_main:
     k rdown "Alright!"
     hide kotonoha
     "With the question quota met, we step down from the non-existent stage."
+    stop music fadeout 1.0
+    $ style.say_window = style.window
+    $ nb = "namebox"
+    scene bg park_01 with dissolve_scene_full
+    play music confdep
+    "I'm starting to wonder if I should really be here."
+    "Everyone's so social here."
+    "But me..."
+    "I don't fit in."
+    "I just don't fit in!"
+    "I'm an observer from afar, not a socialist within reach."
+    a "Damnit!"
+    stop music fadeout 1.0
+    $ style.say_window = style.window_fake
+    $ nb = "namebox_fake"
+    scene bg park_01 with dissolve_scene_full
     show monika forward casual happ lpoint rhip zorder 2 at t11
-    stop music fadeout 2.0
-    m om "Okay, everyone!  We have one more activity planned for today, and it's a literature one!"
     play music t5
+    m om "Okay, everyone!  We have one more activity planned for today, and it's a literature one!"
     m ldown "We do this every year, Let's all write a poem and show it to each other!"
     hide monika
     "With that, everyone goes off to write their poems seperately."
@@ -664,8 +679,18 @@ label ch0_main:
     show natsuki turned casual happ zorder 4 at t22
     m ldown om "Sure!"
     show monika cm
-    call showpoem(poem_t)
+    call showpoem(poem_t, False)
     t "I think it speaks for itself."
+
+    call showpoem(poem_k, False)
+
+    call showpoem(poem_m)
+
+    call showpoem(poem_y)
+
+    call showpoem(poem_n)
+
+    call showpoem(poem_s)
 
     show monika forward casual happ rhip zorder 2 at t11
     m om "Okay, everyone!  We are running out of time here, so let's decide on what we should write for this year."
