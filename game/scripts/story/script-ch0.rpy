@@ -272,6 +272,7 @@ label ch0_main:
         
         "Sayori's chat" if last_chosen != "chat":
             $ last_chosen = "chat"
+
     hide yuri
     hide sayori
     hide monika
@@ -314,6 +315,50 @@ label ch0_main:
 
         "Sayori's chat" if last_chosen != "chat":
             $ last_chosen = "chat"
+
+    hide yuri
+    hide sayori
+    hide monika
+    hide natsuki
+    show kotonoha turned casual happ lup zorder 2 at t11
+    $ koto_chosen = renpy.random.choice([person_chosen for person_chosen in choice_list if person_chosen not in [koto_chosen]])
+    if koto_chosen == "monika":
+        k om "I'll choose Monika."
+        
+    if koto_chosen == "sayori":
+        k om "I'll choose Sayori."
+
+    if koto_chosen == "natsuki":
+        k om "I'll choose Natsuki."
+
+    if koto_chosen == "yuri":
+        k om "I'll choose Yuri."
+    
+    if koto_chosen == "chat":
+        k om "I'll choose Sayori's chat."
+
+    show monika zorder 2 at t41
+    show sayori turned casual happ rup zorder 2 at t42
+    show natsuki turned casual happ rhip zorder 2 at t43
+    show yuri turned casual happ rup zorder 2 at t44
+    menu:
+        "Next Question."
+        
+        "Monika" if last_chosen != "monika":
+            $ last_chosen = "monika"
+        
+        "Sayori" if last_chosen != "sayori":
+            $ last_chosen = "sayori"
+        
+        "Natsuki" if last_chosen != "natsuki":
+            $ last_chosen = "natsuki"
+        
+        "Yuri" if last_chosen != "yuri":
+            $ last_chosen = "yuri"
+
+        "Sayori's chat" if last_chosen != "chat":
+            $ last_chosen = "chat"
+
     hide yuri
     hide sayori
     hide monika
@@ -398,6 +443,7 @@ label ch0_main:
 
         "Sayori's chat" if last_chosen != "chat":
             $ last_chosen = "chat"
+            
     hide yuri
     hide sayori
     hide monika
@@ -440,6 +486,7 @@ label ch0_main:
 
         "Sayori's chat" if last_chosen != "chat":
             $ last_chosen = "chat"
+
     hide yuri
     hide sayori
     hide monika
@@ -482,6 +529,7 @@ label ch0_main:
 
         "Sayori's chat" if last_chosen != "chat":
             $ last_chosen = "chat"
+
     hide yuri
     hide sayori
     hide monika
@@ -524,48 +572,7 @@ label ch0_main:
 
         "Sayori's chat" if last_chosen != "chat":
             $ last_chosen = "chat"
-    hide yuri
-    hide sayori
-    hide monika
-    hide natsuki
-    show kotonoha turned casual happ lup zorder 2 at t11
-    $ koto_chosen = renpy.random.choice([person_chosen for person_chosen in choice_list if person_chosen not in [koto_chosen]])
-    if koto_chosen == "monika":
-        k om "I'll choose Monika."
-        
-    if koto_chosen == "sayori":
-        k om "I'll choose Sayori."
-
-    if koto_chosen == "natsuki":
-        k om "I'll choose Natsuki."
-
-    if koto_chosen == "yuri":
-        k om "I'll choose Yuri."
-    
-    if koto_chosen == "chat":
-        k om "I'll choose Sayori's chat."
-
-    show monika zorder 2 at t41
-    show sayori turned casual happ rup zorder 2 at t42
-    show natsuki turned casual happ rhip zorder 2 at t43
-    show yuri turned casual happ rup zorder 2 at t44
-    menu:
-        "Next Question."
-        
-        "Monika" if last_chosen != "monika":
-            $ last_chosen = "monika"
-        
-        "Sayori" if last_chosen != "sayori":
-            $ last_chosen = "sayori"
-        
-        "Natsuki" if last_chosen != "natsuki":
-            $ last_chosen = "natsuki"
-        
-        "Yuri" if last_chosen != "yuri":
-            $ last_chosen = "yuri"
-
-        "Sayori's chat" if last_chosen != "chat":
-            $ last_chosen = "chat"
+            
     hide yuri
     hide sayori
     hide monika
