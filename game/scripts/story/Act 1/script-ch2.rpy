@@ -4,12 +4,33 @@ label act1_ch2_main:
     with dissolve_scene_full
     play music t2
     call showlocation("Residential Street","September 30, 2023",405.2, "bg residential") from _call_showlocation_4
-    
+    $ style.say_window = style.window
+    $ nb = "namebox"
+    show monika forward nuet rhip zorder 2 at t11
+    "Routine checkup."
+    m om "Any progress?"
+    t "No."
+    show monika dist cm
+    "I'm the only one who knows about her unidentified attribute."
+    show monika neut
+    t "Your power is still beyond even my comprehension."
+    t "I don't get it."
+    t "I really don't."
+    t "It seems to be similar to copycat in that you have abilities similar to others."
+    t "But on the other hand, it also seems to be an entirely new power that we haven't discovered yet."
+    m curi "So, what are you thinking?"
+    t "Hmm..."
+    t "Now that I've joined your literature club, I may be able to gather more data based on how you act in there."
+    t "I'll bring my notebook to see what I can jot down."
+    m neut "We're still keeping this secret, right?"
+    t "Per your request."
+    m rdown "Thank you."
+    hide monika
+    "She leaves."
 
     stop music fadeout 1
     scene black with dissolve_scene_full
     play music ghostmenu
-    $ kirinani = "???"
     kiri "Hanato-kun, are you sure about this?"
     "Hanato?"
     ha "Of course I am, father!  I {i}want{/i} Taiyen-kun to hear us this time."
