@@ -771,7 +771,10 @@ label ch0_main:
     call showpoem(poem_s)
     t "Don't remind me.  WE WENT THROUGH HELL!"
     s laug "Yeah, but we survived in the end, didn't we?"
-
+    s rdown "Besides, we're the only ones who remember that life, right?"
+    t "As far as I know."
+    m laug om lpoint "Seems like we have a lot of things that need talking about."
+    k laug lup "Yep, we sure do."
     stop music fadeout 1.0
     $ style.say_window = style.window
     $ nb = "namebox"
