@@ -683,10 +683,10 @@ label ch0_main:
     m om "Alright!  If everyone has written their poems, then we can start sharing."
     show monika cm
     t "Can I go first?  I'm not good at poetry and I want to set a baseline for everybody."
-    show kotonoha turned casual happ zorder 1 at t41
-    show yuri turned casual happ zorder 2 at t44
-    show sayori turned casual happ zorder 3 at t21
-    show natsuki turned casual happ zorder 4 at t22
+    show kotonoha turned casual happ rhip zorder 1 at t41
+    show yuri turned casual happ rup zorder 2 at t44
+    show sayori turned casual happ rup zorder 3 at t21
+    show natsuki turned casual happ rhip zorder 4 at t22
     m ldown om "Sure!"
     show monika cm
     call showpoem(poem_t, False)
@@ -696,7 +696,7 @@ label ch0_main:
     m  laug om "Taiyen, I know you're a drama writer, but I think you could go big as a comedy writer."
     t "I never liked comedy."
     t "Next, please."
-    show sayori happ ldown cm
+    show sayori happ ldown cm oe
     m happ lpoint om "Well, while we're at it, let's have our other new member go next."
     show monika ldown cm at t41
     show kotonoha at t11
@@ -704,7 +704,7 @@ label ch0_main:
     call showpoem(poem_k, False)
     k "What do you all think?"
     show kotonoha cm
-    t "Koto-chan, when did you become a sybolistic writer?"
+    t "Koto-chan, when did you become a symbolistic writer?"
     k laug om ldown "I have absolutely no idea."
     y om "I love how your taking two completely different topics and seeing how they relate together."
     k happ lup "A lot of my inspiration came from how I've noticed that even if everything is different from each other, they still have a lot of similarities."
@@ -712,16 +712,62 @@ label ch0_main:
     n curi "I never noticed."
     n lhip happ "Care to give us some more details?"
     k lup "When we have more time."
+    show yuri cm
     k ldown "For now, who's next?"
     show monika at t11
     show kotonoha cm at t41
-    m lpoint cm "Good ol' me!"
+    m lpoint om "Good ol' me!"
     call showpoem(poem_m)
-
+    show monika cm
+    t "The hard truth of everything..."
+    s e1b om "Yeah, it sucks to know that even you've made yourself the best you can be, there's still a lot of flaws that are just waiting to be pointed out."
+    "I still don't even know your attribute."
+    m dist ldown om "It doesn't help that everyone's been calling me 'perfect' when... I'm nowhere close."
+    y anno om "You and everyone in the universe."
+    n dist om "Perfection is boring."
+    k lup om "Yeah, it's the flaws that makes someone beautiful."
+    m happ "Thank you!"
+    show natsuki happ cm
+    show yuri happ cm
+    show kotonoha ldown cm
+    show sayori happ oe cm
+    m lpoint "Yuri, want to go next?"
+    show yuri at t11
+    show monika ldown cm at t44
+    y rup om "Sure!"
     call showpoem(poem_y)
-
+    k curi om "What's this about?"
+    t "She hasn't told you?"
+    y curi "I thought I did.  Must've slipped my mind."
+    k happ "It's fine."
+    t "To give you the short version; Yuri-chan's past life wasn't the greatest."
+    t "She can give you the details."
+    t "Anyway, I'm glad you're getting through the past and fighting against it."
+    show yuri happ cm
+    show kotonoha cm
+    t "It takes strength, but you'll get through it."
+    t "On another note, what's with the classical language?  Seems kinda out of place."
+    n curi om "Yeah, I was wondering that too."
+    n lhip "You usually use certain language to imply time difference."
+    n ldown "Did it really feel like it was that long ago?"
+    y worr om "Yes, but it still haunts me."
+    y neut "I'll tell you everything someday."
+    show yuri happ cm
+    n happ "Can I go next?"
+    show yuri at t22
+    show natsuki at t11
+    m lpoint om "Go ahead!"
     call showpoem(poem_n)
-
+    y curi om "Who are you talking about now?"
+    n cross dist "Someone whom I presume is dead; my sister."
+    n neut "A lot happened and I really should talk about it."
+    n dist "Just don't know when to."
+    y happ "You'll find time, don't worry."
+    n laug "Thanks."
+    n happ turned rhip "Sayori's up last, right?"
+    show natsuki cm at t21
+    show sayori at t11
+    s om "Sure am!"
     call showpoem(poem_s)
 
     stop music fadeout 1.0
