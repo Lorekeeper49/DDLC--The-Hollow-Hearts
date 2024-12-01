@@ -769,6 +769,8 @@ label ch0_main:
     show sayori at t11
     s om "Sure am!"
     call showpoem(poem_s)
+    t "Don't remind me.  WE WENT THROUGH HELL!"
+    s laug "Yeah, but we survived in the end, didn't we?"
 
     stop music fadeout 1.0
     $ style.say_window = style.window
