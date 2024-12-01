@@ -403,6 +403,7 @@ label ch0_main:
         k om "I'll choose Natsuki."
         show natsuki turned happ casual rhip zorder 2 at r22
         show kotonoha cm at t21
+        n om "Besides writing, what do you do in your free time?"
 
     if koto_chosen == "yuri":
         k om "I'll choose Yuri."
