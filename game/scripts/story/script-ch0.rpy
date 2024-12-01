@@ -691,9 +691,31 @@ label ch0_main:
     show monika cm
     call showpoem(poem_t, False)
     t "I think it speaks for itself."
-
+    s laug ce om lup "Pfft!  That's hilarious!"
+    t "Laugh at it all you want, it only promotes how bad it is."
+    m  laug om "Taiyen, I know you're a drama writer, but I think you could go big as a comedy writer."
+    t "I never liked comedy."
+    t "Next, please."
+    show sayori happ ldown cm
+    m happ lpoint om "Well, while we're at it, let's have our other new member go next."
+    show monika ldown cm at t41
+    show kotonoha at t11
+    k lup om "I'd love to."
     call showpoem(poem_k, False)
-
+    k "What do you all think?"
+    show kotonoha cm
+    t "Koto-chan, when did you become a sybolistic writer?"
+    k laug om ldown "I have absolutely no idea."
+    y om "I love how your taking two completely different topics and seeing how they relate together."
+    k happ lup "A lot of my inspiration came from how I've noticed that even if everything is different from each other, they still have a lot of similarities."
+    k ldown rhip "Shows how things really go together."
+    n curi "I never noticed."
+    n lhip happ "Care to give us some more details?"
+    k lup "When we have more time."
+    k ldown "For now, who's next?"
+    show monika at t11
+    show kotonoha cm at t41
+    m lpoint cm "Good ol' me!"
     call showpoem(poem_m)
 
     call showpoem(poem_y)
