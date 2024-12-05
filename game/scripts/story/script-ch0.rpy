@@ -342,6 +342,11 @@ label ch0_main:
         k om "I'll choose Monika."
         show monika forward happ casual rhip zorder 2 at r22
         show kotonoha cm at t21
+        m om "What does your name mean?"
+        show monika cm
+        k om rhip "Well first of all (even though you didn't get it wrong), it's 'Kotonoha', not 'Kotoba'."
+        k ldown anno ce "People get that wrong all the time, and it's all thanks to the common pronounciation of my kanji."
+        k rdown "Honestly, it probably should be written as '{rb}言の葉{/rb}{rt}Kotonoha{/rt}'..."
         
     if koto_chosen == "sayori":
         k om "I'll choose Sayori."
