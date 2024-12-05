@@ -315,6 +315,10 @@ label ch0_main:
         
         "Monika" if last_chosen != "monika":
             $ last_chosen = "monika"
+            m om "So, what exactly does your name mean?"
+            show monika cm
+            t "Well, nevermind the weird English translation."
+            t "I mean, technically, it's supposed to be 'Taien', not 'Taiyen'.  But that's besides the point."
         
         "Sayori" if last_chosen != "sayori":
             $ last_chosen = "sayori"
