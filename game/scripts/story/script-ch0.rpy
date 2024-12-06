@@ -381,6 +381,26 @@ label ch0_main:
         
         "Sayori" if last_chosen != "sayori":
             $ last_chosen = "sayori"
+            s om "What is your fondest memory?"
+            show sayori cm
+            t "This is gonna sound weird out of context, especially because it involves you and you like me so..."
+            show natsuki shoc at h43
+            n om rdown "HUH?!"
+            "Chat's going nuts."
+            t "That's right, you heard it here first folks!"
+            t "This is official confirmation from the love interest himself: Sayori likes me."
+            show sayori nerv
+            t "She confessed a year ago and I was left kinda unsurprised to say the least."
+            t "The only problem is, I don't know how I feel about her."
+            t "And I probably should work that out because she's been waiting for a response for longer than she should've been by now."
+            s tap nerv om "Yeah, I'm starting to think that I should try to suck it up and move on."
+            t "Well, we'll see what happens in the future."
+            s turned happ rup om "Yeah."
+            show sayori cm
+            n "..."
+            n "O-okay then."
+            show natsuki happ rhip zm at t43
+            t "Anyway..."
         
         "Natsuki" if last_chosen != "natsuki":
             $ last_chosen = "natsuki"
