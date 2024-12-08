@@ -264,6 +264,7 @@ label ch0_main:
             "Ignore this, this option never happens, it's just to make copying the menu easier."
         "Sayori" if last_chosen != "sayori":
             $ last_chosen = "sayori"
+            s om "Don't know how I haven't asked you this yet, but what is your general process for writing?"
         
         "Natsuki" if last_chosen != "natsuki":
             $ last_chosen = "natsuki"
@@ -289,6 +290,7 @@ label ch0_main:
         k om "I'll choose Sayori."
         show sayori turned happ casual rup zorder 2 at r22
         show kotonoha cm at t21
+        s om "Don't know how I haven't asked you this yet, but what is your general process for writing?"
 
     if koto_chosen == "natsuki":
         k om "I'll choose Natsuki."
