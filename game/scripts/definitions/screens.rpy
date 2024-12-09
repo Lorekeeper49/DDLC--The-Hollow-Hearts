@@ -296,17 +296,24 @@ init -1 style input:
 
 # TODO: move to right side and make scrollable
 init -501 screen choice(items,time=None,force=0,mouse=None):
-    style_prefix "choice"
-    vbox:
-        for i in items:
-            if "locked" in i.kwargs:
-                if i.kwargs['locked']:
-                    textbutton "???"
+    use choice_menu_bg
+    fixed at choice_menu_transform:
+        viewport id "vp":
+            mousewheel True
+            draggable True
+            has vbox
+            null height 40
+            xmaximum 300
+            style_prefix "choice"
+            for i in items:
+                if "locked" in i.kwargs:
+                    if i.kwargs['locked']:
+                        textbutton "???" xpos 150
+                    else:
+                        text "PATH UNLOCKED" xpos 150
+                        textbutton i.caption action i.action xpos 150
                 else:
-                    text "PATH UNLOCKED"
-                    textbutton i.caption action i.action
-            else:
-                textbutton i.caption action i.action
+                    textbutton i.caption action i.action xpos 150
     
     if time is not None:
         timer time action items[force].action
@@ -320,42 +327,48 @@ init -501 screen choice(items,time=None,force=0,mouse=None):
     if mouse is not None:
         timer 1.0/30.0 repeat True action Function(RigMouse, mouse)
 
+init -501 screen choice_menu_bg():
 
+    frame at choice_menu_transform:
+        ysize 800
+        background "choice_bg"
+
+image choice_bg:
+    "mod_assets/gui/choice_bg.png"
+    alpha 0.5
+
+init -501 transform choice_menu_transform(xo=0,yo=0):
+    on show:
+        xpos 1280
+        ypos yo
+        easeout .25 xpos 740+xo
+    on hide:
+        xpos 740+xo
+        easein .25 xpos 1280
 
 
 define -1 config.narrator_menu = True
 
 
-init -1 style choice_vbox is vbox
 init -1 style choice_button is button
 init -1 style choice_button_text is button_text
 init -1 style choice_text is text
 
-init -1 style choice_vbox:
-    xalign 0.5
-    ypos 270
-    yanchor 0.5
-
-    spacing gui.choice_spacing
-
 init -1 style choice_button is default:
-    properties gui.button_properties("choice_button")
     hover_sound gui.hover_sound
     activate_sound gui.activate_sound
 
 init -1 style choice_button_text is default:
-    properties gui.button_text_properties("choice_button")
     font "mod_assets/fonts/AlexBrush-Regular.ttf"
     color "#fff"
-    outlines []
+    hover_color "#bbbbbb"
+    size 35
+    outlines [(1, "#585858", 0, 0), (1, "#585858", 1, 1)]
 
 init -1 style choice_text is default:
-    properties gui.button_text_properties("choice_button")
     font "mod_assets/fonts/AlexBrush-Regular.ttf"
     color "#fff"
-    yanchor -0.75
-    outlines []
-
+    outlines [(1, "#585858", 0, 0), (1, "#585858", 1, 1)]
 
 init -1 python:
     def RigMouse():
@@ -363,38 +376,6 @@ init -1 python:
         targetpos = [640, 345]
         if currentpos[1] < targetpos[1]:
             renpy.display.draw.set_mouse_pos((currentpos[0] * 9 + targetpos[0]) / 10.0, (currentpos[1] * 9 + targetpos[1]) / 10.0)
-
-
-
-
-define -1 config.narrator_menu = True
-
-
-init -1 style choice_vbox is vbox
-init -1 style choice_button is button
-init -1 style choice_button_text is button_text
-
-init -1 style choice_vbox:
-    xalign 0.5
-    ypos 270
-    yanchor 0.5
-
-    spacing gui.choice_spacing
-
-init -1 style choice_button is default:
-    properties gui.button_properties("choice_button")
-    hover_sound gui.hover_sound
-    activate_sound gui.activate_sound
-
-init -1 style choice_button_text is default:
-    properties gui.button_text_properties("choice_button")
-    outlines []
-
-
-
-
-
-
 
 init -501 screen quick_menu():
 
