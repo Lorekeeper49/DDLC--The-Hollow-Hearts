@@ -294,7 +294,7 @@ init -1 style input:
 
 
 
-
+# TODO: move to right side and make scrollable
 init -501 screen choice(items,time=None,force=0,mouse=None):
     style_prefix "choice"
     vbox:
@@ -351,6 +351,8 @@ init -1 style choice_button_text is default:
 
 init -1 style choice_text is default:
     properties gui.button_text_properties("choice_button")
+    font "mod_assets/fonts/AlexBrush-Regular.ttf"
+    color "#fff"
     yanchor -0.75
     outlines []
 
