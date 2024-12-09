@@ -294,7 +294,6 @@ init -1 style input:
 
 
 
-# TODO: move to right side and make scrollable
 init -501 screen choice(items,time=None,force=0,mouse=None):
     use choice_menu_bg
     fixed at choice_menu_transform:
