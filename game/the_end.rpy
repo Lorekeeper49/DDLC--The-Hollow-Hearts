@@ -62,10 +62,22 @@ label the_end_questioning:
     menu:
         end "What would you like to know?"
 
-        "Your name is displayed as \"The end\", do you have a different name?":
+        "Your name is displayed as \"The End\", do you have a different name?":
             end "What you see in the label is my name."
             end "I was never given a true name as I was only supposed to tell you the truth about the universe."
             end "Don't give me a name, there aren't enough voicelines in the world to allow that."
             end "The creator doesn't even want to try AI voicing."
             end "So in short, that's who I am."
-            jump the_end_questioning
+        "Why do you keep repeating your question?" if persistent.end_questions_asked > 2:
+            end "The creator started the loop with that question so I don't have much of a choice."
+        "I don't have any more questions to ask.":
+            end "Then, I shall leave you off to do whatever you want."
+            end "If you wish to see again, just simply get another ending."
+            end "Or get the same one again, who cares?"
+            end "I will appear either way."
+            end "It is what I was created for after all."
+            end "So, until next time."
+            end "Sayonara!"
+            $ renpy.quit()
+    $ persistent.end_questions_asked += 1
+    jump the_end_questioning

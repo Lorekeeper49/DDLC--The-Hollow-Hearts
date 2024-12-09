@@ -1680,6 +1680,8 @@ default persistent.nbad = False
 default persistent.ygood = False
 default persistent.ybad = False
 
+default persistent.end_questions_asked = 0
+
 default persistent.anticheat = 0
 default persistent.first_load = None
 define config.mouse = None
@@ -1689,6 +1691,7 @@ default chapter = 0
 default act = 0
 default currentpos = 0
 default faint_effect = None
+
 
 # - names
 default player = "Sakura Taiyen"
