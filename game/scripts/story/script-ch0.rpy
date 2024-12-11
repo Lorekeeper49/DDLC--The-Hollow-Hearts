@@ -271,7 +271,8 @@ label ch0_main:
         
         "Yuri" if last_chosen != "yuri":
             $ last_chosen = "yuri"
-        
+            y om "Why did you start writing in the first place?"
+
         "Sayori's chat" if last_chosen != "chat":
             $ last_chosen = "chat"
 
@@ -301,6 +302,7 @@ label ch0_main:
         k om "I'll choose Yuri."
         show yuri turned happ casual rup zorder 2 at r22
         show kotonoha cm at t21
+        y om "Why did you start writing in the first place?"
     
     if koto_chosen == "chat":
         k om "I'll choose Sayori's chat."
