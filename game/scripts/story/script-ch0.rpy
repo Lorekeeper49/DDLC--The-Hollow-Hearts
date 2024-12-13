@@ -259,25 +259,25 @@ label ch0_main:
     menu:
         m ldown "So, who will you choose?"
         
-        "Monika" if last_chosen != "monika":
+        "Monika" if last_chosen != "monika" and koto_chosen != "monika":
             $ last_chosen = "monika"
             "Ignore this, this option never happens, it's just to make copying the menu easier."
-        "Sayori" if last_chosen != "sayori":
+        "Sayori" if last_chosen != "sayori" and koto_chosen != "sayori":
             $ last_chosen = "sayori"
             s om "Don't know how I haven't asked you this yet, but what is your general process for writing?"
         
-        "Natsuki" if last_chosen != "natsuki":
+        "Natsuki" if last_chosen != "natsuki" and koto_chosen != "natsuki":
             $ last_chosen = "natsuki"
             n om "What's the hardest thing you've ever had to write?"
             show natsuki cm
             t "Bias in any form."
             t "Especially racial, sexual, and social bias."
         
-        "Yuri" if last_chosen != "yuri":
+        "Yuri" if last_chosen != "yuri" and koto_chosen != "yuri":
             $ last_chosen = "yuri"
             y om "Why did you start writing in the first place?"
 
-        "Sayori's chat" if last_chosen != "chat":
+        "Sayori's chat" if last_chosen != "chat" and koto_chosen != "chat":
             $ last_chosen = "chat"
 
     hide yuri
@@ -321,26 +321,29 @@ label ch0_main:
     show sayori turned casual happ rup zorder 2 at t42
     show natsuki turned casual happ rhip zorder 2 at t43
     show yuri turned casual happ rup zorder 2 at t44
+    t "You know, I'll do the same thing Koto-chan is doing; prohibit myself from picking the person she just chose."
+    t "Just to add more variety to the table."
+    t "So, in that case..."
     menu:
         "Next Question."
         
-        "Monika" if last_chosen != "monika":
+        "Monika" if last_chosen != "monika" and koto_chosen != "monika":
             $ last_chosen = "monika"
             m om "So, what exactly does your name mean?"
             show monika cm
             t "Well, nevermind the weird English translation."
             t "I mean, technically, it's supposed to be 'Taien', not 'Taiyen'.  But that's besides the point."
         
-        "Sayori" if last_chosen != "sayori":
+        "Sayori" if last_chosen != "sayori" and koto_chosen != "sayori":
             $ last_chosen = "sayori"
         
-        "Natsuki" if last_chosen != "natsuki":
+        "Natsuki" if last_chosen != "natsuki" and koto_chosen != "natsuki":
             $ last_chosen = "natsuki"
         
-        "Yuri" if last_chosen != "yuri":
+        "Yuri" if last_chosen != "yuri" and koto_chosen != "yuri":
             $ last_chosen = "yuri"
 
-        "Sayori's chat" if last_chosen != "chat":
+        "Sayori's chat" if last_chosen != "chat" and koto_chosen != "chat":
             $ last_chosen = "chat"
 
     hide yuri
@@ -387,10 +390,10 @@ label ch0_main:
     menu:
         "Next Question."
         
-        "Monika" if last_chosen != "monika":
+        "Monika" if last_chosen != "monika" and koto_chosen != "monika":
             $ last_chosen = "monika"
         
-        "Sayori" if last_chosen != "sayori":
+        "Sayori" if last_chosen != "sayori" and koto_chosen != "sayori":
             $ last_chosen = "sayori"
             s om "What is your fondest memory?"
             show sayori cm
@@ -413,14 +416,14 @@ label ch0_main:
             show natsuki happ rhip zm at t43
             t "Anyway..."
         
-        "Natsuki" if last_chosen != "natsuki":
+        "Natsuki" if last_chosen != "natsuki" and koto_chosen != "natsuki":
             $ last_chosen = "natsuki"
             n om "Besides writing, what do you do in your free time?"
         
-        "Yuri" if last_chosen != "yuri":
+        "Yuri" if last_chosen != "yuri" and koto_chosen != "yuri":
             $ last_chosen = "yuri"
 
-        "Sayori's chat" if last_chosen != "chat":
+        "Sayori's chat" if last_chosen != "chat" and koto_chosen != "chat":
             $ last_chosen = "chat"
 
     hide yuri
@@ -463,19 +466,19 @@ label ch0_main:
     menu:
         "Next Question."
         
-        "Monika" if last_chosen != "monika":
+        "Monika" if last_chosen != "monika" and koto_chosen != "monika":
             $ last_chosen = "monika"
         
-        "Sayori" if last_chosen != "sayori":
+        "Sayori" if last_chosen != "sayori" and koto_chosen != "sayori":
             $ last_chosen = "sayori"
         
-        "Natsuki" if last_chosen != "natsuki":
+        "Natsuki" if last_chosen != "natsuki" and koto_chosen != "natsuki":
             $ last_chosen = "natsuki"
         
-        "Yuri" if last_chosen != "yuri":
+        "Yuri" if last_chosen != "yuri" and koto_chosen != "yuri":
             $ last_chosen = "yuri"
 
-        "Sayori's chat" if last_chosen != "chat":
+        "Sayori's chat" if last_chosen != "chat" and koto_chosen != "chat":
             $ last_chosen = "chat"
 
     hide yuri
@@ -517,19 +520,19 @@ label ch0_main:
     menu:
         "Next Question."
         
-        "Monika" if last_chosen != "monika":
+        "Monika" if last_chosen != "monika" and koto_chosen != "monika":
             $ last_chosen = "monika"
         
-        "Sayori" if last_chosen != "sayori":
+        "Sayori" if last_chosen != "sayori" and koto_chosen != "sayori":
             $ last_chosen = "sayori"
         
-        "Natsuki" if last_chosen != "natsuki":
+        "Natsuki" if last_chosen != "natsuki" and koto_chosen != "natsuki":
             $ last_chosen = "natsuki"
         
-        "Yuri" if last_chosen != "yuri":
+        "Yuri" if last_chosen != "yuri" and koto_chosen != "yuri":
             $ last_chosen = "yuri"
 
-        "Sayori's chat" if last_chosen != "chat":
+        "Sayori's chat" if last_chosen != "chat" and koto_chosen != "chat":
             $ last_chosen = "chat"
             
     hide yuri
@@ -571,19 +574,19 @@ label ch0_main:
     menu:
         "Next Question."
         
-        "Monika" if last_chosen != "monika":
+        "Monika" if last_chosen != "monika" and koto_chosen != "monika":
             $ last_chosen = "monika"
         
-        "Sayori" if last_chosen != "sayori":
+        "Sayori" if last_chosen != "sayori" and koto_chosen != "sayori":
             $ last_chosen = "sayori"
         
-        "Natsuki" if last_chosen != "natsuki":
+        "Natsuki" if last_chosen != "natsuki" and koto_chosen != "natsuki":
             $ last_chosen = "natsuki"
         
-        "Yuri" if last_chosen != "yuri":
+        "Yuri" if last_chosen != "yuri" and koto_chosen != "yuri":
             $ last_chosen = "yuri"
 
-        "Sayori's chat" if last_chosen != "chat":
+        "Sayori's chat" if last_chosen != "chat" and koto_chosen != "chat":
             $ last_chosen = "chat"
 
     hide yuri
@@ -625,19 +628,19 @@ label ch0_main:
     menu:
         "Next Question."
         
-        "Monika" if last_chosen != "monika":
+        "Monika" if last_chosen != "monika" and koto_chosen != "monika":
             $ last_chosen = "monika"
         
-        "Sayori" if last_chosen != "sayori":
+        "Sayori" if last_chosen != "sayori" and koto_chosen != "sayori":
             $ last_chosen = "sayori"
         
-        "Natsuki" if last_chosen != "natsuki":
+        "Natsuki" if last_chosen != "natsuki" and koto_chosen != "natsuki":
             $ last_chosen = "natsuki"
         
-        "Yuri" if last_chosen != "yuri":
+        "Yuri" if last_chosen != "yuri" and koto_chosen != "yuri":
             $ last_chosen = "yuri"
 
-        "Sayori's chat" if last_chosen != "chat":
+        "Sayori's chat" if last_chosen != "chat" and koto_chosen != "chat":
             $ last_chosen = "chat"
 
     hide yuri
@@ -679,19 +682,19 @@ label ch0_main:
     menu:
         "Next Question."
         
-        "Monika" if last_chosen != "monika":
+        "Monika" if last_chosen != "monika" and koto_chosen != "monika":
             $ last_chosen = "monika"
         
-        "Sayori" if last_chosen != "sayori":
+        "Sayori" if last_chosen != "sayori" and koto_chosen != "sayori":
             $ last_chosen = "sayori"
         
-        "Natsuki" if last_chosen != "natsuki":
+        "Natsuki" if last_chosen != "natsuki" and koto_chosen != "natsuki":
             $ last_chosen = "natsuki"
         
-        "Yuri" if last_chosen != "yuri":
+        "Yuri" if last_chosen != "yuri" and koto_chosen != "yuri":
             $ last_chosen = "yuri"
 
-        "Sayori's chat" if last_chosen != "chat":
+        "Sayori's chat" if last_chosen != "chat" and koto_chosen != "chat":
             $ last_chosen = "chat"
 
     hide yuri
@@ -733,27 +736,27 @@ label ch0_main:
     menu:
         t "Lastly..."
         
-        "Monika" if last_chosen != "monika":
+        "Monika" if last_chosen != "monika" and koto_chosen != "monika":
             $ last_chosen = "monika"
             m om "Alright!"
             m lpoint "I'm sure everyone's wondering this."
             m ldown "Are you joining the literature club?"
             show monika cm
-        "Sayori" if last_chosen != "sayori":
+        "Sayori" if last_chosen != "sayori" and koto_chosen != "sayori":
             $ last_chosen = "sayori"
             s om "Alright!"
             s "I'm sure everyone's wondering this."
             s lup "Are you joining the literature club?"
             show sayori cm
-        "Natsuki" if last_chosen != "natsuki":
+        "Natsuki" if last_chosen != "natsuki" and koto_chosen != "natsuki":
             $ last_chosen = "natsuki"
             n om "Well new guy, I would like to know if you are joining the literature club."
             show natsuki cm
-        "Yuri" if last_chosen != "yuri":
+        "Yuri" if last_chosen != "yuri" and koto_chosen != "yuri":
             $ last_chosen = "yuri"
             y om "Well my humble patient, I would like to know if you are joining the literature club."
             show yuri cm
-        "Sayori's chat" if last_chosen != "chat":
+        "Sayori's chat" if last_chosen != "chat" and koto_chosen != "chat":
             $ last_chosen = "chat"
             s "They would like to know if you're joining the literature club."
             show sayori cm
