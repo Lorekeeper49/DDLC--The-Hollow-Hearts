@@ -268,6 +268,10 @@ label ch0_main:
         
         "Natsuki" if last_chosen != "natsuki":
             $ last_chosen = "natsuki"
+            n om "What's the hardest thing you've ever had to write?"
+            show natsuki cm
+            t "Bias in any form."
+            t "Especially racial, sexual, and social bias."
         
         "Yuri" if last_chosen != "yuri":
             $ last_chosen = "yuri"
@@ -281,31 +285,34 @@ label ch0_main:
     hide monika
     hide natsuki
     show kotonoha turned casual happ lup zorder 2 at t11
-    $ koto_chosen = renpy.random.choice([person_chosen for person_chosen in choice_list if person_chosen not in [koto_chosen]])
+    k om "To make sure there is a little bit more variety in who I chose, I'm prohibiting myself from picking the same person Tai-kun just chose."
+    k rhip "So..."
+    $ koto_chosen = renpy.random.choice([person_chosen for person_chosen in choice_list if person_chosen not in [koto_chosen, last_chosen]])
     if koto_chosen == "monika":
-        k om "I'll choose Monika."
+        k rdown "I'll choose Monika."
         show monika forward happ casual rhip zorder 2 at r22
         show kotonoha cm at t21
         "Ignore this, this option never happens, it's just to make copying the menu easier."
     if koto_chosen == "sayori":
-        k om "I'll choose Sayori."
+        k rdown "I'll choose Sayori."
         show sayori turned happ casual rup zorder 2 at r22
         show kotonoha cm at t21
         s om "Don't know how I haven't asked you this yet, but what is your general process for writing?"
 
     if koto_chosen == "natsuki":
-        k om "I'll choose Natsuki."
+        k rdown "I'll choose Natsuki."
         show natsuki turned happ casual rhip zorder 2 at r22
         show kotonoha cm at t21
+        n om "What's the hardest thing you've ever had to write?"
 
     if koto_chosen == "yuri":
-        k om "I'll choose Yuri."
+        k rdown "I'll choose Yuri."
         show yuri turned happ casual rup zorder 2 at r22
         show kotonoha cm at t21
         y om "Why did you start writing in the first place?"
     
     if koto_chosen == "chat":
-        k om "I'll choose Sayori's chat."
+        k rdown "I'll choose Sayori's chat."
         show sayori turned happ casual rup zorder 2 at r22
         show kotonoha cm at t21
 
@@ -341,7 +348,7 @@ label ch0_main:
     hide monika
     hide natsuki
     show kotonoha turned casual happ lup zorder 2 at t11
-    $ koto_chosen = renpy.random.choice([person_chosen for person_chosen in choice_list if person_chosen not in [koto_chosen]])
+    $ koto_chosen = renpy.random.choice([person_chosen for person_chosen in choice_list if person_chosen not in [koto_chosen, last_chosen]])
     if koto_chosen == "monika":
         k om "I'll choose Monika."
         show monika forward happ casual rhip zorder 2 at r22
@@ -421,7 +428,7 @@ label ch0_main:
     hide monika
     hide natsuki
     show kotonoha turned casual happ lup zorder 2 at t11
-    $ koto_chosen = renpy.random.choice([person_chosen for person_chosen in choice_list if person_chosen not in [koto_chosen]])
+    $ koto_chosen = renpy.random.choice([person_chosen for person_chosen in choice_list if person_chosen not in [koto_chosen, last_chosen]])
     if koto_chosen == "monika":
         k om "I'll choose Monika."
         show monika forward happ casual rhip zorder 2 at r22
@@ -476,7 +483,7 @@ label ch0_main:
     hide monika
     hide natsuki
     show kotonoha turned casual happ lup zorder 2 at t11
-    $ koto_chosen = renpy.random.choice([person_chosen for person_chosen in choice_list if person_chosen not in [koto_chosen]])
+    $ koto_chosen = renpy.random.choice([person_chosen for person_chosen in choice_list if person_chosen not in [koto_chosen, last_chosen]])
     if koto_chosen == "monika":
         k om "I'll choose Monika."
         show monika forward happ casual rhip zorder 2 at r22
@@ -530,7 +537,7 @@ label ch0_main:
     hide monika
     hide natsuki
     show kotonoha turned casual happ lup zorder 2 at t11
-    $ koto_chosen = renpy.random.choice([person_chosen for person_chosen in choice_list if person_chosen not in [koto_chosen]])
+    $ koto_chosen = renpy.random.choice([person_chosen for person_chosen in choice_list if person_chosen not in [koto_chosen, last_chosen]])
     if koto_chosen == "monika":
         k om "I'll choose Monika."
         show monika forward happ casual rhip zorder 2 at r22
@@ -584,7 +591,7 @@ label ch0_main:
     hide monika
     hide natsuki
     show kotonoha turned casual happ lup zorder 2 at t11
-    $ koto_chosen = renpy.random.choice([person_chosen for person_chosen in choice_list if person_chosen not in [koto_chosen]])
+    $ koto_chosen = renpy.random.choice([person_chosen for person_chosen in choice_list if person_chosen not in [koto_chosen, last_chosen]])
     if koto_chosen == "monika":
         k om "I'll choose Monika."
         show monika forward happ casual rhip zorder 2 at r22
@@ -638,7 +645,7 @@ label ch0_main:
     hide monika
     hide natsuki
     show kotonoha turned casual happ lup zorder 2 at t11
-    $ koto_chosen = renpy.random.choice([person_chosen for person_chosen in choice_list if person_chosen not in [koto_chosen]])
+    $ koto_chosen = renpy.random.choice([person_chosen for person_chosen in choice_list if person_chosen not in [koto_chosen, last_chosen]])
     if koto_chosen == "monika":
         k om "I'll choose Monika."
         show monika forward happ casual rhip zorder 2 at r22
@@ -692,7 +699,7 @@ label ch0_main:
     hide monika
     hide natsuki
     show kotonoha turned casual happ lup zorder 2 at t11
-    $ koto_chosen = renpy.random.choice([person_chosen for person_chosen in choice_list if person_chosen not in [koto_chosen]])
+    $ koto_chosen = renpy.random.choice([person_chosen for person_chosen in choice_list if person_chosen not in [koto_chosen, last_chosen]])
     if koto_chosen == "monika":
         k om "I'll choose Monika."
         show monika forward happ casual rhip zorder 2 at r22
