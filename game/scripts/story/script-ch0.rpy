@@ -254,7 +254,7 @@ label ch0_main:
     show natsuki turned casual happ rhip zorder 2 at t43
     show yuri turned casual happ rup zorder 2 at t44
     m om lpoint "Alright, now you can choose."
-    m ldown "And to make things more interesting, let's allow Sayori's to chat ask questions as well."
+    m ldown "And to make things more interesting, let's allow Sayori's chat to ask questions as well."
     m lpoint "And since you can't choose the same person twice, I'm not in the first selection."
     menu:
         m ldown "So, who will you choose?"
