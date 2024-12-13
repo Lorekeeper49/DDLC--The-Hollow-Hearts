@@ -46,7 +46,7 @@ define BOBCACHIEVEMENTS_UNGRANTED_COLOR = "#ffffff80"
 # Additional available achievement-related variables for screen customization:
 # - BOBCACHIEVEMENTS_NUMACHIEVEMENTS : integer number of total achievements registered in the framework
 # - BOBCACHIEVEMENTS_MAP : map of {reference_id:str : (title:str, description:str, is_hidden:boolean)}
-screen bobcachievements():
+screen achievements():
     tag menu
     default numachievements = len(persistent._achievements)
     use game_menu(_("Achievements"), scroll="viewport"):
