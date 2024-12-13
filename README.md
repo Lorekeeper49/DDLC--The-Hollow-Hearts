@@ -231,3 +231,5 @@ SOME MINIGAME CODE - ShadowyJaw
 [AUTO BACKGROUND CODE - 「N E K O L A I S」](https://discord.com/channels/339272843327963136/373669030747308032/1224937520932847768)
 
 [AUTOFOCUS - Elckarow, Ayowel](https://github.com/Elckarow/Autofocus/tree/v1.0.1)
+
+[ACHIEVEMENTS - bobcgames](https://bobcgames.itch.io/bobcachievements)
