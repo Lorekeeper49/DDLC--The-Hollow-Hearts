@@ -6,5 +6,6 @@ label act2_ch5_main:
     with dissolve_scene_full
     play music t2
     call showlocation("Residential Street","Monday, September 30, 2023",6,45,12) from _call_showlocation_44
-   
+    
+    achieve act2fin
     return

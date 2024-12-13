@@ -984,4 +984,5 @@ label ch0_main:
     ina "Seems like {i}we'll{/i} need to up our game a bit if we want to take over the school."
     ak "We sure will.  I hope your plan works, boss."
     kiri "Oh, don't worry.{w=1}  It will."
+    achieve newfriends
     return

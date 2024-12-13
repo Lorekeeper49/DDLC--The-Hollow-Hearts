@@ -1,4 +1,5 @@
 label the_end:
+    achieve act3fin
     end "Hello player."
     end "You were likely expecting Monika.  In that case, I would like to inform you that this Monika doesn't know that this is a game."
     end "Or rather, a modification of a game."
