@@ -153,7 +153,7 @@ SHINAMONPAN KITCHEN - LvcyLu
 
 [BATHROOM - Uncle Mugen](https://lemmasoft.renai.us/forums/viewtopic.php?f=52&t=17302)
 
-[MONIKA'S BEDROOM - Kjkjmulo]()
+[MONIKA'S BEDROOM - Kjkjmulo](https://www.reddit.com/r/DDLCMods/comments/1hd1u5l/monika_bedroom_bg_free_use_assets/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
 
 - CREDITS BELOW CAME FROM THIS LINK: https://drive.google.com/drive/folders/1yTohcOnGV6Kw6Lru1cITWt-zwRoGSCm_?usp=sharing
 
