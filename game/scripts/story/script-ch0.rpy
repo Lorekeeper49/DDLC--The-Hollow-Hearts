@@ -272,7 +272,8 @@ label ch0_main:
             show natsuki cm
             t "Bias in any form."
             t "Especially racial, sexual, and social bias."
-        
+            t "Koto-chan and I had a writing assignment back in Junior-High School where we had to literally protray sexual bias so we could better understand it."
+            t "It was the single most infuriating thing either of us have ever written."
         "Yuri" if last_chosen != "yuri" and koto_chosen != "yuri":
             $ last_chosen = "yuri"
             y om "Why did you start writing in the first place?"
@@ -298,13 +299,17 @@ label ch0_main:
         show sayori turned happ casual rup zorder 2 at r22
         show kotonoha cm at t21
         s om "Don't know how I haven't asked you this yet, but what is your general process for writing?"
-
+        
     if koto_chosen == "natsuki":
         k rdown "I'll choose Natsuki."
         show natsuki turned happ casual rhip zorder 2 at r22
         show kotonoha cm at t21
         n om "What's the hardest thing you've ever had to write?"
-
+        show natsuki cm
+        k anno ldown rhip "Bias in any form."
+        k ce "Especially racial, sexual, and social bias."
+        k oe lup "Tai-kun and I had a writing assignment back in Junior-High School where we had to literally protray sexual bias so we could better understand it."
+        k ldown "It was the single most infuriating thing either of us have ever written."
     if koto_chosen == "yuri":
         k rdown "I'll choose Yuri."
         show yuri turned happ casual rup zorder 2 at r22
