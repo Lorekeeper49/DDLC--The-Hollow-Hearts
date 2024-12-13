@@ -39,20 +39,26 @@
 
 define BOBCACHIVEMENTS_SPACING = 20
 define BOBCACHIVEMENTS_HIDDEN_ACHIEVEMENT_TEXT = _("???")
-define BOBCACHIEVEMENTS_SPACING_CHAR = _("-")
-define BOBCACHIEVEMENTS_GRANTED_COLOR = "#fff"
-define BOBCACHIEVEMENTS_UNGRANTED_COLOR = "#ffffff80"
+define BOBCACHIEVEMENTS_GRANTED_COLOR = "#000"
+define BOBCACHIEVEMENTS_UNGRANTED_COLOR = "#00000080"
 
 # Additional available achievement-related variables for screen customization:
 # - BOBCACHIEVEMENTS_NUMACHIEVEMENTS : integer number of total achievements registered in the framework
 # - BOBCACHIEVEMENTS_MAP : map of {reference_id:str : (title:str, description:str, is_hidden:boolean)}
 screen achievements():
-    tag menu
     default numachievements = len(persistent._achievements)
-    use game_menu(_("Achievements"), scroll="viewport"):
-        style_prefix "about"
-        vbox:
-            null height BOBCACHIVEMENTS_SPACING
+    use game_menu
+
+    fixed at game_menu_transform:
+        yoffset -10
+        order_reverse True
+        viewport id "vp":
+            mousewheel True
+            draggable True
+            has vbox
+            xmaximum 500
+            null height 40
+
             for achievement_id in BOBCACHIEVEMENTS_MAP:
                 hbox:
                     spacing BOBCACHIVEMENTS_SPACING
@@ -60,20 +66,18 @@ screen achievements():
                         # We have the achievement, so show its name and description
                         add "mod_assets/achievements/" + achiname + ".png"
                         vbox:
-                            text BOBCACHIEVEMENTS_MAP[achievement_id][0] color BOBCACHIEVEMENTS_GRANTED_COLOR
-                            text BOBCACHIEVEMENTS_SPACING_CHAR color BOBCACHIEVEMENTS_GRANTED_COLOR
-                            text BOBCACHIEVEMENTS_MAP[achievement_id][1] color BOBCACHIEVEMENTS_GRANTED_COLOR
+                            text BOBCACHIEVEMENTS_MAP[achievement_id][0] style "achievement_text" color BOBCACHIEVEMENTS_GRANTED_COLOR
+                            text BOBCACHIEVEMENTS_MAP[achievement_id][1] style "achievement_desc_text" color BOBCACHIEVEMENTS_GRANTED_COLOR 
                     elif BOBCACHIEVEMENTS_MAP[achievement_id][2]:
                         # The achievement has not been achieved, and it is marked as
                         # hidden, so don't show a description
                         add "mod_assets/achievements/unachieved.png"
                         vbox:
-                            text BOBCACHIVEMENTS_HIDDEN_ACHIEVEMENT_TEXT color BOBCACHIEVEMENTS_UNGRANTED_COLOR
+                            text BOBCACHIVEMENTS_HIDDEN_ACHIEVEMENT_TEXT style "achievement_text" color BOBCACHIEVEMENTS_UNGRANTED_COLOR
                     else:
                         # The achievement has not been achieved but it is not hidden
                         # so just show its name
                         add "mod_assets/achievements/unachieved.png"
                         vbox:
-                            text BOBCACHIVEMENTS_HIDDEN_ACHIEVEMENT_TEXT color BOBCACHIEVEMENTS_UNGRANTED_COLOR
-                            text BOBCACHIEVEMENTS_SPACING_CHAR color BOBCACHIEVEMENTS_UNGRANTED_COLOR
-                            text BOBCACHIEVEMENTS_MAP[achievement_id][1] color BOBCACHIEVEMENTS_UNGRANTED_COLOR
+                            text BOBCACHIVEMENTS_HIDDEN_ACHIEVEMENT_TEXT style "achievement_text" color BOBCACHIEVEMENTS_UNGRANTED_COLOR
+                            text BOBCACHIEVEMENTS_MAP[achievement_id][1] style "achievement_desc_text" color BOBCACHIEVEMENTS_UNGRANTED_COLOR 

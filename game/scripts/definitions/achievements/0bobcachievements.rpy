@@ -134,6 +134,6 @@ style achievement_text:
 
 style achievement_desc_text:
     font "mod_assets/fonts/AlexBrush-Regular.ttf"
-    size 25
+    size 15
     color "#000"
     outlines []
