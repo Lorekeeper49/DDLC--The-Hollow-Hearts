@@ -349,7 +349,7 @@ label ch0_main:
             t "Specifically not asking if it's literature, huh?"
             n cross anno om "I've already given up on that fight with Yuri."
             show natsuki cm
-            "I see."
+            "Oh, so you've already gone through the seemingly unwinnable war."
             show natsuki happ
             t "Well anyway..."
             show natsuki turned casual happ rhip
