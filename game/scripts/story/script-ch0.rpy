@@ -344,6 +344,15 @@ label ch0_main:
         
         "Natsuki" if last_chosen != "natsuki" and koto_chosen != "natsuki":
             $ last_chosen = "natsuki"
+            n om "Have you read manga before, and if so, what's your opinion on it?"
+            show natsuki cm
+            t "Specifically not asking if it's literature, huh?"
+            n cross anno om "I've already given up on that fight with Yuri."
+            show natsuki cm
+            "I see."
+            show natsuki happ
+            t "Well anyway..."
+            show natsuki turned casual happ rhip
         
         "Yuri" if last_chosen != "yuri" and koto_chosen != "yuri":
             $ last_chosen = "yuri"
@@ -446,6 +455,7 @@ label ch0_main:
         k om "I'll choose Sayori."
         show sayori turned happ casual rup zorder 2 at r22
         show kotonoha cm at t21
+        s om "What is your fondest memory?"
 
     if koto_chosen == "natsuki":
         k om "I'll choose Natsuki."
