@@ -311,6 +311,7 @@ label act2_ch3_alt:
     n cross neut oe om "Hey Sis..."
     stop ambience
     show bg vision_background zorder 1
+    play ambience creepy
     n "Do you... remember me?"
     show natsuki cm
     "Something doesn't feel right..."
@@ -335,6 +336,7 @@ label act2_ch3_alt:
     show noise zorder 1
     n "{w=0.15}{nw}"
     stop sound
+    stop ambience
     hide noise 
     show bg park_night zorder 1
     play ambience forest fadein 5.0

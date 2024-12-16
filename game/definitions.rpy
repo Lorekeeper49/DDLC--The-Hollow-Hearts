@@ -129,6 +129,7 @@ define audio.storm = "<loop 1 to 90>mod_assets/ambience/storm.mp3"
 define audio.forest = "<loop 1 to 38>mod_assets/ambience/forest.mp3"
 define audio.deadamb = "mod_assets/sounds/deadamb.ogg"
 define audio.mansion = "<loop 1 to 38>mod_assets/ambience/mansion.ogg"
+define audio.creepy = "<loop 1 to 38>mod_assets/ambience/creepy.ogg"
 define audio.clock = "mod_assets/ambience/clock.mp3"
 
 # - mod sound effects
