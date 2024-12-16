@@ -172,6 +172,7 @@ label act2_ch3_main:
     show vignette
     with None
     $ pause(0.05)
+    play ambience creepy
     scene bg secret_room
     show vignette zorder 100
     with None
@@ -203,6 +204,7 @@ label act2_ch3_main:
     ma "Hey baby."
     $ mari = "Kusanoki Mari"
     ma "Hey, Aoruguri!"
+    stop ambience fadeout 1.0
     scene bg kamiclassnight
     show mari forward worr zorder 2 at t11
     with blink
