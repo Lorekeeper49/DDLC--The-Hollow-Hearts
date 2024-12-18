@@ -406,6 +406,8 @@ label ch0_main:
         
         "Monika" if last_chosen != "monika" and koto_chosen != "monika":
             $ last_chosen = "monika"
+            m om "Where does most of your inspiration come from?"
+            show monika cm
         
         "Sayori" if last_chosen != "sayori" and koto_chosen != "sayori":
             $ last_chosen = "sayori"
