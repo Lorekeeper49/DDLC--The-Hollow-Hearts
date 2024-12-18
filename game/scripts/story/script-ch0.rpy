@@ -356,6 +356,7 @@ label ch0_main:
         
         "Yuri" if last_chosen != "yuri" and koto_chosen != "yuri":
             $ last_chosen = "yuri"
+            y om "What are some clichés you try to avoid?"
 
         "Sayori's chat" if last_chosen != "chat" and koto_chosen != "chat":
             $ last_chosen = "chat"

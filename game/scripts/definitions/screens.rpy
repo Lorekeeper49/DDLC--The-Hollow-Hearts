@@ -148,7 +148,6 @@ init -1 style frame:
 
 
 
-default hint = ""
 default nb = "namebox_fake"
 init -501 screen say(who, what):
     style_prefix "say"
@@ -156,13 +155,13 @@ init -501 screen say(who, what):
     window:
         id "window"
 
-        textbutton what id "what" action Show(screen="dialog", message=hint, ok_action=Hide("dialog"))
+        text what id "what" font "mod_assets/fonts/NotoSerifJP-Regular.otf"
 
         if who is not None:
 
             window:
                 style nb
-                text who id "who"
+                text who id "who" font "mod_assets/fonts/NotoSerifJP-Regular.otf"
 
 
 
