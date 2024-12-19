@@ -74,10 +74,6 @@ KAMIYAMA AKIRA - LvcyLu
 
 >[CASUAL - Z. Awesomeness](https://discord.com/channels/339272843327963136/373669252554686464/1268162213735039108)
 
-[MIO - yagamirai10](https://drive.google.com/drive/folders/1qU3Z6k81VQgQMmMwomZ0c-85E7pdky5f?usp=sharing)
-
->[MPT - RedLeader](https://www.reddit.com/r/DDLCMods/comments/ucxgcx/kotonoha_mio_and_dadsuki_mpts/?utm_source=share&utm_medium=ios_app&utm_name=ioscss&utm_content=1&utm_term=1)
-
 [LUNA TETSUO - SovietSpartan](https://www.reddit.com/r/DDLCMods/comments/ucxgcx/kotonoha_mio_and_dadsuki_mpts/?utm_source=share&utm_medium=ios_app&utm_name=ioscss&utm_content=1&utm_term=1)
 
 >MPT - RedLeader 
