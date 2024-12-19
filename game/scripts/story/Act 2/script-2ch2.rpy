@@ -239,7 +239,7 @@ label act2_ch2_main:
     "Right in time for the bell."
     "...Yes, that's our bell."
     scene bg kamiroofd with wipeleft_scene
-    call showlocation("Kamiyama Academy Roof","October 9, 2023",724.95,"bg kamiroofd") from _call_showlocation_40
+    call showlocation("Kamiyama Academy Roof\n{size=25}神山学園高校の屋根{/size}","October 9, 2023\n{size=15}2023年10月9日{/size}",724.95,"bg kamiroofd") from _call_showlocation_40
     show hanato day zorder 2 at t11
     $ pause(1.0)
     a "Hanato."
@@ -266,7 +266,8 @@ label act2_ch2_main:
     a "Okay...  What do you think he's say...\nEh?"
     hide hanato
     a "Do you... hear that?"
-    "Both" "*Screaming*{w=2}{nw}" with Shake((0, 0, 0, 0), 5.0, dist=50)
+    $ pla = "Both"
+    general "*Screaming*{w=2}{nw}" with Shake((0, 0, 0, 0), 5.0, dist=50)
     scene bg sewer_hall with wipeleft_scene
     stop ambience
     a "*Huff* *Puff*\nWhere are we?"
@@ -411,7 +412,7 @@ label act2_ch2_follow:
     "I may not know the wanted result, but I may be able to continue some of the renovations."
     a "Be back in an hour."
     scene bg bathroom with wipeleft_scene
-    call showlocation("55 minutes later","October 9, 2023",13*60+54+57/60.0,"bg house")
+    call showlocation("55 minutes later\n{size=25}55分後{/size}","October 9, 2023\n{size=15}2023年10月9日{/size}",13*60+54+57/60.0,"bg house")
     a "*Big exhale*"
     "I set my tools down."
     "I've been working very hard."
@@ -483,7 +484,7 @@ label act2_ch2_follow:
     "At least {i}some{/i} men are considerate about girls."
     stop music
     call playlog(log5, "bg tlivingroom_night", 35.0)
-    call showlocation("9 hours later","October 9, 2023",20*60+59+57/60.0,"bg tlivingroom_night")
+    call showlocation("9 hours later\n{size=25}9時間後{/size}","October 9, 2023\n{size=15}2023年10月9日{/size}",20*60+59+57/60.0,"bg tlivingroom_night")
     play music confdep
     "Late at night."
     show taiyen zorder 2 at t11
@@ -556,7 +557,7 @@ label act2_ch2_run:
     "Too late now."
     "I'll have to apologize to him later..."
     scene bg kamiclassday with wipeleft_scene
-    call showlocation("Woodshop Class","October 9, 2023",12*60+54+57/60.0,"bg kamiclassnight")
+    call showlocation("Woodshop Class","October 9, 2023\n{size=15}2023年10月9日{/size}",12*60+54+57/60.0,"bg kamiclassnight")
     "Having trouble staying focused."
     show akira 4al zorder 2 at t11
     ak "Aoruguri, let's talk."

@@ -5,7 +5,7 @@ label act1_ch3_main:
     with dissolve_scene_full
     $ style.say_window = style.window
     $ nb = "namebox"
-    call showlocation("Converse Park","October 1, 2023",415.2,"bg tree") from _call_showlocation_8
+    call showlocation("Converse Park\n{size=25}コンバースパーク{/size}","October 1, 2023\n{size=15}2023年10月1日{/size}",415.2,"bg tree") from _call_showlocation_8
     t "A little windy today..."
     "I know school starts in at 7:15 but I actually get a late start due to how my classes are on Tuesdays."
     "The situation might be the same with Hanato, she doesn't seem to have woken up yet."
@@ -67,7 +67,7 @@ label act1_ch3_main:
     play music t8
     $ style.say_window = style.window_fake
     $ nb = "namebox_fake"
-    call showlocation("Sakura Academy","October 1, 2023",479.95,"bg school_day") from _call_showlocation_9
+    call showlocation("Sakura Academy\n{size=25}桜学園高校{/size}","October 1, 2023\n{size=15}2023年10月1日{/size}",479.95,"bg school_day") from _call_showlocation_9
 
 
     show monika forward happ rhip om zorder 2 at t11 
@@ -100,7 +100,7 @@ label act1_ch3_main:
     "Got it."
     "I won't ask questions, not until it's safe to."
     scene bg schoolbasement with wipeleft_scene
-    call showlocation("Sakura Academy Basement","October 1, 2023",60*16+29+57/60.0,"bg schoolbasement") from _call_showlocation_14
+    call showlocation("Sakura Academy Basement\n{size=25}桜学園高校の地下{/size}","October 1, 2023\n{size=15}2023年10月1日{/size}",60*16+29+57/60.0,"bg schoolbasement") from _call_showlocation_14
     show monika forward neut zorder 2 at t11
     t "So, what exactly is going on here?"
     m rhip om "Well, ever since she was born, the Yandere parents have been trying to keep Lilly away from people for some unknown reason."

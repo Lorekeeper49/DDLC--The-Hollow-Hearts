@@ -1,9 +1,10 @@
 style location_text:
-    font "mod_assets/fonts/AlexBrush-Regular.ttf"
+    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
     size 100
     color gui.text_color
     outlines [(2, "#000000aa", 0, 0)]
     text_align 0.5
+    line_spacing -20
 
 style time_text:
     font "mod_assets/fonts/SevenSegment.ttf"
@@ -13,11 +14,12 @@ style time_text:
     text_align 0.5
 
 style date_text:
-    font "mod_assets/fonts/AlexBrush-Regular.ttf"
+    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
     size 25
     color gui.text_color
     outlines [(2, "#000000aa", 0, 0)]
     text_align 0.5
+    line_spacing -5
 
 image location_text = ParameterizedText(style="location_text")
 
@@ -95,7 +97,7 @@ transform date_trans:
     xanchor 0.5
     yanchor 0.5
     xalign 0.5
-    yalign 0.25
+    yalign 0.20
 
 screen clock(bg="",date="",minutes=0.0):
     frame:

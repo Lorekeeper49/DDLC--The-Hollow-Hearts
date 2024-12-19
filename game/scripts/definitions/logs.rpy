@@ -5,8 +5,8 @@ init python:
             self.text = text
     
     log1 = Log(
-        title = "Log 1", 
-        text = """\
+        title = _("Log 1"), 
+        text = _("""\
     The purpose of these logs is to give information about the Breaker experiment and how exactly it went in the process of production.  The reason why these are physical logs not saved onto my computer is because I don't want this information to be leaked before we can release this for public use.
     The purpose of Breaker is to allow people to remove their current attribute and either exchange it for another one, or stay without it and be ordinary, whatever that means.
     Five test subjects have volunteered to take the substance: Kamiyama Kirinani, Luna Dominion, Yandere Lilly, Kusunoki Mari, and Settou Seiei.  We'll supply these logs with tutorials on how to perform the procedure safely.
@@ -16,25 +16,25 @@ init python:
     Please...
     If your hearing this...
     Take care of her daughter.
-    """
+    """)
     )
     log5 = Log(
-        title = "Log 5", 
-        text = """\
+        title = _("Log 5"), 
+        text = _("""\
     TESTS ONE AND TWO COMPLETE.  AWAITING RESULTS...
     The tests are going smoothly, that or my son is lying to me.  I always worry about lies, even if they're from my own family...
     That's off-topic.  What's on-topic is that the tests seem to be going off without a hitch.  I'm still waiting on accurate results, but our volunteers might just be in store for a better future, here's hoping.
     TEST THREE is tonight, results should come by then.
-    """
+    """)
     )
     finallog = Log(
-        title = "Final Log", 
-        text = """\
+        title = _("Final Log"), 
+        text = _("""\
     The experiment failed, they're completely different people now, I've destroyed them.
     What we failed to realize was that every attribute was tied to the person's personality.  To change one's attribute, you must change their personality.  What we were essentially trying to do without realizing it is allow them to change their attribute without changing their personality.  You can imagine how much of an issue that can become when you attempt to put it into practice.
     Now they are suffering, and it's all because of me!  I know I should do it myself, but I want someone to end their suffering before it escalates for the worse.  I am not a killer, but I know I can't let them live like this!  Damnit!  This is all my fault!
     I just hope... that this won't come back to bite me.
-    """
+    """)
     )
 
 screen log(currentlog,length):

@@ -6,7 +6,7 @@ label act1_ch1_main:
     call showintro(intro_t)
     scene bg tlivingroom
     with dissolve_scene_full
-    call showlocation("Sakura Household","September 29, 2023",7*60+0+0/60.0,"bg tlivingroom")
+    call showlocation("Sakura Household\n{size=25}桜の家庭{/size}","September 29, 2023\n{size=15}2023年9月29日{/size}",7*60+0+0/60.0,"bg tlivingroom")
     t "Agh!  I can't focus!"
     "Been trying to play my favorite game to get my mind off it, but it's bothering me so much!"
     "What were those voices I heard last night?"
@@ -72,7 +72,7 @@ label act1_ch1_main:
     $ nb = "namebox_fake"
     call deadfast("bg park_day")
     play music t2
-    call showlocation("Converse Park","September 29, 2023",7*60+15+0/60.0,"bg tree")
+    call showlocation("Converse Park\n{size=25}コンバースパーク{/size}","September 29, 2023\n{size=15}2023年9月29日{/size}",7*60+15+0/60.0,"bg tree")
     t "Ohayou Sayori!"
     show sayori turned casual happ zorder 2 at t11
     s om "I thought someone was following me!"
@@ -179,7 +179,7 @@ label act1_ch1_main:
     "No one ask what that means, please."
     scene bg deep_forest with wipeleft_scene
     play music t2
-    call showlocation("Deep Forest","September 29, 2023",10*60+0+0/60.0,"bg deep_forest")
+    call showlocation("Deep Forest\n{size=25}幽林{/size}","September 29, 2023\n{size=15}2023年9月29日{/size}",10*60+0+0/60.0,"bg deep_forest")
     "They did."
     "And we spent an hour trying to explain that it just means to talk about it another day."
     "*Sigh* The terminology of boy and girl..."

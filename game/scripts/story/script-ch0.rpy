@@ -16,7 +16,7 @@ label ch0_main:
     "That's what I thought!"
     play sound door
     scene bg house with wipeleft_scene
-    call showlocation("Sakura Home","September 28, 2023",7*60+59+57/60.0,"bg house")
+    call showlocation("Sakura Home\n{size=25}桜のホーム{/size}","September 28, 2023\n{size=15}2023年9月28日{/size}",7*60+59+57/60.0,"bg house")
     t "*Sigh*"
     show yuri turned casual curi rup zorder 2 at t11
     y om "Taiyen?"

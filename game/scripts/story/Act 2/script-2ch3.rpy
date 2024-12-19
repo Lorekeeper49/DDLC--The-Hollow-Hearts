@@ -359,7 +359,7 @@ label act2_ch3_alt:
     "She walks away."
     a "I should consult Mari."
     scene bg mari_office with wipeleft_scene
-    call showlocation("Principal's Office", "October 10, 2023",19*60+59+57/60.0,"bg mari_office")
+    call showlocation("Principal's Office\n{size=25}校長室{/size}", "October 10, 2023\n{size=15}2023年10月10日{/size}",19*60+59+57/60.0,"bg mari_office")
     a "Mari?"
     show mari forward curi zorder 2 at t11
     ma om "Yes, honey?"

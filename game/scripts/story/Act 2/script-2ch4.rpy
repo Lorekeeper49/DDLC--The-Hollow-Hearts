@@ -6,7 +6,7 @@ label act2_ch4_main:
     #play ambience mansion
     scene bg mansion
     with dissolve_scene_full
-    call showlocation("Wraith Mansion","October 11, 2023",21*60+14+57/60.0,"bg mansion") from _call_showlocation_43
+    call showlocation("Wraith Mansion","October 11, 2023\n{size=15}2023年10月11日{/size}",21*60+14+57/60.0,"bg mansion") from _call_showlocation_43
     k "We're here."
     "Welp, here we go..."
     a "Everyone got their flashlights?"
@@ -85,7 +85,7 @@ label act2_ch4_alt:
     scene bg foyer
     show dark zorder 10
     with dissolve_scene_full
-    call showlocation("Wraith Mansion","October 11, 2023",21*60+14+57/60.0,"bg mansion")
+    call showlocation("Wraith Mansion","October 11, 2023\n{size=15}2023年10月11日{/size}",21*60+14+57/60.0,"bg mansion")
     a "..."
     "I honestly have no idea what I'm doing here."
     "This is stupid!  This is reckless!"
@@ -164,7 +164,7 @@ label act2_ch4_common:
     a "{cps=3}...?{/cps}"
     scene bg final_room
     with dissolve_scene_full
-    call showlocation("???","October 11, 2023",23*60+59+57/60.0,"bg final_room")
+    call showlocation("???","October 11, 2023\n{size=15}2023年10月11日{/size}",23*60+59+57/60.0,"bg final_room")
     a "Huh?  Where am I?"
     "Why is there blood?"
     a "Hey, what the fuck?"

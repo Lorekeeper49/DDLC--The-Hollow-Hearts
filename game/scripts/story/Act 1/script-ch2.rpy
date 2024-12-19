@@ -3,7 +3,7 @@ label act1_ch2_main:
     scene bg residential_day
     with dissolve_scene_full
     play music t2
-    call showlocation("Residential Street","September 30, 2023",405.2, "bg residential") from _call_showlocation_4
+    call showlocation("Residential Street\n{size=25}住宅街{/size}","September 30, 2023\n{size=15}2023年9月30日{/size}",405.2, "bg residential") from _call_showlocation_4
     $ style.say_window = style.window
     $ nb = "namebox"
     show monika forward nuet rhip zorder 2 at t11
