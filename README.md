@@ -78,13 +78,21 @@ KAMIYAMA AKIRA - LvcyLu
 
 >[MPT - RedLeader](https://www.reddit.com/r/DDLCMods/comments/ucxgcx/kotonoha_mio_and_dadsuki_mpts/?utm_source=share&utm_medium=ios_app&utm_name=ioscss&utm_content=1&utm_term=1)
 
-[TETSUO TETSUO - SovietSpartan](https://www.reddit.com/r/DDLCMods/comments/ucxgcx/kotonoha_mio_and_dadsuki_mpts/?utm_source=share&utm_medium=ios_app&utm_name=ioscss&utm_content=1&utm_term=1)
+[LUNA TETSUO - SovietSpartan](https://www.reddit.com/r/DDLCMods/comments/ucxgcx/kotonoha_mio_and_dadsuki_mpts/?utm_source=share&utm_medium=ios_app&utm_name=ioscss&utm_content=1&utm_term=1)
 
 >MPT - RedLeader 
 
 [KUSANOKI MARI - Nekolais](https://drive.google.com/file/d/1rAgY9Ijoyib2W9Hh6FJZaFYg0RDGR7ey/view)
 
-[SETTOU SEIEI - StormBlazed76 and Satchley](https://www.reddit.com/r/DDLCMods/comments/ofkf3s/canon_mc_sprites_are_here_ladies_and_gentlemen/)
+[SETTOU SEIEI (CANON MC)](https://www.reddit.com/r/DDLCMods/comments/1hhmu77/new_canon_mc_remake_sprites_are_here_better_and/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
+
+>SPRITES - Stormblazed76
+
+>SKETCH - Satchely
+
+>EXPRESSIONS & CHEAT SHEET - Blue Quacker
+
+>COMISSIONING, MPT & COMPOSITES - Sweggory
 
 [LUNA ENGEKI (SAYURI) - Hoeruko](https://drive.google.com/drive/folders/1P0MJt2YYwGrlgtQo4AnriWN_540NCifq?usp=sharing)
 

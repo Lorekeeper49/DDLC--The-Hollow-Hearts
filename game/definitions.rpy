@@ -1657,6 +1657,7 @@ define ti = DynamicCharacter('tina', image='tina', what_prefix='“', what_suffi
 define en = DynamicCharacter('en_name', image="engeki", what_prefix='“', what_suffix='”', ctc="ctc", ctc_position="fixed")
 define ma = DynamicCharacter('mari', image="mari", what_prefix='“', what_suffix='”', ctc="ctc", ctc_position="fixed")
 define d = DynamicCharacter('dominion', image="dominion", what_prefix='“', what_suffix='”', ctc="ctc", ctc_position="fixed")
+define sei = DynamicCharacter('seiei', image='seiei', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define general = DynamicCharacter('pla', what_prefix='“', what_suffix='”', ctc="ctc", ctc_position="fixed")
 
 define _dismiss_pause = config.developer
@@ -1713,6 +1714,7 @@ default tina = "高佐氏ティナ\n{size=15}Takasashi Tina"
 default en_name = "ルナ演劇\n{size=15}Luna Engeki"
 default mari = "楠まり\n{size=15}Kusunoki Mari"
 default dominion = "ルナどみにおん\n{size=15}Luna Dominion"
+default seiei = "窃盗精鋭\n{size=15}Settou Seiei{/size}"
 default pla = "General Name"
 
 # - choices
