@@ -315,6 +315,7 @@ label ch0_main:
         show yuri turned happ casual rup zorder 2 at r22
         show kotonoha cm at t21
         y om "Why did you start writing in the first place?"
+        show yuri cm
     
     if koto_chosen == "chat":
         k rdown "I'll choose Sayori's chat."
@@ -341,6 +342,8 @@ label ch0_main:
         
         "Sayori" if last_chosen != "sayori" and koto_chosen != "sayori":
             $ last_chosen = "sayori"
+            s om "What's the first thing you've ever written?"
+            show sayori cm
         
         "Natsuki" if last_chosen != "natsuki" and koto_chosen != "natsuki":
             $ last_chosen = "natsuki"
@@ -357,6 +360,7 @@ label ch0_main:
         "Yuri" if last_chosen != "yuri" and koto_chosen != "yuri":
             $ last_chosen = "yuri"
             y om "What are some clichés you try to avoid?"
+            show yuri cm
 
         "Sayori's chat" if last_chosen != "chat" and koto_chosen != "chat":
             $ last_chosen = "chat"
@@ -381,16 +385,31 @@ label ch0_main:
         k om "I'll choose Sayori."
         show sayori turned happ casual rup zorder 2 at r22
         show kotonoha cm at t21
+        s om "What's the first thing you've ever written?"
+        show sayori cm
 
     if koto_chosen == "natsuki":
         k om "I'll choose Natsuki."
         show natsuki turned happ casual rhip zorder 2 at r22
         show kotonoha cm at t21
+        n om "Have you read manga before, and if so, what's your opinion on it?"
+        show natsuki cm
+        k rhip om "Specifically not asking if it's literature, huh?"
+        show kotonoha cm
+        n cross anno om "I've already given up on that fight with Yuri."
+        show natsuki cm
+        k ldown b1e om "Oh, so you've already gone through the seemingly unwinnable war."
+        show natsuki happ
+        $ layeredimage_ref("kotonoha")
+        k lup rdown om "Well anyway..."
+        show natsuki turned casual happ rhip
 
     if koto_chosen == "yuri":
         k om "I'll choose Yuri."
         show yuri turned happ casual rup zorder 2 at r22
         show kotonoha cm at t21
+        y om "What are some clichés you try to avoid?"
+        show yuri cm
     
     if koto_chosen == "chat":
         k om "I'll choose Sayori's chat."
@@ -436,9 +455,12 @@ label ch0_main:
         "Natsuki" if last_chosen != "natsuki" and koto_chosen != "natsuki":
             $ last_chosen = "natsuki"
             n om "Besides writing, what do you do in your free time?"
+            show yuri cm
         
         "Yuri" if last_chosen != "yuri" and koto_chosen != "yuri":
             $ last_chosen = "yuri"
+            y om "What's your favorite novel?"
+            show yuri cm
 
         "Sayori's chat" if last_chosen != "chat" and koto_chosen != "chat":
             $ last_chosen = "chat"
@@ -453,23 +475,29 @@ label ch0_main:
         k om "I'll choose Monika."
         show monika forward happ casual rhip zorder 2 at r22
         show kotonoha cm at t21
+        m om "Where does most of your inspiration come from?"
+        show monika cm
         
     if koto_chosen == "sayori":
         k om "I'll choose Sayori."
         show sayori turned happ casual rup zorder 2 at r22
         show kotonoha cm at t21
         s om "What is your fondest memory?"
+        show sayori cm
 
     if koto_chosen == "natsuki":
         k om "I'll choose Natsuki."
         show natsuki turned happ casual rhip zorder 2 at r22
         show kotonoha cm at t21
         n om "Besides writing, what do you do in your free time?"
+        show natsuki cm
 
     if koto_chosen == "yuri":
         k om "I'll choose Yuri."
         show yuri turned happ casual rup zorder 2 at r22
         show kotonoha cm at t21
+        y om "What's your favorite novel?"
+        show yuri cm
     
     if koto_chosen == "chat":
         k om "I'll choose Sayori's chat."
@@ -486,15 +514,23 @@ label ch0_main:
         
         "Monika" if last_chosen != "monika" and koto_chosen != "monika":
             $ last_chosen = "monika"
+            m om "What story do you think has the best writing?"
+            show monika cm
         
         "Sayori" if last_chosen != "sayori" and koto_chosen != "sayori":
             $ last_chosen = "sayori"
+            s om "What's something that you think has been done to death?"
+            show sayori cm
         
         "Natsuki" if last_chosen != "natsuki" and koto_chosen != "natsuki":
             $ last_chosen = "natsuki"
+            n om "What's your favorite adaptation you have seen?"
+            show natsuki cm
         
         "Yuri" if last_chosen != "yuri" and koto_chosen != "yuri":
             $ last_chosen = "yuri"
+            y om "What's your favorite type of story?"
+            show yuri cm
 
         "Sayori's chat" if last_chosen != "chat" and koto_chosen != "chat":
             $ last_chosen = "chat"
@@ -509,21 +545,29 @@ label ch0_main:
         k om "I'll choose Monika."
         show monika forward happ casual rhip zorder 2 at r22
         show kotonoha cm at t21
+        m om "What story do you think has the best writing?"
+        show monika cm
         
     if koto_chosen == "sayori":
         k om "I'll choose Sayori."
         show sayori turned happ casual rup zorder 2 at r22
         show kotonoha cm at t21
+        s om "What's something that you think has been done to death?"
+        show sayori cm
 
     if koto_chosen == "natsuki":
         k om "I'll choose Natsuki."
         show natsuki turned happ casual rhip zorder 2 at r22
         show kotonoha cm at t21
+        n om "What's your favorite adaptation you have seen?"
+        show natsuki cm
 
     if koto_chosen == "yuri":
         k om "I'll choose Yuri."
         show yuri turned happ casual rup zorder 2 at r22
         show kotonoha cm at t21
+        y om "What's your favorite type of story?"
+        show yuri cm
     
     if koto_chosen == "chat":
         k om "I'll choose Sayori's chat."
@@ -540,15 +584,23 @@ label ch0_main:
         
         "Monika" if last_chosen != "monika" and koto_chosen != "monika":
             $ last_chosen = "monika"
+            m om "What's your favorite genre?"
+            show monika cm
         
         "Sayori" if last_chosen != "sayori" and koto_chosen != "sayori":
             $ last_chosen = "sayori"
+            s om "How do you come up with the names of your characters?"
+            show sayori cm
         
         "Natsuki" if last_chosen != "natsuki" and koto_chosen != "natsuki":
             $ last_chosen = "natsuki"
+            n om "What tips do you have to help people improve on their writing?"
+            show natsuki cm
         
         "Yuri" if last_chosen != "yuri" and koto_chosen != "yuri":
             $ last_chosen = "yuri"
+            y om "What's your opinion on horror?"
+            show yuri cm
 
         "Sayori's chat" if last_chosen != "chat" and koto_chosen != "chat":
             $ last_chosen = "chat"
@@ -563,21 +615,29 @@ label ch0_main:
         k om "I'll choose Monika."
         show monika forward happ casual rhip zorder 2 at r22
         show kotonoha cm at t21
+        m om "What's your favorite genre?"
+        show monika cm
         
     if koto_chosen == "sayori":
         k om "I'll choose Sayori."
         show sayori turned happ casual rup zorder 2 at r22
         show kotonoha cm at t21
+        s om "How do you come up with the names of your characters?"
+        show sayori cm
 
     if koto_chosen == "natsuki":
         k om "I'll choose Natsuki."
         show natsuki turned happ casual rhip zorder 2 at r22
         show kotonoha cm at t21
+        n om "What tips do you have to help people improve on their writing?"
+        show natsuki cm
 
     if koto_chosen == "yuri":
         k om "I'll choose Yuri."
         show yuri turned happ casual rup zorder 2 at r22
         show kotonoha cm at t21
+        y om "What's your opinion on horror?"
+        show yuri cm
     
     if koto_chosen == "chat":
         k om "I'll choose Sayori's chat."
@@ -594,15 +654,23 @@ label ch0_main:
         
         "Monika" if last_chosen != "monika" and koto_chosen != "monika":
             $ last_chosen = "monika"
+            m om "Have you ever done a collaboration project before?"
+            show monika cm
         
         "Sayori" if last_chosen != "sayori" and koto_chosen != "sayori":
             $ last_chosen = "sayori"
+            s om "Have you ever had to completely rewrite a story before release?"
+            show sayori cm
         
         "Natsuki" if last_chosen != "natsuki" and koto_chosen != "natsuki":
             $ last_chosen = "natsuki"
+            n om "Worst stereotype, go!"
+            show natsuki cm
         
         "Yuri" if last_chosen != "yuri" and koto_chosen != "yuri":
             $ last_chosen = "yuri"
+            y om "How do you get out of writer's block?"
+            show yuri cm
 
         "Sayori's chat" if last_chosen != "chat" and koto_chosen != "chat":
             $ last_chosen = "chat"
@@ -617,21 +685,29 @@ label ch0_main:
         k om "I'll choose Monika."
         show monika forward happ casual rhip zorder 2 at r22
         show kotonoha cm at t21
+        m om "Have you ever done a collaboration project before?"
+        show monika cm
         
     if koto_chosen == "sayori":
         k om "I'll choose Sayori."
         show sayori turned happ casual rup zorder 2 at r22
         show kotonoha cm at t21
+        s om "Have you ever had to completely rewrite a story before release?"
+        show sayori cm
 
     if koto_chosen == "natsuki":
         k om "I'll choose Natsuki."
         show natsuki turned happ casual rhip zorder 2 at r22
         show kotonoha cm at t21
+        n om "Worst stereotype, go!"
+        show natsuki cm
 
     if koto_chosen == "yuri":
         k om "I'll choose Yuri."
         show yuri turned happ casual rup zorder 2 at r22
         show kotonoha cm at t21
+        y om "How do you get out of writer's block?"
+        show yuri cm
     
     if koto_chosen == "chat":
         k om "I'll choose Sayori's chat."
@@ -648,15 +724,24 @@ label ch0_main:
         
         "Monika" if last_chosen != "monika" and koto_chosen != "monika":
             $ last_chosen = "monika"
+            m om "What's your least favorite genre?"
+            show monika cm
         
         "Sayori" if last_chosen != "sayori" and koto_chosen != "sayori":
             $ last_chosen = "sayori"
+            s om "What's the most common problem you see with stories and how do you wish to fix it?"
+            show sayori cm
         
         "Natsuki" if last_chosen != "natsuki" and koto_chosen != "natsuki":
             $ last_chosen = "natsuki"
+            n om "What's your least favorite adaptation?"
+            show natsuki cm
         
         "Yuri" if last_chosen != "yuri" and koto_chosen != "yuri":
             $ last_chosen = "yuri"
+            y om "What's the general writing aspect that you focus the most on?"
+            show yuri cm
+            t "Contintuity."
 
         "Sayori's chat" if last_chosen != "chat" and koto_chosen != "chat":
             $ last_chosen = "chat"
@@ -671,21 +756,29 @@ label ch0_main:
         k om "I'll choose Monika."
         show monika forward happ casual rhip zorder 2 at r22
         show kotonoha cm at t21
+        m om "What's your least favorite genre?"
+        show monika cm
         
     if koto_chosen == "sayori":
         k om "I'll choose Sayori."
         show sayori turned happ casual rup zorder 2 at r22
         show kotonoha cm at t21
+        s om "What's the most common problem you see with stories and how do you wish to fix it?"
+        show sayori cm
 
     if koto_chosen == "natsuki":
         k om "I'll choose Natsuki."
         show natsuki turned happ casual rhip zorder 2 at r22
         show kotonoha cm at t21
+        n om "What's your least favorite adaptation?"
+        show natsuki cm
 
     if koto_chosen == "yuri":
         k om "I'll choose Yuri."
         show yuri turned happ casual rup zorder 2 at r22
         show kotonoha cm at t21
+        y om "What's the general writing aspect that you focus the most on?"
+        show yuri cm
     
     if koto_chosen == "chat":
         k om "I'll choose Sayori's chat."
@@ -702,15 +795,23 @@ label ch0_main:
         
         "Monika" if last_chosen != "monika" and koto_chosen != "monika":
             $ last_chosen = "monika"
+            m om "What's your least favorite story?"
+            show monika cm
         
         "Sayori" if last_chosen != "sayori" and koto_chosen != "sayori":
             $ last_chosen = "sayori"
+            s om "I know you don't like comedy, but what do you actually like about it?"
+            show sayori cm
         
         "Natsuki" if last_chosen != "natsuki" and koto_chosen != "natsuki":
             $ last_chosen = "natsuki"
+            n om "How do you feel about the deredere types?"
+            show natsuki cm
         
         "Yuri" if last_chosen != "yuri" and koto_chosen != "yuri":
             $ last_chosen = "yuri"
+            y om "Who's your favorite character in any media?"
+            show yuri cm
 
         "Sayori's chat" if last_chosen != "chat" and koto_chosen != "chat":
             $ last_chosen = "chat"
@@ -725,21 +826,29 @@ label ch0_main:
         k om "I'll choose Monika."
         show monika forward happ casual rhip zorder 2 at r22
         show kotonoha cm at t21
+        m om "What's your least favorite story?"
+        show monika cm
         
     if koto_chosen == "sayori":
         k om "I'll choose Sayori."
         show sayori turned happ casual rup zorder 2 at r22
         show kotonoha cm at t21
+        s om "I know you don't like comedy, but what do you actually like about it?"
+        show sayori cm
 
     if koto_chosen == "natsuki":
         k om "I'll choose Natsuki."
         show natsuki turned happ casual rhip zorder 2 at r22
         show kotonoha cm at t21
+        n om "How do you feel about the deredere types?"
+        show natsuki cm
 
     if koto_chosen == "yuri":
         k om "I'll choose Yuri."
         show yuri turned happ casual rup zorder 2 at r22
         show kotonoha cm at t21
+        y om "Who's your favorite character in any media?"
+        show yuri cm
     
     if koto_chosen == "chat":
         k om "I'll choose Sayori's chat."
