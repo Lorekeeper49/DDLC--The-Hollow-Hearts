@@ -557,7 +557,7 @@ label act2_ch2_run:
     "Too late now."
     "I'll have to apologize to him later..."
     scene bg kamiclassday with wipeleft_scene
-    call showlocation("Woodshop Class","October 9, 2023\n{size=15}2023年10月9日{/size}",12*60+54+57/60.0,"bg kamiclassnight")
+    call showlocation("Woodshop Class\n{size=25}木工のクラス{/size}","October 9, 2023\n{size=15}2023年10月9日{/size}",12*60+54+57/60.0,"bg kamiclassnight")
     "Having trouble staying focused."
     show akira 4al zorder 2 at t11
     ak "Aoruguri, let's talk."

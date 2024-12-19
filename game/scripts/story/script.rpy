@@ -260,35 +260,35 @@ label dev:
                     "CHAPTER 2":
                         $ chapter = 2
                         "BEGINNING CHAPTER 2"
-                        $ hanato = "Kamiyama Hanato"
+                        $ hanato = "神山華翔\n{size=15}Kamiyama Hanato"
                         call chapter_trans("The Precursors")
                         call act1_ch2_main from _call_act1_ch2_main_1
                     "CHAPTER 3":
                         $ chapter = 3
                         "BEGINNING CHAPTER 3"
-                        $ hanato = "Kamiyama Hanato"
+                        $ hanato = "神山華翔\n{size=15}Kamiyama Hanato"
                         call chapter_trans("Bearing Secrets")
                         call act1_ch3_main from _call_act1_ch3_main_1
                     "CHAPTER 4":
                         $ chapter = 4
                         "BEGINNING CHAPTER 4"
-                        $ hanato = "Kamiyama Hanato"
+                        $ hanato = "神山華翔\n{size=15}Kamiyama Hanato"
                         call chapter_trans("")
                         call act1_ch4_main from _call_act1_ch4_main_1
                     "CHAPTER 5":
                         $ chapter = 5
                         "BEGINNING CHAPTER 5"
-                        $ hanato = "Kamiyama Hanato"
+                        $ hanato = "神山華翔\n{size=15}Kamiyama Hanato"
                         call chapter_trans("")
                         call act1_ch5_main from _call_act1_ch5_main_1
                     "BACK":
                         jump dev_loop
             "ACT 2":
                 $ act = 2
-                $ hanato = "Kamiyama Hanato"
+                $ hanato = "神山華翔\n{size=15}Kamiyama Hanato"
                 $ style.say_window = style.window
                 $ nb = "namebox"
-                $ aoruguri = "Luna Aoruguri"
+                $ aoruguri = "ルナ煽るぐり\n{size=15}Luna Aoruguri"
                 call act_trans
                 menu:
                     "WHICH PATH?"
