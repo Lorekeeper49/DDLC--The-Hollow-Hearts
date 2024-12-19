@@ -214,7 +214,6 @@ init -1 style namebox_fake:
     xsize 816
     ypos gui.name_ypos-50
     ysize 86
-    text_align 0.5
 
     background Frame("mod_assets/gui/fakenamebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
     padding gui.namebox_borders.padding
@@ -225,6 +224,8 @@ init -1 style say_label:
     size gui.name_text_size
     xalign gui.name_xalign
     yalign 0.5
+    text_align 0.5
+    line_spacing -10
     outlines [ ( 0, "#000", 1, 1) ]
 
 init -1 style say_dialogue:

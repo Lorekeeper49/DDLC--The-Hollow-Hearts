@@ -1,5 +1,5 @@
 define sei = DynamicCharacter('seiei', image='seiei', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")#, window_background=im.MatrixColor("mod_assets/gui/textbox.png", im.matrix.invert())
-default seiei = "Settou Seiei"
+default seiei = "窃盗精鋭\n{size=15}Settou Seiei{/size}"
 
 image seiei 1a = im.Composite((960, 960), (0, 0), "mod_assets/characters/seiei/1.png", (0, 0), "mod_assets/characters/seiei/a.png")
 image seiei 1a1 = im.Composite((960, 960), (0, 0), "mod_assets/characters/seiei/1.png", (0, 0), "mod_assets/characters/seiei/a1.png")

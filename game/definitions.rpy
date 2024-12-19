@@ -1651,7 +1651,6 @@ define kiri = DynamicCharacter('kirinani', image='kirinani', what_prefix='“', 
 define ina = DynamicCharacter('inari', image='inari', what_prefix='“', what_suffix='”', ctc="ctc", ctc_position="fixed")
 define kmind = DynamicCharacter('k_name', image='kotonoha', what_prefix='(', what_suffix=')', ctc="ctc", ctc_position="fixed")
 define everyone = DynamicCharacter('everyone', what_prefix='“', what_suffix='”', ctc="ctc", ctc_position="fixed")
-define mom = DynamicCharacter('mom', what_prefix='“', what_suffix='”', ctc="ctc", ctc_position="fixed")
 define a = DynamicCharacter('aoruguri', image='aoruguri', what_prefix='“', what_suffix='”', ctc="ctc", ctc_position="fixed")
 define ti = DynamicCharacter('tina', image='tina', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define en = DynamicCharacter('en_name', image="engeki", what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
@@ -1695,25 +1694,24 @@ default faint_effect = None
 
 
 # - names
-default player = "Sakura Taiyen"
-default s_name = "Shinamonpan Sayori"
-default m_name = "Murikou Monika"
-default n_name = "Luna Natsuki"
-default y_name = "Yandere Yuri"
-default k_name = "Sakura Kotonoha"
-default akira = "Kamiyama Akira"
-default hanato = "Kamiyama Hanato"
-default kirinani = "Kamiyama Kirinani"
-default itsomi = "Kamiyama Itsomi"
-default inari = "Kamiyama Inari"
-default mom = "Mother"
-default everyone = "Everyone"
-default lilly = "Yandere Lilly"
-default aoruguri = "Luna Aoruguri"
-default tina = "Takasashi Tina"
-default en_name = "Luna Engeki"
-default mari = "Kusunoki Mari"
-default dominion = "Luna Dominion"
+default player = "桜隊円\n{size=15}Sakura Taiyen{/size}"
+default s_name = "シナモンパン佐代里\n{size=15}Shinamonpan Sayori"
+default m_name = "無理高モニカ\n{size=15}Murikou Monika"
+default n_name = "ルナ菜月\n{size=15}Luna Natsuki{/size}"
+default y_name = "ヤンデレ百合\n{size=15}Yandere Yuri{/size}"
+default k_name = "桜言葉\n{size=15}Sakura Kotonoha"
+default akira = "神山秋羅\n{size=15}Kamiyama Akira"
+default hanato = "神山華翔\n{size=15}Kamiyama Hanato"
+default kirinani = "神山霧何\n{size=15}Kamiyama Kirinani"
+default itsomi = "神山イツォミ\n{size=15}Kamiyama Itsomi"
+default inari = "神山稲荷\n{size=15}Kamiyama Inari"
+default everyone = "みんな\n{size=15}Everyone"
+default lilly = "ヤンデレリリー\n{size=15}Yandere Lilly"
+default aoruguri = "ルナ煽るぐり\n{size=15}Luna Aoruguri"
+default tina = "高佐氏ティナ\n{size=15}Takasashi Tina"
+default en_name = "ルナ演劇\n{size=15}Luna Engeki"
+default mari = "楠まり\n{size=15}Kusunoki Mari"
+default dominion = "ルナどみにおん\n{size=15}Luna Dominion"
 default pla = "General Name"
 
 # - choices
