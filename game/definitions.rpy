@@ -1652,10 +1652,10 @@ define ina = DynamicCharacter('inari', image='inari', what_prefix='“', what_su
 define kmind = DynamicCharacter('k_name', image='kotonoha', what_prefix='(', what_suffix=')', ctc="ctc", ctc_position="fixed")
 define everyone = DynamicCharacter('everyone', what_prefix='“', what_suffix='”', ctc="ctc", ctc_position="fixed")
 define a = DynamicCharacter('aoruguri', image='aoruguri', what_prefix='“', what_suffix='”', ctc="ctc", ctc_position="fixed")
-define ti = DynamicCharacter('tina', image='tina', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
-define en = DynamicCharacter('en_name', image="engeki", what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
-define ma = DynamicCharacter('mari', image="mari", what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
-define d = DynamicCharacter('dominion', image="dominion", what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
+define ti = DynamicCharacter('tina', image='tina', what_prefix='“', what_suffix='”', ctc="ctc", ctc_position="fixed")
+define en = DynamicCharacter('en_name', image="engeki", what_prefix='“', what_suffix='”', ctc="ctc", ctc_position="fixed")
+define ma = DynamicCharacter('mari', image="mari", what_prefix='“', what_suffix='”', ctc="ctc", ctc_position="fixed")
+define d = DynamicCharacter('dominion', image="dominion", what_prefix='“', what_suffix='”', ctc="ctc", ctc_position="fixed")
 define general = DynamicCharacter('pla', what_prefix='“', what_suffix='”', ctc="ctc", ctc_position="fixed")
 
 define _dismiss_pause = config.developer

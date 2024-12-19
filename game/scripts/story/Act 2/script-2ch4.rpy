@@ -207,7 +207,7 @@ label act2_ch4_common:
     $ en_name = "???"
     en "Hello."
     en "It's me."
-    $ en_name = "Luna Engeki"
+    $ en_name = "ルナ演劇\n{size=15}Luna Engeki"
     en "Engeki."
     show engeki ma
     a "Engeki?"
