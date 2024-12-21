@@ -239,7 +239,6 @@ label splashscreen:
 
     $ config.allow_skipping = False
 
-    achieve test
     show black
     $ config.main_menu_music = audio.t1
     if not startnow:
