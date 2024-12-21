@@ -395,6 +395,8 @@ init -1 python:
             renpy.jump_out_of_context("start")
     def Act3():
         renpy.jump_out_of_context("act3")
+    def Extras():
+        renpy.jump_out_of_context("extras")
 
 default -1 option_index = 0
 default -1 aa_status = "OFF"
@@ -416,7 +418,7 @@ init -501 screen navigation():
             if renpy.variant("pc"):
                 textbutton _("HELP\n{size=20}ヘルプ{/size}") hovered [SetVariable("option_index", 5)]  action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))]
                 textbutton _("DISCORD\n{size=20}ディスコード{/size}") hovered [SetVariable("option_index", 6)] action OpenURL("https://discord.gg/Q3CcJW4Ag2")
-            textbutton _("EXTRAS\n{size=20}エクストラー{/size}") hovered [SetVariable("option_index", 7)] action Quit(confirm=not main_menu)
+            textbutton _("EXTRAS\n{size=20}エクストラー{/size}") hovered [SetVariable("option_index", 7)] action Function(Extras)
             if renpy.variant("pc"):
                 textbutton _("QUIT\n{size=20}クイット{/size}") hovered [SetVariable("option_index", 8)] action Quit(confirm=not main_menu)
         else:
