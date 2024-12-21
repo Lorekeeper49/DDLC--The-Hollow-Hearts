@@ -113,18 +113,14 @@ init python:
 
 screen achievement_screen(achiname, achievement_title, achievement_description):
     timer 5.0 action Hide("achievement_screen")
-    hbox:
-        add "mod_assets/achievements/" + achiname + ".png"
-        vbox:
-            text BOBCACHIEVEMENT_NOTIFY_PREFIX text_align 1.0 xalign 1.0
-            text achievement_title text_align 1.0 xalign 1.0
-            text achievement_description text_align 1.0 xalign 1.0
-        
-style achievement_unlock_text:
-    font "gui/font/AlexBrush-Regular.ttf"
-    size 40
-    color "#000"
-    outlines []
+    use achievement_frame_bg
+    fixed at achievement_transform:
+        xmaximum 500
+        hbox:
+            add "mod_assets/achievements/" + achiname + ".png"
+            vbox:
+                text achievement_title style "achievement_text"
+                text achievement_description style "achievement_desc_text"
 
 style achievement_text:
     font "mod_assets/fonts/AlexBrush-Regular.ttf"
@@ -137,3 +133,23 @@ style achievement_desc_text:
     size 15
     color "#000"
     outlines []
+
+transform achievement_transform():
+    ypos 620
+    on show:
+        xpos -640
+        easeout .25 xpos 0
+    on hide:
+        xpos 0
+        easein .25 xpos -640
+
+init -501 screen achievement_frame_bg():
+
+    frame at achievement_transform:
+        ysize 100
+        background "achievement_bg"
+
+image achievement_bg:
+    "mod_assets/gui/achievement_bg.png"
+    xzoom -1.0
+    alpha 0.5
