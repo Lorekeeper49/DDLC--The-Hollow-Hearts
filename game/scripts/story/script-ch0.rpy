@@ -277,7 +277,25 @@ label ch0_main:
         "Yuri" if last_chosen != "yuri" and koto_chosen != "yuri":
             $ last_chosen = "yuri"
             y om "Why did you start writing in the first place?"
-
+            show yuri cm
+            t "Well it's not about why I started, it's more about why I continued."
+            t "I had always been inspired by the amazing stories the creative minds can muster, and I wanted to try developing an original story myself."
+            t "However, I didn't start with something original."
+            t "In fact, I started with an embarassingly bad fan-rewrite of an indie horror game."
+            t "Half of it wasn't even close to correct with lore of that game, it was so bad."
+            show monika ce
+            show natsuki ce
+            show yuri ce
+            show sayori ce
+            "Everyone chuckles."
+            show monika oe
+            show natsuki oe
+            show yuri oe
+            show sayori oe
+            t "I'm not sure why I kept writing after that."
+            t "Frankly, I should've realized that I had no talent."
+            t "But with time, I slowly gained talent."
+            "Take that Aragaki!"
         "Sayori's chat" if last_chosen != "chat" and koto_chosen != "chat":
             $ last_chosen = "chat"
 
@@ -666,7 +684,8 @@ label ch0_main:
             $ last_chosen = "natsuki"
             n om "Worst stereotype, go!"
             show natsuki cm
-        
+            t "Minority or race being weak."
+            t "Enough said."
         "Yuri" if last_chosen != "yuri" and koto_chosen != "yuri":
             $ last_chosen = "yuri"
             y om "How do you get out of writer's block?"
@@ -701,7 +720,8 @@ label ch0_main:
         show kotonoha cm at t21
         n om "Worst stereotype, go!"
         show natsuki cm
-
+        k om "Minority or race being weak."
+        k ldown rhip "Enough said."
     if koto_chosen == "yuri":
         k om "I'll choose Yuri."
         show yuri turned happ casual rup zorder 2 at r22
