@@ -112,6 +112,7 @@ init python:
     del BOBCACHIEVEMENT_LIST
 
 screen achievement_screen(achiname, achievement_title, achievement_description):
+    zorder 2000
     timer 5.0 action Hide("achievement_screen")
     use achievement_frame_bg
     fixed at achievement_transform:
@@ -144,7 +145,7 @@ transform achievement_transform():
         easein .25 xpos -640
 
 init -501 screen achievement_frame_bg():
-
+    zorder 1000
     frame at achievement_transform:
         ysize 100
         background "achievement_bg"
