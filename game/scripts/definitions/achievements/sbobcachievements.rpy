@@ -64,7 +64,7 @@ screen achievements():
                     spacing BOBCACHIVEMENTS_SPACING
                     if achievement.has(achievement_id):
                         # We have the achievement, so show its name and description
-                        add "mod_assets/achievements/" + achiname + ".png"
+                        add "mod_assets/achievements/" + achievement_id + ".png"
                         vbox:
                             text BOBCACHIEVEMENTS_MAP[achievement_id][0] style "achievement_text" color BOBCACHIEVEMENTS_GRANTED_COLOR
                             text BOBCACHIEVEMENTS_MAP[achievement_id][1] style "achievement_desc_text" color BOBCACHIEVEMENTS_GRANTED_COLOR 
