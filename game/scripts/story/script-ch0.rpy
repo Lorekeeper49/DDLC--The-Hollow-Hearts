@@ -247,7 +247,19 @@ label ch0_main:
     $ last_chosen = "monika"
     $ koto_chosen = "monika"
     $ choice_list = ["monika", "sayori", "natsuki", "yuri", "chat"]
-
+    t "A choice-based adventure by the name of 'Hollow'."
+    t "It was very fun to write and something I have actually never done before writing it."
+    t "I won't give anything in-case you haven't seen it yet."
+    t "But it honestly turned out really well."
+    hide yuri
+    hide sayori
+    hide monika
+    hide natsuki
+    show kotonoha turned casual happ lup zorder 2 at t11
+    k om "As for me, Salvation."
+    k ldown "Specifically, the huge remake and rewrite that came out recently."
+    k rhip "It was a lot of fun remaking that story and seeing how I can improve upon the last time I did it."
+    k lup "The story is completely different from the original by the way, just saying."
     hide kotonoha
     show monika forward casual happ rhip zorder 2 at t41
     show sayori turned casual happ rup zorder 2 at t42
@@ -265,7 +277,12 @@ label ch0_main:
         "Sayori" if last_chosen != "sayori" and koto_chosen != "sayori":
             $ last_chosen = "sayori"
             s om "Don't know how I haven't asked you this yet, but what is your general process for writing?"
-        
+            show sayori cm
+            t "I don't really have one to be honest."
+            t "I just think of a topic and setting, then write my ideas based on that."
+            t "It usually takes me no time to think of the plot."
+            t "It usually takes me multiple months to complete the story."
+            t "My writing style is very annoying."
         "Natsuki" if last_chosen != "natsuki" and koto_chosen != "natsuki":
             $ last_chosen = "natsuki"
             n om "What's the hardest thing you've ever had to write?"
@@ -317,14 +334,17 @@ label ch0_main:
         show sayori turned happ casual rup zorder 2 at r22
         show kotonoha cm at t21
         s om "Don't know how I haven't asked you this yet, but what is your general process for writing?"
-        
+        show sayori cm
+        k ldown om "It is a very sequential way of writing."
+        k rhip "I usually think of the characters first, then think of the plot."
+        k rdown "Any ideas or new characters that come in during the plot are decided later."
     if koto_chosen == "natsuki":
         k rdown "I'll choose Natsuki."
         show natsuki turned happ casual rhip zorder 2 at r22
         show kotonoha cm at t21
         n om "What's the hardest thing you've ever had to write?"
         show natsuki cm
-        k anno ldown rhip "Bias in any form."
+        k anno ldown rhip om "Bias in any form."
         k ce "Especially racial, sexual, and social bias."
         k oe lup "Tai-kun and I had a writing assignment back in Junior-High School where we had to literally protray sexual bias so we could better understand it."
         k ldown "It was the single most infuriating thing either of us have ever written."
@@ -334,7 +354,9 @@ label ch0_main:
         show kotonoha cm at t21
         y om "Why did you start writing in the first place?"
         show yuri cm
-    
+        k om "Mainly because my brother did."
+        k ldown rhip "He made a very interesting story and I wanted to see if I could top it."
+        k rdown "We're kinda rivals in that sense."
     if koto_chosen == "chat":
         k rdown "I'll choose Sayori's chat."
         show sayori turned happ casual rup zorder 2 at r22
@@ -357,12 +379,19 @@ label ch0_main:
             show monika cm
             t "Well, nevermind the weird English translation."
             t "I mean, technically, it's supposed to be 'Taien', not 'Taiyen'.  But that's besides the point."
-        
+            t "Everyone knows {rb}桜{/rb}{rt}Sakura{/rt} means cherry blossom."
+            t "{rb}隊{/rb}{rt}Tai{/rt} means squad."
+            t "{rb}円{/rb}{rt}En{/rt} means circle, round, or yen."
+            t "So basically squad money or round squad."
         "Sayori" if last_chosen != "sayori" and koto_chosen != "sayori":
             $ last_chosen = "sayori"
             s om "What's the first thing you've ever written?"
             show sayori cm
-        
+            t "There's that really bad horror rewrite I never finished."
+            t "As for one I did finish..."
+            t "I rushed a story that was set within an abandoned waterpark."
+            t "Honestly, it was a timed project, but I had plenty of time to properly write it."
+            t "I should've picked more times to write, that would've made it more fleshed out."
         "Natsuki" if last_chosen != "natsuki" and koto_chosen != "natsuki":
             $ last_chosen = "natsuki"
             n om "Have you read manga before, and if so, what's your opinion on it?"
@@ -374,12 +403,16 @@ label ch0_main:
             show natsuki happ
             t "Well anyway..."
             show natsuki turned casual happ rhip
-        
+            t "Believe it or not, I've actually have never read manga."
+            t "But I do believe it is a very nice and creative form of media."
+            t "And by the way, I believe anything written is literature, including manga."
         "Yuri" if last_chosen != "yuri" and koto_chosen != "yuri":
             $ last_chosen = "yuri"
             y om "What are some clichés you try to avoid?"
             show yuri cm
-
+            t "I don't try to avoid clichés."
+            t "I honestly find them inevitable."
+            t "So I just accept it if I end up writing a cliché."
         "Sayori's chat" if last_chosen != "chat" and koto_chosen != "chat":
             $ last_chosen = "chat"
 
@@ -398,14 +431,20 @@ label ch0_main:
         k om rhip "Well first of all (even though you didn't get it wrong), it's 'Kotonoha', not 'Kotoba'."
         k ldown anno ce "People get that wrong all the time, and it's all thanks to the common pronounciation of my kanji."
         k rdown "Honestly, it probably should be written as '{rb}言の葉{/rb}{rt}Kotonoha{/rt}'..."
-        
+        k lup "Everyone knows {rb}桜{/rb}{rt}Sakura{/rt} means cherry blossom."
+        k rhip "{rb}言{/rb}{rt}Koto{/rt} means word and is the kanji used when referring to the action of talking."
+        k ldown "{rb}葉{/rb}{rt}Ha{/rt} means leaf."
+        k rdown "Together, they make up the noun 'word'."
     if koto_chosen == "sayori":
         k om "I'll choose Sayori."
         show sayori turned happ casual rup zorder 2 at r22
         show kotonoha cm at t21
         s om "What's the first thing you've ever written?"
         show sayori cm
-
+        k om "Salvation."
+        k ldown rhip "I've already talked about the remake, but the original is actually the first thing that I've written."
+        k rdown "Looking back, it is very nice story with a lot of fun quirks."
+        k rhip "It really turned out well."
     if koto_chosen == "natsuki":
         k om "I'll choose Natsuki."
         show natsuki turned happ casual rhip zorder 2 at r22
@@ -421,14 +460,19 @@ label ch0_main:
         $ layeredimage_ref("kotonoha")
         k lup rdown om "Well anyway..."
         show natsuki turned casual happ rhip
-
+        k ldown "I have read manga, and I believe it's a nice form of media."
+        k lup "My favorite being one hero based one that's a lot of fun."
+        k ldown rhip "And by the way, I believe anything written is literature, including manga."
     if koto_chosen == "yuri":
         k om "I'll choose Yuri."
         show yuri turned happ casual rup zorder 2 at r22
         show kotonoha cm at t21
         y om "What are some clichés you try to avoid?"
         show yuri cm
-    
+        k ldown rhip "Things like 'in the nick of time'."
+        k lup "That's where a lot of ex-machinas come from."
+        k anno ce "And I really don't like ex-machinas..."
+        k oe "That's basically the main thing I try to avoid."
     if koto_chosen == "chat":
         k om "I'll choose Sayori's chat."
         show sayori turned happ casual rup zorder 2 at r22
@@ -446,7 +490,10 @@ label ch0_main:
             $ last_chosen = "monika"
             m om "Where does most of your inspiration come from?"
             show monika cm
-        
+            t "A lot of it (albeit, too much) comes from my favorite medias out there."
+            t "I actually used to practically steal ideas from them."
+            t "That's not a good way to be original."
+            t "So I try to limit myself from taking too much inspiration these days."
         "Sayori" if last_chosen != "sayori" and koto_chosen != "sayori":
             $ last_chosen = "sayori"
             s om "What is your fondest memory?"
@@ -467,19 +514,26 @@ label ch0_main:
             show sayori cm
             n "..."
             n "O-okay then."
-            show natsuki happ rhip zm at t43
+            show natsuki happ rhip cm at t43
             t "Anyway..."
-        
+            t "Honestly, meeting you is my fondest memory."
+            t "You really helped me learn how to connect with people and friends and I will always be grateful for that."
+            s laug lup "Aww!"
         "Natsuki" if last_chosen != "natsuki" and koto_chosen != "natsuki":
             $ last_chosen = "natsuki"
             n om "Besides writing, what do you do in your free time?"
             show yuri cm
-        
+            t "Play games, watch shows, hang out with friends."
+            t "Yeah, I'm generic."
         "Yuri" if last_chosen != "yuri" and koto_chosen != "yuri":
             $ last_chosen = "yuri"
             y om "What's your favorite novel?"
             show yuri cm
-
+            t "Not sure if I can say the name on stream but my favorite novel is a very intricate one that takes place in multiple dimensions."
+            t "One of the main characters gets a sharp object that allows him to cross dimensions and the other gets one that only tells the truth."
+            t "It ends up turning into a really interesting story with a lot of good plot points."
+            t "It's a lot of fun to go through."
+            t "I can tell you all the title later."
         "Sayori's chat" if last_chosen != "chat" and koto_chosen != "chat":
             $ last_chosen = "chat"
 
@@ -509,7 +563,8 @@ label ch0_main:
         show kotonoha cm at t21
         n om "Besides writing, what do you do in your free time?"
         show natsuki cm
-
+        k om "Play games, watch shows, hang out with friends."
+        k laug rhip ldown "Yeah, I'm generic."
     if koto_chosen == "yuri":
         k om "I'll choose Yuri."
         show yuri turned happ casual rup zorder 2 at r22
