@@ -549,14 +549,18 @@ label ch0_main:
         show kotonoha cm at t21
         m om "Where does most of your inspiration come from?"
         show monika cm
-        
+        k ldown rhip om "In true rival fashion, I tend to take a lot of inspiration from my brother."
+        k laug rdown "However, that usually doesn't go too well.  My own ideas tend to be a lot better than the inspiration."
     if koto_chosen == "sayori":
         k om "I'll choose Sayori."
         show sayori turned happ casual rup zorder 2 at r22
         show kotonoha cm at t21
         s om "What is your fondest memory?"
         show sayori cm
-
+        k om "The first time me and Tai-kun collaborated on a story."
+        k ldown rhip "We have a habit of telling each other our plots for our next stories and for this one, we happened to have the same plot ideas by accident."
+        k rdown "So we decided to collaborate on it."
+        k rhip "It ended up being a really fun experience and it lead up to multiple other collaborations later on down the line."
     if koto_chosen == "natsuki":
         k om "I'll choose Natsuki."
         show natsuki turned happ casual rhip zorder 2 at r22
@@ -571,7 +575,10 @@ label ch0_main:
         show kotonoha cm at t21
         y om "What's your favorite novel?"
         show yuri cm
-    
+        k laug ldown rhip om "I don't read novels as often as I should to be honest."
+        k happ "But my favorite is probably that medieval one that Tai-kun over here hasn't read yet."
+        show kotonoha cm
+        t "I'll get to it, don't worry!"
     if koto_chosen == "chat":
         k om "I'll choose Sayori's chat."
         show sayori turned happ casual rup zorder 2 at r22
@@ -1144,7 +1151,7 @@ label ch0_main:
     show monika dist
     $ pause(1.0)
     m ce ldown rhip om "*Sigh*\nOh boy..."
-    m oe lpoint "'Write about a true experience, past or present, that has made a significant impact on your life.  Preferably, a dramatically long experience.'\n*Sigh*"
+    m oe lpoint "'Write about a true experience, past or present, that has made a significant impact on your life.  Preferably, a dramatically long experience.'  *Sigh*"
     m neut "Does anyone want to reroll?"
     hide monika
     show kotonoha turned casual dist zorder 2 at t41
