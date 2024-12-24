@@ -1194,6 +1194,7 @@ label ch0_main:
     show yuri at t22
     show natsuki at t11
     m lpoint om "Go ahead!"
+    show monika cm
     call showpoem(poem_n)
     y curi om "Who are you talking about now?"
     n cross dist "Someone whom I presume is dead; my sister."
