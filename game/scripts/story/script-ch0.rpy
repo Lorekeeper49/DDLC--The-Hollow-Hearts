@@ -599,18 +599,22 @@ label ch0_main:
             show monika cm
             t "That is a very difficult question to answer..."
             t "There's so many of them!"
-            t "Medieval wizards, everyone being a hero, multiple dimensions, the list goes on."
+            t "Medieval wizards, everyone being a hero, multiple dimensions, feeling isekai, the list goes on."
             t "It'll probably be forever before I come up with a proper answer."
         "Sayori" if last_chosen != "sayori" and koto_chosen != "sayori":
             $ last_chosen = "sayori"
             s om "What's something that you think has been done to death?"
             show sayori cm
-        
+            t "The main hero falling in love with a female friend or the damsel he's rescuing."
+            t "It happens way too often, and most of the time, it doesn't exactly influence either party's action."
+            t "Enough said."
         "Natsuki" if last_chosen != "natsuki" and koto_chosen != "natsuki":
             $ last_chosen = "natsuki"
             n om "What's your favorite adaptation you have seen?"
             show natsuki cm
-        
+            t "An 8 movie series about a boy becoming a renowned wizard."
+            t "Despite the original author's controversy."
+            t "And no, contrary to what these TV studios believe, that series does not need a remake."
         "Yuri" if last_chosen != "yuri" and koto_chosen != "yuri":
             $ last_chosen = "yuri"
             y om "What's your favorite type of story?"
@@ -633,28 +637,35 @@ label ch0_main:
         show kotonoha cm at t21
         m om "What story do you think has the best writing?"
         show monika cm
-        
+        k laug ldown rhip "Unfortunately, I don't look at enough stories to answer that question..."
     if koto_chosen == "sayori":
         k om "I'll choose Sayori."
         show sayori turned happ casual rup zorder 2 at r22
         show kotonoha cm at t21
         s om "What's something that you think has been done to death?"
         show sayori cm
-
+        k anno ldown rhip ce om "Ex-machinas..."
+        k oe "I'm tired of people getting saved by someone in the nick of time like that..."
+        k rdown "Part of why I don't like them so much."
     if koto_chosen == "natsuki":
         k om "I'll choose Natsuki."
         show natsuki turned happ casual rhip zorder 2 at r22
         show kotonoha cm at t21
         n om "What's your favorite adaptation you have seen?"
         show natsuki cm
-
+        k om "A medieval magic one with dragons that's..."
+        k laug rhip "...way too hard to summarize."
+        k ldown rdown "You'll have to watch the show in order to understand."
+        k happ rhip "Just know, it's rated M for a reason."
     if koto_chosen == "yuri":
         k om "I'll choose Yuri."
         show yuri turned happ casual rup zorder 2 at r22
         show kotonoha cm at t21
         y om "What's your favorite type of story?"
         show yuri cm
-    
+        k om "Ones that are meant to tell you a meaningful message to live by."
+        k ldown rhip "That's actually the type of writer Tai-kun over here aspires to be."
+        k rdown "One that writes stories with messages that help people out."
     if koto_chosen == "chat":
         k om "I'll choose Sayori's chat."
         show sayori turned happ casual rup zorder 2 at r22
@@ -672,22 +683,32 @@ label ch0_main:
             $ last_chosen = "monika"
             m om "What's your favorite genre?"
             show monika cm
-        
+            t "Action."
+            t "Enough said."
         "Sayori" if last_chosen != "sayori" and koto_chosen != "sayori":
             $ last_chosen = "sayori"
             s om "How do you come up with the names of your characters?"
             show sayori cm
-        
+            t "I don't."
+            t "Seriously, I don't that much thought at all towards the name for my characters."
+            t "Except Japanese names."
+            t "Usually for those, I think of the spelling/pronounciation first, then I think about the kanji and what it means."
+            t "That's about it."
         "Natsuki" if last_chosen != "natsuki" and koto_chosen != "natsuki":
             $ last_chosen = "natsuki"
             n om "What tips do you have to help people improve on their writing?"
             show natsuki cm
-        
+            t "There's a lot, but here's the main one I can give:"
+            t "If you have a location where a lot of things are or happen, draw a map of the place so you know where everything is and you don't add anything unnecessary."
+            t "I can't tell you how many times I have gotten lost in my locations because I didn't have a damn map of the place!"
+            t "It helps tremendously to have a map, trust me."
         "Yuri" if last_chosen != "yuri" and koto_chosen != "yuri":
             $ last_chosen = "yuri"
             y om "What's your opinion on horror?"
             show yuri cm
-
+            t "Standalone horror tends to not work."
+            t "It doesn't seem to scare me all that well."
+            t "Personally I prefer psychological horror."
         "Sayori's chat" if last_chosen != "chat" and koto_chosen != "chat":
             $ last_chosen = "chat"
             
@@ -703,28 +724,36 @@ label ch0_main:
         show kotonoha cm at t21
         m om "What's your favorite genre?"
         show monika cm
-        
+        k om "Psychological horror."
+        k ldown rhip "Really nice way to grasp people's hearts."
+        k rdown "Don't think I need to say anything else about it."
     if koto_chosen == "sayori":
         k om "I'll choose Sayori."
         show sayori turned happ casual rup zorder 2 at r22
         show kotonoha cm at t21
         s om "How do you come up with the names of your characters?"
         show sayori cm
-
+        k laug rhip om "I just give them all generic names, I don't really give it much thought."
+        k ldown "I'm not that good of a name chooser."
     if koto_chosen == "natsuki":
         k om "I'll choose Natsuki."
         show natsuki turned happ casual rhip zorder 2 at r22
         show kotonoha cm at t21
         n om "What tips do you have to help people improve on their writing?"
         show natsuki cm
-
+        k om "There's a lot, but here's the main one I can give:"
+        k ldown rhip "Make sure you look back on past actions that the characters have done constantly."
+        k lup "That way, you'll be able to form events that connect with what characters have done previously."
+        k ldown "As opposed to events that have little to no connection at all."
     if koto_chosen == "yuri":
         k om "I'll choose Yuri."
         show yuri turned happ casual rup zorder 2 at r22
         show kotonoha cm at t21
         y om "What's your opinion on horror?"
         show yuri cm
-    
+        k laug ldown "Standalone horror tends to not work."
+        k lup "It doesn't seem to scare me all that well."
+        k ldown rhip "Personally I prefer psychological horror."
     if koto_chosen == "chat":
         k om "I'll choose Sayori's chat."
         show sayori turned happ casual rup zorder 2 at r22
@@ -742,12 +771,17 @@ label ch0_main:
             $ last_chosen = "monika"
             m om "Have you ever done a collaboration project before?"
             show monika cm
-        
+            t "Besides with Koto-chan?  Only those writing assignments I was assigned with other classmates."
+            t "Didn't have many to talk to."
         "Sayori" if last_chosen != "sayori" and koto_chosen != "sayori":
             $ last_chosen = "sayori"
             s om "Have you ever had to completely rewrite a story before release?"
             show sayori cm
-        
+            t "Yes actually, but only one."
+            t "And that one would be Hollow."
+            t "At some point during writing, there were so many lore inconsisties with the story that I had to rewrite the entire thing to fix the continuity."
+            t "Not to mention how poorly written and cringey the first part of it was."
+            t "That was certainly an endeavor."
         "Natsuki" if last_chosen != "natsuki" and koto_chosen != "natsuki":
             $ last_chosen = "natsuki"
             n om "Worst stereotype, go!"
@@ -758,7 +792,9 @@ label ch0_main:
             $ last_chosen = "yuri"
             y om "How do you get out of writer's block?"
             show yuri cm
-
+            t "Take a break."
+            t "That's it, it's that simple."
+            t "A break really helps with things like that."
         "Sayori's chat" if last_chosen != "chat" and koto_chosen != "chat":
             $ last_chosen = "chat"
 
@@ -774,14 +810,18 @@ label ch0_main:
         show kotonoha cm at t21
         m om "Have you ever done a collaboration project before?"
         show monika cm
-        
+        k om "Besides with Tai-kun?  Only those writing assignments I was assigned with other classmates."
+        k laug ldown rhip "Didn't have many to talk to."
     if koto_chosen == "sayori":
         k om "I'll choose Sayori."
         show sayori turned happ casual rup zorder 2 at r22
         show kotonoha cm at t21
         s om "Have you ever had to completely rewrite a story before release?"
         show sayori cm
-
+        k om "Not really."
+        k rhip "I know Tai-kun did."
+        k laug ldown "He completely broke the lore, had to rewrite the entire first part."
+        k rdown "It was certainly an endeavor."
     if koto_chosen == "natsuki":
         k om "I'll choose Natsuki."
         show natsuki turned happ casual rhip zorder 2 at r22
@@ -796,7 +836,9 @@ label ch0_main:
         show kotonoha cm at t21
         y om "How do you get out of writer's block?"
         show yuri cm
-    
+        k om "Take a break."
+        k rhip "That's it, it's that simple."
+        k ldown "A break really helps with things like that."
     if koto_chosen == "chat":
         k om "I'll choose Sayori's chat."
         show sayori turned happ casual rup zorder 2 at r22
@@ -814,23 +856,33 @@ label ch0_main:
             $ last_chosen = "monika"
             m om "What's your least favorite genre?"
             show monika cm
-        
+            t "Comedy."
+            t "Enough said."
         "Sayori" if last_chosen != "sayori" and koto_chosen != "sayori":
             $ last_chosen = "sayori"
             s om "What's the most common problem you see with stories and how do you wish to fix it?"
             show sayori cm
-        
+            t "Continuity errors, a sinner's favorite thing to call out."
+            t "To avoid those, you want to look back on past events constantly to make sure everything lines up."
+            t "Use your ability as the writer to look at the past as an advantage."
+            t "It'll help connect things in the end."
         "Natsuki" if last_chosen != "natsuki" and koto_chosen != "natsuki":
             $ last_chosen = "natsuki"
             n om "What's your least favorite adaptation?"
             show natsuki cm
-        
+            t "That one where a demi-god tries to stop a war."
+            t "That did not work as a movie."
+            t "I'm glad they're fixing it and making it a TV series."
+            t "I've seen the first season, it looks so much better now."
+            t "Great improvement on last time!"
         "Yuri" if last_chosen != "yuri" and koto_chosen != "yuri":
             $ last_chosen = "yuri"
             y om "What's the general writing aspect that you focus the most on?"
             show yuri cm
-            t "Contintuity."
-
+            t "Continuity."
+            t "Continuity errors often mess with a story's lore."
+            t "So, I tend to make sure everything connects up properly."
+            t "I'm sure Koto-chan would say the same."
         "Sayori's chat" if last_chosen != "chat" and koto_chosen != "chat":
             $ last_chosen = "chat"
 
@@ -846,28 +898,38 @@ label ch0_main:
         show kotonoha cm at t21
         m om "What's your least favorite genre?"
         show monika cm
-        
+        k om "Comedy."
+        k ldown rhip "Enough said."
     if koto_chosen == "sayori":
         k om "I'll choose Sayori."
         show sayori turned happ casual rup zorder 2 at r22
         show kotonoha cm at t21
         s om "What's the most common problem you see with stories and how do you wish to fix it?"
         show sayori cm
-
+        k anno ldown rhip ce om "Continuity errors, a sinner's favorite thing to call out."
+        k happ lup rdown oe "To avoid those, you want to look back on past events constantly to make sure everything lines up."
+        k rhip "Use your ability as the writer to look at the past as an advantage."
+        k ldown "It'll help connect things in the end."
     if koto_chosen == "natsuki":
         k om "I'll choose Natsuki."
         show natsuki turned happ casual rhip zorder 2 at r22
         show kotonoha cm at t21
         n om "What's your least favorite adaptation?"
         show natsuki cm
-
+        k anno om "That TV remake of the really good wizard boy story."
+        k ldown rhip "I know it's not out yet, but that really doesn't need a TV remake."
+        k ce "Seriously, people love the 8 movie series, we want a remake."
+        k rdown "*Sigh*"
     if koto_chosen == "yuri":
         k om "I'll choose Yuri."
         show yuri turned happ casual rup zorder 2 at r22
         show kotonoha cm at t21
         y om "What's the general writing aspect that you focus the most on?"
         show yuri cm
-    
+        k om "Continuity."
+        k rhip "Continuity errors often mess with a story's lore."
+        k rdown "So, I tend to make sure everything connects up properly."
+        k ldown rhip "I'm sure Tai-kun would say the same."
     if koto_chosen == "chat":
         k om "I'll choose Sayori's chat."
         show sayori turned happ casual rup zorder 2 at r22
@@ -885,22 +947,32 @@ label ch0_main:
             $ last_chosen = "monika"
             m om "What's your least favorite story?"
             show monika cm
-        
+            t "I don't exactly have one to be honest."
+            t "I've read so many good ones, it feels rude to pick a least favorite."
         "Sayori" if last_chosen != "sayori" and koto_chosen != "sayori":
             $ last_chosen = "sayori"
             s om "I know you don't like comedy, but what do you actually like about it?"
             show sayori cm
-        
+            t "I only like when it's just a gag that's done during a serious scene and manages to make you laugh."
+            t "That's about it."
         "Natsuki" if last_chosen != "natsuki" and koto_chosen != "natsuki":
             $ last_chosen = "natsuki"
             n om "How do you feel about the deredere types?"
             show natsuki cm
-        
+            t "They're a very complicated bunch, I'll say that much."
+            t "I think most people like the tsundere, and I must agree."
+            n cross om "That's what I am!"
+            show natsuki cm
+            t "Never thought I'd hear an actual tsundere admit it."
+            n laug om "Yeah, I gave up denying a long time ago..."
         "Yuri" if last_chosen != "yuri" and koto_chosen != "yuri":
             $ last_chosen = "yuri"
             y om "Who's your favorite character in any media?"
             show yuri cm
-
+            t "An adorable golden girl from my favorite game of all time;"
+            t "A gacha rhythm game with probably the best cast of characters in anything ever!"
+            t "I'm not saying anything else, I want you all to have fun with this adorable cast yourself."
+            t "Assuming you know what I'm talking about of course."
         "Sayori's chat" if last_chosen != "chat" and koto_chosen != "chat":
             $ last_chosen = "chat"
 
@@ -916,28 +988,35 @@ label ch0_main:
         show kotonoha cm at t21
         m om "What's your least favorite story?"
         show monika cm
-        
+        k om "Any nursery rhyme."
+        k ldown rhip "Enough said."
     if koto_chosen == "sayori":
         k om "I'll choose Sayori."
         show sayori turned happ casual rup zorder 2 at r22
         show kotonoha cm at t21
         s om "I know you don't like comedy, but what do you actually like about it?"
         show sayori cm
-
+        k om "I only like when it's just a gag that's done during a serious scene and manages to make you laugh."
+        k ldown rhip "That's about it."
     if koto_chosen == "natsuki":
         k om "I'll choose Natsuki."
         show natsuki turned happ casual rhip zorder 2 at r22
         show kotonoha cm at t21
         n om "How do you feel about the deredere types?"
         show natsuki cm
-
+        k om "They are quite a fun class of characters."
+        k ldown rhip "And call me crazy, but my favorite type is the yandere."
+        k laug "Even though in real life, they've tried to kill Tai-kun and I multiple times."
     if koto_chosen == "yuri":
         k om "I'll choose Yuri."
         show yuri turned happ casual rup zorder 2 at r22
         show kotonoha cm at t21
         y om "Who's your favorite character in any media?"
         show yuri cm
-    
+        k om "Hard to narrow it down."
+        k ldown "There's so many good ones."
+        k rhip "I'll probably need to break down every character I've ever liked to help me narrow things down." 
+        k rdown "So that will be for later."
     if koto_chosen == "chat":
         k om "I'll choose Sayori's chat."
         show sayori turned happ casual rup zorder 2 at r22
