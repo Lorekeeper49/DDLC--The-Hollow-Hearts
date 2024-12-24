@@ -597,7 +597,10 @@ label ch0_main:
             $ last_chosen = "monika"
             m om "What story do you think has the best writing?"
             show monika cm
-        
+            t "That is a very difficult question to answer..."
+            t "There's so many of them!"
+            t "Medieval wizards, everyone being a hero, multiple dimensions, the list goes on."
+            t "It'll probably be forever before I come up with a proper answer."
         "Sayori" if last_chosen != "sayori" and koto_chosen != "sayori":
             $ last_chosen = "sayori"
             s om "What's something that you think has been done to death?"
@@ -612,7 +615,9 @@ label ch0_main:
             $ last_chosen = "yuri"
             y om "What's your favorite type of story?"
             show yuri cm
-
+            t "Ones that are meant to tell you a meaningful message to live by."
+            t "That's actually the type of writer I aspire to be."
+            t "One that writes stories with messages that help people out."
         "Sayori's chat" if last_chosen != "chat" and koto_chosen != "chat":
             $ last_chosen = "chat"
 
