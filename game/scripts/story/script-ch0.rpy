@@ -1085,15 +1085,24 @@ label ch0_main:
     "I just don't fit in!"
     "I'm an observer from afar, not a socialist within reach."
     a "Damnit!"
-    show akira 3bc zorder 2 at t11
+    show akira 3bl zorder 2 at t11
+    show akira at f11
     ak "You need a break?  You seem to be really out of it."
+    show akira at t11
     a "Tell me about it."
+    show akira at f11
     ak 4bc "You seemed interested in that boy over there."
+    show akira at t11
     a "Not interested, just thought he sounded familiar."
-    ak 2bc "Does the name 'Taiyen' ring a bell?"
+    show akira at f11
+    ak 2bl "Does the name 'Taiyen' ring a bell?"
+    show akira at t11
     a "His name is what?"
-    ak 1bc "Taiyen."
+    show akira at f11
+    ak 1bl "Taiyen."
+    show akira at t11
     a "No, it doesn't"
+    show akira at f11
     ak 4bc "..."
     stop music fadeout 1.0
     $ style.say_window = style.window_fake
