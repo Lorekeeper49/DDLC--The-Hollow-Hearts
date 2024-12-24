@@ -918,7 +918,7 @@ label ch0_main:
         show natsuki cm
         k anno om "That TV remake of the really good wizard boy story."
         k ldown rhip "I know it's not out yet, but that really doesn't need a TV remake."
-        k ce "Seriously, people love the 8 movie series, we want a remake."
+        k ce "Seriously, people love the 8 movie series, we don't want a remake."
         k rdown "*Sigh*"
     if koto_chosen == "yuri":
         k om "I'll choose Yuri."
