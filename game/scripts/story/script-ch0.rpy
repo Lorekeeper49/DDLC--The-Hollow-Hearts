@@ -247,9 +247,10 @@ label ch0_main:
     $ last_chosen = "monika"
     $ koto_chosen = "monika"
     $ choice_list = ["monika", "sayori", "natsuki", "yuri", "chat"]
+    show monika cm
     t "A choice-based adventure by the name of 'Hollow'."
     t "It was very fun to write and something I have actually never done before writing it."
-    t "I won't give anything in-case you haven't seen it yet."
+    t "I won't give anything away in-case you haven't seen it yet."
     t "But it honestly turned out really well."
     hide yuri
     hide sayori
