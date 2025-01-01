@@ -8,10 +8,6 @@ label start:
 
     $ _dismiss_pause = config.developer
 
-    $ m_name = "Girl 3"
-    $ n_name = "Girl 2"
-    $ y_name = "Girl 1"
-
     $ quick_menu = True
     $ style.say_dialogue = style.normal
     $ allow_skipping = True
