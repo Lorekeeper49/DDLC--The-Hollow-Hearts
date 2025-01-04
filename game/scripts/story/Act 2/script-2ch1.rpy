@@ -255,12 +255,18 @@ label act2_ch1_alt:
     a "*Sob*"
     a "I'm such a fucking..."
     scene black with None
-    $ pause(0.1)
+    $ pause(0.25)
     scene bg kamihallnight with None
-    $ pause(0.1)
+    $ pause(0.25)
     scene black with None
-    $ pause(0.1)
-    scene bg kamihallnight with None
-    $ pause(0.1)
-
+    $ pause(0.25)
+    scene bg house_night with None
+    $ pause(0.25)
+    scene black with None
+    $ pause(0.25)
+    scene bg tlivingroom_night
+    show kotonoha turned casual surp om at i11
+    with None
+    $ pause(0.25)
+    scene black with None
     return
