@@ -250,6 +250,7 @@ label act2_ch1_alt:
     "I watch as the members talk about what I just did."
     stop ambience fadeout 1.0
     scene bg kamiclassnight with wipeleft_scene
+    
 
     scene bg mari_office with wipeleft
     a "*Sob*"
