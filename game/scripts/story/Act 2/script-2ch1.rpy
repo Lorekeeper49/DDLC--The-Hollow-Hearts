@@ -261,12 +261,10 @@ label act2_ch1_alt:
     $ pause(0.25)
     scene black with None
     $ pause(0.25)
-    scene bg house_night with None
-    $ pause(0.25)
-    scene black with None
-    $ pause(0.25)
-    scene bg tlivingroom_night
-    show kotonoha turned casual surp om at i11
+    scene bg kamiclassnight
+    show tina turned vsur om at i31
+    show kotonoha turned casual surp om at i32
+    show lilly doll a0 at i33
     with None
     $ pause(0.25)
     scene black with None
