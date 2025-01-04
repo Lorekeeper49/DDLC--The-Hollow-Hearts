@@ -171,6 +171,8 @@ NATSUKI'S BEDROOM - Minikle with edits by Nuxill
 
 SEWER HALL - Minikle with edits by Nuxill
 
+SAKURA HOUSE NIGHT - Alex \[ORG]#9077
+
 #### MISC
 MAIN LOGO - LvcyLu
 
