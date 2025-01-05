@@ -44,7 +44,7 @@ define BOBCACHIEVEMENT_LIST = (
 #    want to display them using a custom screen instead, override the screen variable with a string of
 #    the name of the screen you want to use. Or just change the prefix text to whatever you desire.
 define BOBCACHIEVEMENT_SCREEN_NAME = "achievement_screen"
-define BOBCACHIEVEMENT_NOTIFY_PREFIX = _("Achievement Unlocked!")
+define BOBCACHIEVEMENT_NOTIFY_PREFIX = ""
 define BOBCACHIEVEMENT_SCREEN_TRANSITION = None
     
 # 6) That's it! To display achievements to the user, please see directions in sbobcachievements.rpy
