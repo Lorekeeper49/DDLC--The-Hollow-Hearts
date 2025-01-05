@@ -210,9 +210,10 @@ Argument - MC.Dummy.Composer
 
 
 ### FONTS
-[SCRIPT - TypeSETit (Alex Brush)](https://www.1001fonts.com/legible+handwriting-fonts.html)
 
-[JPFONT - Noto Serif](https://fonts.google.com/noto/specimen/Noto+Serif+JP?subset=japanese&noto.script=Hira)
+[NORMAL FONT - Noto Serif](https://fonts.google.com/noto/specimen/Noto+Serif+JP?subset=japanese&noto.script=Hira)
+
+[SCRIPT - TypeSETit (Alex Brush)](https://www.1001fonts.com/legible+handwriting-fonts.html)
 
 [7-SEGMENT - Krafti Lab](https://www.dafont.com/seven-segment.font)
 
