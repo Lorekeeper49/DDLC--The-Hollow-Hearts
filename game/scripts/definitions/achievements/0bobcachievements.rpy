@@ -124,13 +124,13 @@ screen achievement_screen(achiname, achievement_title, achievement_description):
                 text achievement_description style "achievement_desc_text"
 
 style achievement_text:
-    font "mod_assets/fonts/AlexBrush-Regular.ttf"
+    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
     size 30
     color "#000"
     outlines []
 
 style achievement_desc_text:
-    font "mod_assets/fonts/AlexBrush-Regular.ttf"
+    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
     size 15
     color "#000"
     outlines []

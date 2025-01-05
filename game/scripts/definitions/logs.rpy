@@ -72,7 +72,7 @@ style log_vbar is vscrollbar:
     ysize 700
 
 style log_text:
-    font "mod_assets/fonts/Unitblock-mLAwm.ttf"
+    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
     size 34
     color "#ffffff"
     outlines []

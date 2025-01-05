@@ -247,7 +247,7 @@ style koto_text:
     outlines []
 
 style tai_text:
-    font "mod_assets/fonts/Unitblock-mLAwm.ttf"
+    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
     size 34
     color "#000"
     outlines []

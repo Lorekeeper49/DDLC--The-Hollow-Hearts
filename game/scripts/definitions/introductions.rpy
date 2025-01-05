@@ -209,12 +209,12 @@ style kan_text:
     color "#fff"
     outlines []
 style rom:
-    font "mod_assets/fonts/Unitblock-mLAwm.ttf"
+    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
     size 50
     color "#fff"
     outlines []
 style intro_text:
-    font "mod_assets/fonts/Unitblock-mLAwm.ttf"
+    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
     size 34
     color "#fff"
     outlines []

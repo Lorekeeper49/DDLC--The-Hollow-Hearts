@@ -3,7 +3,7 @@ init -1 style explore_button:
     hover_background "#ffffff6c"
 
 init -1 style explore_text:
-    font "mod_assets/fonts/Unitblock-mLAwm.ttf"
+    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
     size 25
     color "#ffffff6c"
     text_align 0.5

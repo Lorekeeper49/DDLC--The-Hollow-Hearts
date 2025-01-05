@@ -358,14 +358,14 @@ init -1 style choice_button is default:
     activate_sound gui.activate_sound
 
 init -1 style choice_button_text is default:
-    font "mod_assets/fonts/AlexBrush-Regular.ttf"
+    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
     color "#fff"
     hover_color "#bbbbbb"
     size 35
     outlines [(1, "#585858", 0, 0), (1, "#585858", 1, 1)]
 
 init -1 style choice_text is default:
-    font "mod_assets/fonts/AlexBrush-Regular.ttf"
+    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
     color "#fff"
     outlines [(1, "#585858", 0, 0), (1, "#585858", 1, 1)]
 
