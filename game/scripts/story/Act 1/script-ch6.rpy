@@ -28,7 +28,7 @@ label act1_ch6_main:
     t "The changes these once beloved friendly people would undergo!"
     t "Only one saw benefit from it..."
     t "And she's not even human..."
-    t "...and we didn't know that at the time."
+    t "We didn't know that at the time."
     t "The others..."
     t "The ones who weren't tested on..."
     t "They unfortunately have to suffer the consequences."
