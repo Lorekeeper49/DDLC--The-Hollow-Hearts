@@ -14,7 +14,7 @@ label act1_ch6_main:
     t "If you thought I am about to find happiness..."
     t "I am not."
     t "The thing is, I will never be happy."
-    t "Not with the failed experiment coming still asking for death..."
+    t "Not with the failed experiment still asking for death..."
     t "In more ways than one, mind you."
     t "The past is not dead."
     t "The past will never be dead."
