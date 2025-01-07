@@ -2,7 +2,8 @@ label act1_ch6_main:
     stop music fadeout 2.0
     scene bg gym
     with dissolve_scene_full
-    play music t2
+    play ambience storm
+    $ renpy.music.set_volume(0.3, delay=0, channel="ambience")
     $ style.say_window = style.window
     $ nb = "namebox"
     call showlocation("Sakura Academy Gym\n{size=25}桜学園高校のジム{/size}","October 4, 2023\n{size=15}2023年10月4日{/size}",6*60+0+0/60.0,"bg gym")
@@ -54,5 +55,7 @@ label act1_ch6_main:
     t "But I do know this:"
     t "He is coming!"
     t "And he needs death!"
+    stop ambience fadeout 1.0
+    $ renpy.music.set_volume(1.0, delay=0, channel="ambience")
     achieve act1fin
     return
