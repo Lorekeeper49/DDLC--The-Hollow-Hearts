@@ -39,6 +39,7 @@ label act1_ch6_main:
     t "It is all..."
     t "...the fault of the Sakura family!"
     t "The same family you all chose to idolize within this very school!"
+    t "The same family who founded the school in question!"
     t "The same family who's oldest were murdered..."
     t "...by their own experiment!"
     t "You all have probably heard this same dump of sudden information before."
