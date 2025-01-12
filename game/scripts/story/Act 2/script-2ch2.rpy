@@ -80,7 +80,7 @@ label act2_ch2_main:
     play sound lightswitch
     $ pause(0.5)
     scene bg kamiclassday with None
-    a "Oh crap!  The system's broken, the lights aren't supposed to be on yet!"
+    a "Oh shit!  The system's broken, the lights aren't supposed to be on yet!"
     scene bg kamiroofs with wipeleft_scene
     "On the roof, I see the culprit;"
     show hanato day anno zorder 2 at t11
