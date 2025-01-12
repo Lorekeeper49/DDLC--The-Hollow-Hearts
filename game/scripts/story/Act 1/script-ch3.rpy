@@ -113,7 +113,7 @@ label act1_ch3_main:
     t "Ah, there they are!"
     show yuri turned worr om rup zorder 2 at t22
     show lilly zorder 2 at t21
-    y "Lilly, you're not making a lot of sense here, what do you mean you're anyting but human?"
+    y "Lilly, you're not making a lot of sense here, what do you mean you're anything but human?"
     show yuri cm
     lil a1c2 "It would be a lot easier to explain if you could see anything..."
     y ce om rdown "*Sigh* I don't get it, I don't get it at all."
