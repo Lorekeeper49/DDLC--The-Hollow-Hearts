@@ -43,7 +43,7 @@ init python:
     kan = "桜言葉",
     name = "Sakura Kotonoha",
     attr = _("- Telegraph: She can manipulate things with her mind to a huge extent.  She's basically a telepathic individual."),
-    bio = _("Taiyen's beloved sister!  She is a book enthusiast who loves to write but most importantly, she's helping dealing with the many problems of the world however she can."),
+    bio = _("Taiyen's beloved sister!  She is a book enthusiast who loves to write but most importantly, she's helping to deal with the many problems of the world however she can."),
     img = "kotonoha turned casual happ"
     )
 
