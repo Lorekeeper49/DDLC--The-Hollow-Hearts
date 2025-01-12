@@ -68,7 +68,7 @@ label act2_ch3_main:
     show kotonoha turned casual anno rhip lup zorder 2 at t11
     k om "Okay.  We need to figure out where to find this Dominion.  Anyone have any ideas?"
     show kotonoha cm
-    a "I believe I read somewhere that there is a small storage shack south of here, but were gonna have to search deep in the forest to find it."
+    a "I believe I read somewhere that there is a small storage shack south of here, but we're gonna have to search deep in the forest to find it."
     k ldown "Then we'll search there.  Everyone, use your GPSes to find your way to each other if you're lost."
     everyone "Got it!"
     $ start_loc = random_list(["0_0", "1_0", "2_0", "3_0", "4_0", "5_0", "6_0", "7_0", "8_0", "9_0"])
