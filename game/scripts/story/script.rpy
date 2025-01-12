@@ -278,7 +278,7 @@ label dev:
                         call chapter_trans("")
                         call act1_ch5_main from _call_act1_ch5_main_1
                     "CHAPTER 6":
-                        $ chapter = 5
+                        $ chapter = 6
                         "BEGINNING CHAPTER 6"
                         $ hanato = "神山華翔\n{size=15}Kamiyama Hanato"
                         call chapter_trans("The Enemy")
