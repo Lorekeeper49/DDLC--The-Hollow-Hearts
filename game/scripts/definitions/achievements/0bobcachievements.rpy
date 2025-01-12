@@ -25,7 +25,7 @@
 define BOBCACHIEVEMENT_LIST = (
     ("newfriends", _("Brand New Friends"), _("Complete the main prologue.")),
     ("qa", _("Complete Questionnaire"), _("Have every possible question from the 20 questions game be asked at least once.")),
-    ("act1fin", _("This story ain't what it seems..."), _("Complete the first act")),
+    ("act1fin", _("Not What It Seems"), _("Complete the first act")),
     ("act2fin", _("Power Overtaken"), _("Complete the second act")),
     ("act3fin", _("Nothing Exists"), _("Complete the final act"))
     )
