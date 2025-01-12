@@ -351,7 +351,7 @@ label act2_ch3_alt:
     "She stops."
     a "You said my mother can't find me, can you find her?"
     "I'm just assuming what she's saying is true without a second thought."
-    "If this girl really is my sister, then she'd know how to find mother."
+    "If this girl really is my sister, then she'd know how to find my mother."
     n om "I don't need to."
     n "You already have."
     "The fuck is that supposed to mean?"
