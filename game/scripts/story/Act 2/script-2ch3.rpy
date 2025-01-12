@@ -387,5 +387,7 @@ label act2_ch3_alt:
     ma dist "They would not have been..."
     ma om "It's a lot of things to take in."
     ma ee "Not to mention how little I actually want to recall."
+    a "Don't worry, I won't make you recall it, Mother."
+    a "I'll probably find it out myself anyway."
 
     return
