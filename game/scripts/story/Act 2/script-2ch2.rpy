@@ -151,7 +151,7 @@ label act2_ch2_main:
     a "Taiyen?"
     a "How long was I out?"
     t "An hour."
-    a "Why am I not in the hospital."
+    a "Why am I not in the hospital?"
     t "Thank Yuri-chan."
     "He shows what I assume is his phone with a knife in the center of it."
     a "That's... a little extreme."
