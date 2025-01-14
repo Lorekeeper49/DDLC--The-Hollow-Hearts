@@ -1,7 +1,7 @@
 label act1_ch1_main:
     $ style.say_window = style.window
     $ nb = "namebox"
-    $ aoruguri = "Hidden Girl"
+    $ aoruguri = "隠れた少女\n{size=15}Hidden Girl{/size}"
     stop music fadeout 2.0
     call showintro(intro_t)
     scene bg tlivingroom
