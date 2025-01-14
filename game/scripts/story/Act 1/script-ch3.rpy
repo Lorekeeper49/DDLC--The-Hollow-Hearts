@@ -209,7 +209,7 @@ label introaoruguri:
     t "Hi..."
     t "Here, I'll start, I'm Sakura Taiyen, and my higher generation runs the school I go to.{w=1}\n(Why did I never tell that to you before?)"
     a md "I-I'm Luna Aoruguri... and there's currently nothing special about me."
-    $ aoruguri = "Luna Aoruguri"
+    $ aoruguri = "ルナ煽るぐり\n{size=15}Luna Aoruguri{/size}"
     a "So you're... Sakura-san."
     show aoruguri ma
     t "I think we're past using family names to address each other, Aoruguri."

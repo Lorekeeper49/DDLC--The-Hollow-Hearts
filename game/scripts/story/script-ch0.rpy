@@ -7,7 +7,7 @@ label ch0_main:
     with dissolve_scene_full
     $ restore_all_characters()
     $ pla = "???"
-    $ aoruguri = "ルナ煽るぐり\n{size=15}Luna Aoruguri"
+    $ aoruguri = "ルナ煽るぐり\n{size=15}Luna Aoruguri{/size}"
     general "IT'S YOUR FAULT."
     "Shut up."
     general "IT'S YOUR FAULT AND YOU KNOW IT."
