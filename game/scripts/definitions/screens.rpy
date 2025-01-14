@@ -715,15 +715,17 @@ init -501 screen preferences():
                 textbutton "English" action Language("english")
                 textbutton "日本語" action Language("japanese")
             null height (4 * gui.pref_spacing)
-    hbox:
+    frame:
+        background Solid("#00000080")
         xalign 1.0 yalign 1.0
         xoffset -10 yoffset -10
-        style_prefix "slider"
-        box_wrap True
-        vbox:
-            label _("Information")
-            text _("[settinginfo]")
-            text _("[settingdef]")
+        hbox:
+            style_prefix "slider"
+            box_wrap True
+            vbox:
+                label _("Information")
+                text _("[settinginfo]")
+                text _("[settingdef]")
     text "v[config.version]":
         xalign 1.0 yalign 1.0
         xoffset -10 yoffset -10
