@@ -709,11 +709,11 @@ init -501 screen preferences():
                 label _("Fast Forward")
                 textbutton _("Unseen Text") hovered [SetLocalVariable("settinginfo", "Fast Forward skips over text you haven't seen yet"), SetLocalVariable("settingdef", "Default: False")] action Preference("skip", "toggle")
                 textbutton _("After Choices") hovered [SetLocalVariable("settinginfo", "Fast Forward persists after you make a choice"), SetLocalVariable("settingdef", "Default: False")] action Preference("after choices", "toggle")
-            # vbox:
-            #     style_prefix "radio"
-            #     label _("Language")
-            #     textbutton "English" action Language("english")
-            #     textbutton "日本語" action Language("japanese")
+            vbox:
+                style_prefix "radio"
+                label _("Language")
+                textbutton "English" action Language("english")
+                textbutton "日本語" action Language("japanese")
             null height (4 * gui.pref_spacing)
             hbox:
                 style_prefix "slider"
