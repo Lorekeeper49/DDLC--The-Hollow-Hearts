@@ -250,7 +250,12 @@ label act2_ch1_alt:
     "I watch as the members talk about what I just did."
     stop ambience fadeout 1.0
     scene bg kamiclassnight with wipeleft_scene
-    
+    show kotonoha turned casual rhip lup om zorder 2 at t21
+    show akira uniform cross l zorder 2 at t22
+    k "So, she ran away from you..."
+    ak k "Yes..."
+    k ce ldown "I don't know what I expected to be honest..."
+    k oe "Anyone have have any thoughts on this?"
 
     scene bg mari_office with wipeleft
     a "*Sob*"
