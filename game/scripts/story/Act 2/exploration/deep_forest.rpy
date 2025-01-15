@@ -3,6 +3,7 @@ label shed:
     show dominion zorder 2 at t11
     a "Dominion!"
     a "Found you!"
+    scene bg shed with dissolve_scene_full
 
     return
 

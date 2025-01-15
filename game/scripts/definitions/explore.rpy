@@ -50,7 +50,7 @@ init -1 python:
                 self.y = y
                 renpy.redraw(self, 0)
 
-label explore(start, transition=False, limited_time=-1, fail_label=""):
+label explore(start, *, transition=False, limited_time=-1, fail_label=""):
     if start.startswith("deep_forest"):
         scene bg deep_forest
     else:
