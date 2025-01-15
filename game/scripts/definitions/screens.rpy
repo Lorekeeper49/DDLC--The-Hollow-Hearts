@@ -712,7 +712,7 @@ init -501 screen preferences():
             vbox:
                 style_prefix "radio"
                 label _("Language")
-                textbutton "English" action Language("english")
+                textbutton "English" action Language(None)
                 textbutton "日本語" action Language("japanese")
             null height (4 * gui.pref_spacing)
 
