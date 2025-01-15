@@ -173,7 +173,12 @@ screen intro(currentintro):
     add "textbg"
     viewport:
         style "attr_viewport"
-        text _("Attributes:\n[currentintro.attr]\n\n") style "intro_text"
+        child_size (500, 300)
+        mousewheel True
+        draggable True
+        has vbox
+        null height 20
+        text _("Attributes:\n[currentintro.attr]\n\n") style "intro_text" size 25
     viewport id "vp":
         child_size (500, 300)
         mousewheel True
