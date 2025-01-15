@@ -240,3 +240,5 @@ SOME MINIGAME CODE - ShadowyJaw
 [AUTOFOCUS - Elckarow, Ayowel](https://github.com/Elckarow/Autofocus/tree/v1.0.1)
 
 [ACHIEVEMENTS - bobcgames](https://bobcgames.itch.io/bobcachievements)
+
+[CURSOR TRACKING IMAGE](https://lemmasoft.renai.us/forums/viewtopic.php?p=340355&sid=4540fae3b4ed740ce81e66660e093648#p340355)

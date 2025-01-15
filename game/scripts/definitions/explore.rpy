@@ -22,7 +22,7 @@ init -1 python:
     def get_length(s):
         return len(s)
     class TrackCursor(renpy.Displayable):
-        #class form here: https://lemmasoft.renai.us/forums/viewtopic.php?p=340355&sid=4540fae3b4ed740ce81e66660e093648#p340355
+        #class from here: https://lemmasoft.renai.us/forums/viewtopic.php?p=340355&sid=4540fae3b4ed740ce81e66660e093648#p340355
         def __init__(self, child):
 
             super(TrackCursor, self).__init__()
