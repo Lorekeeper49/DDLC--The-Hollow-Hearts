@@ -70,7 +70,7 @@ label act2_ch5_alt:
     ak "Especially when 'unconscious'."
     t "*Sigh*"
     ak "Let's get out of here."
-    a "{{sobbing} Taiyen...  I'm so sorry..."
+    a "*Sobbing* Taiyen...  I'm so sorry..."
     #End of cutscene
 
     achieve act2fin

@@ -254,10 +254,10 @@ label act2_ch2_main:
     ha ldown oe om "That's not the whole point though."
     ha rdown "He's planning something, and I don't like what I'm reading off of him."
     ha rup lhip "You won't understand this, but..."
-    ha rdown "He plans to attack and destroy the school your friend goes to.\n{{Said normally but editted to sound backwards}" # Ot seog rouy loohcs eht yortsed dna kcatta ot snalp eh.
+    ha rdown "Ot seog rouy loohcs eht yortsed dna kcatta ot snalp eh."
     show hanato cm
     a "De-"
-    "What? {{confused}"
+    "What?"
     ha ce om "Yeah, that's what he's done to keep the plan secret."
     ha rup oe "And before you try making it sound normal, I already have to no avail."
     show hanato:
@@ -280,7 +280,7 @@ label act2_ch2_main:
     call explore("sewer_hall") from _call_explore
     play ambience forest
     scene bg tree with wipeleft_scene
-    a "Well, that was fun.  {{said sarcastically}"
+    a "Well, that was fun."
     show hanato day anno rhip lhip om zorder 2 at t11
     ha "You said it!  I don't know if I want to go there again."
     a "We should head back to school, we've been gone for over two hours, no doubt we missed classes."

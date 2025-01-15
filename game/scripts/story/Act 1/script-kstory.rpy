@@ -86,7 +86,7 @@ label kstory_ch2:
     "No one takes notice of me."
     ak 4ac "Seiei...  Did you do it again?"
     sei 2bh1 "*Sigh*"
-    ak 2ae "Ugh!  Seiei, I told you not to use STASIS to train!  It is unhealthy and doesn't actually do anything to the physical body.\n{{While he is yelling, He is not shouting STASIS, that's just the capitalisation of the device}"
+    ak 2ae "Ugh!  Seiei, I told you not to use STASIS to train!  It is unhealthy and doesn't actually do anything to the physical body."
     sei 2be "Yeah, yeah...  Listen, Kotonoha's here, say hi."
     show akira 4ae
     "He looks at me."
@@ -133,7 +133,7 @@ label kstory_ch3:
     k "Found it!"
     "Convenient that the door's labeled."
     k "Locked!"
-    sei "There's another door that leads to a business room, it might have a spare key they left behind. {{Calling out}"
+    sei "There's another door that leads to a business room, it might have a spare key they left behind."
     k "Okay, I'll stay here!"
     "{cps=1}...{/cps}"
     "It's so quiet..."
