@@ -410,31 +410,31 @@ init -501 screen navigation():
         style_prefix "navigation"
         spacing 0
         if main_menu:
-            textbutton _("CLOSE\n{size=20}閉じる{/size}") hovered [SetVariable("option_index", 0)] action [Hide("achievements"), Hide("preferences"), Hide("file_slots"), Hide("navigation")]
-            textbutton _("BEGIN\n{size=20}スタート{/size}") hovered [SetVariable("option_index", 1)] action Function(StartGame)
-            textbutton _("BOOKMARKS\n{size=20}しおり{/size}") hovered [SetVariable("option_index", 2)] action [Hide("achievements"), Hide("preferences"), ShowMenu("file_slots"), SensitiveIf(renpy.get_screen("file_slots") == None)]
-            textbutton _("ACHIEVEMENTS\n{size=20}アチーブメント{/size}") hovered [SetVariable("option_index", 3)] action [Hide("file_slots"), ShowMenu("achievements"), SensitiveIf(renpy.get_screen("achievements") == None)]
-            textbutton _("OPTIONS\n{size=20}オプション{/size}") hovered [SetVariable("option_index", 4)] action [Hide("achievements"), Hide("file_slots"), ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
+            textbutton "CLOSE\n{size=20}閉じる{/size}" hovered [SetVariable("option_index", 0)] action [Hide("achievements"), Hide("preferences"), Hide("file_slots"), Hide("navigation")]
+            textbutton "BEGIN\n{size=20}スタート{/size}" hovered [SetVariable("option_index", 1)] action Function(StartGame)
+            textbutton "BOOKMARKS\n{size=20}しおり{/size}" hovered [SetVariable("option_index", 2)] action [Hide("achievements"), Hide("preferences"), ShowMenu("file_slots"), SensitiveIf(renpy.get_screen("file_slots") == None)]
+            textbutton "ACHIEVEMENTS\n{size=20}アチーブメント{/size}" hovered [SetVariable("option_index", 3)] action [Hide("file_slots"), ShowMenu("achievements"), SensitiveIf(renpy.get_screen("achievements") == None)]
+            textbutton "OPTIONS\n{size=20}オプション{/size}" hovered [SetVariable("option_index", 4)] action [Hide("achievements"), Hide("file_slots"), ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
             if renpy.variant("pc"):
-                textbutton _("HELP\n{size=20}ヘルプ{/size}") hovered [SetVariable("option_index", 5)]  action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))]
-                textbutton _("DISCORD\n{size=20}ディスコード{/size}") hovered [SetVariable("option_index", 6)] action OpenURL("https://discord.gg/Q3CcJW4Ag2")
-            textbutton _("EXTRAS\n{size=20}エクストラー{/size}") hovered [SetVariable("option_index", 7)] action Function(Extras)
+                textbutton "HELP\n{size=20}ヘルプ{/size}" hovered [SetVariable("option_index", 5)]  action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))]
+                textbutton "DISCORD\n{size=20}ディスコード{/size}" hovered [SetVariable("option_index", 6)] action OpenURL("https://discord.gg/Q3CcJW4Ag2")
+            textbutton "EXTRAS\n{size=20}エクストラー{/size}" hovered [SetVariable("option_index", 7)] action Function(Extras)
             if renpy.variant("pc"):
-                textbutton _("QUIT\n{size=20}クイット{/size}") hovered [SetVariable("option_index", 8)] action Quit(confirm=not main_menu)
+                textbutton "QUIT\n{size=20}クイット{/size}" hovered [SetVariable("option_index", 8)] action Quit(confirm=not main_menu)
         else:
-            textbutton _("CLOSE\n{size=20}閉じる{/size}") hovered [SetVariable("option_index", 0)] action Return()
-            textbutton _("LOG\n{size=20}ログ{/size}") hovered [SetVariable("option_index", 1)] action [Hide("preferences"), Hide("file_slots"), ShowMenu("history"), SensitiveIf(renpy.get_screen("history") == None)]
-            textbutton _("AUTO ADVANCE  " + aa_status + "\n{size=20}オート                                                                          " + aa_status_kan + "{/size}") hovered [SetVariable("option_index", 2)] action [Preference("auto-forward", "toggle"), If(aa_status == "OFF", [SetVariable("aa_status", "ON"), SetVariable("aa_status_kan", "{size=20}オン{/size}")], [SetVariable("aa_status", "OFF"), SetVariable("aa_status_kan", "{size=20}オッフ{/size}")])]
-            textbutton _("FAST FORWARD\n{size=20}早送り{/size}") hovered [SetVariable("option_index", 3)] action Skip()
-            textbutton _("BOOKMARKS\n{size=20}しおり{/size}") hovered [SetVariable("option_index", 4)] action [Hide("history"), Hide("preferences"), ShowMenu("file_slots"), SensitiveIf(renpy.get_screen("file_slots") == None)]
-            textbutton _("OPTIONS\n{size=20}オプション{/size}") hovered [SetVariable("option_index", 5)] action [Hide("history"), Hide("file_slots"), ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
+            textbutton "CLOSE\n{size=20}閉じる{/size}" hovered [SetVariable("option_index", 0)] action Return()
+            textbutton "LOG\n{size=20}ログ{/size}" hovered [SetVariable("option_index", 1)] action [Hide("preferences"), Hide("file_slots"), ShowMenu("history"), SensitiveIf(renpy.get_screen("history") == None)]
+            textbutton "AUTO ADVANCE  " + aa_status + "\n{size=20}オート                                                                          " + aa_status_kan + "{/size}" hovered [SetVariable("option_index", 2)] action [Preference("auto-forward", "toggle"), If(aa_status == "OFF", [SetVariable("aa_status", "ON"), SetVariable("aa_status_kan", "{size=20}オン{/size}")], [SetVariable("aa_status", "OFF"), SetVariable("aa_status_kan", "{size=20}オッフ{/size}")])]
+            textbutton "FAST FORWARD\n{size=20}早送り{/size}" hovered [SetVariable("option_index", 3)] action Skip()
+            textbutton "BOOKMARKS\n{size=20}しおり{/size}" hovered [SetVariable("option_index", 4)] action [Hide("history"), Hide("preferences"), ShowMenu("file_slots"), SensitiveIf(renpy.get_screen("file_slots") == None)]
+            textbutton "OPTIONS\n{size=20}オプション{/size}" hovered [SetVariable("option_index", 5)] action [Hide("history"), Hide("file_slots"), ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
             if _in_replay:
-                textbutton _("END REPLAY\n{size=20}リプレイを終了する{/size}") hovered [SetVariable("option_index", 6)] action EndReplay(confirm=True)
+                textbutton "END REPLAY\n{size=20}リプレイを終了する{/size}" hovered [SetVariable("option_index", 6)] action EndReplay(confirm=True)
             else:
-                textbutton _("TITLE SCREEN\n{size=20}タイトル画面{/size}") hovered [SetVariable("option_index", 6)] action MainMenu()
+                textbutton "TITLE SCREEN\n{size=20}タイトル画面{/size}" hovered [SetVariable("option_index", 6)] action MainMenu()
             if renpy.variant("pc"):
-                textbutton _("HELP\n{size=20}ヘルプ{/size}") hovered [SetVariable("option_index", 7)] action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))]
-                textbutton _("QUIT\n{size=20}クイット{/size}") hovered [SetVariable("option_index", 8)] action Quit(confirm=not main_menu) 
+                textbutton "HELP\n{size=20}ヘルプ{/size}" hovered [SetVariable("option_index", 7)] action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))]
+                textbutton "QUIT\n{size=20}クイット{/size}" hovered [SetVariable("option_index", 8)] action Quit(confirm=not main_menu) 
             
 init -501 screen navigation_border():
     zorder 2500
