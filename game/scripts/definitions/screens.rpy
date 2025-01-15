@@ -613,7 +613,7 @@ init -501 screen file_slots():
                     alternate FileDelete(slot)
                     has vbox
                     add FileScreenshot(slot) 
-                    text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("empty slot")):
+                    text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("EMPTY")):
                         style "slot_time_text"
                     text FileSaveName(slot):
                         style "slot_name_text"
@@ -626,21 +626,22 @@ init -501 screen file_slots():
                 ycenter 100
                 background "#ffffff8a"
                 vbox:
-                    text "NAME THIS BOOKMARK" font "mod_assets/fonts/Unitblock-mLAwm.ttf"
-                    input default FileSaveName(slot_selected) value VariableInputValue("save_name") length 24 font "mod_assets/fonts/Unitblock-mLAwm.ttf"
+                    xalign 0.5
+                    text "しおりの名前\nNAME OF BOOKMARK" font "mod_assets/fonts/NotoSerifJP-Regular.otf" size 10 xalign 0.5 text_align 0.5
+                    input default FileSaveName(slot_selected) value VariableInputValue("save_name") length 24 font "mod_assets/fonts/NotoSerifJP-Regular.otf"
                     hbox:
                         if not main_menu:
                             button:
-                                background "#1eff0080"
-                                text "SAVE" font "mod_assets/fonts/Unitblock-mLAwm.ttf"
+                                background "#1eff0080" 
+                                text "セーブ\nSAVE" font "mod_assets/fonts/NotoSerifJP-Regular.otf" size 10 text_align 0.5 ypos -5
                                 action FileSave(slot_selected)
                         button:
                             background "#ff000080"
-                            text "DELETE" font "mod_assets/fonts/Unitblock-mLAwm.ttf"
+                            text "デリート\nDELETE" font "mod_assets/fonts/NotoSerifJP-Regular.otf" size 10 text_align 0.5 ypos -5
                             action FileDelete(slot_selected)
                         button:
                             background "#ffffff80"
-                            text "LOAD" font "mod_assets/fonts/Unitblock-mLAwm.ttf"
+                            text "ロード\nLOAD" font "mod_assets/fonts/NotoSerifJP-Regular.otf" size 10 text_align 0.5 ypos -5
                             action FileLoad(slot_selected)
 
 init -1 style slot_button is gui_button
@@ -679,56 +680,41 @@ init -501 screen preferences():
                 style_prefix "slider"
                 label _("Music Volume")
                 hbox:
-                    bar value Preference("music volume") hovered [SetLocalVariable("settinginfo", "The volume of the music within the game."), SetLocalVariable("settingdef", "Default: 75%")] unhovered [SetLocalVariable("settinginfo", "Hover over an option to view info about it."), SetLocalVariable("settingdef", "")] xsize 440
+                    bar value Preference("music volume") xsize 440
             if config.has_sound:
                 style_prefix "slider"
                 label _("Sound Volume")
                 hbox:
-                    bar value Preference("sound volume") hovered [SetLocalVariable("settinginfo", "The volume of the sound within the game."), SetLocalVariable("settingdef", "Default: 75%")] unhovered [SetLocalVariable("settinginfo", "Hover over an option to view info about it."), SetLocalVariable("settingdef", "")] xsize 440
+                    bar value Preference("sound volume") xsize 440
             if config.has_voice:
                 style_prefix "slider"
                 label _("Voice Volume")
                 hbox:
-                    bar range 2.00 value Preference("voice volume") hovered [SetLocalVariable("settinginfo", "The volume of the voicelines within the game."), SetLocalVariable("settingdef", "Default: 150%")] unhovered [SetLocalVariable("settinginfo", "Hover over an option to view info about it."), SetLocalVariable("settingdef", "")] xsize 440
+                    bar range 2.00 value Preference("voice volume") xsize 440
                     if config.sample_voice:
                         textbutton _("Test") action Play("voice", config.sample_voice)
             if config.has_music or config.has_sound or config.has_voice:
+                style_prefix "slider"
                 textbutton _("Reset"):
                     action [Preference("music volume", 0.75), Preference("sound volume", 0.75), Preference("voice volume", 1.50)] 
-                    hovered SetLocalVariable("settinginfo", "Resets the volume settings to default.") unhovered SetLocalVariable("settinginfo", "Hover over an option to view info about it.")
-                    style "ui_text"
             yoffset -10
             if renpy.variant("pc"):
                 vbox:
                     style_prefix "radio"
                     label _("Display")
-                    textbutton _("Window") action Preference("display", "window") hovered [SetLocalVariable("settinginfo", "How the game's window is displayed on your screen."), SetLocalVariable("settingdef", "Default: Window")] unhovered [SetLocalVariable("settinginfo", "Hover over an option to view info about it."), SetLocalVariable("settingdef", "")]
-                    textbutton _("Fullscreen") action Preference("display", "fullscreen") hovered [SetLocalVariable("settinginfo", "How the game's window is displayed on your screen."), SetLocalVariable("settingdef", "Default: Window")] unhovered [SetLocalVariable("settinginfo", "Hover over an option to view info about it."), SetLocalVariable("settingdef", "")]
+                    textbutton _("Window") action Preference("display", "window")
+                    textbutton _("Fullscreen") action Preference("display", "fullscreen")
             vbox:
                 style_prefix "check"
                 label _("Fast Forward")
-                textbutton _("Unseen Text") hovered [SetLocalVariable("settinginfo", "Fast Forward skips over text you haven't seen yet"), SetLocalVariable("settingdef", "Default: False")] action Preference("skip", "toggle")
-                textbutton _("After Choices") hovered [SetLocalVariable("settinginfo", "Fast Forward persists after you make a choice"), SetLocalVariable("settingdef", "Default: False")] action Preference("after choices", "toggle")
+                textbutton _("Unseen Text") action Preference("skip", "toggle")
+                textbutton _("After Choices") action Preference("after choices", "toggle")
             vbox:
                 style_prefix "radio"
                 label _("Language")
                 textbutton "English" action Language("english")
                 textbutton "日本語" action Language("japanese")
             null height (4 * gui.pref_spacing)
-    frame:
-        background Solid("#00000080")
-        xalign 1.0 yalign 1.0
-        xoffset -10 yoffset -10
-        hbox:
-            style_prefix "slider"
-            box_wrap True
-            vbox:
-                label _("Information")
-                text _("[settinginfo]")
-                text _("[settingdef]")
-    text "v[config.version]":
-        xalign 1.0 yalign 1.0
-        xoffset -10 yoffset -10
 
 init -1 style pref_label is gui_label
 init -1 style pref_label_text is gui_label_text
@@ -761,7 +747,7 @@ init -1 style pref_label:
     bottom_margin 2
 
 init -1 style pref_label_text:
-    font "mod_assets/fonts/Unitblock-mLAwm.ttf"
+    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
     size 24
     color "#fff"
     outlines [(3, "#585858", 0, 0), (1, "#585858", 1, 1)]
@@ -779,7 +765,7 @@ init -1 style radio_button:
 
 init -1 style radio_button_text:
     properties gui.button_text_properties("radio_button")
-    font "gui/font/Halogen.ttf"
+    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
     outlines []
 
 init -1 style check_vbox:
@@ -791,7 +777,7 @@ init -1 style check_button:
 
 init -1 style check_button_text:
     properties gui.button_text_properties("check_button")
-    font "gui/font/Halogen.ttf"
+    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
     outlines []
 
 init -1 style slider_slider:
@@ -804,6 +790,7 @@ init -1 style slider_button:
 
 init -1 style slider_button_text:
     properties gui.button_text_properties("slider_button")
+    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
 
 init -1 style slider_vbox:
     xsize 450
