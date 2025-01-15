@@ -7,6 +7,13 @@ label shed:
 
     return
 
+label no_shed:
+    a "Shit!"
+    a "This is taking too long."
+    a "We should head back."
+    a "He's probably already gone anyway."
+    return
+
 default blocked_directions = { # randomized each run
     "0_0": ["north", "south", "east", "west"],
     "1_0": ["north", "south", "east", "west"],
