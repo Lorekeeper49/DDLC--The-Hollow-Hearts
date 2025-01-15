@@ -100,7 +100,7 @@ label kstory_ch2:
     "Right, he's like me; one of the unlucky ones that actually get tired."
     k "You can take a break at any time."
     ak 4ag "Actually, I can't!"
-    ak 3ag "My brother's doing so much evil, I can't take my eyes off him for a second!"
+    ak 3ag "My father's doing so much evil, I can't take my eyes off him for a second!"
     k "That reminds me, why would a copycat who can give his comrades attributes not give them the ability to not get tired?"
     ak 4ak "I've asked him that same question, and his answer was 'I wish it worked that way'.  And frankly, I agree."
     "Your telling me?  I wish {i}I{/i} could give people attributes, let alone the ability to not get tired."
