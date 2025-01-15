@@ -39,7 +39,7 @@ label act2_ch3_main:
     scene park_night
     show taiyen zorder 2 at face
     with dissolve_scene_half
-    $ pla = "Sakura Taiyen?"
+    $ pla = "桜隊円？\n{size=15}Sakura Taiyen?{/size}"
     general "Are you okay?"
     a "Yeah, thanks Taiyen..."
     general "Okay, you're not exactly okay."
