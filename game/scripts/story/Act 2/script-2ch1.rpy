@@ -249,6 +249,7 @@ label act2_ch1_alt:
     "Mari goes to the computers on the left which show the classroom cameras and focuses the one for 3-B onto the projector."
     "I watch as the members talk about what I just did."
     stop ambience fadeout 1.0
+    play music confdep
     scene bg kamiclassnight with wipeleft_scene
     show kotonoha turned casual rhip lup om zorder 2 at t21
     show akira uniform cross l zorder 2 at t22
@@ -256,7 +257,13 @@ label act2_ch1_alt:
     ak k "Yes..."
     k ce ldown "I don't know what I expected to be honest..."
     k oe "Anyone have have any thoughts on this?"
-
+    "Everyone's silent."
+    k ce "*Sigh*"
+    k oe lup "She would've been good to have here too..."
+    k ldown "She's just too timid."
+    k worr "I worry about her..."
+    "..."
+    stop music fadeout 1.0
     scene bg mari_office with wipeleft
     a "*Sob*"
     a "I'm such a fucking..."
