@@ -67,18 +67,21 @@ label explore(start, *, transition=False, limited_time=-1, fail_label=""):
     $ renpy.call_screen(start)
     return
 
+default jumpnum = 0
 label next_location(loc, *, transition=True, j=False, f=False, w=False):
     if loc.startswith("deep_forest"):
         scene bg deep_forest
     else:
         scene expression "bg [loc]"
     if j:
-        if random_chance(25):
+        if random_chance(10):
+            $ renpy.music.play(audio.jumpscare, channel="jump" + jumpnum, loop=True)
             show bg factory with Fade(0.1, 0.0, 0.1, color="#fff")
             $ pause(0.05)
             hide bg factory 
             with Fade(0.1, 0.0, 0.1, color="#fff")
             $ remaining_sec -= 300
+            $ jumpnum += 1
     if f:
         show screen flashlight
     if transition:
