@@ -30,25 +30,27 @@ label kstory_ch2:
     "That is officially the weirdest thing I've ever said, especially in my head."
     k "*Sigh* Seiei?"
     "He comes out."
-    show seiei 1bh1 zorder 2 at t11
+    show seiei turned casual anno ce zorder 2 at t11
     $ pause(0.5)
     call showintro(intro_sei) from _call_showintro_3
-    sei "*Sigh* That is an embarrasing death."
+    sei om "*Sigh* That is an embarrassing death."
+    show seiei cm
     k "They were swarming us!"
-    sei 1be "Wanna do another attempt?"
+    sei oe om "Wanna do another attempt?"
+    show seiei neut cm
     k "We can't, it's late and the club's probably worried."
-    sei 2ba "Right.  Let's head back to HQ."
+    sei cross om "Right.  Let's head back to HQ."
     hide seiei
     "We walk for a bit."
     $ pause(3.0)
     "I stop."
-    show seiei 2ba zorder 2 at t11
+    show seiei turned casual zorder 2 at t11
     k "It's...  It's not right!"
-    sei "What?  Me being here?"
+    sei curi om "What?  Me being here?"
     k "No-"
-    sei 1bh1 "I get it.  There's no way an Ordinary man like me-"
+    sei cross neut "I get it.  There's no way an Ordinary man like me-"
     k "That's not what I'm talking about!"
-    show seiei 1ba
+    show seiei cm
     k "We're breaking into so many abandoned places..."
     k "going through so many dangers..."
     k "meeting so many fates...!"
@@ -62,50 +64,51 @@ label kstory_ch2:
     k "It's impossible!"
     k "*Sob*"
     $ pause(1.0)
-    show seiei 2ba
-    sei "Maybe so..."
-    sei "{i}If{/i} we didn't have help from his own family."
+    sei ldown2 rdown2 om "Maybe so..."
+    sei anno "{i}If{/i} we didn't have help from his own family."
     k "What?"
-    sei "Follow me, I know where he is."
+    sei ldown rdown "Follow me, I know where he is."
     scene bg shed_night with wipeleft_scene
     call showlocation("Shed Hideout","September 29, 2023",20*60+14+57/60.0,"bg shed_night") from _call_showlocation_18
-    show akira 1ac zorder 2 at t11
+    show akira uniform turned c zorder 2 at t11
     "...{w=1}Huh?"
     hide akira
-    show seiei 2ba zorder 2 at t11
+    show seiei turned casual zorder 2 at t11
     k "Akira?  Why him?  He's like Kirinani's right hand man!"
-    sei 1ba "Well, why do {i}you{/i} like him?"
+    sei om "Well, why do {i}you{/i} like him?"
+    show seiei cm
     k "Uh-?  *Flustered noise*\n...Fair point..."
-    sei 2ba "He's a spy, and a good one at that."
-    sei 1be "Oi!  Akira!"
+    sei cross om "He's a spy, and a good one at that."
+    sei ldown rdown anno om "Oi!  Akira!"
     k "Eh-W-Wait!"
-    show akira 1ac zorder 2 at t22
+    show akira uniform turned c zorder 2 at t22
     show seiei at t21
     "Akira comes over."
     k "I wanted you to at least explain things before calling him over!"
     "No one takes notice of me."
-    ak 4ac "Seiei...  Did you do it again?"
-    sei 2bh1 "*Sigh*"
-    ak 2ae "Ugh!  Seiei, I told you not to use STASIS to train!  It is unhealthy and doesn't actually do anything to the physical body."
-    sei 2be "Yeah, yeah...  Listen, Kotonoha's here, say hi."
-    show akira 4ae
+    ak cross "Seiei...  Did you do it again?"
+    sei cross ce "*Sigh*"
+    ak turned rout e "Ugh!  Seiei, I told you not to use STASIS to train!  It is unhealthy and doesn't actually do anything to the physical body."
+    sei oe om "Yeah, yeah...  Listen, Kotonoha's here, say hi."
+    show akira cross
+    show seiei cm
     "He looks at me."
-    ak 4ag "So... we're finally telling {i}her{/i} about me, huh?"
-    ak 1ag "Good, I don't have to hide anymore."
+    ak g "So... we're finally telling {i}her{/i} about me, huh?"
+    ak turned rout lout "Good, I don't have to hide anymore."
     hide seiei
     show akira at t11
-    ak "Hi Kotonoha, it's me.  I spy on my family."
+    ak rpock lpock "Hi Kotonoha, it's me.  I spy on my family."
     k "You sound like you're tired of this job."
-    ak 4ak "I'm not tired of the job, I'm tired of staying up until midnight every day."
+    ak cross k "I'm not tired of the job, I'm tired of staying up until midnight every day."
     "Right, he's like me; one of the unlucky ones that actually get tired."
     k "You can take a break at any time."
-    ak 4ag "Actually, I can't!"
-    ak 3ag "My father's doing so much evil, I can't take my eyes off him for a second!"
+    ak g "Actually, I can't!"
+    ak turned rout lpock "My father's doing so much evil, I can't take my eyes off him for a second!"
     k "That reminds me, why would a copycat who can give his comrades attributes not give them the ability to not get tired?"
-    ak 4ak "I've asked him that same question, and his answer was 'I wish it worked that way'.  And frankly, I agree."
+    ak cross k "I've asked him that same question, and his answer was 'I wish it worked that way'.  And frankly, I agree."
     "Your telling me?  I wish {i}I{/i} could give people attributes, let alone the ability to not get tired."
     k "So, this is what you've been doing behind my back!"
-    ak 1ao "Yes... and it ain't easy."
+    ak turned o "Yes... and it ain't easy."
     "If only we could make it easier."
     "Well at least I know I can trust him."
     "That is reassuring."

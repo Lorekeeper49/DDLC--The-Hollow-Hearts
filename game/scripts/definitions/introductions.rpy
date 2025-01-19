@@ -141,7 +141,7 @@ init python:
         name = "Settou Seiei",
         attr = _("- Ordinary: He has no special abilities, he's just a normal person"),
         bio = _("The leader of the midnight club, he's a determined individual who claims to want to make peace to the world."),
-        img = "seiei 1a"
+        img = "seiei turned casual cross"
     )
 
     intro_en = Intro(
