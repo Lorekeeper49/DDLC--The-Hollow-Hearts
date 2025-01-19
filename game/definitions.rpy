@@ -1673,7 +1673,7 @@ define ti = DynamicCharacter('tina', image='tina', what_prefix='“', what_suffi
 define en = DynamicCharacter('en_name', image="engeki", what_prefix='“', what_suffix='”', ctc="ctc", ctc_position="fixed")
 define ma = DynamicCharacter('mari', image="mari", what_prefix='“', what_suffix='”', ctc="ctc", ctc_position="fixed")
 define d = DynamicCharacter('dominion', image="dominion", what_prefix='“', what_suffix='”', ctc="ctc", ctc_position="fixed")
-define sei = DynamicCharacter('seiei', image='seiei', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
+define sei = DynamicCharacter('seiei', image='seiei', what_prefix='“', what_suffix='”', ctc="ctc", ctc_position="fixed")
 define general = DynamicCharacter('pla', what_prefix='“', what_suffix='”', ctc="ctc", ctc_position="fixed")
 
 define _dismiss_pause = config.developer
