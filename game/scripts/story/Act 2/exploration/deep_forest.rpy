@@ -55,7 +55,7 @@ label dominion_loop:
         "Give up on him":
             a "I give up!"
             return
-    if calm >= 3 and stress < calm and stress != calm:
+    if calm >= 3 and stress < calm:
         d "Okay, I'm calm.  I'm calm."
         a "You good?"
         d "Yeah, I'm good."
@@ -63,7 +63,7 @@ label dominion_loop:
         a "Okay."
         a "Whew."
         return
-    elif stress >= 3 and calm > stress and stress != calm:
+    elif stress >= 3 and calm > stress:
         d "*Stuttered Breath*"
         d monstertrans "AAAAAAAAAAAAAAAAHHHHH!!!"
         a "Shit!"
