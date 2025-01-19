@@ -37,18 +37,143 @@ label shed:
     a "Let's get out of here!"
     return
 
+default dom_calm = False
+default dom_stress = False
+default dom_rage = False
+default calm = 0
+default stress = 0
 label dominion_loop:
     menu:
-        "Comfort him":
-
-        "Stress him to face it":
-
+        "Convince him to calm down" if not dom_calm:
+            $ dom_calm = True
+            call dom_com
+        "Stress him to face it" if not dom_stress:
+            $ dom_stress = True
+            call dom_stress
         "Tell him his abilities straight":
-        
+            jump dom_ab
         "Give up on him":
             a "I give up!"
             return
+    if calm >= 3 and stress < calm and stress != calm:
+        d "Okay, I'm calm.  I'm calm."
+        a "You good?"
+        d "Yeah, I'm good."
+        d "I'll head back to the school in a bit."
+        a "Okay."
+        a "Whew."
+        return
+    elif stress >= 3 and calm > stress and stress != calm:
+        d "*Stuttered Breath*"
+        d monstertrans "AAAAAAAAAAAAAAAAHHHHH!!!"
+        a "Shit!"
+        jump dom_burst
+    elif dom_rage:
+        return
     jump dominion_loop
+
+default Comforting = False
+default Stressful = False
+default Direct = False
+default Vague = False
+default Smart = False
+default Stupid = False
+default Angry = False
+default Happy = False
+label dom_com:
+    menu:
+        "Be Comforting" if not Comforting:
+            $ Comforting = True
+            $ calm += 1
+
+        "Be Stressful" if not Stressful:
+            $ Stressful = True
+            $ stress += 1
+
+        "Be Direct" if not Direct:
+            $ Direct = True
+            $ calm += 1
+
+        "Be Vague" if not Vague:
+            $ Vague = True
+            $ stress += 1
+
+        "Be Smart" if not Smart:
+            $ Smart = True
+            $ calm += 1
+
+        "Be Stupid" if not Stupid:
+            $ Stupid = True
+            $ stress += 1
+
+        "Be Angry" if not Angry:
+            $ Angry = True
+            $ stress += 1
+
+        "Be Happy" if not Happy:
+            $ Happy = True
+            $ calm += 1
+
+    jump dom_com
+
+label dom_stress:
+    a "How about you just face it?"
+    d "Huh?"
+    a "What?  You could learn how it works."
+    a "Or are you gonna be a fucking crybaby about potentially killing us?"
+    menu:
+        "Stress him to face it":
+            pass
+        "Stop":
+            a "Sorry, I'll stop."
+            "Let's try something else."
+            return
+    a "I'm being serious here!"
+    a "You won't be able to fight if you don't face it!"
+    d "You can't hold back that power!"
+    a "You really sure about that?"
+    a "We can prove you wrong."
+    menu:
+        "Stress him!":
+            pass
+        "Stop":
+            a "Sorry, I'll stop."
+            "Let's try something else."
+            return
+    d "I don't know what to-"
+    a "You're already a dick."
+    a "BUT YOU'LL BE EVEN MORE OF A DICK IF YOU DON'T FUCK THAT POWER!"
+    menu:
+        "Face it!":
+            pass
+        "Stop":
+            a "Sorry, I'll stop."
+            "Let's try something else."
+            return
+    a "Just ass up and face it!"
+    a "Or are you gonna be a coward like me?"
+    d "I can't-"
+    a "JUST FUCKING SHOW IT TO US!!"
+    menu:
+        "FACE IT!":
+            pass
+        "Stop":
+            a "Sorry, I'll stop."
+            "Let's try something else."
+            return
+    a "SHOW IT TO US!!!"
+    d monstertrans "AAAAAAAAAAAAAAAAHHHHH!!!"
+    a "Well that worked."
+    jump dom_burst
+
+label dom_ab:
+
+    return
+
+label dom_burst:
+    $ dom_rage = True
+
+    return
 
 label no_shed:
     a "Shit!"
