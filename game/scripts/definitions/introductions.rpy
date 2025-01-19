@@ -139,7 +139,7 @@ init python:
     intro_sei = Intro(
         kan = "窃盗精鋭",
         name = "Settou Seiei",
-        attr = _("- Ordinary: He has no special abilities, he's just a normal person"),
+        attr = _("- Ordinary Man: He has no special abilities, he's just a normal person"),
         bio = _("The leader of the midnight club, he's a determined individual who claims to want to make peace to the world."),
         img = "seiei turned casual cross"
     )
@@ -155,9 +155,9 @@ init python:
     intro_d = Intro(
         kan = "ルナどみにおん",
         name = "Luna Dominion",
-        attr = "[UNIDENTIFIED]",
+        attr = _("- Rampant Image: He can turn into a static noise monster at will."),
         bio = _("Aoruguri's slight older brother, he is a face of horror among the general public who is calls himself dangerous.\nHe is afraid of himself just as everyone is afraid of him."),
-        img = "engeki turned sweater"
+        img = "dominion"
     )
 
 

@@ -20,8 +20,35 @@ label shed:
     show kotonoha anno rhip ce om zorder 2 at r22
     k "I can assure you, we are not-"
     a "Just face it.  With the amount of dangers you guys throw yourselves into, you might as well take the name."
-
+    k lup "You say that as a member of us."
+    show kotonoha cm
+    a "I'll just shut my fucking mouth then!"
+    k ldown om "No, you're the only one who can talk to him properly."
+    show kotonoha cm
+    a "Then keep him from getting out!"
+    k rdown om "Copy that."
+    show kotonoha cm at rhide
+    hide kotonoha
+    show dominion at t11
+    d "Seriously!  You should get out of here!  I could end up killing you!"
+    "Hm.  Seems like talking to him will be more difficult than usual."
+    "How should I go about this?"
+    call dominion_loop
+    a "Let's get out of here!"
     return
+
+label dominion_loop:
+    menu:
+        "Comfort him":
+
+        "Stress him to face it":
+
+        "Tell him his abilities straight":
+        
+        "Give up on him":
+            a "I give up!"
+            return
+    jump dominion_loop
 
 label no_shed:
     a "Shit!"
