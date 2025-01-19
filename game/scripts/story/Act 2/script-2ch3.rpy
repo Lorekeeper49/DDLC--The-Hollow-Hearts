@@ -8,7 +8,7 @@ label act2_ch3_main:
     play ambience forest
     scene bg park_night
     with dissolve_scene_full
-    call showlocation("Converse Park\n{size=25}コンバースパーク{/size}","October 10, 2023\n{size=15}2023年10月10日{/size}",23*60+14+57/60.0,"bg tree") from _call_showlocation_41
+    call showlocation("Converse Park\n{size=25}コンバースパーク{/size}","October 10, 2023\n{size=15}2023年10月10日{/size}",0*60+14+57/60.0,"bg tree") from _call_showlocation_41
     a "What are we doing here?"
     a "This is the same park that I..."
     show kotonoha turned casual neut om zorder 2 at t11

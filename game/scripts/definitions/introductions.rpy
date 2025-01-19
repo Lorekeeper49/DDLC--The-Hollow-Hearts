@@ -152,6 +152,14 @@ init python:
         img = "engeki turned sweater"
     )
 
+    intro_d = Intro(
+        kan = "ルナどみにおん",
+        name = "Luna Dominion",
+        attr = "[UNIDENTIFIED]",
+        bio = _("Aoruguri's slight older brother, he is a face of horror among the general public who is calls himself dangerous.\nHe is afraid of himself just as everyone is afraid of him."),
+        img = "engeki turned sweater"
+    )
+
 
 
 image textbg:

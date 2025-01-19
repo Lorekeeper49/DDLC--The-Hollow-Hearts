@@ -4,6 +4,22 @@ label shed:
     a "Dominion!"
     a "Found you!"
     scene bg shed with dissolve_scene_full
+    call showlocation("Abandoned Shed\n{size=25}放置された小屋{/size}","October 10, 2023\n{size=15}2023年10月10日{/size}",1*60+59+57/60.0,"bg shed")
+    show dominion zorder 2 at t11
+    call showintro(intro_d)
+    d "..."
+    d "!!!"
+    d "Who are you people?"
+    a "Dominion!  Dominion!  Calm down!  These are my new friends."
+    d "Aoruguri?"
+    d "Get away from me!  I'm not safe!"
+    a "We saw.  You're okay."
+    a "These people live for danger."
+    d "Tch!  Some daredevils, huh?"
+    show dominion at t21
+    show kotonoha anno rhip ce om zorder 2 at r22
+    k "I can assure you, we are not-"
+    a "Just face it.  With the amount of dangers you guys throw yourselves into, you might as well take the name."
 
     return
 
