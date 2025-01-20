@@ -114,9 +114,13 @@ label dom_com:
             $ Happy = True
             $ calm += 1
 
+        "Stop convincing him":
+            "Let's stop here."
+            return
     jump dom_com
 
 label dom_stress:
+    $ stress += 2
     a "How about you just face it?"
     d "Huh?"
     a "What?  You could learn how it works."
