@@ -212,7 +212,6 @@ Argument - MC.Dummy.Composer
 
 
 ### FONTS
-
 [NORMAL FONT - Noto Serif](https://fonts.google.com/noto/specimen/Noto+Serif+JP?subset=japanese&noto.script=Hira)
 
 [SCRIPT - TypeSETit (Alex Brush)](https://www.1001fonts.com/legible+handwriting-fonts.html)
