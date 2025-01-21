@@ -163,6 +163,7 @@ define audio.fallout = "mod_assets/sounds/fall.mp3"
 define audio.jumpscare = "<loop 5>mod_assets/sounds/jumpscare.ogg"
 define audio.door = "mod_assets/sounds/open_door.ogg"
 define audio.footsteps = "mod_assets/sounds/footsteps.ogg"
+define audio.grass_move = "mod_assets/sounds/grass_movement.ogg"
 define audio.static = "mod_assets/sounds/static.ogg"
 
 image black = "#000000"
