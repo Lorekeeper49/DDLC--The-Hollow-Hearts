@@ -187,17 +187,17 @@ label no_shed:
     return
 
 default blocked_directions = { # randomized each run
-    "0_0": {"north": False, "south": False, "east": False, "west": False},
-    "1_0": {"north": False, "south": False, "east": False, "west": False},
-    "2_0": {"north": False, "south": False, "east": False, "west": False},
-    "3_0": {"north": False, "south": False, "east": False, "west": False},
-    "4_0": {"north": False, "south": False, "east": False, "west": False},
-    "5_0": {"north": False, "south": False, "east": False, "west": False},
-    "6_0": {"north": False, "south": False, "east": False, "west": False},
-    "7_0": {"north": False, "south": False, "east": False, "west": False},
-    "8_0": {"north": False, "south": False, "east": False, "west": False},
-    "9_0": {"north": False, "south": False, "east": False, "west": False},
-    "0_1": {"north": False, "south": False, "east": False, "west": False},
+    "0_0": {"north": True, "south": False, "east": False, "west": True},
+    "1_0": {"north": True, "south": False, "east": False, "west": False},
+    "2_0": {"north": True, "south": False, "east": False, "west": False},
+    "3_0": {"north": True, "south": False, "east": False, "west": False},
+    "4_0": {"north": True, "south": False, "east": False, "west": False},
+    "5_0": {"north": True, "south": False, "east": False, "west": False},
+    "6_0": {"north": True, "south": False, "east": False, "west": False},
+    "7_0": {"north": True, "south": False, "east": False, "west": False},
+    "8_0": {"north": True, "south": False, "east": False, "west": False},
+    "9_0": {"north": True, "south": False, "east": True, "west": False},
+    "0_1": {"north": False, "south": False, "east": False, "west": True},
     "1_1": {"north": False, "south": False, "east": False, "west": False},
     "2_1": {"north": False, "south": False, "east": False, "west": False},
     "3_1": {"north": False, "south": False, "east": False, "west": False},
@@ -206,8 +206,8 @@ default blocked_directions = { # randomized each run
     "6_1": {"north": False, "south": False, "east": False, "west": False},
     "7_1": {"north": False, "south": False, "east": False, "west": False},
     "8_1": {"north": False, "south": False, "east": False, "west": False},
-    "9_1": {"north": False, "south": False, "east": False, "west": False},
-    "0_2": {"north": False, "south": False, "east": False, "west": False},
+    "9_1": {"north": False, "south": False, "east": True, "west": False},
+    "0_2": {"north": False, "south": False, "east": False, "west": True},
     "1_2": {"north": False, "south": False, "east": False, "west": False},
     "2_2": {"north": False, "south": False, "east": False, "west": False},
     "3_2": {"north": False, "south": False, "east": False, "west": False},
@@ -216,8 +216,8 @@ default blocked_directions = { # randomized each run
     "6_2": {"north": False, "south": False, "east": False, "west": False},
     "7_2": {"north": False, "south": False, "east": False, "west": False},
     "8_2": {"north": False, "south": False, "east": False, "west": False},
-    "9_2": {"north": False, "south": False, "east": False, "west": False},
-    "0_3": {"north": False, "south": False, "east": False, "west": False},
+    "9_2": {"north": False, "south": False, "east": True, "west": False},
+    "0_3": {"north": False, "south": False, "east": False, "west": True},
     "1_3": {"north": False, "south": False, "east": False, "west": False},
     "2_3": {"north": False, "south": False, "east": False, "west": False},
     "3_3": {"north": False, "south": False, "east": False, "west": False},
@@ -226,8 +226,8 @@ default blocked_directions = { # randomized each run
     "6_3": {"north": False, "south": False, "east": False, "west": False},
     "7_3": {"north": False, "south": False, "east": False, "west": False},
     "8_3": {"north": False, "south": False, "east": False, "west": False},
-    "9_3": {"north": False, "south": False, "east": False, "west": False},
-    "0_4": {"north": False, "south": False, "east": False, "west": False},
+    "9_3": {"north": False, "south": False, "east": True, "west": False},
+    "0_4": {"north": False, "south": False, "east": False, "west": True},
     "1_4": {"north": False, "south": False, "east": False, "west": False},
     "2_4": {"north": False, "south": False, "east": False, "west": False},
     "3_4": {"north": False, "south": False, "east": False, "west": False},
@@ -236,8 +236,8 @@ default blocked_directions = { # randomized each run
     "6_4": {"north": False, "south": False, "east": False, "west": False},
     "7_4": {"north": False, "south": False, "east": False, "west": False},
     "8_4": {"north": False, "south": False, "east": False, "west": False},
-    "9_4": {"north": False, "south": False, "east": False, "west": False},
-    "0_5": {"north": False, "south": False, "east": False, "west": False},
+    "9_4": {"north": False, "south": False, "east": True, "west": False},
+    "0_5": {"north": False, "south": False, "east": False, "west": True},
     "1_5": {"north": False, "south": False, "east": False, "west": False},
     "2_5": {"north": False, "south": False, "east": False, "west": False},
     "3_5": {"north": False, "south": False, "east": False, "west": False},
@@ -246,8 +246,8 @@ default blocked_directions = { # randomized each run
     "6_5": {"north": False, "south": False, "east": False, "west": False},
     "7_5": {"north": False, "south": False, "east": False, "west": False},
     "8_5": {"north": False, "south": False, "east": False, "west": False},
-    "9_5": {"north": False, "south": False, "east": False, "west": False},
-    "0_6": {"north": False, "south": False, "east": False, "west": False},
+    "9_5": {"north": False, "south": False, "east": True, "west": False},
+    "0_6": {"north": False, "south": False, "east": False, "west": True},
     "1_6": {"north": False, "south": False, "east": False, "west": False},
     "2_6": {"north": False, "south": False, "east": False, "west": False},
     "3_6": {"north": False, "south": False, "east": False, "west": False},
@@ -256,8 +256,8 @@ default blocked_directions = { # randomized each run
     "6_6": {"north": False, "south": False, "east": False, "west": False},
     "7_6": {"north": False, "south": False, "east": False, "west": False},
     "8_6": {"north": False, "south": False, "east": False, "west": False},
-    "9_6": {"north": False, "south": False, "east": False, "west": False},
-    "0_7": {"north": False, "south": False, "east": False, "west": False},
+    "9_6": {"north": False, "south": False, "east": True, "west": False},
+    "0_7": {"north": False, "south": False, "east": False, "west": True},
     "1_7": {"north": False, "south": False, "east": False, "west": False},
     "2_7": {"north": False, "south": False, "east": False, "west": False},
     "3_7": {"north": False, "south": False, "east": False, "west": False},
@@ -266,8 +266,8 @@ default blocked_directions = { # randomized each run
     "6_7": {"north": False, "south": False, "east": False, "west": False},
     "7_7": {"north": False, "south": False, "east": False, "west": False},
     "8_7": {"north": False, "south": False, "east": False, "west": False},
-    "9_7": {"north": False, "south": False, "east": False, "west": False},
-    "0_8": {"north": False, "south": False, "east": False, "west": False},
+    "9_7": {"north": False, "south": False, "east": True, "west": False},
+    "0_8": {"north": False, "south": False, "east": False, "west": True},
     "1_8": {"north": False, "south": False, "east": False, "west": False},
     "2_8": {"north": False, "south": False, "east": False, "west": False},
     "3_8": {"north": False, "south": False, "east": False, "west": False},
@@ -276,15 +276,37 @@ default blocked_directions = { # randomized each run
     "6_8": {"north": False, "south": False, "east": False, "west": False},
     "7_8": {"north": False, "south": False, "east": False, "west": False},
     "8_8": {"north": False, "south": False, "east": False, "west": False},
-    "9_8": {"north": False, "south": False, "east": False, "west": False},
-    "0_9": {"north": False, "south": False, "east": False, "west": False},
-    "1_9": {"north": False, "south": False, "east": False, "west": False},
-    "2_9": {"north": False, "south": False, "east": False, "west": False},
-    "3_9": {"north": False, "south": False, "east": False, "west": False},
-    "4_9": {"north": False, "south": False, "east": False, "west": False},
-    "5_9": {"north": False, "south": False, "east": False, "west": False},
-    "6_9": {"north": False, "south": False, "east": False, "west": False},
-    "7_9": {"north": False, "south": False, "east": False, "west": False},
-    "8_9": {"north": False, "south": False, "east": False, "west": False},
-    "9_9": {"north": False, "south": False, "east": False, "west": False}
+    "9_8": {"north": False, "south": False, "east": True, "west": False},
+    "0_9": {"north": True, "south": False, "east": False "west": True},
+    "1_9": {"north": True, "south": False, "east": False, "west": False},
+    "2_9": {"north": True, "south": False, "east": False, "west": False},
+    "3_9": {"north": True, "south": False, "east": False, "west": False},
+    "4_9": {"north": True, "south": False, "east": False, "west": False},
+    "5_9": {"north": True, "south": False, "east": False, "west": False},
+    "6_9": {"north": True, "south": False, "east": False, "west": False},
+    "7_9": {"north": True, "south": False, "east": False, "west": False},
+    "8_9": {"north": True, "south": False, "east": False, "west": False},
+    "9_9": {"north": True, "south": False, "east": True, "west": False}
 }
+
+init python:
+    def randomize_blockages():
+        for coords in blocked_directions:
+            for direction in blocked_directions[coords]:
+                if not blocked_directions[coords][direction]:
+                    blocked_directions[coords][direction] = random_chance(10)
+
+screen deep_forest_coords:
+    style_prefix "explore"
+    if not blocked_directions[coords]["north"]:
+        button xcenter 640 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call(next_location, "deep_forest_next", j=True)]
+        text "北\nNORTH" xcenter 640 ycenter 260
+    if not blocked_directions[coords]["west"]:
+        button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call(next_location, "deep_forest_next", j=True)]
+        text "西\nWEST" xcenter 240 ycenter 260
+    if not blocked_directions[coords]["east"]:
+        button xcenter 1040 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call(next_location, "deep_forest_next", j=True)]
+        text "東\nEAST" xcenter 1040 ycenter 260
+    if not blocked_directions[coords]["south"]:
+        button xcenter 640 ycenter 695 xysize (1280, 50) action [Play("sound", audio.grass_move), Call(next_location, "deep_forest_next", j=True)]
+        text "南\nSOUTH" xcenter 640 ycenter 695
