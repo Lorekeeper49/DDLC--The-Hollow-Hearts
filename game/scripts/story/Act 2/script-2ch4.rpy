@@ -35,7 +35,7 @@ label act2_ch4_main:
     hide kotonoha
     a "Alright.  Since this is a big place, we'll split up!"
     show kotonoha turned casual anno rhip zorder 2 at t22
-    show akira 4ad zorder 2 at t21
+    show akira uniform cross d zorder 2 at t21
     a "Kotonoha and Akira will take this floor,"
     hide akira
     hide kotonoha

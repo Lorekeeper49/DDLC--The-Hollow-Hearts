@@ -38,68 +38,74 @@ label failure:
 screen first_room:
     style_prefix "explore"
     button xcenter 500 ycenter 300 xysize (200, 500) action [Play("sound", audio.door), Call("next_location", "bedroom1", w=True)]
-    text "B\nE\nD\nR\nO\nO\nM" xcenter 500 ycenter 300
+    text "B\nE\nD\nR\nO\nO\nM" xcenter 530 ycenter 300
+    text "寝\n室" xcenter 470 ycenter 300
     button xcenter 1000 ycenter 300 xysize (300, 300) action [Play("sound", audio.footsteps), Call("next_location", "hall1", w=True)]
-    text "FORWARD" xcenter 1000 ycenter 300
+    text "前方\nFORWARD" xcenter 1000 ycenter 300
 
 screen bedroom1:
     style_prefix "explore"
-    button xcenter 640 ycenter 695 xysize (1280, 50) action [Play("sound", audio.door), Call("next_location", "first_room", w=True)]
-    text "HALL" xcenter 640 ycenter 695
+    button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.door), Call("next_location", "first_room", w=True)]
+    text "ホール\nHALL" xcenter 640 ycenter 680
 
 screen bedroom2:
     style_prefix "explore"
-    button xcenter 500 ycenter 500 xysize (100, 150) action Call("nothing", "bedroom2")
-    text "SEARCH" xcenter 500 ycenter 500
-    button xcenter 640 ycenter 695 xysize (1280, 50) action [Play("sound", audio.door), Call("next_location", "hall1", w=True)]
-    text "HALL" xcenter 640 ycenter 695
+    button xcenter 500 ycenter 500 xysize (150, 150) action Call("nothing", "bedroom2")
+    text "検索する\nSEARCH" xcenter 500 ycenter 500
+    button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.door), Call("next_location", "hall1", w=True)]
+    text "ホール\nHALL" xcenter 640 ycenter 680
 
 screen hall1:
     style_prefix "explore"
     button xcenter 1000 ycenter 300 xysize (300, 300) action [Play("sound", audio.footsteps), Call("next_location", "hall2", w=True)]
-    text "FORWARD" xcenter 1000 ycenter 300
-    button xcenter 640 ycenter 695 xysize (1280, 50) action [Play("sound", audio.footsteps), Call("next_location", "first_room", w=True)]
-    text "BACK" xcenter 640 ycenter 695
+    text "前方\nFORWARD" xcenter 1000 ycenter 300
+    button xcenter 640 ycenter 695 xysize (1280, 100) action [Play("sound", audio.footsteps), Call("next_location", "first_room", w=True)]
+    text "バック\nBACK" xcenter 640 ycenter 680
     button xcenter 500 ycenter 300 xysize (200, 500) action [Play("sound", audio.door), Call("next_location", "bedroom2", w=True)]
-    text "B\nE\nD\nR\nO\nO\nM" xcenter 500 ycenter 300
+    text "B\nE\nD\nR\nO\nO\nM" xcenter 530 ycenter 300
+    text "寝\n室" xcenter 470 ycenter 300
     button xcenter 700 ycenter 300 xysize (200, 500) action [Play("sound", audio.door), Call("next_location", "dark_kitchen", w=True)]
-    text "K\nI\nT\nC\nH\nE\nN" xcenter 700 ycenter 300
+    text "K\nI\nT\nC\nH\nE\nN" xcenter 730 ycenter 300
+    text "キ\nッ\nチ\nン" xcenter 670 ycenter 300
     button xcenter 1200 ycenter 300 xysize (75, 500) action [Play("sound", audio.footsteps), Call("next_location", "storage", w=True)]
-    text "S\nT\nO\nR\nA\nG\nE" xcenter 1200 ycenter 300
+    text "S\nT\nO\nR\nA\nG\nE" xcenter 1220 ycenter 300
+    text "ス\nト\nレ\n|\nジ" xcenter 1180 ycenter 300
 
 screen hall2:
     style_prefix "explore"
     button xcenter 150 ycenter 150 xysize (300, 300) action If("broken key" in inventory, [Play("sound", audio.door), Call("mansion_end")]) 
-    text "FAMILIAR ROOM" xcenter 150 ycenter 150
-    button xcenter 640 ycenter 695 xysize (1280, 50) action [Play("sound", audio.footsteps), Call("next_location", "hall1", w=True)]
-    text "BACK" xcenter 640 ycenter 695
+    text "馴染みの部屋\nFAMILIAR ROOM" xcenter 150 ycenter 150
+    button xcenter 640 ycenter 695 xysize (1280, 100) action [Play("sound", audio.footsteps), Call("next_location", "hall1", w=True)]
+    text "バック\nBACK" xcenter 640 ycenter 680
 
 screen dark_kitchen:
     style_prefix "explore"
     button xcenter 450 ycenter 200 xysize (175, 400) action Call("nothing", "dark_kitchen")
-    text "SEARCH" xcenter 450 ycenter 200
+    text "検索する\nSEARCH" xcenter 450 ycenter 200
     button xcenter 650 ycenter 200 xysize (225, 400) action Call("nothing", "dark_kitchen")
-    text "SEARCH" xcenter 650 ycenter 200
+    text "検索する\nSEARCH" xcenter 650 ycenter 200
     button xcenter 915 ycenter 100 xysize (300, 200) action Call("nothing", "dark_kitchen")
-    text "SEARCH" xcenter 915 ycenter 100
+    text "検索する\nSEARCH" xcenter 915 ycenter 100
     button xcenter 300 ycenter 200 xysize (100, 400) action Call("nothing", "dark_kitchen")
-    text "S\nE\nA\nR\nC\nH" xcenter 300 ycenter 200
+    text "S\nE\nA\nR\nC\nH" xcenter 320 ycenter 200
+    text "検\n索\nす\nる" xcenter 280 ycenter 200
     button xcenter 1175 ycenter 200 xysize (200, 350) action If("broken key" in inventory, Call("nothing", "dark_kitchen"), Call("something", "broken key", "dark_kitchen"))
-    text "SEARCH" xcenter 1175 ycenter 200
-    button xcenter 640 ycenter 695 xysize (1280, 50) action [Play("sound", audio.door), Call("next_location", "hall1", w=True)]
-    text "HALL" xcenter 640 ycenter 695
+    text "検索する\nSEARCH" xcenter 1175 ycenter 200
+    button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.door), Call("next_location", "hall1", w=True)]
+    text "ホール\nHALL" xcenter 640 ycenter 680
 
 screen storage:
     style_prefix "explore"
-    button xcenter 640 ycenter 695 xysize (1280, 50) action [Play("sound", audio.footsteps), Call("next_location", "hall1", w=True)]
-    text "BACK" xcenter 640 ycenter 695
+    button xcenter 640 ycenter 695 xysize (1280, 100) action [Play("sound", audio.footsteps), Call("next_location", "hall1", w=True)]
+    text "バック\nBACK" xcenter 640 ycenter 680
     button xcenter 100 ycenter 400 xysize (100, 300) action [Play("sound", audio.footsteps), Call("next_location", "room", w=True)]
-    text "R\nO\nO\nM" xcenter 100 ycenter 400
+    text "R\nO\nO\nM" xcenter 120 ycenter 400
+    text "部\n屋" xcenter 80 ycenter 400
 
 screen room:
     style_prefix "explore"
-    button xcenter 640 ycenter 695 xysize (1280, 50) action [Play("sound", audio.door), Call("next_location", "storage", w=True)]
-    text "STORAGE" xcenter 640 ycenter 695
+    button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.door), Call("next_location", "storage", w=True)]
+    text "ストレージ\nSTORAGE" xcenter 640 ycenter 680
 
 label nothing(r):
     "Nothing here."
@@ -147,4 +153,4 @@ label mansion_end:
 
 screen show_text:
     style_prefix "explore"
-    text "YOU KNOW THIS PLACE" xcenter 640 ycenter 360
+    text "貴方はここ知ってる\nYOU KNOW THIS PLACE" xcenter 640 ycenter 360
