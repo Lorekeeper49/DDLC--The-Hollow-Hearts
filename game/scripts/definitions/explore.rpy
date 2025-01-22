@@ -115,31 +115,31 @@ screen code_input:
     style_prefix "explore"
     add "vignette"
     text "[dial]" xcenter 640 ycenter 140
-    button xcenter 750 ycenter 580 xysize (75, 75) action [If(dial == code, AddToSet(codes, to_input)), Call("next_location", prev_loc, transition=False)]
-    text "ENTER" xcenter 750 ycenter 580
-    button xcenter 530 ycenter 580 xysize (75, 75) action SetVariable("dial", "")
-    text "CLEAR" xcenter 530 ycenter 580
-    button xcenter 640 ycenter 580 xysize (75, 75) action SetVariable("dial", dial + "0")
+    button xcenter 750 ycenter 580 xysize (100, 100) action [If(dial == code, AddToSet(codes, to_input)), Call("next_location", prev_loc, transition=False)]
+    text "入力\nENTER" xcenter 750 ycenter 580
+    button xcenter 530 ycenter 580 xysize (100, 100) action SetVariable("dial", "")
+    text "クリア\nCLEAR" xcenter 530 ycenter 580
+    button xcenter 640 ycenter 580 xysize (100, 100) action SetVariable("dial", dial + "0")
     text "0" xcenter 640 ycenter 580
-    button xcenter 530 ycenter 470 xysize (75, 75) action SetVariable("dial", dial + "1")
+    button xcenter 530 ycenter 470 xysize (100, 100) action SetVariable("dial", dial + "1")
     text "1" xcenter 530 ycenter 470
-    button xcenter 640 ycenter 470 xysize (75, 75) action SetVariable("dial", dial + "2")
+    button xcenter 640 ycenter 470 xysize (100, 100) action SetVariable("dial", dial + "2")
     text "2" xcenter 640 ycenter 470
-    button xcenter 750 ycenter 470 xysize (75, 75) action SetVariable("dial", dial + "3")
+    button xcenter 750 ycenter 470 xysize (100, 100) action SetVariable("dial", dial + "3")
     text "3" xcenter 750 ycenter 470
-    button xcenter 530 ycenter 360 xysize (75, 75) action SetVariable("dial", dial + "4")
+    button xcenter 530 ycenter 360 xysize (100, 100) action SetVariable("dial", dial + "4")
     text "4" xcenter 530 ycenter 360
-    button xcenter 640 ycenter 360 xysize (75, 75) action SetVariable("dial", dial + "5")
+    button xcenter 640 ycenter 360 xysize (100, 100) action SetVariable("dial", dial + "5")
     text "5" xcenter 640 ycenter 360
-    button xcenter 750 ycenter 360 xysize (75, 75) action SetVariable("dial", dial + "6")
+    button xcenter 750 ycenter 360 xysize (100, 100) action SetVariable("dial", dial + "6")
     text "6" xcenter 750 ycenter 360
-    button xcenter 530 ycenter 250 xysize (75, 75) action SetVariable("dial", dial + "7")
+    button xcenter 530 ycenter 250 xysize (100, 100) action SetVariable("dial", dial + "7")
     text "7" xcenter 530 ycenter 250
-    button xcenter 640 ycenter 250 xysize (75, 75) action SetVariable("dial", dial + "8")
+    button xcenter 640 ycenter 250 xysize (100, 100) action SetVariable("dial", dial + "8")
     text "8" xcenter 640 ycenter 250
-    button xcenter 750 ycenter 250 xysize (75, 75) action SetVariable("dial", dial + "9")
+    button xcenter 750 ycenter 250 xysize (100, 100) action SetVariable("dial", dial + "9")
     text "9" xcenter 750 ycenter 250
-    text "[get_length(code)]-DIGIT CODE" xcenter 640 ycenter 40
+    text "[get_length(code)]桁コード\n[get_length(code)]-DIGIT CODE" xcenter 640 ycenter 40
 
 
 screen flashlight:
