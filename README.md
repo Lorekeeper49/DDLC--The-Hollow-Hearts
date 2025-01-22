@@ -16,7 +16,7 @@ Please note: if you ever get an error detailing something about `menu` expecting
 
 LINKS ARE DIRECTED TO WHERE YOU CAN DOWNLOAD THE LISTED THING
 
-### ORIGINAL GAME
+### [ORIGINAL GAME](https://ddlc.moe/)
 Team Salvato
 
 ### DIRECTOR
