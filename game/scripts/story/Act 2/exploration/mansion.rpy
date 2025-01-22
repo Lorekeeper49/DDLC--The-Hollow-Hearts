@@ -35,6 +35,8 @@ label failure:
     $ pause(3.0)
     return
 
+#NOTE: The map here is kind of a proof-of-concept, I plan to make things more elaborate and have more things to find when I revamp all the art for the FULL RELEASE
+
 screen first_room:
     style_prefix "explore"
     button xcenter 500 ycenter 300 xysize (200, 500) action [Play("sound", audio.door), Call("next_location", "bedroom1", w=True)]
