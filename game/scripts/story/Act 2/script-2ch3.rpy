@@ -68,11 +68,11 @@ label act2_ch3_main:
     show kotonoha turned casual anno rhip lup zorder 2 at t11
     k om "Okay.  We need to figure out where to find this Dominion.  Anyone have any ideas?"
     show kotonoha cm
-    a "I believe I read somewhere that there is a small storage shack North of here, but we're gonna have to search deep in the forest to find it."
+    a "I believe I read somewhere that there is a small storage shack Northeast of here, but we're gonna have to search deep in the forest to find it."
     k ldown "Then we'll search there.  Everyone, use your GPS's to find your way to each other if you're lost."
     everyone "Got it!"
-    $ start_loc = random_list(["0_0", "1_0", "2_0", "3_0", "4_0", "5_0", "6_0", "7_0", "8_0", "9_0"])
-    call explore("deep_forest_" + start_loc[0], transition=True, limited_time=3600, fail_label="no_shed") from _call_explore_1
+    $ start_loc = random_list(["0_0", "1_0", "2_0", "3_0", "4_0", "5_0", "6_0", "7_0", "8_0", "9_0"])[0]
+    call explore("deep_forest_" + start_loc, transition=True, limited_time=3600, fail_label="no_shed") from _call_explore_1
     scene bg kamiclassnight with dissolve_scene_full
     call showlocation("HEADQUARTERS\n{size=25}本社{/size}","October 10, 2023\n{size=15}2023年10月10日{/size}",2*60+59+57/60.0,"bg kamiclassnight") from _call_showlocation_42
     "We're back."
