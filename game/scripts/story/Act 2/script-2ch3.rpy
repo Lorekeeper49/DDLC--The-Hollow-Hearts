@@ -71,6 +71,7 @@ label act2_ch3_main:
     a "I believe I read somewhere that there is a small storage shack Northeast of here, but we're gonna have to search deep in the forest to find it."
     k ldown "Then we'll search there.  Everyone, use your GPS's to find your way to each other if you're lost."
     everyone "Got it!"
+    $ randomize_blockages
     $ start_loc = random_list(["0_0", "1_0", "2_0", "3_0", "4_0", "5_0", "6_0", "7_0", "8_0", "9_0"])[0]
     call explore("deep_forest_" + start_loc, transition=True, limited_time=3600, fail_label="no_shed") from _call_explore_1
     scene bg kamiclassnight with dissolve_scene_full
