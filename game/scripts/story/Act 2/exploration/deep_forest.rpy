@@ -417,7 +417,7 @@ screen deep_forest_coords:
 screen deep_forest_9_9:
     style_prefix "explore"
     if blocked_directions["9_9"]["north"]:
-        button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("shed")]
+        button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.door), Call("shed")]
         text "北\nNORTH" xcenter 740 ycenter 360
     if not blocked_directions["9_9"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_9", j=True)]
