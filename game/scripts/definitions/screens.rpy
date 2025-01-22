@@ -398,6 +398,7 @@ init -1 python:
     def Extras():
         renpy.jump_out_of_context("extras")
 
+#TODO: Add screen with buttons for reviewing prologue, act 1, act 2, and act 3
 default -1 option_index = 0
 default -1 aa_status = "OFF"
 default -1 aa_status_kan = "{size=20}オッフ{/size}"
