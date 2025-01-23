@@ -393,6 +393,10 @@ init -1 python:
             renpy.jump_out_of_context("dev")
         else:
             renpy.jump_out_of_context("start")
+    def Act1():
+        renpy.jump_out_of_context("act1")
+    def Act2():
+        renpy.jump_out_of_context("act2")
     def Act3():
         renpy.jump_out_of_context("act3")
     def Extras():
@@ -412,7 +416,7 @@ init -501 screen navigation():
         spacing 0
         if main_menu:
             textbutton "CLOSE\n{size=20}閉じる{/size}" hovered [SetVariable("option_index", 0)] action [Hide("achievements"), Hide("preferences"), Hide("file_slots"), Hide("navigation")]
-            textbutton "BEGIN\n{size=20}スタート{/size}" hovered [SetVariable("option_index", 1)] action Function(StartGame)
+            textbutton "BEGIN\n{size=20}スタート{/size}" hovered [SetVariable("option_index", 1)] action [Hide("navigation"), Show("acts")]
             textbutton "BOOKMARKS\n{size=20}しおり{/size}" hovered [SetVariable("option_index", 2)] action [Hide("achievements"), Hide("preferences"), ShowMenu("file_slots"), SensitiveIf(renpy.get_screen("file_slots") == None)]
             textbutton "ACHIEVEMENTS\n{size=20}アチーブメント{/size}" hovered [SetVariable("option_index", 3)] action [Hide("file_slots"), ShowMenu("achievements"), SensitiveIf(renpy.get_screen("achievements") == None)]
             textbutton "OPTIONS\n{size=20}オプション{/size}" hovered [SetVariable("option_index", 4)] action [Hide("achievements"), Hide("file_slots"), ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
@@ -436,7 +440,20 @@ init -501 screen navigation():
             if renpy.variant("pc"):
                 textbutton "HELP\n{size=20}ヘルプ{/size}" hovered [SetVariable("option_index", 7)] action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))]
                 textbutton "QUIT\n{size=20}クイット{/size}" hovered [SetVariable("option_index", 8)] action Quit(confirm=not main_menu) 
-            
+
+init -501 screen acts():
+    
+    zorder 3000
+    use navigation_border
+    vbox at navigation_transform(0, 10):
+        style_prefix "navigation"
+        spacing 0
+        textbutton "BACK\n{size=20}バック{/size}" hovered [SetVariable("option_index", 0)] action [Hide("acts"), Show("navigation")]
+        textbutton "PROLOGUE\n{size=20}プロローグ{/size}" hovered [SetVariable("option_index", 1)] action Function(StartGame)
+        textbutton "ACT 1\n{size=20}アクト１{/size}" hovered [SetVariable("option_index", 2)] action Function(Act1)
+        textbutton "ACT 2\n{size=20}アクト２{/size}" hovered [SetVariable("option_index", 3)] action Function(Act2)
+        textbutton "ACT 3\n{size=20}アクト３{/size}" hovered [SetVariable("option_index", 4)] action Function(Act3)
+        
 init -501 screen navigation_border():
     zorder 2500
     text _(str(option_index)) style "navigation_center_text" at navigation_transform(120, -75)
