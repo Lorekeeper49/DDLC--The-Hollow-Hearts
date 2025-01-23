@@ -397,6 +397,8 @@ init -1 python:
         renpy.jump_out_of_context("act1")
     def Act2():
         renpy.jump_out_of_context("act2")
+    def Act2_alt():
+        renpy.jump_out_of_context("act2_alt")
     def Act3():
         renpy.jump_out_of_context("act3")
     def Extras():
@@ -443,17 +445,35 @@ init -501 screen navigation():
 
 init -501 screen acts():
     
-    zorder 3000
+    zorder 2000
     use navigation_border
     vbox at navigation_transform(0, 10):
         style_prefix "navigation"
         spacing 0
         textbutton "BACK\n{size=20}バック{/size}" hovered [SetVariable("option_index", 0)] action [Hide("acts"), Show("navigation")]
         textbutton "PROLOGUE\n{size=20}プロローグ{/size}" hovered [SetVariable("option_index", 1)] action Function(StartGame)
-        textbutton "ACT 1\n{size=20}アクト１{/size}" hovered [SetVariable("option_index", 2)] If(achievement.has("newfriends"), action Function(Act1), Show(screen="dialog", message="Complete the Prologue first.", ok_action=Hide("dialog")))
-        textbutton "ACT 2\n{size=20}アクト２{/size}" hovered [SetVariable("option_index", 3)] If(achievement.has("act1fin"), action Function(Act2), Show(screen="dialog", message="Complete Act 1 first.", ok_action=Hide("dialog")))
-        textbutton "ACT 3\n{size=20}アクト３{/size}" hovered [SetVariable("option_index", 4)] If(achievement.has("act2fin"), action Function(Act3), Show(screen="dialog", message="Complete Act 2 first.", ok_action=Hide("dialog")))
-        
+        textbutton "ACT 1\n{size=20}アクト１{/size}" hovered [SetVariable("option_index", 2)] action If(achievement.has("newfriends"), Function(Act1), Show(screen="dialog", message="Complete the Prologue first.", ok_action=Hide("dialog")))
+        textbutton "ACT 2\n{size=20}アクト２{/size}" hovered [SetVariable("option_index", 3)] action If(achievement.has("act1fin"), [Hide("acts"), Show("act2choice")], Show(screen="dialog", message="Complete Act 1 first.", ok_action=Hide("dialog")))
+        textbutton "ACT 3\n{size=20}アクト３{/size}" hovered [SetVariable("option_index", 4)] action If(achievement.has("act2fin"), Function(Act3), Show(screen="dialog", message="Complete Act 2 first.", ok_action=Hide("dialog")))
+
+default unlock_jp = ""
+default unlock_en = ""
+init -501 screen act2choice():
+    zorder 3000
+    frame:
+        xysize (1280, 720)
+        background Solid("#646464b9")
+    style_prefix "explore"
+    text "道を選んでください\nCHOOSE YOUR PATH" xcenter 640 ycenter 40
+    button xcenter 360 ycenter 360 xysize (500, 300) hovered If("Hidden Girl Revealed" not in persistent.choices_made, [SetVariable("unlock_jp", "この道を開くために、彼女に質問する"), SetVariable("unlock_en", "ASK HER THE QUESTION TO UNLOCK")]) unhovered [SetVariable("unlock_jp", ""), SetVariable("unlock_en", "")] action If("Hidden Girl Revealed" in persistent.choices_made, Function(Act2), NullAction())
+    text "知られざる少女\nREVEALED" xcenter 360 ycenter 360
+    text "[unlock_jp]" xcenter 640 ycenter 190
+    text "[unlock_en]" xcenter 640 ycenter 530
+    button xcenter 920 ycenter 360 xysize (500, 300) hovered If("Hidden Girl Kept Secret" not in persistent.choices_made, [SetVariable("unlock_jp", "この道を開くために、彼女に質問してはいけない"), SetVariable("unlock_en", "DON'T ASK HER THE QUESTION TO UNLOCK")]) unhovered [SetVariable("unlock_jp", ""), SetVariable("unlock_en", "")] action If("Hidden Girl Kept Secret" in persistent.choices_made, Function(Act2_alt), NullAction())
+    text "隠れた少女\nHIDDEN" xcenter 920 ycenter 360
+    button xcenter 640 ycenter 695 xysize (1280, 100) action [Hide("act2choice"), Show("acts")]
+    text "バック\nBACK" xcenter 640 ycenter 680
+
 init -501 screen navigation_border():
     zorder 2500
     text _(str(option_index)) style "navigation_center_text" at navigation_transform(120, -75)

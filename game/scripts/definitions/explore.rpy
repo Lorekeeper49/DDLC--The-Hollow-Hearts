@@ -1,8 +1,8 @@
-init -1 style explore_button:
+init -501 style explore_button:
     background "#6464646c"
     hover_background "#ffffff6c"
 
-init -1 style explore_text:
+init -501 style explore_text:
     font "mod_assets/fonts/NotoSerifJP-Regular.otf"
     size 25
     color "#ffffff6c"
