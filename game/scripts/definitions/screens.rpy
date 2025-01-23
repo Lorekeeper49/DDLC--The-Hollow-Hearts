@@ -450,9 +450,9 @@ init -501 screen acts():
         spacing 0
         textbutton "BACK\n{size=20}バック{/size}" hovered [SetVariable("option_index", 0)] action [Hide("acts"), Show("navigation")]
         textbutton "PROLOGUE\n{size=20}プロローグ{/size}" hovered [SetVariable("option_index", 1)] action Function(StartGame)
-        textbutton "ACT 1\n{size=20}アクト１{/size}" hovered [SetVariable("option_index", 2)] action Function(Act1)
-        textbutton "ACT 2\n{size=20}アクト２{/size}" hovered [SetVariable("option_index", 3)] action Function(Act2)
-        textbutton "ACT 3\n{size=20}アクト３{/size}" hovered [SetVariable("option_index", 4)] action Function(Act3)
+        textbutton "ACT 1\n{size=20}アクト１{/size}" hovered [SetVariable("option_index", 2)] If(achievement.has("newfriends"), action Function(Act1), Show(screen="dialog", message="Complete the Prologue first.", ok_action=Hide("dialog")))
+        textbutton "ACT 2\n{size=20}アクト２{/size}" hovered [SetVariable("option_index", 3)] If(achievement.has("act1fin"), action Function(Act2), Show(screen="dialog", message="Complete Act 1 first.", ok_action=Hide("dialog")))
+        textbutton "ACT 3\n{size=20}アクト３{/size}" hovered [SetVariable("option_index", 4)] If(achievement.has("act2fin"), action Function(Act3), Show(screen="dialog", message="Complete Act 2 first.", ok_action=Hide("dialog")))
         
 init -501 screen navigation_border():
     zorder 2500
