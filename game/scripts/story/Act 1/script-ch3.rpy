@@ -50,11 +50,12 @@ label act1_ch3_main:
 
         "[change]Ask her.":
             $ persistent.choices_made.append("Hidden Girl Revealed")
-            call introaoruguri from _call_introaoruguri #correct choice
+            call introaoruguri from _call_introaoruguri 
         "[change]Don't ask.":
             $ persistent.choices_made.append("Hidden Girl Kept Secret")
             "No."
             pass
+    $ renpy.save_persistent()
     a om "Well, I should get going."
     a "See you around."
     t "You too."
