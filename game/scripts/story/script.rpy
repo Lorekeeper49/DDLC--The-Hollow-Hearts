@@ -34,15 +34,15 @@ label start:
     $ act = 1
     call act_trans
     $ chapter = 1
-    call chapter_trans("Breaker")
+    call chapter_trans("ブレイカー\n{size=35}Breaker{/size}")
     call act1_ch1_main from _call_act1_ch1_main
 
     $ chapter = 2
-    call chapter_trans("The Precursors")
+    call chapter_trans("プリカーサーズ\n{size=35}The Precursors{/size}")
     call act1_ch2_main from _call_act1_ch2_main
 
     $ chapter = 3
-    call chapter_trans("Bearing Secrets")
+    call chapter_trans("秘密のベアリング\n{size=35}Bearing Secrets{/size}")
     call act1_ch3_main from _call_act1_ch3_main
 
     $ chapter = 4
@@ -54,30 +54,30 @@ label start:
     call act1_ch5_main from _call_act1_ch5_main
 
     $ chapter = 6
-    call chapter_trans("The Enemy")
+    call chapter_trans("敵\n{size=35}The Enemy{/size}")
     call act1_ch6_main
 
     $ act = 2
     call act_trans
     $ chapter = 1
-    call chapter_trans("A Club That Works at Night")
+    call chapter_trans("夜に活動するクラブ\n{size=35}A Club That Works at Night")
     call act2_ch1_main from _call_act2_ch1_main
 
     $ chapter = 2
-    call chapter_trans("Dark Discoveries")
+    call chapter_trans("闇の発見\n{size=35}Dark Discoveries{/size}")
     call act2_ch2_main from _call_act2_ch2_main
     
     $ chapter = 3
-    call chapter_trans("The Aftermath")
+    call chapter_trans("アフターマス\n{size=35}The Aftermath{/size}")
     call act2_ch3_main from _call_act2_ch3_main
 
     $ chapter = 4
-    call chapter_trans("A Past Regained")
+    call chapter_trans("取り戻した過去\n{size=35}A Past Regained{/size}")
     call act2_ch4_main from _call_act2_ch4_main
     call showintro(intro_kiri)
 
     $ chapter = 5
-    call chapter_trans("It Begins")
+    call chapter_trans("スタート\n{size=35}It Begins{/size}")
     call act2_ch5_main from _call_act2_ch5_main
     
     return
@@ -251,19 +251,19 @@ label dev:
                     "CHAPTER 1":
                         "BEGINNING CHAPTER 1"
                         $ chapter = 1
-                        call chapter_trans("Breaker")
+                        call chapter_trans("ブレイカー\n{size=35}Breaker{/size}")
                         call act1_ch1_main from _call_act1_ch1_main_1
                     "CHAPTER 2":
                         $ chapter = 2
                         "BEGINNING CHAPTER 2"
                         $ hanato = "神山華翔\n{size=15}Kamiyama Hanato"
-                        call chapter_trans("The Precursors")
+                        call chapter_trans("プリカーサーズ\n{size=35}The Precursors{/size}")
                         call act1_ch2_main from _call_act1_ch2_main_1
                     "CHAPTER 3":
                         $ chapter = 3
                         "BEGINNING CHAPTER 3"
                         $ hanato = "神山華翔\n{size=15}Kamiyama Hanato"
-                        call chapter_trans("Bearing Secrets")
+                        call chapter_trans("秘密のベアリング\n{size=35}Bearing Secrets{/size}")
                         call act1_ch3_main from _call_act1_ch3_main_1
                     "CHAPTER 4":
                         $ chapter = 4
@@ -281,7 +281,7 @@ label dev:
                         $ chapter = 6
                         "BEGINNING CHAPTER 6"
                         $ hanato = "神山華翔\n{size=15}Kamiyama Hanato"
-                        call chapter_trans("The Enemy")
+                        call chapter_trans("敵\n{size=35}The Enemy{/size}")
                         call act1_ch6_main
                     "BACK":
                         jump dev_loop
@@ -305,27 +305,27 @@ label dev:
                     "CHAPTER 1":
                         "BEGINNING CHAPTER 1"
                         $ chapter = 1
-                        call chapter_trans("A Club That Works at Night")
+                        call chapter_trans("夜に活動するクラブ\n{size=35}A Club That Works at Night")
                         call act2_ch1_main from _call_act2_ch1_main_1
                     "CHAPTER 2":
                         $ chapter = 2
                         "BEGINNING CHAPTER 2"
-                        call chapter_trans("Dark Discoveries")
+                        call chapter_trans("闇の発見\n{size=35}Dark Discoveries{/size}")
                         call act2_ch2_main from _call_act2_ch2_main_1
                     "CHAPTER 3":
                         $ chapter = 3
                         "BEGINNING CHAPTER 3"
-                        call chapter_trans("The Aftermath")
+                        call chapter_trans("アフターマス\n{size=35}The Aftermath{/size}")
                         call act2_ch3_main from _call_act2_ch3_main_1
                     "CHAPTER 4":
                         $ chapter = 4
                         "BEGINNING CHAPTER 4"
-                        call chapter_trans("A Past Regained")
+                        call chapter_trans("取り戻した過去\n{size=35}A Past Regained{/size}")
                         call act2_ch4_main from _call_act2_ch4_main_1
                     "CHAPTER 5":
                         $ chapter = 5
                         "BEGINNING CHAPTER 5"
-                        call chapter_trans("It Begins")
+                        call chapter_trans("スタート\n{size=35}It Begins{/size}")
                         call act2_ch5_main from _call_act2_ch5_main_1
                     "BACK":
                         jump dev_loop

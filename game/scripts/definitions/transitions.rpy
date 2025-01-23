@@ -70,7 +70,7 @@ label chapter_trans(name):
     stop music fadeout 2.0
     scene black with dissolve_scene_full
     window hide
-    show location_text "Chapter [chapter]:\n[name]" zorder 10000 at center_zoom(0.5, 1.0, 5.0) with Dissolve(2.0)
+    show location_text "第[chapter]章\n{size=35}CHAPTER [chapter]{/size}\n[name]" zorder 10000 at center_zoom(0.5, 1.0, 5.0) with Dissolve(2.0)
     $ pause(1.0)
     hide location_text with Dissolve(2.0)
     return
