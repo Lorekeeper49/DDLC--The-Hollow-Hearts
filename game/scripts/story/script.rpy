@@ -26,7 +26,7 @@ label start:
     $ act = 0
 
     $ chapter = 0
-    show location_text "Prologue:\nClub Order" zorder 10000 at center_zoom(0.5, 1.0, 6.0) with Dissolve(2.0)
+    show location_text "プロローグ\n{size=35}Prologue{/size}\nクラブオーダー\n{size=35}Club Order{/size}" zorder 10000 at center_zoom(0.5, 1.0, 6.0) with Dissolve(2.0)
     $ pause(1.0)
     hide location_text with Dissolve(2.0)
     call ch0_main from _call_ch0_main
