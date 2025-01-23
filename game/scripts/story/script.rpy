@@ -30,7 +30,10 @@ label start:
     $ pause(1.0)
     hide location_text with Dissolve(2.0)
     call ch0_main from _call_ch0_main
+    
+    return
 
+label act1:
     $ act = 1
     call act_trans
     $ chapter = 1
@@ -57,6 +60,10 @@ label start:
     call chapter_trans("敵\n{size=35}The Enemy{/size}")
     call act1_ch6_main
 
+    return
+
+label act2:
+    $ known = True
     $ act = 2
     call act_trans
     $ chapter = 1
@@ -79,7 +86,34 @@ label start:
     $ chapter = 5
     call chapter_trans("スタート\n{size=35}It Begins{/size}")
     call act2_ch5_main from _call_act2_ch5_main
+
+    return
+
+label act2_alt:
+    $ known = False
+    $ act = 2
+    call act_trans
+    $ chapter = 1
+    call chapter_trans("夜に活動するクラブ\n{size=35}A Club That Works at Night")
+    call act2_ch1_main from _call_act2_ch1_main
+
+    $ chapter = 2
+    call chapter_trans("闇の発見\n{size=35}Dark Discoveries{/size}")
+    call act2_ch2_alt from _call_act2_ch2_alt
     
+    $ chapter = 3
+    call chapter_trans("アフターマス\n{size=35}The Aftermath{/size}")
+    call act2_ch3_alt from _call_act2_ch3_alt
+
+    $ chapter = 4
+    call chapter_trans("取り戻した過去\n{size=35}A Past Regained{/size}")
+    call act2_ch4_alt from _call_act2_ch4_alt
+    call showintro(intro_kiri)
+
+    $ chapter = 5
+    call chapter_trans("スタート\n{size=35}It Begins{/size}")
+    call act2_ch5_alt from _call_act2_ch5_alt
+
     return
 
 label dev:

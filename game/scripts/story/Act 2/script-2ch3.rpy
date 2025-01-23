@@ -1,7 +1,5 @@
 #Name: The Aftermath
 label act2_ch3_main:
-    if not known:
-        jump act2_ch3_alt
     if config.developer:
         $ found_breaker = True
     stop music fadeout 2.0

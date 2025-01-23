@@ -1,8 +1,6 @@
 #Name: It Begins
 #Kotonoha will die here
 label act2_ch5_main:
-    if not known:
-        jump act2_ch3_alt
     stop music fadeout 2.0
     scene bg residential_day
     with dissolve_scene_full

@@ -68,8 +68,6 @@ label act2_ch1_main:
     ak 1ab "You know, you could join me if you wanted."
     show akira 1aa
     a "Me with a team of delinquents?"
-    if not known:
-        jump act2_ch1_alt
     a "I mean, I could do it but..."
     a "I don't even know how to control my abilities correctly.  Not to mention my social problems..."
     ak 4ab "We can teach you."
@@ -78,6 +76,8 @@ label act2_ch1_main:
     ak 2an "Better; a telegraph!"
     a "A telegraph?"
     "Fuck, okay.  I've been meaning to learn how to use storm for a while so..."
+    if not known:
+        jump act2_ch1_alt
     a "Fuck it, take me there!"
     ak 1ab "Come on then!"
     scene bg kamihallnight with wipeleft_scene

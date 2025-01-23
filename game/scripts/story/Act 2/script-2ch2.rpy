@@ -1,7 +1,5 @@
 #Name: Dark Discoveries
 label act2_ch2_main:
-    if not known:
-        jump act2_ch2_alt
     scene bg kamiclassnight
     show lilly c2e zorder 2 at t11
     with dissolve_scene_full

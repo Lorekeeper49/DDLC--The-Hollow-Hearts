@@ -1,7 +1,5 @@
 #Name: A Past Regained
 label act2_ch4_main:
-    if not known:
-        jump act2_ch4_alt
     stop music fadeout 2.0
     #play ambience mansion
     scene bg mansion
