@@ -389,10 +389,7 @@ default -1 quick_menu = True
 
 init -1 python:
     def StartGame():
-        if config.developer:
-            renpy.jump_out_of_context("dev")
-        else:
-            renpy.jump_out_of_context("start")
+        renpy.jump_out_of_context("start")
     def Act1():
         renpy.jump_out_of_context("act1")
     def Act2():
@@ -403,8 +400,9 @@ init -1 python:
         renpy.jump_out_of_context("act3")
     def Extras():
         renpy.jump_out_of_context("extras")
+    def Developer():
+        renpy.jump_out_of_context("dev")
 
-#TODO: Add screen with buttons for reviewing prologue, act 1, act 2, and act 3
 default -1 option_index = 0
 default -1 aa_status = "OFF"
 default -1 aa_status_kan = "{size=20}オッフ{/size}"
@@ -455,6 +453,8 @@ init -501 screen acts():
         textbutton "ACT 1\n{size=20}アクト１{/size}" hovered [SetVariable("option_index", 2)] action If(achievement.has("newfriends"), Function(Act1), Show(screen="dialog", message="Complete the Prologue first.", ok_action=Hide("dialog")))
         textbutton "ACT 2\n{size=20}アクト２{/size}" hovered [SetVariable("option_index", 3)] action If(achievement.has("act1fin"), [Hide("acts"), Show("act2choice")], Show(screen="dialog", message="Complete Act 1 first.", ok_action=Hide("dialog")))
         textbutton "ACT 3\n{size=20}アクト３{/size}" hovered [SetVariable("option_index", 4)] action If(achievement.has("act2fin"), Function(Act3), Show(screen="dialog", message="Complete Act 2 first.", ok_action=Hide("dialog")))
+        if config.developer:
+            "DEVELOPER MODE\n{size=20}デベロッパーモード{/size}" hovered [SetVariable("option_index", 5)] action Function(Developer)
 
 default unlock_jp = ""
 default unlock_en = ""

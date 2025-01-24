@@ -68,7 +68,7 @@ label act2:
     call act_trans
     $ chapter = 1
     call chapter_trans("夜に活動するクラブ\n{size=35}A Club That Works at Night")
-    call act2_ch1_main from _call_act2_ch1_main
+    call act2_ch1_main
 
     $ chapter = 2
     call chapter_trans("闇の発見\n{size=35}Dark Discoveries{/size}")
@@ -95,7 +95,7 @@ label act2_alt:
     call act_trans
     $ chapter = 1
     call chapter_trans("夜に活動するクラブ\n{size=35}A Club That Works at Night")
-    call act2_ch1_main from _call_act2_ch1_main
+    call act2_ch1_main
 
     $ chapter = 2
     call chapter_trans("闇の発見\n{size=35}Dark Discoveries{/size}")
