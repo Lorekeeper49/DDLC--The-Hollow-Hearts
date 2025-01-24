@@ -50,7 +50,7 @@ KAMIYAMA AKIRA - MasterTri
 ### ART
 
 #### CHARACTERS
-[SAKURA KOTONOHA - Cyrke (Special thanks to Danko for releasing the sprites!)](https://www.reddit.com/r/DDLCMods/comments/hq8c09/the_kotonoha_sprites_are_now_available/) [MPT by Redleader](https://www.reddit.com/r/DDLCMods/comments/vhoamv/kotonoha_mpt_guide_and_update/)
+[SAKURA KOTONOHA - Cyrke (Special thanks to Danko for releasing the sprites!)](https://www.reddit.com/r/DDLCMods/comments/hq8c09/the_kotonoha_sprites_are_now_available/) [MPT by Doki Senate](https://github.com/dokisenate66/Kotonoha-MPT-Pack-Revised)
 
 KAMIYAMA AKIRA - LvcyLu
 
