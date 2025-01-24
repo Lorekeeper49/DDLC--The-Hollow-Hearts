@@ -67,7 +67,7 @@ image menu_art_m:
 
 image menu_art_k:
     subpixel True
-    im.Composite((960, 960), (0, 0), "mod_assets/characters/kotonoha/1.png", (0, 0), "mod_assets/characters/kotonoha/o.png")
+    "mod_assets/menu_k.png"
     xcenter 640
     ycenter 600
     zoom 0.25
