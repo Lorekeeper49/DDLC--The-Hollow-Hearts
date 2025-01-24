@@ -231,8 +231,7 @@ label splashscreen:
         "I, and the team that helped me out, hope you enjoy this mod."
         pause 1.0
         scene black
-        if not config.developer:
-            $ startnow = True
+        $ startnow = True
 
     $ basedir = config.basedir.replace('\\', '/')
 
