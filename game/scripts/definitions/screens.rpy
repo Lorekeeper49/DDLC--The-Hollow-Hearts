@@ -454,7 +454,7 @@ init -501 screen acts():
         textbutton "ACT 2\n{size=20}アクト２{/size}" hovered [SetVariable("option_index", 3)] action If(achievement.has("act1fin"), [Hide("acts"), Show("act2choice")], Show(screen="dialog", message="Complete Act 1 first.", ok_action=Hide("dialog")))
         textbutton "ACT 3\n{size=20}アクト３{/size}" hovered [SetVariable("option_index", 4)] action If(achievement.has("act2fin"), Function(Act3), Show(screen="dialog", message="Complete Act 2 first.", ok_action=Hide("dialog")))
         if config.developer:
-            "DEVELOPER MODE\n{size=20}デベロッパーモード{/size}" hovered [SetVariable("option_index", 5)] action Function(Developer)
+            textbutton "DEVELOPER MODE\n{size=20}デベロッパーモード{/size}" hovered [SetVariable("option_index", 5)] action Function(Developer)
 
 default unlock_jp = ""
 default unlock_en = ""
