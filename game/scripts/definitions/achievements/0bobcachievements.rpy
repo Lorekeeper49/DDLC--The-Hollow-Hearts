@@ -23,11 +23,11 @@
 #   normal sample: ("sample", _("NAME"), _("DESC/CONDITION"))
 #   hidden sample: ("sample", _("NAME"), _("DESC/CONDITION"), True)
 define BOBCACHIEVEMENT_LIST = (
-    ("newfriends", _("Brand New Friends"), _("Complete the main prologue.")),
-    ("qa", _("Complete Questionnaire"), _("Have every possible question from the 20 questions game be asked at least once.")),
-    ("act1fin", _("Not What It Seems"), _("Complete the first act")),
-    ("act2fin", _("Power Overtaken"), _("Complete the second act")),
-    ("act3fin", _("Nothing Exists"), _("Complete the final act"))
+    ("newfriends", "新しい友達\n{size=10}Brand New Friends{/size}", _("Complete the main prologue.")),
+    ("qa", "完全な質問\n{size=10}Complete Questionnaire{/size}", _("Have every possible question from the 20 questions game be asked at least once.")),
+    ("act1fin", "見かけによらない\n{size=10}Not What It Seems{/size}", _("Complete the first act")),
+    ("act2fin", "追い越された力\n{size=10}Power Overtaken{/size}", _("Complete the second act")),
+    ("act3fin", "何も存在しない\n{size=10}Nothing Exists{/size}", _("Complete the final act"))
     )
     
 # 3) In your game script, when you want to grant an achievement, type "achieve <reference_id>" without the
@@ -136,7 +136,7 @@ style achievement_desc_text:
     outlines []
 
 transform achievement_transform():
-    ypos 620
+    ypos 570
     on show:
         xpos -640
         easeout .25 xpos 0
@@ -147,7 +147,7 @@ transform achievement_transform():
 init -501 screen achievement_frame_bg():
     zorder 1000
     frame at achievement_transform:
-        ysize 100
+        ysize 150
         background "achievement_bg"
 
 image achievement_bg:
