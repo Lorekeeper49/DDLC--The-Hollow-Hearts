@@ -211,7 +211,7 @@ label splashscreen:
         "Disclaimer."
         "This is a Doki Doki Literature Club fan mod that is not affiliated with Team Salvato."
         "It is designed to be played only after the official game has been completed."
-        "You can download Doki Doki Literature Club at: {a=https://ddlc.moe}http://ddlc.moe{/a}"
+        "You can download Doki Doki Literature Club at: {a=https://ddlc.moe}https://ddlc.moe{/a}"
         "Also:"
         "This mod contains disturbing dialogue and visuals, suggestive dialogue and visuals, violence, flashing lights, and other things that may affect certain people."
         "If you have any issues with these factors, it is recommended that you either stop playing or take the necessary precautions before you continue."
