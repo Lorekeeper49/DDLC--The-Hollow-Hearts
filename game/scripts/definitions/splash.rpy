@@ -223,7 +223,7 @@ label splashscreen:
         "Real quick:"
         "This is the first time I've ever written a story with multiple paths so you are free to let me know of anything I probably could've done better."
         "I also know little to nothing about Japanese culture so I apologize for any inconsisties with that."
-        "Now, with all of that said."
+        "Now, with all of that said..."
         $ persistent.first_run = True
         scene tos2
         with Dissolve(1.5)
