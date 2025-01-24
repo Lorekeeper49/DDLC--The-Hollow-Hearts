@@ -464,7 +464,7 @@ init -501 screen act2choice():
         xysize (1280, 720)
         background Solid("#646464b9")
     style_prefix "explore"
-    text "道を選んでください\nCHOOSE YOUR PATH" xcenter 640 ycenter 40
+    text "道を選んで下さい\nCHOOSE YOUR PATH" xcenter 640 ycenter 40
     button xcenter 360 ycenter 360 xysize (500, 300) hovered If("Hidden Girl Revealed" not in persistent.choices_made, [SetVariable("unlock_jp", "この道を開くために、彼女に質問する"), SetVariable("unlock_en", "ASK HER THE QUESTION TO UNLOCK")]) unhovered [SetVariable("unlock_jp", ""), SetVariable("unlock_en", "")] action If("Hidden Girl Revealed" in persistent.choices_made, Function(Act2), NullAction())
     text "知られざる少女\nREVEALED" xcenter 360 ycenter 360
     text "[unlock_jp]" xcenter 640 ycenter 190

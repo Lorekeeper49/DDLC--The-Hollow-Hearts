@@ -144,6 +144,23 @@ image tos = "bg/warning.png"
 image tos2 = "bg/warning2.png"
 
 
+init -501 default info_jp = ""
+init -501 default info_en = ""
+init -501 screen languagechoice():
+    zorder 3000
+    frame:
+        xysize (1280, 720)
+        background Solid("#646464b9")
+    style_prefix "explore"
+    text "言語を選択して下さい\nCHOOSE YOUR LANGUAGE" xcenter 640 ycenter 40
+    button xcenter 360 ycenter 360 xysize (500, 300) action [Language(None), Return()]
+    text "ENGLISH" xcenter 360 ycenter 360
+    text "[info_jp]" xcenter 640 ycenter 190
+    text "[info_en]" xcenter 640 ycenter 530
+    button xcenter 920 ycenter 360 xysize (500, 300) hovered If("japanese" not in renpy.known_languages(), [SetVariable("info_jp", "現在入手不可"), SetVariable("info_en", "CURRENTLY UNAVAILABLE")]) unhovered [SetVariable("info_jp", ""), SetVariable("info_en", "")] action If("japanese" in renpy.known_languages(), Language("japanese"), NullAction())
+    text "日本語" xcenter 920 ycenter 360
+
+
 label splashscreen:
     
     python:
@@ -204,6 +221,7 @@ label splashscreen:
             restore_all_characters()
         $ quick_menu = False
         scene black
+        call screen languagechoice
         pause 0.5
         scene tos
         with Dissolve(1.0)
