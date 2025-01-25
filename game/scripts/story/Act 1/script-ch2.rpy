@@ -1,9 +1,8 @@
 label act1_ch2_main:
     stop music fadeout 2.0
-    scene bg residential_day
+    scene bg bedroom
     with dissolve_scene_full
-    play music t2
-    call showlocation("Residential Street\n{size=25}住宅街{/size}","September 30, 2023\n{size=15}2023年9月30日{/size}",405.2, "bg residential") from _call_showlocation_4
+    call showlocation("Taiyen's Room\n{size=25}隊円の部屋{/size}","September 30, 2023\n{size=15}2023年9月30日{/size}",405.2, "bg residential") from _call_showlocation_4
     $ style.say_window = style.window
     $ nb = "namebox"
     show monika forward nuet rhip zorder 2 at t11
