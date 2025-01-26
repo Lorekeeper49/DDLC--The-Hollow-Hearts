@@ -21,7 +21,8 @@ label kstory(r=True,bgreturn="bg club_day"):
     return
 
 label kstory_ch2:
-    scene bg city_street_night with dissolve_scene_half
+    play music tears
+    scene bg city_street_night with dissolve_scene_full
     call showlocation("Bustling Streets","September 29, 2023",20*60+4+57/60.0,"bg city_street_night") from _call_showlocation_17
     k "Ugh!  Why is that so difficult!?"
     "I look around after getting kicked out."

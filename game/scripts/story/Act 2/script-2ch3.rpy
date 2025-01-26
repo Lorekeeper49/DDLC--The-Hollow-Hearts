@@ -388,5 +388,7 @@ label act2_ch3_alt:
     ma ee "Not to mention how little I actually want to recall."
     a "Don't worry, I won't make you recall it, Mother."
     a "I'll probably find it out myself anyway."
+    ma nuet om "Knowing you I wouldn't be surprised."
+    ma happ "I'm just happy you remember me now."
 
     return
