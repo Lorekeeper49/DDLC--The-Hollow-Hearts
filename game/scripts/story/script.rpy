@@ -345,22 +345,34 @@ label dev:
                         $ chapter = 2
                         "BEGINNING CHAPTER 2"
                         call chapter_trans("闇の発見\n{size=35}Dark Discoveries{/size}")
-                        call act2_ch2_main from _call_act2_ch2_main_1
+                        if known:    
+                            call act2_ch2_main
+                        else:
+                            call act2_ch2_alt
                     "CHAPTER 3":
                         $ chapter = 3
                         "BEGINNING CHAPTER 3"
                         call chapter_trans("アフターマス\n{size=35}The Aftermath{/size}")
-                        call act2_ch3_main from _call_act2_ch3_main_1
+                        if known:    
+                            call act2_ch3_main
+                        else:
+                            call act2_ch3_alt
                     "CHAPTER 4":
                         $ chapter = 4
                         "BEGINNING CHAPTER 4"
                         call chapter_trans("取り戻した過去\n{size=35}A Past Regained{/size}")
-                        call act2_ch4_main from _call_act2_ch4_main_1
+                        if known:    
+                            call act2_ch4_main
+                        else:
+                            call act2_ch4_alt
                     "CHAPTER 5":
                         $ chapter = 5
                         "BEGINNING CHAPTER 5"
                         call chapter_trans("スタート\n{size=35}It Begins{/size}")
-                        call act2_ch5_main from _call_act2_ch5_main_1
+                        if known:    
+                            call act2_ch5_main
+                        else:
+                            call act2_ch5_alt
                     "BACK":
                         jump dev_loop
             "QUIT":

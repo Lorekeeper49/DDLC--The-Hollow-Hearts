@@ -357,6 +357,7 @@ label act2_ch3_alt:
     hide natsuki
     "She walks away."
     a "I should consult Mari."
+    stop ambience fadeout 1.0
     scene bg mari_office with wipeleft_scene
     call showlocation("Principal's Office\n{size=25}校長室{/size}", "October 10, 2023\n{size=15}2023年10月10日{/size}",19*60+59+57/60.0,"bg mari_office")
     a "Mari?"
@@ -372,7 +373,7 @@ label act2_ch3_alt:
     ma tears om "Daughter?  You remember?!"
     "She's always been right in front of me!"
     a "Mother!"
-    show mari ce cm at face
+    show mari cm at face
     "..."
     ma oe om "I finally found you!"
     show mari cm
@@ -380,15 +381,35 @@ label act2_ch3_alt:
     show mari at t11
     a "I wouldn't say you've found me per se, I think I've still got amnesia."
     ma om "Well, it's a start, is it not?"
-    show mari none
+    show mari cm none
     "She wipes her tears."
     a "So, why didn't you tell me about all this before?  I feel like things would've been the same, if not a lot happier."
     ma dist "They would not have been..."
     ma om "It's a lot of things to take in."
-    ma ee "Not to mention how little I actually want to recall."
+    ma cm "Not to mention how little I actually want to recall."
     a "Don't worry, I won't make you recall it, Mother."
     a "I'll probably find it out myself anyway."
-    ma nuet om "Knowing you I wouldn't be surprised."
+    ma neut om "Knowing you I wouldn't be surprised."
     ma happ "I'm just happy you remember me now."
+    show mari cm
+    a "You and me both."
+    ma curi om "How'd you find out anyway?"
+    show mari cm
+    a "I came in contact with a pink-haired girl claiming to be my sister."
+    ma happ om "Natsuki?"
+    ma worr cm "She thought you were dead for years..."
+    ma sad "I lost her number a long time ago so I don't exactly know how she found out."
+    show mari cm
+    a "How do you just lose your daughter's number like that?"
+    ma om "We lost a lot in the aftermath."
+    show mari cm
+    a "The aftermath of what I'd rather not ask right now."
+    a "She also mentioned something else..."
+    a "My friend, Taiyen, is apparently in most of the memories I've lost."
+    ma neut om "She's not wrong about that."
+    show mari cm
+    a "She described it as 'fuck him or dump him'."
+    ma curi om "Oh!"
+    ma "And which do you choose?"
 
     return
