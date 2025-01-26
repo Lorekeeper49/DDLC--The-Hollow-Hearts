@@ -411,5 +411,26 @@ label act2_ch3_alt:
     a "She described it as 'fuck him or dump him'."
     ma curi om "Oh!"
     ma "And which do you choose?"
-
+    show mari cm
+    a "Well-"
+    a "Are you accusing me of being in love with him?"
+    ma neut om "Maybe."
+    show mari cm
+    "She totally is."
+    a "Well...  I-I'm not e-exactly... denying the idea."
+    a "H-honestly, something's been drawing me to him for a while."
+    a "Is this what love is?"
+    ma worr "Honestly, after my horrible affair with your father, I don't even know what love between two unrelated people is anymore..."
+    ma sad "So unfortunatly, I can't answer that for you."
+    a "That's fine."
+    ma happ om "And don't worry, I won't discriminate you if you choose to fuck him."
+    ma "He's a good man for you."
+    show mari cm
+    a "Heh, thanks."
+    show mari sad
+    a "*Sigh*"
+    "I've been wondering what's going on for a while."
+    "But now I know that my entire family is in shambles after what happened."
+    "I want to put everything back together and make everyone happy again."
+    "But the question is how?"
     return
