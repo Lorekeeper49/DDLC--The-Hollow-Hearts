@@ -63,9 +63,9 @@ layeredimage mari forward:
         anchor (0,0) subpixel (True)
         
         # Apparently this character only has open eyes
-        attribute oe default if_any(["neut"]):
+        attribute oe default if_any(["neut","worr"]):
             "mod_assets/MPT/mari/eyes/a.png"
-        attribute oe default if_any(["angr","sad","worr","anno","happ","curi"]):
+        attribute oe default if_any(["angr","sad","anno","happ","curi"]):
             "mod_assets/MPT/mari/eyes/f.png"
         attribute oe default if_any(["dist"]):
             "mod_assets/MPT/mari/eyes/d.png"
