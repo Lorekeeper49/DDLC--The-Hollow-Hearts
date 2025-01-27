@@ -423,15 +423,15 @@ label act2_ch2_follow:
     call playlog(log1, "bg bathroom", 84.0)
     a "The fuck?"
     play sound "sfx/monikapound.ogg"
-    show bg factory with Fade(0.1, 0.0, 0.1, color="#fff")
+    scene bg factory with Fade(0.1, 0.0, 0.1, color="#fff")
     $ pause(0.25)
-    hide bg factory 
-    show veins
+    scene bg bathroom 
+    show veins onlayer foreground
     with Fade(0.1, 0.0, 0.1, color="#fff")
     a "Agh!"
     a "I'm alright!"
     a "*Steadied breathing*"
-    hide veins with dissolve_scene
+    hide veins onlayer foreground with dissolve_scene
     a "I'm okay."
     "I should head back."
     play music confdep

@@ -2,9 +2,6 @@ define persistent.demo = False
 define persistent.steam = ("steamapps" in config.basedir.lower())
 define config.developer = True
 define config.console = True
-init:
-    define config.layers = ['behind_background', 'background', 'master', 'transient', 'screens', 'foreground', 'overlay']
-    $ config.tag_layer['bg'] = 'background'
 
 python early:
     import singleton
@@ -39,6 +36,7 @@ init python:
     renpy.music.register_channel("jump13", mixer="music", tight=True)
     renpy.music.register_channel("jump14", mixer="music", tight=True)
     renpy.music.register_channel("jump15", mixer="music", tight=True)
+    config.tag_layer['bg'] = 'background'
     def get_pos(channel='music'):
         pos = renpy.music.get_pos(channel=channel)
         if pos: return pos

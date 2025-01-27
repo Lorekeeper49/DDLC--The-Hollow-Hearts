@@ -83,7 +83,7 @@ label next_location(loc, *, transition=True, j=False, f=False, w=False):
             $ remaining_sec -= 300
             $ jumpnum += 1
     if f:
-        show screen flashlight
+        show flashlight onlayer foreground
     if transition:
         with Fade(0.25, 0.0, 0.25)
     if w:
@@ -142,9 +142,8 @@ screen code_input:
     text "[get_length(code)]桁コード\n[get_length(code)]-DIGIT CODE" xcenter 640 ycenter 40
 
 
-screen flashlight:
-    zorder 1000
-    add TrackCursor("mod_assets/flashlight.png") 
+image flashlight:
+    TrackCursor("mod_assets/flashlight.png") 
 
 default remaining_sec = -1
 default oot = ""

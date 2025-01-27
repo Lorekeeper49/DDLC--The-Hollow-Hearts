@@ -121,13 +121,13 @@ label something(i, r):
     return
 
 label mansion_end:
-    hide screen flashlight
+    hide flashlight onlayer foreground
     scene bg final_room
     with Fade(0.25, 0.0, 0.25)
     play ambience hb
-    show veins zorder 10 at heartbeat
+    show veins onlayer foreground at heartbeat
     play music jumpscare fadein 8.0
-    show noise zorder 10 at noisefade(5.0)
+    show noise onlayer foreground at noisefade(5.0)
     $ pause(0.144)
     show wraith_black at t11
     $ pause(1.479)
@@ -143,7 +143,10 @@ label mansion_end:
     $ pause(0.144)
     show wraith_black4 at t44
     $ pause(1.479)
-    scene black with None
+    hide veins onlayer foreground
+    hide noise onlayer foreground
+    scene black 
+    with None
     $ pause(1.0)
     show screen show_text with Dissolve(2.0)
     $ pause(1.0)

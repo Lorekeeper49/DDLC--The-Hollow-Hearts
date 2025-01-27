@@ -311,7 +311,7 @@ label act2_ch3_alt:
     n ce "..."
     n cross neut oe om "Hey Sis..."
     stop ambience
-    show bg vision_background zorder 1
+    show bg vision_background onlayer forebackground
     play ambience creepy
     n "Do you... remember me?"
     show natsuki cm
@@ -332,7 +332,7 @@ label act2_ch3_alt:
     n ldown neut "But in all seriousness, he exists in most of those memories of yours."
     n dist "The others, well..."
     n cross neut "There's an old mansion on the west side of town about 50 blocks from your school."
-    hide bg vision_background
+    hide bg vision_background onlayer forebackground
     play sound static
     show noise zorder 1
     n "{w=0.15}{nw}"

@@ -15,7 +15,7 @@ label act2_ch4_main:
     a "Here goes nothing."
     "We all walk inside."
     scene bg foyer
-    show screen flashlight 
+    show flashlight onlayer foreground
     with wipeleft_scene
     "...{w=1}Huh?"
     show kotonoha turned casual curi om zorder 2 at t11
@@ -51,7 +51,6 @@ label act2_ch4_main:
     a "I'm sure we'll find it easily."
     hide tina
     scene bg dark_dining
-    show screen flashlight 
     with wipeleft_scene
     "..."
     "Why does this place look so...?"
@@ -70,7 +69,6 @@ label act2_ch4_main:
     "I didn't even know one could be alive!"
     a "Well anyway, come on.  I found the basement back here."
     scene bg first_room
-    show screen flashlight 
     with wipeleft_scene
     "Well, here we go."
     call explore("first_room") from _call_explore_2
@@ -81,7 +79,7 @@ label act2_ch4_alt:
     stop music fadeout 2.0
     #play ambience mansion
     scene bg foyer
-    show dark zorder 10
+    show dark onlayer foreground
     with dissolve_scene_full
     call showlocation("Wraith Mansion","October 11, 2023\n{size=15}2023年10月11日{/size}",21*60+14+57/60.0,"bg mansion")
     a "..."
@@ -99,7 +97,7 @@ label act2_ch4_alt:
     a "!!!"
     a "Oh, I am so dead."
     scene bg dark_dining
-    show dark zorder 10 
+    show dark onlayer foreground
     with wipeleft_scene
     "I hate this!"
     "This place is so barren!"
@@ -117,7 +115,7 @@ label act2_ch4_alt:
     general "WE WON'T HURT YOU!"
     a "Yeah, right."
     scene bg top_kitchen
-    show dark zorder 10 
+    show dark onlayer foreground
     with wipeleft_scene
     "I don't know how I haven't been attacked yet."
     "With every step I take, I regret this more."
@@ -131,14 +129,14 @@ label act2_ch4_alt:
     a "Fuck off!  I'm leaving!"
     "I should've never gone in here in the first place"
     scene bg bedroom1
-    show dark zorder 10 
+    show dark onlayer foreground
     with wipeleft_scene
     a "Huh?!"
     a "This isn't the foyer!"
     a "Did I take a wrong turn?"
     a "Oh God!"
     scene bg bad_bedroom
-    show dark zorder 10 
+    show dark onlayer foreground
     with wipeleft_scene
     "I'm so lost..."
     "This room has the least amount of blood."
@@ -255,27 +253,27 @@ label act2_ch4_common:
     $ pause(0.1)
     hide tetsuo
     play ambience hb
-    show veins zorder 10 at heartbeat
+    show veins onlayer foreground at heartbeat
     a "Ah!"
     en "Are you-"
     a "I'm fine!"
     play sound static
-    scene noise with None
+    show noise onlayer foreground with None
     $ pause(0.25)
+    hide noise onlayer foreground
     stop sound
     scene bg room
     show darkred
-    show veins zorder 10 at heartbeat
     show tetsuo towards zorder 2 at t11
     with None
     $ pause(1.0)
     play sound static
-    scene noise with None
+    show noise onlayer foreground with None
     $ pause(0.25)
+    hide noise onlayer foreground
     stop sound
     scene bg dark_kitchen
     show darkred
-    show veins zorder 10 at heartbeat
     show tetsuo towards zorder 2 at t11
     with None
     $ pause(0.5)
@@ -283,81 +281,83 @@ label act2_ch4_common:
     hide tetsuo
     $ pause(0.5)
     play sound static
-    scene noise with None
+    show noise onlayer foreground with None
     $ pause(0.25)
+    hide noise onlayer foreground
     stop sound
     scene bg bedroom1
     show darkred zorder 9
-    show veins zorder 10 at heartbeat
     play sound fall
     $ pause(1.0)
     show tetsuo towards cross zorder 2 at t11
     with None
     $ pause(1.0)
     play sound static
-    scene noise with None
+    show noise onlayer foreground with None
     $ pause(0.25)
+    hide noise onlayer foreground
     stop sound
     scene bg hall2
     show darkred zorder 9
-    show veins zorder 10 at heartbeat
     play sound fall2
     $ pause(1.0)
     show tetsuo towards cross zorder 2 at t11
     with None
     $ pause(1.0)
     play sound static
-    scene noise with None
+    show noise onlayer foreground with None
     $ pause(0.25)
+    hide noise onlayer foreground
     stop sound
     scene bg dark_bathroom
     show darkred zorder 9
-    show veins zorder 10 at heartbeat
     show tetsuo towards zorder 2 at t11
     with None
     $ pause(0.5)
     show testuo shoc
     play sound static
-    show noise zorder 12 with None
+    show noise onlayer foreground zorder 12 with None
     $ pause(0.1)
     stop sound
-    hide noise
+    hide noise onlayer foreground
     $ pause(0.1)
     play sound static
-    show noise zorder 12 with None
+    show noise onlayer foreground zorder 12 with None
     $ pause(0.1)
     stop sound
-    hide noise
+    hide noise onlayer foreground
     $ pause(0.1)
     play sound static
-    show noise zorder 12 with None
+    show noise onlayer foreground zorder 12 with None
     $ pause(0.1)
     stop sound
-    hide noise
+    hide noise onlayer foreground
     $ pause(0.1)
     play sound static
-    show noise zorder 12 with None
+    show noise onlayer foreground zorder 12 with None
     $ pause(0.1)
     stop sound
-    hide noise
+    hide noise onlayer foreground
     $ pause(0.1)
     play sound static
-    show noise zorder 12 with None
+    show noise onlayer foreground zorder 12 with None
     $ pause(0.25)
     stop sound
-    hide noise
+    hide noise onlayer foreground
     $ pause(0.25)
     play sound static
-    scene noise with None
+    show noise onlayer foreground with None
     $ pause(1.0)
+    hide veins onlayer foreground
+    hide noise onlayer foreground
     stop sound
     stop ambience
     stop music
     scene bg dark_bathroom
-    show vignette zorder 10
+    show vignette onlayer foreground
     show engeki turned sweater rchest mi zorder 2 at t11
     play music confdep
-    hide vignette with Dissolve(3.0)
+    hide vignette onlayer foreground with Dissolve(3.0)
     a "I'm okay... I'm okay..."
     a "I remember everything."
     en mh "Are you sure?"
