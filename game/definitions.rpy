@@ -2,7 +2,9 @@ define persistent.demo = False
 define persistent.steam = ("steamapps" in config.basedir.lower())
 define config.developer = True
 define config.console = True
-default entirestory = False
+init:
+    define config.layers = ['behind_background', 'background', 'master', 'transient', 'screens', 'foreground', 'overlay']
+    $ config.tag_layer['bg'] = 'background'
 
 python early:
     import singleton
