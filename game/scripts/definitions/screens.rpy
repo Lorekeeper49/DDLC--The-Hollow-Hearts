@@ -409,7 +409,6 @@ default -1 aa_status_kan = "{size=20}オッフ{/size}"
 
 init -501 screen navigation():
     
-    zorder 3000
     use navigation_border
     vbox at navigation_transform(0, 10):
         style_prefix "navigation"
@@ -421,7 +420,7 @@ init -501 screen navigation():
             textbutton "ACHIEVEMENTS\n{size=20}アチーブメント{/size}" hovered [SetVariable("option_index", 3)] action [Hide("file_slots", _layer="textbox"), ShowMenu("achievements", _layer="textbox"), SensitiveIf(renpy.get_screen("achievements") == None)]
             textbutton "OPTIONS\n{size=20}オプション{/size}" hovered [SetVariable("option_index", 4)] action [Hide("achievements", _layer="textbox"), Hide("file_slots", _layer="textbox"), ShowMenu("preferences", _layer="textbox"), SensitiveIf(renpy.get_screen("preferences") == None)]
             if renpy.variant("pc"):
-                textbutton "HELP\n{size=20}ヘルプ{/size}" hovered [SetVariable("option_index", 5)]  action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))]
+                textbutton "HELP\n{size=20}ヘルプ{/size}" hovered [SetVariable("option_index", 5)]  action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"), _layer="textbox")]
                 textbutton "DISCORD\n{size=20}ディスコード{/size}" hovered [SetVariable("option_index", 6)] action OpenURL("https://discord.gg/Q3CcJW4Ag2")
             textbutton "EXTRAS\n{size=20}エクストラー{/size}" hovered [SetVariable("option_index", 7)] action Function(Extras)
             if renpy.variant("pc"):
@@ -438,12 +437,11 @@ init -501 screen navigation():
             else:
                 textbutton "TITLE SCREEN\n{size=20}タイトル画面{/size}" hovered [SetVariable("option_index", 6)] action MainMenu()
             if renpy.variant("pc"):
-                textbutton "HELP\n{size=20}ヘルプ{/size}" hovered [SetVariable("option_index", 7)] action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))]
+                textbutton "HELP\n{size=20}ヘルプ{/size}" hovered [SetVariable("option_index", 7)] action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"), _layer="textbox")]
                 textbutton "QUIT\n{size=20}クイット{/size}" hovered [SetVariable("option_index", 8)] action Quit(confirm=not main_menu) 
 
 init -501 screen acts():
     
-    zorder 2000
     use navigation_border
     vbox at navigation_transform(0, 10):
         style_prefix "navigation"
@@ -926,49 +924,13 @@ init -1 style history_label:
 init -1 style history_label_text:
     xalign 0.5
 
-
-init -501 screen name_input(message, ok_action):
-
-
-    modal True
-
-    zorder 200
-
-    style_prefix "confirm"
-
-    add "gui/overlay/confirm.png"
-    key "K_RETURN" action [Play("sound", gui.activate_sound), ok_action]
-
-    frame:
-
-        has vbox:
-            xalign .5
-            yalign .5
-            spacing 30
-
-        label _(message):
-            style "confirm_prompt"
-            xalign 0.5
-
-        input default "[save_name]" value VariableInputValue("save_name") length 24
-
-
-
-
-
-
-        hbox:
-            xalign 0.5
-            spacing 100
-
-            textbutton _("OK") action ok_action
-
 init -501 screen dialog(message, ok_action):
 
 
     modal True
 
     zorder 200
+    layer "textbox"
 
     style_prefix "confirm"
 
@@ -989,14 +951,7 @@ init -501 screen dialog(message, ok_action):
             xalign 0.5
             spacing 100
 
-            textbutton _("OK") action ok_action
-
-init 499 image confirm_glitch:
-    "gui/overlay/confirm_glitch.png"
-    pause 0.02
-    "gui/overlay/confirm_glitch2.png"
-    pause 0.02
-    repeat
+            textbutton "オーケー\n{size=25}OK{/size}" action ok_action
 
 init -501 screen confirm(message, yes_action, no_action):
 
@@ -1004,6 +959,7 @@ init -501 screen confirm(message, yes_action, no_action):
     modal True
 
     zorder 200
+    layer "textbox"
 
     style_prefix "confirm"
 
@@ -1024,8 +980,8 @@ init -501 screen confirm(message, yes_action, no_action):
             xalign 0.5
             spacing 100
 
-            textbutton _("Yes") action yes_action
-            textbutton _("No") action no_action
+            textbutton "はい\n{size=25}YES{/size}" action yes_action
+            textbutton "いいえ\n{size=25}NO{/size}" action no_action
 
 
 
@@ -1048,6 +1004,7 @@ init -1 style confirm_prompt_text:
     outlines []
     text_align 0.5
     layout "subtitle"
+    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
 
 init -1 style confirm_button:
     properties gui.button_properties("confirm_button")
