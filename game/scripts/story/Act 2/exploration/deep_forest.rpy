@@ -216,6 +216,7 @@ label dom_burst:
     a "Use your true form and help me out!"
     show lilly doll a0 with blink
     lil "You got it!"
+    scene bg storm with flash
 
     d "I need your help."
     d "I can't fight this forever."

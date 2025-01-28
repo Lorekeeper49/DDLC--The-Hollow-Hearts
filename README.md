@@ -103,21 +103,21 @@ KAMIYAMA AKIRA - LvcyLu
 
 [SHINAMONPAN LIVING ROOM & KOTONOHA'S ROOM - tropicalmonsoon](https://lemmasoft.renai.us/forums/viewtopic.php?f=52&t=22595)
 
-[OUTSIDE SHINAMONPAN HOUSE - Kimagure After](https://gakaisozai.seesaa.net/index-6.html)
+[OUTSIDE SHINAMONPAN HOUSE - Kimagure After](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing)
 
-[OUTSIDE SAKURA ACADEMY - Kimagure After](https://gakaisozai.seesaa.net/index-8.html)
+[OUTSIDE SAKURA ACADEMY - Kimagure After](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing)
 
-[SAKURA ACADEMY RIVER - Kimagure After](https://gakaisozai.seesaa.net/index-5.html)
+[SAKURA ACADEMY RIVER - Kimagure After](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing)
 
-[YANDERE LIVING ROOM - Kimagure After](https://gakaisozai.seesaa.net/index-6.html)
+[YANDERE LIVING ROOM - Kimagure After](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing)
 
-[YURI'S BEDROOM - Kimagure After](https://gakaisozai.seesaa.net/index-6.html)
+[YURI'S BEDROOM - Kimagure After](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing)
 
-[YANDERE HALL - Kimagure After](https://gakaisozai.seesaa.net/index-6.html)
+[YANDERE HALL - Kimagure After](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing)
 
-[STREET - Kimagure After](https://gakaisozai.seesaa.net/index-3.html)
+[STREET - Kimagure After](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing)
 
-[SCHOOL ROOF - Kimagure After](https://gakaisozai.seesaa.net/index-3.html)
+[SCHOOL ROOF - Kimagure After](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing)
 
 SHINAMONPAN KITCHEN - LvcyLu
 
@@ -125,9 +125,9 @@ SHINAMONPAN KITCHEN - LvcyLu
 
 [FOREST - Uncle Mugen](https://lemmasoft.renai.us/forums/viewtopic.php?f=52&t=33203#p379740)
 
-[LOCKER ROOM - Kimagure After](https://gakaisozai.seesaa.net/index-6.html)
+[LOCKER ROOM - Kimagure After](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing)
 
-[KAMIYAMA ACADEMY - Kimagure After](https://gakaisozai.seesaa.net/index-6.html)
+[KAMIYAMA ACADEMY - Kimagure After](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing)
 
 [KAMIYAMA ACADEMY ROOF - Min-Chiri](https://min-chi.material.jp/category/fm/bg_c/)
 
@@ -158,6 +158,8 @@ SHINAMONPAN KITCHEN - LvcyLu
 [BATHROOM - Uncle Mugen](https://lemmasoft.renai.us/forums/viewtopic.php?f=52&t=17302)
 
 [MONIKA'S BEDROOM - Kjkjmulo](https://www.reddit.com/r/DDLCMods/comments/1hd1u5l/monika_bedroom_bg_free_use_assets/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
+
+[STORM - Kimagure After](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing)
 
 - CREDITS BELOW CAME FROM THIS LINK: https://drive.google.com/drive/folders/1yTohcOnGV6Kw6Lru1cITWt-zwRoGSCm_?usp=sharing
 
