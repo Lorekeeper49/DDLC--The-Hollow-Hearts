@@ -382,8 +382,8 @@ init -501 screen quick_menu():
     zorder 2000
 
     if quick_menu:
-        imagebutton idle "mod_assets/gui/menu_button.png" action [SetVariable("option_index", 0), ShowMenu("navigation"), SensitiveIf(renpy.get_screen("navigation") == None)]
-        key "K_ESCAPE" action [SetVariable("option_index", 0), ShowMenu("navigation"), SensitiveIf(renpy.get_screen("navigation") == None)]
+        imagebutton idle "mod_assets/gui/menu_button.png" action [SetVariable("option_index", 0), ShowMenu("navigation", _layer="textbox"), SensitiveIf(renpy.get_screen("navigation") == None)]
+        key "K_ESCAPE" action [SetVariable("option_index", 0), ShowMenu("navigation", _layer="textbox"), SensitiveIf(renpy.get_screen("navigation") == None)]
 
 default -1 quick_menu = True
 
@@ -415,11 +415,11 @@ init -501 screen navigation():
         style_prefix "navigation"
         spacing 0
         if main_menu:
-            textbutton "CLOSE\n{size=20}閉じる{/size}" hovered [SetVariable("option_index", 0)] action [Hide("achievements"), Hide("preferences"), Hide("file_slots"), Hide("navigation")]
-            textbutton "BEGIN\n{size=20}スタート{/size}" hovered [SetVariable("option_index", 1)] action [Hide("navigation"), Show("acts")]
-            textbutton "BOOKMARKS\n{size=20}しおり{/size}" hovered [SetVariable("option_index", 2)] action [Hide("achievements"), Hide("preferences"), ShowMenu("file_slots"), SensitiveIf(renpy.get_screen("file_slots") == None)]
-            textbutton "ACHIEVEMENTS\n{size=20}アチーブメント{/size}" hovered [SetVariable("option_index", 3)] action [Hide("file_slots"), ShowMenu("achievements"), SensitiveIf(renpy.get_screen("achievements") == None)]
-            textbutton "OPTIONS\n{size=20}オプション{/size}" hovered [SetVariable("option_index", 4)] action [Hide("achievements"), Hide("file_slots"), ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
+            textbutton "CLOSE\n{size=20}閉じる{/size}" hovered [SetVariable("option_index", 0)] action [Hide("achievements", _layer="textbox"), Hide("preferences", _layer="textbox"), Hide("file_slots", _layer="textbox"), Hide("navigation", _layer="textbox")]
+            textbutton "BEGIN\n{size=20}スタート{/size}" hovered [SetVariable("option_index", 1)] action [Hide("achievements", _layer="textbox"), Hide("preferences", _layer="textbox"), Hide("file_slots", _layer="textbox"), Hide("navigation", _layer="textbox"), Show("acts", _layer="textbox")]
+            textbutton "BOOKMARKS\n{size=20}しおり{/size}" hovered [SetVariable("option_index", 2)] action [Hide("achievements", _layer="textbox"), Hide("preferences", _layer="textbox"), ShowMenu("file_slots", _layer="textbox"), SensitiveIf(renpy.get_screen("file_slots") == None)]
+            textbutton "ACHIEVEMENTS\n{size=20}アチーブメント{/size}" hovered [SetVariable("option_index", 3)] action [Hide("file_slots", _layer="textbox"), ShowMenu("achievements", _layer="textbox"), SensitiveIf(renpy.get_screen("achievements") == None)]
+            textbutton "OPTIONS\n{size=20}オプション{/size}" hovered [SetVariable("option_index", 4)] action [Hide("achievements", _layer="textbox"), Hide("file_slots", _layer="textbox"), ShowMenu("preferences", _layer="textbox"), SensitiveIf(renpy.get_screen("preferences") == None)]
             if renpy.variant("pc"):
                 textbutton "HELP\n{size=20}ヘルプ{/size}" hovered [SetVariable("option_index", 5)]  action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))]
                 textbutton "DISCORD\n{size=20}ディスコード{/size}" hovered [SetVariable("option_index", 6)] action OpenURL("https://discord.gg/Q3CcJW4Ag2")
@@ -428,11 +428,11 @@ init -501 screen navigation():
                 textbutton "QUIT\n{size=20}クイット{/size}" hovered [SetVariable("option_index", 8)] action Quit(confirm=not main_menu)
         else:
             textbutton "CLOSE\n{size=20}閉じる{/size}" hovered [SetVariable("option_index", 0)] action Return()
-            textbutton "LOG\n{size=20}ログ{/size}" hovered [SetVariable("option_index", 1)] action [Hide("preferences"), Hide("file_slots"), ShowMenu("history"), SensitiveIf(renpy.get_screen("history") == None)]
+            textbutton "LOG\n{size=20}ログ{/size}" hovered [SetVariable("option_index", 1)] action [Hide("preferences", _layer="textbox"), Hide("file_slots", _layer="textbox"), ShowMenu("history", _layer="textbox"), SensitiveIf(renpy.get_screen("history") == None)]
             textbutton "AUTO ADVANCE  " + aa_status + "\n{size=20}オート                                                                          " + aa_status_kan + "{/size}" hovered [SetVariable("option_index", 2)] action [Preference("auto-forward", "toggle"), If(aa_status == "OFF", [SetVariable("aa_status", "ON"), SetVariable("aa_status_kan", "{size=20}オン{/size}")], [SetVariable("aa_status", "OFF"), SetVariable("aa_status_kan", "{size=20}オッフ{/size}")])]
             textbutton "FAST FORWARD\n{size=20}早送り{/size}" hovered [SetVariable("option_index", 3)] action Skip()
-            textbutton "BOOKMARKS\n{size=20}しおり{/size}" hovered [SetVariable("option_index", 4)] action [Hide("history"), Hide("preferences"), ShowMenu("file_slots"), SensitiveIf(renpy.get_screen("file_slots") == None)]
-            textbutton "OPTIONS\n{size=20}オプション{/size}" hovered [SetVariable("option_index", 5)] action [Hide("history"), Hide("file_slots"), ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
+            textbutton "BOOKMARKS\n{size=20}しおり{/size}" hovered [SetVariable("option_index", 4)] action [Hide("history", _layer="textbox"), Hide("preferences", _layer="textbox"), ShowMenu("file_slots", _layer="textbox"), SensitiveIf(renpy.get_screen("file_slots") == None)]
+            textbutton "OPTIONS\n{size=20}オプション{/size}" hovered [SetVariable("option_index", 5)] action [Hide("history", _layer="textbox"), Hide("file_slots", _layer="textbox"), ShowMenu("preferences", _layer="textbox"), SensitiveIf(renpy.get_screen("preferences") == None)]
             if _in_replay:
                 textbutton "END REPLAY\n{size=20}リプレイを終了する{/size}" hovered [SetVariable("option_index", 6)] action EndReplay(confirm=True)
             else:
@@ -448,10 +448,10 @@ init -501 screen acts():
     vbox at navigation_transform(0, 10):
         style_prefix "navigation"
         spacing 0
-        textbutton "BACK\n{size=20}バック{/size}" hovered [SetVariable("option_index", 0)] action [Hide("acts"), Show("navigation")]
+        textbutton "BACK\n{size=20}バック{/size}" hovered [SetVariable("option_index", 0)] action [Hide("acts", _layer="textbox"), Show("navigation", _layer="textbox")]
         textbutton "PROLOGUE\n{size=20}プロローグ{/size}" hovered [SetVariable("option_index", 1)] action Function(StartGame)
         textbutton "ACT 1\n{size=20}アクト１{/size}" hovered [SetVariable("option_index", 2)] action If(achievement.has("newfriends"), Function(Act1), Show(screen="dialog", message="Complete the Prologue first.", ok_action=Hide("dialog")))
-        textbutton "ACT 2\n{size=20}アクト２{/size}" hovered [SetVariable("option_index", 3)] action If(achievement.has("act1fin"), [Hide("acts"), Show("act2choice")], Show(screen="dialog", message="Complete Act 1 first.", ok_action=Hide("dialog")))
+        textbutton "ACT 2\n{size=20}アクト２{/size}" hovered [SetVariable("option_index", 3)] action If(achievement.has("act1fin"), [Hide("acts", _layer="textbox"), Show("act2choice", _layer="textbox")], Show(screen="dialog", message="Complete Act 1 first.", ok_action=Hide("dialog")))
         textbutton "ACT 3\n{size=20}アクト３{/size}" hovered [SetVariable("option_index", 4)] action If(achievement.has("act2fin"), Function(Act3), Show(screen="dialog", message="Complete Act 2 first.", ok_action=Hide("dialog")))
         if config.developer:
             textbutton "DEVELOPER MODE\n{size=20}デベロッパーモード{/size}" hovered [SetVariable("option_index", 5)] action Function(Developer)
@@ -908,6 +908,7 @@ init -1 style history_name:
 init -1 style history_name_text:
     min_width gui.history_name_width
     text_align gui.history_name_xalign
+    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
 
 init -1 style history_text:
     xpos gui.history_text_xpos
@@ -917,6 +918,7 @@ init -1 style history_text:
     min_width gui.history_text_width
     text_align gui.history_text_xalign
     layout ("subtitle" if gui.history_text_xalign else "tex")
+    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
 
 init -1 style history_label:
     xfill True
