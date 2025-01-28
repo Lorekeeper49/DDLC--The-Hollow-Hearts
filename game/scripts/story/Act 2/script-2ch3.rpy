@@ -75,6 +75,12 @@ label act2_ch3_main:
     scene bg kamiclassnight with dissolve_scene_full
     call showlocation("HEADQUARTERS\n{size=25}本社{/size}","October 10, 2023\n{size=15}2023年10月10日{/size}",2*60+59+57/60.0,"bg kamiclassnight") from _call_showlocation_42
     "We're back."
+    a "So, anyone think I should be commander?"
+    show kotonoha turned laug rhip zorder 2 at t11
+    k om "We'll have to test you on that."
+    a "Right."
+    hide kotonoha
+    "..."
     show mari forward anno zorder 2 at t11
     a "Mari, about Dominion..."
     ma mi "I already know what you're about to ask."

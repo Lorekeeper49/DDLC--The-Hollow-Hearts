@@ -176,6 +176,30 @@ label dom_ab:
 
 label dom_burst:
     $ dom_rage = True
+    #INSERT EPIC BATTLE CUTSCENE ANIMATED TO My Demons BY Starset
+    show kotonoha turned casual angr zorder 3 at l31
+    a "Kotonoha!  Lock on his mind!"
+    k om "Got it!"
+    show kotonoha cm
+    show akira uniform cross d zorder 3 at r33
+    a "Akira!  Weaken him!"
+    ak "On it!"
+    show kotonoha at t31
+    show akira at t33
+    hide kotonoha
+    hide akira
+    show tina turned angr lhip rhip zorder 3 at t11
+    ti om "Who put you in charge?!"
+    show tina cm
+    a "We don't have time for aggresive chatter!  This is life or death!  Make sure no one gets near!"
+    ti cross "..."
+    hide tina
+    show lilly casual norm se
+    a "Lilly?"
+    lil "Yes?"
+    a "Use your true form and help me out!"
+    show lilly doll a0 with blink
+    lil "You got it!"
 
     return
 
