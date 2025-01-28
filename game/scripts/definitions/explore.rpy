@@ -75,7 +75,7 @@ label next_location(loc, *, transition=True, j=False, f=False, w=False):
         scene expression "bg [loc]"
     if j:
         if random_chance(10):
-            $ renpy.music.play(audio.jumpscare, channel="jump" + jumpnum, loop=True)
+            $ renpy.music.play(audio.jumpscare, channel="jump" + str(jumpnum), loop=True)
             show bg factory onlayer forebackground with Fade(0.1, 0.0, 0.1, color="#fff")
             $ pause(0.05)
             hide bg factory onlayer forebackground
@@ -148,4 +148,4 @@ image flashlight:
 default remaining_sec = -1
 default oot = ""
 screen timer:
-    timer 1.0 repeat True action Function("update_time")
+    timer 1.0 repeat True action If(remaining_sec <= 0, [Hide("timer"), Call(oot)], SetVariable("remaining_sec", remaining_sec-1))

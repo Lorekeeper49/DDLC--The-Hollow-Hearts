@@ -1,9 +1,25 @@
 label shed:
-    scene bg shed with Fade(0.25, 0.0, 0.25)
+    scene bg shed_night with Fade(0.25, 0.0, 0.25)
     show dominion zorder 2 at t11
     a "Dominion!"
     a "Found you!"
-    scene bg shed with dissolve_scene_full
+    stop jump0 fadeout 1.0
+    stop jump1 fadeout 1.0
+    stop jump2 fadeout 1.0
+    stop jump3 fadeout 1.0
+    stop jump4 fadeout 1.0
+    stop jump5 fadeout 1.0
+    stop jump6 fadeout 1.0
+    stop jump7 fadeout 1.0
+    stop jump8 fadeout 1.0
+    stop jump9 fadeout 1.0
+    stop jump10 fadeout 1.0
+    stop jump11 fadeout 1.0
+    stop jump12 fadeout 1.0
+    stop jump13 fadeout 1.0
+    stop jump14 fadeout 1.0
+    stop jump15 fadeout 1.0
+    scene bg shed_night with dissolve_scene_full
     call showlocation("Abandoned Shed\n{size=25}放置された小屋{/size}","October 10, 2023\n{size=15}2023年10月10日{/size}",1*60+59+57/60.0,"bg shed")
     show dominion zorder 2 at t11
     call showintro(intro_d)
@@ -17,13 +33,13 @@ label shed:
     a "These people live for danger."
     d "Tch!  Some daredevils, huh?"
     show dominion at t21
-    show kotonoha anno rhip ce om zorder 2 at r22
+    show kotonoha turned casual anno rhip ce om zorder 2 at r22
     k "I can assure you, we are not-"
     a "Just face it.  With the amount of dangers you guys throw yourselves into, you might as well take the name."
-    k lup "You say that as a member of us."
+    k oe lup "You say that as a member of us."
     show kotonoha cm
     a "I'll just shut my fucking mouth then!"
-    k ldown om "No, you're the only one who can talk to him properly."
+    k angr ldown om "No, you're the only one who can talk to him properly."
     show kotonoha cm
     a "Then keep him from getting out!"
     k rdown om "Copy that."
@@ -194,7 +210,7 @@ label dom_burst:
     a "We don't have time for aggresive chatter!  This is life or death!  Make sure no one gets near!"
     ti cross "..."
     hide tina
-    show lilly casual norm se
+    show lilly casual norm se zorder 3 at t11
     a "Lilly?"
     lil "Yes?"
     a "Use your true form and help me out!"
@@ -208,19 +224,35 @@ label no_shed:
     a "This is taking too long."
     a "We should head back."
     a "He's probably already gone anyway."
+    stop jump0 fadeout 1.0
+    stop jump1 fadeout 1.0
+    stop jump2 fadeout 1.0
+    stop jump3 fadeout 1.0
+    stop jump4 fadeout 1.0
+    stop jump5 fadeout 1.0
+    stop jump6 fadeout 1.0
+    stop jump7 fadeout 1.0
+    stop jump8 fadeout 1.0
+    stop jump9 fadeout 1.0
+    stop jump10 fadeout 1.0
+    stop jump11 fadeout 1.0
+    stop jump12 fadeout 1.0
+    stop jump13 fadeout 1.0
+    stop jump14 fadeout 1.0
+    stop jump15 fadeout 1.0
     return
 
 default blocked_directions = { # randomized each run
-    "0_0": {"north": True, "south": False, "east": False, "west": True},
-    "1_0": {"north": True, "south": False, "east": False, "west": False},
-    "2_0": {"north": True, "south": False, "east": False, "west": False},
-    "3_0": {"north": True, "south": False, "east": False, "west": False},
-    "4_0": {"north": True, "south": False, "east": False, "west": False},
-    "5_0": {"north": True, "south": False, "east": False, "west": False},
-    "6_0": {"north": True, "south": False, "east": False, "west": False},
-    "7_0": {"north": True, "south": False, "east": False, "west": False},
-    "8_0": {"north": True, "south": False, "east": False, "west": False},
-    "9_0": {"north": True, "south": False, "east": True, "west": False},
+    "0_0": {"north": False, "south": True, "east": False, "west": True},
+    "1_0": {"north": False, "south": True, "east": False, "west": False},
+    "2_0": {"north": False, "south": True, "east": False, "west": False},
+    "3_0": {"north": False, "south": True, "east": False, "west": False},
+    "4_0": {"north": False, "south": True, "east": False, "west": False},
+    "5_0": {"north": False, "south": True, "east": False, "west": False},
+    "6_0": {"north": False, "south": True, "east": False, "west": False},
+    "7_0": {"north": False, "south": True, "east": False, "west": False},
+    "8_0": {"north": False, "south": True, "east": False, "west": False},
+    "9_0": {"north": False, "south": True, "east": True, "west": False},
     "0_1": {"north": False, "south": False, "east": False, "west": True},
     "1_1": {"north": False, "south": False, "east": False, "west": False},
     "2_1": {"north": False, "south": False, "east": False, "west": False},
@@ -318,7 +350,7 @@ init python:
         for coords in blocked_directions:
             for direction in blocked_directions[coords]:
                 if not blocked_directions[coords][direction]:
-                    blocked_directions[coords][direction] = random_chance(10)
+                    blocked_directions[coords][direction] = random_chance(25)
     def reset_blockages():
         blocked_directions = {
             "0_0": {"north": True, "south": False, "east": False, "west": True},
