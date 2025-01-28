@@ -34,7 +34,7 @@ label act2_ch3_main:
     $ pause(1)
     scene black with blink
     $ pause(1)
-    scene park_night
+    scene bg park_night
     show taiyen zorder 2 at face
     with dissolve_scene_half
     $ pla = "桜隊円？\n{size=15}Sakura Taiyen?{/size}"
