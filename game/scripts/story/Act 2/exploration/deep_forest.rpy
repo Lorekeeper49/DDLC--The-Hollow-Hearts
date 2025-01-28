@@ -217,6 +217,61 @@ label dom_burst:
     show lilly doll a0 with blink
     lil "You got it!"
 
+    d "I need your help."
+    d "I can't fight this forever."
+    a "Brother, I'm here for you."
+    "Huh?"
+    "What is...?"
+    scene bg storm with flash
+    "What's hapenning?"
+    "I can't control what I'm doing!"
+    a "Everyone!  Help me out!"
+    "What?"
+    "I don't need their help."
+    "I just need Lilly's!"
+    "They're busy with..."
+    d "AAAAAAAAAAAAAAAAHHHHH!!!"
+    a "DOMINION!"
+    "What?"
+    "No stop!"
+    a "STOP THIS!!"
+    "What am I doing?"
+    "That's gonna kill him!"
+    a "WAKE UUUUUUUUUUUUPPPPPP!!!{nw}"
+    show white onlayer foreground at noisefade(1.5)
+    "HOLD BAAAAAAAAAACCCKKK!!!{w=1}{nw}"
+    scene bg deep_forest with Shake((0, 0, 0, 0), 5.0, dist=50)
+    show dominion zorder 2 at t11
+    $ pause(1.0)
+    a "Shit!"
+    "What did I just..."
+    a "Is he okay?"
+    show kotonoha turned casual neut zorder 2 at t21
+    k "..."
+    a "Kotonoha!"
+    k worr ce om "No..."
+    a "What...?"
+    k rhip oe "He's not okay.  But at least he's alive."
+    k rdown "I got him."
+    hide kotonoha
+    hide dominion
+    a "What was I doing?"
+    a "Partway through that fight, it felt like I had no control over myself."
+    a "And... near the end..."
+    a "I was about to release a blow that would've killed him."
+    show akira uniform cross l zorder 2 at t11
+    ak "You were under extreme stress."
+    a "What?"
+    ak turned rout lout "When people are under emotional distress, they tend to do things beyond their own control."
+    a "I..."
+    hide akira
+    show mari forward happ zorder 2 at t11
+    ma om "Hey, hey!  You're okay, you did great."
+    ma "He's subdued."
+    ma "You can calm down now."
+    ma "I'm proud of you."
+    show mari cm
+    a "Yeah...  Thanks Mari."
     return
 
 label no_shed:
