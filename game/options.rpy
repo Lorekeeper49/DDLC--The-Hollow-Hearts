@@ -157,7 +157,7 @@ define config.say_layer = "textbox"
 define config.image_cache_size = 64
 define config.predict_statements = 50
 define config.rollback_enabled = config.developer
-define config.menu_clear_layers = ["front"]
+define config.menu_clear_layers = ["textbox"]
 define config.gl_test_image = "white"
 
 
