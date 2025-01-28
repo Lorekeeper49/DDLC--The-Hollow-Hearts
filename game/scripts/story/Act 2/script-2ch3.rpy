@@ -55,7 +55,7 @@ label act2_ch3_main:
     k curi "About this Dominion, you sure you saw him?"
     show akira uniform cross o zorder 1 at t22
     ak "I did."
-    ak 1ao "He's been presumed dead for years.  Didn't think he'd turn up here."
+    ak turned rout lout "He's been presumed dead for years.  Didn't think he'd turn up here."
     hide kotonoha
     hide akira
     show mari forward worr zorder 2 at t11
