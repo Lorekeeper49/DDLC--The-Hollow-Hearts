@@ -147,10 +147,6 @@ label dev:
         menu:
             "SELECT AN ACT:"
 
-            "ENTIRE STORY":
-                "GOING THROUGH THE ENTIRE STORY FROM START"
-                $ entirestory = True
-                jump start
             "PROLOGUES":
                 menu:
                     "SELECT A PROLOGUE:"
