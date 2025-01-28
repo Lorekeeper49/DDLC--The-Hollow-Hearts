@@ -53,7 +53,7 @@ label act2_ch3_main:
     a "I don't know what happened, I just..."
     k rhip "No, you're fine."
     k curi "About this Dominion, you sure you saw him?"
-    show akira 4ao zorder 1 at t22
+    show akira uniform cross o zorder 1 at t22
     ak "I did."
     ak 1ao "He's been presumed dead for years.  Didn't think he'd turn up here."
     hide kotonoha
