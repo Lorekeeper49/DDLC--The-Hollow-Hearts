@@ -60,7 +60,7 @@ label act2_ch3_main:
     hide akira
     show mari forward worr zorder 2 at t11
     a "Mari, do you happen to know whatever happened to him?"
-    ma om "Maybe I shouldn't burden you with the details while the tension's high..."
+    ma sad "Maybe I shouldn't burden you with the details while the tension's high..."
     a "Fair enough."
     hide mari
     show kotonoha turned casual anno rhip lup zorder 2 at t11
