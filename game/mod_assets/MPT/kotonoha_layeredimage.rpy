@@ -151,9 +151,9 @@ layeredimage kotonoha turned:
 
         anchor (0,0) subpixel (True)
 
-        attribute blink_a default if_not(["ce", "e2b", "e4a","e4b","e4c", "e4d", "e4f", "e4e", "e1e", "e1f"]):
+        attribute blink_a if_not(["ce", "e2b", "e4a","e4b","e4c", "e4d", "e4f", "e4e", "e1e", "e1f"]):
             "_koko_blink_a"
-        attribute no_blink:
+        attribute no_blink default:
             "sprite_blank"
 
     group brows:
