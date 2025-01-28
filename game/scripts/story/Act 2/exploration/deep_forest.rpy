@@ -233,10 +233,10 @@ label dom_burst:
     "They're busy with..."
     d "AAAAAAAAAAAAAAAAHHHHH!!!"
     a "DOMINION!"
-    "What?"
+    "What am I doing?"
     "No stop!"
     a "STOP THIS!!"
-    "What am I doing?"
+    "Not that!"
     "That's gonna kill him!"
     a "WAKE UUUUUUUUUUUUPPPPPP!!!{nw}"
     show white onlayer foreground at noisefade(1.5)
