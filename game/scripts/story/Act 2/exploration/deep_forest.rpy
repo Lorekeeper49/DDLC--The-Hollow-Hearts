@@ -101,38 +101,55 @@ label dom_com:
         "Be Comforting" if not Comforting:
             $ Comforting = True
             $ calm += 1
-
+            a "Your attribute seems dangerous."
+            a "But we've all been through worse."
+            a "We can help you out."
         "Be Stressful" if not Stressful:
             $ Stressful = True
             $ stress += 1
-
+            a "This is probably pretty obvious."
+            a "But you need to calm down."
+            a "Things will look pretty bad here if you don't."
         "Be Direct" if not Direct:
             $ Direct = True
             $ calm += 1
-
+            a "Your attribute may be scary."
+            a "But it's only as dangerous as you make it."
+            a "Lighten up a little."
         "Be Vague" if not Vague:
             $ Vague = True
             $ stress += 1
-
+            a "It doesn't like emotion."
+            a "Remove the emotion from the scene."
+            a "We don't want distress."
         "Be Smart" if not Smart:
             $ Smart = True
             $ calm += 1
-
+            a "Your attribute is powerful, and certainly dangerous."
+            a "But it will only kill us if you let it."
+            a "Don't let it."
         "Be Stupid" if not Stupid:
             $ Stupid = True
             $ stress += 1
-
-        "Be Angry" if not Angry:
-            $ Angry = True
-            $ stress += 1
-
+            a "I don't know anything about your attribute."
+            a "But it shouldn't be a problem."
+            a "Just trust me."
         "Be Happy" if not Happy:
             $ Happy = True
             $ calm += 1
-
+            a "I'm glad to know what your attribute is."
+            a "I just need you to calm down."
+            a "Okay?"
+        "Be Angry" if not Angry:
+            $ Angry = True
+            $ stress += 1
+            a "This is kind of cowardly."
+            a "Hiding your attribute like this."
+            a "You could've at least given a warning."
         "Stop convincing him":
             "Let's stop here."
             return
+    d "..."
     jump dom_com
 
 label dom_stress:
@@ -187,6 +204,10 @@ label dom_stress:
     jump dom_burst
 
 label dom_ab:
+    show kotonoha turned casual rhip zorder 3 at l31
+    a "Kotonoha?"
+    a "Do the same thing you did to help train me to use storm."
+    a "Clearly he's a rampant image, so use that as your reference."
 
     return
 
@@ -219,7 +240,7 @@ label dom_burst:
     scene bg storm
     show dominion zorder 2 at t11
     with flash
-    
+
 
     scene black
     show dominion zorder 2 at t11
