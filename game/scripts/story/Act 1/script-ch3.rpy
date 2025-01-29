@@ -48,10 +48,10 @@ label act1_ch3_main:
     menu:
         t "(Umm...)"
 
-        "[change]Ask her.":
+        "Ask her.":
             $ persistent.choices_made.append("Hidden Girl Revealed")
             call introaoruguri from _call_introaoruguri 
-        "[change]Don't ask.":
+        "Don't ask.":
             $ persistent.choices_made.append("Hidden Girl Kept Secret")
             "No."
             pass

@@ -469,7 +469,7 @@ init -501 screen act2choice():
     text "[unlock_en]" xcenter 640 ycenter 530
     button xcenter 920 ycenter 360 xysize (500, 300) hovered If("Hidden Girl Kept Secret" not in persistent.choices_made, [SetVariable("unlock_jp", "この道を開くために、彼女に質問してはいけない"), SetVariable("unlock_en", "DON'T ASK HER THE QUESTION TO UNLOCK")]) unhovered [SetVariable("unlock_jp", ""), SetVariable("unlock_en", "")] action If("Hidden Girl Kept Secret" in persistent.choices_made, Function(Act2_alt), NullAction())
     text "隠れた少女\nHIDDEN" xcenter 920 ycenter 360
-    button xcenter 640 ycenter 695 xysize (1280, 100) action [Hide("act2choice"), Show("acts")]
+    button xcenter 640 ycenter 695 xysize (1280, 100) action [Hide("act2choice", _layer="textbox"), Show("acts", _layer="textbox")]
     text "バック\nBACK" xcenter 640 ycenter 680
 
 init -501 screen navigation_border():

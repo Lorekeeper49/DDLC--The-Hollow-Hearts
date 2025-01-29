@@ -214,8 +214,9 @@ label dom_ab:
     "This monster has the same mass as the host and is controlled by the same mind."
     "It is a parasite that isn't... life-threatening."
     "...Couldn't think of a better word."
-    scene bg shed_night with dissolve_scene
+    scene bg shed_night
     show dominion zorder 2 at t11
+    with dissolve_scene
     d "I think... I understand."
     d "I can use this... to fight."
     a "You calm?"
@@ -227,6 +228,7 @@ label dom_ab:
     d "Right, I'll head home then."
     d "I'll text you tomorrow."
     a "Okay."
+    hide dominion
     "He leaves."
     return
 
