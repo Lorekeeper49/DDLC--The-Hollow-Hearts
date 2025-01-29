@@ -216,8 +216,14 @@ label dom_burst:
     a "Use your true form and help me out!"
     show lilly doll a0 with blink
     lil "You got it!"
-    scene bg storm with flash
+    scene bg storm
+    show dominion zorder 2 at t11
+    with flash
+    
 
+    scene black
+    show dominion zorder 2 at t11
+    with blink
     d "I need your help."
     d "I can't fight this forever."
     a "Brother, I'm here for you."

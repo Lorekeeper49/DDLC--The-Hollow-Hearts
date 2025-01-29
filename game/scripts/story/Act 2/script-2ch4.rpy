@@ -97,7 +97,6 @@ label act2_ch4_alt:
     a "!!!"
     a "Oh, I am so dead."
     scene bg dark_dining
-    show dark onlayer foreground
     with wipeleft_scene
     "I hate this!"
     "This place is so barren!"
@@ -115,7 +114,6 @@ label act2_ch4_alt:
     general "WE WON'T HURT YOU!"
     a "Yeah, right."
     scene bg top_kitchen
-    show dark onlayer foreground
     with wipeleft_scene
     "I don't know how I haven't been attacked yet."
     "With every step I take, I regret this more."
@@ -129,14 +127,12 @@ label act2_ch4_alt:
     a "Fuck off!  I'm leaving!"
     "I should've never gone in here in the first place"
     scene bg bedroom1
-    show dark onlayer foreground
     with wipeleft_scene
     a "Huh?!"
     a "This isn't the foyer!"
     a "Did I take a wrong turn?"
     a "Oh God!"
     scene bg bad_bedroom
-    show dark onlayer foreground
     with wipeleft_scene
     "I'm so lost..."
     "This room has the least amount of blood."
@@ -151,6 +147,7 @@ label act2_ch4_alt:
     scene black with None
     stop sound fadeout 3.0
     $ pause(3.0)
+    hide dark onlayer foreground
     call act2_ch4_common
     return
 
