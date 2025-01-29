@@ -208,7 +208,25 @@ label dom_ab:
     a "Kotonoha?"
     a "Do the same thing you did to help train me to use storm."
     a "Clearly he's a rampant image, so use that as your reference."
-
+    scene black with dissolve_scene
+    "A rampant image has the ability to turn into a terrifying monster to rampage everywhere."
+    "This monster has the same mass as the host and is controlled by the same mind."
+    "It is a parasite that isn't... life-threatening."
+    "...Couldn't think of a better word."
+    scene bg shed_night with dissolve_scene
+    show dominion zorder 2 at t11
+    d "I think... I understand."
+    d "I can use this... to fight."
+    a "You calm?"
+    d "I think so..."
+    a "Good."
+    d "Hey, can I come with you guys?"
+    a "I think it's better if you get some rest."
+    a "You've had a terrifying day."
+    d "Right, I'll head home then."
+    d "I'll text you tomorrow."
+    a "Okay."
+    "He leaves."
     return
 
 label dom_burst:
