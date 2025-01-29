@@ -1,7 +1,7 @@
 #Name: Dark Discoveries
 label act2_ch2_main:
     scene bg kamiclassnight
-    show lilly c2e zorder 2 at t11
+    show lilly casual c2e zorder 2 at t11
     with dissolve_scene_full
     lil "Hi..."
     "She scared the shit out of me!"
@@ -111,16 +111,16 @@ label act2_ch2_main:
     a "Guys, you here?"
     show tina turned anno zorder 2 at t11
     ti "You're late!"
-    show akira 1ab zorder 1 at t21
+    show akira uniform turned b zorder 1 at t21
     ak "Actually, you're right on time.\nYour boyfriend's not here yet."
     a "He's not my..."
     "I'm not even blushing and I cut myself off."
     hide akira
     hide tina
-    show kotonoha turned rhip neut zorder 2 at t11
-    k "Okay, calm down people!"
+    show kotonoha turned casual rhip neut zorder 2 at t11
+    k om "Okay, calm down people!"
     "Already done."
-    k happ e1c "Oh!  He's here!"
+    k happ om "Oh!  He's here!"
     hide kotonoha
     play music t2
     show sayori turned happ zorder 4 at l21
@@ -161,7 +161,7 @@ label act2_ch2_main:
     "Ugh...  What was that dream I had?"
     "I remember it clearly like I usually do, this isn't the first time I've been knocked out.  But it felt so... familiar..."
     "I stand up wearily."
-    show kotonoha turned worr om zorder 2 at t11
+    show kotonoha turned casual casual om zorder 2 at t11
     k "Hate to burst your bubble but you struck yourself with lightning about 12 times while you were asleep."
     a "Why did I-\nWait, I know exactly why."
     a "My body likes to go crazy while I'm asleep, even attempt to kill itself."
@@ -252,15 +252,12 @@ label act2_ch2_main:
     ha ldown oe om "That's not the whole point though."
     ha rdown "He's planning something, and I don't like what I'm reading off of him."
     ha rup lhip "You won't understand this, but..."
-    ha rdown "Ot seog rouy loohcs eht yortsed dna kcatta ot snalp eh."
+    ha rdown "*Untelligible speech*"
     show hanato cm
     a "De-"
     "What?"
     ha ce om "Yeah, that's what he's done to keep the plan secret."
     ha rup oe "And before you try making it sound normal, I already have to no avail."
-    show hanato:
-        time 3
-        tcommon(x=-100)
     a "Okay...  What do you think he's say...\nEh?"
     hide hanato
     a "Do you... hear that?"

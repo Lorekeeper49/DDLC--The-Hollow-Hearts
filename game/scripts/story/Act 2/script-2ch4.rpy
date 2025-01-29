@@ -32,7 +32,7 @@ label act2_ch4_main:
     hide tina
     hide kotonoha
     a "Alright.  Since this is a big place, we'll split up!"
-    show kotonoha turned casual anno rhip zorder 2 at t22
+    show kotonoha turned casual angr rhip zorder 2 at t22
     show akira uniform cross d zorder 2 at t21
     a "Kotonoha and Akira will take this floor,"
     hide akira
@@ -434,7 +434,7 @@ label act2_ch4_main_end:
     a "!!!"
     "My other memory fades back."
     a "Hey, guys!  I made it!"
-    k surp cm "!!!"
+    k lsur cm "!!!"
     k om "Hey guys, she's back!"
     hide kotonoha
     ti "Thank God!"
@@ -474,9 +474,9 @@ label act2_ch4_main_end:
     "On the ground?"
     a "Lilly!"
     "She's not okay, she's barely stable!"
-    k "Don't worry about that, that's just a doll!  We gotta-"
+    ma "Don't worry about that, that's just a doll!  We gotta-"
     a "No, you don't understand!  This {i}is{/i} her!"
-    k "What?"
+    ma "What?"
     a "We gotta..."
     a "Wait a second."
     "They can see her?"

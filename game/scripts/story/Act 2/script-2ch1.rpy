@@ -35,7 +35,7 @@ label act2_ch1_main:
     a "I am also sorry for running back there."
     show tina curi
     a "I do that with everyone...\nI'm a bit of a coward."
-    show lilly c1e zorder 2 at t21
+    show lilly casual c1e zorder 2 at t21
     lil "So you don't have friends?"
     ti anno rside "Lilly!"
     a "It's fine!"
@@ -43,53 +43,53 @@ label act2_ch1_main:
     "I don't know how I'm keeping my cool here but I'm not questioning it."
     a "And actually, I have 2 friends.  Kamiyama Akira and Sakura Taiyen."
     a "Wait!  Wasn't he behind you guys back there?"
-    show akira 2al zorder 2 at t22
+    show akira uniform turned lout rout l zorder 2 at t22
     ak "Someone call for me?"
     a "Speak of the... not-devil."
-    ak 4ag "I {i}spy{/i} on the devil, thank you!"
+    ak cross g "I {i}spy{/i} on the devil, thank you!"
     a "Hence the 'not' part."
     "I know he's joking but I do believe there is some truth behind those words."
-    ak 2al "Anyway, I should ask: what are you doing here?  Aren't you normally on the roof at this time?"
+    ak turned lout rout l "Anyway, I should ask: what are you doing here?  Aren't you normally on the roof at this time?"
     "I guess that would explain why he'd be late if I was there right now."
     a "Yes, but I think you can guess what happened here."
     a "*Sigh*"
     ak "Mm..."
-    ak 2ac "I'll handle her, you two should head to clubroom."
+    ak c "I'll handle her, you two should head to clubroom."
     ti rdown "Copy that."
     hide tina
     hide lilly
     show akira zorder 2 at t11
     "They leave and Akira sits next to me."
-    ak 1af "So...{w=1}{nw}"
-    show akira 1al
+    ak lpock rpock c "So...{w=1}{nw}"
+    show akira l
     extend " I guess my secret's out."
     ak "Well, one of them."
     "How many secrets do you have?"
-    ak 1ab "You know, you could join me if you wanted."
-    show akira 1aa
+    ak b "You know, you could join me if you wanted."
+    show akira a
     a "Me with a team of delinquents?"
     a "I mean, I could do it but..."
     a "I don't even know how to control my abilities correctly.  Not to mention my social problems..."
-    ak 4ab "We can teach you."
-    show akira 4aa
+    ak cross b "We can teach you."
+    show akira a
     a "Do you even have a storm in your ranks?"
-    ak 2an "Better; a telegraph!"
+    ak n "Better; a telegraph!"
     a "A telegraph?"
     "Fuck, okay.  I've been meaning to learn how to use storm for a while so..."
     if not known:
         jump act2_ch1_alt
     a "Fuck it, take me there!"
-    ak 1ab "Come on then!"
+    ak b "Come on then!"
     scene bg kamihallnight with wipeleft_scene
     call showlocation("Kamiyama Academy 3F\n{size=25}神山学園高校の3階{/size}","October 8, 2023\n{size=15}2023年10月8日{/size}",659.95,"bg kamihallnight") from _call_showlocation_38
     "Why do they always put the night atmosphere on during clubtime?"
-    "Like I like the the illusion, but most find it unusual."
-    show akira 1ab zorder 2 at t11
+    "I mean, I like the the illusion, but most find it unusual."
+    show akira uniform turned lpock rpock b zorder 2 at t11
     ak "Here we are!"
     "Class 1-C."
     "That was my first-year class."
     scene bg kamiclassnight
-    show akira 1ab zorder 2 at t11
+    show akira uniform turned lpock rpock b zorder 2 at t11
     with wipeleft
     ak "Kotonoha?  We have a potential new member!"
     show akira at rhide
@@ -115,12 +115,12 @@ label act2_ch1_main:
     a "Until midnight?"
     a "Well, lucky for you, storms don't sleep."
     scene bg kamiclassnight with wipeleft_scene
-    call showlocation("Midnight\n{size=25}真夜中{/size}", "October 8, 2023\n{size=15}2023年10月8日{/size}",0.0,"black") from _call_showlocation_39
+    call showlocation("Midnight\n{size=25}真夜中{/size}", "October 8, 2023\n{size=15}2023年10月8日{/size}",0.0,"bg storm") from _call_showlocation_39
     "Very glad storms don't get tired because I have been training for 8 hours straight, only stopping to go to the bathroom."
-    show kotonoha turned casual anno rhip om zorder 5 at t11
+    show kotonoha turned casual angr rhip om zorder 5 at t11
     k "Everyone!  Places at the table!"
-    show akira 4ae zorder 4 at t21
-    show lilly norm se zorder 1 at t41
+    show akira uniform cross e zorder 4 at t21
+    show lilly casual norm se zorder 1 at t41
     show mari forward anno om zorder 3 at t22
     show tina turned suit cross anno om zorder 2 at t44
     everyone "Right!"
@@ -131,14 +131,15 @@ label act2_ch1_main:
     hide kotonoha
     "Someone's serious!"
     "Does she always do this?"
-    show kotonoha turned casual anno rhip om zorder 5 at t11
+    show kotonoha turned casual angr rhip om zorder 5 at t11
     k "So!  We need to find Kirinani!"
-    "Agh!  Should've known that fire wouldn't kill him."
-    k lup "I know he's not home, I tore up that place hours ago."
     show kotonoha cm
-    show akira 4ae zorder 4 at r44
+    "Agh!  Should've known that fire wouldn't kill him."
+    k lup om "I know he's not home, I tore up that place hours ago."
+    show kotonoha cm
+    show akira uniform cross e zorder 4 at r44
     ak "(Quite literally!  That would explain the mess.)"
-    ak 1ab "Always thorough!  That's what I like about you, Kotonoha!"
+    ak turned lout rout b "Always thorough!  That's what I like about you, Kotonoha!"
     show akira at rhide
     hide akira
     "...{w=1}\nI'm not even gonna question what that could mean."
@@ -160,16 +161,14 @@ label act2_ch1_main:
     "They're scaring me."
     show tina at lhide
     hide tina
-    show lilly ee zorder 2 at r11
+    show lilly casual ee zorder 2 at r11
     a "My god, you guys do this all the time?"
     lil "Pretty much."
     show lilly doll c0 with blink
     lil "But it's fun!{w=0.25}{nw}"
-    scene bg kamiclassnight
     show lilly doll a0 zorder 2 at t11
     with blink
     $ pause(0.25)
-    scene bg kamiclassnight
     show lilly norm f1c2 zorder 2 at t11
     with blink
     "...{w=1}{nw}" with blink
@@ -187,13 +186,13 @@ label act2_ch1_main:
     "What?"
     show lilly at rhide
     hide lilly
-    show kotonoha anno zorder 2 at t11
+    show kotonoha angr zorder 2 at t11
     k "Anyway, I think your plan works here unless anyone else has any better plans."
     show kotonoha cm
     "No one answers."
     k om "Then we'll head there at 22:00 tomorrow!"
-    show akira 4ae zorder 4 at t21
-    show lilly norm se zorder 1 at t41
+    show akira uniform cross e zorder 4 at t21
+    show lilly casual norm se zorder 1 at t41
     show mari forward anno om zorder 3 at t22
     show tina turned cross anno om zorder 2 at t44
     everyone "Right!"
@@ -203,13 +202,13 @@ label act2_ch1_alt:
     a "...{w=2}*Inhale*"
     stop music
     a "I'm sorry, I can't..."
-    ak 1al "!!!"
+    ak l "!!!"
     hide akira
     ak "Aoruguri?  Aoruguri!"
     scene bg kamihallnight with wipeleft_scene
     a "*Huff* *Puff*"
     a "Damnit!  WHY!?"
-    show mari forward worr zorder 2 at t11
+    show mari forward sad zorder 2 at t11
     ma "Aoruguri?"
     a "Mari..."
     a "I'm sorry...  I couldn't do it!"
@@ -218,18 +217,19 @@ label act2_ch1_alt:
     ma "Hey, honey...  It's okay."
     ma "You're okay."
     ma "Here..."
-    scene noise with None
+    show noise onlayer foreground with None
     play sound static
     $ pause(0.15)
+    hide noise onlayer foreground
     stop sound
-    show bg office at center_zoom(1.0, 2.0, 100.0)
+    show bg office onlayer master at center_zoom(1.0, 2.0, 100.0)
     ma "Let's head to my office, okay?"
     a "Okay..."
     play ambience clock
     scene bg mari_office with dissolve_scene_full
     call showlocation("Principal's Office\n{size=25}校長室{/size}", "October 8, 2023\n{size=15}2023年10月8日{/size}",659.95,"bg mari_office")
     call showintro(intro_mari)
-    show mari forward worr zorder 2 at t11
+    show mari forward sad zorder 2 at t11
     ma "So it was the Midnight Club that offered you to join them."
     a "Yes..."
     ma ea "*Sigh*"

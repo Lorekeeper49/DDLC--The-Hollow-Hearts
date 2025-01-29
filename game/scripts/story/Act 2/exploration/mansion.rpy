@@ -26,7 +26,7 @@ screen wraith_blink:
 
 label failure:
     hide screen wraith
-    hide screen flashlight
+    hide flashlight onlayer foreground
     play sound jumpscare
     show wraith_black zorder 1000 at face
     $ pause(0.25)

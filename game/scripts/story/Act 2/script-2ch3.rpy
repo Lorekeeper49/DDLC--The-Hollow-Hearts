@@ -64,7 +64,7 @@ label act2_ch3_main:
     ma sad "Maybe I shouldn't burden you with the details while the tension's high..."
     a "Fair enough."
     hide mari
-    show kotonoha turned casual anno rhip lup zorder 2 at t11
+    show kotonoha turned casual angr rhip lup zorder 2 at t11
     k om "Okay.  We need to figure out where to find this Dominion.  Anyone have any ideas?"
     show kotonoha cm
     a "I believe I read somewhere that there is a small storage shack Northeast of here, but we're gonna have to search deep in the forest to find it."
@@ -123,7 +123,7 @@ label act2_ch3_main:
     show mari cm
     a  "!!!"
     hide mari
-    show lilly norm be zorder 2 at t11
+    show lilly casual norm be zorder 2 at t11
     "..."
     lil "I have full memory of this..."
     lil l2bc2 "It was horrible..."
@@ -211,7 +211,7 @@ label act2_ch3_main:
     "..."
     show mari forward sad zorder 2 at t11
     ma "Hey baby."
-    $ mari = "Kusanoki Mari"
+    $ mari = "楠まり\n{size=15}Kusanoki Mari{/size}"
     ma "Hey, Aoruguri!"
     stop ambience fadeout 1.0
     scene bg kamiclassnight
@@ -244,7 +244,7 @@ label act2_ch3_main:
     hide mari
     "Something's still bothering me..."
     "Right, Lilly!"
-    show lilly zorder 1 at t21
+    show lilly casual zorder 1 at t21
     show hanato day anno rhip zorder 2 at t22
     ha "LILLY!"
     "Someone had the same mind."
