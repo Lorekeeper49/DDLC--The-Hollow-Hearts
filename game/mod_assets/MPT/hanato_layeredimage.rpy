@@ -131,9 +131,9 @@ layeredimage hanato day:
             "mod_assets/MPT/hanato/Day/eyes/j.png"
 
         attribute ce if_any(["neut","angr","sad","doub","worr","anno","vang","dist"]):
-            "mod_assets/MPT/hanato/Day/eyes/b"
+            "mod_assets/MPT/hanato/Day/eyes/b.png"
         attribute ce if_any(["happ","laug","curi"]):
-            "mod_assets/MPT/hanato/Day/eyes/c"
+            "mod_assets/MPT/hanato/Day/eyes/c.png"
         attribute ce if_any(["cry"]):
             "mod_assets/MPT/hanato/Day/eyes/h.png"
         
