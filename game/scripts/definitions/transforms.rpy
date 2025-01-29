@@ -401,10 +401,10 @@ image noise:
 transform noise_alpha:
     alpha 0.25
 
-transform noisefade(t=0):
+transform noisefade(t=0, f=5.0):
     alpha 0.0
     t
-    linear 5.0 alpha 0.40
+    linear f alpha 1.0
 
 image vignette:
     truecenter

@@ -224,13 +224,28 @@ label dom_burst:
     "Huh?"
     "What is...?"
     scene bg storm with flash
-    "What's hapenning?"
+    "What's happenning?"
     "I can't control what I'm doing!"
     a "Everyone!  Help me out!"
+    show kotonoha turned casual angr zorder 2 at r22
     "What?"
+    show kotonoha at lhide
+    hide kotonoha
     "I don't need their help."
+    show akira uniform cross g zorder 2 at l21
     "I just need Lilly's!"
+    show akira at rhide
+    hide akira
+    "They don't need to be here."
+    show akira uniform cross g zorder 2 at r22
+    show kotonoha turned casual angr zorder 2 at l21
     "They're busy with..."
+    show kotonoha at t11
+    show akira at t11
+    $ pause(0.01)
+    hide akira
+    hide kotonoha
+    with flash
     d "AAAAAAAAAAAAAAAAHHHHH!!!"
     a "DOMINION!"
     "What am I doing?"
@@ -239,15 +254,17 @@ label dom_burst:
     "Not that!"
     "That's gonna kill him!"
     a "WAKE UUUUUUUUUUUUPPPPPP!!!{nw}"
-    show white onlayer foreground at noisefade(1.5)
+    show white onlayer foreground at noisefade(0.0, 1.0)
     "HOLD BAAAAAAAAAACCCKKK!!!{w=1}{nw}"
+    hide white onlayer foreground
     scene bg deep_forest with Shake((0, 0, 0, 0), 5.0, dist=50)
+    $ pause(1.0)
     show dominion zorder 2 at t11
     $ pause(1.0)
     a "Shit!"
     "What did I just..."
     a "Is he okay?"
-    show kotonoha turned casual neut zorder 2 at t21
+    show kotonoha turned casual neut zorder 2 at t22
     k "..."
     a "Kotonoha!"
     k worr ce om "No..."
