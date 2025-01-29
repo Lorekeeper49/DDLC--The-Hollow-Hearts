@@ -1,5 +1,6 @@
 label shed:
     scene bg shed_night with Fade(0.25, 0.0, 0.25)
+    $ renpy.music.set_volume(0.3, delay=0, channel="ambience")
     show dominion zorder 2 at t11
     a "Dominion!"
     a "Found you!"
@@ -258,17 +259,24 @@ label dom_burst:
     scene bg storm
     show dominion zorder 2 at t11
     with flash
-
-
+    play ambience storm
+    $ renpy.music.set_volume(1.0, delay=0, channel="ambience")
+    "Come on Aoruguri, you can do this!"
+    show lilly casual doll a0 zorder 2 at r44
+    "Work with Lilly, and pull him out!"
+    scene bg deep_forest with ZoomTransition
+    "He's calling for help."
     scene black
     show dominion zorder 2 at t11
     with blink
+    $ renpy.music.set_volume(0.3, delay=0, channel="ambience")
     d "I need your help."
     d "I can't fight this forever."
     a "Brother, I'm here for you."
     "Huh?"
     "What is...?"
     scene bg storm with flash
+    $ renpy.music.set_volume(1.0, delay=0, channel="ambience")
     "What's happenning?"
     "I can't control what I'm doing!"
     a "Everyone!  Help me out!"
@@ -302,6 +310,7 @@ label dom_burst:
     show white onlayer foreground at noisefade(0.0, 1.0)
     "HOLD BAAAAAAAAAACCCKKK!!!{w=1}{nw}"
     hide white onlayer foreground
+    stop ambience
     scene bg deep_forest with Shake((0, 0, 0, 0), 5.0, dist=50)
     $ pause(1.0)
     show dominion zorder 2 at t11
