@@ -187,8 +187,6 @@ init python:
 
 
 init python:
-
-
     build.archive("scripts", "mod")
     build.archive("mod_assets", "mod")
     build.archive("voicelines", "mod")
