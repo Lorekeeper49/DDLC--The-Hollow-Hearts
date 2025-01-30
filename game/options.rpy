@@ -220,9 +220,8 @@ init python:
 
     build.classify("game/mod_assets/**", "mod_assets")
     build.classify("game/gui/**", "mod_assets")
-    build.classify("game/scripts/**", "scripts")
+    build.classify("game/scripts/**.rpyc", "scripts")
     build.classify("game/**.rpyc", "scripts")
-    build.classify("game/**.rpy", "scripts")
     build.classify("game/**.txt", "scripts")
     build.classify("game/**.chr", "scripts")
     build.classify("game/**.wav", "audio")
