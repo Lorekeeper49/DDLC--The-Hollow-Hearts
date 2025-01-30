@@ -1,4 +1,4 @@
-define config.name = "DDLC: The Hollow Hearts"
+define config.name = "ドキドキ文芸部：ザー・ホロー・ハーツ | DDLC: The Hollow Hearts"
 
 
 
@@ -189,48 +189,23 @@ init python:
 init python:
 
 
+    build.archive("scripts", "mod")
+    build.archive("mod_assets", "mod")
+    build.archive("voicelines", "mod")
+    build.archive("translations", "mod")
 
+    build.classify("**.rpy", None)
+    build.classify("**.rpa", None)
+    
+    build.classify("game/mod_assets/**", "mod_assets all")
+    build.classify("game/gui/**", "mod_assets all")
+    build.classify("game/scripts/**.rpyc", "scripts all")
+    build.classify("game/**.rpyc", "scripts all")
+    build.classify("game/**.txt", "scripts all")
+    build.classify("game/voicelines/**", "voicelines all")
+    build.classify("game/tl/**", "translations all")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    build.archive("scripts", "all")
-    build.archive("images", "all")
-    build.archive("audio", "all")
-    build.archive("fonts", "all")
-    build.archive("mod_assets", "all")
-    build.archive("gui", "all")
-    build.archive("voicelines", "all")
-
-    build.classify("game/**.jpg", "images")
-    build.classify("game/**.png", "images")
-
-    build.classify("game/mod_assets/**", "mod_assets")
-    build.classify("game/gui/**", "mod_assets")
-    build.classify("game/scripts/**.rpyc", "scripts")
-    build.classify("game/**.rpyc", "scripts")
-    build.classify("game/**.txt", "scripts")
-    build.classify("game/**.chr", "scripts")
-    build.classify("game/**.wav", "audio")
-    build.classify("game/**.mp3", "audio")
-    build.classify("game/**.ogg", "audio")
-    build.classify("game/**.ttf", "fonts")
-    build.classify("game/**.otf", "fonts")
-    build.classify("game/voicelines/**", "voicelines")
-
+    
     build.classify('**~', None)
     build.classify('**.bak', None)
     build.classify('**/.**', None)
