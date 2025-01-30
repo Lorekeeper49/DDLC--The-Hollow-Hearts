@@ -70,7 +70,7 @@ label act1_ch2_main:
     t "Gotta say, I find it interesting but also fun that all 4 of us are in the same class."
     lil ee "Yeah, we got kinda lucky."
     t "The only one missing is Koto-chan, who got class B."
-    t "That's fine, I had her class twice in a row in the last 2 years."
+    t "But that's fine, I had her class twice in a row in the last 2 years."
     hide lilly
     hide sayori
     hide yuri
