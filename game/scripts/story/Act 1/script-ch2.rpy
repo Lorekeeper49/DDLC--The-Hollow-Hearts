@@ -69,6 +69,7 @@ label act1_ch2_main:
     show yuri turned happ rup zorder 2 at t33
     t "Gotta say, I find it interesting but also fun that all 4 of us are in the same class."
     lil ee "Yeah, we got kinda lucky."
+    t "The only one missing is Koto-chan."
     hide lilly
     hide sayori
     hide yuri
