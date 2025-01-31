@@ -439,7 +439,7 @@ init -501 screen navigation():
                 text "ACHIEVEMENTS" xalign 0.1 yalign 0.5 style "navigation_button_text"
                 text "アチーブメント" xalign 0.1 yalign 1.1 style "navigation_kan" 
                 hovered [SetVariable("option_index", 3)] 
-                action [Hide("file_slots", _layer="textbox"), ShowMenu("achievements", _layer="textbox"), SensitiveIf(renpy.get_screen("achievements") == None)]
+                action [Hide("preferences", _layer="textbox"), Hide("file_slots", _layer="textbox"), ShowMenu("achievements", _layer="textbox"), SensitiveIf(renpy.get_screen("achievements") == None)]
             button:
                 at button_transform
                 text "OPTIONS" xalign 0.1 yalign 0.5 style "navigation_button_text"
@@ -602,14 +602,18 @@ init -501 image nav_f:
     "mod_assets/gui/nav_f.png"
     alpha 0.5
 
+init -501 image game_menu_f:
+    "mod_assets/gui/game_menu_f.png"
+    alpha 0.5
+
 init -501 screen navigation_border():
     zorder 2500
     frame at navigation_transform:
         ysize 720
         xsize 540
         background Solid("#ffffff")
-    text _(str(option_index)) style "navigation_center_text" at navigation_transform(-10, -75)
-    add "nav_f"
+        text _(str(option_index)) style "navigation_center_text" yalign 0.5 xalign 0.5
+    add "nav_f" at navigation_transform
 
 init -501 transform navigation_transform(xo=0,yo=0):
     on show:
@@ -670,6 +674,7 @@ init -1 style navigation_center_text:
     color "#00000010"
     outlines [(0, "#58585800", 0, 0), (0, "#58585800", 0, 0)]
     size 700
+    text_align 0.5
 
 
 
@@ -723,11 +728,11 @@ init -501 transform bg_transform:
         repeat
 
 init -501 screen game_menu():
-
     frame at game_menu_transform:
-        ysize 800
+        ysize 720
         xsize 540
-        background Solid("#ffffff8f") 
+        background Solid("#ffffff")
+    add "game_menu_f" at game_menu_transform
 
 init -501 transform game_menu_transform(xo=0,yo=0):
     on show:
@@ -789,7 +794,7 @@ init -501 screen file_slots():
             frame:
                 xcenter 400
                 ycenter 100
-                background "#ffffff8a"
+                background "#8181818a"
                 vbox:
                     xalign 0.5
                     text "しおりの名前\nNAME OF BOOKMARK" font "mod_assets/fonts/NotoSerifJP-Regular.otf" size 10 xalign 0.5 text_align 0.5
@@ -880,17 +885,23 @@ init -501 screen preferences():
             null height 40
             if config.has_music:
                 style_prefix "slider"
-                label _("Music Volume")
+                hbox:
+                    label "Music Volume" yalign 0.5
+                    text "音楽ボリューム" yalign 0.75 style "pref_JP_label_text"
                 hbox:
                     bar value Preference("music volume") xsize 440
             if config.has_sound:
                 style_prefix "slider"
-                label _("Sound Volume")
+                hbox:
+                    label "Sound Volume" yalign 0.5
+                    text "SFXボリューム" yalign 0.75 style "pref_JP_label_text"
                 hbox:
                     bar value Preference("sound volume") xsize 440
             if config.has_voice:
                 style_prefix "slider"
-                label _("Voice Volume")
+                hbox:
+                    label "Voice Volume" yalign 0.5
+                    text "声ボリューム" yalign 0.75 style "pref_JP_label_text"
                 hbox:
                     bar range 2.00 value Preference("voice volume") xsize 440
                     if config.sample_voice:
@@ -903,17 +914,24 @@ init -501 screen preferences():
             if renpy.variant("pc"):
                 vbox:
                     style_prefix "radio"
-                    label _("Display")
+                    hbox:
+                        label "Display" yalign 0.5
+                        text "ディスプレイ" yalign 0.75 style "pref_JP_label_text"
                     textbutton _("Window") action Preference("display", "window")
                     textbutton _("Fullscreen") action Preference("display", "fullscreen")
             vbox:
+                xsize 440
                 style_prefix "check"
-                label _("Fast Forward")
+                hbox:
+                    label "Fast Forward" yalign 0.5
+                    text "早送り" yalign 0.75 style "pref_JP_label_text"
                 textbutton _("Unseen Text") action Preference("skip", "toggle")
                 textbutton _("After Choices") action Preference("after choices", "toggle")
             vbox:
                 style_prefix "radio"
-                label _("Language")
+                hbox:
+                    label "Language" yalign 0.5
+                    text "言語" yalign 0.75 style "pref_JP_label_text"
                 textbutton "English" action Language(None)
                 textbutton "日本語" action Language("japanese")
             null height (4 * gui.pref_spacing)
@@ -949,10 +967,17 @@ init -1 style pref_label:
     bottom_margin 2
 
 init -1 style pref_label_text:
-    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
+    font "mod_assets/fonts/ThatSoundsGreat-yYLE3.ttf"
     size 24
-    color "#fff"
-    outlines [(3, "#585858", 0, 0), (1, "#585858", 1, 1)]
+    color "#000"
+    outlines [(3, "#58585800", 0, 0), (1, "#58585800", 1, 1)]
+    yalign 1.0
+
+init -1 style pref_JP_label_text:
+    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
+    size 15
+    color "#00000080"
+    outlines [(3, "#58585800", 0, 0), (1, "#58585800", 1, 1)]
     yalign 1.0
 
 init -1 style pref_vbox:
@@ -968,6 +993,7 @@ init -1 style radio_button:
 init -1 style radio_button_text:
     properties gui.button_text_properties("radio_button")
     font "mod_assets/fonts/NotoSerifJP-Regular.otf"
+    color "#000"
     outlines []
 
 init -1 style check_vbox:
@@ -980,7 +1006,8 @@ init -1 style check_button:
 init -1 style check_button_text:
     properties gui.button_text_properties("check_button")
     font "mod_assets/fonts/NotoSerifJP-Regular.otf"
-    outlines []
+    color "#000"
+    outlines [(3, "#58585800", 0, 0), (1, "#58585800", 1, 1)]
 
 init -1 style slider_slider:
     xsize 350
@@ -993,6 +1020,7 @@ init -1 style slider_button:
 init -1 style slider_button_text:
     properties gui.button_text_properties("slider_button")
     font "mod_assets/fonts/NotoSerifJP-Regular.otf"
+    color "#000"
 
 init -1 style slider_vbox:
     xsize 450
@@ -1117,7 +1145,7 @@ init -501 screen dialog(message, ok_action):
             xalign 0.5
             spacing 100
 
-            textbutton "オーケー\n{size=25}OK{/size}" action ok_action
+            textbutton "オーケー\n{size=15}OK{/size}" action ok_action
 
 init -501 screen confirm(message, yes_action, no_action):
 
@@ -1146,8 +1174,8 @@ init -501 screen confirm(message, yes_action, no_action):
             xalign 0.5
             spacing 100
 
-            textbutton "はい\n{size=25}YES{/size}" action yes_action
-            textbutton "いいえ\n{size=25}NO{/size}" action no_action
+            textbutton "はい\n{size=15}YES{/size}" action yes_action
+            textbutton "いいえ\n{size=15}NO{/size}" action no_action
 
 
 
@@ -1179,6 +1207,7 @@ init -1 style confirm_button:
 
 init -1 style confirm_button_text is navigation_button_text:
     properties gui.button_text_properties("confirm_button")
+    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
 
 
 
