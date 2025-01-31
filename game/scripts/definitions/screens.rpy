@@ -377,12 +377,17 @@ init -1 python:
             renpy.display.draw.set_mouse_pos((currentpos[0] * 9 + targetpos[0]) / 10.0, (currentpos[1] * 9 + targetpos[1]) / 10.0)
 
 init -501 screen quick_menu():
-
-
-    zorder 2000
-
     if quick_menu:
-        imagebutton idle "mod_assets/gui/menu_button.png" action [SetVariable("option_index", 0), ShowMenu("navigation", _layer="textbox"), SensitiveIf(renpy.get_screen("navigation") == None)]
+        frame:
+            background Solid("#00000056")
+            vbox:
+                imagebutton idle "mod_assets/gui/menu_button.png" action [SetVariable("option_index", 0), ShowMenu("navigation", _layer="textbox"), SensitiveIf(renpy.get_screen("navigation") == None)]
+                if not main_menu and can_cont:
+                    if preferences.afm_enable:
+                        imagebutton idle "mod_assets/gui/auto_on.png" action Preference("auto-forward", "disable")
+                    else:
+                        imagebutton idle "mod_assets/gui/auto_off.png" action Preference("auto-forward", "enable")
+        key "K_TAB" action Preference("auto-forward", "toggle")
         key "K_ESCAPE" action [SetVariable("option_index", 0), ShowMenu("navigation", _layer="textbox"), SensitiveIf(renpy.get_screen("navigation") == None)]
 
 default -1 quick_menu = True
@@ -403,10 +408,6 @@ init -1 python:
     def Developer():
         renpy.jump_out_of_context("dev")
 
-default -1 option_index = 0
-default -1 aa_status = "OFF"
-default -1 aa_status_kan = "{size=20}オッフ{/size}"
-
 init -501 screen navigation():
     
     use navigation_border
@@ -415,7 +416,7 @@ init -501 screen navigation():
         spacing 0
         if main_menu:
             textbutton "CLOSE\n{size=20}閉じる{/size}" hovered [SetVariable("option_index", 0)] action [Hide("achievements", _layer="textbox"), Hide("preferences", _layer="textbox"), Hide("file_slots", _layer="textbox"), Hide("navigation", _layer="textbox")]
-            textbutton "BEGIN\n{size=20}スタート{/size}" hovered [SetVariable("option_index", 1)] action [Hide("achievements", _layer="textbox"), Hide("preferences", _layer="textbox"), Hide("file_slots", _layer="textbox"), Hide("navigation", _layer="textbox"), Show("acts", _layer="textbox")]
+            textbutton "ACT SELECT\n{size=20}アクト選択へ{/size}" hovered [SetVariable("option_index", 1)] action [Hide("achievements", _layer="textbox"), Hide("preferences", _layer="textbox"), Hide("file_slots", _layer="textbox"), Hide("navigation", _layer="textbox"), Show("acts", _layer="textbox")]
             textbutton "BOOKMARKS\n{size=20}しおり{/size}" hovered [SetVariable("option_index", 2)] action [Hide("achievements", _layer="textbox"), Hide("preferences", _layer="textbox"), ShowMenu("file_slots", _layer="textbox"), SensitiveIf(renpy.get_screen("file_slots") == None)]
             textbutton "ACHIEVEMENTS\n{size=20}アチーブメント{/size}" hovered [SetVariable("option_index", 3)] action [Hide("file_slots", _layer="textbox"), ShowMenu("achievements", _layer="textbox"), SensitiveIf(renpy.get_screen("achievements") == None)]
             textbutton "OPTIONS\n{size=20}オプション{/size}" hovered [SetVariable("option_index", 4)] action [Hide("achievements", _layer="textbox"), Hide("file_slots", _layer="textbox"), ShowMenu("preferences", _layer="textbox"), SensitiveIf(renpy.get_screen("preferences") == None)]
@@ -427,11 +428,11 @@ init -501 screen navigation():
                 textbutton "QUIT\n{size=20}クイット{/size}" hovered [SetVariable("option_index", 8)] action Quit(confirm=not main_menu)
         else:
             textbutton "CLOSE\n{size=20}閉じる{/size}" hovered [SetVariable("option_index", 0)] action Return()
-            textbutton "LOG\n{size=20}ログ{/size}" hovered [SetVariable("option_index", 1)] action [Hide("preferences", _layer="textbox"), Hide("file_slots", _layer="textbox"), ShowMenu("history", _layer="textbox"), SensitiveIf(renpy.get_screen("history") == None)]
-            textbutton "AUTO ADVANCE  " + aa_status + "\n{size=20}オート                                                                          " + aa_status_kan + "{/size}" hovered [SetVariable("option_index", 2)] action [Preference("auto-forward", "toggle"), If(aa_status == "OFF", [SetVariable("aa_status", "ON"), SetVariable("aa_status_kan", "{size=20}オン{/size}")], [SetVariable("aa_status", "OFF"), SetVariable("aa_status_kan", "{size=20}オッフ{/size}")])]
+            textbutton "LOG\n{size=20}ログ{/size}" hovered [SetVariable("option_index", 1)] action [Hide("preferences", _layer="textbox"), Hide("file_slots", _layer="textbox"), Hide("inventory", _layer="textbox"), ShowMenu("history", _layer="textbox"), SensitiveIf(renpy.get_screen("history") == None)]
+            textbutton "INVENTORY\n{size=20}在庫{/size}" hovered [SetVariable("option_index", 2)] action [Hide("preferences", _layer="textbox"), Hide("file_slots", _layer="textbox"), Hide("history", _layer="textbox"), ShowMenu("inventory", _layer="textbox"), SensitiveIf(renpy.get_screen("inventory") == None)]
             textbutton "FAST FORWARD\n{size=20}早送り{/size}" hovered [SetVariable("option_index", 3)] action Skip()
-            textbutton "BOOKMARKS\n{size=20}しおり{/size}" hovered [SetVariable("option_index", 4)] action [Hide("history", _layer="textbox"), Hide("preferences", _layer="textbox"), ShowMenu("file_slots", _layer="textbox"), SensitiveIf(renpy.get_screen("file_slots") == None)]
-            textbutton "OPTIONS\n{size=20}オプション{/size}" hovered [SetVariable("option_index", 5)] action [Hide("history", _layer="textbox"), Hide("file_slots", _layer="textbox"), ShowMenu("preferences", _layer="textbox"), SensitiveIf(renpy.get_screen("preferences") == None)]
+            textbutton "BOOKMARKS\n{size=20}しおり{/size}" hovered [SetVariable("option_index", 4)] action [Hide("history", _layer="textbox"), Hide("preferences", _layer="textbox"), Hide("inventory", _layer="textbox"), ShowMenu("file_slots", _layer="textbox"), SensitiveIf(renpy.get_screen("file_slots") == None)]
+            textbutton "OPTIONS\n{size=20}オプション{/size}" hovered [SetVariable("option_index", 5)] action [Hide("history", _layer="textbox"), Hide("file_slots", _layer="textbox"), Hide("inventory", _layer="textbox"), ShowMenu("preferences", _layer="textbox"), SensitiveIf(renpy.get_screen("preferences") == None)]
             if _in_replay:
                 textbutton "END REPLAY\n{size=20}リプレイを終了する{/size}" hovered [SetVariable("option_index", 6)] action EndReplay(confirm=True)
             else:
