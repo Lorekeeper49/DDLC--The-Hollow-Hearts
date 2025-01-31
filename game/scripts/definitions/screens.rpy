@@ -780,14 +780,12 @@ init -501 screen file_slots():
                 $ slot = i + 1
                 button:
                     action SetVariable("slot_selected", slot)
-                    alternate FileDelete(slot)
                     has vbox
                     add FileScreenshot(slot) 
                     text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("EMPTY")):
                         style "slot_time_text"
                     text FileSaveName(slot):
                         style "slot_name_text"
-                    key "save_delete" action FileDelete(slot)
             vbar value YScrollValue(viewport="vp")
                     
         if slot_selected > 0:
@@ -865,6 +863,8 @@ init -1 style page_button_text:
 
 init -1 style slot_button:
     properties gui.button_properties("slot_button")
+    background "mod_assets/gui/slot_idle_background.png"
+    hover_background "mod_assets/gui/slot_hover_background.png"
 
 init -1 style slot_button_text:
     properties gui.button_text_properties("slot_button")
@@ -1188,7 +1188,7 @@ init -1 style confirm_button is gui_medium_button
 init -1 style confirm_button_text is gui_medium_button_text
 
 init -1 style confirm_frame:
-    background Frame([ "gui/confirm_frame.png", "gui/frame.png"], gui.confirm_frame_borders, tile=gui.frame_tile)
+    background Frame("mod_assets/gui/frame.png", gui.confirm_frame_borders, tile=gui.frame_tile)
     padding gui.confirm_frame_borders.padding
     xalign .5
     yalign .5
