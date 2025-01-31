@@ -824,8 +824,8 @@ init -501 screen inventory_view():
                 ysize 200
                 xsize 540
                 style_prefix "inventory"
-                label "[selected_item]"
-                text "[item_desc]"
+                label selected_item
+                text item_desc
                 background Solid("#00000090")
             viewport id "vp":
                 grid 5 100:
