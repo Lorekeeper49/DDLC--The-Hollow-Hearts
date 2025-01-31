@@ -667,7 +667,7 @@ init -1 style navigation_kan:
 
 init -1 style navigation_center_text:
     font "mod_assets/fonts/ThatSoundsGreat-yYLE3.ttf"
-    color "#0000002d"
+    color "#00000010"
     outlines [(0, "#58585800", 0, 0), (0, "#58585800", 0, 0)]
     size 700
 
