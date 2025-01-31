@@ -428,11 +428,11 @@ init -501 screen navigation():
                 textbutton "QUIT\n{size=20}クイット{/size}" hovered [SetVariable("option_index", 8)] action Quit(confirm=not main_menu)
         else:
             textbutton "CLOSE\n{size=20}閉じる{/size}" hovered [SetVariable("option_index", 0)] action Return()
-            textbutton "LOG\n{size=20}ログ{/size}" hovered [SetVariable("option_index", 1)] action [Hide("preferences", _layer="textbox"), Hide("file_slots", _layer="textbox"), Hide("inventory", _layer="textbox"), ShowMenu("history", _layer="textbox"), SensitiveIf(renpy.get_screen("history") == None)]
-            textbutton "INVENTORY\n{size=20}在庫{/size}" hovered [SetVariable("option_index", 2)] action [Hide("preferences", _layer="textbox"), Hide("file_slots", _layer="textbox"), Hide("history", _layer="textbox"), ShowMenu("inventory", _layer="textbox"), SensitiveIf(renpy.get_screen("inventory") == None)]
+            textbutton "LOG\n{size=20}ログ{/size}" hovered [SetVariable("option_index", 1)] action [Hide("preferences", _layer="textbox"), Hide("file_slots", _layer="textbox"), Hide("inventory_view", _layer="textbox"), ShowMenu("history", _layer="textbox"), SensitiveIf(renpy.get_screen("history") == None)]
+            textbutton "INVENTORY\n{size=20}在庫{/size}" hovered [SetVariable("option_index", 2)] action [Hide("preferences", _layer="textbox"), Hide("file_slots", _layer="textbox"), Hide("history", _layer="textbox"), ShowMenu("inventory_view", _layer="textbox"), SensitiveIf(renpy.get_screen("inventory_view") == None)]
             textbutton "FAST FORWARD\n{size=20}早送り{/size}" hovered [SetVariable("option_index", 3)] action Skip()
-            textbutton "BOOKMARKS\n{size=20}しおり{/size}" hovered [SetVariable("option_index", 4)] action [Hide("history", _layer="textbox"), Hide("preferences", _layer="textbox"), Hide("inventory", _layer="textbox"), ShowMenu("file_slots", _layer="textbox"), SensitiveIf(renpy.get_screen("file_slots") == None)]
-            textbutton "OPTIONS\n{size=20}オプション{/size}" hovered [SetVariable("option_index", 5)] action [Hide("history", _layer="textbox"), Hide("file_slots", _layer="textbox"), Hide("inventory", _layer="textbox"), ShowMenu("preferences", _layer="textbox"), SensitiveIf(renpy.get_screen("preferences") == None)]
+            textbutton "BOOKMARKS\n{size=20}しおり{/size}" hovered [SetVariable("option_index", 4)] action [Hide("history", _layer="textbox"), Hide("preferences", _layer="textbox"), Hide("inventory_view", _layer="textbox"), ShowMenu("file_slots", _layer="textbox"), SensitiveIf(renpy.get_screen("file_slots") == None)]
+            textbutton "OPTIONS\n{size=20}オプション{/size}" hovered [SetVariable("option_index", 5)] action [Hide("history", _layer="textbox"), Hide("file_slots", _layer="textbox"), Hide("inventory_view", _layer="textbox"), ShowMenu("preferences", _layer="textbox"), SensitiveIf(renpy.get_screen("preferences") == None)]
             if _in_replay:
                 textbutton "END REPLAY\n{size=20}リプレイを終了する{/size}" hovered [SetVariable("option_index", 6)] action EndReplay(confirm=True)
             else:
@@ -590,25 +590,6 @@ init -501 transform game_menu_transform(xo=0,yo=0):
         xpos 740+xo
         easein .25 xpos 1280
 
-init -501 screen about():
-    tag menu
-    use game_menu(_("About"), scroll="viewport"):
-
-        style_prefix "about"
-
-        vbox:
-
-            label "[config.name!t]"
-            text _("Version [config.version!t]\n")
-
-
-            if gui.about:
-                text "[gui.about!t]\n"
-
-            text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
-
-
-
 define -1 gui.about = ""
 
 
@@ -680,10 +661,47 @@ init -501 screen file_slots():
                             text "ロード\nLOAD" font "mod_assets/fonts/NotoSerifJP-Regular.otf" size 10 text_align 0.5 ypos -5
                             action FileLoad(slot_selected)
 
+default selected_item = "Nothing\n{size=20}何も無い{/size}"
+default item_desc = ""
+init -501 screen inventory_view():
+    use game_menu
+    fixed at game_menu_transform:
+        vbox:
+            frame:
+                ysize 200
+                xsize 540
+                style_prefix "inventory"
+                label "[selected_item]"
+                text "[item_desc]"
+                background Solid("#00000090")
+            viewport id "vp":
+                grid 5 100:
+                    for item in inventory:
+                        button:
+                            hover_background Solid("#ffffff59")
+                            add "mod_assets/inventory/[item].png"
+                            action [SetVariable("selected_item", item), If(_preferences.language is not None, SetVariable("item_desc", renpy.file("tl/[_preferences.language]/inventory/[item].txt").read()), SetVariable("item_desc", renpy.file("tl/mod_assets/inventory/[item].txt").read()))]
+
 init -1 style slot_button is gui_button
 init -1 style slot_button_text is gui_button_text
 init -1 style slot_time_text is slot_button_text
 init -1 style slot_name_text is slot_button_text
+
+init -1 style inventory_label:
+    bottom_margin 2
+
+init -1 style inventory_label_text:
+    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
+    size 34
+    color "#fff"
+    line_spacing -15
+    outlines [(3, "#585858", 0, 0), (1, "#585858", 1, 1)]
+    yalign 1.0
+
+init -1 style inventory_text:
+    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
+    size 15
+    color "#fff"
 
 init -1 style page_button:
     properties gui.button_properties("page_button")
