@@ -39,6 +39,7 @@ init python:
     renpy.music.register_channel("jump15", mixer="music", tight=True)
     config.tag_layer['bg'] = 'background'
     config.tag_layer['fg'] = 'foreground'
+    config.tag_layer['mv'] = 'cutscenes'
     def get_pos(channel='music'):
         pos = renpy.music.get_pos(channel=channel)
         if pos: return pos
