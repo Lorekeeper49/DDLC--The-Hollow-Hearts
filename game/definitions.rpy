@@ -2,6 +2,7 @@ define persistent.demo = False
 define persistent.steam = ("steamapps" in config.basedir.lower())
 define config.developer = True
 define config.console = True
+default can_cont = True
 
 python early:
     import singleton
@@ -85,6 +86,10 @@ init python:
         renpy.sound.play(audio.static)
     def sound_stop(trans, st, at):
         renpy.sound.stop()
+    def say_blocking():
+        global can_cont
+        return can_cont
+    config.say_allow_dismiss = say_blocking
 default filepathFound = ""
 
 

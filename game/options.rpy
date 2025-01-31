@@ -34,18 +34,18 @@ define config.has_music = True
 define config.has_voice = True
 
 init -1 python:
-    def autovoiceline(line):
-        if renpy.exists("voicelines/[line].ogg"):
+    def autovoiceline(id):
+        if renpy.exists("voicelines/[id].ogg"):
             _preferences.afm_time = 0.5
-            return "voicelines/[line].ogg"
-        elif renpy.exists("voicelines/[line].mp3"):
+            return "voicelines/[id].ogg"
+        elif renpy.exists("voicelines/[id].mp3"):
             _preferences.afm_time = 0.5
-            return "voicelines/[line].mp3"
+            return "voicelines/[id].mp3"
         else:
             _preferences.afm_time = 30
-            return "voicelines/[line]"
+            return "voicelines/[id]"
 
-define config.auto_voice = autovoiceline("{id}")
+define config.auto_voice = autovoiceline
 define config.sample_voice = "voicelines/test.ogg"
 
 
