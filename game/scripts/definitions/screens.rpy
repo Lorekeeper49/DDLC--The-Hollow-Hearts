@@ -442,7 +442,6 @@ init -501 screen navigation():
                 textbutton "QUIT\n{size=20}クイット{/size}" hovered [SetVariable("option_index", 8)] action Quit(confirm=not main_menu) 
 
 init -501 screen acts():
-    
     use navigation_border
     vbox at navigation_transform(0, 10):
         style_prefix "navigation"
