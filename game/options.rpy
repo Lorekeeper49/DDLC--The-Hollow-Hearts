@@ -194,7 +194,7 @@ init python:
     build.classify("**.rpa", None)
     
     build.classify("game/mod_assets/**", "mod_assets all")
-    build.classify("game/scripts/**.rpyc", "scripts all")
+    build.classify("game/scripts/**", "scripts all")
     build.classify("game/**.rpyc", "scripts all")
     build.classify("game/**.txt", "scripts all")
     build.classify("game/voicelines/**", "voicelines all")
