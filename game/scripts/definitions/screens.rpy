@@ -520,7 +520,7 @@ init -1 style navigation_text:
 
 init -1 style navigation_center_text:
     font "mod_assets/fonts/Unitblock-mLAwm.ttf"
-    color "#000"
+    color "#0000005d"
     size 750
 
 
