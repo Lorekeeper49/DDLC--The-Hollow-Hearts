@@ -33,19 +33,6 @@ define config.has_sound = True
 define config.has_music = True
 define config.has_voice = True
 
-init -1 python:
-    def autovoiceline(id):
-        if renpy.exists("voicelines/[id].ogg"):
-            _preferences.afm_time = 0.5
-            return "voicelines/[id].ogg"
-        elif renpy.exists("voicelines/[id].mp3"):
-            _preferences.afm_time = 0.5
-            return "voicelines/[id].mp3"
-        else:
-            _preferences.afm_time = 30
-            return "voicelines/[id]"
-
-define config.auto_voice = autovoiceline
 define config.sample_voice = "voicelines/test.ogg"
 
 
@@ -181,6 +168,17 @@ init python:
         else:
             return (float(height) * (float(config.screen_width) / float(config.screen_height)), height)
 
+    def autovoiceline(id):
+        if renpy.exists("voicelines/[id].ogg"):
+            _preferences.afm_time = 0.5
+            return "voicelines/[id].ogg"
+        elif renpy.exists("voicelines/[id].mp3"):
+            _preferences.afm_time = 0.5
+            return "voicelines/[id].mp3"
+        else:
+            _preferences.afm_time = 30
+            return "voicelines/[id]"
+    config.auto_voice = autovoiceline
 
 
 
