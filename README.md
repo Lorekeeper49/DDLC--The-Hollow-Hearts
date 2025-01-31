@@ -224,6 +224,8 @@ Argument - MC.Dummy.Composer
 
 [UI - Unitblock](https://www.fontspace.com/unitblock-font-f104834)
 
+[That Sounds Great - GraphicSauce](https://www.fontspace.com/that-sounds-great-font-f115095)
+
 
 ### MISC
 [MPT - chronoshag](https://www.reddit.com/r/DDLCMods/comments/emennq/mood_posing_tool_mpt_v10_release_for_ddlc_modding/)
