@@ -408,51 +408,177 @@ init -1 python:
     def Developer():
         renpy.jump_out_of_context("dev")
 
+default option_index = 0
 init -501 screen navigation():
     
     use navigation_border
-    vbox at navigation_transform(0, 10):
+    vbox at navigation_transform(0, 80):
         style_prefix "navigation"
         spacing 0
         if main_menu:
-            textbutton "CLOSE\n{size=20}閉じる{/size}" hovered [SetVariable("option_index", 0)] action [Hide("achievements", _layer="textbox"), Hide("preferences", _layer="textbox"), Hide("file_slots", _layer="textbox"), Hide("navigation", _layer="textbox")]
-            textbutton "ACT SELECT\n{size=20}アクト選択へ{/size}" hovered [SetVariable("option_index", 1)] action [Hide("achievements", _layer="textbox"), Hide("preferences", _layer="textbox"), Hide("file_slots", _layer="textbox"), Hide("navigation", _layer="textbox"), Show("acts", _layer="textbox")]
-            textbutton "BOOKMARKS\n{size=20}しおり{/size}" hovered [SetVariable("option_index", 2)] action [Hide("achievements", _layer="textbox"), Hide("preferences", _layer="textbox"), ShowMenu("file_slots", _layer="textbox"), SensitiveIf(renpy.get_screen("file_slots") == None)]
-            textbutton "ACHIEVEMENTS\n{size=20}アチーブメント{/size}" hovered [SetVariable("option_index", 3)] action [Hide("file_slots", _layer="textbox"), ShowMenu("achievements", _layer="textbox"), SensitiveIf(renpy.get_screen("achievements") == None)]
-            textbutton "OPTIONS\n{size=20}オプション{/size}" hovered [SetVariable("option_index", 4)] action [Hide("achievements", _layer="textbox"), Hide("file_slots", _layer="textbox"), ShowMenu("preferences", _layer="textbox"), SensitiveIf(renpy.get_screen("preferences") == None)]
+            button:
+                at button_transform
+                text "CLOSE" xalign 0.1 yalign 0.5 style "navigation_button_text"
+                text "閉じる" xalign 0.1 yalign 1.1 style "navigation_kan" 
+                hovered [SetVariable("option_index", 0)] 
+                action [Hide("achievements", _layer="textbox"), Hide("preferences", _layer="textbox"), Hide("file_slots", _layer="textbox"), Hide("navigation", _layer="textbox")]
+            button:
+                at button_transform
+                text "ACT SELECT" xalign 0.1 yalign 0.5 style "navigation_button_text"
+                text "アクト選択へ" xalign 0.1 yalign 1.1 style "navigation_kan" 
+                hovered [SetVariable("option_index", 1)] 
+                action [Hide("achievements", _layer="textbox"), Hide("preferences", _layer="textbox"), Hide("file_slots", _layer="textbox"), Hide("navigation", _layer="textbox"), Show("acts", _layer="textbox")]
+            button:
+                at button_transform
+                text "BOOKMARKS" xalign 0.1 yalign 0.5 style "navigation_button_text"
+                text "しおり" xalign 0.1 yalign 1.1 style "navigation_kan" 
+                hovered [SetVariable("option_index", 2)] 
+                action [Hide("achievements", _layer="textbox"), Hide("preferences", _layer="textbox"), ShowMenu("file_slots", _layer="textbox"), SensitiveIf(renpy.get_screen("file_slots") == None)]
+            button:
+                at button_transform
+                text "ACHIEVEMENTS" xalign 0.1 yalign 0.5 style "navigation_button_text"
+                text "アチーブメント" xalign 0.1 yalign 1.1 style "navigation_kan" 
+                hovered [SetVariable("option_index", 3)] 
+                action [Hide("file_slots", _layer="textbox"), ShowMenu("achievements", _layer="textbox"), SensitiveIf(renpy.get_screen("achievements") == None)]
+            button:
+                at button_transform
+                text "OPTIONS" xalign 0.1 yalign 0.5 style "navigation_button_text"
+                text "オプション" xalign 0.1 yalign 1.1 style "navigation_kan" 
+                hovered [SetVariable("option_index", 4)] 
+                action [Hide("achievements", _layer="textbox"), Hide("file_slots", _layer="textbox"), ShowMenu("preferences", _layer="textbox"), SensitiveIf(renpy.get_screen("preferences") == None)]
             if renpy.variant("pc"):
-                textbutton "HELP\n{size=20}ヘルプ{/size}" hovered [SetVariable("option_index", 5)]  action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"), _layer="textbox")]
-                textbutton "DISCORD\n{size=20}ディスコード{/size}" hovered [SetVariable("option_index", 6)] action OpenURL("https://discord.gg/Q3CcJW4Ag2")
-            textbutton "EXTRAS\n{size=20}エクストラー{/size}" hovered [SetVariable("option_index", 7)] action Function(Extras)
+                button:
+                    at button_transform
+                    text "HELP" xalign 0.1 yalign 0.5 style "navigation_button_text"
+                    text "ヘルプ" xalign 0.1 yalign 1.1 style "navigation_kan" 
+                    hovered [SetVariable("option_index", 5)] 
+                    action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"), _layer="textbox")]
+                button:
+                    at button_transform
+                    text "DISCORD" xalign 0.1 yalign 0.5 style "navigation_button_text"
+                    text "ディスコード" xalign 0.1 yalign 1.1 style "navigation_kan" 
+                    hovered [SetVariable("option_index", 6)] 
+                    action OpenURL("https://discord.gg/Q3CcJW4Ag2")
+            button:
+                at button_transform
+                text "EXTRAS" xalign 0.1 yalign 0.5 style "navigation_button_text"
+                text "エクストラー" xalign 0.1 yalign 1.1 style "navigation_kan" 
+                hovered [SetVariable("option_index", 7)] 
+                action Function(Extras)
             if renpy.variant("pc"):
-                textbutton "QUIT\n{size=20}クイット{/size}" hovered [SetVariable("option_index", 8)] action Quit(confirm=not main_menu)
+                button:
+                    at button_transform
+                    text "QUIT" xalign 0.1 yalign 0.5 style "navigation_button_text"
+                    text "クイット" xalign 0.1 yalign 1.1 style "navigation_kan" 
+                    hovered [SetVariable("option_index", 8)] 
+                    action Quit(confirm=not main_menu)
         else:
-            textbutton "CLOSE\n{size=20}閉じる{/size}" hovered [SetVariable("option_index", 0)] action Return()
-            textbutton "LOG\n{size=20}ログ{/size}" hovered [SetVariable("option_index", 1)] action [Hide("preferences", _layer="textbox"), Hide("file_slots", _layer="textbox"), Hide("inventory_view", _layer="textbox"), ShowMenu("history", _layer="textbox"), SensitiveIf(renpy.get_screen("history") == None)]
-            textbutton "INVENTORY\n{size=20}在庫{/size}" hovered [SetVariable("option_index", 2)] action [Hide("preferences", _layer="textbox"), Hide("file_slots", _layer="textbox"), Hide("history", _layer="textbox"), ShowMenu("inventory_view", _layer="textbox"), SensitiveIf(renpy.get_screen("inventory_view") == None)]
-            textbutton "FAST FORWARD\n{size=20}早送り{/size}" hovered [SetVariable("option_index", 3)] action Skip()
-            textbutton "BOOKMARKS\n{size=20}しおり{/size}" hovered [SetVariable("option_index", 4)] action [Hide("history", _layer="textbox"), Hide("preferences", _layer="textbox"), Hide("inventory_view", _layer="textbox"), ShowMenu("file_slots", _layer="textbox"), SensitiveIf(renpy.get_screen("file_slots") == None)]
-            textbutton "OPTIONS\n{size=20}オプション{/size}" hovered [SetVariable("option_index", 5)] action [Hide("history", _layer="textbox"), Hide("file_slots", _layer="textbox"), Hide("inventory_view", _layer="textbox"), ShowMenu("preferences", _layer="textbox"), SensitiveIf(renpy.get_screen("preferences") == None)]
+            button:
+                at button_transform
+                text "CLOSE" xalign 0.1 yalign 0.5 style "navigation_button_text"
+                text "閉じる" xalign 0.1 yalign 1.1 style "navigation_kan" 
+                hovered [SetVariable("option_index", 0)] 
+                action Return()
+            button:
+                at button_transform
+                text "LOG" xalign 0.1 yalign 0.5 style "navigation_button_text"
+                text "ログ" xalign 0.1 yalign 1.1 style "navigation_kan" 
+                hovered [SetVariable("option_index", 1)] 
+                action [Hide("preferences", _layer="textbox"), Hide("file_slots", _layer="textbox"), Hide("inventory_view", _layer="textbox"), ShowMenu("history", _layer="textbox"), SensitiveIf(renpy.get_screen("history") == None)]
+            button:
+                at button_transform
+                text "INVENTORY" xalign 0.1 yalign 0.5 style "navigation_button_text"
+                text "在庫" xalign 0.1 yalign 1.1 style "navigation_kan" 
+                hovered [SetVariable("option_index", 2)] 
+                action [Hide("preferences", _layer="textbox"), Hide("file_slots", _layer="textbox"), Hide("history", _layer="textbox"), ShowMenu("inventory_view", _layer="textbox"), SensitiveIf(renpy.get_screen("inventory_view") == None)]
+            button:
+                at button_transform
+                text "FAST FORWARD" xalign 0.1 yalign 0.5 style "navigation_button_text"
+                text "早送り" xalign 0.1 yalign 1.1 style "navigation_kan" 
+                hovered [SetVariable("option_index", 3)] 
+                action Skip()
+            button:
+                at button_transform
+                text "BOOKMARKS" xalign 0.1 yalign 0.5 style "navigation_button_text"
+                text "しおり" xalign 0.1 yalign 1.1 style "navigation_kan" 
+                hovered [SetVariable("option_index", 4)] 
+                action [Hide("history", _layer="textbox"), Hide("preferences", _layer="textbox"), Hide("inventory_view", _layer="textbox"), ShowMenu("file_slots", _layer="textbox"), SensitiveIf(renpy.get_screen("file_slots") == None)]
+            button:
+                at button_transform
+                text "OPTIONS" xalign 0.1 yalign 0.5 style "navigation_button_text"
+                text "オプション" xalign 0.1 yalign 1.1 style "navigation_kan" 
+                hovered [SetVariable("option_index", 5)] 
+                action [Hide("history", _layer="textbox"), Hide("file_slots", _layer="textbox"), Hide("inventory_view", _layer="textbox"), ShowMenu("preferences", _layer="textbox"), SensitiveIf(renpy.get_screen("preferences") == None)]
             if _in_replay:
-                textbutton "END REPLAY\n{size=20}リプレイを終了する{/size}" hovered [SetVariable("option_index", 6)] action EndReplay(confirm=True)
+                button:
+                    at button_transform
+                    text "END REPLAY" xalign 0.1 yalign 0.5 style "navigation_button_text"
+                    text "リプレイを終了する" xalign 0.1 yalign 1.1 style "navigation_kan" 
+                    hovered [SetVariable("option_index", 6)] 
+                    action EndReplay(confirm=True)
             else:
-                textbutton "TITLE SCREEN\n{size=20}タイトル画面{/size}" hovered [SetVariable("option_index", 6)] action MainMenu()
+                button:
+                    at button_transform
+                    text "TITLE SCREEN" xalign 0.1 yalign 0.5 style "navigation_button_text"
+                    text "タイトル画面" xalign 0.1 yalign 1.1 style "navigation_kan" 
+                    hovered [SetVariable("option_index", 6)] 
+                    action MainMenu()
             if renpy.variant("pc"):
-                textbutton "HELP\n{size=20}ヘルプ{/size}" hovered [SetVariable("option_index", 7)] action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"), _layer="textbox")]
-                textbutton "QUIT\n{size=20}クイット{/size}" hovered [SetVariable("option_index", 8)] action Quit(confirm=not main_menu) 
+                button:
+                    at button_transform
+                    text "HELP" xalign 0.1 yalign 0.5 style "navigation_button_text"
+                    text "ヘルプ" xalign 0.1 yalign 1.1 style "navigation_kan" 
+                    hovered [SetVariable("option_index", 7)] 
+                    action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"), _layer="textbox")]
+                button:
+                    at button_transform
+                    text "QUIT" xalign 0.1 yalign 0.5 style "navigation_button_text"
+                    text "クイット" xalign 0.1 yalign 1.1 style "navigation_kan" 
+                    hovered [SetVariable("option_index", 8)] 
+                    action Quit(confirm=not main_menu) 
 
 init -501 screen acts():
     use navigation_border
-    vbox at navigation_transform(0, 10):
+    vbox at navigation_transform(0, 80):
         style_prefix "navigation"
         spacing 0
-        textbutton "BACK\n{size=20}バック{/size}" hovered [SetVariable("option_index", 0)] action [Hide("acts", _layer="textbox"), Show("navigation", _layer="textbox")]
-        textbutton "PROLOGUE\n{size=20}プロローグ{/size}" hovered [SetVariable("option_index", 1)] action Function(StartGame)
-        textbutton "ACT 1\n{size=20}アクト１{/size}" hovered [SetVariable("option_index", 2)] action If(achievement.has("newfriends"), Function(Act1), Show(screen="dialog", message="Complete the Prologue first.", ok_action=Hide("dialog")))
-        textbutton "ACT 2\n{size=20}アクト２{/size}" hovered [SetVariable("option_index", 3)] action If(achievement.has("act1fin"), [Hide("acts", _layer="textbox"), Show("act2choice", _layer="textbox")], Show(screen="dialog", message="Complete Act 1 first.", ok_action=Hide("dialog")))
-        textbutton "ACT 3\n{size=20}アクト３{/size}" hovered [SetVariable("option_index", 4)] action If(achievement.has("act2fin"), Function(Act3), Show(screen="dialog", message="Complete Act 2 first.", ok_action=Hide("dialog")))
+        button:
+            at button_transform
+            text "BACK" xalign 0.1 yalign 0.5 style "navigation_button_text" 
+            text "バック" xalign 0.1 yalign 1.1 style "navigation_kan" 
+            hovered [SetVariable("option_index", 0)] 
+            action [Hide("acts", _layer="textbox"), Show("navigation", _layer="textbox")]
+        button:
+            at button_transform
+            text "PROLOGUE" xalign 0.1 yalign 0.5 style "navigation_button_text"
+            text "プロローグ" xalign 0.1 yalign 1.1 style "navigation_kan" 
+            hovered [SetVariable("option_index", 1)] 
+            action Function(StartGame)
+        button:
+            at button_transform
+            text "ACT 1" xalign 0.1 yalign 0.5 style "navigation_button_text"
+            text "アクト１" xalign 0.1 yalign 1.1 style "navigation_kan" 
+            hovered [SetVariable("option_index", 2)] 
+            action If(achievement.has("newfriends"), Function(Act1), Show(screen="dialog", message="Complete the Prologue first.", ok_action=Hide("dialog")))
+        button:
+            at button_transform
+            text "ACT 2" xalign 0.1 yalign 0.5 style "navigation_button_text"
+            text "アクト２" xalign 0.1 yalign 1.1 style "navigation_kan" 
+            hovered [SetVariable("option_index", 3)] 
+            action If(achievement.has("act1fin"), [Hide("acts", _layer="textbox"), Show("act2choice", _layer="textbox")], Show(screen="dialog", message="Complete Act 1 first.", ok_action=Hide("dialog")))
+        button:
+            at button_transform
+            text "ACT 3" xalign 0.1 yalign 0.5 style "navigation_button_text"
+            text "アクト３" xalign 0.1 yalign 1.1 style "navigation_kan" 
+            hovered [SetVariable("option_index", 4)] 
+            action If(achievement.has("act2fin"), Function(Act3), Show(screen="dialog", message="Complete Act 2 first.", ok_action=Hide("dialog")))
         if config.developer:
-            textbutton "DEVELOPER MODE\n{size=20}デベロッパーモード{/size}" hovered [SetVariable("option_index", 5)] action Function(Developer)
+            button:
+                at button_transform
+                text "DEVELOPER MODE" xalign 0.1 yalign 0.5 style "navigation_button_text"
+                text "デベロッパーモード" xalign 0.1 yalign 1.1 style "navigation_kan" 
+                hovered [SetVariable("option_index", 5)] 
+                action Function(Developer)
 
 default unlock_jp = ""
 default unlock_en = ""
@@ -472,56 +598,78 @@ init -501 screen act2choice():
     button xcenter 640 ycenter 695 xysize (1280, 100) action [Hide("act2choice", _layer="textbox"), Show("acts", _layer="textbox")]
     text "バック\nBACK" xcenter 640 ycenter 680
 
+init -501 image nav_f:
+    "mod_assets/gui/nav_f.png"
+    alpha 0.5
+
 init -501 screen navigation_border():
     zorder 2500
-    text _(str(option_index)) style "navigation_center_text" at navigation_transform(120, -75)
     frame at navigation_transform:
         ysize 720
         xsize 540
-        background Solid("#ffffff8f")            
+        background Solid("#ffffff")
+    text _(str(option_index)) style "navigation_center_text" at navigation_transform(-10, -75)
+    add "nav_f"
 
 init -501 transform navigation_transform(xo=0,yo=0):
     on show:
         xpos -640
         ypos yo
-        easeout .25 xpos 0+xo
+        easeout .25 xpos xo
     on hide:
-        xpos 0+xo
+        xpos xo
         easein .25 xpos -640
+
+init -501 transform button_transform:
+    on hover:
+        xsize 540
+        ysize 80
+        linear 0.25 xsize 550 ysize 90
+    on idle:
+        xsize 550
+        ysize 90
+        linear 0.25 xsize 540 ysize 80
 
 
 
 init -1 style navigation_button is gui_button
-init -1 style navigation_button_text is gui_button_text
 
 init -1 style navigation_button:
     size_group "navigation"
-    properties gui.button_properties("navigation_button")
-    background "#00000000"
-    hover_background "#0000008f"
+    background "#ffffff00"
+    hover_background "#000"
     xsize 540
-    ysize 75
+    ysize 80
     hover_sound gui.hover_sound
     activate_sound gui.activate_sound
+    yanchor 1.0
 
 init -1 style navigation_button_text:
-    properties gui.button_text_properties("navigation_button")
-    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
+    font "mod_assets/fonts/ThatSoundsGreat-yYLE3.ttf"
     color "#000"
     hover_color "#fff"
-    size 50
-    line_spacing -20
+    outlines [(0, "#58585800", 0, 0), (0, "#58585800", 0, 0)]
+    size 34
+    text_align 0.0
 
 init -1 style navigation_text:
-    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
+    font "mod_assets/fonts/ThatSoundsGreat-yYLE3.ttf"
     color "#000"
+    outlines [(0, "#58585800", 0, 0), (0, "#58585800", 0, 0)]
     size 50
-    text_align 1.0
+
+init -1 style navigation_kan:
+    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
+    color "#00000080"
+    hover_color "#ffffff80"
+    outlines [(0, "#58585800", 0, 0), (0, "#58585800", 0, 0)]
+    size 20
 
 init -1 style navigation_center_text:
-    font "mod_assets/fonts/Unitblock-mLAwm.ttf"
-    color "#0000005d"
-    size 750
+    font "mod_assets/fonts/ThatSoundsGreat-yYLE3.ttf"
+    color "#0000002d"
+    outlines [(0, "#58585800", 0, 0), (0, "#58585800", 0, 0)]
+    size 700
 
 
 
