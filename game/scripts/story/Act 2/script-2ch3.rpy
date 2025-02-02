@@ -102,6 +102,8 @@ label act2_ch3_main:
         ma eb "!!!"
         ma om "Yes!  Yes!  That's exactly what I'm talking about!  How the hell did you find that!?"
         a "It was in an abandoned underground factory just a few meters from where we were tonight."
+        $ remove_from_inv("Mysterious Substance")
+        $ add_to_inv("Breaker", "ブレイカー", _("An experimental substance I assumedly found in the place of invention that apparently went horribly wrong"))
         ma "Please tell me you haven't used those on anybody..."
         a "I didn't, these were the only 2 vials in there and their both half full like how vials are usually filled."
         ma anno "...Good."

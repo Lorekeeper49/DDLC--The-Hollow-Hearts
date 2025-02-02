@@ -21,6 +21,15 @@ init -1 python:
             renpy.call(oot)
     def get_length(s):
         return len(s)
+    def add_to_inv(EN_name, JP_name, desc):
+        inventory.append(EN_name)
+        JPitems.append(JP_name)
+        items_desc.append(desc)
+    def remove_from_inv(EN_name):
+        i = inventory.index(EN_name)
+        del inventory[i]
+        del JPitems[i]
+        del items_desc[i]
     class TrackCursor(renpy.Displayable):
         #class from here: https://lemmasoft.renai.us/forums/viewtopic.php?p=340355&sid=4540fae3b4ed740ce81e66660e093648#p340355
         def __init__(self, child):
@@ -95,6 +104,8 @@ label next_location(loc, *, transition=True, j=False, f=False, w=False):
     return
 
 default inventory = []
+default JPitems = []
+default items_desc = []
 default explored = []
 default party = []
 default code = ""

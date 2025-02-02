@@ -1,14 +1,14 @@
 screen sewer_hall:
     style_prefix "explore"
-    button xcenter 750 ycenter 350 xysize (150, 100) action If("factory key" in inventory, [Play("sound", audio.door), Call("next_location", "factory")]) 
+    button xcenter 750 ycenter 350 xysize (150, 100) action If("Factory Key" in inventory, [Play("sound", audio.door), Call("next_location", "factory")], Call("locked", "sewer_hall")) 
     text "工場\nFACTORY" xcenter 750 ycenter 350
     button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.door), Call("next_location", "hideout")]
     text "ビジネスルーム\nBUSINESS ROOM" xcenter 640 ycenter 680
 
 screen hideout:
     style_prefix "explore"
-    if not "factory key" in inventory:
-        button xcenter 550 ycenter 500 xysize (100, 100) action AddToSet(inventory, "factory key")
+    if not "Factory Key" in inventory:
+        button xcenter 550 ycenter 500 xysize (100, 100) action Function(add_to_inv, "Factory Key", "工場の鍵", _("An old key to the factory."))
         text "鍵\nKEY" xcenter 550 ycenter 500
     button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.door), Call("next_location", "sewer_hall")]
     text "ホール\nHALL" xcenter 640 ycenter 680
@@ -133,6 +133,13 @@ label found_something:
     ha "Well good, 'cause we better get the hell out of here!"
     a "Right behind you!"
     $ found_breaker = True
-    $ persistent.choices_made.append("")
+    if "Found Breaker" not in persistent.choices_made:
+        $ persistent.choices_made.append("Found Breaker")
+    $ add_to_inv("Mysterious Substance", "謎の物質", "A black substance that looks familiar...")
     call screen secret_room
+    return
+
+label locked(r):
+    "Locked."
+    call next_location(r, transition=False)
     return

@@ -75,7 +75,7 @@ screen hall1:
 
 screen hall2:
     style_prefix "explore"
-    button xcenter 150 ycenter 150 xysize (300, 300) action If("broken key" in inventory, [Play("sound", audio.door), Call("mansion_end")]) 
+    button xcenter 150 ycenter 150 xysize (300, 300) action If("Broken Key" in inventory, [Play("sound", audio.door), Call("mansion_end")], Call("locked_man", "hall2")) 
     text "馴染みの部屋\nFAMILIAR ROOM" xcenter 150 ycenter 150
     button xcenter 640 ycenter 695 xysize (1280, 100) action [Play("sound", audio.footsteps), Call("next_location", "hall1", w=True)]
     text "バック\nBACK" xcenter 640 ycenter 680
@@ -91,7 +91,7 @@ screen dark_kitchen:
     button xcenter 300 ycenter 200 xysize (100, 400) action Call("nothing", "dark_kitchen")
     text "S\nE\nA\nR\nC\nH" xcenter 320 ycenter 200
     text "検\n索\nす\nる" xcenter 280 ycenter 200
-    button xcenter 1175 ycenter 200 xysize (200, 350) action If("broken key" in inventory, Call("nothing", "dark_kitchen"), Call("something", "broken key", "dark_kitchen"))
+    button xcenter 1175 ycenter 200 xysize (200, 350) action If("Broken Key" in inventory, Call("nothing", "dark_kitchen"), Call("something", "Broken Key", "折れた鍵", "A key that is broken but still looks to be usable.", "dark_kitchen"))
     text "検索する\nSEARCH" xcenter 1175 ycenter 200
     button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.door), Call("next_location", "hall1", w=True)]
     text "ホール\nHALL" xcenter 640 ycenter 680
@@ -114,9 +114,14 @@ label nothing(r):
     call next_location(r, transition=False, w=True)
     return
 
-label something(i, r):
+label something(en, jp, i, r):
     "Found something."
-    $ inventory.append(i)
+    $ add_to_inv(en, jp, i)
+    call next_location(r, transition=False, w=True)
+    return
+
+label locked_man(r):
+    "Locked."
     call next_location(r, transition=False, w=True)
     return
 

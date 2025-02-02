@@ -6,6 +6,9 @@ label act1_ch2_main:
     $ style.say_window = style.window
     $ nb = "namebox"
     show monika forward nuet rhip zorder 2 at t11
+    $ add_to_inv("Pen", "ペン", _("A pen for writing"))
+    $ add_to_inv("Notebook", "ノートブック", _("My massive collection of notes"))
+    $ add_to_inv("PC", "パソコン", _("My crappy laptop."))
     "Routine checkup."
     m om "Any progress?"
     t "No."

@@ -478,7 +478,7 @@ init -501 screen navigation():
                 text "CLOSE" xalign 0.1 yalign 0.5 style "navigation_button_text"
                 text "閉じる" xalign 0.1 yalign 1.1 style "navigation_kan" 
                 hovered [SetVariable("option_index", 0)] 
-                action Return()
+                action [SetVariable("selected_item", "Nothing\n{size=20}何も無い{/size}"), Return()]
             button:
                 at button_transform
                 text "LOG" xalign 0.1 yalign 0.5 style "navigation_button_text"
@@ -812,26 +812,29 @@ init -501 screen file_slots():
                             text "ロード\nLOAD" font "mod_assets/fonts/NotoSerifJP-Regular.otf" size 10 text_align 0.5 ypos -5
                             action FileLoad(slot_selected)
 
-default selected_item = "Nothing\n{size=20}何も無い{/size}"
+default selected_item = "Nothing"
+default JP_item_name = "何も無い"
 default item_desc = ""
 init -501 screen inventory_view():
     use game_menu
     fixed at game_menu_transform:
+        frame:
+            ysize 200
+            xsize 540
+            background Solid("#00000090")
         vbox:
-            frame:
-                ysize 200
-                xsize 540
-                style_prefix "inventory"
-                label selected_item
-                text item_desc
-                background Solid("#00000090")
+            style_prefix "inventory"
+            label "[selected_item]\n{size=20}[JP_item_name]{/size}"
+            text item_desc
             viewport id "vp":
+                yoffset 100
                 grid 5 100:
-                    for item in inventory:
+                    for item in range(len(inventory)):
                         button:
-                            hover_background Solid("#ffffff59")
-                            add "mod_assets/inventory/[item].png"
-                            action [SetVariable("selected_item", item), If(_preferences.language is not None, SetVariable("item_desc", renpy.file("tl/[_preferences.language]/inventory/[item].txt").read()), SetVariable("item_desc", renpy.file("tl/mod_assets/inventory/[item].txt").read()))]
+                            background Solid("#00000000")
+                            hover_foreground Solid("#ffffff59")
+                            add "mod_assets/inventory/[inventory[item]].png"
+                            action [SetVariable("selected_item", inventory[item]), SetVariable("JP_item_name", JPitems[item]), SetVariable("item_desc", items_desc[item])]
 
 init -1 style slot_button is gui_button
 init -1 style slot_button_text is gui_button_text
