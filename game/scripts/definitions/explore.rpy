@@ -21,6 +21,7 @@ init -1 python:
             renpy.call(oot)
     def get_length(s):
         return len(s)
+    # Only use this when adding items to the inventory, it makes sure the items are in the same place for each list so the inventory view can work correctly
     def add_to_inv(EN_name, JP_name, desc):
         inventory.append(EN_name)
         JPitems.append(JP_name)
