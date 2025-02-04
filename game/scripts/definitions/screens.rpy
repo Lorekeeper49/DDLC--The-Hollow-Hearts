@@ -892,26 +892,26 @@ init -501 screen preferences():
                     label "Music Volume" yalign 0.5
                     text "音楽ボリューム" yalign 0.75 style "pref_JP_label_text"
                 hbox:
-                    bar value Preference("music volume") xsize 440
+                    bar value Preference("music volume")
                 hbox:
                     label "Ambience Volume" yalign 0.5
                     text "環境音ボリューム" yalign 0.75 style "pref_JP_label_text"
                 hbox:
-                    bar value Preference("ambience volume") xsize 440
+                    bar value Preference("ambience volume")
             if config.has_sound:
                 style_prefix "slider"
                 hbox:
                     label "Sound Volume" yalign 0.5
                     text "SFXボリューム" yalign 0.75 style "pref_JP_label_text"
                 hbox:
-                    bar value Preference("sound volume") xsize 440
+                    bar value Preference("sound volume")
             if config.has_voice:
                 style_prefix "slider"
                 hbox:
                     label "Voice Volume" yalign 0.5
                     text "声ボリューム" yalign 0.75 style "pref_JP_label_text"
                 hbox:
-                    bar value Preference("voice volume") xsize 440
+                    bar value Preference("voice volume")
                     if config.sample_voice:
                         textbutton _("Test") yalign 0.5 action Play("voice", config.sample_voice)
             if config.has_music or config.has_sound or config.has_voice:
@@ -1020,7 +1020,7 @@ init -1 style check_button_text:
     outlines [(3, "#58585800", 0, 0), (1, "#58585800", 1, 1)]
 
 init -1 style slider_slider:
-    xsize 350
+    xsize 440
 
 init -1 style slider_button:
     properties gui.button_properties("slider_button")
