@@ -886,13 +886,6 @@ init -501 screen preferences():
             draggable True
             has vbox
             null height 40
-
-
-            hbox:
-                label "Auto-Advance Time" yalign 0.5
-                text "オートタイム" yalign 0.75 style "pref_JP_label_text"
-            hbox:
-                bar range 60 value _preferences.auto_time xsize 440
             if config.has_music:
                 style_prefix "slider"
                 hbox:
