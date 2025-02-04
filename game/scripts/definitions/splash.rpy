@@ -10,7 +10,7 @@ init python:
     "She can't be saved.\nShe won't be saved.",
     "She is hidden.\nShe has amnesia.",
     "She is kind.\nShe's a punk.",
-    "She's not normal.\nShe's not human.",
+    "She is normal.\nShe's not human.",
     "She is a mother.\nShe can't find her.",
     "She is alive.\nShe is dead.",
     "He is a monster.\nHe can't be fixed.",
