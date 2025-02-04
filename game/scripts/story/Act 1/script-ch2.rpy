@@ -102,16 +102,16 @@ label act1_ch2_main:
     n neut om "Hey, Taiyen."
     t "Whatcha doing?"
     n dist cm "..."
-    n cross dist om "I like to come here."
-    n turned dist rhip om "See that path?  Just over there?"
+    n cross "I like to come here."
+    n turned "See that path?  Just over there?"
     "She points across the water to a path next to a campsite."
     n lhip "Walk along it for about a kilometer and you'll reach a mansion."
     n ldown rdown "It's... where I used to live."
-    n cross dist om "My sister and I would use this as an escape from... things I'm going to be talking about in my story..."
+    n cross "My sister and I would use this as an escape from... things I'm going to be talking about in my story..."
     n cm "..."
     t "Where do you live now?"
     n om "Besides the dorms?  Nowhere."
-    n turned dist rhip om "I'm currently saving up to buy a small house near the area."
+    n turned "I'm currently saving up to buy a small house near the area."
     t "Same here."
     n lsur "That's a dorm village?"
     show natsuki cm
@@ -128,6 +128,26 @@ label act1_ch2_main:
     t "My dorm's under renovation though."
     t "They're trying to add more rooms to the place."
     n cross om "Huh."
+    n turned rhip "For being the founder's son, you'd think you'd have a better place."
+    t "I don't know, my family's never been one to brag about their riches."
+    n cross "I see."
+    show natsuki dist
+    "She looks back toward the river."
+    n ce cm "..."
+    t "..."
+    n turned ldown rdown shoc oe om "Ah!"
+    t "Huh?"
+    "She looks across the river."
+    n cross "What?"
+    "..."
+    "I think I know what this is."
+    t "You see your sister?"
+    show natsuki turned
+    "She points across the river."
+    t "There's no one in my view."
+    t "This happens to a lot of people."
+    show natsuki rhip
+    "She pulls back and attempts to regain her composure."
 
     
     return
