@@ -72,6 +72,7 @@ label act1_ch2_main:
     show yuri turned happ rup zorder 2 at t33
     t "Gotta say, I find it interesting but also fun that all 4 of us are in the same class."
     lil ee "Yeah, we got kinda lucky."
+    show lilly de
     t "The only one missing is Koto-chan, who got class B."
     t "But that's fine, I had her class twice in a row in the last 2 years."
     hide lilly
