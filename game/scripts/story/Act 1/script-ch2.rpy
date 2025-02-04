@@ -135,7 +135,7 @@ label act1_ch2_main:
     "She looks back toward the river."
     n ce cm "..."
     t "..."
-    n turned ldown rdown shoc oe om "Ah!"
+    n turned ldown rdown vsur oe om "Ah!"
     t "Huh?"
     "She looks across the river."
     n cross "What?"
@@ -148,6 +148,8 @@ label act1_ch2_main:
     t "This happens to a lot of people."
     show natsuki rhip
     "She pulls back and attempts to regain her composure."
+    n rdown "And now I see myself with her over there."
+
 
     
     return
