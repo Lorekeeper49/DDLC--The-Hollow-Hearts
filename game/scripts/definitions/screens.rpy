@@ -913,11 +913,11 @@ init -501 screen preferences():
                 hbox:
                     bar value Preference("voice volume") xsize 440
                     if config.sample_voice:
-                        textbutton _("Test") action Play("voice", config.sample_voice)
+                        textbutton _("Test") yalign 0.5 action Play("voice", config.sample_voice)
             if config.has_music or config.has_sound or config.has_voice:
                 style_prefix "slider"
                 textbutton _("Reset"):
-                    action [Preference("music volume", 0.75), Preference("sound volume", 0.75), Preference("voice volume", 1.50)] 
+                    action [Preference("music volume", 0.75), Preference("sound volume", 0.75), Preference("voice volume", 1.00), Preference("ambience volume", 0.75)] 
             yoffset -10
             if renpy.variant("pc"):
                 vbox:
@@ -1002,6 +1002,7 @@ init -1 style radio_button_text:
     properties gui.button_text_properties("radio_button")
     font "mod_assets/fonts/NotoSerifJP-Regular.otf"
     color "#000"
+    hover_color "#a8a8a8"
     outlines []
 
 init -1 style check_vbox:
@@ -1015,6 +1016,7 @@ init -1 style check_button_text:
     properties gui.button_text_properties("check_button")
     font "mod_assets/fonts/NotoSerifJP-Regular.otf"
     color "#000"
+    hover_color "#a8a8a8"
     outlines [(3, "#58585800", 0, 0), (1, "#58585800", 1, 1)]
 
 init -1 style slider_slider:
@@ -1029,6 +1031,8 @@ init -1 style slider_button_text:
     properties gui.button_text_properties("slider_button")
     font "mod_assets/fonts/NotoSerifJP-Regular.otf"
     color "#000"
+    hover_color "#a8a8a8"
+    outlines [(3, "#58585800", 0, 0), (1, "#58585800", 1, 1)]
 
 init -1 style slider_vbox:
     xsize 450
