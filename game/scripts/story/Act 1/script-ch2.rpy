@@ -5,7 +5,7 @@ label act1_ch2_main:
     call showlocation("Taiyen's Room\n{size=25}隊円の部屋{/size}","September 30, 2023\n{size=15}2023年9月30日{/size}",405.2, "bg bedroom")
     $ style.say_window = style.window
     $ nb = "namebox"
-    show monika forward nuet rhip zorder 2 at t11
+    show monika forward rhip zorder 2 at t11
     $ add_to_inv("Pen", "ペン", _("A pen for writing"))
     $ add_to_inv("Notebook", "ノートブック", _("My massive collection of notes"))
     $ add_to_inv("PC", "パソコン", _("My crappy laptop."))
@@ -93,7 +93,41 @@ label act1_ch2_main:
     "And I have seat 1-3 at the front of the class."
     $ pla = "先生\n{size=15}Teacher{/size}"
     general "Alright class!  Let's begin!"
+
+    stop music fadeout 1.0
     scene bg schoolriverday with dissolve_scene_full
+    call showlocation("Sakura River\n{size=25}桜川{/size}","September 30, 2023\n{size=15}2023年9月30日{/size}",11*60+29+57/60.0, "bg schoolriverday")
+    show natsuki turned dist rhip zorder 2 at t11
+    t "Oh hello, Natsuki."
+    n neut om "Hey, Taiyen."
+    t "Whatcha doing?"
+    n dist cm "..."
+    n cross dist om "I like to come here."
+    n turned dist rhip om "See that path?  Just over there?"
+    "She points across the water to a path next to a campsite."
+    n lhip "Walk along it for about a kilometer and you'll reach a mansion."
+    n ldown rdown "It's... where I used to live."
+    n cross dist om "My sister and I would use this as an escape from... things I'm going to be talking about in my story..."
+    n cm "..."
+    t "Where do you live now?"
+    n om "Besides the dorms?  Nowhere."
+    n turned dist rhip om "I'm currently saving up to buy a small house near the area."
+    t "Same here."
+    n lsur "That's a dorm village?"
+    show natsuki cm
+    t "Yes."
+    "To seperate from normal schools, this school owns small villages that house the students of each class who opt in for dorms."
+    "It's a little more expensive than traditional dorms-"
+    "Scratch that, it's a lot more expensive than traditional dorms."
+    "And it doesn't even fit the proper definition of the word 'dormitory'."
+    "But people see it as better because they can bring out more personality and the introverts generally like being more seperated from their classmates."
+    "I wouldn't know though, I've never lived in a traditional dorm."
+    "...Who the hell am I explaining this to?"
+    n rdown om "Wow.  I never look at the map, so I didn't realize how big the town area is."
+    show natsuki cm
+    t "My dorm's under renovation though."
+    t "They're trying to add more rooms to the place."
+    n cross om "Huh."
 
     
     return
