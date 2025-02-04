@@ -103,11 +103,12 @@ default preferences.text_cps = 50
 
 
 
-default preferences.afm_time = 1
+default preferences.afm_time = 30
 
 default preferences.music_volume = 0.75
 default preferences.sfx_volume = 0.75
-default preferences.voice_volume = 1.50
+default preferences.ambience_volume = 0.75
+default preferences.voice_volume = 1.0
 
 
 
@@ -176,11 +177,11 @@ init python:
             _preferences.afm_time = 0.5
             return "voicelines/[id].mp3"
         else:
-            _preferences.afm_time = 30
+            _preferences.afm_time = preferences.auto_time
             return "voicelines/[id]"
     config.auto_voice = autovoiceline
 
-
+default preferences.auto_time = 30
 
 
 

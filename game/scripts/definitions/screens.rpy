@@ -886,6 +886,13 @@ init -501 screen preferences():
             draggable True
             has vbox
             null height 40
+
+
+            hbox:
+                label "Auto-Advance Time" yalign 0.5
+                text "オートタイム" yalign 0.75 style "pref_JP_label_text"
+            hbox:
+                bar range 60 value _preferences.auto_time xsize 440
             if config.has_music:
                 style_prefix "slider"
                 hbox:
@@ -893,6 +900,11 @@ init -501 screen preferences():
                     text "音楽ボリューム" yalign 0.75 style "pref_JP_label_text"
                 hbox:
                     bar value Preference("music volume") xsize 440
+                hbox:
+                    label "Ambience Volume" yalign 0.5
+                    text "環境音ボリューム" yalign 0.75 style "pref_JP_label_text"
+                hbox:
+                    bar value Preference("ambience volume") xsize 440
             if config.has_sound:
                 style_prefix "slider"
                 hbox:
@@ -906,7 +918,7 @@ init -501 screen preferences():
                     label "Voice Volume" yalign 0.5
                     text "声ボリューム" yalign 0.75 style "pref_JP_label_text"
                 hbox:
-                    bar range 2.00 value Preference("voice volume") xsize 440
+                    bar value Preference("voice volume") xsize 440
                     if config.sample_voice:
                         textbutton _("Test") action Play("voice", config.sample_voice)
             if config.has_music or config.has_sound or config.has_voice:
