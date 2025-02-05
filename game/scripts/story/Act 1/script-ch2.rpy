@@ -97,6 +97,8 @@ label act1_ch2_main:
     stop music fadeout 1.0
     scene bg schoolriverday with dissolve_scene_full
     call showlocation("Sakura River\n{size=25}桜川{/size}","September 30, 2023\n{size=15}2023年9月30日{/size}",11*60+29+57/60.0, "bg schoolriverday")
+    $ add_to_inv("Bento", "弁当", _("Just in case I eat with a friend."))
+    $ add_to_inv("Chicken Yakisoba", "チキン焼きそば", _("My favorite food."))
     show natsuki turned dist rhip zorder 2 at t11
     t "Oh hello, Natsuki."
     n neut om "Hey, Taiyen."
@@ -122,7 +124,7 @@ label act1_ch2_main:
     "And it doesn't even fit the proper definition of the word 'dormitory'."
     "But people see it as better because they can bring out more personality and the introverts generally like being more seperated from their classmates."
     "I wouldn't know though, I've never lived in a traditional dorm."
-    "...Who the hell am I explaining this to?"
+    "...{w=1}Who the hell am I explaining this to?"
     n rdown om "Wow.  I never look at the map, so I didn't realize how big the town area is."
     show natsuki cm
     t "My dorm's under renovation though."
@@ -151,18 +153,46 @@ label act1_ch2_main:
     n lsur rdown "And now I see myself with her over there."
     n dist cm "..."
     n ce om "*Sigh*"
-    n cross neut "I forgot to grab lunch, I'll be back."
+    n cross oe neut "I forgot to grab lunch, I'll be back."
     menu(time=5.0,force=1):
         "Give her food.":
             t "I have food for you."
             n turned rhip "No, you don't have to-"
             t "I insist."
             n cm "..."
-            n lhip "Alright, whatcha got?"
-            call screen inventory_view(Return())
+            n lhip om "Alright, whatcha got?"
+            call .food_prompt
+            "I hand her my [selected_item]."
+            $ remove_from_inv(selected_item)
+            if selected_item == "Chicken Yakisoba":
+                n lsur ldown rdown "You're giving me that?"
+                "Apparently everyone knows what my favorite food is."
+                n rhip "Are you sure?"
+                t "Of course."
+                n rdown "Wow."
+            else:
+                n happ "Always gotta have you're favorite food, huh?"
+                show natsuki cm
+                "Apparently everyone knows what my favorite food is."
+            n cross happ "Thanks."
+            show natsuki cm
+            t "You're welcome!"
         "Let her go.":
             t "Okay."
-
-
+            hide natsuki
+            "She leaves."
+            "Maybe I should've given her something..."
+            show natsuki cross
+            "She comes back with a bento."
+    "She sits down on a nearby bench and begins her food."
+    "I sit down next to her and begin my food."
     
+    
+    return
+
+label .food_prompt:
+    call screen inventory_view(Return())
+    if selected_item != "Bento" and selected_item != "Chicken Yakisoba":
+        "...{w=1}She can't eat that!"
+        jump .food_prompt
     return
