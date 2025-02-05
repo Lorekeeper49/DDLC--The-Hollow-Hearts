@@ -122,6 +122,7 @@ label act1_ch2_main:
     "It's a little more expensive than traditional dorms-"
     "Scratch that, it's a lot more expensive than traditional dorms."
     "And it doesn't even fit the proper definition of the word 'dormitory'."
+    "That's why I just call them households."
     "But people see it as better because they can bring out more personality and the introverts generally like being more seperated from their classmates."
     "I wouldn't know though, I've never lived in a traditional dorm."
     "...{w=1}Who the hell am I explaining this to?"
@@ -186,7 +187,38 @@ label act1_ch2_main:
             "She comes back with a bento."
     "She sits down on a nearby bench and begins her food."
     "I sit down next to her and begin my food."
+    n curi om "Does that happen to you at all?"
+    show natsuki cm
+    t "What?  Seeing my family like that?"
+    n cross om "Yeah."
+    show natsuki cm
+    t "It's different for everybody."
+    t "I have it worse."
+    t "They keep telling me their death was my fault."
+    show natsuki worr
+    t "I don't want to believe them, but at the same time..."
+    t "There's concrete evidence that it's true..."
+    n turned rhip om "Do I want to know what that means?"
+    t "You'll find out eventually..."
+    t "I almost don't want to talk about it."
+    t "But at the same time, everyone needs to know what happened."
+    t "Sayori said she'd be streaming every meeting now, so I'd better deliver."
+    n cross laug "She is taking a big doxing risk in doing that."
+    show natsuki cm
+    t "Sakura Academy looks pretty similar to other schools, we should be fine as long as no one says the name of the school."
+    n turned rhip om "30% of her fans attend Sakura Academy."
+    t "And how do you know that?"
+    n happ "That poll on the notice board.  I'm the one who put it up."
+    show natsuki cm
+    t "Oh!  I did not notice that."
+    t "I've heard you being called the survey girl around the school, I didn't know what that meant until now."
+    n cross anno om "I hate that name..."
+    n ce "There are far better things to know me by."
+    t "You're talking to the so-called 'Black Lab Scientist'!"
+    n turned shoc oe "That's who they're referring to?"
+    t "Right here in the flesh!"
     
+
     
     return
 
