@@ -130,6 +130,7 @@ label mansion_end:
     scene bg final_room
     with Fade(0.25, 0.0, 0.25)
     play ambience hb
+    $ renpy.music.set_volume(1.0, delay=0, channel="ambience")
     show veins onlayer foreground at heartbeat
     play music jumpscare fadein 8.0
     show noise onlayer foreground at noisefade(5.0)

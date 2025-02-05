@@ -15,6 +15,7 @@ label act2_ch4_main:
     "I've seen this place before, but I've never been inside."
     a "Here goes nothing."
     "We all walk inside."
+    $ renpy.music.set_volume(0.3, delay=0, channel="ambience")
     scene bg foyer
     show flashlight onlayer foreground
     with wipeleft_scene
@@ -78,7 +79,8 @@ label act2_ch4_main:
 
 label act2_ch4_alt:
     stop music fadeout 2.0
-    #play ambience mansion
+    play ambience storm
+    $ renpy.music.set_volume(0.3, delay=0, channel="ambience")
     scene bg foyer
     show dark onlayer foreground
     with dissolve_scene_full
@@ -154,7 +156,8 @@ label act2_ch4_alt:
 
 label act2_ch4_common:
     stop music fadeout 2.0
-    #play ambience mansion fadein 1.0
+    play ambience storm fadein 1.0
+    $ renpy.music.set_volume(0.3, delay=0, channel="ambience")
     a "{cps=3}...?{/cps}"
     scene bg final_room
     with dissolve_scene_full
@@ -251,6 +254,7 @@ label act2_ch4_common:
     $ pause(0.1)
     hide tetsuo
     play ambience hb
+    $ renpy.music.set_volume(1.0, delay=0, channel="ambience")
     show veins onlayer foreground at heartbeat
     a "Ah!"
     en "Are you-"
@@ -420,7 +424,6 @@ label act2_ch4_common:
             a "Until then, See you later."
             show engeki ei
             "I step out the door."
-    stop ambience fadeout 1.0
     if known:
         call act2_ch4_main_end
     else:
