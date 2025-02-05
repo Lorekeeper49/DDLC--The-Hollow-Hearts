@@ -1,9 +1,10 @@
 #Name: A Past Regained
 label act2_ch4_main:
     stop music fadeout 2.0
-    #play ambience mansion
-    scene bg mansion
-    with dissolve_scene_full
+    play ambience storm
+    $ renpy.music.set_volume(1.0, delay=0, channel="ambience")
+    play sound thunder2
+    scene bg mansion with flash
     call showlocation("Wraith Mansion","October 11, 2023\n{size=15}2023年10月11日{/size}",21*60+14+57/60.0,"bg mansion") from _call_showlocation_43
     k "We're here."
     "Welp, here we go..."

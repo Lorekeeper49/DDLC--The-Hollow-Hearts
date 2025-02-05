@@ -106,6 +106,7 @@ label act2_ch2_main:
     a "I've really changed, huh?"
     a "..."
     a "I'm running out of time."
+    play sound thunder
     scene bg tree with flash
     play ambience forest
     a "Guys, you here?"
@@ -230,6 +231,7 @@ label act2_ch2_main:
     t "Take care, Aoruguri."
     a "You too."
     "With that, I raise my hand and..."
+    play sound thunder
     scene bg kamiclassday with flash
     stop ambience
     "...zap back to school."
@@ -280,6 +282,7 @@ label act2_ch2_main:
     ha "You said it!  I don't know if I want to go there again."
     a "We should head back to school, we've been gone for over two hours, no doubt we missed classes."
     "I don't even acknowledge the fact that this is the park Taiyen and I usually meet at."
+    play sound thunder
     scene bg kamiroofn with flash
     show mari forward worr zorder 2 at t11
     ma "Aoruguri!?"

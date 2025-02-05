@@ -258,10 +258,11 @@ label dom_burst:
     a "Use your true form and help me out!"
     show lilly doll a0 with blink
     lil "You got it!"
+    play sound thunder
     scene bg storm
     show dominion zorder 2 at t11
     with flash
-    play ambience storm
+    play ambience epic_storm
     $ renpy.music.set_volume(1.0, delay=0, channel="ambience")
     "Come on Aoruguri, you can do this!"
     show lilly casual doll a0 zorder 2 at r44
@@ -277,6 +278,7 @@ label dom_burst:
     a "Brother, I'm here for you."
     "Huh?"
     "What is...?"
+    play sound thunder
     scene bg storm with flash
     $ renpy.music.set_volume(1.0, delay=0, channel="ambience")
     "What's happenning?"

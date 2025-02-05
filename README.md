@@ -197,6 +197,8 @@ Argument - MC.Dummy.Composer
 
 [Tears Won't Stop - Fesliyan Studios](https://www.fesliyanstudios.com/royalty-free-music/downloads-c/sad-music/1)
 
+EPIC STORM - Sound Effect by [Peace,love,happiness](https://pixabay.com/users/placidplace-25572496/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=106800) from [Pixabay](https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=106800)
+
 
 
 ### SOUNDS
@@ -213,6 +215,10 @@ Argument - MC.Dummy.Composer
 [FOOTSTEPS - Sound Effect from Pixabay](https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=43089)
 
 [GRASS MOVEMENT - MADE BY MIXING SOUNDS FROM Fesliyan Studios](https://www.fesliyanstudios.com/royalty-free-sound-effects-download/footsteps-on-grass-284)
+
+THUNDER - Sound Effect by [LordSonny](https://pixabay.com/users/lordsonny-38439655/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=161022) from [Pixabay](https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=161022)
+
+THUNDER2 - Sound Effect by [Mikhail](https://pixabay.com/users/soundsforyou-4861230/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=113219) from [Pixabay](https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=113219)
 
 
 ### FONTS

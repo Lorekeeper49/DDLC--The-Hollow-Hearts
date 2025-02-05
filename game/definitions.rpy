@@ -156,6 +156,7 @@ define audio.deadamb = "mod_assets/sounds/deadamb.ogg"
 define audio.mansion = "<loop 1 to 38>mod_assets/ambience/mansion.ogg"
 define audio.creepy = "<loop 5>mod_assets/ambience/creepy.ogg"
 define audio.clock = "mod_assets/ambience/clock.mp3"
+define audio.epic_storm = "mod_assets/ambience/epic_storm.mp3"
 
 # - mod sound effects
 define audio.bell = "mod_assets/sounds/school-bell.ogg"
@@ -173,6 +174,8 @@ define audio.door = "mod_assets/sounds/open_door.ogg"
 define audio.footsteps = "mod_assets/sounds/footsteps.ogg"
 define audio.grass_move = "mod_assets/sounds/grass_movement.ogg"
 define audio.static = "mod_assets/sounds/static.ogg"
+define audio.thunder = "mod_assets/sounds/thunder.mp3"
+define audio.thunder2 = "mod_assets/sounds/thunder2.ogg"
 
 image black = "#000000"
 image dark = "#000000e4"
