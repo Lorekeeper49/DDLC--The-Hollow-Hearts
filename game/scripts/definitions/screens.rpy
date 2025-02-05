@@ -916,8 +916,7 @@ init -501 screen preferences():
                         textbutton _("Test") yalign 0.5 action Play("voice", config.sample_voice)
             if config.has_music or config.has_sound or config.has_voice:
                 style_prefix "slider"
-                textbutton _("Reset"):
-                    action [Preference("music volume", 0.75), Preference("sound volume", 0.75), Preference("voice volume", 1.00), Preference("ambience volume", 0.75)] 
+                textbutton _("Reset") action [Preference("music volume", 0.75), Preference("sound volume", 0.75), Preference("voice volume", 1.00), Preference("ambience volume", 0.75)] 
             yoffset -10
             if renpy.variant("pc"):
                 vbox:
