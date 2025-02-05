@@ -1272,11 +1272,11 @@ label ch0_main:
     $ style.say_window = style.window
     $ nb = "namebox"
     play music ghostmenu
-    $ akira = "４つの声\n{size=15}4th Voice{/size}"
-    $ hanato = "１つの声\n{size=15}1st Voice{/size}"
-    $ kirinani = "５つの声\n{size=15}5th Voice{/size}"
-    $ itsomi = "２つの声\n{size=15}2nd Voice{/size}"
-    $ inari = "３つの声\n{size=15}3rd Voice{/size}"
+    $ akira = "???"
+    $ hanato = "???"
+    $ kirinani = "???"
+    $ itsomi = "???"
+    $ inari = "???"
     ha "Seems like your boyfriend has joined that club you despise."
     its "Well, how infuriating."
     ina "Seems like {i}we'll{/i} need to up our game a bit if we want to take over the school."
