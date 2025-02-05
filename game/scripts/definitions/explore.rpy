@@ -115,6 +115,10 @@ default prev_loc = ""
 default to_input = ""
 default codes = []
 
+label call_inventory(item_action):
+    call screen inventory_view(item_action)
+    return
+
 label dialpad(c, p, s):
     $ code = c
     $ prev_loc = p

@@ -75,7 +75,7 @@ screen hall1:
 
 screen hall2:
     style_prefix "explore"
-    button xcenter 150 ycenter 150 xysize (300, 300) action If("Broken Key" in inventory, [Play("sound", audio.door), Call("mansion_end")], Call("locked_man", "hall2")) 
+    button xcenter 150 ycenter 150 xysize (300, 300) action Call("call_inventory", If(selected_item == "Broken Key", [Play("sound", audio.door), Call("mansion_end")], Call("locked_man", "hall2")))
     text "馴染みの部屋\nFAMILIAR ROOM" xcenter 150 ycenter 150
     button xcenter 640 ycenter 695 xysize (1280, 100) action [Play("sound", audio.footsteps), Call("next_location", "hall1", w=True)]
     text "バック\nBACK" xcenter 640 ycenter 680

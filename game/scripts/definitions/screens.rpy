@@ -815,15 +815,16 @@ init -501 screen file_slots():
 default selected_item = "Nothing"
 default JP_item_name = "何も無い"
 default item_desc = ""
-init -501 screen inventory_view():
+init -501 screen inventory_view(item_action=None):
     use game_menu
+    style_prefix "inventory"
     fixed at game_menu_transform:
         frame:
             ysize 200
             xsize 540
             background Solid("#00000090")
         vbox:
-            style_prefix "inventory"
+            
             label "[selected_item]\n{size=20}[JP_item_name]{/size}"
             text item_desc
             viewport id "vp":
@@ -831,10 +832,13 @@ init -501 screen inventory_view():
                 grid 5 100:
                     for item in range(len(inventory)):
                         button:
-                            background Solid("#00000000")
                             hover_foreground Solid("#ffffff59")
+                            xysize (100, 100)
                             add "mod_assets/inventory/[inventory[item]].png"
                             action [SetVariable("selected_item", inventory[item]), SetVariable("JP_item_name", JPitems[item]), SetVariable("item_desc", items_desc[item])]
+        if item_action is not None:
+            textbutton "Use [selected_item]\n{size=15}使用[JP_item_name]{/size}" yalign 0.95 action item_action
+
 
 init -1 style slot_button is gui_button
 init -1 style slot_button_text is gui_button_text
@@ -856,6 +860,13 @@ init -1 style inventory_text:
     font "mod_assets/fonts/NotoSerifJP-Regular.otf"
     size 15
     color "#fff"
+
+init -1 style inventory_button_text:
+    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
+    color "#000"
+    hover_color "#a8a8a8"
+    size 35
+    outlines [(1, "#58585800", 0, 0), (1, "#58585800", 1, 1)]
 
 init -1 style page_button:
     properties gui.button_properties("page_button")

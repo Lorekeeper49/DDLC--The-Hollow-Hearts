@@ -148,7 +148,20 @@ label act1_ch2_main:
     t "This happens to a lot of people."
     show natsuki rhip
     "She pulls back and attempts to regain her composure."
-    n rdown "And now I see myself with her over there."
+    n lsur rdown "And now I see myself with her over there."
+    n dist cm "..."
+    n ce om "*Sigh*"
+    n cross neut "I forgot to grab lunch, I'll be back."
+    menu(time=5.0,force=1):
+        "Give her food.":
+            t "I have food for you."
+            n turned rhip "No, you don't have to-"
+            t "I insist."
+            n cm "..."
+            n lhip "Alright, whatcha got?"
+            call screen inventory_view(Return())
+        "Let her go.":
+            t "Okay."
 
 
     
