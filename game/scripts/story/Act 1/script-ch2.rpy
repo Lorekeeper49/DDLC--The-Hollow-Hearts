@@ -215,9 +215,24 @@ label act1_ch2_main:
     n cross anno om "I hate that name..."
     n ce "There are far better things to know me by."
     t "You're talking to the so-called 'Black Lab Scientist'!"
-    n turned shoc oe "That's who they're referring to?"
+    n turned vsur oe "That's who they're referring to?"
     t "Right here in the flesh!"
-    
+    n cross lsur "God!  People have it out for you, don't they?"
+    t "Eh, it's nothing unusual at this point."
+    show natsuki neut cm
+    "Natsuki and I finish eating."
+    t "We should head to class."
+    "I start to get up."
+    n om "Hey."
+    t "Hm?"
+    n cross happ "Thanks for this."
+    show natsuki cm
+    t "No problem."
+    t "If you ever need me, you know how to contact me."
+    "She smiles."
+    scene bg music_room with wipeleft_scene
+    call showlocation("Music Class\n{size=25}音楽教室{/size}","September 30, 2023\n{size=15}2023年9月30日{/size}",12*60+29+57/60.0, "bg music_room")
+    "Music Class!  My favorite!"
 
     
     return
