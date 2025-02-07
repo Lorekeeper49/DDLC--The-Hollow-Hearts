@@ -4,61 +4,89 @@
  
 ## INSTALLATION INSTRUCTIONS
 
-Step 1: delete scripts.rpa and firstrun
+### ENGLISH
 
-Step 2: copy everything in the folder and paste them where DDLC.exe is, replacing files if prompted
+Step 1: delete scripts.rpa and firstrun.
 
-Step 3: run THH.exe or THH-32.exe depending on your pc and delete save data if prompted
+Step 2: copy everything in the folder and paste them where DDLC.exe is, replacing files if prompted.
 
-Now you are ready to play the mod
+Step 3: run THH.exe or THH-32.exe depending on your pc and delete save data if prompted.
 
-Please note: if you ever get an error detailing something about `menu` expecting a :, that means you are running the wrong executable
+Now you are ready to play the mod.
 
-## CREDITS
+Please note: if you ever get an error detailing something about `menu` expecting a :, that means you are running the wrong executable.
 
-LINKS ARE DIRECTED TO WHERE YOU CAN DOWNLOAD THE LISTED THING
+### 日本語
 
-### [ORIGINAL GAME](https://ddlc.moe/)
-Team Salvato
+ステップ１：scripts.rpaとfirstrunを削除する。
 
-### DIRECTOR
-Lorekeeper49
+ステップ２：すべてをコピーし、DDLC.exeがある場所に貼り付ける。プロンプトが表示されたら、ファイルを置き換える。
 
+ステップ３：お使いのPCに応じてTHH.exeまたはTHH-32.exeを実行し、プロンプトが表示されたら保存データを削除します。
 
-### VOICE ACTING
-SAKURA TAIYEN - Lorekeeper49
+これでゲーム改造の準備は整った。
 
-MURIKO MONIKA - ???
+注意：もし`menu`が`:`を期待しているというようなエラーが発生したら、それは間違った実行ファイルを実行していることを意味します。
 
-SHINAMONPAN SAYORI - ???
+## CREDITS | 点数
 
-LUNA NATSUKI - ???
+LINKS ARE DIRECTED TO WHERE YOU CAN DOWNLOAD THE LISTED THING. | リンクは、リストされたものをダウンロードできる場所へのものです。
 
-YANDERE YURI - ???
+### [ORIGINAL GAME | オリジナルゲームのチーマ](https://ddlc.moe/)
+Team Salvato |  チームサルヴァート
 
-SAKURA KOTONOHA - ???
-
-KAMIYAMA ITSOMI - ???
-
-KAMIYAMA KIRINANI - ???
-
-KAMIYAMA HANATO - ???
-
-KAMIYAMA INARI - ???
-
-KAMIYAMA AKIRA - MasterTri
+### DIRECTOR | ディレクター
+Lorekeeper49 | ロアキーパー４９
 
 
-### ART
+### VOICE ACTING | 声優
+SAKURA TAIYEN | 桜隊円 - Lorekeeper49 | ロアキーパー４９
 
-#### CHARACTERS
-[SAKURA KOTONOHA - Cyrke (Special thanks to Danko for releasing the sprites!)](https://www.reddit.com/r/DDLCMods/comments/hq8c09/the_kotonoha_sprites_are_now_available/) [MPT by Doki Senate](https://github.com/dokisenate66/Kotonoha-MPT-Pack-Revised)
+MURIKO MONIKA | 無理高モニカ  - Willow Redwood
 
-KAMIYAMA AKIRA - LvcyLu
+SHINAMONPAN SAYORI | シナモンパン佐代里 - ???
 
-[MURIKO MONIKA (CASUAL) - DestinyPvEGal (reddit)](https://drive.google.com/drive/folders/1yTohcOnGV6Kw6Lru1cITWt-zwRoGSCm_?usp=sharing)
+LUNA NATSUKI | ルナ菜月 - ???
 
-[TINA - JohnRDVSMarston](https://drive.google.com/drive/folders/10Z_W8AEi_wuq-de1UcgSpqoYn_SYmue0?usp=sharing)
+YANDERE YURI | ヤンデレ百合 - ???
+
+YANDERE LILLY | ヤンデレリリー - ???
+
+SAKURA KOTONOHA | 桜言葉 - ???
+
+KAMIYAMA ITSOMI | 神山イツォミ - ???
+
+KAMIYAMA KIRINANI | 神山霧何 - ???
+
+KAMIYAMA HANATO | 神山華翔 - ???
+
+KAMIYAMA INARI | 神山稲荷 - ???
+
+KAMIYAMA AKIRA | 神山秋羅 - LRKade
+
+LUNA AORUGURI | ルナ煽るぐり - ???
+
+LUNA DOMINION | ルナどみにおん - ???
+
+LUNA ENGEKI | ルナ演劇 - ???
+
+TAKASASHI TINA | 高佐氏ティナ - ???
+
+KUSANOKI MARI | 楠まり - ???
+
+LUNA TETSUO | ルナ哲夫 - ???
+
+SETTOU SEIEI | 窃盗精鋭 - ???
+
+
+### ART | 美術
+
+#### CHARACTERS | キャラクター
+[SAKURA KOTONOHA | 桜言葉 - Cyrke (Special thanks to Danko for releasing the sprites!)](https://www.reddit.com/r/DDLCMods/comments/hq8c09/the_kotonoha_sprites_are_now_available/) [MPT by Doki Senate](https://github.com/dokisenate66/Kotonoha-MPT-Pack-Revised)
+
+KAMIYAMA AKIRA | 神山秋羅 - LvcyLu
+
+[TAKASASHI TINA | 高佐氏ティナ - JohnRDVSMarston](https://drive.google.com/drive/folders/10Z_W8AEi_wuq-de1UcgSpqoYn_SYmue0?usp=sharing)
 
 >CHIBI - JohnRDVSMarston, AJtheYandere, & CPG Yuri
 
@@ -68,21 +96,21 @@ KAMIYAMA AKIRA - LvcyLu
 
 >SUIT & MPT ADOPTION - Frithian
 
-[YANDERE LILLY - JohnRDVSMarston](https://drive.google.com/drive/folders/1i3z-HYM7ibOc9RvXee_RcY5kJIudXgCC?usp=sharing)
+[YANDERE LILLY | ヤンデレリリー - JohnRDVSMarston](https://drive.google.com/drive/folders/1i3z-HYM7ibOc9RvXee_RcY5kJIudXgCC?usp=sharing)
 
 >CHIBI - JohnRDVSMarston, AJtheYandere, & CPG Yuri
 
 >MENU - depressedjoanna a.k.a. staticquit
 
->[CASUAL - Z. Awesomeness](https://discord.com/channels/339272843327963136/373669252554686464/1268162213735039108)
+>[CASUAL | ラフな服 - Z. Awesomeness](https://discord.com/channels/339272843327963136/373669252554686464/1268162213735039108)
 
-[LUNA TETSUO - SovietSpartan](https://www.reddit.com/r/DDLCMods/comments/ucxgcx/kotonoha_mio_and_dadsuki_mpts/?utm_source=share&utm_medium=ios_app&utm_name=ioscss&utm_content=1&utm_term=1)
+[LUNA TETSUO | ルナ哲夫 - SovietSpartan](https://www.reddit.com/r/DDLCMods/comments/ucxgcx/kotonoha_mio_and_dadsuki_mpts/?utm_source=share&utm_medium=ios_app&utm_name=ioscss&utm_content=1&utm_term=1)
 
 >MPT - RedLeader 
 
-[KUSANOKI MARI - Nekolais](https://drive.google.com/file/d/1rAgY9Ijoyib2W9Hh6FJZaFYg0RDGR7ey/view)
+[KUSANOKI MARI | 楠まり - Nekolais](https://drive.google.com/file/d/1rAgY9Ijoyib2W9Hh6FJZaFYg0RDGR7ey/view)
 
-[SETTOU SEIEI (CANON MC)](https://www.reddit.com/r/DDLCMods/comments/1hhmu77/new_canon_mc_remake_sprites_are_here_better_and/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
+[SETTOU SEIEI (CANON MC) | 窃盗精鋭（キヤノンMC）](https://www.reddit.com/r/DDLCMods/comments/1hhmu77/new_canon_mc_remake_sprites_are_here_better_and/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
 
 >SPRITES - Stormblazed76
 
@@ -92,13 +120,13 @@ KAMIYAMA AKIRA - LvcyLu
 
 >COMISSIONING, MPT & COMPOSITES - Sweggory
 
-[LUNA ENGEKI (SAYURI) - Hoeruko](https://drive.google.com/drive/folders/1P0MJt2YYwGrlgtQo4AnriWN_540NCifq?usp=sharing)
+[LUNA ENGEKI (SAYURI) | ルナ演劇（サユリ） - Hoeruko](https://drive.google.com/drive/folders/1P0MJt2YYwGrlgtQo4AnriWN_540NCifq?usp=sharing)
 
 >SPRITE SET - Ian Suller_Blogger
 
 >SPRITE EDITS, CASUAL, MPT - Matic
 
-#### BACKGROUNDS
+#### BACKGROUNDS | 背景
 [KAMIYAMA PARK BATHROOM - Uncle Mugen](https://lemmasoft.renai.us/forums/viewtopic.php?f=52&t=17302)
 
 [KAMIYAMA PARK - osumashi](http://www7b.biglobe.ne.jp/~osumashi/free_bg.html)
@@ -177,14 +205,14 @@ SEWER HALL - Minikle with edits by Nuxill
 
 SAKURA HOUSE NIGHT - Alex \[ORG]#9077
 
-#### MISC
+#### MISC | その他の美術
 MAIN LOGO - LvcyLu
 
 ACT 1, 2, AND 3 LOGOS - Leomonade33
 
 
 
-### MUSIC & AMBIENCE
+### MUSIC & AMBIENCE | 音楽と環境音
 [After Dark Piano Cover (Title Screen song) - 949](https://www.reddit.com/r/DDLCMods/comments/y0zla2/free_to_use_song_for_ddlc_mods/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
 
 Confesssion - MC.Dummy.Composer
@@ -203,7 +231,7 @@ EPIC STORM - Sound Effect by [Peace,love,happiness](https://pixabay.com/users/pl
 
 
 
-### SOUNDS
+### SOUNDS | 物音
 [DEADMAN WHOOSH SOUND - Fesliyan Studios](https://www.fesliyanstudios.com)
 
 [BANGING - Fesliyan Studios](https://www.fesliyanstudios.com)
@@ -223,10 +251,10 @@ THUNDER - Sound Effect by [LordSonny](https://pixabay.com/users/lordsonny-384396
 THUNDER2 - Sound Effect by [Mikhail](https://pixabay.com/users/soundsforyou-4861230/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=113219) from [Pixabay](https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=113219)
 
 
-### FONTS
-[NORMAL FONT - Noto Serif](https://fonts.google.com/noto/specimen/Noto+Serif+JP?subset=japanese&noto.script=Hira)
+### FONTS | フォント
+[NORMAL FONT - Noto Serif JP](https://fonts.google.com/noto/specimen/Noto+Serif+JP?subset=japanese&noto.script=Hira)
 
-[SCRIPT - TypeSETit (Alex Brush)](https://www.1001fonts.com/legible+handwriting-fonts.html)
+[SAKURA KOTONOHA HANDWRITING - TypeSETit (Alex Brush)](https://www.1001fonts.com/legible+handwriting-fonts.html)
 
 [7-SEGMENT - Krafti Lab](https://www.dafont.com/seven-segment.font)
 
@@ -235,12 +263,10 @@ THUNDER2 - Sound Effect by [Mikhail](https://pixabay.com/users/soundsforyou-4861
 [That Sounds Great - GraphicSauce](https://www.fontspace.com/that-sounds-great-font-f115095)
 
 
-### MISC
-[MPT - chronoshag](https://www.reddit.com/r/DDLCMods/comments/emennq/mood_posing_tool_mpt_v10_release_for_ddlc_modding/)
+### MISC | その他
+[DOKI MPT - Chronos, Yagamirai, Terra, DiabloGraves](https://www.reddit.com/r/DDLCMods/comments/emennq/mood_posing_tool_mpt_v10_release_for_ddlc_modding/)
 
 DEADMAN AMBIENCE - (REALLY JUST THE FNAF 1 AMBIENCE)
-
-SOME MINIGAME CODE - ShadowyJaw
 
 [CAMERA SHAKE - Ren'Py cookbook](https://www.renpy.org/wiki/renpy/doc/cookbook/Shake_effect)
 
