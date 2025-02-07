@@ -147,9 +147,10 @@ define config.predict_statements = 50
 define config.rollback_enabled = config.developer
 define config.menu_clear_layers = ["textbox"]
 define config.gl_test_image = "white"
-
+define config.voice_filename_format = "voicelines/{persistent.voice_lang}/{filename}"
 
 init python:
+    import os
     if len(renpy.loadsave.location.locations) > 1: del(renpy.loadsave.location.locations[1])
     renpy.game.preferences.pad_enabled = False
     def replace_text(s):
@@ -170,15 +171,18 @@ init python:
             return (float(height) * (float(config.screen_width) / float(config.screen_height)), height)
 
     def autovoiceline(id):
-        if renpy.exists("voicelines/[id].ogg"):
+        if renpy.exists("voicelines/{persistent.voice_lang}/{id}.ogg"):
             _preferences.afm_time = 0.5
-            return "voicelines/[id].ogg"
-        elif renpy.exists("voicelines/[id].mp3"):
+            return "{id}.ogg"
+        elif renpy.exists("voicelines/{persistent.voice_lang}/{id}.mp3"):
             _preferences.afm_time = 0.5
-            return "voicelines/[id].mp3"
+            return "{id}.mp3"
+        elif renpy.exists("voicelines/{persistent.voice_lang}/{id}.wav"):
+            _preferences.afm_time = 0.5
+            return "{id}.wav"
         else:
             _preferences.afm_time = 30
-            return "voicelines/[id]"
+            return "{id}"
     config.auto_voice = autovoiceline
 
 

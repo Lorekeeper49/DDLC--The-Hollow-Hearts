@@ -946,12 +946,21 @@ init -501 screen preferences():
                 textbutton _("Unseen Text") action Preference("skip", "toggle")
                 textbutton _("After Choices") action Preference("after choices", "toggle")
             vbox:
+                xsize 440
                 style_prefix "radio"
                 hbox:
-                    label "Language" yalign 0.5
-                    text "言語" yalign 0.75 style "pref_JP_label_text"
+                    label "Text Language" yalign 0.5
+                    text "テキスト言語" yalign 0.75 style "pref_JP_label_text"
                 textbutton "English" action Language(None)
                 textbutton "日本語" action Language("japanese")
+            vbox:
+                xsize 440
+                style_prefix "radio"
+                hbox:
+                    label "Voice Language" yalign 0.5
+                    text "声言語" yalign 0.75 style "pref_JP_label_text"
+                for lang in lang_list: 
+                    textbutton lang[lang.rindex('\\')+1:] action SetVariable("persistent.voice_lang", lang[lang.rindex('\\')+1:])
             null height (4 * gui.pref_spacing)
 
 init -1 style pref_label is gui_label

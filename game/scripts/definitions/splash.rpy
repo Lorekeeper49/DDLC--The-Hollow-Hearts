@@ -153,11 +153,11 @@ init -501 screen languagechoice():
         background Solid("#646464b9")
     style_prefix "explore"
     text "言語を選択して下さい\nCHOOSE YOUR LANGUAGE" xcenter 640 ycenter 40
-    button xcenter 360 ycenter 360 xysize (500, 300) action [Language(None), Return()]
+    button xcenter 360 ycenter 360 xysize (500, 300) action [Language(None), SetVariable("persistent.voice_lang", "English"), Return()]
     text "ENGLISH" xcenter 360 ycenter 360
     text "[info_jp]" xcenter 640 ycenter 190
     text "[info_en]" xcenter 640 ycenter 530
-    button xcenter 920 ycenter 360 xysize (500, 300) hovered If("japanese" not in renpy.known_languages(), [SetVariable("info_jp", "現在入手不可"), SetVariable("info_en", "CURRENTLY UNAVAILABLE")]) unhovered [SetVariable("info_jp", ""), SetVariable("info_en", "")] action If("japanese" in renpy.known_languages(), Language("japanese"), NullAction())
+    button xcenter 920 ycenter 360 xysize (500, 300) hovered If("japanese" not in renpy.known_languages(), [SetVariable("info_jp", "現在入手不可"), SetVariable("info_en", "CURRENTLY UNAVAILABLE")]) unhovered [SetVariable("info_jp", ""), SetVariable("info_en", "")] action If("japanese" in renpy.known_languages(), [Language("japanese"), SetVariable("persistent.voice_lang", "日本語"), Return()], NullAction())
     text "日本語" xcenter 920 ycenter 360
 
 
@@ -255,7 +255,7 @@ label splashscreen:
 
 
     $ config.allow_skipping = False
-
+    $ lang_list = get_langs()
     show black
     $ config.main_menu_music = audio.t1
     if not startnow:
