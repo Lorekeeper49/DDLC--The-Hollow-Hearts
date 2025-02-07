@@ -1,4 +1,6 @@
 # DDLC: The Hollow Hearts
+
+![LOGO TEST](/game/mod_assets/logo.png)
  
 ## INSTALLATION INSTRUCTIONS
 
