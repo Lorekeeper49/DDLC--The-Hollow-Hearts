@@ -913,7 +913,7 @@ init -501 screen preferences():
                 style_prefix "slider"
                 hbox:
                     label "Sound Volume" yalign 0.5
-                    text "SFXボリューム" yalign 0.75 style "pref_JP_label_text"
+                    text "物音ボリューム" yalign 0.75 style "pref_JP_label_text"
                 hbox:
                     bar value Preference("sound volume")
             if config.has_voice:
