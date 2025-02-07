@@ -832,9 +832,9 @@ init -501 screen inventory_view(item_action=None):
                 grid 5 100:
                     for item in range(len(inventory)):
                         button:
+                            background "mod_assets/inventory/[inventory[item]].png"
                             hover_foreground Solid("#ffffff59")
                             xysize (100, 100)
-                            add "mod_assets/inventory/[inventory[item]].png"
                             action [SetVariable("selected_item", inventory[item]), SetVariable("JP_item_name", JPitems[item]), SetVariable("item_desc", items_desc[item])]
         if item_action is not None:
             textbutton "Use [selected_item]\n{size=15}使用[JP_item_name]{/size}" yalign 0.95 action item_action
