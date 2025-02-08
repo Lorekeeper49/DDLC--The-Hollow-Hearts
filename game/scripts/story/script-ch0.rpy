@@ -416,7 +416,14 @@ label ch0_main:
             t "So I just accept it if I end up writing a cliché."
         "Sayori's chat" if last_chosen != "chat" and koto_chosen != "chat":
             $ last_chosen = "chat"
-
+            s laug om "Ah-"
+            s rdown "They're asking what school we go to..."
+            t "I don't know, but it seems like you go to Doxing Academy!"
+            show monika shoc zorder 2 at h41
+            show sayori vsur zorder 2 at h42
+            show natsuki vsur om zorder 2 at h43
+            show yuri vsur om zorder 2 at h44
+            "OOOOOOOOHHHHHH!!!{nw}"
     hide yuri
     hide sayori
     hide monika
