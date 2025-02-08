@@ -306,6 +306,10 @@ label act1_ch2_main:
     "Everyone silently agrees."
     m om "Here, I'll go first to help break the ice."
     call mstory
+    show monika forward rhip zorder 2 at t11
+    m om "How's that?"
+    t "You are in thin ice to be writing about Kanzen Academy even after it's been destroyed."
+    m dist ce "Believe me, there's a reason why I transferred here..."
 
     
     return
