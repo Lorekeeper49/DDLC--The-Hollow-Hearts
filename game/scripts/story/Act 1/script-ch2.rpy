@@ -231,11 +231,32 @@ label act1_ch2_main:
     t "If you ever need me, you know how to contact me."
     "She smiles."
     scene bg music_room with wipeleft_scene
-    call showlocation("Music Class\n{size=25}音楽教室{/size}","September 30, 2023\n{size=15}2023年9月30日{/size}",12*60+29+57/60.0, "bg music_room")
+    call showlocation("Music Class\n{size=25}音楽教室{/size}","September 30, 2023\n{size=15}2023年9月30日{/size}",12*60+59+57/60.0, "bg music_room")
     "Music Class!  My favorite!"
     "It actually wasn't my idea to attend this class, it was Sayori's.  She makes music as a hobby alongside her livestreams."
     "And honestly, I'm glad she suggested it, I'm having a lot of fun making music."
 
+    scene bg club_day with wipeleft_scene
+    call showlocation("The Literature Club\n{size=25}文芸部{/size}","September 30, 2023\n{size=15}2023年9月30日{/size}",16*60+29+57/60.0, "bg club_day")
+    show monika forward happ rhip zorder 2 at t11
+    m om "Hello Taiyen!  Welcome to the literature club!"
+    show natsuki cross anno zorder 2 at l21
+    show monika cm at t22
+    n om "You're late!"
+    show monika laug om
+    t "Hey!  It is the student council's duty to examine and approve each of the clubs and their respective rooms!"
+    t "In fact, I saved you all for last so you won't have to wait for me to come back at all."
+    t "And..."
+    "I check my last boxes."
+    t "That's it!"
+    scene bg corrider with wipeleft
+    t "Sara!"
+    $ pla = "盆皿\n{size=15}Bon Sara{/size}"
+    general "Yes, Taiyen."
+    t "Can you drop this off for me?  I'm attending this club."
+    general "Will do!"
+    scene bg club_day with wiperight
+    t "And with that, I'm finished with my work!"
     
     return
 
