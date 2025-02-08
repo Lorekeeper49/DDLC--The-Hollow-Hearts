@@ -15,7 +15,7 @@ label mstory_ch2:
     play music confdep
     play ambience storm
     scene bg schoolroofstorm with dissolve_scene_half
-    call showlocation("Kanzen Academy Roof\n{size=25}完全学園高校の屋根{/size}","December 1, 2020\n{size=15}2020年12月1日{/size}",60*12+4+57/60,"bg schoolroofstorm") from _call_showlocation_22
+    call showlocation("Kanzen Academy Roof\n{size=25}完全学園高校の屋根{/size}","December 1, 2020\n{size=15}2020年12月1日{/size}",60*12+4+57/60,"bg schoolroofstorm")
     "Kanzen means 'perfect', but this school far from it's name."
     "I know I'm not allowed to be on the roof when there is a thunderstorm outside due to safety reasons..."
     "But I just can't handle all the chaos inside..."
@@ -79,16 +79,16 @@ label mstory_ch2:
     return
 
 label mstory_ch3:
-    call showlocation("???","Monday, August 1, 2020",23,59,57) from _call_showlocation_23
+    call showlocation("???","Monday, August 1, 2020",23,59,57)
 
     return
 
 label mstory_ch4:
-    call showlocation("???","Monday, August 1, 2020",23,59,57) from _call_showlocation_24
+    call showlocation("???","Monday, August 1, 2020",23,59,57)
 
     return
 
 label mstory_ch5:
-    call showlocation("???","Monday, August 1, 2020",23,59,57) from _call_showlocation_25
+    call showlocation("???","Monday, August 1, 2020",23,59,57)
 
     return

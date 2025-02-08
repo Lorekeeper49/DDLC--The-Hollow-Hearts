@@ -1,4 +1,3 @@
-#Name: Dark Discoveries
 label act2_ch2_main:
     scene bg kamiclassnight
     show lilly casual c2e zorder 2 at t11
@@ -239,7 +238,7 @@ label act2_ch2_main:
     "Right in time for the bell."
     "...Yes, that's our bell."
     scene bg kamiroofd with wipeleft_scene
-    call showlocation("Kamiyama Academy Roof\n{size=25}神山学園高校の屋根{/size}","October 9, 2023\n{size=15}2023年10月9日{/size}",724.95,"bg kamiroofd") from _call_showlocation_40
+    call showlocation("Kamiyama Academy Roof\n{size=25}神山学園高校の屋根{/size}","October 9, 2023\n{size=15}2023年10月9日{/size}",724.95,"bg kamiroofd")
     show hanato day zorder 2 at t11
     $ pause(1.0)
     a "Hanato."

@@ -12,7 +12,7 @@ label nstory(bgreturn="bg club_day"):
     return
 
 label nstory_ch2:
-    call showlocation("???","Monday, August 1, 2018",23,59,57) from _call_showlocation_26
+    call showlocation("???","Monday, August 1, 2018",23,59,57)
 
     return
 
@@ -36,11 +36,11 @@ label nstory_ch3:
     return
 
 label nstory_ch4:
-    call showlocation("???","Monday, August 1, 2018",23,59,57) from _call_showlocation_26
+    call showlocation("???","Monday, August 1, 2018",23,59,57)
 
     return
 
 label nstory_ch5:
-    call showlocation("???","Monday, August 1, 2018",23,59,57) from _call_showlocation_27
+    call showlocation("???","Monday, August 1, 2018",23,59,57)
 
     return

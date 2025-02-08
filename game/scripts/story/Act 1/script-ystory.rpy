@@ -26,16 +26,16 @@ label ystory_ch2:
     return
 
 label ystory_ch3:
-    call showlocation("???","Monday, August 1, 2020",23,59,57) from _call_showlocation_35
+    call showlocation("???","Monday, August 1, 2020",23,59,57)
 
     return
 
 label ystory_ch4:
-    call showlocation("???","Monday, August 1, 2020",23,59,57) from _call_showlocation_36
+    call showlocation("???","Monday, August 1, 2020",23,59,57)
 
     return
 
 label ystory_ch5:
-    call showlocation("???","Monday, August 1, 2020",23,59,57) from _call_showlocation_37
+    call showlocation("???","Monday, August 1, 2020",23,59,57)
 
     return

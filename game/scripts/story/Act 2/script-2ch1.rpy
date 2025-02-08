@@ -1,8 +1,7 @@
-# Name: A Club That Works at Night
 label act2_ch1_main:
     $ style.say_window = style.window
     $ nb = "namebox"
-    call showintro(intro_a) from _call_showintro_4
+    call showintro(intro_a)
     play music confdep
     scene black with dissolve_scene
     scene bg kamihallday with dissolve_scene 
@@ -81,7 +80,7 @@ label act2_ch1_main:
     a "Fuck it, take me there!"
     ak b "Come on then!"
     scene bg kamihallnight with wipeleft_scene
-    call showlocation("Kamiyama Academy 3F\n{size=25}神山学園高校の3階{/size}","October 8, 2023\n{size=15}2023年10月8日{/size}",659.95,"bg kamihallnight") from _call_showlocation_38
+    call showlocation("Kamiyama Academy 3F\n{size=25}神山学園高校の3階{/size}","October 8, 2023\n{size=15}2023年10月8日{/size}",659.95,"bg kamihallnight")
     "Why do they always put the night atmosphere on during clubtime?"
     "I mean, I like the the illusion, but most find it unusual."
     show akira uniform turned lpock rpock b zorder 2 at t11
@@ -115,7 +114,7 @@ label act2_ch1_main:
     a "Until midnight?"
     a "Well, lucky for you, storms don't sleep."
     scene bg kamiclassnight with wipeleft_scene
-    call showlocation("Midnight\n{size=25}真夜中{/size}", "October 8, 2023\n{size=15}2023年10月8日{/size}",0.0,"bg storm") from _call_showlocation_39
+    call showlocation("Midnight\n{size=25}真夜中{/size}", "October 8, 2023\n{size=15}2023年10月8日{/size}",0.0,"bg storm")
     "Very glad storms don't get tired because I have been training for 8 hours straight, only stopping to go to the bathroom."
     show kotonoha turned casual angr rhip om zorder 5 at t11
     k "Everyone!  Places at the table!"

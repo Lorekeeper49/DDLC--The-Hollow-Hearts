@@ -15,7 +15,7 @@ label kstory(bgreturn="bg club_day"):
 label kstory_ch2:
     play music tears
     scene bg city_street_night with dissolve_scene_full
-    call showlocation("Bustling Streets","September 29, 2023",20*60+4+57/60.0,"bg city_street_night") from _call_showlocation_17
+    call showlocation("Bustling Streets","September 29, 2023",20*60+4+57/60.0,"bg city_street_night")
     k "Ugh!  Why is that so difficult!?"
     "I look around after getting kicked out."
     "The game I was playing is hard as balls trapped in an air fryer!"
@@ -62,7 +62,7 @@ label kstory_ch2:
     k "What?"
     sei ldown rdown "Follow me, I know where he is."
     scene bg shed_night with wipeleft_scene
-    call showlocation("Shed Hideout","September 29, 2023",20*60+14+57/60.0,"bg shed_night") from _call_showlocation_18
+    call showlocation("Shed Hideout","September 29, 2023",20*60+14+57/60.0,"bg shed_night")
     show akira uniform turned c zorder 2 at t11
     "...{w=1}Huh?"
     hide akira
@@ -109,7 +109,7 @@ label kstory_ch2:
 
 label kstory_ch3:
     scene bg pasteur_night with dissolve_scene_half
-    call showlocation("Kanzen Academy Ruins","September 30, 2023",60*23+59+57/60.0,"bg pasteur_night") from _call_showlocation_19
+    call showlocation("Kanzen Academy Ruins","September 30, 2023",60*23+59+57/60.0,"bg pasteur_night")
     k "You sure we'll be able find anything here?"
     k "The place is completely destroyed."
     show seiei 2ba zorder 2 at t11
@@ -201,12 +201,12 @@ label kstory_ch3:
     return
 
 label kstory_ch4:
-    call showlocation("???","October 1, 2023",23,59,57) from _call_showlocation_20
+    call showlocation("???","October 1, 2023",23,59,57)
 
     return
 
 label kstory_ch5:
-    call showlocation("???","October 2, 2023",23,59,57) from _call_showlocation_21
+    call showlocation("???","October 2, 2023",23,59,57)
     k "That son of a...!"
     k "Why didn't anyone tell me!?"
     k "I trusted him..."

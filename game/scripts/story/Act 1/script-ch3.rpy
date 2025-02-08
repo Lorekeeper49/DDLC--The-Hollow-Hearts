@@ -5,7 +5,7 @@ label act1_ch3_main:
     with dissolve_scene_full
     $ style.say_window = style.window
     $ nb = "namebox"
-    call showlocation("Converse Park\n{size=25}コンバースパーク{/size}","October 1, 2023\n{size=15}2023年10月1日{/size}",415.2,"bg tree") from _call_showlocation_8
+    call showlocation("Converse Park\n{size=25}コンバースパーク{/size}","October 1, 2023\n{size=15}2023年10月1日{/size}",415.2,"bg tree")
     t "A little windy today..."
     "I know school starts in at 7:15 but I actually get a late start due to how my classes are on Tuesdays."
     "The situation might be the same with Hanato, she doesn't seem to have woken up yet."
@@ -50,7 +50,7 @@ label act1_ch3_main:
 
         "Ask her.":
             $ persistent.choices_made.append("Hidden Girl Revealed")
-            call introaoruguri from _call_introaoruguri 
+            call introaoruguri
         "Don't ask.":
             $ persistent.choices_made.append("Hidden Girl Kept Secret")
             "No."
@@ -68,7 +68,7 @@ label act1_ch3_main:
     play music t8
     $ style.say_window = style.window_fake
     $ nb = "namebox_fake"
-    call showlocation("Sakura Academy\n{size=25}桜学園高校{/size}","October 1, 2023\n{size=15}2023年10月1日{/size}",479.95,"bg school_day") from _call_showlocation_9
+    call showlocation("Sakura Academy\n{size=25}桜学園高校{/size}","October 1, 2023\n{size=15}2023年10月1日{/size}",479.95,"bg school_day")
 
 
     

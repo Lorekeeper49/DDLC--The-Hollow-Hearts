@@ -1,4 +1,3 @@
-#Name: The Aftermath
 label act2_ch3_main:
     if config.developer:
         $ found_breaker = True
@@ -6,7 +5,7 @@ label act2_ch3_main:
     play ambience forest
     scene bg park_night
     with dissolve_scene_full
-    call showlocation("Converse Park\n{size=25}コンバースパーク{/size}","October 10, 2023\n{size=15}2023年10月10日{/size}",0*60+14+57/60.0,"bg tree") from _call_showlocation_41
+    call showlocation("Converse Park\n{size=25}コンバースパーク{/size}","October 10, 2023\n{size=15}2023年10月10日{/size}",0*60+14+57/60.0,"bg tree")
     a "What are we doing here?"
     a "This is the same park that I..."
     show kotonoha turned casual neut om zorder 2 at t11
@@ -73,11 +72,11 @@ label act2_ch3_main:
     $ reset_blockages()
     $ randomize_blockages()
     $ start_loc = random_list(["0_0", "1_0", "2_0", "3_0", "4_0", "5_0", "6_0", "7_0", "8_0", "9_0"])[0]
-    call explore("deep_forest_" + start_loc, transition=True, limited_time=3600, fail_label="no_shed") from _call_explore_1
+    call explore("deep_forest_" + start_loc, transition=True, limited_time=3600, fail_label="no_shed")
     $ renpy.music.set_volume(1.0, delay=0, channel="ambience")
     stop ambience fadeout 1.0
     scene bg kamiclassnight with dissolve_scene_full
-    call showlocation("HEADQUARTERS\n{size=25}本社{/size}","October 10, 2023\n{size=15}2023年10月10日{/size}",2*60+59+57/60.0,"bg kamiclassnight") from _call_showlocation_42
+    call showlocation("HEADQUARTERS\n{size=25}本社{/size}","October 10, 2023\n{size=15}2023年10月10日{/size}",2*60+59+57/60.0,"bg kamiclassnight")
     "We're back."
     a "So, anyone think I should be commander?"
     show kotonoha turned casual laug rhip zorder 2 at t11
