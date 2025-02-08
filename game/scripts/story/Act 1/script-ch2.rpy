@@ -236,6 +236,7 @@ label act1_ch2_main:
     "It actually wasn't my idea to attend this class, it was Sayori's.  She makes music as a hobby alongside her livestreams."
     "And honestly, I'm glad she suggested it, I'm having a lot of fun making music."
 
+    play music t3
     scene bg club_day with wipeleft_scene
     call showlocation("The Literature Club\n{size=25}文芸部{/size}","September 30, 2023\n{size=15}2023年9月30日{/size}",16*60+29+57/60.0, "bg club_day")
     show monika forward happ rhip zorder 2 at t11
@@ -280,6 +281,16 @@ label act1_ch2_main:
     hide yuri
     show kotonoha turned happ zorder 2 at t11
     "Koto-chan seems to be having fun as well talking with the chat!"
+    show sayori turned happ rup zorder 2 at t21
+    show kotonoha at t22
+    s om "Hey Koko-tan!  Quit pestering the chat!  We're about to start reading our stories!"
+    k om "Hey!  My pestering is reserved you and Tai-kun specifically!"
+    t "Not Akira-kun?"
+    k laug "I haven't exactly asked him out yet."
+    hide kotonoha
+    hide sayori
+    
+
     
     return
 
