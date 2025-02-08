@@ -481,10 +481,6 @@ label act2_ch2_follow:
     a "That's good."
     "At least {i}some{/i} men are considerate about girls."
     stop music
-    y "You killed my sister!"
-    "What?"
-
-
     call playlog(log5, "bg tlivingroom_night", 35.0)
     call showlocation("9 hours later\n{size=25}９時間後{/size}","October 9, 2023\n{size=15}2023年10月9日{/size}",20*60+59+57/60.0,"bg tlivingroom_night")
     play music confdep
@@ -550,63 +546,53 @@ label act2_ch2_follow:
     "Got one more in here."
     call playlog(finallog, "black", 75.0)
     "Unfortunately, it did..."
+    $ persistent.choices_made.append("Yuri Alive")
     return
 
 label act2_ch2_run:
-    scene bg kamihallday with wipeleft_scene
-    "Fuck!"
-    "I'm such a coward."
-    "Too late now."
-    "I'll have to apologize to him later..."
-    scene bg kamiclassday with wipeleft_scene
-    call showlocation("Woodshop Class\n{size=25}木工のクラス{/size}","October 9, 2023\n{size=15}2023年10月9日{/size}",12*60+54+57/60.0,"bg kamiclassnight")
-    "Having trouble staying focused."
-    show akira uniform cross l zorder 2 at t11
-    ak "Aoruguri, let's talk."
-    a "Not now.  I need to focus."
-    ak o "You need a distraction."
-    a "Look, Taiyen just told me he lost his sister, I'm not in the right mindset for casual conversation."
-    ak turned lout rout l "Actually, that's what this is about."
-    a "*Sigh*"
-    a "Fine, continue."
-    ak cross o "As you know, my father is a narcissistic psychopath."
-    ak g "He's killed Taiyen's entire family."
-    ak turned lout rout l "So you can guess who..."
-    ak k "You can guess..."
-    a "I can guess who killed Kotonoha?"
-    ak lpock rpock "...Yes..."
-    ak l "And... I hate to break it to you..."
-    ak lout rout k "But this is all the fault of the Sakura family."
-    "Stunned, I set down my tools and focus my full attention on Akira."
-    ak cross l "I want to preface this by saying that they didn't do it on purpose..."
-    ak "There's just a lot they didn't realize."
-    ak f "...Supposedly."
-    ak turned lback l "They didn't give me all the details."
-    a "Well, what details {i}did{/t} they give you?"
-    show akira cross l
-    "He thinks for a second."
-    ak turned lpock "My father was a volunteer test subject of an experiment codenamed 'Breaker'."
-    ak l "It was to be made as a voluntary thing to have people change their attribute easily."
-    ak cross c "However, it went horribly."
-    ak g "TESTS ONE, TWO, and THREE...  RESULTS: Normal people turned into completely different people."
-    ak turned lout rout "My father was ONE."
-    ak cross o "And before you ask, your little fire stunt 3 years ago did not kill him like it should've."
-    a "So even crushing him with debris wasn't enough?"
-    ak f "Apparently not..."
-    ak turned lout rout k "*Long sigh*"
-    ak cross "To be honest, he doesn't deserve death, because this isn't who he is..."
-    ak o "But he also needs death for that same reason."
-    ak turned lout rout "Hope that makes sense."
-    a "It does."
-    "Almost feel sorry for him now."
-    ak lpock rpock l "Just got one question to ask you:"
-    ak lback "Do you hate Taiyen now... after what I told you?"
+    scene bg park_night with wipeleft_scene
+    show yuri turned casual ce zorder 2 at t11
+    stop music
+    "!!!"
+    y om "You!"
+    y lup rup "Killed!"
+    y angr "MY!"
+    play sound thunder2
+    play ambience epic_storm
+    y vang oe "SISTER!!!" with flash
+    "What?"
+    scene bg storm
+    show yuri turned casual vang om zorder 2 at t11
+    play sound thunder2
+    "Shit!" with flash
+    scene bg park_night
+    show yuri turned casual vang om zorder 2 at t11
+    play sound thunder2
+    "Fuck!" with flash
+    hide yuri
+    show dark with dissolve
+    "I'm trapped!"
+    "Oh no!"
+    scene black with dissolve
+    "She's gonna..."
+    "..."
+    "What?"
+    scene bg storm
+    show yuri turned casual vang om zorder 2 at t11
+    with dissolve
+    ""
+
+
+    a "Huh?"
+    a "What did I just..."
+    a "Oh God!"
+    "..."
+    a "She's not..."
     a "I..."
-    "I think for a moment."
-    a "If you asked me to, I wouldn't be able to."
-    "Why's {i}that{/i} the conclusion I came to?"
-    ak cross h "That's good."
-    ak a "I don't know the specifics of it."
-    ak turned lpock rpock b "But I believe... you're going to need him in the future..."
-    a "You and me both."
+    a "I just..."
+    show vignette
+    a "!!!"
+    scene black
+    a "NO!"
+    $ persistent.choices_made.append("Yuri Killed")
     return

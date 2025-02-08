@@ -1,5 +1,15 @@
-label act3_ch1_main:
+label act3_ch1_alt:
     
-    ak "Aoruguri, I hate to tell you this, but you didn't just kill Kotonoha, you killed the entire Midnight club, except for me who decided to get the hell out of dodge."
+    y "You killed my sister!"
+    a "*Gasp*"
+    a "..."
+    menu Aoruguri:
+        "Admit it":
+            #Admission path
+            pass
+    menu Taiyen:
+        "Interject":
+            #Don't make Aoruguri relive those moments 
+            pass
 
     return
