@@ -183,7 +183,7 @@ label act1_ch2_main:
             hide natsuki
             "She leaves."
             "Maybe I should've given her something..."
-            show natsuki cross
+            show natsuki cross zorder 2 at t11
             "She comes back with a bento."
     "She sits down on a nearby bench and begins her food."
     "I sit down next to her and begin my food."
@@ -206,7 +206,7 @@ label act1_ch2_main:
     n cross laug "She is taking a big doxing risk in doing that."
     show natsuki cm
     t "Sakura Academy looks pretty similar to other schools, we should be fine as long as no one says the name of the school."
-    n turned rhip om "30% of her fans attend Sakura Academy."
+    n turned rhip om "30%% of her fans attend Sakura Academy."
     t "And how do you know that?"
     n happ "That poll on the notice board.  I'm the one who put it up."
     show natsuki cm
@@ -249,7 +249,7 @@ label act1_ch2_main:
     t "And..."
     "I check my last boxes."
     t "That's it!"
-    scene bg corrider with wipeleft
+    scene bg corridor with wipeleft
     t "Sara!"
     $ pla = "盆皿\n{size=15}Bon Sara{/size}"
     general "Yes, Taiyen."
