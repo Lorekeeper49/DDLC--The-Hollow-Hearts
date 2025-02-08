@@ -1,15 +1,9 @@
 label kstory(bgreturn="bg club_day"):
-    if renpy.music.is_playing(channel="music_swap"):
-        $ previouschan = "music_swap"
-        stop music_swap fadeout 2.0
-    else:
-        $ previouschan = "music"
-        stop music fadeout 2.0
     scene black with dissolve_scene
     $ style.say_window = style.window
     $ nb = "namebox"
     $ nextscene = "kstory_ch" + str(chapter)
-    call expression nextscene from _call_expression_4
+    call expression nextscene 
     stop music fadeout 2.0
     stop sound fadeout 2.0
     scene black with dissolve_scene

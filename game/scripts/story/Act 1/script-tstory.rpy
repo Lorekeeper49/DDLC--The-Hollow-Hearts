@@ -3,7 +3,7 @@ label tstory(bgreturn="bg club_day"):
     $ style.say_window = style.window
     $ nb = "namebox"
     $ nextscene = "tstory_ch" + str(chapter)
-    call expression nextscene from _call_expression_8
+    call expression nextscene 
     stop music fadeout 2.0
     stop sound fadeout 2.0
     scene black with dissolve_scene

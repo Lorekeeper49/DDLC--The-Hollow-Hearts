@@ -3,7 +3,7 @@ label mstory(bgreturn="bg club_day"):
     $ style.say_window = style.window
     $ nb = "namebox"
     $ nextscene = "mstory_ch" + str(chapter)
-    call expression nextscene from _call_expression_5
+    call expression nextscene
     stop music fadeout 2.0
     scene black with dissolve_scene
     $ style.say_window = style.window_fake
