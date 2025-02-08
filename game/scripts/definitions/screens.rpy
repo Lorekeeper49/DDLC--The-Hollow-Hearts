@@ -958,7 +958,7 @@ init -501 screen preferences():
                 style_prefix "radio"
                 hbox:
                     label "Voice Language" yalign 0.5
-                    text "声言語" yalign 0.75 style "pref_JP_label_text"
+                    text "音声言語" yalign 0.75 style "pref_JP_label_text"
                 for lang in lang_list: 
                     textbutton lang[lang.rindex('\\')+1:] action SetVariable("persistent.voice_lang", lang[lang.rindex('\\')+1:])
             null height (4 * gui.pref_spacing)
