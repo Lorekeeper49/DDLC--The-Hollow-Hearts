@@ -255,8 +255,31 @@ label act1_ch2_main:
     general "Yes, Taiyen."
     t "Can you drop this off for me?  I'm attending this club."
     general "Will do!"
-    scene bg club_day with wiperight
+    scene bg club_day 
+    show monika forward happ rhip zorder 2 at t22
+    show natsuki cross anno zorder 2 at t21
+    with wiperight
     t "And with that, I'm finished with my work!"
+    t "You won't be catching me late anymore!"
+    n turned rhip happ "Good!"
+    hide monika
+    hide natsuki
+    "Things are looking pretty lively here!"
+    show sayori turned happ rup zorder 2 at t11
+    "I see Sayori has started livestreaming."
+    hide sayori
+    show yuri turned happ rup zorder 2 at t22
+    show lilly norm de zorder 2 at t21
+    "Yuri-chan seems to be handling things a lot better than last time."
+    "I actually gotta ask her why her..."
+    show lilly at f21
+    "Oh, nevermind!  Her sister {i}is{/i} here."
+    "Wonder why she wasn't before..."
+    show lilly at t21
+    hide lilly
+    hide yuri
+    show kotonoha turned happ zorder 2 at t11
+    "Koto-chan seems to be having fun as well talking with the chat!"
     
     return
 
