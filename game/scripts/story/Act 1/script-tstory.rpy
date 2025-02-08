@@ -1,10 +1,4 @@
-label tstory(r=True,bgreturn="bg club_day"):
-    if renpy.music.is_playing(channel="music_swap"):
-        $ previouschan = "music_swap"
-        stop music_swap fadeout 2.0
-    else:
-        $ previouschan = "music"
-        stop music fadeout 2.0
+label tstory(bgreturn="bg club_day"):
     scene black with dissolve_scene
     $ style.say_window = style.window
     $ nb = "namebox"
@@ -15,9 +9,6 @@ label tstory(r=True,bgreturn="bg club_day"):
     scene black with dissolve_scene
     $ style.say_window = style.window_fake
     $ nb = "namebox_fake"
-    $ audio.t5 = "<from 0 loop 4.444>bgm/5.ogg"
-    if r:
-        $ renpy.music.play(audio.t5, channel=previouschan, fadein=2.0)
     scene expression bgreturn with dissolve_scene_half
     return
 

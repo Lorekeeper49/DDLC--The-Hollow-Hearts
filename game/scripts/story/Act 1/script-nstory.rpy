@@ -1,10 +1,4 @@
 label nstory(bgreturn="bg club_day"):
-    if renpy.music.is_playing(channel="music_swap"):
-        $ previouschan = "music_swap"
-        stop music_swap fadeout 2.0
-    else:
-        $ previouschan = "music"
-        stop music fadeout 2.0
     scene black with dissolve_scene
     $ style.say_window = style.window
     $ nb = "namebox"
@@ -14,7 +8,6 @@ label nstory(bgreturn="bg club_day"):
     scene black with dissolve_scene
     $ style.say_window = style.window_fake
     $ nb = "namebox_fake"
-    $ renpy.music.play(audio.t5y, channel=previouschan, fadein=2.0)
     scene expression bgreturn with dissolve_scene_half
     return
 

@@ -1,4 +1,4 @@
-label kstory(r=True,bgreturn="bg club_day"):
+label kstory(bgreturn="bg club_day"):
     if renpy.music.is_playing(channel="music_swap"):
         $ previouschan = "music_swap"
         stop music_swap fadeout 2.0
@@ -15,8 +15,6 @@ label kstory(r=True,bgreturn="bg club_day"):
     scene black with dissolve_scene
     $ style.say_window = style.window_fake
     $ nb = "namebox_fake"
-    if r:
-        $ renpy.music.play(audio.t5c, channel=previouschan, fadein=2.0)
     scene expression bgreturn with dissolve_scene_half
     return
 
