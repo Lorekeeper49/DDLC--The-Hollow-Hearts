@@ -580,9 +580,25 @@ label act2_ch2_run:
     scene bg storm
     show yuri turned casual vang om zorder 2 at t11
     with dissolve
-    ""
-
-
+    "What is happening?"
+    "What am I doing?"
+    "No!"
+    "Stop!"
+    "Give up!"
+    "You stand no chance against her!"
+    "What she said is probably true anyway, something clearly happened last night!"
+    "Just let her kill you!"
+    "You deserve it..."
+    show yuri curi
+    a "This..." with blink
+    show yuri pani
+    a "Might..." with blink
+    scene black
+    stop ambience
+    a "Hurt."
+    y "!!!"
+    play sound thunder
+    scene bg park_night with flash
     a "Huh?"
     a "What did I just..."
     a "Oh God!"
@@ -590,7 +606,7 @@ label act2_ch2_run:
     a "She's not..."
     a "I..."
     a "I just..."
-    show vignette
+    show veins
     a "!!!"
     scene black
     a "NO!"
