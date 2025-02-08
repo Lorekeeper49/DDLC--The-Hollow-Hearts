@@ -950,7 +950,7 @@ init -501 screen preferences():
                 style_prefix "radio"
                 hbox:
                     label "Text Language" yalign 0.5
-                    text "テキスト言語" yalign 0.75 style "pref_JP_label_text"
+                    text "文字言語" yalign 0.75 style "pref_JP_label_text"
                 textbutton "English" action Language(None)
                 textbutton "日本語" action Language("japanese")
             vbox:
