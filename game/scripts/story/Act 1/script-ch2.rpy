@@ -283,13 +283,29 @@ label act1_ch2_main:
     "Koto-chan seems to be having fun as well talking with the chat!"
     show sayori turned happ rup zorder 2 at t21
     show kotonoha at t22
-    s om "Hey Koko-tan!  Quit pestering the chat!  We're about to start reading our stories!"
+    s om "Hey, Koko-tan!  Quit pestering the chat!  We're about to start reading our stories!"
     k om "Hey!  My pestering is reserved you and Tai-kun specifically!"
     t "Not Akira-kun?"
     k laug "I haven't exactly asked him out yet."
     hide kotonoha
     hide sayori
-    
+    show monika forward happ lpoint rhip zorder 2 at t11
+    m om "Okay, everyone!"
+    m laug ldown "There's my catchphrase."
+    m happ lpoint "Who wants to read their story first?"
+    show monika cm
+    stop music fadeout 1.0
+    "{cps=3}...{/cps}"
+    "No one answers."
+    m laug ldown om "Should've expected that..."
+    m dist ce "*Sigh*"
+    m rdown ce "Listen, this year's topic is really hard on all of us..."
+    m rhip "But we're all willing to do this and tell everyone the worst of what we've been through."
+    m neut oe "So I'd really like for everyone to take this slow and don't try to say any more than you want to, okay?"
+    show monika cm
+    "Everyone silently agrees."
+    m om "Here, I'll go first to help break the ice."
+    call mstory
 
     
     return

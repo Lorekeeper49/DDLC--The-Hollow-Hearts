@@ -18,6 +18,11 @@ label nstory(bgreturn="bg club_day"):
     scene expression bgreturn with dissolve_scene_half
     return
 
+label nstory_ch2:
+    call showlocation("???","Monday, August 1, 2018",23,59,57) from _call_showlocation_26
+
+    return
+
 label nstory_ch3:
     #call showlocation("???","Monday, March 1, 2018",21,59,57)
     "Brought down...{w=1}\nBeaten...{w=1}\nKilled..."
