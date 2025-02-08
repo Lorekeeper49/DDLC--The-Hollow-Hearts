@@ -484,9 +484,9 @@ label act2_ch2_follow:
     y "You killed my sister!"
     "What?"
 
-    
+
     call playlog(log5, "bg tlivingroom_night", 35.0)
-    call showlocation("9 hours later\n{size=25}9時間後{/size}","October 9, 2023\n{size=15}2023年10月9日{/size}",20*60+59+57/60.0,"bg tlivingroom_night")
+    call showlocation("9 hours later\n{size=25}９時間後{/size}","October 9, 2023\n{size=15}2023年10月9日{/size}",20*60+59+57/60.0,"bg tlivingroom_night")
     play music confdep
     "Late at night."
     show taiyen zorder 2 at t11
