@@ -36,10 +36,10 @@ label mstory_ch2:
     scene bg gym
     show memory_vignette zorder 300 
     with flashback_start
+    $ kirinani = "神山霧何\n{size=15}Kamiyama Kirinani{/size}"
     call showlocation("Kanzen Academy Gym\n{size=25}完全学園高校のジム{/size}","September 2, 2020\n{size=15}2020年9月2日{/size}",60*12+4+57/60,"bg gym")
     kiri "Next up, Murikou Monika."
     "The school principal, Kamiyama Kirinani..."
-    $ kirinani = "Kamiyama Kirinani"
     kiri "Come on, take the stage!"
     "There is no stage..."
     "..."
@@ -75,6 +75,7 @@ label mstory_ch2:
     scene bg roofentrancestorm with wipeleft_scene
     "Someone's staring at me..."
     m "Who's there?"
+    $ renpy.music.set_volume(1, delay=0, channel="ambience")
     stop ambience
     return
 
