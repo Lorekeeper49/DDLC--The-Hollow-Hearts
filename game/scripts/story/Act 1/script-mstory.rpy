@@ -91,7 +91,10 @@ label mstory_ch4:
     show aoruguri turned zorder 2 at t22
     show natsuki cross casual zorder 2 at t21
     "..."
-    a cross om "This storm should keep the three of us alone."
+    a cross om "This weather should keep the three of us alone."
+    show aoruguri cm
+    "Glad to have a storm in our ranks."
+    m "Alright, what's the plan?"
 
     return
 
