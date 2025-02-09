@@ -14,7 +14,7 @@ label tstory(bgreturn="bg club_day"):
 
 label tstory_ch2:
     scene bg factory with dissolve_scene_half
-    call showlocation("Palace Factories Inc.","September 29, 2015",20*60+4+57/60.0,"bg factory") from _call_showlocation_31
+    call showlocation("Palace Factories Inc.","September 29, 2015",20*60+4+57/60.0,"bg factory")
     $ pla = "Worker"
     t "Oi!  Stop slacking off!  Get back to work!"
     general "You're not the boss of me!"
@@ -28,7 +28,7 @@ label tstory_ch2:
 
 label tstory_ch3:
     scene bg factory with dissolve_scene_half
-    call showlocation("Palace Factories Inc.","October 1, 2015",20*60+4+57/60.0,"bg factory") from _call_showlocation_32
+    call showlocation("Palace Factories Inc.","October 1, 2015",20*60+4+57/60.0,"bg factory")
     t "So... this is who I'm taking care of for the rest of the week."
     "NAME: [[UNKNOWN]"
     "ATTRIBUTE: STORM"
@@ -38,13 +38,13 @@ label tstory_ch3:
 
 label tstory_ch4:
     scene bg factory with dissolve_scene_half
-    call showlocation("Palace Factories Inc.","October 1, 2015",20*60+4+57/60.0,"bg factory") from _call_showlocation_33
+    call showlocation("Palace Factories Inc.","October 1, 2015",20*60+4+57/60.0,"bg factory")
 
     return
 
 label tstory_ch5:
     scene bg factory with dissolve_scene_half
-    call showlocation("Palace Factories Inc.","October 2, 2015",20*60+4+57/60.0,"bg factory") from _call_showlocation_34
+    call showlocation("Palace Factories Inc.","October 2, 2015",20*60+4+57/60.0,"bg factory")
     s "It is done."
     t "Thank you."
     "The experiment went horribly wrong!"
