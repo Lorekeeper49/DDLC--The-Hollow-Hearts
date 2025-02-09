@@ -178,7 +178,8 @@ layeredimage aoruguri turned:
         attribute storm:
             "mod_assets/MPT/aoruguri/storm.png"
 
-layeredimage aoruguri crossed:
+layeredimage aoruguri cross:
+    at AutofocusDisplayable(name="aoruguri")
     group outfit:
         attribute uniform default null
         attribute casual null
