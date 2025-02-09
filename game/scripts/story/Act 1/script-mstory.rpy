@@ -85,21 +85,38 @@ label mstory_ch3:
     return
 
 label mstory_ch4:
-    play ambience storm
-    scene bg schoolroofstorm with dissolve_scene_half
-    call showlocation("Kanzen Academy Roof\n{size=25}完全学園高校の屋根{/size}","November 1, 2020\n{size=15}2020年11月1日{/size}",60*11+59+57/60,"bg schoolroofstorm")
-    show aoruguri turned zorder 2 at t22
-    show natsuki cross casual zorder 2 at t21
-    "..."
-    a cross om "This weather should keep the three of us alone."
-    show aoruguri cm
-    "Glad to have a storm in our ranks."
-    m "Alright, what's the plan?"
+    
 
     return
 
 label mstory_ch5:
-    call showlocation("Kanzen Academy Roof\n{size=25}完全学園高校の屋根{/size}","November 1, 2020\n{size=15}2020年11月1日{/size}",60*15+59+57/60,"bg schoolroofstorm")    
+    play ambience storm
+    scene bg schoolroofstorm with dissolve_scene_half
+    call showlocation("Kanzen Academy Roof\n{size=25}完全学園高校の屋根{/size}","November 1, 2020\n{size=15}2020年11月1日{/size}",60*11+59+57/60,"bg schoolroofstorm")
+    show aoruguri turned zorder 2 at t11
+    "..."
+    a om "This weather should keep the three of us alone."
+    show aoruguri cm
+    "Glad to have a storm with me."
+    a cross om "This is about as much as I know how to do so my powers won't be much help from here."
+    show aoruguri cm
+    m "Alright, what's the plan?"
+    a om "Well, as you know, schools are required by protocol to have sprinklers around the building in case of a fire."
+    a doub "They use a deluge sprinkler system, which seems like overkill for a school, but at least that makes the plan faster."
+    show aoruguri cm
+    m "Wait, hold on.  Are you suggesting we fill the sprinklers up with petrol and burn down the school?"
+    a angr om "Correct."
+    a turned rhip "But of course, we don't want any casualties."
+    a lhip "So we're gonna have to do it while no students are inside the building."
+    show aoruguri cm
+    m "Well, lucky for us, all clubs are required to be outside today."
+    m "And next week if today won't work."
+    a om "It'll have to work!"
+    a ldown "I've got no idea if the principal is looking at us right now and I'm not taking any chances!"
+    a cross "I've got a reputation for skipping class, so I'll go fill up the sprinklers."
+    a doub "That is if I can figure out how to do it."
+    show aoruguri cm
+    m "Well we've only got 4-5 hours, so you better get to work."
 
 
     return
