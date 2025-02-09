@@ -308,8 +308,21 @@ label act1_ch2_main:
     call mstory
     show monika forward rhip zorder 2 at t11
     m om "How's that?"
-    t "You are in thin ice to be writing about Kanzen Academy even after it's been destroyed."
+    t "You are on thin ice to be writing about Kanzen Academy even after it's been destroyed."
     m dist ce "Believe me, there's a reason why I transferred here..."
+    t "I'm sure we'll find out about that very soon."
+    t "How about I go next?"
+    m neut oe "Okay."
+    hide monika
+    show lilly norm a1e zorder 2 at t21
+    show sayori turned zorder 2 at t22
+    t "Alright, I would like everyone to keep calm about this story, especially Lilly over there, I know she has awful memories about this..."
+    lil a1c2 "..."
+    s dist rup ce om "Oh God!  You're talking about that?"
+    t "As much as you've told everyone, they'll never know the full story if I don't say anything."
+    t "I'm the only one who knows everything about that incident."
+    s rdown "Alright...  Tell them."
+    call tstory
 
     
     return
