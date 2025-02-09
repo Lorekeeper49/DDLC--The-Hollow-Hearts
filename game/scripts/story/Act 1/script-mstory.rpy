@@ -15,7 +15,7 @@ label mstory_ch2:
     play music confdep
     play ambience storm
     scene bg schoolroofstorm with dissolve_scene_half
-    call showlocation("Kanzen Academy Roof\n{size=25}完全学園高校の屋根{/size}","December 1, 2020\n{size=15}2020年12月1日{/size}",60*12+4+57/60,"bg schoolroofstorm")
+    call showlocation("Kanzen Academy Roof\n{size=25}完全学園高校の屋根{/size}","October 1, 2020\n{size=15}2020年10月1日{/size}",60*12+4+57/60,"bg schoolroofstorm")
     "Kanzen means 'perfect', but this school far from it's name."
     "I know I'm not allowed to be on the roof when there is a thunderstorm outside due to safety reasons..."
     "But I just can't handle all the chaos inside..."
@@ -29,7 +29,7 @@ label mstory_ch2:
     m "This school's terrible..."
     "Not many think that way...\nSo it may seem..."
     "There's a reason why I don't have any friends."
-    "{cps=1}...{/cps}"
+    "..."
     "I remember the first day like it was yesterday..."
     $ renpy.music.set_volume(0.3, delay=0, channel="ambience")
     play sound flashback
@@ -85,11 +85,18 @@ label mstory_ch3:
     return
 
 label mstory_ch4:
-    call showlocation("???","Monday, August 1, 2020",23,59,57)
+    play ambience storm
+    scene bg schoolroofstorm with dissolve_scene_half
+    call showlocation("Kanzen Academy Roof\n{size=25}完全学園高校の屋根{/size}","November 1, 2020\n{size=15}2020年11月1日{/size}",60*11+59+57/60,"bg schoolroofstorm")
+    show aoruguri turned zorder 2 at t22
+    show natsuki cross casual zorder 2 at t21
+    "..."
+    a cross om "This storm should keep the three of us alone."
 
     return
 
 label mstory_ch5:
-    call showlocation("???","Monday, August 1, 2020",23,59,57)
+    call showlocation("Kanzen Academy Roof\n{size=25}完全学園高校の屋根{/size}","November 1, 2020\n{size=15}2020年11月1日{/size}",60*15+59+57/60,"bg schoolroofstorm")    
+
 
     return
