@@ -345,6 +345,34 @@ label act1_ch2_main:
     k doub "Rather reckless group that I'm leading."
     k neut "Allow me to explain."
     call kstory
+    show kotonoha turned rhip zorder 2 at t11
+    t "So, in short, we can trust Akira."
+    k happ om "Yes."
+    show kotonoha cm
+    t "Thank God!"
+    t "I thought he betrayed us or something."
+    show kotonoha at t21
+    show natsuki turned angr rhip zorder 2 at r22
+    n om "Nevermind that!  What the hell are you guys doing?"
+    n cross doub "Some daredevils."
+    k anno cm "We are not daredevils."
+    show kotonoha at t31
+    show natsuki at t32
+    show monika forward lsur rhip zorder 2 at r33
+    m om "Also, are you seriously telling me that Kirinani is alive?!"
+    m angr "After all that...  Ugh!"
+    show monika at t33
+    hide monika
+    hide kotonoha
+    hide natsuki
+    show sayori turned laug rup zorder 2 at t11
+    s om "Okay everyone, calm down.  I'm sure this isn't even the peak of what we'll find out within these stories."
+    s rdown "How about I go next?"
+    show sayori neut cm
+    "Sayori takes the pedestal."
+    s rup om "You've heard of this legend before..."
+    s rdown "But I and one other person are the only ones who truly remember it."
+    call sstory
 
     
     return
