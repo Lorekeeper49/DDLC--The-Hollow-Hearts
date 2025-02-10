@@ -291,7 +291,7 @@ label act1_ch2_main:
     hide sayori
     show monika forward happ lpoint rhip zorder 2 at t11
     m om "Okay, everyone!"
-    m laug ldown "There's my catchphrase."
+    m laug ldown "There's my catchphrase..."
     m happ lpoint "Who wants to read their story first?"
     show monika cm
     stop music fadeout 1.0
@@ -314,6 +314,7 @@ label act1_ch2_main:
     t "How about I go next?"
     m neut oe "Okay."
     hide monika
+    "I take the stage."
     show lilly norm a1e zorder 2 at t21
     show sayori turned zorder 2 at t22
     t "Alright, I would like everyone to keep calm about this story, especially Lilly over there, I know she has awful memories about this..."
@@ -323,6 +324,27 @@ label act1_ch2_main:
     t "I'm the only one who knows everything about that incident."
     s rdown "Alright...  Tell them."
     call tstory
+    show lilly norm a1c2 zorder 2 at t21
+    show sayori turned dist om zorder 2 at t22
+    s "So that's how it started..."
+    lil c1 "Well it certainly seemed promising..."
+    hide sayori
+    hide lilly
+    show monika forward dist rhip om zorder 2 at t11
+    m "To think you, Sayori, and Lilly were exposed to this kind of stuff when you were teenagers..."
+    m ce "I can't imagine how any of you must be feeling right now."
+    t "You and everyone else..."
+    hide monika
+    t "Who's next?"
+    show kotonoha turned rhip om zorder 2 at t11
+    k "I'll go."
+    "My sister and I swap places."
+    k lup rdown "Tai-kun told me what he was writing about and unfortunately I don't have anything past that would be particularly life changing."
+    k rhip "So, I'm talking about something happening presently."
+    k laug ldown "I've actually never been told anyone outside of Tai-kun about this..."
+    k doub "Rather reckless group that I'm leading."
+    k neut "Allow me to explain."
+    call kstory
 
     
     return

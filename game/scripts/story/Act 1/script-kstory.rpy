@@ -153,51 +153,8 @@ label kstory_ch3:
     scene bg sewer_hall with dissolve_scene
     $ pause(1.0)
     scene bg factory with wiperight_scene
-    k "We're{nw}"
-    scene bg club_day with None
-    play sound bang
-    $ pause(1.0)
-    play sound bang
-    $ pause(1.0)
-    play sound bang
-    $ pause(1.0)
-    play sound bang
-    show bg club_dark with None
-    $ pause(0.15)
-    show bg club_day with None
-    $ pause(0.15)
-    show bg club_dark with None
-    $ pause(0.15)
-    show bg club_day with None
-    $ pause(0.55)
-    play sound bang
-    show bg club_dark with None
-    $ pause(0.15)
-    show bg club_day with None
-    $ pause(0.15)
-    show bg club_dark with None
-    $ pause(0.15)
-    show bg club_day with None
-    $ pause(0.55)
-    play sound bang
-    show bg club_dark with None
-    $ pause(0.15)
-    show bg club_day with None
-    $ pause(0.15)
-    show bg club_dark with None
-    $ pause(0.15)
-    show bg club_day with None
-    $ pause(0.55)
-    play audio bang
-    play audio fall
-    show bg club_dark with None
-    $ pause(5.0)
-    play sound jumpscare
-    show lilly doll a0 zorder 2 at face
-    $ pause(0.5)
-    t "GET OUT NOW!!!{w=0.5}{nw}"
-    scene bg sky with wipeleft_scene
-    $ pause(1.0)
+    k "We're here."
+    
     return
 
 label kstory_ch4:
