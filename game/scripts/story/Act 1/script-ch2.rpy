@@ -382,9 +382,9 @@ label act1_ch2_main:
     t "It's something we failed to realize during Breaker."
     s neut oe rup "Alright, who's next?"
     hide sayori
+    show lilly norm zorder 1 at t41
     show natsuki turned zorder 2 at t22
     show yuri turned zorder 2 at t21
-    show lilly norm zorder 1 at t41
     "Just Yuri-chan, Lilly, and Natsuki left."
     n om rhip "I'll go."
     hide lilly
