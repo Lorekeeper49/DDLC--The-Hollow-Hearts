@@ -75,7 +75,7 @@ label act2_ch4_main:
     scene bg first_room
     with wipeleft_scene
     "Well, here we go."
-    call explore("first_room") from _call_explore_2
+    call explore("first_room")
     call act2_ch4_common
     return
 
