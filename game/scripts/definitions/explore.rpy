@@ -65,7 +65,7 @@ label explore(start, *, transition=False, limited_time=-1, fail_label=""):
         scene bg deep_forest
     else:
         scene expression "bg [start]"
-    show screen quick_menu
+    show screen quick_menu onlayer textbox
     if transition:
         with wipeleft_scene
     if limited_time > -1:

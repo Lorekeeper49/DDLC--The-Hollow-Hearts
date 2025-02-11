@@ -21,8 +21,8 @@ screen black_screen:
     add Solid("#000", xsize=2000, ysize=2000)
 
 screen wraith_blink:
-    timer 0.1 repeat True action Show("black_screen", _zorder=200)
-    timer 0.075 repeat True action Hide("black_screen")
+    timer 0.1 repeat True action Show("black_screen", _layer="textbox", _zorder=100)
+    timer 0.075 repeat True action Hide("black_screen", _layer="textbox")
 
 label failure:
     hide screen wraith
@@ -75,7 +75,7 @@ screen hall1:
 
 screen hall2:
     style_prefix "explore"
-    button xcenter 150 ycenter 150 xysize (300, 300) action Call("call_inventory", If(selected_item == "Broken Key", [Play("sound", audio.door), Call("mansion_end")], Call("locked_man", "hall2")))
+    button xcenter 150 ycenter 150 xysize (300, 300) action Call("call_inventory", If(used_item == "Broken Key", [Play("sound", audio.door), Call("mansion_end")], Call("locked_man", "hall2")))
     text "馴染みの部屋\nFAMILIAR ROOM" xcenter 150 ycenter 150
     button xcenter 640 ycenter 695 xysize (1280, 100) action [Play("sound", audio.footsteps), Call("next_location", "hall1", w=True)]
     text "バック\nBACK" xcenter 640 ycenter 680

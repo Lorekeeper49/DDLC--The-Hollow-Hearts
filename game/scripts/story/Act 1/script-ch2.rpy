@@ -163,9 +163,9 @@ label act1_ch2_main:
             n cm "..."
             n lhip om "Alright, whatcha got?"
             call .food_prompt
-            "I hand her my [selected_item]."
-            $ remove_from_inv(selected_item)
-            if selected_item == "Chicken Yakisoba":
+            "I hand her my [used_item]."
+            $ remove_from_inv(used_item)
+            if used_item == "Chicken Yakisoba":
                 n lsur ldown rdown "You're giving me that?"
                 "Apparently everyone knows what my favorite food is."
                 n rhip "Are you sure?"
@@ -379,7 +379,7 @@ label act1_ch2_main:
 
 label .food_prompt:
     call screen inventory_view(Return())
-    if selected_item != "Bento" and selected_item != "Chicken Yakisoba":
+    if used_item != "Bento" and used_item != "Chicken Yakisoba":
         "...{w=1}She can't eat that!"
         jump .food_prompt
     return

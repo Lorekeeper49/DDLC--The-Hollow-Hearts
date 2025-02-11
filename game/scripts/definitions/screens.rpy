@@ -815,6 +815,7 @@ init -501 screen file_slots():
 default selected_item = "Nothing"
 default JP_item_name = "何も無い"
 default item_desc = ""
+default used_item = ""
 init -501 screen inventory_view(item_action=None):
     use game_menu
     style_prefix "inventory"
@@ -824,7 +825,6 @@ init -501 screen inventory_view(item_action=None):
             xsize 540
             background Solid("#00000090")
         vbox:
-            
             label "[selected_item]\n{size=20}[JP_item_name]{/size}"
             text item_desc
             viewport id "vp":
@@ -837,7 +837,7 @@ init -501 screen inventory_view(item_action=None):
                             xysize (100, 100)
                             action [SetVariable("selected_item", inventory[item]), SetVariable("JP_item_name", JPitems[item]), SetVariable("item_desc", items_desc[item])]
         if item_action is not None:
-            textbutton "Use [selected_item]\n{size=15}使用[JP_item_name]{/size}" yalign 0.95 action item_action
+            textbutton "Use [selected_item]\n{size=15}使用[JP_item_name]{/size}" yalign 0.95 action [SetVariable("used_item", selected_item), SetVariable("selected_item", "Nothing"), SetVariable("JP_item_name", "何も無い"), SetVariable("item_desc", ""), item_action]
 
 
 init -1 style slot_button is gui_button
