@@ -1,6 +1,6 @@
 screen sewer_hall:
     style_prefix "explore"
-    button xcenter 750 ycenter 350 xysize (150, 100) action Call("call_inventory", If(used_item == "Factory Key", [Play("sound", audio.door), Call("next_location", "factory")], Call("locked", "sewer_hall")))
+    button xcenter 750 ycenter 350 xysize (150, 100) action Call("call_inventory", "Factory Key", correct_action=[Play("sound", audio.door), Call("next_location", "factory")], incorrect_action=Call("locked", "sewer_hall"))
     text "工場\nFACTORY" xcenter 750 ycenter 350
     button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.door), Call("next_location", "hideout")]
     text "ビジネスルーム\nBUSINESS ROOM" xcenter 640 ycenter 680

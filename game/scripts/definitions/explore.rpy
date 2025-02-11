@@ -75,6 +75,7 @@ label explore(start, *, transition=False, limited_time=-1, fail_label=""):
     $ codes = []
     $ explored = []
     $ renpy.call_screen(start)
+    hide screen quick_menu onlayer textbox
     return
 
 default jumpnum = 0
@@ -115,9 +116,16 @@ default prev_loc = ""
 default to_input = ""
 default codes = []
 
-label call_inventory(item_action):
-    call screen inventory_view(item_action)
+label call_inventory(correct_item, *, correct_action=None, incorrect_action=None):
+    call screen inventory_view(Return())
+    if used_item == correct_item:
+        call screen explore_item(correct_action)
+    else:
+        call screen explore_item(incorrect_action)
     return
+
+screen explore_item(item_action):
+    timer 0.1 action item_action
 
 label dialpad(c, p, s):
     $ code = c
