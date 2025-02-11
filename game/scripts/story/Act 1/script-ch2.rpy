@@ -373,6 +373,26 @@ label act1_ch2_main:
     s rup om "You've heard of this legend before..."
     s rdown "But I and one other person are the only ones who truly remember it."
     call sstory
+    show sayori turned rup zorder 2 at t11
+    t "Our war, huh?"
+    s dist rdown ce om "Yes...  Our war."
+    t "None of you know this, but this story mentions something called pre-life.  Basically the life before you're born to determine how you are."
+    t "It's why most people are born already having an attribute."
+    t "If you even know how attributes work."
+    t "It's something we failed to realize during Breaker."
+    s neut oe rup "Alright, who's next?"
+    hide sayori
+    show natsuki turned zorder 2 at t22
+    show yuri turned zorder 2 at t21
+    show lilly norm zorder 1 at t41
+    "Just Yuri-chan, Lilly, and Natsuki left."
+    n om rhip "I'll go."
+    hide lilly
+    hide yuri
+    show natsuki cm at t11
+    "She takes the pedestal."
+    n angr lhip om "A lot happened here, so you better keep quiet!"
+    call nstory
 
     
     return
