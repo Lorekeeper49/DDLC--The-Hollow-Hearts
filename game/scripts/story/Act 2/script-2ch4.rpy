@@ -128,7 +128,7 @@ label act2_ch4_alt:
     "I check the drawers and cabinets."
     "..."
     a "Ugh!  There's nothing in these!"
-    general "YOU'LL FIND SOMETHING IN YOUR RO-"
+    general "YOU'LL FIND SOMETHING IN YOUR RO-{nw}"
     a "Fuck off!  I'm leaving!"
     "I should've never gone in here in the first place"
     scene bg bedroom1
