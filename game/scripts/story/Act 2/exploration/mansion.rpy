@@ -15,7 +15,7 @@ screen wraith_tut:
     add "wraith_black"
     button xcenter 450 ycenter 200 xysize (200, 200) hovered SetVariable("wraith_beaten", True) unhovered SetVariable("wraith_beaten", False) action NullAction()
     timer 1.8 action Show("wraith_blink")
-    timer 3.0 action If(wraith_beaten, [Hide("wraith_blink"), Hide("black_screen"), Hide("wraith_tut"), SetVariable("wraith_beaten", False)]) repeat True
+    timer 3.0 action If(wraith_beaten, [SetVariable("can_cont", True), Hide("wraith_blink"), Hide("black_screen"), Hide("wraith_tut"), SetVariable("wraith_beaten", False)]) repeat True
 
 screen black_screen:
     add Solid("#000", xsize=2000, ysize=2000)

@@ -59,6 +59,8 @@ label act2_ch4_main:
     lil "Behind you!"
     play sound "sfx/giggle.ogg"
     show screen wraith_tut
+    $ _preferences.afm_enable = False
+    $ can_cont = False
     "Stay calm!  Gotta hold my flashlight on it's face!"
     "Whew."
     show lilly casual c2e zorder 2 at t11
