@@ -307,7 +307,7 @@ init -501 screen choice(items,time=None,force=0,mouse=None):
             for i in items:
                 if "locked" in i.kwargs:
                     if i.kwargs['locked']:
-                        textbutton "???" xpos 150
+                        text "???" xpos 150
                     else:
                         text "PATH UNLOCKED" xpos 150
                         textbutton i.caption action i.action xpos 150
@@ -360,7 +360,7 @@ init -1 style choice_button is default:
 init -1 style choice_button_text is default:
     font "mod_assets/fonts/NotoSerifJP-Regular.otf"
     color "#fff"
-    hover_color "#bbbbbb"
+    hover_color "#000"
     size 35
     outlines [(1, "#585858", 0, 0), (1, "#585858", 1, 1)]
 
