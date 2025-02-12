@@ -393,7 +393,12 @@ label act1_ch2_main:
     "She takes the pedestal."
     n angr lhip om "A lot happened here, so you better keep quiet!"
     call nstory
-
+    show yuri turned lup rup nerv zorder 2 at t22
+    show natsuki turned rhip zorder 2 at t21
+    y "I don't remember any of this."
+    n cross anno ce om "'Course you don't!"
+    n turned rhip "And I don't expect you to anytime soon."
+    n neut oe "Anyway, who's next?"
 
     call ystory
     show monika forward shoc om zorder 2 at t41
@@ -448,9 +453,13 @@ label act1_ch2_main:
     play music t5
     show monika forward laug zorder 2 at t11
     m om "Well, after that incredibly shocking revelation, how are we feeling?"
-
-
-    
+    show monika cm
+    "No one has the words to answer."
+    m rdown om "Yeah, I expect that."
+    m lpoint "I think we should all head home."
+    m happ rhip "So tomorrow, same deal as today, so bring your books."
+    m ldown "Dismissed!"
+    show monika laug
     return
 
 label .food_prompt:
