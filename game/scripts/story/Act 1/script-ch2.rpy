@@ -9,6 +9,7 @@ label act1_ch2_main:
     $ add_to_inv("Pen", "ペン", _("A pen for writing"))
     $ add_to_inv("Notebook", "ノートブック", _("My massive collection of notes"))
     $ add_to_inv("PC", "パソコン", _("My crappy laptop."))
+    $ add_to_inv("Phone", "スマホ", _("My UNBREAKABLE 12151109"))
     "Routine checkup."
     m om "Any progress?"
     t "No."
