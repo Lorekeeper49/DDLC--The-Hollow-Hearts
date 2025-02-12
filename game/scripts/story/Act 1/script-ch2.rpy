@@ -399,7 +399,15 @@ label act1_ch2_main:
     n cross anno ce om "'Course you don't!"
     n turned rhip "And I don't expect you to anytime soon."
     n neut oe "Anyway, who's next?"
-
+    hide natsuki
+    show yuri turned happ rup zorder 2 at t22
+    show lilly norm de zorder 2 at t21
+    y om "Us."
+    show yuri cm
+    lil ee "We decided to collaborate on this one."
+    show lilly de
+    "They seem happy as they take they take the stage."
+    y om "The following may shock you."
     call ystory
     show monika forward shoc om zorder 2 at t41
     show sayori turned shoc om zorder 2 at t42
