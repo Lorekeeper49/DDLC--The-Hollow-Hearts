@@ -94,7 +94,7 @@ label act1_ch2_main:
     "And I have seat 1-3 at the front of the class."
     $ pla = "先生\n{size=15}Teacher{/size}"
     general "Alright class!  Let's begin!"
-    
+
 
     stop music fadeout 1.0
     scene bg schoolriverday with dissolve_scene_full
@@ -233,10 +233,12 @@ label act1_ch2_main:
     t "If you ever need me, you know how to contact me."
     "She smiles."
     scene bg music_room with wipeleft_scene
+    play music t8
     call showlocation("Music Class\n{size=25}音楽教室{/size}","September 30, 2023\n{size=15}2023年9月30日{/size}",12*60+59+57/60.0, "bg music_room")
     "Music Class!  My favorite!"
     "It actually wasn't my idea to attend this class, it was Sayori's.  She makes music as a hobby alongside her livestreams."
     "And honestly, I'm glad she suggested it, I'm having a lot of fun making music."
+    
 
     play music t3
     scene bg club_day with wipeleft_scene
