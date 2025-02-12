@@ -438,7 +438,7 @@ label act1_ch2_main:
     scene bg club_day with dissolve_scene_full
     play music t5
     show monika forward laug zorder 2 at t11
-    m om "Well, after that shocking revelation, how are we feeling?"
+    m om "Well, after that incredibly shocking revelation, how are we feeling?"
 
 
     
