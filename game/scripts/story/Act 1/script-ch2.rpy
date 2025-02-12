@@ -426,12 +426,20 @@ label act1_ch2_main:
     with None
     show natsuki turned shoc om zorder 2 at h22
     $ pause(0.5)
+    hide vignette onlayer foreground
+    $ pause(0.5)
+    show vignette onlayer foreground
+    $ pause(0.5)
+    hide vignette onlayer foreground
+    $ pause(0.5)
+    show vignette onlayer foreground
+    $ pause(0.5)
     scene bg club_day
     show lilly norm b zorder 1 at t41
     show yuri turned worr ce om zorder 2 at t21
     hide vignette onlayer foreground
     show natsuki turned shoc om zorder 2 at t22
-    with None
+    with dissolve
     "..."
     lil c1e "Humans can't do that."
     y oe "Believe us now?"
