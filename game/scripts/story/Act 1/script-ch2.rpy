@@ -394,6 +394,53 @@ label act1_ch2_main:
     n angr lhip om "A lot happened here, so you better keep quiet!"
     call nstory
 
+
+    call ystory
+    show monika forward shoc om zorder 2 at t41
+    show sayori turned shoc om zorder 2 at t42
+    show kotonoha turned shoc om zorder 2 at t43
+    show natsuki turned shoc om zorder 2 at t44
+    "..."
+    "Uh..."
+    hide monika
+    hide sayori
+    hide kotonoha
+    hide natsuki
+    show lilly norm c1e zorder 1 at t11
+    lil "You guys have been staring at me like that the entire story, is something wro-{nw}"
+    show natsuki lsur rhip om zorder 2 at r22
+    show lilly at t21
+    n "I'm not going to be able to sleep tonight."
+    n shoc rdown "What the fuck kind of doll is able to walk, talk, and feel like a real person?!"
+    n rhip "Are you sure this ain't fiction?"
+    show yuri turned worr ce om zorder 2 at l21
+    show lilly b at t41
+    y "I can assure you, this is all-{nw}"
+    n angr lhip "No!  No!  I refuse to believe that a human doll lives amongst us!"
+    n ldown rdown "What the fu-{nw}"
+    scene bg club_dark
+    show lilly doll a0 zorder 1 at t41
+    show yuri turned worr ce om zorder 2 at t21
+    show vignette onlayer foreground
+    with None
+    show natsuki turned shoc om zorder 2 at h22
+    $ pause(0.5)
+    scene bg club_day
+    show lilly norm b zorder 1 at t41
+    show yuri turned worr ce om zorder 2 at t21
+    hide vignette onlayer foreground
+    show natsuki turned shoc om zorder 2 at t22
+    with None
+    "..."
+    lil c1e "Humans can't do that."
+    y oe "Believe us now?"
+    n laug rhip "Uhh..."
+    scene bg club_day with dissolve_scene_full
+    play music t5
+    show monika forward laug zorder 2 at t11
+    m om "Well, after that shocking revelation, how are we feeling?"
+
+
     
     return
 
