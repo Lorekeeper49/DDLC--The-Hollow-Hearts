@@ -418,6 +418,7 @@ label act1_ch2_main:
     y "I can assure you, this is all-{nw}"
     n angr lhip "No!  No!  I refuse to believe that a human doll lives amongst us!"
     n ldown rdown "What the fu-{nw}"
+    play sound light_cut
     scene bg club_dark
     show lilly doll a0 zorder 1 at t41
     show yuri turned worr ce om zorder 2 at t21
