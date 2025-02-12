@@ -94,6 +94,7 @@ label act1_ch2_main:
     "And I have seat 1-3 at the front of the class."
     $ pla = "先生\n{size=15}Teacher{/size}"
     general "Alright class!  Let's begin!"
+    
 
     stop music fadeout 1.0
     scene bg schoolriverday with dissolve_scene_full
