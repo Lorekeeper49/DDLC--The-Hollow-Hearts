@@ -118,9 +118,9 @@ default prev_loc = ""
 default to_input = ""
 default codes = []
 
-label call_inventory(correct_item, *, correct_action=None, incorrect_action=None):
+label call_inventory(*correct_items, *, correct_action=None, incorrect_action=None):
     call screen inventory_view(Return())
-    if used_item == correct_item:
+    if used_item in correct_items:
         call screen explore_item(correct_action)
     else:
         call screen explore_item(incorrect_action)
