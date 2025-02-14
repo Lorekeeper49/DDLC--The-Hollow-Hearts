@@ -549,6 +549,7 @@ label act2_ch2_follow:
     return
 
 label act2_ch2_run:
+    #INSERT EPIC BATTLE CUTSCENE ANIMATED TO Left Behind BY DAGames
     scene bg park_night with wipeleft_scene
     show yuri turned casual ce zorder 2 at t11
     stop music
