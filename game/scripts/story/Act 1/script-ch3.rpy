@@ -92,7 +92,7 @@ label introaoruguri:
     show aoruguri ma
     "I'll admit, she does look cute but I'm not one to pay attention to looks, I only use looks to recognize someone or something familiar."
     t "Hi..."
-    t "Here, I'll start, I'm Sakura Taiyen, and my higher generation runs the school I go to.{w=1}\n(Why did I never tell that to you before?)"
+    t "Here, I'll start.  I'm Sakura Taiyen, and my higher generation runs the school I go to.{w=1}\n(Why did I never tell that to you before?)"
     a md "I-I'm Luna Aoruguri... and there's currently nothing special about me."
     $ aoruguri = "ルナ煽るぐり\n{size=15}Luna Aoruguri{/size}"
     a "So you're... Sakura-san."
