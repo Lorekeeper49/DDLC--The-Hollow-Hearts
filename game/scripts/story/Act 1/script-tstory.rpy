@@ -35,6 +35,7 @@ label tstory_ch3:
     "NAME: [[UNKNOWN]"
     "ATTRIBUTE: STORM"
     "APPEARANCE: BLACK HAIR, BLUE EYES, SHORT STATURE"
+    "PERSONALITY: [[UNKNOWN]"
 
     return
 
