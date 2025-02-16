@@ -265,7 +265,7 @@ label act2_ch2_main:
     $ pla = "Both"
     general "*Screaming*{w=2}{nw}" with Shake((0, 0, 0, 0), 5.0, dist=50)
     scene bg sewer_hall with wipeleft_scene
-    stop ambience
+    play ambience factory
     a "*Huff* *Puff*\nWhere are we?"
     a "Hanato?"
     "No sign of her!"
