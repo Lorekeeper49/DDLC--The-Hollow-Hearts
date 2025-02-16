@@ -65,6 +65,20 @@ label act1_ch3_main:
     call showlocation("Sakura Academy\n{size=25}桜学園高校{/size}","October 1, 2023\n{size=15}2023年10月1日{/size}",479.95,"bg school_day")
 
 
+
+    call tstory
+    show monika turned dist rhip zorder 2 at t21
+    show natsuki turned dist rhip zorder 2 at t22
+    n om "So that's why you looked familiar..."
+    t "You recognized me?"
+    n cross neut "Didn't bother to mention it because I didn't think it was important."
+    t "Makes sense."
+    n turned rhip "Anyway, I'll go next."
+    hide monika
+    show natsuki at t11
+    "Natsuki and I swap places."
+    n cross om "This is where my father really started to break and become worse than he already was."
+    call nstory
     
     return
 
