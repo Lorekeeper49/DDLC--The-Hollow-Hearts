@@ -494,20 +494,20 @@ init python:
             "east": (1, 0),
             "west": (-1, 0)
         }
-        start_pos = map(int, coord.split("_"))
+        start_pos = map(int, start.split("_"))
         queue = deque([start_pos])
-        visited = []
+        visited = set()
         while queue:
             x, y = queue.popleft()
-            current = "[x]_[y]"
+            current = f"{x}_{y}"
             if current in visited:
                 continue
-            visited.append(current)
-            if current = "9_9":
+            visited.add(current)
+            if current == "9_9":
                 return True
             for direction, (dx, dy) in directions.items():
                 new_x, new_y = x + dx, y + dy
-                new_coord = "[new_x]_[new_y]"
+                new_coord = f"{new_x}_{new_y}"
                 if new_coord in blocked_directions and not blocked_directions[current].get(direction, True) and new_coord not in visited:
                     queue.append((new_x, new_y))
         return False
