@@ -147,7 +147,7 @@ define config.predict_statements = 50
 define config.rollback_enabled = config.developer
 define config.menu_clear_layers = ["textbox"]
 define config.gl_test_image = "white"
-define config.voice_filename_format = "voicelines/{persistent.voice_lang}/{filename}"
+define config.voice_filename_format = f"voicelines/{persistent.voice_lang}/{filename}"
 
 init python:
     import os
@@ -171,18 +171,18 @@ init python:
             return (float(height) * (float(config.screen_width) / float(config.screen_height)), height)
 
     def autovoiceline(id):
-        if renpy.exists("voicelines/{persistent.voice_lang}/{id}.ogg"):
+        if renpy.exists(f"voicelines/{persistent.voice_lang}/{id}.ogg"):
             _preferences.afm_time = 0.5
-            return "{id}.ogg"
-        elif renpy.exists("voicelines/{persistent.voice_lang}/{id}.mp3"):
+            return f"{id}.ogg"
+        elif renpy.exists(f"voicelines/{persistent.voice_lang}/{id}.mp3"):
             _preferences.afm_time = 0.5
-            return "{id}.mp3"
-        elif renpy.exists("voicelines/{persistent.voice_lang}/{id}.wav"):
+            return f"{id}.mp3"
+        elif renpy.exists(f"voicelines/{persistent.voice_lang}/{id}.wav"):
             _preferences.afm_time = 0.5
-            return "{id}.wav"
+            return f"{id}.wav"
         else:
             _preferences.afm_time = 30
-            return "{id}"
+            return f"{id}"
     config.auto_voice = autovoiceline
 
 
