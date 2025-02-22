@@ -147,7 +147,7 @@ define config.predict_statements = 50
 define config.rollback_enabled = config.developer
 define config.menu_clear_layers = ["textbox"]
 define config.gl_test_image = "white"
-define config.voice_filename_format = f"voicelines/{persistent.voice_lang}/{filename}"
+define config.voice_filename_format = "voicelines/{persistent.voice_lang}/{filename}"
 
 init python:
     import os

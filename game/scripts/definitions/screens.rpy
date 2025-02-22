@@ -832,7 +832,7 @@ init -501 screen inventory_view(item_action=None):
                 grid 5 100:
                     for item in range(len(inventory)):
                         button:
-                            #background "mod_assets/inventory/[inventory[item]].png"
+                            background "mod_assets/inventory/[inventory[item]].png"
                             hover_foreground Solid("#ffffff59")
                             xysize (100, 100)
                             action [SetVariable("selected_item", inventory[item]), SetVariable("JP_item_name", JPitems[item]), SetVariable("item_desc", items_desc[item])]
