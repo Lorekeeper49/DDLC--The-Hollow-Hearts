@@ -1,7 +1,7 @@
 init python:
     def Live2D_lipsync(self, dt):
         if renpy.music.get_playing(channel="voice"):
-            self.set_param("ParamMouthOpenY", renpy.sound.get_volume("voice"))
+            self.set_parameter("ParamMouthOpenY", renpy.sound.get_volume("voice"))
 
 define _live2d_fade = True
 
