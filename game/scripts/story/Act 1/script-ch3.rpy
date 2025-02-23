@@ -150,8 +150,11 @@ label act1_ch3_main:
             t "But I'm marking this, we can't add it now!"
             t "Not when there are pansexuals currently in this school."
             "I make a subtle gesture to Sayori which he doesn't notice."
-    t "Your other rules are fine.  You can place in the ones I haven't marked."
-    "I hand him my marked paper."
+    t "Your other rules are fine."
+    "After what I just read, I'm surprised there isn't anyrthing about transgender or non-binary."
+    "However if there were, I would have a few choice words to say to him."
+    t "You can place in the ones I haven't marked."
+    "I hand him my marked up paper."
     hide aragaki
     "Because I've got better things to do than be here, I leave to go somewhere else less infuriating."
     scene bg schoolriverday with wipeleft_scene
