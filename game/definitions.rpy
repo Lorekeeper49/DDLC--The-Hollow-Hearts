@@ -474,6 +474,7 @@ define en = DynamicCharacter('en_name', image="engeki", what_prefix='“', what_
 define ma = DynamicCharacter('mari', image="mari", what_prefix='“', what_suffix='”', ctc="ctc", ctc_position="fixed")
 define d = DynamicCharacter('dominion', image="dominion", what_prefix='“', what_suffix='”', ctc="ctc", ctc_position="fixed")
 define sei = DynamicCharacter('seiei', image='seiei', what_prefix='“', what_suffix='”', ctc="ctc", ctc_position="fixed")
+define ara = DynamicCharacter('ara_name', image='aragaki', what_prefix='“', what_suffix='”', ctc="ctc", ctc_position="fixed")
 define general = DynamicCharacter('pla', what_prefix='“', what_suffix='”', ctc="ctc", ctc_position="fixed")
 
 define _dismiss_pause = config.developer
@@ -531,10 +532,10 @@ default en_name = "ルナ演劇\n{size=15}Luna Engeki{/size}"
 default mari = "楠まり\n{size=15}Kusunoki Mari{/size}"
 default dominion = "ルナどみにおん\n{size=15}Luna Dominion{/size}"
 default seiei = "窃盗精鋭\n{size=15}Settou Seiei{/size}"
+default ara_name = "桜荒垣\n{size=15}Sakura Aragaki{/size}"
 default pla = "General Name"
 
 # - choices
-default change = "*"
 default cute = False
 default known = False
 default found_breaker = False
@@ -544,9 +545,6 @@ default followed = False
 default persistent.choices_made = []
 
 # - miscellaneous
-default settinginfo = "Hover over an option to view info about it."
-default settingdef = ""
-
 default previouschan = "music"
 
 default startnow = False

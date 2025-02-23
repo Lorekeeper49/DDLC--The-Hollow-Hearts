@@ -44,9 +44,11 @@ label act1_ch3_main:
 
         "Ask her.":
             $ persistent.choices_made.append("Hidden Girl Revealed")
+            $ known = True
             call introaoruguri
         "Don't ask.":
             $ persistent.choices_made.append("Hidden Girl Kept Secret")
+            $ known = False
             "No."
             pass
     $ renpy.save_persistent()
@@ -56,13 +58,33 @@ label act1_ch3_main:
     hide aoruguri
     "She's gone..."
     t "*Sigh*"
-    "Time's almost 8, I should get to school soon."
+    if known:
+        t "I need to talk with Natsuki..."
     stop ambience fadeout 1.0
-    call deadfast("bg school_day") from _call_deadfast
+    call deadfast("bg school_day")
     play music t8
     $ style.say_window = style.window_fake
     $ nb = "namebox_fake"
     call showlocation("Sakura Academy\n{size=25}桜学園高校{/size}","October 1, 2023\n{size=15}2023年10月1日{/size}",479.95,"bg school_day")
+    "As I walk toward the front door, I notice the intercom is on."
+    k "And as the student council president comes from his weekly outing with a woman..."
+    "Since when did Koto-chan become the anouncer?"
+    k "I'd like to mention that our new principle is setting up some new rules.  The student council will be discussing those with him pronto."
+    "It's rare that we get new rules."
+    "Guess I know what's going on today."
+    scene bg security_building with wipeleft_scene
+    "At our luxurious security building..."
+    show sayori turned happ zorder 2 at t11
+    t "Oh, hello Sayori.  Looking to join?"
+    s om "Of course!"
+    s rup "I already took care of the papers."
+    show sayori cm
+    t "Look at you getting things done!"
+    show sayori ce
+    t "I'll look at the papers and go over them.  You can use this as a trial meeting.  And let's just say..."
+    show sayori oe rdown
+    t "This is not out of bias but... I think your chances are pretty high."
+    
 
 
 
