@@ -46,6 +46,14 @@ transform ZoomTransition(new_widget, old_widget, t=.5, glitch_amt=1.0):
     easein_circ t * 1.75 zoom 1.1 blur 0 matrixcolor BrightnessMatrix(0) u_rx 0 u_bx 0
     ease_cubic t zoom 1
 
+transform BumpTransition(new_widget, old_widget, t=1.0, z=1.75): 
+    subpixel True
+    old_widget
+    linear t * 0.1 zoom z
+    zoom z
+    new_widget
+    linear t zoom 1
+
 label deadfast(new_scene): 
     window hide
     $ audio.deadamb = "mod_assets/sounds/deadamb.ogg"

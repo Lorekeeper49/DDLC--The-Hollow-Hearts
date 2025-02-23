@@ -160,6 +160,14 @@ init python:
         img = "dominion"
     )
 
+    intro_ara = Intro(
+        kan = "桜荒垣",
+        name = "Sakura Aragaki",
+        attr = _("- Dictator: He can (to an extent) force anyone perform any action he commands."),
+        bio = _("Taiyen's painful uncle, he looks down upon everyone.  It's a wonder he's the new principal of the school."),
+        img = "aragaki turned crossed md"
+    )
+
 
 
 image textbg:

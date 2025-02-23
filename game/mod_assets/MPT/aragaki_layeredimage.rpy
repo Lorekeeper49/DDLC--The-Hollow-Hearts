@@ -52,7 +52,7 @@ layeredimage aragaki turned:
         anchor (0.0, 0.0)
         yoffset -0.1
         
-        "mod_assets/MPT/aragak/facebase.png"
+        "mod_assets/MPT/aragaki/facebase.png"
 
     group nose:
         attribute na default null                         # nothing

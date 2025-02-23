@@ -84,7 +84,22 @@ label act1_ch3_main:
     t "I'll look at the papers and go over them.  You can use this as a trial meeting.  And let's just say..."
     show sayori oe rdown
     t "This is not out of bias but... I think your chances are pretty high."
-    
+    hide sayori
+    show aragaki turned crossed md zorder 2 at t11
+    ara mf "Alright, everyone, here's the new rules I thought of."
+    call showintro(intro_ara)
+    show aragaki md
+    "Aragaki..."
+    "Who did you dictate to get you in this position?"
+    play sound beat
+    $ renpy.music.set_volume(0.0, delay=0, channel="music")
+    show vignette zorder 1 with BumpTransition
+    ara mg "{b}You will read them respectfully.{/b}"
+    hide vignette
+    hide aragaki
+    $ renpy.music.set_volume(1.0, delay=0, channel="music")
+    "Ignoring his command, I read them reluctantly."
+    #TODO: add a section where Taiyen reads a rule against uncommon sexuality and is greatly against it
 
 
 
@@ -142,10 +157,11 @@ label introaoruguri:
     t "But, I'm sure that if you just try to introduce yourself to more people, like you're doing with me, then I'm sure people will warm up to you for who you are."
     t "Though who am I to talk?  I'm the exact opposite of shy."
     $ layeredimage_ref("aoruguri")
-    show aoruguri crossed
+    show aoruguri cross
     a dist om "I never would've guessed."
     show aoruguri cm
     "She said that sarcastically."
-    a neut "I'll try to take what you said into consideration..."
+    a neut om "I'll try to take what you said into consideration..."
+    show aoruguri cm
     t "Good."
     return
