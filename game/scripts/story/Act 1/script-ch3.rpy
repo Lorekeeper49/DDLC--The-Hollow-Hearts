@@ -94,12 +94,68 @@ label act1_ch3_main:
     play sound beat
     $ renpy.music.set_volume(0.0, delay=0, channel="music")
     show vignette zorder 1 with BumpTransition
-    ara mg "{b}You will read them respectfully.{/b}"
+    ara mf "{b}You will read them respectfully.{/b}"
     hide vignette
     hide aragaki
     $ renpy.music.set_volume(1.0, delay=0, channel="music")
     "Ignoring his command, I read them reluctantly."
-    #TODO: add a section where Taiyen reads a rule against uncommon sexuality and is greatly against it
+    "A lot of the rules here are the same as we had before, no need for changing those."
+    t "'No sexual conduct in the bathrooms'?"
+    "Is this a joke?"
+    t "I don't think we've ever needed to explicitly spell that out before."
+    show kotonoha turned laug rhip lup zorder 2 at t11
+    k om "To be fair, I did just have to deal like 3 in a row yesterday."
+    t "Seriously?"
+    k ldown "Yeah, it was certainly something."
+    t "And I thought you were immature."
+    k e1b "That is a very low bar."
+    t "Okay, but I'm marking this for extra review.  We may need to look at our rates before we explicitly enforce something like this."
+    hide kotonoha
+    show aragaki turned crossed md zorder 2 at t11
+    ara mf "I'll allow it."
+    hide aragaki
+    show sayori turned doub zorder 2 at t11
+    s om "Uh, Taiyen..."
+    s nuet rup "Look at the last rule."
+    "She has me worried."
+    hide sayori
+    stop music fadeout 1.0
+    t "'No romantic conduct between those of the same...'"
+    t "No..."
+    show aragaki turned crossed md zorder 2 at t11
+    ara mf "Excuse me?"
+    t "I said no!  I am not letting your religious ass have influence on this school's rules!"
+    show aragaki mj
+    t "I don't know if you know about this, but some of my best friends are either gay or pansexual, I don't know about bisexual but let me tell you, I support them all the way through."
+    ara not_crossed md "You know what the law says-{nw}"
+    t "Fucking screw the law!  Do you think really that my parents ever cared about the law?"
+    show aragaki eb mj
+    t "We've all spoken about this!  They need to pass legal gay marriage or SO HELP ME!"
+    play sound beat
+    show vignette zorder 1 with BumpTransition
+    ara bd mf "{b}You will-{/b}{nw}"
+    hide vignette
+    t "NO I WILL NOT!"
+    show aragaki mj
+    t "I hate to be the one to break it to you, but you have NEVER been able to control your family and you never WILL be able to!"
+    ara md "I am trying to make this school more normal!  PLEASE!"
+    show aragaki mj
+    menu:
+        "Deny this rule":
+            t "NO!  We are NOT doing this!"
+            t "I'm sorry but you need to stop clinging to normality!  It doesn't mean anything anymore!"
+        "Submit this rule":
+            t "FINE!"
+            achieve hate
+            t "But I'm marking this, we can't add it now!"
+            t "Not when there are pansexuals currently in this school."
+            "I make a subtle gesture to Sayori which he doesn't notice."
+    t "Your other rules are fine.  You can place in the ones I haven't marked."
+    "I hand him my marked paper."
+    hide aragaki
+    "Because I've got better things to do than be here, I leave to go somewhere else less infuriating."
+    scene bg schoolriverday with wipeleft_scene
+    call showlocation("Sakura River\n{size=25}桜川{/size}","October 1, 2023\n{size=15}2023年10月1日{/size}",11*60+29+57/60.0, "bg schoolriverday")
 
 
 
