@@ -391,7 +391,8 @@ label act2_ch4_common:
     menu:
         "Encourage them.":
             $ en_out = True
-            $ persistent.choices_made.append("Engeki Left")
+            if not "Engeki Left" in persistent.choices_made:
+                $ persistent.choices_made.append("Engeki Left")
             a "No..."
             a "That's not what's stopping you."
             a "They're not scared of the outside..."
@@ -414,7 +415,8 @@ label act2_ch4_common:
             "We step out the door."
         "Understand them.":
             $ en_out = False
-            $ persistent.choices_made.append("Engeki Stayed")
+            if not "Engeki Stayed" in persistent.choices_made:
+                $ persistent.choices_made.append("Engeki Stayed")
             a "I understand."
             a "Guess that's it then..."
             a "*Sigh*"
@@ -426,6 +428,7 @@ label act2_ch4_common:
             a "Until then, See you later."
             show engeki ei
             "I step out the door."
+    $ renpy.save_persistent()
     if known:
         call act2_ch4_main_end
     else:

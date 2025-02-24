@@ -366,13 +366,12 @@ label act2_ch2_alt:
             "I begin following him."
             stop ambience fadeout 1.0
             $ followed = True
-            $ persistent.choices_made.append("Followed Taiyen")
             call act2_ch2_follow
         "Run away":
             stop ambience fadeout 1.0
             $ followed = False
-            $ persistent.choices_made.append("Ran away from Taiyen")
             call act2_ch2_run
+    $ renpy.save_persistent()
     return
 
 label act2_ch2_follow:
@@ -545,7 +544,8 @@ label act2_ch2_follow:
     "Got one more in here."
     call playlog(finallog, "black", 75.0)
     "Unfortunately, it did..."
-    $ persistent.choices_made.append("Yuri Alive")
+    if not "Yuri Alive" in persistent.choices_made:
+        $ persistent.choices_made.append("Yuri Alive")
     return
 
 label act2_ch2_run:
@@ -610,5 +610,6 @@ label act2_ch2_run:
     a "!!!"
     scene black
     a "NO!"
-    $ persistent.choices_made.append("Yuri Killed")
+    if not "Yuri Killed" in persistent.choices_made:
+        $ persistent.choices_made.append("Yuri Killed")
     return

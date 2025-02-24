@@ -43,11 +43,13 @@ label act1_ch3_main:
         t "(Umm...)"
 
         "Ask her.":
-            $ persistent.choices_made.append("Hidden Girl Revealed")
+            if not "Hidden Girl Revealed" in persistent.choices_made:
+                $ persistent.choices_made.append("Hidden Girl Revealed")
             $ known = True
             call introaoruguri
         "Don't ask.":
-            $ persistent.choices_made.append("Hidden Girl Kept Secret")
+            if not "Hidden Girl Kept Secret" in persistent.choices_made:
+                $ persistent.choices_made.append("Hidden Girl Kept Secret")
             $ known = False
             "No."
             pass

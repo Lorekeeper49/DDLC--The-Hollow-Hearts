@@ -135,6 +135,7 @@ label found_something:
     $ found_breaker = True
     if "Found Breaker" not in persistent.choices_made:
         $ persistent.choices_made.append("Found Breaker")
+    $ renpy.save_persistent()
     $ add_to_inv("Mysterious Substance", "謎の物質", "A black substance that looks familiar...")
     call screen secret_room
     return
