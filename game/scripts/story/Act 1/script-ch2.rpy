@@ -234,6 +234,8 @@ label act1_ch2_main:
     t "No problem."
     t "If you ever need me, you know how to contact me."
     "She smiles."
+    stop ambience fadeout 1.0
+    stop ambience2 fadeout 1.0
     scene bg music_room with wipeleft_scene
     play music t8
     call showlocation("Music Class\n{size=25}音楽教室{/size}","September 30, 2023\n{size=15}2023年9月30日{/size}",12*60+59+57/60.0, "bg music_room")
