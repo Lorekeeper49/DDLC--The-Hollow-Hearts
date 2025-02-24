@@ -121,6 +121,7 @@ label dev:
     scene black
     with dissolve_scene_full
     "DEVELOPER MODE ACTIVE"
+    call playcutscene("test")
     label dev_loop:
         $ quick_menu = True
         $ style.say_dialogue = style.normal
@@ -140,8 +141,6 @@ label dev:
         $ dontfans = False
         $ known = False
         $ act = 1
-        $ style.say_window = style.window_fake
-        $ nb = "namebox_fake"
         $ aoruguri = "Hidden Girl"
     label dev_start2: 
         menu:
