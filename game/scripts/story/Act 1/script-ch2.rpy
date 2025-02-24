@@ -240,8 +240,9 @@ label act1_ch2_main:
     play music t8
     call showlocation("Music Class\n{size=25}音楽教室{/size}","September 30, 2023\n{size=15}2023年9月30日{/size}",12*60+59+57/60.0, "bg music_room")
     "Music Class!  My favorite!"
-    "It actually wasn't my idea to attend this class, it was Sayori's.  She makes music as a hobby alongside her livestreams."
+    "It actually wasn't my idea to attend this class, it was Monika-chan's.  She makes music as a hobby alongside her other duties."
     "And honestly, I'm glad she suggested it, I'm having a lot of fun making music."
+    "Nobody knows it was her idea though."
     
 
     play music t3

@@ -33,6 +33,10 @@ init -1 python:
             del JPitems[i]
             del items_desc[i]
         except: pass
+    def clear_inv():
+        inventory.clear()
+        JPitems.clear()
+        items_desc.clear()
     class TrackCursor(renpy.Displayable):
         #class from here: https://lemmasoft.renai.us/forums/viewtopic.php?p=340355&sid=4540fae3b4ed740ce81e66660e093648#p340355
         def __init__(self, child):
