@@ -160,6 +160,8 @@ label act1_ch3_main:
     hide aragaki
     "Because I've got better things to do than be here, I leave to go somewhere else less infuriating."
     scene bg schoolriverday with wipeleft_scene
+    play ambience river fadein 1.0
+    play ambience2 forest fadein 1.0
     call showlocation("Sakura River\n{size=25}桜川{/size}","October 1, 2023\n{size=15}2023年10月1日{/size}",11*60+29+57/60.0, "bg schoolriverday")
 
 

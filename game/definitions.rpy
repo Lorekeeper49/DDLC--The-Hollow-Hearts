@@ -18,6 +18,8 @@ init python:
     config.keymap['clipboard_voicing'] = []
     config.keymap['toggle_skip'] = []
     renpy.music.register_channel("ambience", mixer="ambience", tight=True)
+    renpy.music.register_channel("ambience2", mixer="ambience", tight=True)
+    renpy.music.register_channel("ambience3", mixer="ambience", tight=True)
     renpy.music.register_channel("music_swap", mixer="music", tight=True)
     renpy.music.register_channel("music_poem", mixer="music", tight=True)
     renpy.music.register_channel("cutscene_audio", mixer="sfx", loop=False, tight=True)
@@ -160,6 +162,7 @@ define audio.creepy = "<loop 5>mod_assets/ambience/creepy.ogg"
 define audio.clock = "mod_assets/ambience/clock.mp3"
 define audio.epic_storm = "mod_assets/ambience/epic_storm.mp3"
 define audio.factory = "<loop 11.945>mod_assets/ambience/revolvingdoors.ogg"
+define audio.river = "mod_assets/ambience/river-rapids-23199.mp3"
 
 # - mod sound effects
 define audio.bell = "mod_assets/sounds/school-bell.ogg"

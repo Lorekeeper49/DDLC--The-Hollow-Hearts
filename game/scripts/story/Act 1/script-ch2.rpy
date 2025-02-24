@@ -97,6 +97,8 @@ label act1_ch2_main:
 
 
     stop music fadeout 1.0
+    play ambience river fadein 2.0
+    play ambience2 forest fadein 2.0
     scene bg schoolriverday with dissolve_scene_full
     call showlocation("Sakura River\n{size=25}桜川{/size}","September 30, 2023\n{size=15}2023年9月30日{/size}",11*60+29+57/60.0, "bg schoolriverday")
     $ add_to_inv("Bento", "弁当", _("Just in case I eat with a friend."))
