@@ -163,6 +163,46 @@ label act1_ch3_main:
     play ambience river fadein 1.0
     play ambience2 forest fadein 1.0
     call showlocation("Sakura River\n{size=25}桜川{/size}","October 1, 2023\n{size=15}2023年10月1日{/size}",11*60+29+57/60.0, "bg schoolriverday")
+    t "*Sigh*"
+    show natsuki turned neut rhip zorder 2 at t11
+    n om "Hey dude."
+    show natsuki cm
+    t "Hey..."
+    n cross om "Sayori already told me the details, you needn't say anything."
+    show natsuki cm
+    t "..."
+    n dist "..."
+    n turned rhip neut om "You know?  I'm lesbian."
+    t "The tsundere too, huh?"
+    n lhip happ "What'd you expect?  A heterosexual?"
+    show natsuki cm
+    t "I didn't expect anything to be honest."
+    n laug "..."
+    show natsuki dist
+    "She looks across the river."
+    n ldown om "Sister?"
+    n rdown "Are you alive out there?"
+    if known:
+        show natsuki cm
+        "My cue."
+        t "Hey, has Sayori told you about what I do every Tuesday yet?"
+        n rhip happ om "Outing with a woman, right?"
+        show natsuki cm
+        t "A secluded one, more like."
+        t "She actually properly introduced herself today."
+        show natsuki dist
+        t "My request."
+        "She's not interested right now."
+        t "It's someone you've been looking for."
+        n curi "Huh?"
+        "That got her."
+        n cross om "I'm listening"
+        t "Kinda cute, black hair, blue eyes, short stature..."
+        t "A storm..."
+        t "Name: Luna Aoruguri."
+        n turned lsur "!!!"
+        n "Ao...ru..."
+        n happ "..." #crying happy
 
 
 
