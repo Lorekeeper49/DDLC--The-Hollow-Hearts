@@ -197,12 +197,36 @@ label act1_ch3_main:
         n curi "Huh?"
         "That got her."
         n cross om "I'm listening"
+        show natsuki cm
         t "Kinda cute, black hair, blue eyes, short stature..."
         t "A storm..."
         t "Name: Luna Aoruguri."
         n turned lsur "!!!"
-        n "Ao...ru..."
-        n happ "..." #crying happy
+        n om "Ao...ru..."
+        n rhip "You're kidding!"
+        t "I am dead serious.  It's the only name she said."
+        n cross "And you're sure she wasn't lying?"
+        t "With how nervous she was, I don't think she even {i}could{/i} lie."
+        n "..."
+        show natsuki doub cm
+        "She seems doubtful."
+        n turned neut "Where does she attend?"
+        n rhip "I wanna see this for myself."
+        t "She... never told me."
+        n dist "..."
+        t "But next week, I'll talk to her."
+        t "Come with me then."
+        t "That is if you can make it."
+        show natsuki ce
+        "She considers it."
+        n cross happ om "Oh, what the hell?  I can skip class, this is my little sister were talking about here."
+        show natsuki cm
+        t "Teh, I trust you on that."
+        t "Just make sure you can catch up."
+        t "I'll cover for you."
+        n om "Thanks."
+        show natsuki cm
+        "She smiles."
 
 
 
