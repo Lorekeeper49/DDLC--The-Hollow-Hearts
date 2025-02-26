@@ -227,12 +227,25 @@ label act1_ch3_main:
         n om "Thanks."
         show natsuki cm
         "She smiles."
+        n neut "Speaking of siblings..."
     else:
         t "Out of curiousity, how did you find out?"
         n rhip curi om "Huh?"
         t "That you're a lesbian?"
         n neut "Oh."
         n laug "That's a bit of an embarrassing topic."
+        show natuski cm
+        t "It's fine, you don't have to say anything."
+        n om "Well, if you'll allow me..."
+        show natsuki ce cm
+        "She clears her throat."
+        n cross neut oe om "I'm in love with a certain someone..."
+        n doub "With purple hair."
+        t "Yuri-chan?"
+        t "My training therapist?"
+        n turned rhip laug "If she's your therapist, why are you using that honorific?"
+        t "I don't know."
+
 
 
 
