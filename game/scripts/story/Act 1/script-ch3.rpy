@@ -227,6 +227,12 @@ label act1_ch3_main:
         n om "Thanks."
         show natsuki cm
         "She smiles."
+    else:
+        t "Out of curiousity, how did you find out?"
+        n rhip curi om "Huh?"
+        t "That you're a lesbian?"
+        n neut "Oh."
+        n laug "That's a bit of an embarrassing topic."
 
 
 
