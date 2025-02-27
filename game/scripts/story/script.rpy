@@ -45,7 +45,7 @@ label act1:
     call act1_ch2_main from _call_act1_ch2_main
 
     $ chapter = 3
-    call chapter_trans("秘密のベアリング\n{size=35}Bearing Secrets{/size}")
+    call chapter_trans("悪い事\n{size=35}The Wrong Thing{/size}")
     call act1_ch3_main from _call_act1_ch3_main
 
     $ chapter = 4
