@@ -245,6 +245,7 @@ label act1_ch3_main:
         t "My training therapist?"
         n turned rhip laug "If she's your therapist, why are you using that honorific?"
         t "I don't know."
+        t "Just force of habit at this point."
 
 
 
