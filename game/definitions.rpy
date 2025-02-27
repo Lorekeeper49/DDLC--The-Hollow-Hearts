@@ -22,7 +22,7 @@ init python:
     renpy.music.register_channel("ambience3", mixer="ambience", tight=True)
     renpy.music.register_channel("music_swap", mixer="music", tight=True)
     renpy.music.register_channel("music_poem", mixer="music", tight=True)
-    renpy.music.register_channel("cutscene_audio", mixer="sfx", loop=False, tight=True)
+    renpy.music.register_channel("cutscene_voice", mixer="voice", loop=False, tight=True)
     renpy.music.register_channel("jump0", mixer="music", tight=True)
     renpy.music.register_channel("jump1", mixer="music", tight=True)
     renpy.music.register_channel("jump2", mixer="music", tight=True)

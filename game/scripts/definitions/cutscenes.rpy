@@ -1,5 +1,9 @@
 label playcutscene(vid, *, back="black", starttransition=False, endtransition=False):
-    play movie ("mod_assets/cutscenes/" + vid + ".webm")
+    play movie ("mod_assets/cutscenes/" + vid + "/movie.webm")
+    play sound ("mod_assets/cutscenes/" + vid + "/sound.ogg")
+    play music ("mod_assets/cutscenes/" + vid + "/music.ogg")
+    play ambience ("mod_assets/cutscenes/" + vid + "/ambience.ogg")
+    play cutscene_voice ("voicelines/" + persistent.voice_lang + "/cutscenes/" + vid + ".ogg")
     scene movie
     if starttransition:
         with wipeleft_scene
