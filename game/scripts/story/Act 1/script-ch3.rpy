@@ -246,8 +246,18 @@ label act1_ch3_main:
         n turned rhip laug "If she's your therapist, why are you using that honorific?"
         t "I don't know."
         t "Just force of habit at this point."
+        n 
 
-
+    n neut rhip lhip om "You know, I still can't believe it."
+    n lsur ldown "Yuri's sister is a doll?"
+    n laug "What...?"
+    t "It's surely a lot to process..."
+    t "The real question is how she is so... human?"
+    t "She can get sick, take needle shots..."
+    t "Heck, she's even got blood."
+    n rdown "She must've been one hell of a science experiment."
+    t "I'm telling her you said that."
+    n pani "Uh!  Don't!  Please don't!  Seriously!"
 
 
     call tstory
