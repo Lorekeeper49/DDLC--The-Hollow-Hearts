@@ -246,7 +246,7 @@ label act1_ch3_main:
         n turned rhip laug "If she's your therapist, why are you using that honorific?"
         t "I don't know."
         t "Just force of habit at this point."
-        n 
+        n cross lhip "Well anyway..."
 
     n neut rhip lhip om "You know, I still can't believe it."
     n lsur ldown "Yuri's sister is a doll?"
