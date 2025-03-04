@@ -25,7 +25,7 @@
 define BOBCACHIEVEMENT_LIST = (
     ("newfriends", "新しい友達\n{size=10}Brand New Friends{/size}", _("Complete the main prologue.")),
     ("qa", "完全な質問\n{size=10}Complete Questionnaire{/size}", _("Have every possible question from the 20 questions game be asked at least once.")),
-    ("hate", "僕は貴方が嫌い\n{size=10}I Hate You{/size}", _("Do something most won't agree with.")),
+    ("hate", "僕は貴方が嫌い\n{size=10}I Hate You{/size}", _("Do something most won't agree with."), True),
     ("act1fin", "見かけによらない\n{size=10}Not What It Seems{/size}", _("Complete the first act")),
     ("act2fin", "追い越された力\n{size=10}Power Overtaken{/size}", _("Complete the second act")),
     ("act3fin", "何も存在しない\n{size=10}Nothing Exists{/size}", _("Complete the final act"))

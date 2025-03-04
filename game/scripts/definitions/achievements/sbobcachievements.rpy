@@ -68,13 +68,7 @@ screen achievements():
                         vbox:
                             text BOBCACHIEVEMENTS_MAP[achievement_id][0] style "achievement_text" color BOBCACHIEVEMENTS_GRANTED_COLOR
                             text BOBCACHIEVEMENTS_MAP[achievement_id][1] style "achievement_desc_text" color BOBCACHIEVEMENTS_GRANTED_COLOR 
-                    elif BOBCACHIEVEMENTS_MAP[achievement_id][2]:
-                        # The achievement has not been achieved, and it is marked as
-                        # hidden, so don't show a description
-                        add "mod_assets/achievements/unachieved.png"
-                        vbox:
-                            text BOBCACHIVEMENTS_HIDDEN_ACHIEVEMENT_TEXT style "achievement_text" color BOBCACHIEVEMENTS_UNGRANTED_COLOR
-                    else:
+                    elif not BOBCACHIEVEMENTS_MAP[achievement_id][2]:
                         # The achievement has not been achieved but it is not hidden
                         # so just show its name
                         add "mod_assets/achievements/unachieved.png"
