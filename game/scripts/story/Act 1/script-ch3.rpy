@@ -246,9 +246,50 @@ label act1_ch3_main:
         n turned rhip laug "If she's your therapist, why are you using that honorific?"
         t "I don't know."
         t "Just force of habit at this point."
-        n cross lhip "Well anyway..."
-
-    n neut rhip lhip om "You know, I still can't believe it."
+        n cross "Well anyway..."
+        n neut "You wanna know why I haven't said anything?"
+        show natsuki cm
+        menu(time=10,force=1):
+            "Go ahead":
+                t "Is it possible it has something to do with what she is?"
+                n om "It is."
+                n dist "I'm worried... that, because she's a yandere, she'll become overly possessive of me and want everything I can provide out of me."
+                n turned "I don't want that..."
+                n neut "So I ask you this:"
+                n cross "Do you think that she lives up to her name at all?"
+                show natsuki cm
+                menu(time=10,force=0):
+                    "Be honest":
+                        t "Honestly, I have no idea."
+                        show natsuki dist
+                        t "Her appointments haven't shown enough."
+                        t "It may be best to just tell her how you feel, set boundaries, and see what happens."
+                        t "I've never been in a relationship, so I have no idea."
+                        n laug om "Not even with Sayori."
+                        t "That's complicated."
+                        "We both laugh at that."
+                    "Trust Yuri":
+                        t "Considering that it was her sister that tried to kill me..."
+                        show natsuki dist
+                        t "I'm inclined to believe that she does."
+                        t "But at the same time..."
+                        t "She and her sister are not the same person."
+                        t "From what I can tell from her appointments, she doesn't have those antics."
+                        show natsuki curi
+                        t "And if she does, well she certainly doesn't show it."
+                        t "I think it may be best to just tell her how you feel, set boundaries, and see what happens."
+                        t "I've never been in a relationship, so I have no idea."
+                        show natsuki laug om
+                        "We both laugh at that."
+                        n happ "Thanks bud."
+                        t "Anytime."
+            "Don't burden me":
+                t "If it's complicated, you shouldn't burden me."
+                n dist om "Well, you should be able to figure some of it out at least, from her name."
+                t "Mm."
+        show natsuki dist cm
+        "..."
+    n turned neut rhip lhip om "You know, I still can't believe it."
     n lsur ldown "Yuri's sister is a doll?"
     n laug "What...?"
     t "It's surely a lot to process..."
