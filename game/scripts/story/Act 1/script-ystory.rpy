@@ -26,7 +26,7 @@ label ystory_ch2:
 
     #Lilly's perspective
     ha "Lilly, you lifeless doll!"
-    lil "I am in fact a lifeless doll."
+    lil "I am indeed a lifeless doll."
     ha "Do you have any idea what pain has taught us humans?"
     lil "Don't you dare try to sound like my father!"
     lil "I-"
