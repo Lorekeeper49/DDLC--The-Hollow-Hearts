@@ -1,5 +1,5 @@
 label act1_ch1_main:
-    $ style.say_window = style.window
+    $ window_style = ""
     $ nb = "namebox"
     $ aoruguri = "隠れた少女\n{size=15}Hidden Girl{/size}"
     stop music fadeout 2.0
@@ -68,7 +68,7 @@ label act1_ch1_main:
     s "So, we're heading East instead of West."
     t "That'll help."
     "I follow her."
-    $ style.say_window = style.window_fake
+    $ window_style = "fake"
     $ nb = "namebox_fake"
     call deadfast("bg park_day")
     play music t2
@@ -184,6 +184,6 @@ label act1_ch1_main:
     "And we spent an hour trying to explain that it just means to talk about it another day."
     "*Sigh* The terminology of boy and girl..."
     "That sounds worse now that I hear it in my head."
-    
+
 
     return

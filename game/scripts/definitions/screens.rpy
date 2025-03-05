@@ -149,14 +149,19 @@ init -1 style frame:
 
 
 default nb = "namebox_fake"
+default window_style = ""
 init -501 screen say(who, what):
     style_prefix "say"
     
     window:
         id "window"
+        
+        if window_style == "fake":
+            $ style.say_window = style.window_fake
+        else:
+            $ style.say_window = style.window
 
         text what id "what" font "mod_assets/fonts/NotoSerifJP-Regular.otf"
-
         if who is not None:
 
             window:

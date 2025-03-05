@@ -1,5 +1,5 @@
 label act2_ch1_main:
-    $ style.say_window = style.window
+    $ window_style = ""
     $ nb = "namebox"
     call showintro(intro_a)
     play music confdep

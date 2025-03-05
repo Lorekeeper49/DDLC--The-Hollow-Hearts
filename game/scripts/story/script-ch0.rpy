@@ -1,5 +1,5 @@
 label ch0_main:
-    $ style.say_window = style.window
+    $ window_style = ""
     $ nb = "namebox"
     stop music fadeout 2.0
     play music confdep
@@ -59,7 +59,7 @@ label ch0_main:
     scene bg park_01 with wipeleft_scene
     y "We're here."
     t "And where is-{nw}"
-    $ style.say_window = style.window_fake
+    $ window_style = "fake"
     $ nb = "namebox_fake"
     play music t2
     show sayori turned casual happ rup lup ce om zorder 2 at t11
@@ -148,7 +148,7 @@ label ch0_main:
     show natsuki at t11
     n happ "Now if you'll excuse me, let's get this party started!"
     stop music fadeout 1.0
-    $ style.say_window = style.window
+    $ window_style = ""
     $ nb = "namebox"
     scene bg park_01 with dissolve_scene_full
     play music confdep
@@ -159,7 +159,7 @@ label ch0_main:
     "I'm such a coward!"
     a "..."
     stop music fadeout 1.0
-    $ style.say_window = style.window_fake
+    $ window_style = "fake"
     $ nb = "namebox_fake"
     scene bg park_01 with dissolve_scene_full
     play music t8
@@ -194,7 +194,7 @@ label ch0_main:
     "Glad everyone's having fun!"
     "I might actually join this!"
     t "Hm?"
-    $ style.say_window = style.window
+    $ window_style = ""
     $ nb = "namebox"
     scene bg park_01 with wipeleft_scene
     a "..."
@@ -202,7 +202,7 @@ label ch0_main:
     "Why does that boy sound so familiar?"
     a "Hm."
     "I should move somewhere else."
-    $ style.say_window = style.window_fake
+    $ window_style = "fake"
     $ nb = "namebox_fake"
     scene bg park_01 with wipeleft_scene
     t "What was..."
@@ -1081,7 +1081,7 @@ label ch0_main:
     hide kotonoha
     "With the question quota met, we step down from the non-existent stage."
     stop music fadeout 1.0
-    $ style.say_window = style.window
+    $ window_style = ""
     $ nb = "namebox"
     scene bg park_01 with dissolve_scene_full
     play music confdep
@@ -1103,7 +1103,7 @@ label ch0_main:
     a "No, it doesn't"
     ak cross c "..."
     stop music fadeout 1.0
-    $ style.say_window = style.window_fake
+    $ window_style = "fake"
     $ nb = "namebox_fake"
     scene bg park_01 with dissolve_scene_full
     show monika forward casual happ lpoint rhip zorder 2 at t11
@@ -1212,7 +1212,7 @@ label ch0_main:
     m laug om lpoint "Seems like we have a lot of things that need talking about."
     k laug om lup "Yep, we sure do."
     stop music fadeout 1.0
-    $ style.say_window = style.window
+    $ window_style = ""
     $ nb = "namebox"
     scene bg park_01 with dissolve_scene_full
     play music confdep
@@ -1226,7 +1226,7 @@ label ch0_main:
     a "*Sigh*"
     a "I should never have come here..."
     stop music fadeout 1.0
-    $ style.say_window = style.window_fake
+    $ window_style = "fake"
     $ nb = "namebox_fake"
     scene bg park_01 with dissolve_scene_full
     play music t3
@@ -1276,7 +1276,7 @@ label ch0_main:
     everyone "Got it."
     stop music fadeout 1.0
     scene black with dissolve_scene_full
-    $ style.say_window = style.window
+    $ window_style = ""
     $ nb = "namebox"
     play music ghostmenu
     $ akira = "???"

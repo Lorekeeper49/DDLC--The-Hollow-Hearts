@@ -3,7 +3,7 @@ label act1_ch3_main:
     play ambience forest
     scene bg tree
     with dissolve_scene_full
-    $ style.say_window = style.window
+    $ window_style = ""
     $ nb = "namebox"
     call showlocation("Converse Park\n{size=25}コンバースパーク{/size}","October 1, 2023\n{size=15}2023年10月1日{/size}",415.2,"bg tree")
     t "A little windy today..."
@@ -65,7 +65,7 @@ label act1_ch3_main:
     stop ambience fadeout 1.0
     call deadfast("bg school_day")
     play music t8
-    $ style.say_window = style.window_fake
+    $ window_style = "fake"
     $ nb = "namebox_fake"
     call showlocation("Sakura Academy\n{size=25}桜学園高校{/size}","October 1, 2023\n{size=15}2023年10月1日{/size}",479.95,"bg school_day")
     "As I walk toward the front door, I notice the intercom is on."

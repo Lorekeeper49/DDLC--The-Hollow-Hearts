@@ -1,12 +1,13 @@
 label ystory(bgreturn="bg club_day"):
     scene black with dissolve_scene
-    $ style.say_window = style.window
+    $ window_style = ""
     $ nb = "namebox"
     $ nextscene = "ystory_ch" + str(chapter)
-    call expression nextscene
+    call expression nextscene 
     stop music fadeout 2.0
+    stop sound fadeout 2.0
     scene black with dissolve_scene
-    $ style.say_window = style.window_fake
+    $ window_style = "fake"
     $ nb = "namebox_fake"
     scene expression bgreturn with dissolve_scene_half
     return

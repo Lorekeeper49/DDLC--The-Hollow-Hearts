@@ -4,7 +4,7 @@ label act1_ch5_main:
     with dissolve_scene_full
     play music t2
     call showlocation("Taiyen's Room\n{size=25}隊円の部屋{/size}","October 3, 2023\n{size=15}2023年10月3日{/size}",6*60+0+0/60.0,"bg bedroom")
-    $ style.say_window = style.window
+    $ window_style = ""
     $ nb = "namebox"
     show yuri turned anno rup om zorder 2 at t11
     "Routine Therapy."

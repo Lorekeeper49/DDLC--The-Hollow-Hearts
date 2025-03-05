@@ -121,7 +121,6 @@ label dev:
     scene black
     with dissolve_scene_full
     "DEVELOPER MODE ACTIVE"
-    call playcutscene("test")
     label dev_loop:
         $ quick_menu = True
         $ style.say_dialogue = style.normal
@@ -142,6 +141,8 @@ label dev:
         $ known = False
         $ act = 1
         $ aoruguri = "Hidden Girl"
+        $ window_style = ""
+        $ nb = "namebox"
     label dev_start2: 
         menu:
             "SELECT AN ACT:"
@@ -317,8 +318,6 @@ label dev:
             "ACT 2":
                 $ act = 2
                 $ hanato = "神山華翔\n{size=15}Kamiyama Hanato"
-                $ style.say_window = style.window
-                $ nb = "namebox"
                 $ aoruguri = "ルナ煽るぐり\n{size=15}Luna Aoruguri"
                 call act_trans
                 menu:

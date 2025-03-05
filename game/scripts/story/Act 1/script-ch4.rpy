@@ -4,7 +4,7 @@ label act1_ch4_main:
     scene bg park_01
     with dissolve_scene_full
     call showlocation("Kamiyama Park\n{size=25}神山のパーク{/size}","October 2, 2023\n{size=15}2023年10月2日{/size}",5*60+0+0/60.0,"bg park_01")
-    $ style.say_window = style.window
+    $ window_style = ""
     $ nb = "namebox"
     "Sayori and I woke up early and couldn't get back to sleep so we decided to practice archery by literally firing on each other while going through the arrows since we don't have actual targets."
     show sayori turned neut cm zorder 2 at t11

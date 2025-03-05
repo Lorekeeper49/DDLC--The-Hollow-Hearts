@@ -4,7 +4,7 @@ label act1_ch6_main:
     with dissolve_scene_full
     play ambience storm
     $ renpy.music.set_volume(0.3, delay=0, channel="ambience")
-    $ style.say_window = style.window
+    $ window_style = ""
     $ nb = "namebox"
     call showlocation("Sakura Academy Gym\n{size=25}桜学園高校のジム{/size}","October 4, 2023\n{size=15}2023年10月4日{/size}",6*60+0+0/60.0,"bg gym")
     t "If you thought I am about to fall in love..."

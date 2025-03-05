@@ -3,7 +3,7 @@ label act1_ch2_main:
     scene bg bedroom
     with dissolve_scene_full
     call showlocation("Taiyen's Room\n{size=25}隊円の部屋{/size}","September 30, 2023\n{size=15}2023年9月30日{/size}",405.2, "bg bedroom")
-    $ style.say_window = style.window
+    $ window_style = ""
     $ nb = "namebox"
     show monika forward rhip zorder 2 at t11
     $ add_to_inv("Pen", "ペン", _("A pen for writing"))
@@ -32,7 +32,7 @@ label act1_ch2_main:
     "She leaves."
     "I should head to school."
     scene bg residential_day with wipeleft_scene
-    $ style.say_window = style.window_fake
+    $ window_style = "fake"
     $ nb = "namebox_fake"
     play music t2
     call showlocation("Residential Street\n{size=25}住宅街{/size}","September 30, 2023\n{size=15}2023年9月30日{/size}",6*60+59+57/60.0, "bg residential_day")
