@@ -1,6 +1,7 @@
 .vscode
 *.rpa
 *.rpyc
+*.bak
 DDLC.exe
 DDLC.py
 DDLC.sh
