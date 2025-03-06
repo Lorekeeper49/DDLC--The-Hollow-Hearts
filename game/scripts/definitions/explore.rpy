@@ -22,21 +22,27 @@ init -1 python:
     def get_length(s):
         return len(s)
     # Only use this when adding items to the inventory, it makes sure the items are in the same place for each list so the inventory view can work correctly
-    def add_to_inv(EN_name, JP_name, desc):
-        inventory.append(EN_name)
-        JPitems.append(JP_name)
-        items_desc.append(desc)
-    def remove_from_inv(EN_name):
+    def add_to_inv(EN_name, JP_name, desc, chara=None):
+        if chara is None:
+            chara = char_perspective
+        inventory[chara].append(EN_name)
+        JPitems[chara].append(JP_name)
+        items_desc[chara].append(desc)
+    def remove_from_inv(EN_name, chara=None):
+        if chara is None:
+            chara = char_perspective
         try:
-            i = inventory.index(EN_name)
-            del inventory[i]
-            del JPitems[i]
-            del items_desc[i]
+            i = inventory[chara].index(EN_name)
+            del inventory[chara][i]
+            del JPitems[chara][i]
+            del items_desc[chara][i]
         except: pass
-    def clear_inv():
-        inventory.clear()
-        JPitems.clear()
-        items_desc.clear()
+    def clear_inv(chara=None):
+        if chara is None:
+            chara = char_perspective
+        inventory[chara].clear()
+        JPitems[chara].clear()
+        items_desc[chara].clear()
     class TrackCursor(renpy.Displayable):
         #class from here: https://lemmasoft.renai.us/forums/viewtopic.php?p=340355&sid=4540fae3b4ed740ce81e66660e093648#p340355
         def __init__(self, child):
@@ -111,9 +117,37 @@ label next_location(loc, *, transition=True, j=False, f=False, w=False):
     $ renpy.call_screen(loc)
     return
 
-default inventory = []
-default JPitems = []
-default items_desc = []
+default inventory = {
+    "Taiyen": [],
+    "Aoruguri": [],
+    "Monika": [],
+    "Sayori": [],
+    "Natsuki": [],
+    "Yuri": [],
+    "Kotonoha": [],
+    "Lilly": []
+    }
+default JPitems = {
+    "Taiyen": [],
+    "Aoruguri": [],
+    "Monika": [],
+    "Sayori": [],
+    "Natsuki": [],
+    "Yuri": [],
+    "Kotonoha": [],
+    "Lilly": []
+    }
+default items_desc = {
+    "Taiyen": [],
+    "Aoruguri": [],
+    "Monika": [],
+    "Sayori": [],
+    "Natsuki": [],
+    "Yuri": [],
+    "Kotonoha": [],
+    "Lilly": []
+    }
+default char_perspective = ""
 default explored = []
 default party = []
 default code = ""

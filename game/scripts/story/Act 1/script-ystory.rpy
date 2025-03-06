@@ -3,7 +3,9 @@ label ystory(bgreturn="bg club_day"):
     $ window_style = ""
     $ nb = "namebox"
     $ nextscene = "ystory_ch" + str(chapter)
+    $ char_perspective = "Yuri"
     call expression nextscene 
+    $ char_perspective = "Taiyen"
     stop music fadeout 2.0
     stop sound fadeout 2.0
     scene black with dissolve_scene
@@ -24,7 +26,7 @@ label ystory_ch2:
     lil "Stay there!"
     lil "Think about what I want for once!"
 
-    #Lilly's perspective
+    $ char_perspective = "Lilly"
     ha "Lilly, you lifeless doll!"
     lil "I am indeed a lifeless doll."
     ha "Do you have any idea what pain has taught us humans?"

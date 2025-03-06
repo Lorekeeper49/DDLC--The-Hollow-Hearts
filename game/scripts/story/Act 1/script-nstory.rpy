@@ -3,7 +3,9 @@ label nstory(bgreturn="bg club_day"):
     $ window_style = ""
     $ nb = "namebox"
     $ nextscene = "nstory_ch" + str(chapter)
+    $ char_perspective = "Natsuki"
     call expression nextscene 
+    $ char_perspective = "Taiyen"
     stop music fadeout 2.0
     stop sound fadeout 2.0
     scene black with dissolve_scene

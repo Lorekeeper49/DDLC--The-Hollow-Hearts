@@ -1,6 +1,7 @@
 label ch0_main:
     $ window_style = ""
     $ nb = "namebox"
+    $ char_perspective = "Taiyen"
     stop music fadeout 2.0
     play music confdep
     scene bg tlivingroom
@@ -148,6 +149,7 @@ label ch0_main:
     show natsuki at t11
     n happ "Now if you'll excuse me, let's get this party started!"
     stop music fadeout 1.0
+    $ char_perspective = "Aoruguri"
     $ window_style = ""
     $ nb = "namebox"
     scene bg park_01 with dissolve_scene_full
@@ -159,6 +161,7 @@ label ch0_main:
     "I'm such a coward!"
     a "..."
     stop music fadeout 1.0
+    $ char_perspective = "Taiyen"
     $ window_style = "fake"
     $ nb = "namebox_fake"
     scene bg park_01 with dissolve_scene_full
@@ -194,6 +197,7 @@ label ch0_main:
     "Glad everyone's having fun!"
     "I might actually join this!"
     t "Hm?"
+    $ char_perspective = "Aoruguri"
     $ window_style = ""
     $ nb = "namebox"
     scene bg park_01 with wipeleft_scene
@@ -202,6 +206,7 @@ label ch0_main:
     "Why does that boy sound so familiar?"
     a "Hm."
     "I should move somewhere else."
+    $ char_perspective = "Taiyen"
     $ window_style = "fake"
     $ nb = "namebox_fake"
     scene bg park_01 with wipeleft_scene
@@ -1081,6 +1086,7 @@ label ch0_main:
     hide kotonoha
     "With the question quota met, we step down from the non-existent stage."
     stop music fadeout 1.0
+    $ char_perspective = "Aoruguri"
     $ window_style = ""
     $ nb = "namebox"
     scene bg park_01 with dissolve_scene_full
@@ -1103,6 +1109,7 @@ label ch0_main:
     a "No, it doesn't"
     ak cross c "..."
     stop music fadeout 1.0
+    $ char_perspective = "Taiyen"
     $ window_style = "fake"
     $ nb = "namebox_fake"
     scene bg park_01 with dissolve_scene_full
@@ -1212,6 +1219,7 @@ label ch0_main:
     m laug om lpoint "Seems like we have a lot of things that need talking about."
     k laug om lup "Yep, we sure do."
     stop music fadeout 1.0
+    $ char_perspective = "Aoruguri"
     $ window_style = ""
     $ nb = "namebox"
     scene bg park_01 with dissolve_scene_full
@@ -1226,6 +1234,7 @@ label ch0_main:
     a "*Sigh*"
     a "I should never have come here..."
     stop music fadeout 1.0
+    $ char_perspective = "Taiyen"
     $ window_style = "fake"
     $ nb = "namebox_fake"
     scene bg park_01 with dissolve_scene_full

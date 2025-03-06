@@ -1,4 +1,5 @@
 label act2_ch1_main:
+    $ char_perspective = "Aoruguri"
     $ window_style = ""
     $ nb = "namebox"
     call showintro(intro_a)
