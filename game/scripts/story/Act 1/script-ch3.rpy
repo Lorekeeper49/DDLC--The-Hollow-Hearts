@@ -219,7 +219,7 @@ label act1_ch3_main:
         t "That is if you can make it."
         show natsuki ce
         "She considers it."
-        n cross happ om "Oh, what the hell?  I can skip class, this is my little sister were talking about here."
+        n cross happ oe om "Oh, what the hell?  I can skip class, this is my little sister were talking about here."
         show natsuki cm
         t "Teh, I trust you on that."
         t "Just make sure you can catch up."
@@ -227,7 +227,7 @@ label act1_ch3_main:
         n om "Thanks."
         show natsuki cm
         "She smiles."
-        n neut "Speaking of siblings..."
+        n neut om "Speaking of siblings..."
     else:
         t "Out of curiousity, how did you find out?"
         n rhip curi om "Huh?"
@@ -293,12 +293,62 @@ label act1_ch3_main:
     n lsur ldown "Yuri's sister is a doll?"
     n laug "What...?"
     t "It's surely a lot to process..."
+    show natsuki cm
     t "The real question is how she is so... human?"
     t "She can get sick, take needle shots..."
     t "Heck, she's even got blood."
-    n rdown "She must've been one hell of a science experiment."
+    n rdown om "She must've been one hell of a science experiment."
     t "I'm telling her you said that."
     n pani "Uh!  Don't!  Please don't!  Seriously!"
+    "I laugh at her expense."
+    play sound bell
+    $ pause(3.0)
+    n cross dist om "And there's the bell..."
+    "Today's gonna be a slow day..."
+    scene bg club_day with wipeleft_scene
+    play music t5
+    call showlocation("The Literature Club\n{size=25}文芸部{/size}","October 1, 2023\n{size=15}2023年10月1日{/size}",16*60+00+57/60.0, "bg club_day")
+    "Or did I fall asleep?"
+    "That was over quickly."
+    kmind "I think we just wanted to get things over with after the meeting."
+    "Jesus, hope this doesn't cut into my grade."
+    show monika forward happ rhip zorder 2 at t11
+    m om "Well hello, Taiyen.  Nice to see student council duties didn't mess with you this time."
+    show monika cm
+    t "Oh believe me, it did."
+    show monika curi
+    t "Sayori can give you the details."
+    m laug om "Well, besides that..."
+    m happ lpoint "I don't know if you saw our texts earlier, but we agreed on having the stories be done first for today."
+    show lilly norm de zorder 2 at l31
+    show natsuki turned happ rhip zorder 2 at l32
+    show monika at t33
+    n om "How about we have our resident doll go first?"
+    m doub ldown ce "(Natsuki, can you be a little more considerate about your crush's-){nw}"
+    play sound beat
+    $ renpy.music.set_volume(0.0, delay=0, channel="music")
+    show vignette zorder 1 with BumpTransition
+    show natsuki pani rdown at h32
+    show monika lsur oe cm rdown at h33
+    lil doll a0 "'̸͓̝͑R̵̩̝̋̊e̸̦̥̾̕s̵͈̻̆i̸̫͝d̷̙͓͑̚e̵͇͆̊n̶͖̾̂ẗ̸͍̼́̆ ̶̧̫͝ḏ̶̥̒o̴̯̚l̴͉͉̎͠l̵̦͒'̵̹̅ ̸̝̮͋̂h̶̯̥̾ü̷̟h̸͕́́?̵̡̛̛̠ ̸͚̠͝ ̶͖͑́Ţ̴̳͛̓h̶̤͒̕a̴͍̗̎t̵͍̔͝'̵̤͐s̶̺̄̏ ̴̘́̔w̷̢̖̉ĥ̸̻̣̕a̷̛̭ṯ̶͓̎̀ ̵͔̾Ȋ̵̗ ̶̜̻͊a̸̛̹̝̐m̵̟̣̆ ̸̹́t̸̪̲͋͠o̸̠͙͠ ̵̹̟̉͝ÿ̸͖̞̇o̵͙̅͑ủ̴̫͙̌.̵̟̦̂"
+    "That form is terrifying!"
+    "Wait, didn't she say no one can see it.{nw}"
+    hide vignette
+    show lilly norm dc2
+    show natsuki zorder 2 at t32
+    show monika at t33
+    $ renpy.music.set_volume(1.0, delay=0, channel="music")
+    $ pause(2.0)
+    lil ec2 "Just kidding."
+    show lilly dc2
+    n laug rhip "Jesus!  Aggressive much!"
+    hide monika
+    hide natsuki
+    show lilly at t22
+    show yuri turned dist rup ce om zorder 2 at l21
+    y "Let's just read the story."
+    call ystory
+
 
 
     call tstory
