@@ -20,7 +20,7 @@ label ch0_main:
     call showlocation("Sakura Home\n{size=25}桜のホーム{/size}","September 28, 2023\n{size=15}2023年9月28日{/size}",7*60+59+57/60.0,"bg house")
     t "*Sigh*"
     show yuri turned casual curi rup zorder 2 at t11
-    y om "Taiyen?"
+    y om "Taiyen-kun?"
     t "Hey Yuri-chan..."
     call showintro(intro_y)
     y "You doing alright?"
@@ -225,7 +225,7 @@ label ch0_main:
     "Koto-chan takes the stage."
     hide kotonoha
     show yuri turned casual happ rup zorder 2 at t11
-    y om "Taiyen, you count too."
+    y om "Taiyen-kun, you count too."
     show yuri cm
     t "Huh?  But I haven't made any-"
     y om rdown "You made the decision to be here."

@@ -15,7 +15,7 @@ label act1_ch5_main:
     t "Haven't you been taking more notes now that I'm part of the literature club?"
     y laug "I've forgotten to bring my notebook on several occasions."
     t "That's a surprise."
-    y happ "No one's perfect, Taiyen."
+    y happ "No one's perfect, Taiyen-kun."
     t "Have you considered asking for a raise?"
     y anno "I'm not gonna get one with my current performance!"
    
