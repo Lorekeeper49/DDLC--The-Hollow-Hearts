@@ -257,7 +257,7 @@ label dom_burst:
     lil "Yes?"
     a "Use your true form and help me out!"
     show lilly doll a0 with blink
-    lil "You got it!"
+    lil "Y̸̭̪̋̍o̶̦̾ŭ̶̖͔ ̶̮̆g̷̝͊o̸͚͂ẗ̴̖́̾ ̶͚̱̈́͠i̸̭̒͋t̷̤̞̐!̶͈̭̉̕"
     play sound thunder
     scene bg storm
     show dominion zorder 2 at t11
