@@ -37,7 +37,7 @@ label the_end:
     end "I am telling you all this because it is my duty, this is all a script after all."
     end "I do not know why I exist, but I do know why I'm here."
     end "I'm here to tell you what's wrong here."
-    end "That the universe yo just saw can never hope to exist."
+    end "That the universe you just saw can never hope to exist."
     end "As it is just a broken replica."
     end "A copy of another universe that has more hope of existing than the one you saw."
     end "A universe that the creator is in the process of 'reimagining' as I speak."
