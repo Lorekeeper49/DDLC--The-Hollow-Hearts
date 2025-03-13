@@ -201,7 +201,7 @@ label splashscreen:
                         renpy.persistent.should_save_persistent = False
                         renpy.utter_restart()
                 "No, continue where I left off.":
-                    $ restore_relevant_characters()
+                    pass
 
         python:
             if not firstrun:
@@ -210,11 +210,6 @@ label splashscreen:
                         f.write("1")
                 except:
                     renpy.jump("readonly")
-
-    if config.version != persistent.oldversion:
-        $ restore_relevant_characters()
-        $ persistent.oldversion = config.version
-        $ renpy.save_persistent()
 
     if not persistent.first_run:
         python:

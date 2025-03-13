@@ -48,14 +48,6 @@ init python:
     def delete_all_saves():
         for savegame in renpy.list_saved_games(fast=True):
             renpy.unlink_save(savegame)
-    def delete_character(name):
-        import os
-        try: os.remove(config.basedir + "/characters/" + name + ".chr")
-        except: pass
-    def restore_all_characters():
-        pass
-    def restore_relevant_characters():
-        restore_all_characters()
     def pause(time=None):
         global _windows_hidden
         if not time:
