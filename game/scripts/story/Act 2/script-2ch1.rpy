@@ -184,6 +184,7 @@ label act2_ch1_main:
     lil c1e "(Wait...)"
     a "I think I'm going crazy."
     lil c3 "(You're... not...)"
+    k lsur "(Is this part of what my brother was talking about?)"
     "What?"
     show lilly at rhide
     hide lilly
