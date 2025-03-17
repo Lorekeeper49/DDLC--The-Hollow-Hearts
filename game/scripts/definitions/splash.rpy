@@ -212,8 +212,6 @@ label splashscreen:
                     renpy.jump("readonly")
 
     if not persistent.first_run:
-        python:
-            restore_all_characters()
         $ quick_menu = False
         scene black
         call screen languagechoice
@@ -272,8 +270,6 @@ label splashscreen:
     return
 
 label after_load:
-    if persistent.playthrough == 0:
-        $ restore_all_characters()
     $ config.allow_skipping = allow_skipping
     $ _dismiss_pause = config.developer
     $ persistent.ghost_menu = False

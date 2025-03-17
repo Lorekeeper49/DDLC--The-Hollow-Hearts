@@ -26,8 +26,9 @@ label act1_ch4_main:
     "She puts away her bow and changes the subject."
     s rdown "You remember prelife?"
     t "How could I forget when we were at war with that storm for the entire century that we were in there!"
+    t "Not to mention, you're literally writing about it."
     s worr rup "You know, I'm worried about her."
-    "What?"
+    t "Huh?"
     s "Apparently, the war didn't start deliberately."
     s rdown "She lost control."
     t "Who are you talking about?"
@@ -41,7 +42,10 @@ label act1_ch4_main:
     "I decide not to press further."
     t "Well, I'm out of arrows, wanna head to school early?"
     s neut rup "Sure."
+    stop music fadeout 1.0
     scene bg school_day with wipeleft_scene
+    $ window_style = "fake"
+    $ nb = "namebox_fake"
 
         
         
@@ -93,7 +97,9 @@ label act1_ch4_main:
     $ pause(0.05)
     stop music
     hide vignette 
-    show natsuki pani
+    hide natsuki
+    show natsuki turned pani om zorder 2 at t31
+    show lilly norm a1e
     with Fade(0.0, 1.0, 0.0)
     $ pause(1.0)
     play ambience river fadein 1.0
@@ -113,18 +119,18 @@ label act1_ch4_main:
     lil w3 "How did you..."
     lil w3e "No.  How did {i}either{/i} of you see my true form?!"
     lil w3e2b "I left this life so long ago!"
-    lil doll a3 "He forced me to be alone!"
+    lil doll c0 "He forced me to be alone!"
     hide natsuki
     hide yuri
     lil "He created me just to be some crazy science experiment, never to go outside!"
-    lil a4 "I just wanted to talk with people!"
+    lil d0 "I just wanted to talk with people!"
     show vignette zorder 1 with dissolve
     lil "I just wanted to make friends!"
     show darkred zorder 1 with dissolve
     lil "Not be human!"
-    show lilly a2
+    show lilly b0
     "She's crying blood!"
-    lil a4 "This is what I want you to see me as!"
+    lil d0 "This is what I want you to see me as!"
     hide darkred with dissolve
     lil "Not that!"
 

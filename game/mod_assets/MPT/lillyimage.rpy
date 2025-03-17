@@ -543,6 +543,8 @@ layeredimage lilly:
             "mod_assets/MPT/lilly/w3e.png"
         attribute w3eb:
             "mod_assets/MPT/lilly/w3eb.png"
+        attribute w3e2b:
+            "mod_assets/MPT/lilly/w3e2b.png"
         attribute w3eb2:
             "mod_assets/MPT/lilly/w3eb2.png"
         attribute x:
