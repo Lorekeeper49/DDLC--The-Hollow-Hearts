@@ -43,10 +43,90 @@ label act1_ch4_main:
     s neut rup "Sure."
     scene bg school_day with wipeleft_scene
 
-    if known:
-        # Talk to Natsuki about Aoruguri
-    else:
-        # Ask Lilly why we were able to see her true form
+        
+        
+    show lilly norm a1e zorder 2 at t11
+    t "Lilly, can we talk?"
+    lil c2 "Uh."
+    show lilly c2e
+    extend "  Sure, what's up?"
+    show lilly a1e
+    t "Outside.  Let's go outside for this."
+    "I sound serious but I don't mean to."
+    scene bg schoolriverday with wipeleft_scene
+    play ambience river fadein 1.0
+    play ambience2 forest fadein 1.0
+    call showlocation("Sakura River\n{size=25}桜川{/size}","October 2, 2023\n{size=15}2023年10月1日{/size}",11*60+29+57/60.0, "bg schoolriverday")
+    show lilly norm c2e zorder 2 at t32
+    show natsuki turned neut rhip zorder 2 at t31
+    show yuri turned neut zorder 2 at t33
+    lil "So, what's up?"
+    show lilly a1e
+    "Natsuki's here too, just to give us another set of eyes."
+    t "Can you like... transform here?"
+    show natsuki lsur
+    show yuri curi
+    lil c1e "Uh, what?"
+    t "I wanna check something..."
+    lil c2e "Okay..."
+    n rdown om "Oh no..."
+    play music jumpscare
+    stop ambience
+    stop ambience2
+    show vignette zorder 1 with BumpTransition
+    show natsuki s_scream at h31
+    show yuri nerv
+    show lilly doll a0
+    $ pause(0.5)
+    n "*Screams in terror*{w=0.5}{nw}"
+    t "Natsuki!  Natsuki!  Calm down!"
+    "I hold Natsuki by the shoulders, making sure she doesn't run away from the terror that is in front of her."
+    "In front of me too."
+    "Jesus Christ, is this what she truly looks like?"
+    show lilly a0 with Fade(0.0, 0.05, 0.0)
+    $ pause(0.05)
+    show lilly with Fade(0.0, 0.05, 0.0)
+    $ pause(0.05)
+    show lilly with Fade(0.0, 0.05, 0.0)
+    $ pause(0.05)
+    show lilly with Fade(0.0, 0.05, 0.0)
+    $ pause(0.05)
+    stop music
+    hide vignette 
+    show natsuki pani
+    with Fade(0.0, 1.0, 0.0)
+    $ pause(1.0)
+    play ambience river fadein 1.0
+    play ambience2 forest fadein 1.0
+    t "I knew it!"
+    show yuri lsur 
+    lil w3e "Wait, you saw me?!"
+    y vsur om rup "Are you serious?"
+    show natsuki nerv rhip
+    "Natsuki and I both nod our heads."
+    lil w3 "...What?"
+    y lup "I saw nothing."
+    "Then what was your reaction earlier?"
+    n om "Now I understand why you two like horror so much."
+    "How is that relevent in any way?"
+    lil w3e "But that doesn't make any sense!"
+    lil w3 "How did you..."
+    lil w3e "No.  How did {i}either{/i} of you see my true form?!"
+    lil w3e2b "I left this life so long ago!"
+    lil doll a3 "He forced me to be alone!"
+    hide natsuki
+    hide yuri
+    lil "He created me just to be some crazy science experiment, never to go outside!"
+    lil a4 "I just wanted to talk with people!"
+    show vignette zorder 1 with dissolve
+    lil "I just wanted to make friends!"
+    show darkred zorder 1 with dissolve
+    lil "Not be human!"
+    show lilly a2
+    "She's crying blood!"
+    lil a4 "This is what I want you to see me as!"
+    hide darkred with dissolve
+    lil "Not that!"
 
 
     

@@ -180,13 +180,14 @@ label act2_ch1_main:
     "Huh?"
     a "You didn't see that just now?"
     k rhip "No?"
+    k e2b "(I know her voice changed, but I wasn't exactly paying attention...)"
     lil c1e "(Wait...)"
     a "I think I'm going crazy."
     lil c3 "(You're... not...)"
     "What?"
     show lilly at rhide
     hide lilly
-    show kotonoha angr zorder 2 at t11
+    show kotonoha angr oe zorder 2 at t11
     k "Anyway, I think your plan works here unless anyone else has any better plans."
     show kotonoha cm
     "No one answers."
