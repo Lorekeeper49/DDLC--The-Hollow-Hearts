@@ -119,6 +119,9 @@ label act1_ch4_main:
     lil w3 "How did you..."
     lil w3e "No.  How did {i}either{/i} of you see my true form?!"
     lil w3e2b "I left this life so long ago!"
+    stop ambience
+    stop ambience2
+    play music static
     lil doll c0 "He forced me to be alone!"
     hide natsuki
     hide yuri
@@ -133,6 +136,19 @@ label act1_ch4_main:
     lil d0 "This is what I want you to see me as!"
     hide darkred with dissolve
     lil "Not that!"
+    show lilly b0
+    "I feel bad."
+    "But..."
+    "I finally understand why she was the way she was back then."
+    stop music fadeout 1.0
+    scene black with dissolve_scene
+    "Back then, when I first met Lilly..."
+    "I was the one who came to her."
+    "But... she wouldn't talk to me..."
+    # Transition to scene of Lilly and Taiyen's first meeting
+    
+
+    "As I recount these memories, I give Lilly a much needed hug."
 
 
     
