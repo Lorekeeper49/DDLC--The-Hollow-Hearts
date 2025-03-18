@@ -122,19 +122,23 @@ label act1_ch4_main:
     stop ambience
     stop ambience2
     play music static
+    $ renpy.music.set_volume(0.25, delay=0, channel="music")
     lil doll c0 "He forced me to be alone!"
     hide natsuki
     hide yuri
     lil "He created me just to be some crazy science experiment, never to go outside!"
     lil d0 "I just wanted to talk with people!"
-    show vignette zorder 1 with dissolve
+    $ renpy.music.set_volume(0.50, delay=0, channel="music")
+    show vignette zorder 1
     lil "I just wanted to make friends!"
-    show darkred zorder 1 with dissolve
+    $ renpy.music.set_volume(0.75, delay=0, channel="music")
+    show darkred zorder 1
     lil "Not be human!"
     show lilly b0
     "She's crying blood!"
     lil d0 "This is what I want you to see me as!"
-    hide darkred with dissolve
+    $ renpy.music.set_volume(1.0, delay=0, channel="music")
+    hide darkred
     lil "Not that!"
     show lilly b0
     "I feel bad."
@@ -148,7 +152,68 @@ label act1_ch4_main:
     # Transition to scene of Lilly and Taiyen's first meeting
     
 
-    "As I recount these memories, I give Lilly a much needed hug."
+    scene black with dissolve_scene
+    "As I retell this story, I realize that I am not just talking to myself."
+    show dark zorder 3
+    show hanato night zorder 2 at t11
+    "In fact, I can see her right now, hiding in the darkness of my mind."
+    "I know her, and she is impolitely listening."
+    "But she is not my concern."
+    hide dark
+    hide hanato
+    "There's someone else here."
+    "You."
+    "The one... looking at a screen."
+    "..."
+    "Look, I don't know if you're some sort of spark..."
+    "An onlooker watching from a camera..."
+    "Or some person trying to control me like some video game character..."
+    if achievement.has("hate"):
+        "Probably that one because it seems you've already made me do something I would never do!"
+    "But there's something you need to know regardless."
+    "You've probably seen these people already in your time."
+    "And I can tell that you've probably done some..."
+    "Rather intimate things to a few of them."
+    "The girls mainly."
+    "I'm not assuming your gender, I wouldn't care if you were female or other, I'm just throwing that out there."
+    "But...  I'm here to tell you that things... may not be the same here..."
+    "If you've caught on already, then great!  I didn't need to say that."
+    "But... if you are someone who is controlling me..."
+    "The choices you will be given..."
+    "And possibly {i}have{/i} been given..."
+    "The things you can make me do..."
+    "And possibly someone else..."
+    "Most if not all of them will matter."
+    "And some of them... could lead to outcomes you don't want."
+    "That I... don't want."
+    "So I ask you to make every choice with extreme care."
+    "I can't stop you."
+    "Nor do I know how."
+    "I'm not even gonna try to tell everyone about you because you might be able just stop me from doing so."
+    "So I hope you can keep everyone in check and alive."
+    "I don't care how much you hate any of them."
+    "Make sure they are all alive."
+    "I want a good ending out of this."
+    "You've already made one decision that has changed the course of someone else's entire future."
+    "So I hope this will all be worth it in the end."
+    "I can do things without your control as well, as you've seen."
+    "I won't give you many options yet, I actually want to learn how to do things against your judgement."
+    "But as more time goes on and I know I can trust you more and more..."
+    "I'll be more than willing to leave things in your hands."
+    "I'll know when you are gone."
+    "So while you are here, you are to follow these rules."
+    menu:
+        "Deal?"
+
+        "Yes.":
+            "Good."
+        "No.":
+            "Hmph."
+            "Well regardless, you're still going to follow them whether you like it or not."
+    "I'll head back to the original topic now."
+    "This was your warning, CONTROLLER."
+    scene bg schoolriverday with dissolve_scene
+    "As I finish my message to you, I give Lilly a much needed hug."
 
 
     
