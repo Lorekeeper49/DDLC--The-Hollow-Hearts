@@ -26,6 +26,7 @@ default choice_filters = {
         {"choice name": "choice", "variable to set": "test_var", "variable value": "value"}, 
         {"choice name": "unchoice", "variable to set": "test_var", "variable value": "no value"}],
 }
+define test_var = "no value"
 
 screen path_chooser:
     add "taiyen cross" xcenter 640 ycenter 640 zoom 2.0
@@ -52,7 +53,7 @@ screen path_chooser:
                             xalign 0.1 
                             yalign 0.5
                             spacing 10
-                            if filt["variable to set"] == filt["variable value"]:
+                            if globals()[filt["variable to set"]] == filt["variable value"]:
                                 frame xysize (40, 40) background "#fff"
                             else:
                                 frame xysize (40, 40) background "#000"
