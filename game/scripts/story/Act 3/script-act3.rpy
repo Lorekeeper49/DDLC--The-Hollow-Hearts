@@ -20,7 +20,7 @@ label act3:
         "Just set up OBS or XSplit to have 2 screens and capture both games."
         "If that doesn't work, then unfortunately... I don't know how to help you."
     "That is all."
-    call screen dialog(message="The mod will now open the Midnight Club application, this process could take a while.  When this happens, the command prompt will open up too, close the command prompt and both applications will respond.\nPlease ensure that both this application and the Midnight Club application are both running simultaneously the entire time throughout this Act.", ok_action=[Function(openMidnight), Return()])
+    call screen path_chooser
 
     return
 
