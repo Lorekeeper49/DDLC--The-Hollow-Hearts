@@ -18,7 +18,7 @@ default act2_choice_filters = {
 }
 
 default act2_path_list = [
-    {"title": "The Timid Storm", "needed choices": ["Hidden Girl Revealed"], "category": "HIDDEN GIRL", "filter value": "revealed", "label": "act2", "extra options": []},
+    {"title": "The Timid Storm", "needed choices": ["Hidden Girl Revealed"], "category": "HIDDEN GIRL", "filter value": "revealed", "label": "act2", "extra options": [{"option name": "item", "needed choices": ["niajnfoie"]}]},
     {"title": "The Hidden Girl", "needed choices": ["Hidden Girl Kept Secret"], "category": "HIDDEN GIRL", "filter value": "hidden", "label": "act2_alt", "extra options": []},
 ]
 
@@ -145,22 +145,21 @@ screen path_chooser(choice_filters, path_list):
                 draggable True
                 has vbox
                 if path_list[selected_path]["extra options"] is not None:
-                    for item in path_list[selected_path]["extra options"]:
+                    for option in path_list[selected_path]["extra options"]:
                         button:
                             xysize (140, 140)
                             xalign 1.0
                             xpos 1280
-                            if item in extra_selected:
+                            if option["option name"] in extra_selected:
                                 background "#ffffff40"
                             else:
                                 background "#00000000"
                             hover_background "#ffffff80"
-                            if item["needed choices"] is None or all(item in persistent.choices_made for item in item["needed choices"]):
-                                text item["option name"] style "path_button_text" xalign 0.5 yalign 0.5
+                            if option["needed choices"] is None or all(item in persistent.choices_made for item in option["needed choices"]):
+                                text option["option name"] style "path_button_text" xalign 0.5 yalign 0.5
                             else:
                                 text "?" style "path_button_text" xalign 0.5 yalign 0.5
-                            frame xysize (384, 216) xalign 0.25 yalign 0.5
-                            action If(item["needed choices"] is None or all(item in persistent.choices_made for item in filt["needed choices"]), If(item["option name"] in extra_selected, RemoveFromSet(extra_selected, item["option name"]), AddToSet(extra_selected, item["option name"])))
+                            action If(option["needed choices"] is None or all(item in persistent.choices_made for item in option["needed choices"]), If(option["option name"] in extra_selected, RemoveFromSet(extra_selected, option["option name"]), AddToSet(extra_selected, option["option name"])))
             
 
     timer 5.2 repeat True action SetVariable("current_text", random_list(globals()[char_list])[0])
