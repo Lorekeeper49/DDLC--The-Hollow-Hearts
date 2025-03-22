@@ -570,7 +570,7 @@ init -501 screen acts():
             text "ACT 2" xalign 0.1 yalign 0.5 style "navigation_button_text"
             text "アクト２" xalign 0.1 yalign 1.1 style "navigation_kan" 
             hovered [SetVariable("option_index", 3)] 
-            action If(achievement.has("act1fin"), [Hide("acts", _layer="textbox"), Show("act2choice", _layer="textbox")], Show(screen="dialog", message="Complete Act 1 first.", ok_action=Hide("dialog")))
+            action If(achievement.has("act1fin"), [Hide("acts", _layer="textbox"), Show("path_chooser", dissolve_scene, act2_choice_filters, act2_path_list)], Show(screen="dialog", message="Complete Act 1 first.", ok_action=Hide("dialog")))
         button:
             at button_transform
             text "ACT 3" xalign 0.1 yalign 0.5 style "navigation_button_text"

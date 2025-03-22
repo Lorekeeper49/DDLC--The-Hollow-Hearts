@@ -530,15 +530,6 @@ default seiei = "窃盗精鋭\n{size=15}Settou Seiei{/size}"
 default ara_name = "桜荒垣\n{size=15}Sakura Aragaki{/size}"
 default pla = "General Name"
 
-# - choices
-default cute = False
-default known = False
-default found_breaker = False
-default secrets = False
-default en_out = False
-default followed = False
-default persistent.choices_made = []
-
 # - miscellaneous
 default previouschan = "music"
 

@@ -20,7 +20,7 @@ label act3:
         "Just set up OBS or XSplit to have 2 screens and capture both games."
         "If that doesn't work, then unfortunately... I don't know how to help you."
     "That is all."
-    call screen path_chooser
+    # call screen path_chooser
 
     return
 
