@@ -585,24 +585,6 @@ init -501 screen acts():
                 hovered [SetVariable("option_index", 5)] 
                 action Function(Developer)
 
-default unlock_jp = ""
-default unlock_en = ""
-init -501 screen act2choice():
-    zorder 3000
-    frame:
-        xysize (1280, 720)
-        background Solid("#646464b9")
-    style_prefix "explore"
-    text "道を選んで下さい\nCHOOSE YOUR PATH" xcenter 640 ycenter 40
-    button xcenter 360 ycenter 360 xysize (500, 300) hovered If("Hidden Girl Revealed" not in persistent.choices_made, [SetVariable("unlock_jp", "この道を開くために、彼女に質問する"), SetVariable("unlock_en", "ASK HER THE QUESTION TO UNLOCK")]) unhovered [SetVariable("unlock_jp", ""), SetVariable("unlock_en", "")] action If("Hidden Girl Revealed" in persistent.choices_made, Function(Act2), NullAction())
-    text "知られざる少女\nREVEALED" xcenter 360 ycenter 360
-    text "[unlock_jp]" xcenter 640 ycenter 190
-    text "[unlock_en]" xcenter 640 ycenter 530
-    button xcenter 920 ycenter 360 xysize (500, 300) hovered If("Hidden Girl Kept Secret" not in persistent.choices_made, [SetVariable("unlock_jp", "この道を開くために、彼女に質問してはいけない"), SetVariable("unlock_en", "DON'T ASK HER THE QUESTION TO UNLOCK")]) unhovered [SetVariable("unlock_jp", ""), SetVariable("unlock_en", "")] action If("Hidden Girl Kept Secret" in persistent.choices_made, Function(Act2_alt), NullAction())
-    text "隠れた少女\nHIDDEN" xcenter 920 ycenter 360
-    button xcenter 640 ycenter 695 xysize (1280, 100) action [Hide("act2choice", _layer="textbox"), Show("acts", _layer="textbox")]
-    text "バック\nBACK" xcenter 640 ycenter 680
-
 init -501 image nav_f:
     "mod_assets/gui/nav_f.png"
     alpha 0.5
