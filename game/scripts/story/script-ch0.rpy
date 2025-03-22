@@ -6,7 +6,6 @@ label ch0_main:
     play music confdep
     scene bg tlivingroom
     with dissolve_scene_full
-    $ restore_all_characters()
     $ pla = "???"
     $ aoruguri = "ルナ煽るぐり\n{size=15}Luna Aoruguri{/size}"
     general "IT'S YOUR FAULT."
