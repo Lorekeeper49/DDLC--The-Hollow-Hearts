@@ -470,7 +470,9 @@ define ma = DynamicCharacter('mari', image="mari", what_prefix='“', what_suffi
 define d = DynamicCharacter('dominion', image="dominion", what_prefix='“', what_suffix='”', ctc="ctc", ctc_position="fixed")
 define sei = DynamicCharacter('seiei', image='seiei', what_prefix='“', what_suffix='”', ctc="ctc", ctc_position="fixed")
 define ara = DynamicCharacter('ara_name', image='aragaki', what_prefix='“', what_suffix='”', ctc="ctc", ctc_position="fixed")
+define tet = DynamicCharacter('tet_name', image='tetsuo', what_prefix='“', what_suffix='”', ctc="ctc", ctc_position="fixed")
 define general = DynamicCharacter('pla', what_prefix='“', what_suffix='”', ctc="ctc", ctc_position="fixed")
+define unknown = DynamicCharacter('un_name', what_prefix='“', what_suffix='”', ctc="ctc", ctc_position="fixed")
 
 define _dismiss_pause = config.developer
 
@@ -528,6 +530,8 @@ default mari = "楠まり\n{size=15}Kusunoki Mari{/size}"
 default dominion = "ルナどみにおん\n{size=15}Luna Dominion{/size}"
 default seiei = "窃盗精鋭\n{size=15}Settou Seiei{/size}"
 default ara_name = "桜荒垣\n{size=15}Sakura Aragaki{/size}"
+default tet_name = "ルナ哲夫\n{size=15}Luna Tetsuo{/size}"
+default un_name = "???"
 default pla = "General Name"
 
 # - miscellaneous

@@ -31,15 +31,11 @@ layeredimage aoruguri turned:
         
         attribute ldown default if_any(["uniform"]):
             "mod_assets/MPT/aoruguri/Uniform/ldown.png"
-        attribute lup if_any(["uniform"]):
-            "mod_assets/MPT/aoruguri/Uniform/lup.png"
         attribute lhip if_any(["uniform"]):
             "mod_assets/MPT/aoruguri/Uniform/lhip.png"
         
         attribute ldown default if_any(["casual"]):
             "mod_assets/MPT/aoruguri/Casual/ldown.png"
-        attribute lup if_any(["casual"]):
-            "mod_assets/MPT/aoruguri/Casual/lup.png"
         attribute lhip if_any(["casual"]):
             "mod_assets/MPT/aoruguri/Casual/lhip.png"
     
@@ -50,15 +46,11 @@ layeredimage aoruguri turned:
         
         attribute rdown default if_any(["uniform"]):
             "mod_assets/MPT/aoruguri/Uniform/rdown.png"
-        attribute rup if_any(["uniform"]):
-            "mod_assets/MPT/aoruguri/Uniform/rup.png"
         attribute rhip if_any(["uniform"]):
             "mod_assets/MPT/aoruguri/Uniform/rhip.png"
         
         attribute rdown default if_any(["casual"]):
             "mod_assets/MPT/aoruguri/Casual/rdown.png"
-        attribute rup if_any(["casual"]):
-            "mod_assets/MPT/aoruguri/Casual/rup.png"
         attribute rhip if_any(["casual"]):
             "mod_assets/MPT/aoruguri/Casual/rhip.png"
     
