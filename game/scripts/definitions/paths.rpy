@@ -18,7 +18,7 @@ default act2_choice_filters = {
 }
 
 default act2_path_list = [
-    {"title": "The Timid Storm", "needed choices": ["Hidden Girl Revealed"], "category": "HIDDEN GIRL", "filter value": "revealed", "label": "act2", "extra options": [{"option name": "item", "needed choices": ["niajnfoie"]}]},
+    {"title": "The Timid Storm", "needed choices": ["Hidden Girl Revealed"], "category": "HIDDEN GIRL", "filter value": "revealed", "label": "act2", "extra options": []},
     {"title": "The Hidden Girl", "needed choices": ["Hidden Girl Kept Secret"], "category": "HIDDEN GIRL", "filter value": "hidden", "label": "act2_alt", "extra options": []},
 ]
 
