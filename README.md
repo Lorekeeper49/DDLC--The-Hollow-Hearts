@@ -266,6 +266,8 @@ THUNDER2 - Sound Effect by [Mikhail](https://pixabay.com/users/soundsforyou-4861
 
 [That Sounds Great - GraphicSauce](https://www.fontspace.com/that-sounds-great-font-f115095)
 
+[FOT-RodinNTLG Pro EB](https://fontsgeek.com/fonts/fot-rodinntlg-pro-eb?ref=readme)
+
 
 ### MISC | その他
 [DOKI MPT - Chronos, Yagamirai, Terra, DiabloGraves](https://www.reddit.com/r/DDLCMods/comments/emennq/mood_posing_tool_mpt_v10_release_for_ddlc_modding/)

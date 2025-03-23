@@ -9,17 +9,17 @@ define extra_selected = []
 define selected_path = -1
 
 default act2_choice_filters = {
-    "HIDDEN GIRL": { "variable to set": "hidden_girl",
+    "HIDDEN GIRL": { "variable to set": "hidden_girl", "JP": "隠れた少女",
         "buttons": [
-        {"choice name": "REVEALED", "variable value": "revealed", "needed choices": ["Hidden Girl Revealed"]}, 
-        {"choice name": "HIDDEN", "variable value": "hidden", "needed choices": ["Hidden Girl Kept Secret"]}
+        {"choice name": "REVEALED", "JP": "ハニカミ", "variable value": "revealed", "needed choices": ["Hidden Girl Revealed"]}, 
+        {"choice name": "HIDDEN", "JP": "隠れ", "variable value": "hidden", "needed choices": ["Hidden Girl Kept Secret"]}
         ]
     },
 }
 
 default act2_path_list = [
-    {"title": "The Timid Storm", "needed choices": ["Hidden Girl Revealed"], "category": "HIDDEN GIRL", "filter value": "revealed", "label": "act2", "extra options": []},
-    {"title": "The Hidden Girl", "needed choices": ["Hidden Girl Kept Secret"], "category": "HIDDEN GIRL", "filter value": "hidden", "label": "act2_alt", "extra options": []},
+    {"title": "The Timid Storm", "JP": "小心嵐", "needed choices": ["Hidden Girl Revealed"], "category": "HIDDEN GIRL", "filter value": "revealed", "label": "act2", "extra options": []},
+    {"title": "The Hidden Girl", "JP": "隠れた少女", "needed choices": ["Hidden Girl Kept Secret"], "category": "HIDDEN GIRL", "filter value": "hidden", "label": "act2_alt", "extra options": []},
 ]
 
 # define your choice filter variables here.  You must use define and not default or there will be an error.
@@ -35,7 +35,7 @@ transform occasional_flash:
         repeat
 
 style path_bg_text:
-    font "mod_assets/fonts/Unitblock-mLAwm.ttf"
+    font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf"
     color "#fff"
     size 200
     text_align 0.5
@@ -74,9 +74,10 @@ screen path_chooser(choice_filters, path_list):
                 for category in choice_filters:
                     frame:
                         text category xalign 0.1 yalign 0.5 style "path_button_text"
-                        text "選択肢フィルター" xalign 0.1 yalign 1.1 style "path_kan" 
+                        text choice_filters[category]["JP"] xalign 0.1 yalign 1.1 style "path_kan" 
                     for filt in choice_filters[category]["buttons"]:
                         button:
+                            text filt["JP"] xalign 0.1 yalign 1.1 style "path_kan" 
                             hbox:
                                 yalign 0.5
                                 spacing 10
@@ -90,6 +91,7 @@ screen path_chooser(choice_filters, path_list):
                                     text "?" style "path_button_text"
                             action If(filt["needed choices"] is None or all(item in persistent.choices_made for item in filt["needed choices"]), SetVariable(choice_filters[category]["variable to set"], filt["variable value"]))
                     button:
+                        text "フィルターなし" xalign 0.1 yalign 1.1 style "path_kan" 
                         hbox:
                             yalign 0.5
                             spacing 10
@@ -97,7 +99,7 @@ screen path_chooser(choice_filters, path_list):
                                 frame xysize (40, 40) background "#fff"
                             else:
                                 frame xysize (40, 40) background "#000"
-                            text "UNFILTER" style "path_button_text"
+                            text "NO FILTER" style "path_button_text"
                         action SetVariable(choice_filters[category]["variable to set"], None)
     viewport:
         mousewheel True
@@ -112,9 +114,11 @@ screen path_chooser(choice_filters, path_list):
                     if filt["needed choices"] is None or all(item in persistent.choices_made for item in filt["needed choices"]):
                         text path_list[i]["title"] style "path_title" xcenter 250
                         add "mod_assets/paths/" + path_list[i]["title"] + ".png" xalign 0.25 yalign 0.5 zoom 0.2
+                        text path_list[i]["JP"] style "path_title" xcenter 250 yalign 1.0
                     else:
                         text "LOCKED PATH" style "path_title" xcenter 250
                         frame xysize (384, 216) xalign 0.25 yalign 0.5
+                        text "ロックされた道"style "path_title" xcenter 250 yalign 1.0
                     if selected_path == i:
                         background "#ffffff40"
                     else:
@@ -185,7 +189,7 @@ style path_frame:
     activate_sound gui.activate_sound
 
 style path_button_text:
-    font "mod_assets/fonts/ThatSoundsGreat-yYLE3.ttf"
+    font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf"
     color "#333"
     hover_color "#fff"
     outlines [(0, "#58585800", 0, 0), (0, "#58585800", 0, 0)]
@@ -193,20 +197,20 @@ style path_button_text:
     text_align 0.0
 
 style path_text:
-    font "mod_assets/fonts/ThatSoundsGreat-yYLE3.ttf"
+    font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf"
     color "#333"
     outlines [(0, "#58585800", 0, 0), (0, "#58585800", 0, 0)]
     size 50
 
 style path_kan:
-    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
+    font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf"
     color "#33333380"
     hover_color "#ffffff80"
     outlines [(0, "#58585800", 0, 0), (0, "#58585800", 0, 0)]
     size 20
 
 style path_title:
-    font "mod_assets/fonts/ThatSoundsGreat-yYLE3.ttf"
+    font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf"
     color "#333"
     hover_color "#fff"
     outlines [(0, "#58585800", 0, 0), (0, "#58585800", 0, 0)]

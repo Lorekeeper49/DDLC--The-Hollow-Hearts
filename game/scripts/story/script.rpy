@@ -140,7 +140,7 @@ label dev:
         $ dontfans = False
         $ known = False
         $ act = 1
-        $ aoruguri = "Hidden Girl"
+        $ aoruguri = "隠れた少女\n{size=15}Hidden Girl{/size}"
         $ window_style = ""
         $ nb = "namebox"
     label dev_start2: 
