@@ -487,8 +487,10 @@ init python:
         trans.xoffset = -1 + random.random() * 9 - 4
         trans.yoffset = 3 + random.random() * 6 - 3
         return random.random() * 1.2 + 0.3
-    def flashback_help():
-        renpy.play(flashback, channel="sounds")
+    def noise_start(trans, st, at):
+        renpy.play(audio.static, "sound")
+    def noise_stop(trans, st, at):
+        renpy.music.stop("sound")
 
 transform malpha(a=1.00):
     i11

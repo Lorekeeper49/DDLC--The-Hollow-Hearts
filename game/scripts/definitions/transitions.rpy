@@ -57,27 +57,37 @@ transform BumpTransition(new_widget, old_widget, t=1.0, z=1.75):
 transform StaticTransition(new_widget, old_widget): 
     subpixel True
     old_widget
+    function noise_start
     "noise"
     0.2
+    function noise_stop
     old_widget
     0.05
+    function noise_start
     "noise"
     0.1
+    function noise_stop
     old_widget
     0.05
+    function noise_start
     "noise"
     0.1
+    function noise_stop
     old_widget
     0.1
+    function noise_start
     "noise"
     0.5
+    function noise_stop
     new_widget
 
 transform StaticTransitionLong(new_widget, old_widget, t=1.0): 
     subpixel True
     old_widget
+    function noise_start
     "noise"
     t
+    function noise_stop
     new_widget
 
 label deadfast(new_scene): 
