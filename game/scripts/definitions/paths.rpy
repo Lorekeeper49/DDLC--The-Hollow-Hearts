@@ -120,7 +120,7 @@ screen path_chooser(choice_filters, path_list):
                                             text "?" style "path_button_text"
                                     action If(filt["needed choices"] is None or all(item in persistent.choices_made for item in filt["needed choices"]), SetVariable(choice_filters[category]["variable to set"], filt["variable value"]))
                         button:
-                            text "フィルターなし" xalign 0.1 yalign 1.1 style "path_kan" 
+                            text "全て表示" xalign 0.1 yalign 1.1 style "path_kan" 
                             hbox:
                                 yalign 0.5
                                 spacing 10
@@ -128,7 +128,7 @@ screen path_chooser(choice_filters, path_list):
                                     frame xysize (40, 40) background "#fff"
                                 else:
                                     frame xysize (40, 40) background "#000"
-                                text "NO FILTER" style "path_button_text"
+                                text "SHOW ALL" style "path_button_text"
                             action SetVariable(choice_filters[category]["variable to set"], None)
                         button:
                             text "全て隠す" xalign 0.1 yalign 1.1 style "path_kan" 
