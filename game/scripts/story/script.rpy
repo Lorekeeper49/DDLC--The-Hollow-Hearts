@@ -275,6 +275,7 @@ label dev:
             "ACT 1":
                 $ act = 1
                 call act_trans
+                $ char_perspective = "Taiyen"
                 menu:
                     "SELECT A CHAPTER:"
 
@@ -319,6 +320,7 @@ label dev:
                 $ act = 2
                 $ hanato = "神山華翔\n{size=15}Kamiyama Hanato"
                 $ aoruguri = "ルナ煽るぐり\n{size=15}Luna Aoruguri"
+                $ char_perspective = "Aoruguri"
                 call act_trans
                 menu:
                     "WHICH PATH?"

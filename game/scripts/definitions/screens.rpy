@@ -810,7 +810,7 @@ init -501 screen inventory_view(item_action=None):
         frame:
             ysize 200
             xsize 540
-            background Solid("#00000090")
+            background "#00000090"
         vbox:
             label "[selected_item]\n{size=20}[JP_item_name]{/size}"
             text item_desc
@@ -820,7 +820,7 @@ init -501 screen inventory_view(item_action=None):
                     for item in range(len(inventory[char_perspective])):
                         button:
                             background "mod_assets/inventory/[inventory[char_perspective][item]].png"
-                            hover_foreground Solid("#ffffff59")
+                            hover_foreground "#ffffff59"
                             xysize (100, 100)
                             action [SetVariable("selected_item", inventory[char_perspective][item]), SetVariable("JP_item_name", JPitems[char_perspective][item]), SetVariable("item_desc", items_desc[char_perspective][item])]
         if item_action is not None:
