@@ -54,6 +54,32 @@ transform BumpTransition(new_widget, old_widget, t=1.0, z=1.75):
     new_widget
     linear t zoom 1
 
+transform StaticTransition(new_widget, old_widget): 
+    subpixel True
+    old_widget
+    "noise"
+    0.2
+    old_widget
+    0.05
+    "noise"
+    0.1
+    old_widget
+    0.05
+    "noise"
+    0.1
+    old_widget
+    0.1
+    "noise"
+    0.5
+    new_widget
+
+transform StaticTransitionLong(new_widget, old_widget, t=1.0): 
+    subpixel True
+    old_widget
+    "noise"
+    t
+    new_widget
+
 label deadfast(new_scene): 
     window hide
     $ audio.deadamb = "mod_assets/sounds/deadamb.ogg"
