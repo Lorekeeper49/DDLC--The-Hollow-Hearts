@@ -61,7 +61,7 @@ label nstory_ch2:
     a "Perfect timing, I just finished the report."
     show aoruguri cm
     n "What'd you tell him?"
-    a rdown om "Just that wind broken the windows as that's been a common problem for us."
+    a rdown om "Just that wind broke the window as that's been a common problem for us."
     show aoruguri cm
     n "Don't remind me!"
     n "I'm not sure why he insists on having us live in this house."
