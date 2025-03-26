@@ -62,7 +62,7 @@ style path_bg_text:
     size 200
     text_align 0.5
 
-default current_text = "CONTROLLER"
+default current_text = ""
 default char_list = "t_list"
 default t_list = [
     "KILL HIM",
@@ -226,7 +226,7 @@ screen path_chooser(choice_filters, path_list):
                 text "PLAY" style "path_button_text" xalign 0.5 yalign 0.5
                 action Function(renpy.jump_out_of_context, path_list[selected_path]["label"])
             
-
+    timer 0.001 action SetVariable("current_text", random_list(globals()[char_list])[0])
     timer 5.2 repeat True action SetVariable("current_text", random_list(globals()[char_list])[0])
 
 style path_button is gui_button

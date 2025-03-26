@@ -402,10 +402,6 @@ init -1 python:
         renpy.jump_out_of_context("start")
     def Act1():
         renpy.jump_out_of_context("act1")
-    def Act2():
-        renpy.jump_out_of_context("act2")
-    def Act2_alt():
-        renpy.jump_out_of_context("act2_alt")
     def Act3():
         renpy.jump_out_of_context("act3")
     def Extras():
