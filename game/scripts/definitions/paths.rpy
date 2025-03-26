@@ -161,7 +161,7 @@ screen path_chooser(choice_filters, path_list):
                         else:
                             background "#00000000"
                         hover_background "#ffffff80"
-                        action If(filt["needed choices"] is None or all(item in persistent.choices_made for item in filt["needed choices"]), [ToggleVariable("selected_path", i, -1), ])
+                        action If(filt["needed choices"] is None or all(item in persistent.choices_made for item in filt["needed choices"]), [ToggleVariable("selected_path", i, -1)])
     vbox:
         spacing -4
         button:
