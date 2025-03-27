@@ -82,7 +82,7 @@ label dominion_loop:
         a "Okay."
         a "Whew."
         if not "Dominion Calm" in persistent.choices_made:
-                $ persistent.choices_made.append("Dominion Calm")
+            $ persistent.choices_made.append("Dominion Calm")
         return
     elif stress >= 3 and calm > stress:
         d "*Stuttered Breath*"
