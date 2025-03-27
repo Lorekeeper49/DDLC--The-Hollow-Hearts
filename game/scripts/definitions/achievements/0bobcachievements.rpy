@@ -125,15 +125,27 @@ screen achievement_screen(achiname, achievement_title, achievement_description):
                 text achievement_description style "achievement_desc_text"
 
 style achievement_text:
-    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
+    font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf"
     size 30
     color "#000"
     outlines []
 
 style achievement_desc_text:
-    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
+    font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf"
     size 15
     color "#000"
+    outlines []
+
+style achievement_main_text:
+    font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf"
+    size 30
+    color "#fff"
+    outlines []
+
+style achievement_main_desc_text:
+    font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf"
+    size 15
+    color "#fff"
     outlines []
 
 transform achievement_transform():

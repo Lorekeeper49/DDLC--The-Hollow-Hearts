@@ -37,49 +37,6 @@ image menu_fade:
     "black"
     menu_fadeout
 
-image menu_art_y:
-    subpixel True
-    im.Composite((960, 960), (0, 0), "yuri/1l.png", (0, 0), "yuri/2r.png", (0, 0), "yuri/o.png")
-    xcenter 500
-    ycenter 250
-    zoom 0.25
-
-image menu_art_n:
-    subpixel True
-    im.Composite((960, 960), (0, 0), "natsuki/1l.png", (0, 0), "natsuki/1r.png", (0, 0), "natsuki/2tf.png")
-    xcenter 840
-    ycenter 340
-    zoom 0.25
-
-image menu_art_s:
-    subpixel True
-    im.Composite((960, 960), (0, 0), "sayori/1l.png", (0, 0), "sayori/1r.png", (0, 0), "sayori/k.png")
-    xcenter 700
-    ycenter 200
-    zoom 0.25
-
-image menu_art_m:
-    subpixel True
-    im.Composite((960, 960), (0, 0), "monika/1l.png", (0, 0), "monika/1r.png", (0, 0), "monika/q.png")
-    xcenter 610
-    ycenter 100
-    zoom 0.25
-
-image menu_art_k:
-    subpixel True
-    "mod_assets/menu_k.png"
-    xcenter 640
-    ycenter 600
-    zoom 0.25
-
-image menu_art_a:
-    subpixel True
-    "mod_assets/MPT/aoruguri/example.png"
-    xcenter 800
-    ycenter 600
-    zoom 0.25
-
-
 image menu_nav:
     "mod_assets/gui/main_menu.png"
 
