@@ -442,7 +442,7 @@ init -501 screen navigation():
         button:
             at button_transform
             text "BOOKMARKS" xalign 0.1 yalign 0.5 style "navigation_button_text"
-            text "しおり" xalign 0.1 yalign 1.1 style "navigation_kan" 
+            text "栞" xalign 0.1 yalign 1.1 style "navigation_kan" 
             hovered [SetVariable("option_index", 4)] 
             action [Hide("history", _layer="textbox"), Hide("preferences", _layer="textbox"), Hide("inventory_view", _layer="textbox"), ShowMenu("file_slots", _layer="textbox"), SensitiveIf(renpy.get_screen("file_slots") == None)]
         button:
@@ -619,7 +619,7 @@ init -501 screen main_menu():
             action [Hide("achievements_main", _layer="textbox"), Hide("preferences_main", _layer="textbox"), Hide("file_slots_main", _layer="textbox"), Show("acts", _layer="textbox")]
         button:
             text "BOOKMARKS" xalign 0.1 yalign 0.5 style "main_menu_button_text"
-            text "しおり" xalign 0.1 yalign 1.1 style "main_menu_kan"  
+            text "栞" xalign 0.1 yalign 1.1 style "main_menu_kan"  
             action [Hide("acts", _layer="textbox"), Hide("achievements_main", _layer="textbox"), Hide("preferences_main", _layer="textbox"), ShowMenu("file_slots_main", _layer="textbox"), SensitiveIf(renpy.get_screen("file_slots_main") == None)]
         button:
             text "ACHIEVEMENTS" xalign 0.1 yalign 0.5 style "main_menu_button_text"
@@ -767,7 +767,7 @@ init -501 screen file_slots():
                 background "#8181818a"
                 vbox:
                     xalign 0.5
-                    text "しおりの名前\nNAME OF BOOKMARK" font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf" size 10 xalign 0.5 text_align 0.5
+                    text "栞の名前\nNAME OF BOOKMARK" font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf" size 10 xalign 0.5 text_align 0.5
                     input default FileSaveName(slot_selected) value VariableInputValue("save_name") length 24 font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf"
                     hbox:
                         if not main_menu:
@@ -816,7 +816,7 @@ init -501 screen file_slots_main():
                 background "#8181818a"
                 vbox:
                     xalign 0.5
-                    text "しおりの名前\nNAME OF BOOKMARK" font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf" size 10 xalign 0.5 text_align 0.5
+                    text "栞の名前\nNAME OF BOOKMARK" font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf" size 10 xalign 0.5 text_align 0.5
                     input default FileSaveName(slot_selected) value VariableInputValue("save_name") length 24 font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf"
                     hbox:
                         if not main_menu:
