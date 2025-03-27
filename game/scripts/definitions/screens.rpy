@@ -397,18 +397,6 @@ init -501 screen quick_menu():
 
 default -1 quick_menu = True
 
-init -1 python:
-    def StartGame():
-        renpy.jump_out_of_context("start")
-    def Act1():
-        renpy.jump_out_of_context("act1")
-    def Act3():
-        renpy.jump_out_of_context("act3")
-    def Extras():
-        renpy.jump_out_of_context("extras")
-    def Developer():
-        renpy.jump_out_of_context("dev")
-
 default option_index = 0
 init -501 screen navigation():
     use navigation_border
@@ -487,11 +475,11 @@ init -501 screen acts():
         button:
             text "PROLOGUE" xalign 0.1 yalign 0.5 style "main_menu_button_text"
             text "プロローグ" xalign 0.1 yalign 1.1 style "main_menu_kan"  
-            action Function(StartGame)
+            action Function(renpy.jump_out_of_context, "start")
         button:
             text "ACT 1" xalign 0.1 yalign 0.5 style "main_menu_button_text"
             text "アクト１" xalign 0.1 yalign 1.1 style "main_menu_kan"  
-            action If(achievement.has("newfriends"), Function(Act1), Show(screen="dialog", message="Complete the Prologue first.", ok_action=Hide("dialog")))
+            action If(achievement.has("newfriends"), Function(renpy.jump_out_of_context, "act1"), Show(screen="dialog", message="Complete the Prologue first.", ok_action=Hide("dialog")))
         button:
             text "ACT 2" xalign 0.1 yalign 0.5 style "main_menu_button_text"
             text "アクト２" xalign 0.1 yalign 1.1 style "main_menu_kan"  
@@ -499,12 +487,12 @@ init -501 screen acts():
         button:
             text "ACT 3" xalign 0.1 yalign 0.5 style "main_menu_button_text"
             text "アクト３" xalign 0.1 yalign 1.1 style "main_menu_kan"  
-            action If(achievement.has("act2fin"), Function(Act3), Show(screen="dialog", message="Complete Act 2 first.", ok_action=Hide("dialog")))
+            action If(achievement.has("act2fin"), [Hide("acts", _layer="textbox"), Show("path_chooser", StaticTransition, act3_choice_filters, act3_path_list)], Show(screen="dialog", message="Complete Act 2 first.", ok_action=Hide("dialog")))
         if config.developer:
             button:
                 text "DEVELOPER MODE" xalign 0.1 yalign 0.5 style "main_menu_button_text"
                 text "デベロッパーモード" xalign 0.1 yalign 1.1 style "main_menu_kan" 
-                action Function(Developer)
+                action Function(renpy.jump_out_of_context, "dev")
 
 init -501 image nav_f:
     "mod_assets/gui/nav_f.png"
@@ -641,7 +629,7 @@ init -501 screen main_menu():
         button:
             text "EXTRAS" xalign 0.1 yalign 0.5 style "main_menu_button_text"
             text "エクストラー" xalign 0.1 yalign 1.1 style "main_menu_kan"  
-            action Function(Extras)
+            action Function(renpy.jump_out_of_context, "extras")
         if renpy.variant("pc"):
             button:
                 text "QUIT" xalign 0.1 yalign 0.5 style "main_menu_button_text"

@@ -71,6 +71,8 @@ label dominion_loop:
             jump dom_ab
         "Give up on him":
             a "I give up!"
+            if not "Dominion Left Behind" in persistent.choices_made:
+                $ persistent.choices_made.append("Dominion Left Behind")
             return
     if calm >= 3 and stress < calm:
         d "Okay, I'm calm.  I'm calm."
@@ -79,6 +81,8 @@ label dominion_loop:
         d "I'll head back to the school in a bit."
         a "Okay."
         a "Whew."
+        if not "Domionion Calm" in persistent.choices_made:
+                $ persistent.choices_made.append("Domionion Calm")
         return
     elif stress >= 3 and calm > stress:
         d "*Stuttered Breath*"
@@ -348,6 +352,8 @@ label dom_burst:
     ma "I'm proud of you."
     show mari cm
     a "Yeah...  Thanks Mari."
+    if not "Domionion Burst" in persistent.choices_made:
+        $ persistent.choices_made.append("Domionion Burst")
     return
 
 label no_shed:
@@ -371,6 +377,8 @@ label no_shed:
     stop jump13 fadeout 1.0
     stop jump14 fadeout 1.0
     stop jump15 fadeout 1.0
+    if not "Dominion Left Behind" in persistent.choices_made:
+        $ persistent.choices_made.append("Dominion Left Behind")
     return
 
 default blocked_directions = { # randomized each run

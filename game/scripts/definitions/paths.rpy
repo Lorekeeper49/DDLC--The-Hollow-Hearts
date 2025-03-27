@@ -27,6 +27,40 @@ default act2_choice_filters = {
     }
 }
 
+default act3_choice_filters = {
+    "HIDDEN GIRL": { "variable to set": "hidden_girl", "JP": "隠れた少女", "hidden": False,
+        "buttons": [
+        {"choice name": "REVEALED", "JP": "ハニカミ", "variable value": "revealed", "needed choices": ["Hidden Girl Revealed"], "hidden": False}, 
+        {"choice name": "HIDDEN", "JP": "隠れ", "variable value": "hidden", "needed choices": ["Hidden Girl Kept Secret"], "hidden": False}
+        ]
+    },
+    "BREAKER": { "variable to set": "breaker_found", "JP": "ブレイカー", "hidden": True,
+        "buttons": [
+        {"choice name": "FOUND", "JP": "発見", "variable value": "found", "needed choices": ["Found Breaker"], "hidden": False}, 
+        {"choice name": "DIDN'T FIND", "JP": "見つからない", "variable value": "didn't find", "needed choices": ["Found Breaker"], "hidden": False}
+        ]
+    },
+    "FRIGHTENED DOMINION": { "variable to set": "fright_dom", "JP": "怖いどみにおん", "hidden": True,
+        "buttons": [
+        {"choice name": "CONVINCED", "JP": "落ち着いた", "variable value": "revealed", "needed choices": ["Domionion Calm"], "hidden": False}, 
+        {"choice name": "BURST", "JP": "激高", "variable value": "revealed", "needed choices": ["Domionion Burst"], "hidden": False}, 
+        {"choice name": "LEFT BEHIND", "JP": "取り残された", "variable value": "left behind", "needed choices": ["Dominion Left Behind"], "hidden": False}
+        ]
+    },
+    "KIND MAN": { "variable to set": "kind_man", "JP": "心の優しい人", "hidden": True,
+        "buttons": [
+        {"choice name": "FOLLOWED", "JP": "尾行された", "variable value": "followed", "needed choices": ["Yuri Alive"], "hidden": False}, 
+        {"choice name": "RAN AWAY", "JP": "逃げ出した", "variable value": "ran away", "needed choices": ["Yuri Killed"], "hidden": False}
+        ]
+    },
+    "UNKNOWN SISTER": { "variable to set": "unknown_sister", "JP": "知ら無い姉", "hidden": False,
+        "buttons": [
+        {"choice name": "LEFT", "JP": "去った", "variable value": "left", "needed choices": ["Engeki Left"], "hidden": False}, 
+        {"choice name": "STAYED", "JP": "滞在", "variable value": "stayed", "needed choices": ["Engeki Stayed"], "hidden": False}
+        ]
+    }
+}
+
 # Path Lists: the lists of paths you can take
 #   title: The name of the path, the screen looks for "mod_assets/paths/" + title + ".png" for the thumbnail and expects it to be a 1920x1080 image 
 #   needed choices: the choices the player has to have made to unlock the path
@@ -44,10 +78,32 @@ default act2_path_list = [
     {"title": "The Hidden Girl", "JP": "隠れた少女", "needed choices": ["Hidden Girl Kept Secret"], "categories": {"HIDDEN GIRL": "hidden"}, "label": "act2_alt", "extra options": [], "hidden": False}
 ]
 
+default act3_path_list = [
+    {"title": "The Timid Storm", "JP": "小心嵐", "needed choices": ["Hidden Girl Revealed"], "categories": {"HIDDEN GIRL": "revealed"}, "label": "act2", "extra options": [], "hidden": True}, # timid storm, found breaker, calm dominion, engeki left
+    {"title": "The Timid Storm", "JP": "小心嵐", "needed choices": ["Hidden Girl Revealed"], "categories": {"HIDDEN GIRL": "revealed"}, "label": "act2", "extra options": [], "hidden": True}, # timid storm, found breaker, burst dominion, engeki left
+    {"title": "The Timid Storm", "JP": "小心嵐", "needed choices": ["Hidden Girl Revealed"], "categories": {"HIDDEN GIRL": "revealed"}, "label": "act2", "extra options": [], "hidden": True}, # timid storm, found breaker, left behind dominion, engeki left
+    {"title": "The Timid Storm", "JP": "小心嵐", "needed choices": ["Hidden Girl Revealed"], "categories": {"HIDDEN GIRL": "revealed"}, "label": "act2", "extra options": [], "hidden": True}, # timid storm, not found breaker, calm dominion, engeki left
+    {"title": "The Timid Storm", "JP": "小心嵐", "needed choices": ["Hidden Girl Revealed"], "categories": {"HIDDEN GIRL": "revealed"}, "label": "act2", "extra options": [], "hidden": True}, # timid storm, not found breaker, burst dominion, engeki left
+    {"title": "The Timid Storm", "JP": "小心嵐", "needed choices": ["Hidden Girl Revealed"], "categories": {"HIDDEN GIRL": "revealed"}, "label": "act2", "extra options": [], "hidden": True}, # timid storm, not found breaker, left behind dominion, engeki left
+    {"title": "The Timid Storm", "JP": "小心嵐", "needed choices": ["Hidden Girl Revealed"], "categories": {"HIDDEN GIRL": "revealed"}, "label": "act2", "extra options": [], "hidden": True}, # timid storm, found breaker, calm dominion, engeki stayed
+    {"title": "The Timid Storm", "JP": "小心嵐", "needed choices": ["Hidden Girl Revealed"], "categories": {"HIDDEN GIRL": "revealed"}, "label": "act2", "extra options": [], "hidden": True}, # timid storm, found breaker, burst dominion, engeki stayed
+    {"title": "The Timid Storm", "JP": "小心嵐", "needed choices": ["Hidden Girl Revealed"], "categories": {"HIDDEN GIRL": "revealed"}, "label": "act2", "extra options": [], "hidden": True}, # timid storm, found breaker, left behind dominion, engeki stayed
+    {"title": "The Timid Storm", "JP": "小心嵐", "needed choices": ["Hidden Girl Revealed"], "categories": {"HIDDEN GIRL": "revealed"}, "label": "act2", "extra options": [], "hidden": True}, # timid storm, not found breaker, calm dominion, engeki stayed
+    {"title": "The Timid Storm", "JP": "小心嵐", "needed choices": ["Hidden Girl Revealed"], "categories": {"HIDDEN GIRL": "revealed"}, "label": "act2", "extra options": [], "hidden": True}, # timid storm, not found breaker, burst dominion, engeki stayed
+    {"title": "The Timid Storm", "JP": "小心嵐", "needed choices": ["Hidden Girl Revealed"], "categories": {"HIDDEN GIRL": "revealed"}, "label": "act2", "extra options": [], "hidden": True}, # timid storm, not found breaker, left behind dominion, engeki stayed
+    {"title": "The Timid Storm", "JP": "小心嵐", "needed choices": ["Hidden Girl Revealed"], "categories": {"HIDDEN GIRL": "revealed"}, "label": "act2", "extra options": [], "hidden": True}, # hidden girl, followed taiyen, engeki left
+    {"title": "The Timid Storm", "JP": "小心嵐", "needed choices": ["Hidden Girl Revealed"], "categories": {"HIDDEN GIRL": "revealed"}, "label": "act2", "extra options": [], "hidden": True}, # hidden girl, followed taiyen, engeki stayed
+    {"title": "The Timid Storm", "JP": "小心嵐", "needed choices": ["Hidden Girl Revealed"], "categories": {"HIDDEN GIRL": "revealed"}, "label": "act2", "extra options": [], "hidden": True}, # hidden girl, ran from taiyen, engeki left
+    {"title": "The Timid Storm", "JP": "小心嵐", "needed choices": ["Hidden Girl Revealed"], "categories": {"HIDDEN GIRL": "revealed"}, "label": "act2", "extra options": [], "hidden": True}  # hidden girl, ran from taiyen, engeki stayed
+]
+
 # define your choice filter variables here.  You must use define and not default or there will be an error.
 # don't edit these variables in the story or reloading will reset them
 define hidden_girl = None
-define test_girl = None
+define unknown_sister = None
+define fright_dom = None
+define breaker_found = None
+define kind_man = None
 
 transform occasional_flash:
     parallel:
