@@ -162,7 +162,8 @@ screen path_chooser(choice_filters, path_list):
                         for filt in choice_filters[category]["buttons"]:
                             if not filt["hidden"] or all(item in persistent.choices_made for item in filt["needed choices"]):
                                 button:
-                                    text filt["JP"] xalign 0.1 yalign 1.1 style "path_kan" 
+                                    if filt["needed choices"] is None or all(item in persistent.choices_made for item in filt["needed choices"]):
+                                        text filt["JP"] xalign 0.1 yalign 1.1 style "path_kan" 
                                     hbox:
                                         yalign 0.5
                                         spacing 10
