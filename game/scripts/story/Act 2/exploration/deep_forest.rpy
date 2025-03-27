@@ -81,8 +81,8 @@ label dominion_loop:
         d "I'll head back to the school in a bit."
         a "Okay."
         a "Whew."
-        if not "Domionion Calm" in persistent.choices_made:
-                $ persistent.choices_made.append("Domionion Calm")
+        if not "Dominion Calm" in persistent.choices_made:
+                $ persistent.choices_made.append("Dominion Calm")
         return
     elif stress >= 3 and calm > stress:
         d "*Stuttered Breath*"
@@ -352,8 +352,8 @@ label dom_burst:
     ma "I'm proud of you."
     show mari cm
     a "Yeah...  Thanks Mari."
-    if not "Domionion Burst" in persistent.choices_made:
-        $ persistent.choices_made.append("Domionion Burst")
+    if not "Dominion Burst" in persistent.choices_made:
+        $ persistent.choices_made.append("Dominion Burst")
     return
 
 label no_shed:
