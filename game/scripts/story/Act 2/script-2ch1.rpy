@@ -165,7 +165,7 @@ label act2_ch1_main:
     a "My god, you guys do this all the time?"
     lil "Pretty much."
     show lilly doll c0 with blink
-    lil "B̵̭̟͌ữ̵͚̝t̵̢̛͑ ̵̦̍i̴̗̺̍͆t̸̪͛ͅ'̷̪́͌s̷̜͉͛ ̶̻̝͠f̸̦̋̾u̸̱͝ṉ̸̺͌!̶̖͘{w=0.25}{nw}"
+    lil "{b}But it's fun!{/b}{w=0.25}{nw}"
     show lilly doll a0 zorder 2 at t11
     with blink
     $ pause(0.25)

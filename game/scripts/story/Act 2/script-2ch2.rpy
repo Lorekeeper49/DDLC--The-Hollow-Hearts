@@ -14,10 +14,10 @@ label act2_ch2_main:
     show lilly with Fade(0.0, 0.1, 0.0)
     $ pause(0.05)
     show lilly doll c0 with Fade(0.0, 0.3, 0.0)
-    lil "Ẏ̵̼̪ö̶͙̀u̴͓͐ ̶̮̻̚c̶͓̕͘ͅa̷̛͓͛n̷͈̑̕ ̴͚̑̒s̸̀͐͜e̶̤͝ȩ̸̙͆̿ ̵̜͂m̴̯̽͘ė̴͍,̷̨̖͑ ̴̞̇̓r̴̙̍͝i̴̻̳̍͂g̶͍̍̆h̵͎̕t̸̟̯͒?̷̬̚"
+    lil "{b}You can see me, right?{/b}"
     show lilly a0
     a "Holy fuck!"
-    lil c0 "T̶̠̿̔h̸̡͛̄i̵̤̮̐̃s̷͚̏ ̶͙̟̄̋í̵̲̝͋s̶͇̍ ̸̣̽͠w̴̺͠h̶̘͎̏͐a̸̖̤͐͑t̴͔̣́̓ ̵̳̖̕Ĩ̴̤̂ ̸̻̎ṯ̷͙̅̇r̶̡̊͘͜ů̷̳͔l̶̳̳̓y̶̪̿̊ ̵̘͓̀͘l̶̺̀o̸̫̿o̸͍͈͂͘ḱ̸͜͝ ̵̜̌l̵̠̔i̵̺̍̈́k̵̨̉̔é̸̡͖̓.̷̛̰̀"
+    lil c0 "{b}This is what I truly look like.{/b}"
     show lilly a0 with Fade(0.0, 0.05, 0.0)
     $ pause(0.05)
     show lilly with Fade(0.0, 0.05, 0.0)

@@ -330,7 +330,7 @@ label act1_ch3_main:
     show vignette zorder 1 with BumpTransition
     show natsuki pani rdown at h32
     show monika lsur oe cm rdown at h33
-    lil doll a0 "'̸͓̝͑R̵̩̝̋̊e̸̦̥̾̕s̵͈̻̆i̸̫͝d̷̙͓͑̚e̵͇͆̊n̶͖̾̂ẗ̸͍̼́̆ ̶̧̫͝ḏ̶̥̒o̴̯̚l̴͉͉̎͠l̵̦͒'̵̹̅ ̸̝̮͋̂h̶̯̥̾ü̷̟h̸͕́́?̵̡̛̛̠ ̸͚̠͝ ̶͖͑́Ţ̴̳͛̓h̶̤͒̕a̴͍̗̎t̵͍̔͝'̵̤͐s̶̺̄̏ ̴̘́̔w̷̢̖̉ĥ̸̻̣̕a̷̛̭ṯ̶͓̎̀ ̵͔̾Ȋ̵̗ ̶̜̻͊a̸̛̹̝̐m̵̟̣̆ ̸̹́t̸̪̲͋͠o̸̠͙͠ ̵̹̟̉͝ÿ̸͖̞̇o̵͙̅͑ủ̴̫͙̌.̵̟̦̂"
+    lil doll a0 "{b}'Resident doll' huh?  That's what I am to you?{/b}"
     "That form is terrifying!"
     "Wait, didn't she say no one can see it.{nw}"
     hide vignette
