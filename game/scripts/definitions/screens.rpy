@@ -152,27 +152,19 @@ default nb = "namebox_fake"
 default window_style = ""
 init -501 screen say(who, what):
     style_prefix "say"
-    
+    if window_style == "fake":
+        $ style.say_window = style.window_fake
+    else:
+        $ style.say_window = style.window
     window:
         id "window"
-
-        if window_style == "fake":
-            $ style.say_window = style.window_fake
-        else:
-            $ style.say_window = style.window
-
         text what id "what" font "mod_assets/fonts/NotoSerifJP-Regular.otf"
         if who is not None:
-
             window:
                 style nb
                 text who id "who" font "mod_assets/fonts/NotoSerifJP-Regular.otf"
-
-
-
     if not renpy.variant("small"):
         add SideImage() xalign 0.0 yalign 1.0
-
     use quick_menu
 
 init -1 style window is default
