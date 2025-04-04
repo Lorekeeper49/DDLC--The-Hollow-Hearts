@@ -215,11 +215,13 @@ ACT 1, 2, AND 3 LOGOS - Leomonade33
 ### MUSIC & AMBIENCE | 音楽と環境音
 [After Dark Piano Cover (Title Screen song) - 949](https://www.reddit.com/r/DDLCMods/comments/y0zla2/free_to_use_song_for_ddlc_mods/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
 
-Confesssion - MC.Dummy.Composer
+Confesssion of a Time - MC.Dummy.Composer
 
-Depressed - MC.Dummy.Composer
+Depression of Life - MC.Dummy.Composer
 
-Argument - MC.Dummy.Composer
+Argument Over an Endeavor - MC.Dummy.Composer
+
+The One Who Stalks (Kamiyama Itsomi's Theme) - MC.Dummy.Composer
 
 [DDMC_Track_Series_Lost_In_Emotion - Luma](https://discord.com/channels/339272843327963136/452642679831134209/1093158379423277137)
 
