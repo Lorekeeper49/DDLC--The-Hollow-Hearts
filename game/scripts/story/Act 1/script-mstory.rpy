@@ -90,6 +90,12 @@ label mstory_ch3:
     show aoruguri turned zorder 2 at t11
     m "So, you've been stalking me?"
     a cross ce om "If that's what we're calling it, then I've been stalking everyone." 
+    m "What's going on with you?  Why are you doing this?"
+    a "..."
+    a "I don't have an answer for that."
+    a "There's a rumor going around, they think I'm in love with the principal."
+    m "That's called a pedophile."
+    a "You got that right."
 
     return
 
