@@ -17,7 +17,7 @@ label mstory(bgreturn="bg club_day"):
 label mstory_ch2:
     play music confdep
     play ambience storm
-    scene bg schoolroofstorm with dissolve_scene_half
+    scene bg schoolroofstorm with dissolve_scene_full
     call showlocation("Kanzen Academy Roof\n{size=25}完全学園高校の屋根{/size}","October 1, 2020\n{size=15}2020年10月1日{/size}",60*12+4+57/60,"bg schoolroofstorm")
     "Kanzen means 'perfect', but this school far from it's name."
     "I know I'm not allowed to be on the roof when there is a thunderstorm outside due to safety reasons..."
@@ -83,7 +83,13 @@ label mstory_ch2:
     return
 
 label mstory_ch3:
-    call showlocation("???","Monday, August 1, 2020",23,59,57)
+    play music confdep
+    play ambience storm
+    scene bg gym with dissolve_scene_full
+    call showlocation("Kanzen Academy Gym\n{size=25}完全学園高校のジム{/size}","September 2, 2020\n{size=15}2020年9月2日{/size}",60*12+4+57/60,"bg gym")
+    show aoruguri turned zorder 2 at t11
+    m "So, you've been stalking me?"
+    a cross ce om "If that's what we're calling it, then I've been stalking everyone." 
 
     return
 
