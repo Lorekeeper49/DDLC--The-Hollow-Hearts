@@ -84,7 +84,6 @@ label mstory_ch2:
 
 label mstory_ch3:
     play music confdep
-    play ambience storm
     scene bg gym with dissolve_scene_full
     call showlocation("Kanzen Academy Gym\n{size=25}完全学園高校のジム{/size}","September 2, 2020\n{size=15}2020年9月2日{/size}",60*12+4+57/60,"bg gym")
     show aoruguri turned zorder 2 at t11
@@ -95,8 +94,28 @@ label mstory_ch3:
     a "I don't have an answer for that."
     a "There's a rumor going around, they think I'm in love with the principal."
     m "That's called a pedophile."
-    a "You got that right."
-
+    a "No, that's called a ephebophile."
+    m "Ephe-what?"
+    a "Trust me, it's not used often."
+    m "So is your name."
+    m "No offense."
+    a "None taken."
+    a "As I was saying, my true feelings are actually the opposite of what people are saying."
+    a "I hate the principal with every fiber of my being!"
+    a "And yet, I have to tolerate him because...!"
+    a "..."
+    a "Because he provides for me..."
+    a "I'm homeless."
+    a "I live within this school."
+    a "And no, I don't the dorms."
+    a "I'm quite literally broke."
+    a "And therefore, I've become a test subject in all his little experiments about control."
+    a "Speaking of, I have another experiment tomorrow.  That's gonna be fucking fun!"
+    m "No one's ever said anything about him ever doing any experiments..."
+    m "What the hell is he doing to you down there?!"
+    a "If you really want to know, then sneak your way in somehow."
+    a "Tomorrow; September 3, 2020, 15:45."
+    a "Don't be late, or you'll miss your chance."
     return
 
 label mstory_ch4:
