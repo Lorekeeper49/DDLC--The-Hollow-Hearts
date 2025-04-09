@@ -273,9 +273,12 @@ label act2_ch2_main:
     "Well, first order of business: find a way out of here!"
     "Sewer's have been equipped with dampeners since a historic incident so I won't be able to use my abilities."
     a "Son of a bitch!"
-    call explore("sewer_hall") from _call_explore
+    call explore("sewer_hall")
     play ambience forest
     scene bg tree with wipeleft_scene
+    if not found_breaker:
+        if not "Didn't Find Breaker" in persistent.choices_made:
+            $ persistent.choices_made.append("Didn't Find Breaker")
     a "Well, that was fun."
     show hanato day anno rhip lhip om zorder 2 at t11
     ha "You said it!  I don't know if I want to go there again."

@@ -216,5 +216,19 @@ label act1_ch4_main:
     "As I finish my message to you, I give Lilly a much needed hug."
 
 
+    call mstory
+    show monika forward rhip zorder 2 at t11
+    m om "It was at this point that I knew that principal was up to no good."
+    m lpoint "And if he is still alive as Kotonoha says..."
+    m ldown "Then his plan of control might already be in motion."
+    menu:
+        "Tell them about me.":
+            if not "CONTROLLER Told" in persistent.choices_made:
+                $ persistent.choices_made.append("CONTROLLER Told")
+
+        "Say nothing.":
+            if not "CONTROLLER Untold" in persistent.choices_made:
+                $ persistent.choices_made.append("CONTROLLER Untold")
+
     
     return
