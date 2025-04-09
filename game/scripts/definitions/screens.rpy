@@ -1387,7 +1387,7 @@ init -1 style confirm_prompt_text:
     outlines []
     text_align 0.5
     layout "subtitle"
-    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
+    font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf"
 
 init -1 style confirm_button:
     properties gui.button_properties("confirm_button")
@@ -1396,7 +1396,7 @@ init -1 style confirm_button:
 
 init -1 style confirm_button_text is navigation_button_text:
     properties gui.button_text_properties("confirm_button")
-    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
+    font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf"
 
 
 

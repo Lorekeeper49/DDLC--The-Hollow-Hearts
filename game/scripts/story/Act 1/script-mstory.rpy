@@ -119,7 +119,7 @@ label mstory_ch3:
     m "No one's ever said anything about him ever doing any experiments..."
     m "What the hell is he doing to you down there?!"
     a cross neut om "If you really want to know, then sneak your way in somehow."
-    a oe "Tomorrow; October 2nd, 2020, 15:45."
+    a oe "Tomorrow; October 2nd, 2020, 15 hours 45 minutes."
     a turned "Don't be late, or you'll miss your chance."
     return
 
@@ -178,39 +178,24 @@ label mstory_ch4:
     return
 
 label mstory_ch5:
-    "After what I saw in that experiment, we decided that it was time to finally destroy the school without killing any students."
-    "We spent a couple months researching the building and the best way to demolish the building safely."
-    "Until..."
-    play ambience storm
-    scene bg schoolroofstorm with dissolve_scene_half
-    call showlocation("Kanzen Academy Roof\n{size=25}完全学園高校の屋根{/size}","November 1, 2020\n{size=15}2020年11月1日{/size}",60*11+59+57/60,"bg schoolroofstorm")
-    show aoruguri turned zorder 2 at t11
+    scene bg schoolroofday with dissolve_scene_half
+    call showlocation("Kanzen Academy Roof\n{size=25}完全学園高校の屋根{/size}","October 2, 2020\n{size=15}2020年10月2日{/size}",60*16+59+57/60,"bg schoolroofday")
+    show aoruguri turned ce zorder 2 at t11
     "..."
-    a om "This weather should keep the three of us alone."
-    show aoruguri cm
-    "Glad to have a storm with me."
-    a cross om "This is about as much as I know how to do so my powers won't be much help from here."
-    show aoruguri cm
-    m "I'm in the same boat."
-    m "My abilities are... unique."
-    m "..."
-    m "So, what's the plan?"
-    a om "Well, as you know, schools are required by protocol to have sprinklers around the building in case of a fire."
-    a doub "They use a deluge sprinkler system, which seems like overkill for a school, but at least that makes the plan faster."
-    show aoruguri cm
-    m "Wait, hold on.  Are you suggesting we fill the sprinklers up with petrol and burn down the school?"
-    a angr om "Correct."
-    a turned rhip "But of course, we don't want any casualties."
-    a lhip "So we're gonna have to do it while no students are inside the building."
-    show aoruguri cm
-    m "Well, lucky for us, all clubs are required to be outside today."
-    m "And next week if today won't work."
-    a om "It'll have to work!"
-    a ldown "I've got no idea if the principal is looking at us right now and I'm not taking any chances!"
-    a cross "I've got a reputation for skipping class, so I'll go fill up the sprinklers."
-    a doub "That is if I can figure out how to do it."
-    show aoruguri cm
-    m "Well we've only got 4-5 hours, so you better get to work."
+    m "Are you okay?"
+    a "..."
+    play ambience storm
+    play sound thunder2
+    scene bg schoolroofstorm 
+    show aoruguri turned angr zorder 2 at t11
+    a angr oe cm "!!!" with flash
+    a om "I tried so hard!"
+    a ce "So hard!"
+    a oe "So he wouldn't get that last thing done!"
+    a rhip ce "And now...!"
+    a cm "..."
+    a rdown om "Monika, tell me..."
+    a oe "Tell me what I'm supposed to do!"
 
 
     return

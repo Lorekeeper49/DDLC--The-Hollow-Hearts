@@ -79,7 +79,7 @@ default act3_choice_filters = {
 #       needed choices: the choices the player has to have made to unlock the option
 #       hidden: determines if the option should be hidden if the player hasn't unlocked it
 #   hidden: determines if the path should be hidden if the player hasn't unlocked it
-default act3_path_list = [
+default act2_path_list = [
     {"title": "The Timid Storm", "JP": "小心嵐", "needed choices": ["Hidden Girl Revealed"], "categories": {"HIDDEN GIRL": "revealed"}, "label": "act2", "extra options": [], "hidden": False},
     {"title": "The Hidden Girl", "JP": "隠れた少女", "needed choices": ["Hidden Girl Kept Secret"], "categories": {"HIDDEN GIRL": "hidden"}, "label": "act2_alt", "extra options": [], "hidden": False}
 ]
