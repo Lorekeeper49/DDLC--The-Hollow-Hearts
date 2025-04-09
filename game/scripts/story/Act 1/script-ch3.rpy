@@ -5,6 +5,7 @@ label act1_ch3_main:
     with dissolve_scene_full
     $ window_style = ""
     $ nb = "namebox"
+    $ aoruguri = "隠れた少女\n{size=15}Hidden Girl{/size}"
     call showlocation("Converse Park\n{size=25}コンバースパーク{/size}","October 1, 2023\n{size=15}2023年10月1日{/size}",415.2,"bg tree")
     t "A little windy today..."
     "I know school starts in at 7:15 but I actually get a late start due to how my classes are on Tuesdays."

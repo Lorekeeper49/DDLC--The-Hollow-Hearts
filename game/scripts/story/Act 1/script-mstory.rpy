@@ -4,6 +4,7 @@ label mstory(bgreturn="bg club_day"):
     $ nb = "namebox"
     $ nextscene = "mstory_ch" + str(chapter)
     $ char_perspective = "Monika"
+    $ aoruguri = "ルナ煽るぐり\n{size=15}Luna Aoruguri{/size}"
     call expression nextscene 
     $ char_perspective = "Taiyen"
     stop music fadeout 2.0
@@ -97,7 +98,7 @@ label mstory_ch3:
     a "No, that's called a ephebophile."
     m "Ephe-what?"
     a "Trust me, it's not used often."
-    m "So is your name."
+    m "Neither is your name."
     m "No offense."
     a "None taken."
     a "As I was saying, my true feelings are actually the opposite of what people are saying."
@@ -119,11 +120,63 @@ label mstory_ch3:
     return
 
 label mstory_ch4:
-    
-
+    scene bg gym with dissolve_scene_full
+    call showlocation("Kanzen Academy Gym\n{size=25}完全学園高校のジム{/size}","September 3, 2020\n{size=15}2020年9月3日{/size}",60*15+29+57/60,"bg gym")
+    play sound bell
+    $ pause(1.0)
+    "It's time."
+    m "Stealth, don't fail me now."
+    "I notice that Luna is going to the basement that I didn't even know the school had and I follow behind."
+    "As I follow, she stops behind a wall and talks to me."
+    a "Just so you know, this area is heavily guarded."
+    "Not a problem."
+    a "Also, once I step in there, I won't remember anything from that point forward until I leave."
+    a "It's an error he wants to fix, that's what he told me."
+    a "His explanation is how I know about the experments in the first place."
+    "She begins walking further."
+    "At this point, I set my visibility to false and follow her."
+    scene bg power_room with wipeleft_scene
+    play ambience factory
+    "My abilities are like none other."
+    "It might seem similar to copycat where I have the powers of other attributes."
+    "But it is not."
+    show aoruguri turned zorder 2 at t11
+    "I don't even know how to describe it."
+    show aoruguri ce
+    "It's like the world is digital and I'm able to control the parameters of anything and everything."
+    "As if I'm some sort of administrator."
+    show aoruguri cross
+    "Or at least I assume..."
+    "I haven't exactly learned how to do much yet."
+    show aoruguri at t41
+    "But it is for this reason that I am able to hide myself from the eyes of people and not be detected by anything."
+    "Even heat detectors or super sonic radars."
+    "I'm so caught up my own abilities, I'm not even paying to what Luna is doing."
+    show aoruguri turned
+    "She seems to be picking up random tools?"
+    show aoruguri angr
+    "Now stabbing herself in the arm with a screwdriver."
+    show aoruguri om
+    "It looks like she's trying to disassemble herself."
+    hide aoruguri
+    kiri "Almost perfect!"
+    "That voice!"
+    "No!"
+    kiri "Soon, we'll be able to fully control a person!"
+    "Don't tell me."
+    kiri "Now we just need a volunteer to partake as a CONTROLLER."
+    show aoruguri turned ce zorder 2 at t11
+    a om "I... still... have... memory..."
+    a angr "No..."
+    a oe "He's done it."
+    stop ambience
+    scene black with None
     return
 
 label mstory_ch5:
+    "After what I saw in that experiment, we decided that it was time to finally destroy the school without killing any students."
+    "We spent a couple months researching the building and the best way to demolish the building safely."
+    "Until..."
     play ambience storm
     scene bg schoolroofstorm with dissolve_scene_half
     call showlocation("Kanzen Academy Roof\n{size=25}完全学園高校の屋根{/size}","November 1, 2020\n{size=15}2020年11月1日{/size}",60*11+59+57/60,"bg schoolroofstorm")
@@ -134,7 +187,10 @@ label mstory_ch5:
     "Glad to have a storm with me."
     a cross om "This is about as much as I know how to do so my powers won't be much help from here."
     show aoruguri cm
-    m "Alright, what's the plan?"
+    m "I'm in the same boat."
+    m "My abilities are... unique."
+    m "..."
+    m "So, what's the plan?"
     a om "Well, as you know, schools are required by protocol to have sprinklers around the building in case of a fire."
     a doub "They use a deluge sprinkler system, which seems like overkill for a school, but at least that makes the plan faster."
     show aoruguri cm
