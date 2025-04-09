@@ -333,7 +333,7 @@ label act1_ch3_main:
     show monika lsur oe cm rdown at h33
     lil doll a0 "{b}'Resident doll' huh?  That's what I am to you?{/b}"
     "That form is terrifying!"
-    "Wait, didn't she say no one can see it.{nw}"
+    "Wait, didn't she say no one can see it?{nw}"
     hide vignette
     show lilly norm dc2
     show natsuki zorder 2 at t32
