@@ -7,7 +7,7 @@ screen sewer_hall:
 
 screen hideout:
     style_prefix "explore"
-    if not "Factory Key" in inventory:
+    if not item_in_inv("Factory Key"):
         button xcenter 550 ycenter 500 xysize (100, 100) action Function(add_to_inv, "Factory Key", "工場の鍵", _("An old key to the factory."))
         text "鍵\nKEY" xcenter 550 ycenter 500
     button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.door), Call("next_location", "sewer_hall")]

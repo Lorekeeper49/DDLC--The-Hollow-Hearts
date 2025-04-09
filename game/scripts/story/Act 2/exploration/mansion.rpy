@@ -91,7 +91,7 @@ screen dark_kitchen:
     button xcenter 300 ycenter 200 xysize (100, 400) action Call("nothing", "dark_kitchen")
     text "S\nE\nA\nR\nC\nH" xcenter 320 ycenter 200
     text "検\n索\nす\nる" xcenter 280 ycenter 200
-    button xcenter 1175 ycenter 200 xysize (200, 350) action If("Broken Key" in inventory, Call("nothing", "dark_kitchen"), Call("something", "Broken Key", "折れた鍵", "A key that is broken but still looks to be usable.", "dark_kitchen"))
+    button xcenter 1175 ycenter 200 xysize (200, 350) action If(item_in_inv("Broken Key"), Call("nothing", "dark_kitchen"), Call("something", "Broken Key", "折れた鍵", "A key that is broken but still looks to be usable.", "dark_kitchen"))
     text "検索する\nSEARCH" xcenter 1175 ycenter 200
     button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.door), Call("next_location", "hall1", w=True)]
     text "ホール\nHALL" xcenter 640 ycenter 680

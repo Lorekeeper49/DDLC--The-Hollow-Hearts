@@ -43,6 +43,10 @@ init -1 python:
         inventory[chara].clear()
         JPitems[chara].clear()
         items_desc[chara].clear()
+    def item_in_inv(item, chara=None):
+        if chara is None:
+            chara = char_perspective
+        return item in inventory[chara]
     class TrackCursor(renpy.Displayable):
         #class from here: https://lemmasoft.renai.us/forums/viewtopic.php?p=340355&sid=4540fae3b4ed740ce81e66660e093648#p340355
         def __init__(self, child):
