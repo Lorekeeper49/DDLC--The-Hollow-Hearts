@@ -86,7 +86,7 @@ label mstory_ch2:
 label mstory_ch3:
     play music confdep
     scene bg gym with dissolve_scene_full
-    call showlocation("Kanzen Academy Gym\n{size=25}完全学園高校のジム{/size}","September 2, 2020\n{size=15}2020年9月2日{/size}",60*12+4+57/60,"bg gym")
+    call showlocation("Kanzen Academy Gym\n{size=25}完全学園高校のジム{/size}","October 1, 2020\n{size=15}2020年10月1日{/size}",60*12+4+57/60,"bg gym")
     show aoruguri turned zorder 2 at t11
     m "So, you've been stalking me?"
     a cross ce om "If that's what we're calling it, then I've been stalking everyone." 
@@ -119,13 +119,13 @@ label mstory_ch3:
     m "No one's ever said anything about him ever doing any experiments..."
     m "What the hell is he doing to you down there?!"
     a cross neut om "If you really want to know, then sneak your way in somehow."
-    a oe "Tomorrow; September 3, 2020, 15:45."
+    a oe "Tomorrow; October 2nd, 2020, 15:45."
     a turned "Don't be late, or you'll miss your chance."
     return
 
 label mstory_ch4:
     scene bg gym with dissolve_scene_full
-    call showlocation("Kanzen Academy Gym\n{size=25}完全学園高校のジム{/size}","September 3, 2020\n{size=15}2020年9月3日{/size}",60*15+29+57/60,"bg gym")
+    call showlocation("Kanzen Academy Gym\n{size=25}完全学園高校のジム{/size}","October 2, 2020\n{size=15}2020年10月2日{/size}",60*15+29+57/60,"bg gym")
     play sound bell
     $ pause(1.0)
     "It's time."
