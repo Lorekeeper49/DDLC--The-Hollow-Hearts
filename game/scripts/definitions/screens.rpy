@@ -821,15 +821,15 @@ init -501 screen inventory_view(item_action=None):
     use game_menu
     style_prefix "inventory"
     fixed at game_menu_transform:
-        frame:
-            ysize 200
-            xsize 540
-            background "#00000090"
         vbox:
-            label "[selected_item]\n{size=20}[JP_item_name]{/size}"
-            text item_desc
+            frame:
+                ysize 200
+                xsize 540
+                background "#00000090"
+                vbox:
+                    label "[selected_item]\n{size=20}[JP_item_name]{/size}"
+                    text item_desc
             viewport id "vp":
-                yoffset 100
                 grid 5 100:
                     for item in range(len(inventory[char_perspective])):
                         button:
@@ -838,7 +838,7 @@ init -501 screen inventory_view(item_action=None):
                             xysize (100, 100)
                             action [SetVariable("selected_item", inventory[char_perspective][item]), SetVariable("JP_item_name", JPitems[char_perspective][item]), SetVariable("item_desc", items_desc[char_perspective][item])]
         if item_action is not None:
-            textbutton "Use [selected_item]\n{size=15}使用[JP_item_name]{/size}" yalign 0.95 action [SetVariable("used_item", selected_item), SetVariable("selected_item", "Nothing"), SetVariable("JP_item_name", "何も無い"), SetVariable("item_desc", ""), item_action]
+            textbutton "Use [selected_item]\n{size=15}使用[JP_item_name]{/size}" yalign 0.98 action [SetVariable("used_item", selected_item), SetVariable("selected_item", "Nothing"), SetVariable("JP_item_name", "何も無い"), SetVariable("item_desc", ""), item_action]
 
 
 init -1 style slot_button is gui_button
@@ -850,20 +850,19 @@ init -1 style inventory_label:
     bottom_margin 2
 
 init -1 style inventory_label_text:
-    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
+    font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf"
     size 34
     color "#fff"
-    line_spacing -15
     outlines [(3, "#585858", 0, 0), (1, "#585858", 1, 1)]
     yalign 1.0
 
 init -1 style inventory_text:
-    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
+    font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf"
     size 15
     color "#fff"
 
 init -1 style inventory_button_text:
-    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
+    font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf"
     color "#000"
     hover_color "#a8a8a8"
     size 35
@@ -1398,16 +1397,6 @@ init -1 style confirm_button_text is navigation_button_text:
     properties gui.button_text_properties("confirm_button")
     font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf"
 
-
-
-
-
-
-
-
-init -501 screen fake_skip_indicator():
-    use skip_indicator
-
 init -501 screen skip_indicator():
 
     zorder 100
@@ -1423,8 +1412,6 @@ init -501 screen skip_indicator():
         text "▸" at delayed_blink(0.0, 1.0) style "skip_triangle"
         text "▸" at delayed_blink(0.2, 1.0) style "skip_triangle"
         text "▸" at delayed_blink(0.4, 1.0) style "skip_triangle"
-
-
 
 transform -1 delayed_blink(delay, cycle):
     alpha .5
@@ -1456,14 +1443,6 @@ init -1 style skip_triangle:
 
     font "DejaVuSans.ttf"
 
-
-
-
-
-
-
-
-
 init -501 screen notify(message):
 
     zorder 100
@@ -1481,7 +1460,6 @@ transform -1 notify_appear:
         linear .25 alpha 1.0
     on hide:
         linear .5 alpha 0.0
-
 
 init -1 style notify_frame is empty
 init -1 style notify_text is gui_text
