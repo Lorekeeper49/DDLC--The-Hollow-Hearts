@@ -8,6 +8,7 @@ label mstory(bgreturn="bg club_day"):
     call expression nextscene 
     $ char_perspective = "Taiyen"
     stop music fadeout 2.0
+    stop ambience fadeout 2.0
     stop sound fadeout 2.0
     scene black with dissolve_scene
     $ window_style = "fake"
@@ -187,15 +188,48 @@ label mstory_ch5:
     play ambience storm
     play sound thunder2
     scene bg schoolroofstorm 
-    show aoruguri turned angr zorder 2 at t11
-    a angr oe cm "!!!" with flash
+    show aoruguri turned angr storm zorder 2 at t11
+    a oe cm "!!!" with flash
     a om "I tried so hard!"
     a ce "So hard!"
     a oe "So he wouldn't get that last thing done!"
-    a rhip ce "And now...!"
+    a sad rhip ce "And now...!"
     a cm "..."
-    a rdown om "Monika, tell me..."
+    a cry rdown om "Monika, tell me..."
     a oe "Tell me what I'm supposed to do!"
-
-
+    show aoruguri cm
+    m "..."
+    m "We need to destroy the school."
+    m "What are you?"
+    a sad ce om "I think the weather I created answers that question."
+    show aoruguri cm
+    m "So, storm."
+    m "Good, your abilities can help."
+    m "Mine can too, but it's a little more complicated."
+    a neut oe om "I was never able to figure out your attribute."
+    a cross  "What can you do?"
+    show aoruguri cm
+    m "I..."
+    m "I don't know the extent of my abilities."
+    a "No one truly does."
+    m "That's not what I mean."
+    m "My abilities are like none that have ever been seen before."
+    m "Believe me, I looked.  There are no records about what I can do."
+    m "So I'm completely in the dark."
+    m "And I'm scared."
+    m "I'm scared that I'll do something that I wouldn't want to do."
+    m "..."
+    a turned om "Have you told many about this?"
+    show aoruguri cm
+    m "No..."
+    m "In fact, you're the first one to know."
+    m "Sorry, I know this sounds crazy."
+    a rhip "I've heard crazier."
+    show aoruguri cm
+    m "How?"
+    m "I can literally control the world to my will, how is anything crazier than this?"
+    a cross om "Trust me, I've seen some shit."
+    "I don't know about that."
+    a turned rhip "Anyway, I agree with you but I should warn you."
+    a cross angr "This won't be easy."
     return
