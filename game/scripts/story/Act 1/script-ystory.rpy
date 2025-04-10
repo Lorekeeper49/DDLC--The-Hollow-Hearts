@@ -40,7 +40,7 @@ label ystory_ch2:
     show hanato day angr rhip zorder 2 at t11
     with wipeleft_scene
     $ char_perspective = "Lilly"
-    call showlocation("Converse Playground\n{size=25}コンバース遊び場{/size}","June 15, 2018\n{size=15}2018年6月15日{/size}",7*60+15+0/60.0,"bg park2_night")
+    call showlocation("Converse Playground\n{size=25}コンバース遊び場{/size}","June 15, 2018\n{size=15}2018年6月15日{/size}",21*60+15+0/60.0,"bg park2_night")
     ha om "Lilly, you lifeless doll!"
     lil "{b}I am indeed a lifeless doll.{/b}"
     ha lup "Do you have any idea what pain has taught us humans?"
@@ -136,7 +136,6 @@ label ystory_ch2:
     lil "You noticed?"
     "I didn't."
     y rup "Does she like you?"
-    lil "I-"
     show yuri cm
     "Huh?"
     "What does that mean?"
@@ -146,8 +145,45 @@ label ystory_ch2:
     return
 
 label ystory_ch3:
-    call showlocation("???","Monday, August 1, 2020",23,59,57)
-
+    play music confdep
+    scene bg park2_night with dissolve_scene_full
+    $ char_perspective = "Lilly"
+    call showlocation("Converse Playground\n{size=25}コンバース遊び場{/size}","June 20, 2018\n{size=15}2018年6月15日{/size}",20*60+15+0/60.0,"bg park2_night")
+    show yuri turned casual rup zorder 2 at t11
+    lil "I've loaded my name in."
+    y pani om "Are you crazy?"
+    lil "I've been scared of my attribute ever since I was created, do you really want me to cause havoc?"
+    y angr rdown "No, but you're better off learning how it works."
+    show yuri cm
+    lil "{b}No I'm not!  My abilities as a doll are enough.{/b}"
+    lil "Besides, it's already signed with my name, no turning back now."
+    y anno "..."
+    "With my abilities, I weave a doll from my threads and hold it in my hands."
+    lil "No living being can craft this like I have."
+    show yuri ce
+    lil "I don't want to be alive."
+    lil "I just want to live."
+    show yuri rup
+    lil "I just want peace."
+    lil "..."
+    y neut oe om "You wanna know the one thing that I've learned from living as long as I have?"
+    lil "Humor me."
+    y lup rdown "It's that peace doesn't exactly exist."
+    y ldown "I mean it does, but not in the way you think."
+    y lup "What you're really looking for is mercy."
+    show yuri cm
+    lil "Mercy?"
+    lil "Mercy comes in many forms."
+    y ldown om "It does."
+    y lup "But there's one thing that people agree on it bringing."
+    y happ rup "And that is peace."
+    y dist "And most of the time, that peace only lasts for a few fleeting moments."
+    y happ ldown "But those few moments are to be savored and enjoyed."
+    show yuri cm
+    lil "I see."
+    lil "Thanks Sis."
+    y om "My pleasure."
+    y lup "You may not be alive, but I still care for you like family."
     return
 
 label ystory_ch4:
