@@ -1283,19 +1283,6 @@ label ch0_main:
     m neut lpoint "Alright.  Let's come back on Monday with the first chapters of our stories complete."
     everyone "Got it."
     stop music fadeout 1.0
-    scene black with dissolve_scene_full
     $ window_style = ""
     $ nb = "namebox"
-    play music ghostmenu
-    $ akira = "???"
-    $ hanato = "???"
-    $ kirinani = "???"
-    $ itsomi = "???"
-    $ inari = "???"
-    ha "Seems like your boyfriend has joined that club you despise."
-    its "Well, how infuriating."
-    ina "Seems like {i}we'll{/i} need to up our game a bit if we want to take over the school."
-    ak "We sure will.  I hope your plan works, boss."
-    kiri "Oh, don't worry.{w=1}  It will."
-    achieve newfriends
     return
