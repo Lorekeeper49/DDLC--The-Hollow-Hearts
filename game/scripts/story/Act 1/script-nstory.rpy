@@ -18,7 +18,7 @@ label nstory(bgreturn="bg club_day"):
 label nstory_ch2:
     play ambience creepy
     scene bg bad_bedroom with dissolve_scene_half
-    call showlocation("Luna Mansion\n{size=25}ルナの邸宅{/size}","August 1, 2018\n{size=15}2015年8月1日{/size}",23*60+59+57/60.0,"bg mansion")
+    call showlocation("Luna Mansion\n{size=25}ルナの邸宅{/size}","June 21, 2018\n{size=15}2018年6月21日{/size}",23*60+59+57/60.0,"bg mansion")
     show tetsuo towards zorder 2 at t11
     $ pause(1.0)
     hide tetsuo towards
@@ -78,6 +78,10 @@ label nstory_ch2:
     n "You can come in, just be quiet."
     show yuri neut cm
     "They slowly walk through the window and put their feet on the floor."
+    y sad "What's wrong?"
+    n "Our father."
+    n "Just look at my sister over here."
+    n "Her face may not be covered in blood, but she is in serious distress."
     ""
 
     return
