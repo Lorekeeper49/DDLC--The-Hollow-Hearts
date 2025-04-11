@@ -60,6 +60,10 @@ label act1:
     call chapter_trans("敵\n{size=35}The Enemy{/size}")
     call act1_ch6_main
 
+    scene black with dissolve_scene_full
+    $ kirinani = "???"
+    kiri "The man found out."
+    kiri "Move the CONTROLLER to the girl, they can have fun with her for a while."
     return
 
 label act2:
@@ -87,6 +91,20 @@ label act2:
     call chapter_trans("スタート\n{size=35}It Begins{/size}")
     call act2_ch5_main from _call_act2_ch5_main
 
+    scene black with dissolve_scene_full
+    "As the scene from the school unfolds, you realize you've lost all control of the situation."
+    "The computer screen glows in front of you as you wait for a chance to regain control."
+    "The girl hasn't figured you out yet like the man has so you're in the clear."
+    "But you really wish you had listened to the man's orders."
+    "Now your boss is wreaking havoc at his school."
+    "But then, you had a tought..."
+    "What if you could control both of them at the same time?"
+    "The computer's control module uses USB dongles to tell it which person to control."
+    "So if you could the one for the man..."
+    "Aspired by this thought and knowing full well that no one is watching you, you quickly make your way to the storage where the dongles are held."
+    "You easily find the one you're looking for within a small box.  It is convenient that these are labeled."
+    "You quickly return back to the computer, eager to see if this will work."
+    "With the one for the girl still in, you insert the other dongle and..."
     return
 
 label act2_alt:
@@ -114,6 +132,20 @@ label act2_alt:
     call chapter_trans("スタート\n{size=35}It Begins{/size}")
     call act2_ch5_alt from _call_act2_ch5_alt
 
+    scene black with dissolve_scene_full
+    "As the scene from the school unfolds, you realize you've lost all control of the situation."
+    "The computer screen glows in front of you as you wait for a chance to regain control."
+    "The girl hasn't figured you out yet like the man has so you're in the clear."
+    "But you really wish you had listened to the man's orders."
+    "Now your boss is wreaking havoc at his school."
+    "But then, you had a tought..."
+    "What if you could control both of them at the same time?"
+    "The computer's control module uses USB dongles to tell it which person to control."
+    "So if you could the one for the man..."
+    "Aspired by this thought and knowing full well that no one is watching you, you quickly make your way to the storage where the dongles are held."
+    "You easily find the one you're looking for within a small box.  It is convenient that these are labeled."
+    "You quickly return back to the computer, eager to see if this will work."
+    "With the one for the girl still in, you insert the other dongle and..."
     return
 
 label dev:
