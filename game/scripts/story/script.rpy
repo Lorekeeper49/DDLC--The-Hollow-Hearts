@@ -49,7 +49,7 @@ label act1:
     call act1_ch3_main from _call_act1_ch3_main
 
     $ chapter = 4
-    call chapter_trans("")
+    call chapter_trans("過去\n{size=35}The Past{/size}")
     call act1_ch4_main from _call_act1_ch4_main
 
     $ chapter = 5
@@ -61,6 +61,7 @@ label act1:
     call act1_ch6_main
 
     scene black with dissolve_scene_full
+    achieve act1fin
     $ kirinani = "???"
     kiri "The man found out."
     kiri "Move the CONTROLLER to the girl, they can have fun with her for a while."
@@ -76,36 +77,22 @@ label act2:
 
     $ chapter = 2
     call chapter_trans("闇の発見\n{size=35}Dark Discoveries{/size}")
-    call act2_ch2_main from _call_act2_ch2_main
+    call act2_ch2_main
     
     $ chapter = 3
     call chapter_trans("アフターマス\n{size=35}The Aftermath{/size}")
-    call act2_ch3_main from _call_act2_ch3_main
+    call act2_ch3_main
 
     $ chapter = 4
     call chapter_trans("取り戻した過去\n{size=35}A Past Regained{/size}")
-    call act2_ch4_main from _call_act2_ch4_main
+    call act2_ch4_main
     call showintro(intro_kiri)
 
     $ chapter = 5
     call chapter_trans("スタート\n{size=35}It Begins{/size}")
-    call act2_ch5_main from _call_act2_ch5_main
+    call act2_ch5_main
 
-    scene black with dissolve_scene_full
-    "As the scene from the school unfolds, you realize you've lost all control of the situation."
-    "The computer screen glows in front of you as you wait for a chance to regain control."
-    "The girl hasn't figured you out yet like the man has so you're in the clear."
-    "But you really wish you had listened to the man's orders."
-    "Now your boss is wreaking havoc at his school."
-    "But then, you had a tought..."
-    "What if you could control both of them at the same time?"
-    "The computer's control module uses USB dongles to tell it which person to control."
-    "So if you could the one for the man..."
-    "Aspired by this thought and knowing full well that no one is watching you, you quickly make your way to the storage where the dongles are held."
-    "You easily find the one you're looking for within a small box.  It is convenient that these are labeled."
-    "You quickly return back to the computer, eager to see if this will work."
-    "With the one for the girl still in, you insert the other dongle and..."
-    return
+    jump act2_end
 
 label act2_alt:
     $ known = False
@@ -117,22 +104,26 @@ label act2_alt:
 
     $ chapter = 2
     call chapter_trans("闇の発見\n{size=35}Dark Discoveries{/size}")
-    call act2_ch2_alt from _call_act2_ch2_alt
+    call act2_ch2_alt
     
     $ chapter = 3
     call chapter_trans("アフターマス\n{size=35}The Aftermath{/size}")
-    call act2_ch3_alt from _call_act2_ch3_alt
+    call act2_ch3_alt
 
     $ chapter = 4
     call chapter_trans("取り戻した過去\n{size=35}A Past Regained{/size}")
-    call act2_ch4_alt from _call_act2_ch4_alt
+    call act2_ch4_alt
     call showintro(intro_kiri)
 
     $ chapter = 5
     call chapter_trans("スタート\n{size=35}It Begins{/size}")
-    call act2_ch5_alt from _call_act2_ch5_alt
+    call act2_ch5_alt
+    
+    jump act2_end
 
+label act2_end:
     scene black with dissolve_scene_full
+    achieve act2fin
     "As the scene from the school unfolds, you realize you've lost all control of the situation."
     "The computer screen glows in front of you as you wait for a chance to regain control."
     "The girl hasn't figured you out yet like the man has so you're in the clear."
@@ -146,7 +137,7 @@ label act2_alt:
     "You easily find the one you're looking for within a small box.  It is convenient that these are labeled."
     "You quickly return back to the computer, eager to see if this will work."
     "With the one for the girl still in, you insert the other dongle and..."
-    return
+    return 
 
 label dev:
     stop music fadeout 2.0
@@ -332,7 +323,7 @@ label dev:
                         $ chapter = 4
                         "BEGINNING CHAPTER 4"
                         $ hanato = "神山華翔\n{size=15}Kamiyama Hanato"
-                        call chapter_trans("")
+                        call chapter_trans("過去\n{size=35}The Past{/size}")
                         call act1_ch4_main
                     "CHAPTER 5":
                         $ chapter = 5

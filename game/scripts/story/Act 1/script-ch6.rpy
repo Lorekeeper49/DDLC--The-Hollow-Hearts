@@ -59,5 +59,4 @@ label act1_ch6_main:
     t "And he needs death!"
     stop ambience fadeout 1.0
     $ renpy.music.set_volume(1.0, delay=0, channel="ambience")
-    achieve act1fin
     return

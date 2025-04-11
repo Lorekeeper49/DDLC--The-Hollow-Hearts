@@ -7,7 +7,7 @@ label act2_ch5_main:
     play music t2
     call showlocation("Residential Street\n{size=25}住宅街{/size}","October 12, 2023\n{size=15}2023年10月12日{/size}",6,45,12)
     
-    achieve act2fin
+    
     return
 
 label act2_ch5_alt:
@@ -71,5 +71,5 @@ label act2_ch5_alt:
     a "*Sobbing* Taiyen...  I'm so sorry..."
     #End of cutscene
 
-    achieve act2fin
+    
     return
