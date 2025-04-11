@@ -190,7 +190,7 @@ label dev:
                         show location_text "プロローグ\n{size=35}Prologue{/size}\nクラブオーダー\n{size=35}Club Order{/size}" zorder 10000 at center_zoom(0.5, 1.0, 6.0) with Dissolve(2.0)
                         $ pause(1.0)
                         hide location_text with Dissolve(2.0)
-                        call ch0_main from _call_ch0_main_1
+                        call ch0_main
                     "SAYORI":
                         menu:
                             "SELECT A CHAPTER:"
@@ -209,7 +209,7 @@ label dev:
                                 "BEGINNING CHAPTER 4"
                             "BACK":
                                 jump dev_loop
-                        call sstory from _call_sstory_1
+                        call sstory
                     "MONIKA":
                         menu:
                             "SELECT A CHAPTER:"
@@ -228,7 +228,7 @@ label dev:
                                 "BEGINNING CHAPTER 4"
                             "BACK":
                                 jump dev_loop
-                        call mstory from _call_mstory_1
+                        call mstory
                     "NATSUKI":
                         menu:
                             "SELECT A CHAPTER:"
@@ -244,7 +244,7 @@ label dev:
                                 "BEGINNING CHAPTER 3"
                             "BACK":
                                 jump dev_loop
-                        call nstory from _call_nstory
+                        call nstory 
                     "YURI":
                         menu:
                             "SELECT A CHAPTER:"
@@ -263,7 +263,7 @@ label dev:
                                 "BEGINNING CHAPTER 4"
                             "BACK":
                                 jump dev_loop
-                        call ystory from _call_ystory_1
+                        call ystory
                     "KOTONOHA":
                         menu:
                             "SELECT A CHAPTER:"
@@ -282,7 +282,7 @@ label dev:
                                 "BEGINNING CHAPTER 4"
                             "BACK":
                                 jump dev_loop
-                        call kstory from _call_kstory_2
+                        call kstory
                     "TAIYEN":
                         menu:
                             "SELECT A CHAPTER:"
@@ -315,31 +315,31 @@ label dev:
                         "BEGINNING CHAPTER 1"
                         $ chapter = 1
                         call chapter_trans("ブレイカー\n{size=35}Breaker{/size}")
-                        call act1_ch1_main from _call_act1_ch1_main_1
+                        call act1_ch1_main
                     "CHAPTER 2":
                         $ chapter = 2
                         "BEGINNING CHAPTER 2"
                         $ hanato = "神山華翔\n{size=15}Kamiyama Hanato"
                         call chapter_trans("プリカーサーズ\n{size=35}The Precursors{/size}")
-                        call act1_ch2_main from _call_act1_ch2_main_1
+                        call act1_ch2_main
                     "CHAPTER 3":
                         $ chapter = 3
                         "BEGINNING CHAPTER 3"
                         $ hanato = "神山華翔\n{size=15}Kamiyama Hanato"
                         call chapter_trans("秘密のベアリング\n{size=35}Bearing Secrets{/size}")
-                        call act1_ch3_main from _call_act1_ch3_main_1
+                        call act1_ch3_main
                     "CHAPTER 4":
                         $ chapter = 4
                         "BEGINNING CHAPTER 4"
                         $ hanato = "神山華翔\n{size=15}Kamiyama Hanato"
                         call chapter_trans("")
-                        call act1_ch4_main from _call_act1_ch4_main_1
+                        call act1_ch4_main
                     "CHAPTER 5":
                         $ chapter = 5
                         "BEGINNING CHAPTER 5"
                         $ hanato = "神山華翔\n{size=15}Kamiyama Hanato"
                         call chapter_trans("")
-                        call act1_ch5_main from _call_act1_ch5_main_1
+                        call act1_ch5_main
                     "CHAPTER 6":
                         $ chapter = 6
                         "BEGINNING CHAPTER 6"
@@ -368,7 +368,7 @@ label dev:
                         "BEGINNING CHAPTER 1"
                         $ chapter = 1
                         call chapter_trans("夜に活動するクラブ\n{size=35}A Club That Works at Night")
-                        call act2_ch1_main from _call_act2_ch1_main_1
+                        call act2_ch1_main
                     "CHAPTER 2":
                         $ chapter = 2
                         "BEGINNING CHAPTER 2"
@@ -407,14 +407,3 @@ label dev:
                 "RETURNING TO MAIN MENU"
                 return
         jump dev_loop
-
-
-label endgame(pause_length=4.0):
-    $ quick_menu = False
-    stop music fadeout 2.0
-    scene black
-    show end
-    with dissolve_scene_full
-    pause pause_length
-    $ quick_menu = True
-    return
