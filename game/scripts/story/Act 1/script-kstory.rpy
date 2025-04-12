@@ -17,7 +17,7 @@ label kstory(bgreturn="bg club_day"):
 label kstory_ch2:
     play music tears
     scene bg city_street_night with dissolve_scene_full
-    call showlocation("Bustling Streets","September 29, 2023",20*60+4+57/60.0,"bg city_street_night")
+    call showlocation("Bustling Streets\n{size=25}賑やかな通り{/size}","September 29, 2023\n{size=15}2023年9月29日{/size}",20*60+4+57/60.0,"bg city_street_night")
     k "Ugh!  Why is that so difficult!?"
     "I look around after getting kicked out."
     "The game I was playing is hard as balls trapped in an air fryer!"
@@ -64,7 +64,7 @@ label kstory_ch2:
     k "What?"
     sei ldown rdown "Follow me, I know where he is."
     scene bg shed_night with wipeleft_scene
-    call showlocation("Shed Hideout","September 29, 2023",20*60+14+57/60.0,"bg shed_night")
+    call showlocation("Shed Hideout\n{size=25}小屋の隠れ家{/size}","September 29, 2023\n{size=15}2023年9月29日{/size}",20*60+14+57/60.0,"bg shed_night")
     show akira uniform turned c zorder 2 at t11
     "...{w=1}Huh?"
     hide akira
@@ -111,21 +111,22 @@ label kstory_ch2:
 
 label kstory_ch3:
     scene bg pasteur_night with dissolve_scene_half
-    call showlocation("Kanzen Academy Ruins","September 30, 2023",60*23+59+57/60.0,"bg pasteur_night")
+    call showlocation("Kanzen Academy Ruins\n{size=25}完全学園高校の廃墟{/size}","September 30, 2023\n{size=15}2023年9月30日{/size}",60*23+59+57/60.0,"bg pasteur_night")
     k "You sure we'll be able find anything here?"
     k "The place is completely destroyed."
-    show seiei 2ba zorder 2 at t11
-    sei "Yeah, Luna really did a number on this place."
+    show seiei turned casual cross zorder 2 at t11
+    sei om "Yeah, Luna really did a number on this place."
+    show seiei cm
     k "Not to mention the fact that they cleaned up the place so well it's almost like it never existed."
-    sei 1ba "Which means we're going underground!"
+    sei ldown rdown om "Which means we're going underground!"
     scene bg sewer_hall with wipeleft_scene
     "Shit..."
     "I can barely see."
     "Don't like the sewers already, but {i}this{/i} is worse!"
-    show seiei 2ba zorder 2 at t11
-    sei 2ba "We could get lost in here if we're not careful."
+    show seiei turned casual zorder 2 at t11
+    sei om "We could get lost in here if we're not careful."
     "No need to state the obvious..."
-    sei 1ba "If I'm correct about this, there should be a factory nearby..."
+    sei ldown rdown om "If I'm correct about this, there should be a factory nearby..."
     hide seiei
     "We look around."
     k "Found it!"
@@ -140,15 +141,15 @@ label kstory_ch3:
     $ pause(1.0)
     k "Eh?"
     "Am I... being watched?"
-    show seiei 1ba zorder 2 at r11
+    show seiei turned casual zorder 2 at r11
     sei "I'm back!"
     k "Ah!  Jesus Christ!"
     k "Ha...  Hi!"
     k "You scared the shit out of me!  Jesus!"
-    sei 2bb "Tehehe, sorry!"
+    sei laug ldown rdown2 om "Tehehe, sorry!"
     "Sure sounds like it!"
-    sei 1ba "Anyway, let's get moving."
-    show seiei 2ba at lhide 
+    sei neut cross "Anyway, let's get moving."
+    show seiei cm at lhide 
     $ pause(1.0)
     hide seiei
     $ pause(1.0)
@@ -156,7 +157,37 @@ label kstory_ch3:
     $ pause(1.0)
     scene bg factory with wiperight_scene
     k "We're here."
-    
+    sei "Let's take a look around."
+    "Kay, we got a lot stuff to work with here."
+    "Some old parts, lots of old machinary..."
+    "Whoa, hold on a second."
+    "Is it just me or..."
+    k "Uh Seiei..."
+    k "Tell me you don't recognize this place."
+    show seiei turned casual cross zorder 2 at t11
+    sei om "Yeah I do not like the flashbacks I'm getting here."
+    show seiei cm
+    k "It's worse for me, you were cancelled."
+    k "I'm one of the few who had to witness it all go wrong."
+    k "*Sigh*...  And after I swore to never come back here..."
+    sei ldown rdown om "I did the same."
+    sei cross doub "Then again, all the leads led here."
+    show seiei cm
+    k "If that's the case then..."
+    show seiei neut
+    k "You stay here and keep looking for clues."
+    k "I'm gonna head to the office."
+    seiei om "Got it."
+    scene bg office with wiperight_scene
+    "Oh, how I hate to see this place again after what happened."
+    "However, this is probably the first time in ever since his calculations that anyone besides Kirinani has touched this PC."
+    "Wait, wouldn't that mean...?"
+    "Find stuff now, question him later."
+    "One of the lesser known abilities of a telegraph is that they're able to tell the exact point in time when any object was last touched as well as who touched it."
+    "Knowing this, I check and..."
+    k "I knew it."
+    "This was last touched by Kamiyama Kirinani at October 2nd, 2020 16:00."
+    k "He used this for something, I know it."
     return
 
 label kstory_ch4:
