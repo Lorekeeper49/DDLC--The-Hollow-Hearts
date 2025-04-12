@@ -120,6 +120,7 @@ label kstory_ch3:
     k "Not to mention the fact that they cleaned up the place so well it's almost like it never existed."
     sei ldown rdown om "Which means we're going underground!"
     scene bg sewer_hall with wipeleft_scene
+    play ambience factory
     "Shit..."
     "I can barely see."
     "Don't like the sewers already, but {i}this{/i} is worse!"
@@ -177,7 +178,7 @@ label kstory_ch3:
     show seiei neut
     k "You stay here and keep looking for clues."
     k "I'm gonna head to the office."
-    seiei om "Got it."
+    sei om "Got it."
     scene bg office with wiperight_scene
     "Oh, how I hate to see this place again after what happened."
     "However, this is probably the first time in ever since his calculations that anyone besides Kirinani has touched this PC."
@@ -186,8 +187,9 @@ label kstory_ch3:
     "One of the lesser known abilities of a telegraph is that they're able to tell the exact point in time when any object was last touched as well as who touched it."
     "Knowing this, I check and..."
     k "I knew it."
-    "This was last touched by Kamiyama Kirinani at October 2nd, 2020 16:00."
+    "This was last touched by Kamiyama Kirinani on October 2nd, 2020 at 16:00."
     k "He used this for something, I know it."
+    stop ambience fadeout 2.0
     return
 
 label kstory_ch4:
