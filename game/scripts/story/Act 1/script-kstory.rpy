@@ -219,7 +219,7 @@ label kstory_ch4:
     "I again stab myself with a syringe and..."
     k "Okay, it's in."
     k "I hope this works, otherwise I just doomed myself."
-    "I try to use telekinesis to lift anything in this room."
+    "I again try to use telekinesis to lift anything in this room."
     "The entire shelf beside me moves."
     k "Not my intention, but YES!"
     k "TRANSPLANT COMPLETE!"
