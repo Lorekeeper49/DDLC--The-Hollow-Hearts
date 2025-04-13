@@ -193,8 +193,49 @@ label kstory_ch3:
     return
 
 label kstory_ch4:
-    call showlocation("???","October 1, 2023",23,59,57)
-
+    play ambience factory fadein 1.0
+    scene bg office with dissolve_scene_half
+    call showlocation("Abandoned Office\n{size=25}廃墟のオフィス{/size}","October 1, 2023\n{size=15}2023年10月1日{/size}",60*23+59+57/60.0,"bg office")
+    k "These calcuations just don't make sense."
+    "Decided to come back on my own, because something wasn't exactly clicking in my head."
+    k "Why did it all go wrong when his data..."
+    k "Hold on..."
+    k "Take the samples and..."
+    with wipeleft_scene
+    k "And finally..."
+    "I stab myself with a syringe and..."
+    k "Okay, somethings out.  That's promising."
+    "The syringe is glowing white."
+    k "Now to test."
+    "I try to use telekinesis to lift anything in this room."
+    "{cps=3}...{/cps}"
+    "Nothing."
+    k "Nothing!"
+    k "Yes, it worked!"
+    k "Okay, now to put it back in."
+    k "Just do the normal procedure..."
+    with wipeleft_scene
+    k "And..."
+    "I again stab myself with a syringe and..."
+    k "Okay, it's in."
+    k "I hope this works, otherwise I just doomed myself."
+    "I try to use telekinesis to lift anything in this room."
+    "The entire shelf beside me moves."
+    k "Not my intention, but YES!"
+    k "TRANSPLANT COMPLETE!"
+    k "Wait, but that means..."
+    k "Hold on, let me run a few more tests."
+    with wipeleft_scene
+    k "This...  No..."
+    k "You can't be serious!"
+    with wipeleft_scene
+    k "No way..."
+    k "We had it... all along..."
+    k "It all went wrong because..."
+    play sound footsteps
+    k "!!!"
+    "Getting out of here!"
+    stop ambience fadeout 2.0
     return
 
 label kstory_ch5:

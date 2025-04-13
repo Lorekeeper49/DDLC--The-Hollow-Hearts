@@ -216,6 +216,19 @@ label act1_ch4_main:
     "As I finish my message to you, I give Lilly a much needed hug."
 
 
+    call kstory
+    show kotonoha turned doub lup zorder 2 at t11
+    k om "Almost ran into the bastard while escaping, but I did make it out in the end."
+    t "So someone sabotaged us?"
+    k ldown rhip neut "Yes, but the question is who?"
+    show kotonoha cm
+    t "I'm more confused as to how."
+    k lup om "Let's worry about that later, okay?"
+    k ldown "Monika's last, right?"
+    show kotonoha at lhide
+    hide kotonoha
+    show monika forward neut rhip zorder 2 at r11
+    m om "Correct."
     call mstory
     show monika forward rhip zorder 2 at t11
     m om "It was at this point that I knew that principal was up to no good."
