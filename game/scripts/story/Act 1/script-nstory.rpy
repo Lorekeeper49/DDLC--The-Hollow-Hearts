@@ -7,6 +7,7 @@ label nstory(bgreturn="bg club_day"):
     $ aoruguri = "ルナ煽るぐり\n{size=15}Luna Aoruguri{/size}"
     call expression nextscene 
     $ char_perspective = "Taiyen"
+    stop ambience fadeout 2.0
     stop music fadeout 2.0
     stop sound fadeout 2.0
     scene black with dissolve_scene
@@ -45,7 +46,7 @@ label nstory_ch2:
     show lilly a1
     y rdown ce "Thank goodness!  I thought I went too hard this time!"
     n "..."
-    y neut "We'll see ourselves out."
+    y neut oe "We'll see ourselves out."
     hide yuri
     hide lilly
     n "Wait!"
@@ -78,12 +79,24 @@ label nstory_ch2:
     n "You can come in, just be quiet."
     show yuri neut cm
     "They slowly walk through the window and put their feet on the floor."
-    y sad "What's wrong?"
+    y om "What's wrong?"
+    show yuri cm
     n "Our father."
     n "Just look at my sister over here."
     n "Her face may not be covered in blood, but she is in serious distress."
-    ""
-
+    lil c2e "God, that sounds like hell."
+    show lilly a2e
+    n "You haven't even heard the half of it."
+    a "I want him fucking dead."
+    n "Seriously, where do you learn this language?"
+    "She doesn't answer."
+    n "Anyway, I don't know what she's been through, but it's pretty bad."
+    show lilly at lhide
+    show yuri at lhide
+    hide lilly
+    hide yuri
+    show aoruguri cross casual neut om zorder 2 at r11
+    a "Here, let me just tell you the details."
     return
 
 label nstory_ch3:

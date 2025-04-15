@@ -236,17 +236,20 @@ label dev:
                             "SELECT A CHAPTER:"
 
                             "CHAPTER 1":
-                                $ chapter = 3
+                                $ chapter = 2
                                 "BEGINNING CHAPTER 1"
                             "CHAPTER 2":
-                                $ chapter = 4
+                                $ chapter = 3
                                 "BEGINNING CHAPTER 2"
                             "CHAPTER 3":
-                                $ chapter = 5
+                                $ chapter = 4
                                 "BEGINNING CHAPTER 3"
+                            "CHAPTER 4":
+                                $ chapter = 5
+                                "BEGINNING CHAPTER 4"
                             "BACK":
                                 jump dev_loop
-                        call nstory 
+                        call nstory
                     "YURI":
                         menu:
                             "SELECT A CHAPTER:"
