@@ -46,9 +46,15 @@ label act1_ch4_main:
     scene bg school_day with wipeleft_scene
     $ window_style = "fake"
     $ nb = "namebox_fake"
-
-        
-        
+    show sayori turned neut zorder 2 at t11
+    t "I've got someone I wanna talk to during lunch, so sorry, I won't be able to get back to our regular meet ups today."
+    s happ rup om "That's okay."
+    s rdown "Who with?"
+    show sayori cm
+    t "Lilly.  I want to check on something."
+    play sound bell
+    scene bg music_room with wipeleft_scene
+    call showlocation("Music Class\n{size=25}音楽教室{/size}","October 2, 2023\n{size=15}2023年10月1日{/size}",11*60+29+57/60.0, "bg schoolriverday")
     show lilly norm a1e zorder 2 at t11
     t "Lilly, can we talk?"
     lil c2 "Uh."
@@ -60,7 +66,6 @@ label act1_ch4_main:
     scene bg schoolriverday with wipeleft_scene
     play ambience river fadein 1.0
     play ambience2 forest fadein 1.0
-    call showlocation("Sakura River\n{size=25}桜川{/size}","October 2, 2023\n{size=15}2023年10月1日{/size}",11*60+29+57/60.0, "bg schoolriverday")
     show lilly norm c2e zorder 2 at t32
     show natsuki turned neut rhip zorder 2 at t31
     show yuri turned neut zorder 2 at t33
@@ -123,23 +128,23 @@ label act1_ch4_main:
     stop ambience2
     play music static
     $ renpy.music.set_volume(0.25, delay=0, channel="music")
-    lil doll c0 "He forced me to be alone!"
+    lil doll c0 "{b}He forced me to be alone!{/b}"
     hide natsuki
     hide yuri
-    lil "He created me just to be some crazy science experiment, never to go outside!"
-    lil d0 "I just wanted to talk with people!"
+    lil "{b}He created me just to be some crazy science experiment, never to go outside!{/b}"
+    lil d0 "{b}I just wanted to talk with people!{/b}"
     $ renpy.music.set_volume(0.50, delay=0, channel="music")
     show vignette zorder 1
-    lil "I just wanted to make friends!"
+    lil "{b}I just wanted to make friends!{/b}"
     $ renpy.music.set_volume(0.75, delay=0, channel="music")
     show darkred zorder 1
-    lil "Not be human!"
+    lil "{b}Not be human!{/b}"
     show lilly b0
     "She's crying blood!"
-    lil d0 "This is what I want you to see me as!"
+    lil d0 "{b}This is what I want you to see me as!{/b}"
     $ renpy.music.set_volume(1.0, delay=0, channel="music")
     hide darkred
-    lil "Not that!"
+    lil "{b}Not that!{/b}"
     show lilly b0
     "I feel bad."
     "But..."
@@ -214,6 +219,12 @@ label act1_ch4_main:
     "This was your warning, CONTROLLER."
     scene bg schoolriverday with dissolve_scene
     "As I finish my message to you, I give Lilly a much needed hug."
+    "The moment is short, but it feels long."
+    lil "{b}I don't get it!{/b}"
+    lil "{b}Why does he want me to suffer!?{/b}"
+    lil "{b}I just want people to see me!{/b}"
+    lil "{b}*Sob*{/b}"
+    scene bg club_day with dissolve_scene_full
 
 
     call kstory
