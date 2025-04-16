@@ -8,6 +8,8 @@ init -501 style explore_text:
     color "#ffffff6c"
     text_align 0.5
 
+image explore_text = ParameterizedText(style="explore_text")
+
 init -1 python:
     """
     for all screens: style_prefix "explore"

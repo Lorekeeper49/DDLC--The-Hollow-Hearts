@@ -154,7 +154,6 @@ default t_list = [
 
 screen path_chooser(choice_filters, path_list):
     add "black"
-    add "taiyen cross" xcenter 640 ycenter 640 zoom 2.0
     text current_text style "path_bg_text" xcenter 640 ycenter 360
     add "noise" at occasional_flash
     add "dark"
