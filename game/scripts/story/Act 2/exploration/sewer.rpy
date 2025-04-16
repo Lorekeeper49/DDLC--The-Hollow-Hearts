@@ -25,8 +25,7 @@ screen factory:
     button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.door), Call("next_location", "sewer_hall")]
     text "ホール\nHALL" xcenter 640 ycenter 680
     button xcenter 40 ycenter 360 xysize (100, 720) action [Play("sound", audio.footsteps), Call("next_location", "stairs")]
-    text "S\nT\nA\nI\nR\nS" xcenter 15 ycenter 360
-    text "階\n段" xcenter 50 ycenter 360
+    text "階段\nSTAIRS" xcenter 40 ycenter 360 vertical True
     button xcenter 635 ycenter 430 xysize (100, 100) action Call("sewer_notice")
     text "掲示板\n{size=15}NOTICE\nBOARD{/size}" xcenter 635 ycenter 430
 
@@ -46,8 +45,7 @@ label sewer_notice:
 screen stairs:
     style_prefix "explore"
     button xcenter 1240 ycenter 360 xysize (100, 720) action [Play("sound", audio.footsteps), Call("next_location", "factory")]
-    text "F\nA\nC\nT\nO\nR\nY" xcenter 1265 ycenter 360
-    text "工\n場" xcenter 1230 ycenter 360
+    text "FACTORY\n工場" xcenter 1240 ycenter 360 vertical True
     button xcenter 740 ycenter 400 xysize (600, 270) action [Play("sound", audio.footsteps), If("basement" in explored, Call("next_location", "basement"), Call("to_basement"))]
     text "地下室\nBASEMENT" xcenter 740 ycenter 400
 
@@ -66,8 +64,7 @@ screen basement:
     button xcenter 620 ycenter 365 xysize (75, 150) action [Play("sound", audio.footsteps), Call("next_location", "power_room")]
     text "{size=15}パワー\nルーム\nPOWER\nROOM{/size}" xcenter 620 ycenter 365
     button xcenter 720 ycenter 350 xysize (75, 250) action [Play("sound", audio.door), Call("next_location", "office")]
-    text "O\nF\nF\nI\nC\nE" xcenter 740 ycenter 350
-    text "オ\nフ\nィ\nス" xcenter 700 ycenter 350
+    text "OFFICE\nオフィス" xcenter 720 ycenter 350 vertical True
 
 screen power_room:
     style_prefix "explore"
