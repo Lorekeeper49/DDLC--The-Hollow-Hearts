@@ -146,13 +146,7 @@ label act2_ch4_alt:
     show wraith_black zorder 2 at t11
     a "!!!"
     a "I don't have a...{nw}"
-    play sound jumpscare
-    show wraith_black zorder 1000 at face
-    $ pause(0.25)
-    scene black with None
-    stop sound fadeout 3.0
-    $ pause(3.0)
-    hide dark onlayer foreground
+    call failure
     call act2_ch4_common
     return
 
