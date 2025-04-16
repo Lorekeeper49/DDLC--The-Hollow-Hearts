@@ -32,7 +32,7 @@ label tstory_ch2:
 label tstory_ch3:
     play ambience factory
     scene bg factory with dissolve_scene_half
-    call showlocation("Palace Factories Inc.\n{size=25}株式会社宮殿工場{/size}","July 1, 2018",20*60+4+57/60.0,"bg factory")
+    call showlocation("Palace Factories Inc.\n{size=25}株式会社宮殿工場{/size}","July 1, 2018\n{size=15}2018年7月1日{/size}",20*60+4+57/60.0,"bg factory")
     t "So... this is who I'm taking care of for the rest of the week."
     "NAME: [[UNKNOWN]"
     "ATTRIBUTE: STORM"
@@ -45,7 +45,7 @@ label tstory_ch4:
     play ambience factory
     scene bg factory with dissolve_scene_half
     $ char_perspective = "Lilly"
-    call showlocation("Palace Factories Inc.\n{size=25}株式会社宮殿工場{/size}","July 1, 2018",20*60+4+57/60.0,"bg factory")
+    call showlocation("Palace Factories Inc.\n{size=25}株式会社宮殿工場{/size}","July 1, 2018\n{size=15}2018年7月1日{/size}",20*60+4+57/60.0,"bg factory")
     t "Are you ready?"
     lil "Yes."
     t "Stab her."
@@ -120,14 +120,18 @@ label tstory_ch4:
     t "That can't be!"
     t "Our calculations..."
     t "We need to cancel the other tests right now!"
-
-
+    "Our calculations were wrong from the beginning."
+    "This was doomed from the start."
+    "We were never meant to play God like this."
+    "The only reason the first test went so well is because he resisted the effects."
+    "God Dammit!"
+    t "We need to end their suffering."
     return
 
 label tstory_ch5:
     play ambience factory
     scene bg factory with dissolve_scene_half
-    call showlocation("Palace Factories Inc.\n{size=25}株式会社宮殿工場{/size}","July 2, 2018",20*60+4+57/60.0,"bg factory")
+    call showlocation("Palace Factories Inc.\n{size=25}株式会社宮殿工場{/size}","July 2, 2018\n{size=15}2018年7月2日{/size}",20*60+4+57/60.0,"bg factory")
     s "It is done."
     t "Thank you."
     "The experiment went horribly wrong!"
