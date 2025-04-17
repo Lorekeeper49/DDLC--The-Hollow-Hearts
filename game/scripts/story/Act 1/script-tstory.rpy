@@ -6,6 +6,7 @@ label tstory(bgreturn="bg club_day"):
     $ char_perspective = "Taiyen"
     call expression nextscene 
     $ char_perspective = "Taiyen"
+    stop ambience fadeout 2.0
     stop music fadeout 2.0
     stop sound fadeout 2.0
     scene black with dissolve_scene
@@ -126,6 +127,12 @@ label tstory_ch4:
     "The only reason the first test went so well is because he resisted the effects."
     "God Dammit!"
     t "We need to end their suffering."
+    with wipeleft_scene
+    show sayori turned casual pani zorder 2 at t11
+    s om "What?!"
+    s rup "You can't possibly ask me to-{nw}"
+    t "I don't want to hear it!"
+    t "They can't live on like this."
     return
 
 label tstory_ch5:
@@ -142,5 +149,10 @@ label tstory_ch5:
     "TWO's now a rampant image,"
     "And THREE's now an ordinary girl."
     t "Dammit!  I didn't know this would happen!"
-
+    t "Guess we were right not to trust a black substance."
+    t "That sounded racist.  That's not what I meant."
+    t "I just..."
+    t "..."
+    t "We need to get rid of the rest of them, make sure no one gets their hands on the substance."
+    t "This experiment was a mistake!"
     return
