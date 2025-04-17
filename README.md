@@ -1,8 +1,8 @@
 # DDLC: The Hollow Hearts | ドキドキ文芸部：ザー・ホロー・ハーツ
 
-![LOGO TEST](/game/mod_assets/logo.png)
+![LOGO](/game/mod_assets/logo.png)
  
-## INSTALLATION INSTRUCTIONS
+## INSTALLATION INSTRUCTIONS | インストール手順
 
 ### ENGLISH
 
