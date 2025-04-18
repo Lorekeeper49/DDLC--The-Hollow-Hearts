@@ -70,9 +70,9 @@ init python:
         return l
     # Silhouette code comes from here: https://www.renpy.org/wiki/renpy/doc/cookbook/Turn_an_image_into_a_silhouette
     def silhouette_matrix(r,g,b,a=1.0):
-        return im.matrix((0, 0, 0, 0, r, 0, 0, 0, 0, g, 0, 0, 0, 0, b, 0, 0, 0, a, 0,))
+        return Matrix([0, 0, 0, 0, r, 0, 0, 0, 0, g, 0, 0, 0, 0, b, 0, 0, 0, a, 0,])
     def silhouetted(filename, r,g,b, a = 1.0):
-        return im.MatrixColor(Image(filename), silhouette_matrix(r,g,b,a))
+        return Transform(Image(filename), matrixcolor=silhouette_matrix(r,g,b,a))
     def random_chance(chance):
         n = random.uniform(1.0, 100.0)
         return n < chance

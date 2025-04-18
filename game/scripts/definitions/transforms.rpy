@@ -410,7 +410,7 @@ image vignette:
     truecenter
     "images/bg/vignette.png"
 
-image memory_vignette = im.MatrixColor("images/bg/vignette.png", im.matrix.invert())
+image memory_vignette = Transform("images/bg/vignette.png", matrixcolor=InvertMatrix())
 
 transform vignettefade(t=0):
     alpha 0.0

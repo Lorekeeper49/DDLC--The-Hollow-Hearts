@@ -117,7 +117,6 @@ init -501 screen languagechoice():
     button xcenter 920 ycenter 360 xysize (500, 300) hovered If("japanese" not in renpy.known_languages(), [SetVariable("info_jp", "現在入手不可"), SetVariable("info_en", "CURRENTLY UNAVAILABLE")]) unhovered [SetVariable("info_jp", ""), SetVariable("info_en", "")] action If("japanese" in renpy.known_languages(), [Language("japanese"), SetVariable("persistent.voice_lang", "日本語"), Return()], NullAction())
     text "日本語" xcenter 920 ycenter 360
 
-
 label splashscreen:
     
     python:
@@ -229,7 +228,6 @@ label splashscreen:
 label after_load:
     $ config.allow_skipping = allow_skipping
     $ _dismiss_pause = config.developer
-    $ persistent.ghost_menu = False
     $ style.say_dialogue = style.normal
     if persistent.playthrough == 0 and not persistent.first_load and not config.developer:
         $ persistent.first_load = True
