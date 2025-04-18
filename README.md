@@ -256,6 +256,8 @@ THUNDER - Sound Effect by [LordSonny](https://pixabay.com/users/lordsonny-384396
 
 THUNDER2 - Sound Effect by [Mikhail](https://pixabay.com/users/soundsforyou-4861230/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=113219) from [Pixabay](https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=113219)
 
+[CLICK, HOVER - KENNEY](https://kenney.nl/assets/category:Audio?sort=update)
+
 
 ### FONTS | フォント
 [NORMAL FONT - Noto Serif JP](https://fonts.google.com/noto/specimen/Noto+Serif+JP?subset=japanese&noto.script=Hira)
