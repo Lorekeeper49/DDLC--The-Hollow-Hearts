@@ -259,5 +259,26 @@ label kstory_ch5:
     scene bg kamiroofn with wipeleft_scene
     show seiei turned casual zorder 2 at t11
     k "Seiei?"
-
+    sei curi "Hm?"
+    k "Hate to do this but, you're off the team."
+    sei doub "..."
+    sei cross neut om "I understand."
+    show seiei cm
+    k "You do?"
+    sei om "Someone else brought me to my senses."
+    sei ldown rdown "I've been... lying to myself."
+    sei anno "I've been letting my friends steal for profit and partaking in it myself is if it's right."
+    sei cross "It's not right!"
+    sei ce cm "..."
+    k "..."
+    k "Lying to yourself... is an excellent way to get depression."
+    k "I don't know much about depression works, but I know some causes."
+    k "Lying to yourself is one of them."
+    k "So...  If you can..."
+    k "Please get some mental help if you haven't already."
+    k "And stop these acts before it gets to you again."
+    "He doesn't respond, but I know he heard me."
+    k "I'll be taking over presidency from now on."
+    k "But I don't think we will be talking again."
+    k "This is goodbye."
     return
