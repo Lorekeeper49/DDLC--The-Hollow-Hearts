@@ -394,10 +394,18 @@ label introaoruguri:
     t "Hi..."
     t "Here, I'll start.  I'm Sakura Taiyen, and my higher generation runs the school I go to.{w=1}\n(Why did I never tell that to you before?)"
     a md "I-I'm Luna Aoruguri... and there's currently nothing special about me."
+    "Luna Aoruguri..."
+    "No way."
+    "It's her!"
     $ aoruguri = "ルナ煽るぐり\n{size=15}Luna Aoruguri{/size}"
     a "So you're... Sakura-san."
+    "I babysat this girl a while back."
+    "I thought she was dead."
+    "I should probably say something."
     show aoruguri ma
     t "I think we're past using family names to address each other, Aoruguri."
+    "She doesn't seem to recognize me."
+    "I'll keep it that for now."
     a md "R-right... Taiyen..."
     show aoruguri ma
     "She's so nervous..."

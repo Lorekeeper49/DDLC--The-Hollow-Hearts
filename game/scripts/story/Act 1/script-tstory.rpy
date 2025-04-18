@@ -19,7 +19,7 @@ label tstory_ch2:
     play ambience factory
     scene bg factory with dissolve_scene_half
     call showlocation("Palace Factories Inc.\n{size=25}株式会社宮殿工場{/size}","June 29, 2018\n{size=15}2018年6月29日{/size}",20*60+4+57/60.0,"bg factory")
-    $ pla = "Worker"
+    $ pla = "被雇用者\n{size=15}Worker{/size}"
     t "Oi!  Stop slacking off!  Get back to work!"
     general "You're not the boss of me!"
     t "Hey, don't make me report that attitude to your real boss, who is out sick for the week."
@@ -27,7 +27,21 @@ label tstory_ch2:
     t "And I don't know about you, but I personally wouldn't want to be fired by my substitute boss!"
     "God, do these guys ever learn?"
     "I may sound strict, but this is how the actual boss is with slacking workers."
-    
+    scene bg office with wipeleft_scene
+    t "How are the calculations coming along?"
+    kiri "Things are looking good."
+    kiri "If we do this right, the volunteers will have their attributes changed in no time."
+    t "Awesome!"
+    "We're working on a new substance codenamed Breaker."
+    "Despite it's name, it's not something that reacts when too much power is used and turns off your abilities."
+    "What it actually is a way to extract a person's attribute so it can be placed in someone else."
+    "The only downside is that it actually removes the attribute from the person, rendering them powerless."
+    "So we're using it as a way to change out attributes until we find a way to extract them without removing them."
+    kiri "And that's it!"
+    kiri "There they are; the final calculations!"
+    t "They're looking good!"
+    t "Let's make the chemical."
+    "This is gonna work, I know it."
     return
 
 label tstory_ch3:
@@ -35,18 +49,40 @@ label tstory_ch3:
     scene bg factory with dissolve_scene_half
     call showlocation("Palace Factories Inc.\n{size=25}株式会社宮殿工場{/size}","July 1, 2018\n{size=15}2018年7月1日{/size}",20*60+4+57/60.0,"bg factory")
     t "So... this is who I'm taking care of for the rest of the week."
-    "NAME: [[UNKNOWN]"
+    "NAME: LUNA AORUGURI"
     "ATTRIBUTE: STORM"
     "APPEARANCE: BLACK HAIR, BLUE EYES, SHORT STATURE"
     "PERSONALITY: [[UNKNOWN]"
-
+    "I'm just babysitting her."
+    "When she's my age."
+    "Did she really have that bad of a family?"
+    "I've dealt with my fair share of bad family members."
+    "But I'm not sure if she's in worse condition."
+    "I've been briefed on her situation."
+    "Sort of..."
+    "One of our volunteers, Kusonoki Mari, is her biological mother."
+    "She was abused as a kid and raised to be a vigilante, but it never reached fruition."
+    "She killed her own parents."
+    "It was an accident, but it saved her."
+    "But her love life..."
+    "She wanted kids, but not like this."
+    "She was raped."
+    "In fact, I just realized..."
+    "All our volunteers had a bad past."
+    "ONE: Was controlled his whole life."
+    "TWO: Ran away from his family."
+    "THREE: Used for experiments."
+    "FOUR: Raped."
+    "FIVE: Committed several crimes."
+    "They all had a bad past."
+    "And they're trying to fix it."
     return
 
 label tstory_ch4:
     play ambience factory
     scene bg factory with dissolve_scene_half
     $ char_perspective = "Lilly"
-    call showlocation("Palace Factories Inc.\n{size=25}株式会社宮殿工場{/size}","July 1, 2018\n{size=15}2018年7月1日{/size}",20*60+4+57/60.0,"bg factory")
+    call showlocation("Palace Factories Inc.\n{size=25}株式会社宮殿工場{/size}","July 3, 2018\n{size=15}2018年7月3日{/size}",20*60+4+57/60.0,"bg factory")
     t "Are you ready?"
     lil "Yes."
     t "Stab her."
@@ -138,7 +174,7 @@ label tstory_ch4:
 label tstory_ch5:
     play ambience factory
     scene bg factory with dissolve_scene_half
-    call showlocation("Palace Factories Inc.\n{size=25}株式会社宮殿工場{/size}","July 2, 2018\n{size=15}2018年7月2日{/size}",20*60+4+57/60.0,"bg factory")
+    call showlocation("Palace Factories Inc.\n{size=25}株式会社宮殿工場{/size}","July 4, 2018\n{size=15}2018年7月4日{/size}",20*60+4+57/60.0,"bg factory")
     s "It is done."
     t "Thank you."
     "The experiment went horribly wrong!"
@@ -148,6 +184,7 @@ label tstory_ch5:
     "ONE's now a copycat,"
     "TWO's now a rampant image,"
     "And THREE's now an ordinary girl."
+    "We got the results we wanted, but not in the way we wanted."
     t "Dammit!  I didn't know this would happen!"
     t "Guess we were right not to trust a black substance."
     t "That sounded racist.  That's not what I meant."
