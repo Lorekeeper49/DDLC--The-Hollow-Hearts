@@ -239,10 +239,25 @@ label kstory_ch4:
     return
 
 label kstory_ch5:
-    call showlocation("???","October 2, 2023",23,59,57)
+    play music confdep
+    scene bg kamihallnight with dissolve_scene_full
     k "That son of a...!"
     k "Why didn't anyone tell me!?"
     k "I trusted him..."
     k "And all this time, he's been stealing for profit!?"
+    k "I need to get this guy kicked off the team."
+    scene bg kamiclassnight with wipeleft_scene
+    k "Hey guys."
+    k "I just got some crazy intel."
+    k "Our president, the guy who wanted to stop committing crimes, is still committing crimes."
+    k "He's making money illegally and we need him off."
+    k "I'll be your president from now on."
+    k "Is that clear?"
+    "Everyone nods."
+    k "Good."
+    "Now to boot him off."
+    scene bg kamiroofn with wipeleft_scene
+    show seiei turned casual zorder 2 at t11
+    k "Seiei?"
 
     return
