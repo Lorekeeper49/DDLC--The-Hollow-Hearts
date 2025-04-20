@@ -1,9 +1,9 @@
 default wraith_beaten = False
-image wraith_black = silhouetted("mod_assets/MPT/engeki/body.png",0,0,0)
-image wraith_black1 = silhouetted("mod_assets/MPT/engeki/body.png",0,0,0)
-image wraith_black2 = silhouetted("mod_assets/MPT/engeki/body.png",0,0,0)
-image wraith_black3 = silhouetted("mod_assets/MPT/engeki/body.png",0,0,0)
-image wraith_black4 = silhouetted("mod_assets/MPT/engeki/body.png",0,0,0)
+image wraith_black = Transform("mod_assets/MPT/engeki/body.png", matrixcolor=Matrix([0,0,0,0,0,0,0,0,0]))
+image wraith_black1 = Transform("mod_assets/MPT/engeki/body.png", matrixcolor=Matrix([0,0,0,0,0,0,0,0,0]))
+image wraith_black2 = Transform("mod_assets/MPT/engeki/body.png", matrixcolor=Matrix([0,0,0,0,0,0,0,0,0]))
+image wraith_black3 = Transform("mod_assets/MPT/engeki/body.png", matrixcolor=Matrix([0,0,0,0,0,0,0,0,0]))
+image wraith_black4 = Transform("mod_assets/MPT/engeki/body.png", matrixcolor=Matrix([0,0,0,0,0,0,0,0,0]))
 screen wraith:
     zorder 200
     add "wraith_black"

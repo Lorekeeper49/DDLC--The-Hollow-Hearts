@@ -6,6 +6,7 @@ label ystory(bgreturn="bg club_day"):
     $ char_perspective = "Yuri"
     call expression nextscene 
     $ char_perspective = "Taiyen"
+    stop ambience fadeout 2.0
     stop music fadeout 2.0
     stop sound fadeout 2.0
     scene black with dissolve_scene
@@ -192,7 +193,9 @@ label ystory_ch4:
     call showlocation("Converse Playground\n{size=25}コンバース遊び場{/size}","July 3, 2018\n{size=15}2018年7月3日{/size}",20*60+15+0/60.0,"bg park2_night")
     y "Good luck on your test!"
     lil "I'll let you know the results."
-    "Lilly's "
+    "Lilly's Breaker test is today."
+    "Meanwhile our father is finding out about our training ground."
+
 
 
     return
