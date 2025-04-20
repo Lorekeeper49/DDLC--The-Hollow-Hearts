@@ -195,9 +195,34 @@ label ystory_ch4:
     lil "I'll let you know the results."
     "Lilly's Breaker test is today."
     "Meanwhile our father is finding out about our training ground."
-
-
-
+    $ pla = "父\n{size=15}Father{/size}"
+    general "You've been using this behind my back?"
+    y "Father, it's not what you think."
+    general "Don't think I'm angry."
+    general "You can keep using this, just..."
+    "He seems... different."
+    "This may be my chance."
+    y "Father, there's something I wanted to ask."
+    general "Shoot.  I got time."
+    y "I heard that Lilly is... not human."
+    general "How did you...?"
+    general "I created her... as a science experiment."
+    general "Making her more human was actually always my plan."
+    general "I've just been doing it wrong."
+    general "I'm an alcoholic."
+    y "An alcoholic?  That's not any excuse for what you've been doing to us!"
+    general "I know!"
+    general "I just..."
+    general "..."
+    general "Back on topic..."
+    general "I kept her away from society because people would be terrified of her design."
+    general "But I realize now that's not what she wants."
+    y "..."
+    "That's quite a lot..."
+    general "Daugter..."
+    general "Take care of my experiment."
+    y "I will."
+    "He leaves."
     return
 
 label ystory_ch5:
