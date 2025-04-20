@@ -224,7 +224,17 @@ label act1_ch4_main:
     lil "{b}Why does he want me to suffer!?{/b}"
     lil "{b}I just want people to see me!{/b}"
     lil "{b}*Sob*{/b}"
+    t "It's okay."
+    t "Just let it out."
     scene bg club_day with dissolve_scene_full
+    show monika forward neut rhip om zorder 2 at t11
+    m "Jesus."
+    m dist "That's a lot considering what we already know."
+    m neut rdown "You guys can do your other stories, I'm gonna take a load off and process all this."
+    m dist rhip "I'll read it all later."
+    m rdown "Please take over for now, Sayori."
+    hide monika
+    s "Will do!"
 
 
     call kstory

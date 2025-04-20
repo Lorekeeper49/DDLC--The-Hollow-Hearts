@@ -187,7 +187,13 @@ label ystory_ch3:
     return
 
 label ystory_ch4:
-    call showlocation("???","Monday, August 1, 2020",23,59,57)
+    play music confdep
+    scene bg park2_night with dissolve_scene_full
+    call showlocation("Converse Playground\n{size=25}コンバース遊び場{/size}","July 3, 2018\n{size=15}2018年7月3日{/size}",20*60+15+0/60.0,"bg park2_night")
+    y "Good luck on your test!"
+    lil "I'll let you know the results."
+    "Lilly's "
+
 
     return
 
@@ -268,7 +274,20 @@ label ystory_ch5:
     "Her arm is open."
     "I better fix her."
     with wipeleft_scene
-    ""
-
-
+    "I've always been terrified of dolls."
+    "And yet, here I am stitching a living one back together..."
+    y "There we go."
+    $ char_perspective = "Lilly"
+    with dissolve_scene_full
+    lil "..."
+    show yuri turned casual neut rup om zorder 2 at t11
+    y "Are you okay?"
+    lil "Did... something come out of me?"
+    y dist "Yeah, not sure where it went."
+    lil "Well I'm fine now thanks to that."
+    show yuri neut
+    lil "One thing's for sure; the substance worked, I don't have my yandere powers any more."
+    lil "So our father should be powerless now."
+    lil "But I don't think I'll be the same again..."
+    lil "It's a sacrafice I am willing to make."
     return
