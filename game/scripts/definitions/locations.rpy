@@ -1,10 +1,9 @@
 style location_text:
-    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
+    font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf"
     size 100
     color gui.text_color
     outlines [(2, "#000000aa", 0, 0)]
     text_align 0.5
-    line_spacing -20
 
 style time_text:
     font "mod_assets/fonts/SevenSegment.ttf"
@@ -14,12 +13,11 @@ style time_text:
     text_align 0.5
 
 style date_text:
-    font "mod_assets/fonts/NotoSerifJP-Regular.otf"
-    size 25
+    font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf"
+    size 20
     color gui.text_color
     outlines [(2, "#000000aa", 0, 0)]
     text_align 0.5
-    line_spacing -5
 
 image location_text = ParameterizedText(style="location_text")
 
@@ -42,7 +40,7 @@ transform clock_transform:
 
 transform text_transform:
     xcenter 640
-    ycenter 50
+    ycenter 60
     on show:
         alpha 0
         easeout 1 alpha 1 zoom 1 yoffset 0

@@ -101,22 +101,22 @@ default act3_path_list = [
     {"title": "The Death Emotions", "JP": "死感", "needed choices": ["CONTROLLER Untold", "Hidden Girl Kept Secret", "Yuri Killed", "Engeki Left"], "categories": {"CONTROLLER": "silent", "HIDDEN GIRL": "hidden", "KIND MAN": "ran away", "UNKNOWN SISTER": "left"}, "label": "act3_path14", "extra options": [], "hidden": False}, 
     {"title": "The Lives Taken", "JP": "取られた人生", "needed choices": ["CONTROLLER Untold", "Hidden Girl Kept Secret", "Yuri Alive", "Engeki Stayed"], "categories": {"CONTROLLER": "silent", "HIDDEN GIRL": "hidden", "KIND MAN": "followed", "UNKNOWN SISTER": "stayed"}, "label": "act3_path15", "extra options": [], "hidden": False},
     {"title": "The Lone Girl", "JP": "独り少女", "needed choices": ["CONTROLLER Untold", "Hidden Girl Kept Secret", "Yuri Killed", "Engeki Stayed"], "categories": {"CONTROLLER": "silent", "HIDDEN GIRL": "hidden", "KIND MAN": "ran away", "UNKNOWN SISTER": "stayed"}, "label": "act3_path16", "extra options": [], "hidden": False},
-    {"title": "", "JP": "", "needed choices": ["CONTROLLER Told", "Hidden Girl Revealed", "Found Breaker", "Dominion Calm", "Engeki Left"], "categories": {"CONTROLLER": "told", "HIDDEN GIRL": "revealed", "BREAKER": "found", "FRIGHTENED DOMINION": "calm", "UNKNOWN SISTER": "left"}, "label": "act3_path17", "extra options": [], "hidden": False},
-    {"title": "", "JP": "", "needed choices": ["CONTROLLER Told", "Hidden Girl Revealed", "Found Breaker", "Dominion Burst", "Engeki Left"], "categories": {"CONTROLLER": "told", "HIDDEN GIRL": "revealed", "BREAKER": "found", "FRIGHTENED DOMINION": "burst", "UNKNOWN SISTER": "left"}, "label": "act3_path18", "extra options": [], "hidden": False}, 
-    {"title": "", "JP": "", "needed choices": ["CONTROLLER Told", "Hidden Girl Revealed", "Found Breaker", "Dominion Left Behind", "Engeki Left"], "categories": {"CONTROLLER": "told", "HIDDEN GIRL": "revealed", "BREAKER": "found", "FRIGHTENED DOMINION": "left behind", "UNKNOWN SISTER": "left"}, "label": "act3_path19", "extra options": [], "hidden": False}, 
-    {"title": "", "JP": "", "needed choices": ["CONTROLLER Told", "Hidden Girl Revealed", "Didn't Find Breaker", "Dominion Calm", "Engeki Left"], "categories": {"CONTROLLER": "told", "HIDDEN GIRL": "revealed", "BREAKER": "didn't find", "FRIGHTENED DOMINION": "calm", "UNKNOWN SISTER": "left"}, "label": "act3_path20", "extra options": [], "hidden": False}, 
-    {"title": "", "JP": "", "needed choices": ["CONTROLLER Told", "Hidden Girl Revealed", "Didn't Find Breaker", "Dominion Burst", "Engeki Left"], "categories": {"CONTROLLER": "told", "HIDDEN GIRL": "revealed", "BREAKER": "didn't find", "FRIGHTENED DOMINION": "burst", "UNKNOWN SISTER": "left"}, "label": "act3_path21", "extra options": [], "hidden": False}, 
-    {"title": "", "JP": "", "needed choices": ["CONTROLLER Told", "Hidden Girl Revealed", "Didn't Find Breaker", "Dominion Left Behind", "Engeki Left"], "categories": {"CONTROLLER": "told", "HIDDEN GIRL": "revealed", "BREAKER": "didn't find", "FRIGHTENED DOMINION": "left behind", "UNKNOWN SISTER": "left"}, "label": "act3_path22", "extra options": [], "hidden": False}, 
-    {"title": "", "JP": "", "needed choices": ["CONTROLLER Told", "Hidden Girl Revealed", "Found Breaker", "Dominion Calm", "Engeki Stayed"], "categories": {"CONTROLLER": "told", "HIDDEN GIRL": "revealed", "BREAKER": "found", "FRIGHTENED DOMINION": "calm", "UNKNOWN SISTER": "stayed"}, "label": "act3_path23", "extra options": [], "hidden": False}, 
-    {"title": "", "JP": "", "needed choices": ["CONTROLLER Told", "Hidden Girl Revealed", "Found Breaker", "Dominion Burst", "Engeki Stayed"], "categories": {"CONTROLLER": "told", "HIDDEN GIRL": "revealed", "BREAKER": "found", "FRIGHTENED DOMINION": "burst", "UNKNOWN SISTER": "stayed"}, "label": "act3_path24", "extra options": [], "hidden": False}, 
-    {"title": "", "JP": "", "needed choices": ["CONTROLLER Told", "Hidden Girl Revealed", "Found Breaker", "Dominion Left Behind", "Engeki Stayed"], "categories": {"CONTROLLER": "told", "HIDDEN GIRL": "revealed", "BREAKER": "found", "FRIGHTENED DOMINION": "left behind", "UNKNOWN SISTER": "stayed"}, "label": "act3_path25", "extra options": [], "hidden": False}, 
-    {"title": "", "JP": "", "needed choices": ["CONTROLLER Told", "Hidden Girl Revealed", "Didn't Find Breaker", "Dominion Calm", "Engeki Stayed"], "categories": {"CONTROLLER": "told", "HIDDEN GIRL": "revealed", "BREAKER": "didn't find", "FRIGHTENED DOMINION": "calm", "UNKNOWN SISTER": "stayed"}, "label": "act3_path26", "extra options": [], "hidden": False}, 
-    {"title": "", "JP": "", "needed choices": ["CONTROLLER Told", "Hidden Girl Revealed", "Didn't Find Breaker", "Dominion Burst", "Engeki Stayed"], "categories": {"CONTROLLER": "told", "HIDDEN GIRL": "revealed", "BREAKER": "didn't find", "FRIGHTENED DOMINION": "burst", "UNKNOWN SISTER": "stayed"}, "label": "act3_path27", "extra options": [], "hidden": False}, 
-    {"title": "", "JP": "", "needed choices": ["CONTROLLER Told", "Hidden Girl Revealed", "Didn't Find Breaker", "Dominion Left Behind", "Engeki Stayed"], "categories": {"CONTROLLER": "told", "HIDDEN GIRL": "revealed", "BREAKER": "didn't find", "FRIGHTENED DOMINION": "left behind", "UNKNOWN SISTER": "stayed"}, "label": "act3_path28", "extra options": [], "hidden": False}, 
-    {"title": "", "JP": "", "needed choices": ["CONTROLLER Told", "Hidden Girl Kept Secret", "Yuri Alive", "Engeki Left"], "categories": {"CONTROLLER": "told", "HIDDEN GIRL": "hidden", "KIND MAN": "followed", "UNKNOWN SISTER": "left"}, "label": "act3_path29", "extra options": [], "hidden": False}, 
-    {"title": "", "JP": "", "needed choices": ["CONTROLLER Told", "Hidden Girl Kept Secret", "Yuri Killed", "Engeki Left"], "categories": {"CONTROLLER": "told", "HIDDEN GIRL": "hidden", "KIND MAN": "ran away", "UNKNOWN SISTER": "left"}, "label": "act3_path30", "extra options": [], "hidden": False}, 
-    {"title": "", "JP": "", "needed choices": ["CONTROLLER Told", "Hidden Girl Kept Secret", "Yuri Alive", "Engeki Stayed"], "categories": {"CONTROLLER": "told", "HIDDEN GIRL": "hidden", "KIND MAN": "followed", "UNKNOWN SISTER": "stayed"}, "label": "act3_path31", "extra options": [], "hidden": False},
-    {"title": "", "JP": "", "needed choices": ["CONTROLLER Told", "Hidden Girl Kept Secret", "Yuri Killed", "Engeki Stayed"], "categories": {"CONTROLLER": "told", "HIDDEN GIRL": "hidden", "KIND MAN": "ran away", "UNKNOWN SISTER": "stayed"}, "label": "act3_path32", "extra options": [], "hidden": False}
+    {"title": "The Wrong Way", "JP": "間違った道", "needed choices": ["CONTROLLER Told", "Hidden Girl Revealed", "Found Breaker", "Dominion Calm", "Engeki Left"], "categories": {"CONTROLLER": "told", "HIDDEN GIRL": "revealed", "BREAKER": "found", "FRIGHTENED DOMINION": "calm", "UNKNOWN SISTER": "left"}, "label": "act3_path17", "extra options": [], "hidden": False},
+    {"title": "The Dead Secrets", "JP": "死者の秘密", "needed choices": ["CONTROLLER Told", "Hidden Girl Revealed", "Found Breaker", "Dominion Burst", "Engeki Left"], "categories": {"CONTROLLER": "told", "HIDDEN GIRL": "revealed", "BREAKER": "found", "FRIGHTENED DOMINION": "burst", "UNKNOWN SISTER": "left"}, "label": "act3_path18", "extra options": [], "hidden": False}, 
+    {"title": "The One Killer", "JP": "一人殺し", "needed choices": ["CONTROLLER Told", "Hidden Girl Revealed", "Found Breaker", "Dominion Left Behind", "Engeki Left"], "categories": {"CONTROLLER": "told", "HIDDEN GIRL": "revealed", "BREAKER": "found", "FRIGHTENED DOMINION": "left behind", "UNKNOWN SISTER": "left"}, "label": "act3_path19", "extra options": [], "hidden": False}, 
+    {"title": "The Total Fight", "JP": "大喧嘩", "needed choices": ["CONTROLLER Told", "Hidden Girl Revealed", "Didn't Find Breaker", "Dominion Calm", "Engeki Left"], "categories": {"CONTROLLER": "told", "HIDDEN GIRL": "revealed", "BREAKER": "didn't find", "FRIGHTENED DOMINION": "calm", "UNKNOWN SISTER": "left"}, "label": "act3_path20", "extra options": [], "hidden": False}, 
+    {"title": "The Chaos War", "JP": "混迷戦争", "needed choices": ["CONTROLLER Told", "Hidden Girl Revealed", "Didn't Find Breaker", "Dominion Burst", "Engeki Left"], "categories": {"CONTROLLER": "told", "HIDDEN GIRL": "revealed", "BREAKER": "didn't find", "FRIGHTENED DOMINION": "burst", "UNKNOWN SISTER": "left"}, "label": "act3_path21", "extra options": [], "hidden": False}, 
+    {"title": "The Missing Family", "JP": "消えた家族", "needed choices": ["CONTROLLER Told", "Hidden Girl Revealed", "Didn't Find Breaker", "Dominion Left Behind", "Engeki Left"], "categories": {"CONTROLLER": "told", "HIDDEN GIRL": "revealed", "BREAKER": "didn't find", "FRIGHTENED DOMINION": "left behind", "UNKNOWN SISTER": "left"}, "label": "act3_path22", "extra options": [], "hidden": False}, 
+    {"title": "The Bad Time", "JP": "悪い時", "needed choices": ["CONTROLLER Told", "Hidden Girl Revealed", "Found Breaker", "Dominion Calm", "Engeki Stayed"], "categories": {"CONTROLLER": "told", "HIDDEN GIRL": "revealed", "BREAKER": "found", "FRIGHTENED DOMINION": "calm", "UNKNOWN SISTER": "stayed"}, "label": "act3_path23", "extra options": [], "hidden": False}, 
+    {"title": "The Hated Powers", "JP": "嫌われる能力", "needed choices": ["CONTROLLER Told", "Hidden Girl Revealed", "Found Breaker", "Dominion Burst", "Engeki Stayed"], "categories": {"CONTROLLER": "told", "HIDDEN GIRL": "revealed", "BREAKER": "found", "FRIGHTENED DOMINION": "burst", "UNKNOWN SISTER": "stayed"}, "label": "act3_path24", "extra options": [], "hidden": False}, 
+    {"title": "The Bad Truth", "JP": "悪い真実", "needed choices": ["CONTROLLER Told", "Hidden Girl Revealed", "Found Breaker", "Dominion Left Behind", "Engeki Stayed"], "categories": {"CONTROLLER": "told", "HIDDEN GIRL": "revealed", "BREAKER": "found", "FRIGHTENED DOMINION": "left behind", "UNKNOWN SISTER": "stayed"}, "label": "act3_path25", "extra options": [], "hidden": False}, 
+    {"title": "The Split Wraith", "JP": "壊れたレイス", "needed choices": ["CONTROLLER Told", "Hidden Girl Revealed", "Didn't Find Breaker", "Dominion Calm", "Engeki Stayed"], "categories": {"CONTROLLER": "told", "HIDDEN GIRL": "revealed", "BREAKER": "didn't find", "FRIGHTENED DOMINION": "calm", "UNKNOWN SISTER": "stayed"}, "label": "act3_path26", "extra options": [], "hidden": False}, 
+    {"title": "The Raging Tide", "JP": "津波", "needed choices": ["CONTROLLER Told", "Hidden Girl Revealed", "Didn't Find Breaker", "Dominion Burst", "Engeki Stayed"], "categories": {"CONTROLLER": "told", "HIDDEN GIRL": "revealed", "BREAKER": "didn't find", "FRIGHTENED DOMINION": "burst", "UNKNOWN SISTER": "stayed"}, "label": "act3_path27", "extra options": [], "hidden": False}, 
+    {"title": "The Control Reject", "JP": "CONTROLLERの拒否", "needed choices": ["CONTROLLER Told", "Hidden Girl Revealed", "Didn't Find Breaker", "Dominion Left Behind", "Engeki Stayed"], "categories": {"CONTROLLER": "told", "HIDDEN GIRL": "revealed", "BREAKER": "didn't find", "FRIGHTENED DOMINION": "left behind", "UNKNOWN SISTER": "stayed"}, "label": "act3_path28", "extra options": [], "hidden": False}, 
+    {"title": "The Big Stage", "JP": "大舞台", "needed choices": ["CONTROLLER Told", "Hidden Girl Kept Secret", "Yuri Alive", "Engeki Left"], "categories": {"CONTROLLER": "told", "HIDDEN GIRL": "hidden", "KIND MAN": "followed", "UNKNOWN SISTER": "left"}, "label": "act3_path29", "extra options": [], "hidden": False}, 
+    {"title": "The Bad Past", "JP": "悪い過去", "needed choices": ["CONTROLLER Told", "Hidden Girl Kept Secret", "Yuri Killed", "Engeki Left"], "categories": {"CONTROLLER": "told", "HIDDEN GIRL": "hidden", "KIND MAN": "ran away", "UNKNOWN SISTER": "left"}, "label": "act3_path30", "extra options": [], "hidden": False}, 
+    {"title": "The Puppet Source", "JP": "人形の源", "needed choices": ["CONTROLLER Told", "Hidden Girl Kept Secret", "Yuri Alive", "Engeki Stayed"], "categories": {"CONTROLLER": "told", "HIDDEN GIRL": "hidden", "KIND MAN": "followed", "UNKNOWN SISTER": "stayed"}, "label": "act3_path31", "extra options": [], "hidden": False},
+    {"title": "The Blame Faults", "JP": "責任転嫁", "needed choices": ["CONTROLLER Told", "Hidden Girl Kept Secret", "Yuri Killed", "Engeki Stayed"], "categories": {"CONTROLLER": "told", "HIDDEN GIRL": "hidden", "KIND MAN": "ran away", "UNKNOWN SISTER": "stayed"}, "label": "act3_path32", "extra options": [], "hidden": False}
 ]
 
 # define your choice filter variables here.  You must use define and not default or there will be an error.
@@ -141,16 +141,17 @@ style path_bg_text:
     size 200
     text_align 0.5
 
-default current_text = ""
-default char_list = "t_list"
-default t_list = [
-    "KILL HIM",
-    "HE NEEDS DEATH",
+define t_list = [
+    "彼を殺して下さい",
+    "彼には死が必要だ",
     "CONTROLLER",
-    "HELP ME",
-    "SAVE THEM",
-    "I RUINED HIM"
+    "助けて",
+    "みんなを救う",
+    "僕は彼を破滅させた",
+    "彼は悪い方に変わってしまった",
+    "彼はいつもこうだったのか？"
     ]
+default current_text = random_list(t_list)[0]
 
 screen path_chooser(choice_filters, path_list):
     add "black"
@@ -305,8 +306,7 @@ screen path_chooser(choice_filters, path_list):
                 text "PLAY" style "path_button_text" xalign 0.5 yalign 0.5
                 action Function(renpy.jump_out_of_context, path_list[selected_path]["label"])
             
-    timer 0.001 action SetVariable("current_text", random_list(globals()[char_list])[0])
-    timer 5.2 repeat True action SetVariable("current_text", random_list(globals()[char_list])[0])
+    timer 5.2 repeat True action SetVariable("current_text", random_list(t_list)[0])
 
 style path_button is gui_button
 

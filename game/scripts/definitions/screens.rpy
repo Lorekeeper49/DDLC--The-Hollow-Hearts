@@ -756,6 +756,7 @@ init -501 screen file_slots():
                     text "栞の名前\nNAME OF BOOKMARK" font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf" size 10 xalign 0.5 text_align 0.5
                     input default FileSaveName(slot_selected) value VariableInputValue("save_name") length 24 font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf"
                     hbox:
+                        xalign 0.5
                         if not main_menu:
                             button:
                                 background "#1eff0080" 
@@ -805,6 +806,7 @@ init -501 screen file_slots_main():
                     text "栞の名前\nNAME OF BOOKMARK" font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf" size 10 xalign 0.5 text_align 0.5
                     input default FileSaveName(slot_selected) value VariableInputValue("save_name") length 24 font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf"
                     hbox:
+                        xalign 0.5
                         if not main_menu:
                             button:
                                 background "#1eff0080" 
