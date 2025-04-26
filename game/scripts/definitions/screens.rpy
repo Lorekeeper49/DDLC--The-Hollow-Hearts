@@ -960,7 +960,16 @@ init -501 screen preferences():
                     label "Text Language" yalign 0.5
                     text "文字言語" yalign 0.75 style "pref_JP_label_text"
                 textbutton "English" action Language(None)
-                textbutton "日本語" action Language("japanese")
+                $ languages = [lang for lang in renpy.known_languages() if lang is not None]
+                $ langDisplay = ""
+                for lang in languages:
+                    python:
+                        try:
+                            with open(f"{config.gamedir}/tl/{lang}/display.txt", "r", encoding="utf-8") as file:
+                                langDisplay = file.read()
+                        except: 
+                            langDisplay = lang
+                    textbutton langDisplay action Language(lang)
             vbox:
                 xsize 440
                 style_prefix "radio"
@@ -1036,7 +1045,16 @@ init -501 screen preferences_main():
                     label "Text Language" yalign 0.5
                     text "文字言語" yalign 0.75 style "pref_main_JP_label_text"
                 textbutton "English" action Language(None)
-                textbutton "日本語" action Language("japanese")
+                $ languages = [lang for lang in renpy.known_languages() if lang is not None]
+                $ langDisplay = ""
+                for lang in languages:
+                    python:
+                        try:
+                            with open(f"{config.gamedir}/tl/{lang}/display.txt", "r", encoding="utf-8") as file:
+                                langDisplay = file.read()
+                        except: 
+                            langDisplay = lang
+                    textbutton langDisplay action Language(lang)
             vbox:
                 xsize 440
                 style_prefix "radio_main"
