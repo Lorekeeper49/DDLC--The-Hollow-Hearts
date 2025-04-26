@@ -22,7 +22,7 @@ label nstory_ch2:
     call showlocation("Luna Mansion\n{size=25}ルナの邸宅{/size}","June 21, 2018\n{size=15}2018年6月21日{/size}",23*60+59+57/60.0,"bg mansion")
     show tetsuo towards zorder 2 at t11
     $ pause(1.0)
-    hide tetsuo towards
+    hide tetsuo
     $ pause(1.0)
     n "..."
     n "Sis!  How are you doing?"
@@ -100,16 +100,102 @@ label nstory_ch2:
     return
 
 label nstory_ch3:
-    #call showlocation("???","Monday, March 1, 2018",21,59,57)
-
+    play ambience creepy
+    scene bg bad_bedroom with dissolve_scene_half
+    $ char_perspective = "Aoruguri"
+    call showlocation("Luna Mansion\n{size=25}ルナの邸宅{/size}","June 21, 2018\n{size=15}2018年6月21日{/size}",23*60+59+57/60.0,"bg mansion")
+    a "What he does is painful!"
+    a "Guy's a fucking sadist!"
+    show tetsuo towards zorder 2 at t11
+    a "He forces us to hurt so many people for his own gain..."
+    a "All to build the world his brother envisions."
+    a "A world that they control."
+    hide tetsuo
+    a "And worst of all..."
+    a "We're not the only ones being used."
+    show wraith_black zorder 2 at t11
+    a "There's someone else in this home."
+    a "I don't know who they are but..."
+    a "I got this strong feeling that they're being used for some crazy deed."
+    a "Especially after our brother ran away."
+    a "I don't know what he found out, but it's probably pretty bad."
+    hide wraith_black
+    a "And the screaming..."
+    a "The blood curdling fucking screaming!"
+    a "It's from our mother..."
+    a "And it's nightmare inducing!"
+    a "He hates us!"
+    show mari forward sad zorder 2 at t11
+    a "And our mother can't fight back!"
+    a "At this point, I wouldn't surprised if he forced us to watch him rape her."
+    hide mari
+    n "What the fuck?"
+    a "Exactly."
+    a "This old man is fucked up."
+    a "And we need him dead."
+    show lilly casual norm a2e zorder 2 at t21
+    show yuri turned casual zorder 2 at t22
+    a "Think you could help us?"
+    lil c3 "I'm not sure if we can-{nw}"
+    y angr rup om "Yes!"
+    lil c3e "Sis!"
+    y anno "I don't what I'm doing but I'm doing it."
+    show lilly a2e
+    y angr "We're in a similar position and we don't want anyone to suffer like we have."
+    y rdown "What plans do you have?"
+    show yuri cm
+    a "None at the moment."
+    y om "That's fine."
+    y rup "We'll figure something out."
+    y lup "Together!"
+    y ldown "We'll help you out.  We promise."
     return
 
 label nstory_ch4:
-    call showlocation("???","Monday, August 1, 2018",23,59,57)
+    play ambience creepy
+    scene bg bad_bedroom with dissolve_scene_half
+    call showlocation("Luna Mansion\n{size=25}ルナの邸宅{/size}","July 5, 2018\n{size=15}2018年7月5日{/size}",23*60+59+57/60.0,"bg mansion")
+    show yuri turned casual zorder 2 at t11
+    y om "Hello."
+    n "Where have you been?"
+    y curi "Sorry?"
+    y rup "I don't think I've...{nw}"
+    y angr "Don't mind her." with blink
+    n "Okay?"
+    show yuri cm
+    "What the?"
+    "Does she have a split personality?"
+    n "Whatever.  Listen, my sister's downstairs, getting her regularly scheduled beat up."
+    "God, my jokes are terrible..."
+    ""
 
     return
 
 label nstory_ch5:
-    call showlocation("???","Monday, August 1, 2018",23,59,57)
-
+    play ambience creepy
+    scene bg dark_bathroom with dissolve_scene_half
+    a "Go!  Get out of here!"
+    n "What?!  I'm not leaving you!"
+    tet "Get me the fuck out of here this instant!"
+    a "GO!!!"
+    n "...!"
+    y "Natsuki..."
+    y "Trust her."
+    n "..."
+    n "Okay..."
+    stop ambience fadeout 1.0
+    scene bg mansion with wipeleft
+    $ pause(1.0)
+    play sound thunder2
+    scene bg club_day 
+    show natsuki turned dist rhip lhip zorder 2 at t11
+    with Fade(0.1, 5.0, 3.0, color="#fff")
+    $ char_perspective = "Taiyen"
+    n om "I never saw her again after that..."
+    n ldown "I thought she was dead..."
+    n cm "..."
+    n om "I need a minute..."
+    hide natsuki
+    "She walks to the back of the room."
+    "We give her time to recover."
     return
