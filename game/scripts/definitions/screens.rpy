@@ -966,9 +966,9 @@ init -501 screen preferences():
                     python:
                         try:
                             with open(f"{config.gamedir}/tl/{lang}/display.txt", "r", encoding="utf-8") as file:
-                                langDisplay = file.read()
+                                langDisplay = file.read().strip()
                         except: 
-                            langDisplay = lang
+                            langDisplay = lang.capitalize()
                     textbutton langDisplay action Language(lang)
             vbox:
                 xsize 440
@@ -1051,9 +1051,9 @@ init -501 screen preferences_main():
                     python:
                         try:
                             with open(f"{config.gamedir}/tl/{lang}/display.txt", "r", encoding="utf-8") as file:
-                                langDisplay = file.read()
+                                langDisplay = file.read().strip()
                         except: 
-                            langDisplay = lang
+                            langDisplay = lang.capitalize()
                     textbutton langDisplay action Language(lang)
             vbox:
                 xsize 440
