@@ -965,7 +965,7 @@ init -501 screen preferences():
                 for lang in languages:
                     python:
                         try:
-                            with open(f"{config.gamedir}/tl/{lang}/display.txt", "r", encoding="utf-8") as file:
+                            with open(os.path.join(config.gamedir, "tl", lang, "display.txt"), "r", encoding="utf-8") as file:
                                 langDisplay = file.read().strip()
                         except: 
                             langDisplay = lang.capitalize()
@@ -1050,7 +1050,7 @@ init -501 screen preferences_main():
                 for lang in languages:
                     python:
                         try:
-                            with open(f"{config.gamedir}/tl/{lang}/display.txt", "r", encoding="utf-8") as file:
+                            with open(os.path.join(config.gamedir, "tl", lang, "display.txt"), "r", encoding="utf-8") as file:
                                 langDisplay = file.read().strip()
                         except: 
                             langDisplay = lang.capitalize()
