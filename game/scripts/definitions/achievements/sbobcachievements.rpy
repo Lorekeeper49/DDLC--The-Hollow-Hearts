@@ -78,7 +78,6 @@ screen achievements():
 
 screen achievements_main():
     default numachievements = len(persistent._achievements)
-    add "mod_assets/gui/choice_bg.png" alpha 0.5 xzoom -1.0 at navigation_transform()
     fixed at navigation_transform(440):
         yoffset -10
         order_reverse True

@@ -460,7 +460,6 @@ init -501 screen navigation():
                 action Quit(confirm=not main_menu) 
 
 init -501 screen acts():
-    add "mod_assets/gui/choice_bg.png" alpha 0.5 xzoom -1.0 at navigation_transform()
     vbox at navigation_transform(440, 80):
         style_prefix "main_menu"
         spacing 0
@@ -772,7 +771,6 @@ init -501 screen file_slots():
                             action FileLoad(slot_selected)
 
 init -501 screen file_slots_main():
-    add "mod_assets/gui/choice_bg.png" alpha 0.5 xzoom -1.0 at navigation_transform()
     fixed at navigation_transform(440):
         yoffset -10
         order_reverse True
@@ -981,7 +979,6 @@ init -501 screen preferences():
             null height (4 * gui.pref_spacing)
 
 init -501 screen preferences_main():
-    add "mod_assets/gui/choice_bg.png" alpha 0.5 xzoom -1.0 at navigation_transform()
     fixed at navigation_transform(440):
         yoffset -10
         order_reverse True
