@@ -167,8 +167,26 @@ label nstory_ch4:
     "Does she have a split personality?"
     n "Whatever.  Listen, my sister's downstairs, getting her regularly scheduled beat up."
     "God, my jokes are terrible..."
-    ""
-
+    y rup om "If this happens as often as you make it, then that makes me want to help even more."
+    y rdown "You got a plan?"
+    show yuri cm
+    n "No, you?"
+    y anno om "Sort of..."
+    y rup "Against her better judgement, I watched you and your entire family to learn about everyone."
+    "I didn't even notice!"
+    show yuri cm
+    "Wait, hold on. 'Her'?"
+    n "That's the second time you've mentioned 'her'.  Who is she?"
+    y ce om "That's a long story..."
+    "Now I'm sure she has a split personality."
+    show yuri cm
+    n "So your Yuri?"
+    y neut oe om "{i}She{/i} is Yuri."
+    y happ "{i}I{/i} am called 'Iru'."
+    y rdown "But I assure you, {i}we{/i} are the same person."
+    "This doesn't make any sense."
+    y angr rup "Anyway, there's a lot I know now, and I want to use it to help you."
+    y rdown "Here's what we're gonna do..."
     return
 
 label nstory_ch5:
