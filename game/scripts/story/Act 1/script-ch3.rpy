@@ -235,7 +235,7 @@ label act1_ch3_main:
         t "That you're a lesbian?"
         n neut "Oh."
         n laug "That's a bit of an embarrassing topic."
-        show natuski cm
+        show natsuki cm
         t "It's fine, you don't have to say anything."
         n om "Well, if you'll allow me..."
         show natsuki ce cm
@@ -306,6 +306,8 @@ label act1_ch3_main:
     $ pause(3.0)
     n cross dist om "And there's the bell..."
     "Today's gonna be a slow day..."
+    stop ambience fadeout 1.0
+    stop ambience2 fadeout 1.0
     scene bg club_day with wipeleft_scene
     play music t5
     call showlocation("The Literature Club\n{size=25}文芸部{/size}","October 1, 2023\n{size=15}2023年10月1日{/size}",16*60+00+57/60.0, "bg club_day")
@@ -349,11 +351,33 @@ label act1_ch3_main:
     show yuri turned dist rup ce om zorder 2 at l21
     y "Let's just read the story."
     call ystory
-
-
-
+    show lilly norm a2e zorder 2 at t22
+    show yuri turned anno rup zorder 2 at t21
+    y om "Lilly, I don't remember saying any of this."
+    lil c2e "I didn't think that was Iru."
+    y angr "And who is this 'Iru' you keep mentioning?"
+    t "Uhh..."
+    hide yuri
+    hide lilly
+    show monika forward laug rhip zorder 2 at t11
+    m om "Alright you two, break it up.  We don't want a repeat of last year."
+    show monika cm
+    t "What kind of arguments does this club get into?"
+    m om "Yes."
+    "That's a scary answer."
+    m lpoint "Anyway, I'm guessing there's more to be said about that later."
+    m happ ldown "What Yuri said in that story was nice."
+    m curi "Or I guess Iru... whoever that is."
+    m neut ce "Alright, I'll go next."
+    call mstory
+    show monika forward rhip om zorder 2 at t11
+    m "You won't like the next chapter, warning you now."
+    "Everyone takes the warning."
+    m rdown "Who's next?"
+    hide monika
+    t "I'll go."
     call tstory
-    show monika turned dist rhip zorder 2 at t21
+    show monika forward dist rhip zorder 2 at t21
     show natsuki turned dist rhip zorder 2 at t22
     n om "So that's why you looked familiar..."
     t "You recognized me?"
@@ -363,9 +387,37 @@ label act1_ch3_main:
     hide monika
     show natsuki at t11
     "Natsuki and I swap places."
-    n cross om "This is where my father really started to break and become worse than he already was."
+    n cross om "This is where talk about... what my father did..."
     call nstory
-    
+    show natsuki cross zorder 2 at t11
+    t "Jesus.  That sounds like hell."
+    n dist om "Yeah, it was..."
+    show natsuki cm
+    "Everyone's silent, not wanting to dampen the mood any further."
+    n turned rhip "Who's next?"
+    show natsuki at lhide
+    hide natsuki
+    show kotonoha turned lchest zorder 2 at r11
+    k om "Me."
+    call kstory
+    show kotonoha turned zorder 2 at t11
+    t "So, you went back."
+    k anno lup ce om "Against my better judgement, but yes."
+    k rhip ldown "Would love to know why I was lead there."
+    t "Guess we'll find out later."
+    k  neut rdown oe "Yeah, we'll do more investigations."
+    k rhip "Sayori, you're up last."
+    show kotonoha at lhide
+    hide kotonoha
+    show sayori turned zorder 2 at r11
+    s om "Okay."
+    call sstory
+    show sayori turned zorder 2 at t11
+    t "Forgot that happened..."
+    s om "Yeah, all this was... a lot."
+    s rup "This entire thing was just so much happening at once that I almost forgot about this moment altogether."
+    t "Mm."
+    "With all our stories read, we go about the rest of the day normally and head home."
     return
 
 label introaoruguri:
