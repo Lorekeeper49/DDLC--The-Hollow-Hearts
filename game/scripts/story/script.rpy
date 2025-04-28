@@ -29,7 +29,7 @@ label start:
     show location_text "プロローグ\n{size=35}Prologue{/size}\nクラブオーダー\n{size=35}Club Order{/size}" zorder 10000 at center_zoom(0.5, 1.0, 6.0) with Dissolve(2.0)
     $ pause(1.0)
     hide location_text with Dissolve(2.0)
-    call ch0_main from _call_ch0_main
+    call ch0_main
 
     achieve newfriends
     scene black with dissolve_scene_full
@@ -49,23 +49,23 @@ label act1:
     call act_trans
     $ chapter = 1
     call chapter_trans("ブレイカー\n{size=35}Breaker{/size}")
-    call act1_ch1_main from _call_act1_ch1_main
+    call act1_ch1_main 
 
     $ chapter = 2
     call chapter_trans("プリカーサーズ\n{size=35}The Precursors{/size}")
-    call act1_ch2_main from _call_act1_ch2_main
+    call act1_ch2_main 
 
     $ chapter = 3
     call chapter_trans("悪い事\n{size=35}The Wrong Thing{/size}")
-    call act1_ch3_main from _call_act1_ch3_main
+    call act1_ch3_main 
 
     $ chapter = 4
     call chapter_trans("過去\n{size=35}The Past{/size}")
-    call act1_ch4_main from _call_act1_ch4_main
+    call act1_ch4_main 
 
     $ chapter = 5
-    call chapter_trans("")
-    call act1_ch5_main from _call_act1_ch5_main
+    call chapter_trans("彼女は何処にでもいる\n{size=35}The One That's Everywhere{/size}")
+    call act1_ch5_main 
 
     $ chapter = 6
     call chapter_trans("敵\n{size=35}The Enemy{/size}")
@@ -83,7 +83,7 @@ label act2:
     $ act = 2
     call act_trans
     $ chapter = 1
-    call chapter_trans("夜に活動するクラブ\n{size=35}A Club That Works at Night")
+    call chapter_trans("夜に活動するクラブ\n{size=35}A Club That Works at Night{/size}")
     call act2_ch1_main
 
     $ chapter = 2
@@ -110,7 +110,7 @@ label act2_alt:
     $ act = 2
     call act_trans
     $ chapter = 1
-    call chapter_trans("夜に活動するクラブ\n{size=35}A Club That Works at Night")
+    call chapter_trans("夜に活動するクラブ\n{size=35}A Club That Works at Night{/size}")
     call act2_ch1_main
 
     $ chapter = 2
@@ -215,7 +215,7 @@ label dev:
                         $ chapter = 5
                         "BEGINNING CHAPTER 5"
                         $ hanato = "神山華翔\n{size=15}Kamiyama Hanato"
-                        call chapter_trans("")
+                        call chapter_trans("彼女は何処にでもいる\n{size=35}The One That's Everywhere{/size}")
                         call act1_ch5_main
                     "CHAPTER 6":
                         $ chapter = 6
