@@ -45,7 +45,7 @@ label sstory_ch2:
 
 label sstory_ch3:
     play music confdep
-    scene bg shouse_night 
+    scene bg shouse_day 
     show vignette
     with dissolve_scene_half
     t "Are you okay?"
