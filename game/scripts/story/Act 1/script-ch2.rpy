@@ -6,10 +6,10 @@ label act1_ch2_main:
     $ window_style = ""
     $ nb = "namebox"
     show monika forward rhip zorder 2 at t11
-    $ add_to_inv("Pen", "ペン", _("A pen for writing"))
-    $ add_to_inv("Notebook", "ノートブック", _("My massive collection of notes"))
-    $ add_to_inv("PC", "パソコン", _("My crappy laptop."))
-    $ add_to_inv("Phone", "スマホ", _("My UNBREAKABLE 12151109"))
+    $ add_to_inv("Pen", "ペン", _("A pen for writing."))
+    $ add_to_inv("Notebook", "ノートブック", _("My massive collection of notes."))
+    $ add_to_inv("PC", "パソコン", _("My crappy laptop.  I need a replacement."))
+    $ add_to_inv("Phone", "スマホ", _("My UNBREAKABLE 12151109."))
     "Routine checkup."
     m om "Any progress?"
     t "No."
@@ -94,8 +94,7 @@ label act1_ch2_main:
     "And I have seat 1-3 at the front of the class."
     $ pla = "先生\n{size=15}Teacher{/size}"
     general "Alright class!  Let's begin!"
-
-
+    "I go about my day as normal."
     stop music fadeout 1.0
     play ambience river fadein 2.0
     play ambience2 forest fadein 2.0
@@ -243,8 +242,42 @@ label act1_ch2_main:
     "It actually wasn't my idea to attend this class, it was Monika-chan's.  She makes music as a hobby alongside her other duties."
     "And honestly, I'm glad she suggested it, I'm having a lot of fun making music."
     "Nobody knows it was her idea though."
-    
+    "Fun fact: Music is actually my favorite form of media."
+    "Something about the way it sounds and the things it tells is honestly so beautiful to me."
+    "...{w=1}Okay seriously, who am I explaining this to?"
+    "I never talk to myself this much."
+    "Anyway..."
+    menu(time=5.0,force=1):
+        "What do I want to do for this piece?"
 
+        "Rock":
+            pass
+        "Pop":
+            pass
+        "Classical":
+            pass
+        "Something new":
+            pass
+    stop music
+    "Stop."
+    "I don't choose genres, they come naturally."
+    "Seriously.  I just put notes together and the genre just forms itself."
+    "So why am I considering this?"
+    "Why am I suddenly doing something different than usual?"
+    "I noticed this yesterday too, but I didn't pick up on it."
+    "These can't be my actions, can it?"
+    "I look at my hands, unsure of what's going on."
+    "Who are you if not me?"
+    "Heh, that's a good song idea.  I should write that down."
+    with wipeleft_scene
+    "I'm not sure what to do."
+    "I'm too busy thinking about... you.  If you are there."
+    "Who are you?"
+    "What do you want?"
+    play sound bell
+    $ pause(1.0)
+    "I don't even have time to question you before the bell rings."
+    "Guess we'll talk later."
     play music t3
     scene bg club_day with wipeleft_scene
     call showlocation("The Literature Club\n{size=25}文芸部{/size}","September 30, 2023\n{size=15}2023年9月30日{/size}",16*60+29+57/60.0, "bg club_day")
@@ -430,7 +463,7 @@ label act1_ch2_main:
     hide natsuki
     show lilly norm c1e zorder 1 at t11
     lil "You guys have been staring at me like that the entire story, is something wro-{nw}"
-    show natsuki lsur rhip om zorder 2 at r22
+    show natsuki turned lsur rhip om zorder 2 at r22
     show lilly at t21
     n "I'm not going to be able to sleep tonight."
     n shoc rdown "What the fuck kind of doll is able to walk, talk, and feel like a real person?!"
@@ -449,13 +482,13 @@ label act1_ch2_main:
     show natsuki turned shoc om zorder 2 at h22
     $ pause(0.5)
     hide vignette onlayer foreground
-    $ pause(0.5)
+    $ pause(0.1)
     show vignette onlayer foreground
-    $ pause(0.5)
+    $ pause(0.1)
     hide vignette onlayer foreground
     $ pause(0.5)
     show vignette onlayer foreground
-    $ pause(0.5)
+    $ pause(0.1)
     scene bg club_day
     show lilly norm b zorder 1 at t41
     show yuri turned worr ce om zorder 2 at t21
@@ -472,7 +505,7 @@ label act1_ch2_main:
     m om "Well, after that incredibly shocking revelation, how are we feeling?"
     show monika cm
     "No one has the words to answer."
-    m rdown om "Yeah, I expect that."
+    m rdown om "Yeah, I expected that."
     m lpoint "I think we should all head home."
     m happ rhip "So tomorrow, same deal as today, so bring your books."
     m ldown "Dismissed!"
