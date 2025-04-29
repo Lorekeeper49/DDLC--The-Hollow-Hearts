@@ -126,7 +126,7 @@ label act1_ch4_main:
     lil w3e2b "I left this life so long ago!"
     stop ambience
     stop ambience2
-    play music static
+    play music jumpscare
     $ renpy.music.set_volume(0.25, delay=0, channel="music")
     lil doll c0 "{b}He forced me to be alone!{/b}"
     hide natsuki
@@ -154,10 +154,42 @@ label act1_ch4_main:
     "Back then, when I first met Lilly..."
     "I was the one who came to her."
     "But... she wouldn't talk to me..."
-    # Transition to scene of Lilly and Taiyen's first meeting
-    
-
-    scene black with dissolve_scene
+    play sound flashback
+    scene bg corridor
+    show memory_vignette onlayer foreground
+    with flashback_start
+    play music confdep
+    "I wondered for a while why she wouldn't talk to me."
+    "Why she wouldn't talk to anyone for that matter."
+    "She just stayed in the background."
+    "Like the doll that she is."
+    show lilly norm a1 zorder 2 at t11
+    "And when I actually did try to talk to her."
+    hide lilly
+    "She ran off without a word to say to me."
+    scene black with dissolve
+    "But that wasn't the only time."
+    scene bg class_day with dissolve
+    show lilly norm a1 zorder 2 at t11
+    "I don't know why, but I kept trying her."
+    hide lilly
+    "And every time, she kept running away."
+    scene black with dissolve
+    "Until finally..."
+    scene bg music_room with dissolve
+    show lilly norm a1 zorder 2 at t11
+    "She opened up to me."
+    "She told me why she hasn't been talking to people and what her father has been forcing her to do."
+    show lilly doll a0
+    "She didn't say she was a doll though."
+    "How would she?"
+    "I never found out about what she was until a few days ago."
+    "And with the amount of things she's been telling us now..."
+    "No doubt she has been put through hell."
+    "..."
+    hide memory_vignette onlayer foreground
+    scene black 
+    with flashback_end
     "As I retell this story, I realize that I am not just talking to myself."
     show dark zorder 3
     show hanato night zorder 2 at t11
@@ -227,6 +259,7 @@ label act1_ch4_main:
     lil "{b}*Sob*{/b}"
     t "It's okay."
     t "Just let it out."
+    stop music fadeout 2.0
     scene bg club_day with dissolve_scene_full
     show monika forward neut rhip om zorder 2 at t11
     m "Jesus."
@@ -270,14 +303,18 @@ label act1_ch4_main:
     show yuri cm
     t "'Iru', huh?"
     t "Do you both exist in the same body?"
-    y anno "Yes, but..."
+    y anno om "Yes, but..."
     y ldown "I don't want to be."
     y ce "I want us to exist in different bodies."
     y oe "So that we can work together properly."
     y rdown "But I don't know how to do that."
-    y rup "Yuri, take over.  You should go next."
+    show yuri cm
+    t "..."
+    y rup om "Yuri, take over.  You should go next."
     show yuri dist with blink
     y rdown "I'll have to process all that later."
+    show natsuki at lhide
+    hide natsuki
     show yuri at t21
     show lilly norm a1 zorder 2 at r22
     y neut "Alright Lilly, let's do this."
