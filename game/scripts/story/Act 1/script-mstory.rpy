@@ -39,7 +39,7 @@ label mstory_ch2:
     $ renpy.music.set_volume(0.3, delay=0, channel="ambience")
     play sound flashback
     scene bg gym
-    show memory_vignette zorder 300 
+    show memory_vignette onlayer foreground
     with flashback_start
     $ kirinani = "神山霧何\n{size=15}Kamiyama Kirinani{/size}"
     call showlocation("Kanzen Academy Gym\n{size=25}完全学園高校のジム{/size}","September 2, 2020\n{size=15}2020年9月2日{/size}",60*12+4+57/60,"bg gym")
@@ -57,7 +57,9 @@ label mstory_ch2:
     "Words I would soon regret!"
     kiri "Dismissed!"
     "Tch!"
-    scene bg schoolroofstorm with flashback_end
+    hide memory_vignette onlayer foreground
+    scene bg schoolroofstorm 
+    with flashback_end
     $ renpy.music.set_volume(1, delay=0, channel="ambience")
     "I've seen people be expelled for things they've said about the school..."
     "{i}Outside it!{/i}"

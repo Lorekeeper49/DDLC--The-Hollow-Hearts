@@ -405,7 +405,7 @@ label act1_ch3_main:
     k anno lup ce om "Against my better judgement, but yes."
     k rhip ldown "Would love to know why I was lead there."
     t "Guess we'll find out later."
-    k  neut rdown oe "Yeah, we'll do more investigations."
+    k neut rdown oe "Yeah, we'll do more investigations."
     k rhip "Sayori, you're up last."
     show kotonoha at lhide
     hide kotonoha
