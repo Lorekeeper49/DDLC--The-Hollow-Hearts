@@ -169,6 +169,7 @@ label act1_ch4_main:
     "There's someone else here."
     "You."
     "The one... looking at a screen."
+    "Or whatever you're at to see through my eyes."
     "..."
     "Look, I don't know if you're some sort of spark..."
     "An onlooker watching from a camera..."
@@ -235,8 +236,61 @@ label act1_ch4_main:
     m rdown "Please take over for now, Sayori."
     hide monika
     s "Will do!"
-
-
+    show sayori turned neut rup zorder 2 at t11
+    s om "Alright everyone, I think I'll start for today.  Got a pretty short chapter here."
+    s rdown "Not a lot happens here, just letting you know."
+    call sstory
+    show sayori turned laug rup zorder 2 at t11
+    s om "Yeah, that's it."
+    s rdown "I don't have much else to talk about."
+    s rup "Next please."
+    "She steps off pedestal."
+    t "I'll go."
+    call tstory
+    show lilly norm a1 zorder 2 at t11
+    t "Lilly, are you okay?"
+    lil h2 "I didn't want to remember that."
+    lil c3 "But it's important, something came out of me after that."
+    lil h2 "I'll tell you about it later."
+    t "Hm..."
+    hide lilly
+    show natsuki turned neut rhip zorder 2 at t11
+    n om "I'll go next."
+    call nstory
+    show natsuki cross zorder 2 at t21
+    show yuri turned curi rup zorder 2 at t22
+    n om "Yuri?"
+    n dist "Is Iru still in there?"
+    y dist ce "*Sigh*"
+    y rdown om "Take over."
+    show yuri angr oe with blink
+    y "Yes, I am still here.  Seems she finally believes I exist."
+    y ce lup rup "I don't like hiding, you know.  But she wouldn't let me through."
+    y oe "I'm glad to finally be able to show myself fully."
+    show yuri cm
+    t "'Iru', huh?"
+    t "Do you both exist in the same body?"
+    y anno "Yes, but..."
+    y ldown "I don't want to be."
+    y ce "I want us to exist in different bodies."
+    y oe "So that we can work together properly."
+    y rdown "But I don't know how to do that."
+    y rup "Yuri, take over.  You should go next."
+    show yuri dist with blink
+    y rdown "I'll have to process all that later."
+    show yuri at t21
+    show lilly norm a1 zorder 2 at r22
+    y neut "Alright Lilly, let's do this."
+    call ystory
+    show monika forward happ rhip zorder 2 at t11
+    m om "I'm back!"
+    show monika cm
+    t "Good timing, Yuri just finished reading her story."
+    show kotonoha turned happ rhip zorder 2 at r22
+    k om "I think I'll go next."
+    show kotonoha cm
+    m lpoint om "Then get up here Kotonoha."
+    m ldown "In the meantime, your brother can tell me what happened."
     call kstory
     show kotonoha turned doub lup zorder 2 at t11
     k om "Almost ran into the bastard while escaping, but I did make it out in the end."
@@ -259,10 +313,46 @@ label act1_ch4_main:
         "Tell them about me.":
             if not "CONTROLLER Told" in persistent.choices_made:
                 $ persistent.choices_made.append("CONTROLLER Told")
-
+            t "It is."
+            show monika shoc rdown
+            "What?"
+            "Are you seriously telling them about yourself?"
+            t "This is not Taiyen talking."
+            "You're really going through with this."
+            "Wow.  Maybe I {i}can{/i} trust you."
+            menu:
+                "Be direct.":
+                    t "This wasn't the original plan."
+                    t "None of you were supposed to know about this."
+                    t "I, CONTROLLER, am going against the will of my boss."
+                    t "I am probably going to regret this, but you all had to know."
+                    t "I'll let Taiyen take back control now."
+                "Be honest.":
+                    t "I don't know what the original plan was, but it certainly wasn't this."
+                    t "None of you were supposed to know about this."
+                    t "I, CONTROLLER, am going against the will of my boss."
+                    t "My boss isn't in the room where I am controlling Taiyen."
+                    t "So I'm taking the chance to tell you."
+                    t "I am probably going to regret this, but you all had to know."
+                    t "I'll let Taiyen take back control now."
+                "I'm not sure how to say it, you handle this.":
+                    "That I will do."
+                    t "Now this is Taiyen talking, they're letting me handle this."
+                    t "I've noticed for a while now, my choices haven't been my own."
+                    t "I don't know who this guy is, but it's clear that his boss is that old principal."
+                    t "And I don't know what his plan is, but I'll bet it's not what this guy's letting me do."
+            m "..."
+            hide monika
+            show sayori turned shoc om zorder 2 at t11
+            s "..."
+            hide sayori
+            show kotonoha turned shoc om zorder 2 at t11
+            k "..."
+            hide kotonoha
+            "Everyone's too much in shock to respond."
         "Say nothing.":
             if not "CONTROLLER Untold" in persistent.choices_made:
                 $ persistent.choices_made.append("CONTROLLER Untold")
-
-    
+            t "..."
+    "We'll talk more tomorrow."
     return
