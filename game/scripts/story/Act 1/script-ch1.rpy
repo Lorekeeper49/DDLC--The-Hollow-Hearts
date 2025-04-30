@@ -7,6 +7,7 @@ label act1_ch1_main:
     scene bg tlivingroom
     with dissolve_scene_full
     call showlocation("Sakura Household\n{size=25}桜の家庭{/size}","September 29, 2023\n{size=15}2023年9月29日{/size}",7*60+0+0/60.0,"bg tlivingroom")
+    $ char_perspective = "Taiyen"
     t "Agh!  I can't focus!"
     "Been trying to play my favorite game to get my mind off it, but it's bothering me so much!"
     "What were those voices I heard last night?"
@@ -20,13 +21,13 @@ label act1_ch1_main:
     k ce om "Yes."
     k oe lup "I know his voice like no other."
     t "Because of your crush on him, right?"
-    k surp cm "!!!"
+    k lsur cm "!!!"
     k nerv om ldown "Well- yes, but that's not the point!"
     show kotonoha cm
     "Don't think you should be smiling."
     kmind neut "Don't think you should be internally monologing."
     t "Touchè."
-    k rdown "Anyway..."
+    k rdown om "Anyway..."
     k lup "Remember that experiment we did years ago?"
     t "Yes."
     k ldown rhip "Well, he's alive."
@@ -46,12 +47,12 @@ label act1_ch1_main:
     t "That's who..."
     t "Damn it!  They were right!"
     t "It was my fault!"
-    k worr om "Tai-kun?"
+    k om "Tai-kun?"
     t "I... I need some fresh air!"
     stop ambience fadeout 1.0
     scene bg house with wipeleft_scene
     t "*Deep breath*"
-    show kotonoha turned casual worr zorder 2 at t11
+    show kotonoha turned casual zorder 2 at t11
     k om "Are you okay?"
     show kotonoha cm
     t "...{w=2}I'll be fine."
@@ -184,6 +185,68 @@ label act1_ch1_main:
     "And we spent an hour trying to explain that it just means to talk about it another day."
     "*Sigh* The terminology of boy and girl..."
     "That sounds worse now that I hear it in my head."
-
-
+    "Anyway, we are now in the dreaded deep forest."
+    "The reason why it's dreaded is it's maze like layout that seems to change every 24 hours."
+    "Or at least that's people think it does-{nw}"
+    stop music
+    play sound "sfx/monikapound.ogg"
+    show bg factory onlayer forebackground with Fade(0.1, 0.0, 0.1, color="#fff")
+    $ pause(0.05)
+    hide bg factory onlayer forebackground
+    with Fade(0.1, 0.0, 0.1, color="#fff")
+    t "Ah!"
+    show sayori turned casual pani lup rup om zorder 2 at t11
+    s "Taiyen!  You're awake!  Are you okay?!"
+    t "I think so..."
+    s ldown "My stream's back on too."
+    s neut "My phone shut down exactly like you did, so I couldn't call an ambulance."
+    s rdown "What the hell was that?"
+    t "You tell me."
+    "I carefully get up."
+    t "How long was I out?"
+    s rup "According to my stream pause time, 5 minutes."
+    "The one time where stream pause time trackers seem useful to me."
+    t "That's it?"
+    t "Well, I guess the factory did only flash in front me for a second."
+    s curi "The factory?"
+    t "Oh, yeah.  Uh..."
+    t "Palace Factories Incorporated's core factory flashed in my vision for a second when I was knocked out."
+    s shoc "Are you serious?!"
+    t "Yeah..."
+    t "I wanted to forget about that place."
+    hide sayori
+    t "..."
+    t "Just realized something..."
+    t "This location is near where we built the core factory."
+    t "Okay, we need to talk about this."
+    t "Let's get out of here first, then we'll theorize why this happened."
+    call deadfast("bg park_day")
+    t "Okay, we're out.  Thought that would be a little more difficult."
+    t "Anyway..."
+    show sayori turned casual zorder 2 at t11
+    t "So, did you see anything when I was knocked out?"
+    s om "A black silhouetted figure."
+    s rup "It was the same color as Breaker was for all the tests."
+    show sayori cm
+    t "Seriously?"
+    t "I seem to remember ONE's substance being completely clear, then glowing white when administered."
+    t "Well anyway..."
+    t "If that's what attacked me and I saw the core factory when it did..."
+    t "Then maybe..."
+    t "Do you remember any of our ingredients being wraith essence?"
+    s om "No?"
+    show sayori cm
+    t "Then that throws that out the window."
+    t "But why would it be the same color as..."
+    $ pla = "???"
+    general "THEY TORTURED US!{nw}"
+    t "Hey, do you hear something?"
+    s om "No?"
+    s dist rdown "I'm too focused on the forest to..."
+    s ce "*Sigh*"
+    s oe rup "Alright chat.  I think I'm about ready to head home."
+    t "I don't blame you."
+    "Neither does said chat."
+    t "We'll talk more about this later."
+    "With that, Sayori closes the stream and we call it a day."
     return
