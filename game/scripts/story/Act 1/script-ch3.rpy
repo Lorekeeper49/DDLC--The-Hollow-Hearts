@@ -119,7 +119,7 @@ label act1_ch3_main:
     hide aragaki
     show sayori turned doub zorder 2 at t11
     s om "Uh, Taiyen..."
-    s nuet rup "Look at the last rule."
+    s neut rup "Look at the last rule."
     "She has me worried."
     hide sayori
     stop music fadeout 1.0

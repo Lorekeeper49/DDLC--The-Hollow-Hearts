@@ -6,7 +6,7 @@ label act1_ch4_main:
     call showlocation("Kamiyama Park\n{size=25}神山のパーク{/size}","October 2, 2023\n{size=15}2023年10月2日{/size}",5*60+0+0/60.0,"bg park_01")
     $ window_style = ""
     $ nb = "namebox"
-    "Sayori and I woke up early and couldn't get back to sleep so we decided to practice archery by literally firing on each other while going through the arrows since we don't have actual targets."
+    "Sayori and I woke up early so we decided to practice archery by literally firing on each other while going through the arrows since we don't have actual targets."
     show sayori turned neut cm zorder 2 at t11
     "Sayori aims the bow at me and draws an arrow."
     "I go into ghost mode."
@@ -24,7 +24,7 @@ label act1_ch4_main:
     s happ om rup "Thanks!"
     show sayori neut
     "She puts away her bow and changes the subject."
-    s rdown "You remember prelife?"
+    s rdown "You remember pre-life?"
     t "How could I forget when we were at war with that storm for the entire century that we were in there!"
     t "Not to mention, you're literally writing about it."
     s worr rup "You know, I'm worried about her."
@@ -350,6 +350,7 @@ label act1_ch4_main:
         "Tell them about me.":
             if not "CONTROLLER Told" in persistent.choices_made:
                 $ persistent.choices_made.append("CONTROLLER Told")
+            $ ctold = True
             t "It is."
             show monika shoc rdown
             "What?"
@@ -390,6 +391,7 @@ label act1_ch4_main:
         "Say nothing.":
             if not "CONTROLLER Untold" in persistent.choices_made:
                 $ persistent.choices_made.append("CONTROLLER Untold")
+            $ ctold = False
             t "..."
     "We'll talk more tomorrow."
     return

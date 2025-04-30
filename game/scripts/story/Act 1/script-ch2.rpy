@@ -247,7 +247,7 @@ label act1_ch2_main:
     "...{w=1}Okay seriously, who am I explaining this to?"
     "I never talk to myself this much."
     "Anyway..."
-    menu(time=5.0,force=1):
+    menu(time=1.0,force=1):
         "What do I want to do for this piece?"
 
         "Rock":

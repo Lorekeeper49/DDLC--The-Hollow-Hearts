@@ -4,6 +4,7 @@ default found_breaker = False
 default secrets = False
 default en_out = False
 default followed = False
+default ctold = False
 default persistent.choices_made = []
 define extra_selected = []
 define selected_path = -1

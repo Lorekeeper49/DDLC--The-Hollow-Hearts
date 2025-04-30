@@ -137,7 +137,7 @@ label tstory_ch4:
     $ pause(1.0)
     $ char_perspective = "Taiyen"
     scene bg factory 
-    show lilly norm a2e zorder 2 at t11
+    show lilly norm casual a2e zorder 2 at t11
     with dissolve_scene_full
     t "Are you okay?"
     lil c2e "Sort of..."
