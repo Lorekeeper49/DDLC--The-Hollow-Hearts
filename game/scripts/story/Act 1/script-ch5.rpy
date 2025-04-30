@@ -2,7 +2,6 @@ label act1_ch5_main:
     stop music fadeout 2.0
     scene bg bedroom
     with dissolve_scene_full
-    play music t2
     call showlocation("Taiyen's Room\n{size=25}隊円の部屋{/size}","October 3, 2023\n{size=15}2023年10月3日{/size}",6*60+0+0/60.0,"bg bedroom")
     $ window_style = ""
     $ nb = "namebox"
@@ -49,7 +48,7 @@ label act1_ch5_main:
     $ window_style = "fake"
     $ nb = "namebox_fake"
     scene bg club_day with wipeleft_scene
-    call showlocation("The Literature Club\n{size=25}文芸部{/size}","October 3, 2023\n{size=15}2023年10月3日{/size}",16*60+29+57/60.0, "bg club_day")
+    call showlocation("The Literature Club\n{size=25}文芸部{/size}","October 3, 2023\n{size=15}2023年10月3日{/size}",15*60+29+57/60.0, "bg club_day")
 
     call kstory
 
