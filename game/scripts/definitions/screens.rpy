@@ -572,7 +572,7 @@ default -501 dynamics = random_list(bgs)[0]
 init -501 screen main_menu(): 
     tag menu
     style_prefix "main_menu"
-    add dynamics at bg_transform
+    add dynamics alpha 0.75 at bg_transform
 
     if gui.show_name:
 
