@@ -1,7 +1,7 @@
 define persistent.demo = False
 define persistent.steam = ("steamapps" in config.basedir.lower())
-define config.developer = True
-define config.console = True
+define config.developer = False
+define config.console = False
 default can_cont = True
 
 python early:
