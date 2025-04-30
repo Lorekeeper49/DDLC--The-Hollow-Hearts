@@ -474,16 +474,11 @@ init -501 screen acts():
         button:
             text "ACT 2" xpos 25 yalign 0.5 style "main_menu_button_text"
             text "アクト２" xpos 25 yalign 1.1 style "main_menu_kan"  
-            action If(achievement.has("act1fin"), [Hide("acts", _layer="textbox"), Show("path_chooser", StaticTransition, act2_choice_filters, act2_path_list)], Show(screen="dialog", message="Complete Act 1 first.", ok_action=Hide("dialog")))
+            action Show(screen="dialog", message="Unavailable in demo.", ok_action=Hide("dialog"))
         button:
             text "ACT 3" xpos 25 yalign 0.5 style "main_menu_button_text"
             text "アクト３" xpos 25 yalign 1.1 style "main_menu_kan"  
-            action If(achievement.has("act2fin"), [Hide("acts", _layer="textbox"), Show("path_chooser", StaticTransition, act3_choice_filters, act3_path_list)], Show(screen="dialog", message="Complete Act 2 first.", ok_action=Hide("dialog")))
-        if config.developer:
-            button:
-                text "DEVELOPER MODE" xpos 25 yalign 0.5 style "main_menu_button_text"
-                text "デベロッパーモード" xpos 25 yalign 1.1 style "main_menu_kan" 
-                action Function(renpy.jump_out_of_context, "dev")
+            action Show(screen="dialog", message="Unavailable in demo.", ok_action=Hide("dialog"))
 
 init -501 image nav_f:
     "mod_assets/gui/nav_f.png"
