@@ -277,7 +277,7 @@ screen path_chooser(choice_filters, path_list):
             background "#00000000"
             hover_background "#ffffff80"
             text "BACK" style "path_button_text" xalign 0.5 yalign 0.5
-            action Hide("path_chooser", StaticTransitionLong)          
+            action [SetVariable("selected_path", -1), Hide("path_chooser", StaticTransitionLong)]          
         if selected_path != -1:
             frame:
                 xalign 1.0
