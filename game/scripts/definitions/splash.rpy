@@ -204,7 +204,6 @@ label splashscreen:
 
 
     $ config.allow_skipping = False
-    $ lang_list = get_langs()
     show black
     $ config.main_menu_music = audio.t1
     if not startnow:

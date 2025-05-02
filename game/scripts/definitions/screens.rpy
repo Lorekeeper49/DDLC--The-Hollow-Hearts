@@ -891,6 +891,13 @@ init -1 style slot_button_text:
     color "#666"
     outlines []
 
+init -501 python:
+    def delete_save_data():
+        delete_all_saves()
+        renpy.loadsave.location.unlink_persistent()
+        renpy.persistent.should_save_persistent = False
+        renpy.utter_restart()
+
 init -501 screen preferences():
 
     use game_menu
@@ -974,9 +981,11 @@ init -501 screen preferences():
                 hbox:
                     label "Voice Language" yalign 0.5
                     text "音声言語" yalign 0.75 style "pref_JP_label_text"
+                $ lang_list = get_langs()
                 for lang in lang_list: 
                     textbutton lang[lang.rindex('\\')+1:] action SetVariable("persistent.voice_lang", lang[lang.rindex('\\')+1:])
-            null height (4 * gui.pref_spacing)
+            style_prefix "slider"
+            textbutton _("Delete Save Data") action Show("confirm", message=_("Are you sure you want to delate all your save data?\n(This will restart the game.)"), yes_action=Function(delete_save_data), no_action=Hide("confirm"))
 
 init -501 screen preferences_main():
     fixed at navigation_transform(440):
@@ -1058,9 +1067,11 @@ init -501 screen preferences_main():
                 hbox:
                     label "Voice Language" yalign 0.5
                     text "音声言語" yalign 0.75 style "pref_main_JP_label_text"
+                $ lang_list = get_langs()
                 for lang in lang_list: 
                     textbutton lang[lang.rindex('\\')+1:] action SetVariable("persistent.voice_lang", lang[lang.rindex('\\')+1:])
-            null height (4 * gui.pref_spacing)
+            style_prefix "slider"
+            textbutton _("Delete Save Data") action Show("confirm", message=_("Are you sure you want to delate all your save data?\n(This will restart the game.)"), yes_action=Function(delete_save_data), no_action=Hide("confirm"))
 
 init -1 style pref_label is gui_label
 init -1 style pref_label_text is gui_label_text
