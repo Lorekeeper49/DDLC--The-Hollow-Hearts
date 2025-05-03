@@ -266,4 +266,73 @@ label dev:
                             call act2_ch5_alt
                     "BACK":
                         jump dev_loop
+            "ACT 3":
+                $ act = 3
+                menu:
+                    "SELECT A PATH:"
+
+                    "The Broken Family":
+                        call act3_path1
+                    "The Tragic Past":
+                        call act3_path2
+                    "The Painful Regrets":
+                        call act3_path3
+                    "The Control Experiment":
+                        call act3_path4
+                    "The Rampant Image":
+                        call act3_path5
+                    "The Left Paths":
+                        call act3_path6
+                    "The Missing One":
+                        call act3_path7
+                    "The Curse Breaker":
+                        call act3_path8
+                    "The Timid Love":
+                        call act3_path9
+                    "The Killed Death":
+                        call act3_path10
+                    "The Deadly Storm":
+                        call act3_path11
+                    "The Lost Ones":
+                        call act3_path12
+                    "The Dead Doll":
+                        call act3_path13
+                    "The Death Emotions":
+                        call act3_path14
+                    "The Lives Taken":
+                        call act3_path15
+                    "The Lone Girl":
+                        call act3_path16
+                    "The Wrong Way":
+                        call act3_path17
+                    "The Dead Secrets":
+                        call act3_path18
+                    "The One Killer":
+                        call act3_path19
+                    "The Total Fight":
+                        call act3_path20
+                    "The Chaos War":
+                        call act3_path21
+                    "The Missing Family":
+                        call act3_path22
+                    "The Bad Time":
+                        call act3_path23
+                    "The Hated Powers":
+                        call act3_path24
+                    "The Bad Truth":
+                        call act3_path25
+                    "The Split Wraith":
+                        call act3_path26
+                    "The Raging Tide":
+                        call act3_path27
+                    "The Control Reject":
+                        call act3_path28
+                    "The Big Stage":
+                        call act3_path29
+                    "The Bad Past":
+                        call act3_path30
+                    "The Puppet Source":
+                        call act3_path31
+                    "The Blame Faults":
+                        call act3_path32
         jump dev_loop
