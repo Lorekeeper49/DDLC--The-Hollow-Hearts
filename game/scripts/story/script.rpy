@@ -161,20 +161,6 @@ label dev:
         $ allow_skipping = True
         $ config.allow_skipping = True
         $ af_enabled = True
-        $ entirestory = False
-        $ chapter = 0
-        $ clubtell = False
-        $ onlytell = False
-        $ donttell = False
-        $ class5a = False
-        $ dontknow = False
-        $ locationlie = False
-        $ cute = False
-        $ tellfans = False
-        $ dontfans = False
-        $ known = False
-        $ act = 1
-        $ aoruguri = "隠れた少女\n{size=15}Hidden Girl{/size}"
         $ window_style = ""
         $ nb = "namebox"
     label dev_start2: 
