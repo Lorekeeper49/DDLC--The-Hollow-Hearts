@@ -78,16 +78,16 @@ screen achievements():
 
 screen achievements_main():
     default numachievements = len(persistent._achievements)
-    fixed at navigation_transform(440):
-        yoffset -10
-        order_reverse True
+    frame at navigation_transform(440):
+        style "main_menu_frame"
+        ysize 720
+        xsize 500
+        background "#0001"
         viewport id "vp":
             mousewheel True
             draggable True
             has vbox
             xmaximum 500
-            null height 40
-
             for achievement_id in BOBCACHIEVEMENTS_MAP:
                 hbox:
                     spacing BOBCACHIVEMENTS_SPACING

@@ -460,9 +460,11 @@ init -501 screen navigation():
                 action Quit(confirm=not main_menu) 
 
 init -501 screen acts():
-    vbox at navigation_transform(440, 80):
+    vbox at navigation_transform(440):
         style_prefix "main_menu"
         spacing 0
+        frame:
+            background "#0001"
         button:
             text "PROLOGUE" xpos 25 yalign 0.5 style "main_menu_button_text"
             text "プロローグ" xpos 25 yalign 1.1 style "main_menu_kan"  
@@ -484,6 +486,9 @@ init -501 screen acts():
                 text "DEVELOPER MODE" xpos 25 yalign 0.5 style "main_menu_button_text"
                 text "デベロッパーモード" xpos 25 yalign 1.1 style "main_menu_kan" 
                 action Function(renpy.jump_out_of_context, "dev")
+        frame:
+            ysize 720
+            background "#0001"
 
 init -501 image nav_f:
     "mod_assets/gui/nav_f.png"
@@ -633,7 +638,7 @@ init -501 screen main_menu():
 
 init -1 style main_menu_button:
     size_group "navigation"
-    background "#0000"
+    background "#0001"
     hover_background "#0002"
     xsize 440
     ysize 80
@@ -642,7 +647,7 @@ init -1 style main_menu_button:
 
 init -1 style main_menu_frame:
     size_group "navigation"
-    background "#0000"
+    background "#0002"
     xsize 440
     ysize 80
     hover_sound gui.hover_sound
@@ -771,9 +776,10 @@ init -501 screen file_slots():
                             action FileLoad(slot_selected)
 
 init -501 screen file_slots_main():
-    fixed at navigation_transform(440):
-        yoffset -10
-        order_reverse True
+    frame at navigation_transform(440):
+        style "main_menu_frame"
+        ysize 720
+        background "#0001"
         viewport id "vp":
             mousewheel True
             draggable True
@@ -796,9 +802,9 @@ init -501 screen file_slots_main():
                     
         if slot_selected > 0:
             frame:
-                xcenter 400
+                xcenter 350
                 ycenter 100
-                background "#8181818a"
+                background "#0005"
                 vbox:
                     xalign 0.5
                     text "栞の名前\nNAME OF BOOKMARK" font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf" size 10 xalign 0.5 text_align 0.5
@@ -903,7 +909,6 @@ init -501 screen preferences():
     use game_menu
         
     fixed at game_menu_transform:
-        yoffset -10
         order_reverse True
         viewport id "vp":
             mousewheel True
@@ -988,9 +993,11 @@ init -501 screen preferences():
             textbutton _("Delete Save Data") action Show("confirm", message=_("Are you sure you want to delate all your save data?\n(This will restart the game.)"), yes_action=Function(delete_save_data), no_action=Hide("confirm"))
 
 init -501 screen preferences_main():
-    fixed at navigation_transform(440):
-        yoffset -10
-        order_reverse True
+    frame at navigation_transform(440):
+        style "main_menu_frame"
+        ysize 720
+        xsize 540
+        background "#0001"
         viewport id "vp":
             mousewheel True
             draggable True
