@@ -182,31 +182,26 @@ label dev:
                     "CHAPTER 2":
                         $ chapter = 2
                         "BEGINNING CHAPTER 2"
-                        $ hanato = "神山華翔\n{size=15}Kamiyama Hanato"
                         call chapter_trans("プリカーサーズ\n{size=35}The Precursors{/size}")
                         call act1_ch2_main
                     "CHAPTER 3":
                         $ chapter = 3
                         "BEGINNING CHAPTER 3"
-                        $ hanato = "神山華翔\n{size=15}Kamiyama Hanato"
                         call chapter_trans("秘密のベアリング\n{size=35}Bearing Secrets{/size}")
                         call act1_ch3_main
                     "CHAPTER 4":
                         $ chapter = 4
                         "BEGINNING CHAPTER 4"
-                        $ hanato = "神山華翔\n{size=15}Kamiyama Hanato"
                         call chapter_trans("過去\n{size=35}The Past{/size}")
                         call act1_ch4_main
                     "CHAPTER 5":
                         $ chapter = 5
                         "BEGINNING CHAPTER 5"
-                        $ hanato = "神山華翔\n{size=15}Kamiyama Hanato"
                         call chapter_trans("彼女は何処にでもいる\n{size=35}The One That's Everywhere{/size}")
                         call act1_ch5_main
                     "CHAPTER 6":
                         $ chapter = 6
                         "BEGINNING CHAPTER 6"
-                        $ hanato = "神山華翔\n{size=15}Kamiyama Hanato"
                         call chapter_trans("敵\n{size=35}The Enemy{/size}")
                         call act1_ch6_main
                     "BACK":
