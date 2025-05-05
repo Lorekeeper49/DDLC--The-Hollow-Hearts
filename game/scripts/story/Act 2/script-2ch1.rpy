@@ -277,7 +277,7 @@ label act2_ch1_alt:
     $ pause(0.25)
     scene bg kamiclassnight
     show tina turned vsur om at i31
-    show kotonoha turned casual surp om at i32
+    show kotonoha turned casual pani om at i32
     show lilly doll a0 at i33
     with None
     $ pause(0.25)
