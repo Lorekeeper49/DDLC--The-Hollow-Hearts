@@ -7,8 +7,8 @@ init python:
 
     poem_y = Poem(
     author = "yuri",
-    title = "Dead Life",
-    text = """\
+    title = _("Dead Life"),
+    text = _("""\
 Oh life so tangent,
 why did you hurt me so?
 why art thou have a pure life
@@ -24,13 +24,13 @@ Dead wars.
 Dead promises.
 
 I just have one question,
-why?"""
+why?""")
     )
 
     poem_n = Poem(
     author = "natsuki",
-    title = "Unknown Feelings",
-    text = """\
+    title = _("Unknown Feelings"),
+    text = _("""\
 Where is she?
 I may be lost but...
 she's in the woods.
@@ -44,13 +44,13 @@ Nothing to help her.
 Nothing to lead her.
 Nothing to guide her.
 She is gone.
-And she doesn't know it."""
+And she doesn't know it.""")
     )
 
     poem_s = Poem(
     author = "sayori",
-    title = "Before the Past",
-    text = """\
+    title = _("Before the Past"),
+    text = _("""\
 Before the past,
 what is there?
 After the future,
@@ -79,13 +79,13 @@ After the future
 we are war.
 
 It's all the same
-in an endless cycle."""
+in an endless cycle.""")
     )
 
     poem_m = Poem(
     author = "monika",
-    title = "A Perfect Girl",
-    text = """\
+    title = _("A Perfect Girl"),
+    text = _("""\
 A perfect girl is supposed to be stable.
 A perfect girl is supposed to be calm.
 A perfect girl is supposed to be happy.
@@ -100,13 +100,13 @@ A perfect girl is not happy.
 A perfect girl is not pretty.
 A perfect girl is not perfect.
 
-Nobody is."""
+Nobody is.""")
     )
 
     poem_k = Poem(
     author = "kotonoha",
-    title = "Contradicting Correlation",
-    text = """\
+    title = _("Contradicting Correlation"),
+    text = _("""\
 What do you get while your asleep?
 Nightmares.
 What do you get while your awake?
@@ -129,13 +129,13 @@ What is at the front of a coin?
 Heads.
 What is at the back of a coin?
 Tails.
-They may be different, but they're the same."""
+They may be different, but they're the same.""")
     )
 
     poem_t = Poem(
     author = "taiyen",
-    title = "I am Stupid",
-    text = """\
+    title = _("I am Stupid"),
+    text = _("""\
 I call myself that
 all the time.
 I am not a that,
@@ -157,7 +157,7 @@ I'm just bread.
 I need a head.
 
 I can do stories.
-I can't do poems."""
+I can't do poems.""")
     )
 
 image paper = "images/bg/poem.jpg"

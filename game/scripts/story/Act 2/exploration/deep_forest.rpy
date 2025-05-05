@@ -486,39 +486,11 @@ default blocked_directions = { # randomized each run
 
 init python:
     def randomize_blockages(start):
-        while True:
-            reset_blockages()
-            for coords in blocked_directions:
-                for direction in blocked_directions[coords]:
-                    if not blocked_directions[coords][direction]:
-                        blocked_directions[coords][direction] = random_chance(60)
-            if path_valid(start):
-                break
-    def path_valid(start):
-        from collections import deque
-        directions = {
-            "north": (0, 1),
-            "south": (0, -1),
-            "east": (1, 0),
-            "west": (-1, 0)
-        }
-        start_pos = map(int, start.split("_"))
-        queue = deque([start_pos])
-        visited = set()
-        while queue:
-            x, y = queue.popleft()
-            current = f"{x}_{y}"
-            if current in visited:
-                continue
-            visited.add(current)
-            if current == "9_9":
-                return True
-            for direction, (dx, dy) in directions.items():
-                new_x, new_y = x + dx, y + dy
-                new_coord = f"{new_x}_{new_y}"
-                if new_coord in blocked_directions and not blocked_directions[current].get(direction, True) and new_coord not in visited:
-                    queue.append((new_x, new_y))
-        return False
+        reset_blockages()
+        for coords in blocked_directions:
+            for direction in blocked_directions[coords]:
+                if not blocked_directions[coords][direction]:
+                    blocked_directions[coords][direction] = random_chance(25)
     def reset_blockages():
         for coords in blocked_directions:
             for direction in blocked_directions[coords]:
@@ -531,1498 +503,1498 @@ screen deep_forest_0_0:
     style_prefix "explore"
     if not blocked_directions["0_0"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_0_1", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["0_0"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_-1_0", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["0_0"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_0", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["0_0"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_0_-1", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_0_1:
     style_prefix "explore"
     if not blocked_directions["0_1"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_0_2", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["0_1"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_-1_1", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["0_1"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_1", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["0_1"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_0_0", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_0_2:
     style_prefix "explore"
     if not blocked_directions["0_2"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_0_3", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["0_2"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_-1_2", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["0_2"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_2", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["0_2"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_0_1", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_0_3:
     style_prefix "explore"
     if not blocked_directions["0_3"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_0_4", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["0_3"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_-1_3", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["0_3"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_3", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["0_3"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_0_2", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_0_4:
     style_prefix "explore"
     if not blocked_directions["0_4"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_0_5", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["0_4"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_-1_4", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["0_4"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_4", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["0_4"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_0_3", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_0_5:
     style_prefix "explore"
     if not blocked_directions["0_5"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_0_6", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["0_5"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_-1_5", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["0_5"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_5", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["0_5"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_0_4", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_0_6:
     style_prefix "explore"
     if not blocked_directions["0_6"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_0_7", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["0_6"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_-1_6", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["0_6"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_6", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["0_6"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_0_5", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_0_7:
     style_prefix "explore"
     if not blocked_directions["0_7"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_0_8", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["0_7"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_-1_7", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["0_7"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_7", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["0_7"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_0_6", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_0_8:
     style_prefix "explore"
     if not blocked_directions["0_8"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_0_9", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["0_8"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_-1_8", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["0_8"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_8", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["0_8"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_0_7", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_0_9:
     style_prefix "explore"
     if not blocked_directions["0_9"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_0_10", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["0_9"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_-1_9", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["0_9"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_9", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["0_9"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_0_8", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_1_0:
     style_prefix "explore"
     if not blocked_directions["1_0"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_1", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["1_0"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_0_0", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["1_0"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_0", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["1_0"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_-1", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_1_1:
     style_prefix "explore"
     if not blocked_directions["1_1"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_2", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["1_1"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_0_1", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["1_1"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_1", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["1_1"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_0", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_1_2:
     style_prefix "explore"
     if not blocked_directions["1_2"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_3", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["1_2"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_0_2", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["1_2"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_2", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["1_2"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_1", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_1_3:
     style_prefix "explore"
     if not blocked_directions["1_3"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_4", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["1_3"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_0_3", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["1_3"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_3", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["1_3"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_2", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_1_4:
     style_prefix "explore"
     if not blocked_directions["1_4"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_5", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["1_4"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_0_4", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["1_4"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_4", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["1_4"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_3", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_1_5:
     style_prefix "explore"
     if not blocked_directions["1_5"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_6", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["1_5"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_0_5", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["1_5"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_5", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["1_5"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_4", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_1_6:
     style_prefix "explore"
     if not blocked_directions["1_6"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_7", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["1_6"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_0_6", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["1_6"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_6", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["1_6"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_5", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_1_7:
     style_prefix "explore"
     if not blocked_directions["1_7"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_8", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["1_7"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_0_7", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["1_7"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_7", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["1_7"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_6", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_1_8:
     style_prefix "explore"
     if not blocked_directions["1_8"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_9", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["1_8"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_0_8", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["1_8"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_8", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["1_8"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_7", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_1_9:
     style_prefix "explore"
     if not blocked_directions["1_9"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_10", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["1_9"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_0_9", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["1_9"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_9", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["1_9"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_8", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_2_0:
     style_prefix "explore"
     if not blocked_directions["2_0"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_1", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["2_0"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_0", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["2_0"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_0", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["2_0"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_-1", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_2_1:
     style_prefix "explore"
     if not blocked_directions["2_1"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_2", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["2_1"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_1", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["2_1"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_1", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["2_1"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_0", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_2_2:
     style_prefix "explore"
     if not blocked_directions["2_2"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_3", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["2_2"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_2", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["2_2"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_2", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["2_2"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_1", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_2_3:
     style_prefix "explore"
     if not blocked_directions["2_3"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_4", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["2_3"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_3", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["2_3"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_3", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["2_3"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_2", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_2_4:
     style_prefix "explore"
     if not blocked_directions["2_4"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_5", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["2_4"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_4", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["2_4"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_4", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["2_4"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_3", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_2_5:
     style_prefix "explore"
     if not blocked_directions["2_5"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_6", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["2_5"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_5", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["2_5"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_5", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["2_5"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_4", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_2_6:
     style_prefix "explore"
     if not blocked_directions["2_6"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_7", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["2_6"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_6", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["2_6"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_6", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["2_6"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_5", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_2_7:
     style_prefix "explore"
     if not blocked_directions["2_7"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_8", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["2_7"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_7", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["2_7"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_7", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["2_7"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_6", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_2_8:
     style_prefix "explore"
     if not blocked_directions["2_8"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_9", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["2_8"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_8", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["2_8"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_8", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["2_8"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_7", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_2_9:
     style_prefix "explore"
     if not blocked_directions["2_9"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_10", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["2_9"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_1_9", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["2_9"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_9", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["2_9"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_8", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_3_0:
     style_prefix "explore"
     if not blocked_directions["3_0"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_1", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["3_0"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_0", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["3_0"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_0", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["3_0"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_-1", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_3_1:
     style_prefix "explore"
     if not blocked_directions["3_1"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_2", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["3_1"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_1", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["3_1"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_1", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["3_1"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_0", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_3_2:
     style_prefix "explore"
     if not blocked_directions["3_2"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_3", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["3_2"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_2", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["3_2"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_2", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["3_2"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_1", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_3_3:
     style_prefix "explore"
     if not blocked_directions["3_3"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_4", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["3_3"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_3", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["3_3"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_3", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["3_3"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_2", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_3_4:
     style_prefix "explore"
     if not blocked_directions["3_4"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_5", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["3_4"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_4", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["3_4"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_4", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["3_4"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_3", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_3_5:
     style_prefix "explore"
     if not blocked_directions["3_5"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_6", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["3_5"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_5", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["3_5"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_5", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["3_5"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_4", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_3_6:
     style_prefix "explore"
     if not blocked_directions["3_6"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_7", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["3_6"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_6", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["3_6"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_6", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["3_6"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_5", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_3_7:
     style_prefix "explore"
     if not blocked_directions["3_7"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_8", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["3_7"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_7", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["3_7"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_7", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["3_7"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_6", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_3_8:
     style_prefix "explore"
     if not blocked_directions["3_8"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_9", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["3_8"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_8", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["3_8"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_8", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["3_8"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_7", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_3_9:
     style_prefix "explore"
     if not blocked_directions["3_9"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_10", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["3_9"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_2_9", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["3_9"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_9", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["3_9"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_8", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_4_0:
     style_prefix "explore"
     if not blocked_directions["4_0"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_1", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["4_0"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_0", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["4_0"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_0", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["4_0"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_-1", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_4_1:
     style_prefix "explore"
     if not blocked_directions["4_1"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_2", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["4_1"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_1", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["4_1"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_1", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["4_1"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_0", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_4_2:
     style_prefix "explore"
     if not blocked_directions["4_2"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_3", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["4_2"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_2", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["4_2"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_2", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["4_2"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_1", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_4_3:
     style_prefix "explore"
     if not blocked_directions["4_3"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_4", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["4_3"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_3", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["4_3"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_3", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["4_3"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_2", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_4_4:
     style_prefix "explore"
     if not blocked_directions["4_4"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_5", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["4_4"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_4", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["4_4"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_4", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["4_4"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_3", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_4_5:
     style_prefix "explore"
     if not blocked_directions["4_5"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_6", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["4_5"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_5", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["4_5"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_5", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["4_5"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_4", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_4_6:
     style_prefix "explore"
     if not blocked_directions["4_6"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_7", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["4_6"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_6", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["4_6"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_6", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["4_6"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_5", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_4_7:
     style_prefix "explore"
     if not blocked_directions["4_7"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_8", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["4_7"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_7", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["4_7"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_7", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["4_7"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_6", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_4_8:
     style_prefix "explore"
     if not blocked_directions["4_8"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_9", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["4_8"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_8", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["4_8"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_8", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["4_8"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_7", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_4_9:
     style_prefix "explore"
     if not blocked_directions["4_9"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_10", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["4_9"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_3_9", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["4_9"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_9", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["4_9"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_8", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_5_0:
     style_prefix "explore"
     if not blocked_directions["5_0"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_1", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["5_0"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_0", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["5_0"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_0", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["5_0"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_-1", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_5_1:
     style_prefix "explore"
     if not blocked_directions["5_1"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_2", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["5_1"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_1", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["5_1"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_1", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["5_1"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_0", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_5_2:
     style_prefix "explore"
     if not blocked_directions["5_2"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_3", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["5_2"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_2", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["5_2"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_2", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["5_2"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_1", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_5_3:
     style_prefix "explore"
     if not blocked_directions["5_3"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_4", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["5_3"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_3", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["5_3"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_3", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["5_3"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_2", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_5_4:
     style_prefix "explore"
     if not blocked_directions["5_4"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_5", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["5_4"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_4", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["5_4"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_4", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["5_4"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_3", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_5_5:
     style_prefix "explore"
     if not blocked_directions["5_5"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_6", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["5_5"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_5", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["5_5"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_5", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["5_5"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_4", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_5_6:
     style_prefix "explore"
     if not blocked_directions["5_6"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_7", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["5_6"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_6", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["5_6"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_6", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["5_6"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_5", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_5_7:
     style_prefix "explore"
     if not blocked_directions["5_7"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_8", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["5_7"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_7", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["5_7"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_7", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["5_7"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_6", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_5_8:
     style_prefix "explore"
     if not blocked_directions["5_8"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_9", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["5_8"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_8", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["5_8"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_8", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["5_8"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_7", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_5_9:
     style_prefix "explore"
     if not blocked_directions["5_9"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_10", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["5_9"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_4_9", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["5_9"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_9", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["5_9"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_8", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_6_0:
     style_prefix "explore"
     if not blocked_directions["6_0"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_1", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["6_0"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_0", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["6_0"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_0", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["6_0"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_-1", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_6_1:
     style_prefix "explore"
     if not blocked_directions["6_1"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_2", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["6_1"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_1", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["6_1"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_1", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["6_1"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_0", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_6_2:
     style_prefix "explore"
     if not blocked_directions["6_2"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_3", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["6_2"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_2", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["6_2"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_2", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["6_2"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_1", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_6_3:
     style_prefix "explore"
     if not blocked_directions["6_3"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_4", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["6_3"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_3", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["6_3"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_3", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["6_3"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_2", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_6_4:
     style_prefix "explore"
     if not blocked_directions["6_4"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_5", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["6_4"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_4", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["6_4"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_4", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["6_4"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_3", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_6_5:
     style_prefix "explore"
     if not blocked_directions["6_5"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_6", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["6_5"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_5", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["6_5"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_5", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["6_5"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_4", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_6_6:
     style_prefix "explore"
     if not blocked_directions["6_6"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_7", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["6_6"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_6", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["6_6"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_6", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["6_6"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_5", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_6_7:
     style_prefix "explore"
     if not blocked_directions["6_7"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_8", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["6_7"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_7", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["6_7"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_7", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["6_7"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_6", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_6_8:
     style_prefix "explore"
     if not blocked_directions["6_8"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_9", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["6_8"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_8", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["6_8"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_8", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["6_8"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_7", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_6_9:
     style_prefix "explore"
     if not blocked_directions["6_9"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_10", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["6_9"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_5_9", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["6_9"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_9", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["6_9"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_8", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_7_0:
     style_prefix "explore"
     if not blocked_directions["7_0"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_1", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["7_0"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_0", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["7_0"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_0", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["7_0"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_-1", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_7_1:
     style_prefix "explore"
     if not blocked_directions["7_1"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_2", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["7_1"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_1", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["7_1"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_1", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["7_1"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_0", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_7_2:
     style_prefix "explore"
     if not blocked_directions["7_2"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_3", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["7_2"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_2", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["7_2"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_2", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["7_2"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_1", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_7_3:
     style_prefix "explore"
     if not blocked_directions["7_3"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_4", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["7_3"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_3", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["7_3"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_3", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["7_3"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_2", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_7_4:
     style_prefix "explore"
     if not blocked_directions["7_4"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_5", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["7_4"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_4", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["7_4"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_4", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["7_4"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_3", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_7_5:
     style_prefix "explore"
     if not blocked_directions["7_5"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_6", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["7_5"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_5", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["7_5"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_5", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["7_5"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_4", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_7_6:
     style_prefix "explore"
     if not blocked_directions["7_6"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_7", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["7_6"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_6", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["7_6"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_6", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["7_6"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_5", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_7_7:
     style_prefix "explore"
     if not blocked_directions["7_7"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_8", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["7_7"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_7", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["7_7"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_7", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["7_7"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_6", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_7_8:
     style_prefix "explore"
     if not blocked_directions["7_8"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_9", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["7_8"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_8", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["7_8"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_8", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["7_8"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_7", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_7_9:
     style_prefix "explore"
     if not blocked_directions["7_9"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_10", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["7_9"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_6_9", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["7_9"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_9", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["7_9"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_8", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_8_0:
     style_prefix "explore"
     if not blocked_directions["8_0"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_1", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["8_0"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_0", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["8_0"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_9_0", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["8_0"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_-1", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_8_1:
     style_prefix "explore"
     if not blocked_directions["8_1"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_2", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["8_1"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_1", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["8_1"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_9_1", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["8_1"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_0", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_8_2:
     style_prefix "explore"
     if not blocked_directions["8_2"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_3", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["8_2"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_2", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["8_2"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_9_2", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["8_2"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_1", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_8_3:
     style_prefix "explore"
     if not blocked_directions["8_3"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_4", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["8_3"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_3", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["8_3"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_9_3", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["8_3"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_2", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_8_4:
     style_prefix "explore"
     if not blocked_directions["8_4"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_5", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["8_4"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_4", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["8_4"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_9_4", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["8_4"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_3", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_8_5:
     style_prefix "explore"
     if not blocked_directions["8_5"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_6", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["8_5"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_5", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["8_5"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_9_5", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["8_5"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_4", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_8_6:
     style_prefix "explore"
     if not blocked_directions["8_6"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_7", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["8_6"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_6", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["8_6"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_9_6", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["8_6"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_5", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_8_7:
     style_prefix "explore"
     if not blocked_directions["8_7"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_8", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["8_7"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_7", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["8_7"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_9_7", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["8_7"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_6", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_8_8:
     style_prefix "explore"
     if not blocked_directions["8_8"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_9", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["8_8"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_8", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["8_8"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_9_8", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["8_8"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_7", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_8_9:
     style_prefix "explore"
     if not blocked_directions["8_9"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_10", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["8_9"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_7_9", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["8_9"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_9_9", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["8_9"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_8", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_9_0:
     style_prefix "explore"
     if not blocked_directions["9_0"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_9_1", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["9_0"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_0", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["9_0"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_10_0", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["9_0"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_9_-1", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_9_1:
     style_prefix "explore"
     if not blocked_directions["9_1"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_9_2", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["9_1"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_1", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["9_1"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_10_1", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["9_1"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_9_0", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_9_2:
     style_prefix "explore"
     if not blocked_directions["9_2"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_9_3", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["9_2"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_2", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["9_2"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_10_2", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["9_2"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_9_1", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_9_3:
     style_prefix "explore"
     if not blocked_directions["9_3"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_9_4", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["9_3"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_3", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["9_3"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_10_3", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["9_3"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_9_2", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_9_4:
     style_prefix "explore"
     if not blocked_directions["9_4"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_9_5", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["9_4"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_4", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["9_4"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_10_4", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["9_4"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_9_3", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_9_5:
     style_prefix "explore"
     if not blocked_directions["9_5"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_9_6", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["9_5"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_5", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["9_5"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_10_5", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["9_5"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_9_4", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_9_6:
     style_prefix "explore"
     if not blocked_directions["9_6"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_9_7", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["9_6"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_6", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["9_6"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_10_6", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["9_6"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_9_5", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_9_7:
     style_prefix "explore"
     if not blocked_directions["9_7"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_9_8", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["9_7"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_7", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["9_7"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_10_7", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["9_7"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_9_6", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_9_8:
     style_prefix "explore"
     if not blocked_directions["9_8"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_9_9", j=True)]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["9_8"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_8", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["9_8"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_10_8", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["9_8"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_9_7", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680
 
 screen deep_forest_9_9:
     style_prefix "explore"
     if blocked_directions["9_9"]["north"]:
         button xcenter 740 ycenter 360 xysize (200, 300) action [Play("sound", audio.door), Call("shed")]
-        text "北\nNORTH" xcenter 740 ycenter 360
+        text _("北\nNORTH") xcenter 740 ycenter 360
     if not blocked_directions["9_9"]["west"]:
         button xcenter 240 ycenter 260 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_8_9", j=True)]
-        text "西\nWEST" xcenter 240 ycenter 260
+        text _("西\nWEST") xcenter 240 ycenter 260
     if not blocked_directions["9_9"]["east"]:
         button xcenter 1140 ycenter 460 xysize (200, 300) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_10_9", j=True)]
-        text "東\nEAST" xcenter 1140 ycenter 460
+        text _("東\nEAST") xcenter 1140 ycenter 460
     if not blocked_directions["9_9"]["south"]:
         button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.grass_move), Call("next_location", "deep_forest_9_8", j=True)]
-        text "南\nSOUTH" xcenter 640 ycenter 680
+        text _("南\nSOUTH") xcenter 640 ycenter 680

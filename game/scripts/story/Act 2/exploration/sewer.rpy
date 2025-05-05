@@ -1,19 +1,19 @@
 screen sewer_hall:
     style_prefix "explore"
     button xcenter 750 ycenter 350 xysize (150, 100) action Call("call_inventory", "Factory Key", correct_action=[Play("sound", audio.door), Call("next_location", "factory")], incorrect_action=Call("locked", "sewer_hall"))
-    text "工場\nFACTORY" xcenter 750 ycenter 350
+    text _("工場\nFACTORY") xcenter 750 ycenter 350
     button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.door), Call("next_location", "hideout")]
-    text "ビジネスルーム\nBUSINESS ROOM" xcenter 640 ycenter 680
+    text _("ビジネスルーム\nBUSINESS ROOM") xcenter 640 ycenter 680
 
 screen hideout:
     style_prefix "explore"
     if not item_in_inv("Factory Key"):
         button xcenter 550 ycenter 500 xysize (100, 100) action Function(add_to_inv, "Factory Key", "工場の鍵", _("An old key to the factory."))
-        text "鍵\nKEY" xcenter 550 ycenter 500
+        text _("鍵\nKEY") xcenter 550 ycenter 500
     button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.door), Call("next_location", "sewer_hall")]
-    text "ホール\nHALL" xcenter 640 ycenter 680
+    text _("ホール\nHALL") xcenter 640 ycenter 680
     button xcenter 1015 ycenter 285 xysize (200, 425) action If("hanato" in party, [Play("sound", audio.door), Return()], Call("not_leaving"))
-    text "出口\nEXIT" xcenter 1015 ycenter 285
+    text _("出口\nEXIT") xcenter 1015 ycenter 285
 
 label not_leaving:
     "That's the exit, but I'm not leaving here without Hanato!"
@@ -23,11 +23,11 @@ label not_leaving:
 screen factory:
     style_prefix "explore"
     button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.door), Call("next_location", "sewer_hall")]
-    text "ホール\nHALL" xcenter 640 ycenter 680
+    text _("ホール\nHALL") xcenter 640 ycenter 680
     button xcenter 40 ycenter 360 xysize (100, 720) action [Play("sound", audio.footsteps), Call("next_location", "stairs")]
-    text "階段\nSTAIRS" xcenter 40 ycenter 360 vertical True
+    text _("階段\nSTAIRS") xcenter 40 ycenter 360 vertical True
     button xcenter 635 ycenter 430 xysize (100, 100) action Call("sewer_notice")
-    text "掲示板\n{size=15}NOTICE\nBOARD{/size}" xcenter 635 ycenter 430
+    text _("掲示板\n{size=15}NOTICE\nBOARD{/size}") xcenter 635 ycenter 430
 
 label sewer_notice:
     "マネジャーのお知らせ\n{size=15}NOTICE FROM MANAGER{/size}" "Apologies for the inconvenience but I'm shutting this place down!  We've had far too many incidents and lawsuits over the past 5 years and it's put us into bankruptcy."
@@ -45,9 +45,9 @@ label sewer_notice:
 screen stairs:
     style_prefix "explore"
     button xcenter 1240 ycenter 360 xysize (100, 720) action [Play("sound", audio.footsteps), Call("next_location", "factory")]
-    text "FACTORY\n工場" xcenter 1240 ycenter 360 vertical True
+    text _("FACTORY\n工場") xcenter 1240 ycenter 360 vertical True
     button xcenter 740 ycenter 400 xysize (600, 270) action [Play("sound", audio.footsteps), If("basement" in explored, Call("next_location", "basement"), Call("to_basement"))]
-    text "地下室\nBASEMENT" xcenter 740 ycenter 400
+    text _("地下室\nBASEMENT") xcenter 740 ycenter 400
 
 label to_basement:
     $ explored.append("basement")
@@ -60,19 +60,19 @@ label to_basement:
 screen basement:
     style_prefix "explore"
     button xcenter 472 ycenter 365 xysize (175, 175) action [Play("sound", audio.footsteps), Call("next_location", "stairs")]
-    text "階上\nUPSTAIRS" xcenter 472 ycenter 365
+    text _("階上\nUPSTAIRS") xcenter 472 ycenter 365
     button xcenter 620 ycenter 365 xysize (75, 150) action [Play("sound", audio.footsteps), Call("next_location", "power_room")]
-    text "{size=15}パワー\nルーム\nPOWER\nROOM{/size}" xcenter 620 ycenter 365
+    text _("{size=15}パワー\nルーム\nPOWER\nROOM{/size}") xcenter 620 ycenter 365
     button xcenter 720 ycenter 350 xysize (75, 250) action [Play("sound", audio.door), Call("next_location", "office")]
-    text "OFFICE\nオフィス" xcenter 720 ycenter 350 vertical True
+    text _("OFFICE\nオフィス") xcenter 720 ycenter 350 vertical True
 
 screen power_room:
     style_prefix "explore"
     if not "hanato" in party:
         button xcenter 1000 ycenter 350 xysize (100, 300) action Call("hanato_found")
-        text "隠匿者\n{size=15}SOMEONE\nHIDING{/size}" xcenter 1000 ycenter 350
+        text _("隠匿者\n{size=15}SOMEONE\nHIDING{/size}") xcenter 1000 ycenter 350
     button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.footsteps), Call("next_location", "basement")]
-    text "バック\nBACK" xcenter 640 ycenter 680
+    text _("バック\nBACK") xcenter 640 ycenter 680
 
 label hanato_found:
     show hanato day zorder 2 at t11
@@ -100,17 +100,17 @@ screen office:
     style_prefix "explore"
     if "hanato" in party and "notice board" in explored:
         button xcenter 935 ycenter 525 xysize (100, 175) action If("secret" in codes, [Play("sound", audio.footsteps), Call("next_location", "secret_room")], Call("dialpad", "2179", "office", "secret"))
-        text "密室\n{size=15}SECRET\nROOM{/size}" xcenter 935 ycenter 525
+        text _("密室\n{size=15}SECRET\nROOM{/size}") xcenter 935 ycenter 525
     button xcenter 640 ycenter 680 xysize (1280, 100) action [Play("sound", audio.door), Call("next_location", "basement")]
-    text "バック\nBACK" xcenter 640 ycenter 680
+    text _("バック\nBACK") xcenter 640 ycenter 680
 
 screen secret_room:
     style_prefix "explore"
     button xcenter 930 ycenter 115 xysize (300, 150) action [Play("sound", audio.footsteps), Call("next_location", "office")]
-    text "オフィス\nOFFICE" xcenter 930 ycenter 115
+    text _("オフィス\nOFFICE") xcenter 930 ycenter 115
     if not found_breaker:
         button xcenter 450 ycenter 530 xysize (600, 200) action Call("found_something")
-        text "検索する\nSEARCH" xcenter 450 ycenter 530
+        text _("検索する\nSEARCH") xcenter 450 ycenter 530
 
 label found_something:
     ha "I'll keep watch."
