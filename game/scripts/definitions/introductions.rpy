@@ -8,15 +8,15 @@ init python:
             self.img = img
 
     intro_m = Intro(
-    kan = "無理高モニカ",
+    kan = _("無理高モニカ"),
     name = "Murikou Monika",
-    attr = "[UNIDENTIFIED]",
+    attr = _("[UNIDENTIFIED]"),
     bio = _("The president of the literature club, she is a responsible leader with a good heart.  She aspires to be a historical writer and a reliable woman people can look up to for support."),
     img = "monika forward casual happ rhip lpoint"
     )
 
     intro_s = Intro(
-    kan = "シナモンパン佐代里",
+    kan = _("シナモンパン佐代里"),
     name = "Shinamonpan Sayori",
     attr = _("- Happy Life: She can do many things to lighten the mood of people.\n- Dead Woman: She can turn herself into a ghost to do many paranormal things."),
     bio = _("One of the few people with 2 attributes, she's a cheerful ball of sunshine who aspires to make everyone in the world happy through any means necessary."),
@@ -24,7 +24,7 @@ init python:
     )
 
     intro_n = Intro(
-    kan = "ルナ菜月",
+    kan = _("ルナ菜月"),
     name = "Luna Natsuki",
     attr = _("- Party Crasher: She can summon and manipulate party props at will."),
     bio = _("The tsundere of the literature club, she is a giddy extrovert who--despite many cheerful events from it--doesn't really like her attribute much."),
@@ -32,7 +32,7 @@ init python:
     )
 
     intro_y = Intro(
-    kan = "ヤンデレ百合",
+    kan = _("ヤンデレ百合"),
     name = "Yandere Yuri",
     attr = _("- Yangire: A stronger version of the Yandere, along with the ability to summon knives she can also cut herself into pieces to create clones of herself."),
     bio = _("The nicest yangire you'll ever meet, she is a calm introvert who's rumored to have a secret dark side."),
@@ -40,7 +40,7 @@ init python:
     )
 
     intro_k = Intro(
-    kan = "桜言葉",
+    kan = _("桜言葉"),
     name = "Sakura Kotonoha",
     attr = _("- Telegraph: She can manipulate things with her mind to a huge extent.  She's basically a telepathic individual."),
     bio = _("Taiyen's beloved sister!  She is a book enthusiast who loves to write but most importantly, she's helping to deal with the many problems of the world however she can."),
@@ -48,7 +48,7 @@ init python:
     )
 
     intro_t = Intro(
-    kan = "桜隊円",
+    kan = _("桜隊円"),
     name = "Sakura Taiyen",
     attr = _("- Dead Man: He can turn himself into a ghost to do many paranormal things."),
     bio = _("The man himself, he's an experienced writer who aspires to make a story that'll help people through personal problems.  He's the person you're following in this story."),
@@ -56,7 +56,7 @@ init python:
     )
 
     intro_ak = Intro(
-    kan = "神山秋羅",
+    kan = _("神山秋羅"),
     name = "Kamiyama Akira",
     attr = _("- Manipulator: He can manipulate the power of attributes within a certain radius by improving them or weakening them, each to an extent."),
     bio = _("A good friend of Taiyen, he's an academic genius who helps out many students via tutoring appointments and study sessions, he is a kind-hearted person who likes to help out."),
@@ -64,7 +64,7 @@ init python:
     )
 
     intro_ha = Intro(
-    kan = "神山華翔",
+    kan = _("神山華翔"),
     name = "Kamiyama Hanato",
     attr = _("- Dreamer: She can transport things from the dream world to the real world and make them physical things."),
     bio = _("We have a bit of a problem...\nThis girl is usually a nice and kind folk who claims to have helped out people with personal problems, though no one has ever witnessed it nor is there anybody who backs that information up.  She's an unknown person to Taiyen, and now she's in his mind."),
@@ -72,7 +72,7 @@ init python:
     )
 
     intro_its = Intro(
-    kan = "神山イツォミ",
+    kan = _("神山イツォミ"),
     name = "Kamiyama Itsomi",
     attr = _("- Ordinary: She has no special abilities, just a normal person."),
     bio = _("One of the members of the Kamiyama family, she specializes in luring people to certain places for unkown acts and plans, because of this, she seems crazy to most people as they try to stay away from her."),
@@ -80,7 +80,7 @@ init python:
     )
 
     intro_ina = Intro(
-    kan = "神山稲荷",
+    kan = _("神山稲荷"),
     name = "Kamiyama Inari",
     attr = _("- Creator: Anything he draws becomes a real object he can use to his will."),
     bio = _("One of the members of the Kamiyama family, he is an artist who loves to draw attention by painting art that he claims is beautiful, but everyone else seems to state otherwise.  This person is unknown to Taiyen but he's seen some of his art and has described as 'dark and ominous like it means something'."),
@@ -88,7 +88,7 @@ init python:
     )
 
     intro_kiri = Intro(
-    kan = "神山霧何",
+    kan = _("神山霧何"),
     name = "Kamiyama Kirinani",
     attr = _("- Copycat: He can copy attributes for a certain amount of time, though people say it's for longer than the average Copycat."),
     bio = _("The oldest of the Kamiyama family, he's changed for the worse.\nHe's trying to corrupt the world.\nHis suffering must be ended."),
@@ -96,7 +96,7 @@ init python:
     )
 
     intro_a = Intro(
-    kan = "ルナ煽るぐり",
+    kan = _("ルナ煽るぐり"),
     name = "Luna Aoruguri",
     attr = _("- Storm: She can manipulate the weather to any extent in any location, meaning she can create storms at will."),
     bio = _("A calm and collected girl but also a shy introvert, her only friends are Akira and Taiyen, she doesn't do well with people.  However, she is starting to change that fact."),
@@ -105,7 +105,7 @@ init python:
     
 
     intro_ti = Intro(
-    kan = "高佐氏ティナ",
+    kan = _("高佐氏ティナ"),
     name = "Takasashi Tina",
     attr = _("- Ordinary: She has no special abilities, just a normal person."),
     bio = _("Lilly's close friend, She is an impetuous, crass, rebellious, but very friendly woman who always looks out for people."),
@@ -113,7 +113,7 @@ init python:
     )
 
     intro_lil = Intro(
-    kan = "ヤンデレリリー",
+    kan = _("ヤンデレリリー"),
     name = "Yandere Lilly",
     attr = _("- Yandere: She can summon knives at will"),
     bio = _("Yuri's beloved sister, she is from a rich family that either were away or strict, demanding her to act more like a doll (no talking, and to be just appearances; being on parties and such, and not really being a kid, or a teen), and right now, after knowing Tina and being on a normal school, she continues to be the quiet girl she was, but she has rancor from her life, boiling anger on her heart that sometimes escapes and lashes upon pretty much innocent people.\n\nShe speaks in a very quiet manner, but she can be quite aggressive even being quiet, so she isn't that popular with people, being one of the delinquents."),
@@ -121,7 +121,7 @@ init python:
     )
 
     intro_mari = Intro(
-    kan = "楠まり",
+    kan = _("楠まり"),
     name = "Kusunoki Mari",
     attr = _("- Emotional Trainwreck: Her abilities are based on her current emotions."),
     bio = _("The Principal of Kamiyama Academy, she is a calm and collected woman despite her attribute, and she loves children.  She treats Aoruguri like her daughter and wants the best for her no matter what."),
@@ -129,7 +129,7 @@ init python:
     )
 
     intro_tetsuo = Intro(
-    kan = "ルナ哲夫",
+    kan = _("ルナ哲夫"),
     name = "Luna Tetsuo",
     attr = _("- Copycat: He can copy attributes for a certain amount of time."),
     bio = _("Natsuki's father...\nJust look at how bad he is...\nI hate this man so much I don't even wanna describe him."),
@@ -137,7 +137,7 @@ init python:
     )
 
     intro_sei = Intro(
-        kan = "窃盗精鋭",
+        kan = _("窃盗精鋭",
         name = "Settou Seiei",
         attr = _("- Ordinary Man: He has no special abilities, he's just a normal person"),
         bio = _("The leader of the midnight club, he's a determined individual who claims to want to make peace to the world."),
@@ -145,7 +145,7 @@ init python:
     )
 
     intro_en = Intro(
-        kan = "ルナ演劇",
+        kan = _("ルナ演劇",
         name = "Luna Engeki",
         attr = "[UNIDENTIFIED]",
         bio = _("Aoruguri's mysterious sister, No one's seen her since she turned one, no one knows who she is..."),
@@ -153,7 +153,7 @@ init python:
     )
 
     intro_d = Intro(
-        kan = "ルナどみにおん",
+        kan = _("ルナどみにおん",
         name = "Luna Dominion",
         attr = _("- Rampant Image: He can turn into a static noise monster at will."),
         bio = _("Aoruguri's slight older brother, he is a face of horror among the general public who is calls himself dangerous.\nHe is afraid of himself just as everyone is afraid of him."),
@@ -161,7 +161,7 @@ init python:
     )
 
     intro_ara = Intro(
-        kan = "桜荒垣",
+        kan = _("桜荒垣",
         name = "Sakura Aragaki",
         attr = _("- Dictator: He can (to an extent) force anyone perform any action he commands."),
         bio = _("Taiyen's painful uncle, he looks down upon everyone.  It's a wonder he's the new principal of the school."),
