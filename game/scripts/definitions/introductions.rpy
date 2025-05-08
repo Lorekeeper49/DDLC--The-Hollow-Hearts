@@ -137,7 +137,7 @@ init python:
     )
 
     intro_sei = Intro(
-        kan = _("窃盗精鋭",
+        kan = _("窃盗精鋭"),
         name = "Settou Seiei",
         attr = _("- Ordinary Man: He has no special abilities, he's just a normal person"),
         bio = _("The leader of the midnight club, he's a determined individual who claims to want to make peace to the world."),
@@ -145,15 +145,15 @@ init python:
     )
 
     intro_en = Intro(
-        kan = _("ルナ演劇",
+        kan = _("ルナ演劇"),
         name = "Luna Engeki",
-        attr = "[UNIDENTIFIED]",
+        attr = _("[UNIDENTIFIED]"),
         bio = _("Aoruguri's mysterious sister, No one's seen her since she turned one, no one knows who she is..."),
         img = "engeki turned sweater"
     )
 
     intro_d = Intro(
-        kan = _("ルナどみにおん",
+        kan = _("ルナどみにおん"),
         name = "Luna Dominion",
         attr = _("- Rampant Image: He can turn into a static noise monster at will."),
         bio = _("Aoruguri's slight older brother, he is a face of horror among the general public who is calls himself dangerous.\nHe is afraid of himself just as everyone is afraid of him."),
@@ -161,7 +161,7 @@ init python:
     )
 
     intro_ara = Intro(
-        kan = _("桜荒垣",
+        kan = _("桜荒垣"),
         name = "Sakura Aragaki",
         attr = _("- Dictator: He can (to an extent) force anyone perform any action he commands."),
         bio = _("Taiyen's painful uncle, he looks down upon everyone.  It's a wonder he's the new principal of the school."),
