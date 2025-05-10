@@ -15,6 +15,8 @@ transform scroll_credits(credit_height=256):
 transform skip_prompt_dissolve:
     alpha 0.0
     linear 0.5 alpha 1.0
+    4.0
+    linear 0.5 alpha 0.0
 define SECTION = -1
 init python:
     SECTION_COLORS = [
@@ -170,6 +172,7 @@ screen credits(credit_height=256):
             align (1.0, 1.0)
             offset (-20, -20)
             font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf"
+        timer 5.0 action SetVariable("_show_skip_prompt", False)
 
     key "K_RETURN" action If(_show_skip_prompt, Return(), SetVariable("_show_skip_prompt", True)) # Return if the prompt is visible
     key "K_SPACE" action If(_show_skip_prompt, Return(), SetVariable("_show_skip_prompt", True))
