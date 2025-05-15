@@ -60,6 +60,8 @@ label act3_path13:
     a "I killed your sister in a state of no control!  Do you expect me to be okay!?"
     t "I don't, I just..."
     t "The sister of someone else you killed is outside the door."
+    t "I recommend you listen to what she has to say."
+    "Without a word, I comply."
 
 
 
