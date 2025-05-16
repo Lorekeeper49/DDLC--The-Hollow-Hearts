@@ -45,58 +45,6 @@ import time
 tmp = "." + str(int(time.time())) + ".tmp"
 
 
-# The number of times pause_syncfs has been called, without a corresponding
-# resume_syncfs
-pause_syncfs_count = 0
-
-def pause_syncfs():
-    """
-    Pauses the filesystem sync. This should be called before doing a large
-    number of file operations.
-    """
-
-    global pause_syncfs_count
-    pause_syncfs_count += 1
-
-
-def resume_syncfs():
-    """
-    Resumes the filesystem sync. This should be called after a corresponding
-    pause_syncfs.
-    """
-
-    global pause_syncfs_count
-    pause_syncfs_count -= 1
-
-    if pause_syncfs_count == 0:
-        syncfs()
-
-
-class SyncfsLock(object):
-    """
-    Context to pause then resume the filesystem sync.
-    """
-    def __enter__(self):
-        pause_syncfs()
-        return self
-
-    def __exit__(self, exception_type, exception_value, exception_traceback):
-        resume_syncfs()
-
-
-def syncfs():
-    """
-    Syncs the filesystem.
-    """
-
-    if pause_syncfs_count > 0:
-        return
-
-    if renpy.emscripten:
-        import emscripten # type: ignore
-        emscripten.syncfs()
-
-
 class FileLocation(object):
     """
     A location that saves files to a directory on disk.
@@ -150,7 +98,9 @@ class FileLocation(object):
         Called to indicate that the HOME filesystem was changed.
         """
 
-        syncfs()
+        if renpy.emscripten:
+            import emscripten # type: ignore
+            emscripten.syncfs()
 
     def scan(self):
         """
@@ -421,8 +371,6 @@ class FileLocation(object):
             fn_tmp = fn + tmp
             fn_new = fn + ".new"
 
-            pause_syncfs()
-
             with open(fn_tmp, "wb") as f:
                 f.write(data)
 
@@ -434,7 +382,7 @@ class FileLocation(object):
 
             renpy.util.expose_file(fn)
 
-            resume_syncfs()
+            self.sync()
 
     def unlink_persistent(self):
 
@@ -512,10 +460,9 @@ class MultiLocation(object):
 
         saved = False
 
-        with SyncfsLock():
-            for l in self.active_locations():
-                l.save(slotname, record)
-                saved = True
+        for l in self.active_locations():
+            l.save(slotname, record)
+            saved = True
 
         if not saved:
             raise Exception("Not saved - no valid save locations.")
@@ -588,25 +535,22 @@ class MultiLocation(object):
         if not renpy.config.save:
             return
 
-        with SyncfsLock():
-            for l in self.active_locations():
-                l.unlink(slotname)
+        for l in self.active_locations():
+            l.unlink(slotname)
 
     def rename(self, old, new):
         if not renpy.config.save:
             return
 
-        with SyncfsLock():
-            for l in self.active_locations():
-                l.rename(old, new)
+        for l in self.active_locations():
+            l.rename(old, new)
 
     def copy(self, old, new):
         if not renpy.config.save:
             return
 
-        with SyncfsLock():
-            for l in self.active_locations():
-                l.copy(old, new)
+        for l in self.active_locations():
+            l.copy(old, new)
 
     def load_persistent(self):
         rv = [ ]
@@ -617,14 +561,14 @@ class MultiLocation(object):
         return rv
 
     def save_persistent(self, data):
-        with SyncfsLock():
-            for l in self.active_locations():
-                l.save_persistent(data)
+
+        for l in self.active_locations():
+            l.save_persistent(data)
 
     def unlink_persistent(self):
-        with SyncfsLock():
-            for l in self.active_locations():
-                l.unlink_persistent()
+
+        for l in self.active_locations():
+            l.unlink_persistent()
 
     def scan(self):
         # This should scan everything, as a scan can help decide if a

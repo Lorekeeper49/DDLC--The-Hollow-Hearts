@@ -34,7 +34,6 @@ import zlib
 import re
 import io
 import unicodedata
-import time
 
 from pygame_sdl2.rwobject import RWopsIO
 
@@ -71,27 +70,17 @@ def get_path(fn):
 
 apks = [ ]
 game_apks = [ ]
-split_apks = [ ]
 
 if renpy.android:
     import android.apk # type: ignore
 
-    packs = [os.environ[i] for i in ["ANDROID_PACK_FF" + str(j+1) for j in range(4)] if i in os.environ and os.environ[i].endswith(".apk")]
-
     if renpy.config.renpy_base == renpy.config.basedir:
-        # Read the game data from the APKs.
+        # Read the game data from the APK.
 
         apks.append(android.apk.APK(prefix='assets/x-game/'))
-        game_apks.append(apks[-1])
-        for i in packs:
-            apks.append(android.apk.APK(apk=i, prefix='assets/game/'))
-            game_apks.append(apks[-1])
-            split_apks.append(apks[-1])
+        game_apks.append(apks[0])
 
     apks.append(android.apk.APK(prefix='assets/x-renpy/x-common/'))
-    for i in packs:
-        apks.append(android.apk.APK(apk=i, prefix='assets/renpy/common/'))
-        split_apks.append(apks[-1])
 
 
 # Files on disk should be checked before archives. Otherwise, among
@@ -370,8 +359,7 @@ def scandirfiles_from_apk(add, seen):
 
             # Strip off the "x-" in front of each filename, which is there
             # to ensure that aapt actually includes every file.
-            if apk not in split_apks:
-                f = "/".join(i[2:] for i in f.split("/"))
+            f = "/".join(i[2:] for i in f.split("/"))
 
             add(None, f, files, seen)
 
@@ -590,9 +578,7 @@ def load_from_apk(name):
     """
 
     for apk in apks:
-        prefixed_name = name
-        if apk not in split_apks:
-            prefixed_name = "/".join("x-" + i for i in name.split("/"))
+        prefixed_name = "/".join("x-" + i for i in name.split("/"))
 
         try:
             return apk.open(prefixed_name)
@@ -704,9 +690,7 @@ def loadable_core(name):
         pass
 
     for apk in apks:
-        prefixed_name = name
-        if apk not in split_apks:
-            prefixed_name = "/".join("x-" + i for i in name.split("/"))
+        prefixed_name = "/".join("x-" + i for i in name.split("/"))
         if prefixed_name in apk.info:
             loadable_cache[name] = True
             return True
@@ -724,14 +708,14 @@ def loadable_core(name):
     return False
 
 
-def loadable(name, tl=True, directory=None):
+def loadable(name, directory=None):
 
     name = name.lstrip('/')
 
     if (renpy.config.loadable_callback is not None) and renpy.config.loadable_callback(name):
         return True
 
-    for p in get_prefixes(tl=tl, directory=directory):
+    for p in get_prefixes(directory=directory):
         if loadable_core(p + name):
             return True
 
@@ -1005,14 +989,10 @@ def add_auto(fn, force=False):
         auto_mtimes[fn] = mtime
 
 
-max_mtime = 0
-
 def auto_thread_function():
     """
     This thread sets need_autoreload when necessary.
     """
-
-    global max_mtime
 
     while True:
 
@@ -1030,12 +1010,7 @@ def auto_thread_function():
             if mtime is auto_blacklisted:
                 continue
 
-            new_mtime = auto_mtime(fn)
-
-            if new_mtime is not None:
-                max_mtime = max(max_mtime, new_mtime)
-
-            if new_mtime != mtime:
+            if auto_mtime(fn) != mtime:
 
                 with auto_lock:
                     if auto_mtime(fn) != auto_mtimes[fn]:
@@ -1063,24 +1038,13 @@ def check_git_index_lock():
     return False
 
 
-# Are we actively reloading?
-reloading = False
-
 def check_autoreload():
     """
     Checks to see if autoreload is required.
     """
 
-    global reloading
-
-    if reloading:
-        return
-
     # Defer loading while the git index lock is present.
     if needs_autoreload and check_git_index_lock():
-        return
-
-    if time.time() - max_mtime < .050:
         return
 
     while needs_autoreload:
@@ -1100,7 +1064,6 @@ def check_autoreload():
                 func(fn)
                 break
         else:
-            reloading = True
             renpy.exports.reload_script()
 
 

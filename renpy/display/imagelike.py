@@ -425,7 +425,6 @@ class Frame(renpy.display.displayable.Displayable):
             return
 
         rv = Render(dw, dh)
-        rv.add_property("pixel_perfect", False)
 
         self.draw_pattern(draw, left, top, right, bottom)
 

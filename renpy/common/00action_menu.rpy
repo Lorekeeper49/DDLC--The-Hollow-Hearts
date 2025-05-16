@@ -300,11 +300,6 @@ init -1500 python:
             if not self.get_sensitive():
                 return
 
-            if config.skipping:
-                config.skipping = None
-                renpy.restart_interaction()
-                return
-
             if self.confirm:
                 if self.fast:
                     if _preferences.skip_unseen:
@@ -322,10 +317,14 @@ init -1500 python:
                 else:
                     renpy.jump("_return_skipping")
             else:
-                if self.fast:
-                    config.skipping = "fast"
+
+                if not config.skipping:
+                    if self.fast:
+                        config.skipping = "fast"
+                    else:
+                        config.skipping = "slow"
                 else:
-                    config.skipping = "slow"
+                    config.skipping = None
 
                 renpy.restart_interaction()
 

@@ -215,32 +215,26 @@ init -1500 python:
         `_layer`
             This is passed as the layer argument to :func:`renpy.hide_screen`.
             Ignored if `screen` is None.
-
-        `immediately`
-            If True, the screen is hidden immediately, without the 'on hide' event.
         """
 
         _layer = None
-        immediately = False
 
-        def __init__(self, screen=None, transition=None, _layer=None, immediately=False):
+        def __init__(self, screen=None, transition=None, _layer=None):
             self.screen = screen
             self.transition = transition
             self._layer = _layer
-            self.immediately = immediately
 
         def __call__(self):
-
             if self.screen is None:
                 cs = renpy.current_screen()
 
                 if cs is None:
                     return
 
-                renpy.hide_screen(cs.screen_name, layer=cs.layer, immediately=self.immediately)
+                renpy.hide_screen(cs.screen_name, layer=cs.layer)
 
             else:
-                renpy.hide_screen(self.screen, layer=self._layer, immediately=self.immediately)
+                renpy.hide_screen(self.screen, layer=self._layer)
 
             if self.transition is not None:
                 renpy.transition(self.transition)

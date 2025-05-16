@@ -33,7 +33,7 @@ Please note: if you ever get an error detailing something about `menu` expecting
 LINKS ARE DIRECTED TO WHERE YOU CAN DOWNLOAD THE LISTED THING. | リンクは、リストされたものをダウンロードできる場所へのものです。
 
 ### [ORIGINAL GAME | オリジナルゲームのチーマ](https://ddlc.moe/)
-Team Salvato | チームサルヴァート
+Team Salvato |  チームサルヴァート
 
 ### DIRECTOR | ディレクター
 Lorekeeper49 | ロアキーパー４９
@@ -104,13 +104,13 @@ KAMIYAMA AKIRA | 神山秋羅 - LvcyLu
 
 >[CASUAL | ラフな服 - Z. Awesomeness](https://discord.com/channels/339272843327963136/373669252554686464/1268162213735039108)
 
-[LUNA TETSUO (DADSUKI) | ルナ哲夫 - SovietSpartan](https://www.reddit.com/r/DDLCMods/comments/ucxgcx/kotonoha_mio_and_dadsuki_mpts/?utm_source=share&utm_medium=ios_app&utm_name=ioscss&utm_content=1&utm_term=1)
+[LUNA TETSUO | ルナ哲夫 - SovietSpartan](https://www.reddit.com/r/DDLCMods/comments/ucxgcx/kotonoha_mio_and_dadsuki_mpts/?utm_source=share&utm_medium=ios_app&utm_name=ioscss&utm_content=1&utm_term=1)
 
 >MPT - RedLeader 
 
-[KUSANOKI MARI | 楠まり - 「N E K O L A I S」](https://drive.google.com/file/d/1rAgY9Ijoyib2W9Hh6FJZaFYg0RDGR7ey/view)
+[KUSANOKI MARI | 楠まり - Nekolais](https://drive.google.com/file/d/1rAgY9Ijoyib2W9Hh6FJZaFYg0RDGR7ey/view)
 
-[SETTOU SEIEI (CANON MC) | 窃盗精鋭（キャノンMC）](https://www.reddit.com/r/DDLCMods/comments/1hhmu77/new_canon_mc_remake_sprites_are_here_better_and/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
+[SETTOU SEIEI (CANON MC) | 窃盗精鋭（キヤノンMC）](https://www.reddit.com/r/DDLCMods/comments/1hhmu77/new_canon_mc_remake_sprites_are_here_better_and/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
 
 >SPRITES - Stormblazed76
 
@@ -133,21 +133,21 @@ KAMIYAMA AKIRA | 神山秋羅 - LvcyLu
 
 [SHINAMONPAN LIVING ROOM & KOTONOHA'S ROOM - tropicalmonsoon](https://lemmasoft.renai.us/forums/viewtopic.php?f=52&t=22595)
 
-[OUTSIDE SHINAMONPAN HOUSE - Kimagure After | きまぐれアフター](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing)
+[OUTSIDE SHINAMONPAN HOUSE - Kimagure After](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing)
 
-[OUTSIDE SAKURA ACADEMY - Kimagure After | きまぐれアフター](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing)
+[OUTSIDE SAKURA ACADEMY - Kimagure After](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing)
 
-[SAKURA ACADEMY RIVER - Kimagure After | きまぐれアフター](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing)
+[SAKURA ACADEMY RIVER - Kimagure After](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing)
 
-[YANDERE LIVING ROOM - Kimagure After | きまぐれアフター](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing)
+[YANDERE LIVING ROOM - Kimagure After](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing)
 
-[YURI'S BEDROOM - Kimagure After | きまぐれアフター](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing)
+[YURI'S BEDROOM - Kimagure After](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing)
 
-[YANDERE HALL - Kimagure After | きまぐれアフター](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing)
+[YANDERE HALL - Kimagure After](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing)
 
-[STREET - Kimagure After | きまぐれアフター](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing)
+[STREET - Kimagure After](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing)
 
-[SCHOOL ROOF - Kimagure After | きまぐれアフター](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing)
+[SCHOOL ROOF - Kimagure After](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing)
 
 SHINAMONPAN KITCHEN - LvcyLu
 
@@ -155,27 +155,27 @@ SHINAMONPAN KITCHEN - LvcyLu
 
 [FOREST - Uncle Mugen](https://lemmasoft.renai.us/forums/viewtopic.php?f=52&t=33203#p379740)
 
-[LOCKER ROOM - Kimagure After | きまぐれアフター](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing)
+[LOCKER ROOM - Kimagure After](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing)
 
-[KAMIYAMA ACADEMY - Kimagure After | きまぐれアフター](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing)
+[KAMIYAMA ACADEMY - Kimagure After](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing)
 
-[KAMIYAMA ACADEMY ROOF - Min-Chiri | みんちりえ](https://min-chi.material.jp/category/fm/bg_c/)
+[KAMIYAMA ACADEMY ROOF - Min-Chiri](https://min-chi.material.jp/category/fm/bg_c/)
 
-[FACTORY BASEMENT - Min-Chiri | みんちりえ](https://min-chi.material.jp/category/fm/bg_c/)
+[FACTORY BASEMENT - Min-Chiri](https://min-chi.material.jp/category/fm/bg_c/)
 
-[FACTORY BUSINESS ROOM - Min-Chiri | みんちりえ](https://min-chi.material.jp/category/fm/bg_c/)
+[FACTORY BUSINESS ROOM - Min-Chiri](https://min-chi.material.jp/category/fm/bg_c/)
 
-[FACTORY STAIRS - Min-Chiri | みんちりえ](https://min-chi.material.jp/category/fm/bg_c/)
+[FACTORY STAIRS - Min-Chiri](https://min-chi.material.jp/category/fm/bg_c/)
 
-[FACTORY POWER ROOM - Min-Chiri | みんちりえ](https://min-chi.material.jp/category/fm/bg_c/)
+[FACTORY POWER ROOM - Min-Chiri](https://min-chi.material.jp/category/fm/bg_c/)
 
-[FACTORY OFFICE - Min-Chiri | みんちりえ](https://min-chi.material.jp/category/fm/bg_c/)
+[FACTORY OFFICE - Min-Chiri](https://min-chi.material.jp/category/fm/bg_c/)
 
-[FACTORY SECRET - Min-Chiri | みんちりえ](https://min-chi.material.jp/category/fm/bg_c/)
+[FACTORY SECRET - Min-Chiri](https://min-chi.material.jp/category/fm/bg_c/)
 
-[BUSTLING STREETS - Kimagure After | きまぐれアフター](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing)
+[BUSTLING STREETS - Kimagure After](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing)
 
-[SHED HIDEOUT - Kimagure After | きまぐれアフター](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing)
+[SHED HIDEOUT - Kimagure After](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing)
 
 [KAMIYAMA RUINS - Uncle Mugen](https://lemmasoft.renai.us/forums/viewtopic.php?f=52&t=33203#p379740)
 
@@ -189,7 +189,7 @@ SHINAMONPAN KITCHEN - LvcyLu
 
 [MONIKA'S BEDROOM - Kjkjmulo](https://www.reddit.com/r/DDLCMods/comments/1hd1u5l/monika_bedroom_bg_free_use_assets/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
 
-[STORM - Kimagure After | きまぐれアフター](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing)
+[STORM - Kimagure After](https://drive.google.com/drive/folders/1FvpXP9NGwDx1JOINxAbAEi9nsoBV77Fl?usp=sharing)
 
 - CREDITS BELOW CAME FROM THIS LINK: https://drive.google.com/drive/folders/1yTohcOnGV6Kw6Lru1cITWt-zwRoGSCm_?usp=sharing
 
@@ -213,19 +213,17 @@ ACT 1, 2, AND 3 LOGOS - Leomonade33
 
 
 ### MUSIC & AMBIENCE | 音楽と環境音
-[After Dark - Mr.Kitty](https://youtu.be/sVx1mJDeUjY?si=N892q6rHa1_F2HUz)
-
 [After Dark Piano Cover (Title Screen song) - 949](https://www.reddit.com/r/DDLCMods/comments/y0zla2/free_to_use_song_for_ddlc_mods/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
 
-Confesssion of a Time | 時の告白 - MC.Dummy.Composer
+Confesssion of a Time - MC.Dummy.Composer
 
-Depression of Life | 人生の憂鬱 - MC.Dummy.Composer
+Depression of Life - MC.Dummy.Composer
 
-Argument Over an Endeavor | 努力をめぐる論争 - MC.Dummy.Composer
+Argument Over an Endeavor - MC.Dummy.Composer
 
-The One Who Stalks (Kamiyama Itsomi's Theme) | ストーカー（神山イツォミのテーマ） - MC.Dummy.Composer
+The One Who Stalks (Kamiyama Itsomi's Theme) - MC.Dummy.Composer
 
-[DDMC Track Series: Lost In Emotion - Luma](https://discord.com/channels/339272843327963136/452642679831134209/1093158379423277137)
+[DDMC_Track_Series_Lost_In_Emotion - Luma](https://discord.com/channels/339272843327963136/452642679831134209/1093158379423277137)
 
 [STORM, FOREST, CLOCK - Fesliyan Studios](https://www.fesliyanstudios.com)
 
@@ -236,8 +234,6 @@ EPIC STORM - Sound Effect by [Peace,love,happiness](https://pixabay.com/users/pl
 [FACTORY (revolvingdoors) - DeadAirspace#4433](https://drive.google.com/drive/folders/1P_KKMcbs5DjEmCNDvNDZUbofIOoQHEMl?usp=drive_link)
 
 RIVER - Sound Effect by [freesound_community](https://pixabay.com/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=23199) from [Pixabay](https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=23199)
-
-DEADMAN AMBIENCE - (REALLY JUST THE FNAF 1 AMBIENCE)
 
 
 
@@ -280,6 +276,8 @@ THUNDER2 - Sound Effect by [Mikhail](https://pixabay.com/users/soundsforyou-4861
 ### MISC | その他
 [DOKI MPT - Chronos, Yagamirai, Terra, DiabloGraves](https://www.reddit.com/r/DDLCMods/comments/emennq/mood_posing_tool_mpt_v10_release_for_ddlc_modding/)
 
+DEADMAN AMBIENCE - (REALLY JUST THE FNAF 1 AMBIENCE)
+
 [CAMERA SHAKE - Ren'Py cookbook](https://www.renpy.org/wiki/renpy/doc/cookbook/Shake_effect)
 
 [osumashi LICENSE](https://creativecommons.org/licenses/by/2.0/deed.en)
@@ -290,10 +288,8 @@ THUNDER2 - Sound Effect by [Mikhail](https://pixabay.com/users/soundsforyou-4861
 
 [AUTO BACKGROUND CODE - 「N E K O L A I S」](https://discord.com/channels/339272843327963136/373669030747308032/1224937520932847768)
 
-[AUTOFOCUS - Elckarow, Pseurae, Q™](https://github.com/Elckarow/Autofocus/tree/v1.0.1)
+[AUTOFOCUS - Elckarow, Ayowel](https://github.com/Elckarow/Autofocus/tree/v1.0.1)
 
 [ACHIEVEMENTS - bobcgames](https://bobcgames.itch.io/bobcachievements)
 
 [CURSOR TRACKING IMAGE](https://lemmasoft.renai.us/forums/viewtopic.php?p=340355&sid=4540fae3b4ed740ce81e66660e093648#p340355)
-
-[CREDITS CODE - Retronika](https://discord.com/channels/339272843327963136/373669030747308032/1369906381116805141)

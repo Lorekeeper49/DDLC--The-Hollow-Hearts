@@ -48,11 +48,11 @@ class Version(object):
 
         py_branch_to_version[(python, branch)] = self
 
+Version("main", 3, "8.3.0", "TBD")
+Version("main", 2, "7.8.0", "TBD")
 
-Version("main", 3, "8.4.0", "TBD")
-
-Version("fix", 3, "8.3.4", "Second Star to the Right")
-Version("fix", 2, "7.8.4", "Straight on Till Morning")
+Version("fix", 3, "8.2.3", "64bit Sensation")
+Version("fix", 2, "7.7.3", "32bit Sensation")
 
 
 def make_dict(branch, suffix="00000000", official=False, nightly=False):

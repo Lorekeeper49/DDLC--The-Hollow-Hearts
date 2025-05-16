@@ -508,7 +508,6 @@ init -1500 python hide:
 
 
 screen _auto_voice:
-    layer config.interface_layer
 
     if _voice.auto_file:
 

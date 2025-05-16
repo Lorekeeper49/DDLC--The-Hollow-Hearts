@@ -26,7 +26,6 @@
 
 screen _developer:
 
-    layer config.interface_layer
     zorder 1051
     modal True
 
@@ -66,12 +65,12 @@ screen _developer:
                 textbutton _("Image Attributes"):
                     action ui.callsinnewcontext("_image_attributes")
 
-                if not renpy.get_screen("_translation_info"):
-                    textbutton _("Show Translation Info"):
-                        action Show("_translation_info")
+                if not renpy.get_screen("_translation_identifier"):
+                    textbutton _("Show Translation Identifiers"):
+                        action Show("_translation_identifier")
                 else:
-                    textbutton _("Hide Translation Info"):
-                        action Hide("_translation_info")
+                    textbutton _("Hide Translation Identifiers"):
+                        action Hide("_translation_identifier")
 
                 if bubble.active:
 
@@ -96,7 +95,6 @@ screen _developer:
 
 
 screen _image_attributes():
-    layer config.interface_layer
 
     frame:
         style_prefix ""
@@ -115,10 +113,10 @@ screen _image_attributes():
             vbox:
                 label _("Image Attributes")
 
-                for l in renpy.display.scenelists.ordered_layers:
+                for l in renpy.display.scenelists.layers:
 
                     $ hidden = renpy.get_hidden_tags(l)
-                    $ showing = renpy.get_showing_tags(l, sort=True)
+                    $ showing = renpy.get_showing_tags(l)
 
                     if not hidden and not showing:
                         continue
@@ -130,11 +128,11 @@ screen _image_attributes():
 
                     for name in hidden:
                         $ attributes = " ".join(renpy.get_attributes(name, layer=l))
-                        text _("    [name!q] [attributes!q] (hidden)")
+                        text _("    [name] [attributes] (hidden)")
 
                     for name in showing:
                         $ attributes = " ".join(renpy.get_attributes(name, layer=l))
-                        text _("    [name!q] [attributes!q]")
+                        text _("    [name] [attributes]")
 
                     text " "
 
@@ -157,10 +155,9 @@ label _image_attributes:
 
 
 screen _variable_viewer(title, all_entries, deleted_entries):
-    layer config.interface_layer
+
     zorder 1010
     modal True
-
     default show_deleted = True
     python:
         if show_deleted:
@@ -378,7 +375,6 @@ init python:
 
 
 screen _image_location_picker_image(image_name):
-    layer config.interface_layer
 
     default ilpd = __ImageLocationPickerData()
 
@@ -408,7 +404,6 @@ screen _image_location_picker_image(image_name):
 
 
 screen _image_location_picker(image_files):
-    layer config.interface_layer
 
     default filter = ""
 
@@ -510,7 +505,6 @@ label _filename_list:
 
 
 screen _image_load_log():
-    layer config.interface_layer
     zorder 1500
 
     default show_help = True
@@ -569,13 +563,60 @@ screen _image_load_log():
     timer 10.0 action SetScreenVariable("show_help", False)
 
 
-# Removed, could be in save files.
 screen _translation_identifier():
-    pass
+    zorder 1500
+
+    default show_copy = False
+    default show_help = True
+
+    style_prefix ""
+
+    python:
+        identifier = renpy.get_translation_identifier()
+        copy = None
+
+        if identifier:
+            copy = (SetScreenVariable("show_copy", True),
+                    Function(pygame_sdl2.scrap.put,
+                             pygame_sdl2.scrap.SCRAP_TEXT,
+                             identifier.encode("utf8")))
+
+    drag:
+        draggable True
+        focus_mask None
+        xpos 0
+        ypos 0
+
+        frame:
+            style "empty"
+            background "#0004"
+            xpadding 5
+            ypadding 5
+
+            has vbox
+
+            textbutton "[identifier]":
+                action copy
+                padding (0, 0)
+                text_color "#fff"
+                text_hover_color "#bdf"
+                text_size 14
+
+            if show_copy:
+                text _("\n{color=#fff}Copied to clipboard.{/color}"):
+                    size 14
+
+                timer 2.0 action SetScreenVariable("show_copy", False)
+
+            elif show_help:
+                text _("\n{color=#fff}Click to copy.\nDrag to move.{/color}"):
+                    size 14
+
+    timer 10.0 action SetScreenVariable("show_help", False)
 
 
 screen _filename_and_line():
-    layer config.interface_layer
+
     zorder 1500
     style_prefix ""
 
@@ -620,7 +661,7 @@ screen _filename_and_line():
 
 init 1000 python hide:
     if config.transparent_tile:
-        tile = Tile("_transparent_tile.png")
+        tile = im.Tile("_transparent_tile.png", (config.screen_width, config.screen_height))
         config.underlay.append(tile)
         renpy.start_predict(tile)
 

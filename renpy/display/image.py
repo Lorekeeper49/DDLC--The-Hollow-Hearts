@@ -693,8 +693,9 @@ class DynamicImage(renpy.display.displayable.Displayable):
 
         if raw_target._duplicatable:
             target = raw_target._duplicate(self._args)
+
             if not self._duplicatable:
-                target._unique()
+                self.target._unique()
 
         self.raw_target = raw_target
         self.target = target
@@ -731,8 +732,7 @@ class DynamicImage(renpy.display.displayable.Displayable):
     def _unique(self):
         if self.target is not None:
             self.target._unique()
-
-        self._duplicatable = False
+            self._duplicatable = False
 
     def _in_current_store(self):
         rv = self._copy()

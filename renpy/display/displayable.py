@@ -193,9 +193,6 @@ class Displayable(renpy.object.Object):
     # delay for.
     delay = None # type: float|None
 
-    # An id that can be used to identify this displayable.
-    id = None # type: str|None
-
     def __ne__(self, o):
         return not (self == o)
 
@@ -505,27 +502,18 @@ class Displayable(renpy.object.Object):
 
         return pos
 
-    _store_transform_event = False
-
     def set_transform_event(self, event):
         """
         Sets the transform event of this displayable to event.
-
-        transform_event_responder needs to be set on displayables that respond to transform events.
-
-        _store_transform_event should be set on displayables that store a generated transform event,
-        like Button or Bar.
         """
 
-        if self.transform_event_responder or self._store_transform_event:
+        if event == self.transform_event:
+            return
 
-            if event == self.transform_event:
-                return
+        self.transform_event = event
 
-            self.transform_event = event
-
-            if self.transform_event_responder:
-                renpy.display.render.redraw(self, 0)
+        if self.transform_event_responder:
+            renpy.display.render.redraw(self, 0)
 
     def _handles_event(self, event):
         """
@@ -592,15 +580,11 @@ class Displayable(renpy.object.Object):
             if i is not None:
                 speech = i._tts()
 
-                if isinstance(speech, renpy.display.tts.TTSDone):
-                    if speech.strip():
-                        rv = [ speech ]
-                    else:
-                        rv = [ ]
-                    break
-
                 if speech.strip():
                     rv.append(speech)
+                    if isinstance(speech, renpy.display.tts.TTSDone):
+                        rv = [ speech ]
+                        break
 
 
         rv = ": ".join(rv)

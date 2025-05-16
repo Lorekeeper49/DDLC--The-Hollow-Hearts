@@ -132,6 +132,9 @@ class Container(renpy.display.displayable.Displayable):
         super(Container, self).__init__(**properties)
 
     def set_transform_event(self, event):
+        """
+        Sets the transform event of this displayable to event.
+        """
 
         super(Container, self).set_transform_event(event)
 
@@ -832,9 +835,6 @@ class MultiBox(Container):
         if miny is not None:
             height = max(height, compute_raw(miny, height))
 
-        min_line_x = 0
-        min_line_y = 0
-
         if self.first and adjust_times:
             self.update_times()
 
@@ -968,15 +968,6 @@ class MultiBox(Container):
         xminimum = self.style.xminimum
         yminimum = self.style.yminimum
 
-        box_justify = self.style.box_justify
-        box_align = self.style.box_align
-
-        if box_align is None:
-            box_align = 0
-            use_box_align = False
-        else:
-            use_box_align = True
-
         # The shared height and width of the current line. The line_height must
         # be 0 for a vertical box, and the line_width must be 0 for a horizontal
         # box.
@@ -988,20 +979,10 @@ class MultiBox(Container):
         if self.style.box_reverse and renpy.config.simple_box_reverse:
             children.reverse()
             spacings.reverse()
-        elif self.style.box_reverse and not renpy.config.box_reverse_align:
-            box_align = 1.0 - box_align
 
         # a list of (child, x, y, w, h, surf) tuples that are turned into
         # calls to child.place().
         placements = [ ]
-
-        # A listof placements per line.
-        line_placements = [ ]
-
-        # The width and height of each line.
-        line_widths = [ ]
-        line_heights = [ ]
-        line_use_justify = [ ]
 
         # The maximum x and y.
         maxx = 0
@@ -1011,20 +992,14 @@ class MultiBox(Container):
         minx = 0
         miny = 0
 
-        def layout_line(line, xfill, yfill, use_justify):
+        def layout_line(line, xfill, yfill):
             """
             Lays out a single line.
 
             `line` a list of (child, x, y, surf) tuples.
             `xfill` the amount of space to add in the x direction.
             `yfill` the amount of space to add in the y direction.
-            `use_justify` if True, the line should be justified.
             """
-
-            placements = [ ]
-
-            line_max_x = 0
-            line_max_y = 0
 
             xfill = max(0, xfill)
             yfill = max(0, yfill)
@@ -1034,16 +1009,19 @@ class MultiBox(Container):
             else:
                 line_count = len(line)
 
-            if use_justify or use_box_align or line_count == 0:
+            if line_count > 0:
+                xperchild = xfill // line_count
+                yperchild = yfill // line_count
+            else:
                 xperchild = 0
                 yperchild = 0
-            else:
-                xperchild = xfill / line_count
-                yperchild = yfill / line_count
+
+            maxxout = maxx
+            maxyout = maxy
 
             i = 0
 
-            for child, padding, x, y, surf in line:
+            for child, x, y, surf in line:
 
                 sw, sh = surf.get_size()
                 sw = max(line_width, sw)
@@ -1051,29 +1029,20 @@ class MultiBox(Container):
 
                 if (not child._box_skip) or (not renpy.config.box_skip):
 
-                    x += int(i * xperchild)
-                    y += int(i * yperchild)
+                    x += i * xperchild
+                    y += i * yperchild
 
                     sw += xperchild
                     sh += yperchild
-
-                    x += padding[0]
-                    y += padding[1]
 
                     i += 1
 
                 placements.append((child, x, y, sw, sh, surf))
 
-                line_max_x = x + sw
-                line_max_y = y + sh
+                maxxout = max(maxxout, x + sw)
+                maxyout = max(maxyout, y + sh)
 
-            line_widths.append(line_max_x)
-            line_heights.append(line_max_y)
-            line_use_justify.append(use_justify)
-
-            line_placements.append(placements)
-
-            return ( max(maxx, line_max_x), max(maxy, line_max_y) )
+            return maxxout, maxyout
 
         x = 0
         y = 0
@@ -1088,9 +1057,6 @@ class MultiBox(Container):
             line_height = 0
             line = [ ]
             remwidth = width
-            next_padding = 0
-            lines = [ ]
-            first_line = True
 
             if xfill:
                 target_width = width
@@ -1099,42 +1065,32 @@ class MultiBox(Container):
 
             for d, padding, cst, cat in zip(children, spacings, csts, cats):
 
-                use_justify = (box_justify in (True, "all")
-                    or (box_justify == "first" and first_line))
-
                 if d._box_skip and renpy.config.box_skip:
                     padding = 0
 
                 if box_wrap:
                     rw = width
                 else:
-                    rw = remwidth - next_padding
+                    rw = remwidth
 
                 surf = render(d, rw, height - y, cst, cat)
                 sw, sh = surf.get_size()
 
-                if box_wrap and (remwidth - sw - next_padding) < 0 and line:
-                    maxx, maxy = layout_line(line, (target_width - x), 0, use_justify)
+                if box_wrap and remwidth - sw - padding < 0 and line:
+                    maxx, maxy = layout_line(line, (target_width - x), 0)
 
                     y += line_height + box_wrap_spacing
                     x = 0
                     line_height = 0
                     remwidth = width
                     line = [ ]
-                    first_line = False
-                    next_padding = 0
 
-                    surf = render(d, rw, height - y, cst, cat)
-                    sw, sh = surf.get_size()
-
-                line.append((d, (next_padding, 0), x, y, surf))
+                line.append((d, x, y, surf))
                 line_height = max(line_height, sh)
-                x += sw + next_padding
-                remwidth -= (sw + next_padding)
-                next_padding = padding
+                x += sw + padding
+                remwidth -= (sw + padding)
 
-            use_justify = (box_justify == "all")
-            maxx, maxy = layout_line(line, (target_width - x), 0, use_justify)
+            maxx, maxy = layout_line(line, (target_width - x) if (not box_wrap) else 0, 0)
 
         elif layout == "vertical":
 
@@ -1146,9 +1102,6 @@ class MultiBox(Container):
             line_width = 0
             line = [ ]
             remheight = height
-            next_padding = 0
-            lines = [ ]
-            first_line = True
 
             if yfill:
                 target_height = height
@@ -1157,103 +1110,55 @@ class MultiBox(Container):
 
             for d, padding, cst, cat in zip(children, spacings, csts, cats):
 
-                use_justify = (box_justify in (True, "all")
-                    or (box_justify == "first" and first_line))
-
                 if d._box_skip and renpy.config.box_skip:
                     padding = 0
 
                 if box_wrap:
                     rh = height
                 else:
-                    rh = remheight - next_padding
+                    rh = remheight
 
                 surf = render(d, width - x, rh, cst, cat)
                 sw, sh = surf.get_size()
 
-                if box_wrap and (remheight - sh - next_padding) < 0 and line:
-                    maxx, maxy  = layout_line(line, 0, (target_height - y), use_justify)
+                if box_wrap and remheight - sh - padding < 0:
+                    maxx, maxy = layout_line(line, 0, (target_height - y))
 
                     x += line_width + box_wrap_spacing
                     y = 0
                     line_width = 0
                     remheight = height
                     line = [ ]
-                    first_line = False
-                    next_padding = 0
 
-                    surf = render(d, width - x, rh, cst, cat)
-                    sw, sh = surf.get_size()
-
-                line.append((d, (0, next_padding), x, y, surf))
+                line.append((d, x, y, surf))
                 line_width = max(line_width, sw)
-                y += sh + next_padding
-                remheight -= (sh + next_padding)
-                next_padding = padding
+                y += sh + padding
+                remheight -= (sh + padding)
 
-            use_justify = (box_justify == "all")
-            maxx, maxy = layout_line(line, 0, (target_height - y), use_justify)
+            maxx, maxy = layout_line(line, 0, (target_height - y) if (not box_wrap) else 0)
 
         else:
             raise Exception("Unknown box layout: %r" % layout)
 
-        # Determine the size.
+        # Back to the common for vertical and horizontal.
+
         if not xfill:
             width = max(xminimum, maxx)
 
         if not yfill:
             height = max(yminimum, maxy)
 
-        # Apply box_align and box_justify to the lines.
-        if not(use_justify or use_box_align):
-            placements = [ i for line in line_placements for i in line ]
-
-        elif layout == "horizontal":
-            for line, line_width, use_justify in zip(line_placements, line_widths, line_use_justify):
-                remaining = width - line_width
-                if use_justify and len(line) > 1:
-                    justify_per_child = remaining / (len(line) - 1)
-                    align_offset = 0
-                else:
-                    justify_per_child = 0
-                    align_offset = int(remaining * box_align)
-
-                i = 0
-                for (child, x, y, w, h, surf) in line:
-                    x += align_offset + int(i * justify_per_child)
-                    placements.append((child, x, y, w, h, surf))
-                    i += 1
-
-        else:
-            for line, line_height, use_justify in zip(line_placements, line_heights, line_use_justify):
-                remaining = height - line_height
-                if use_justify and len(line) > 1:
-                    justify_per_child = remaining / (len(line) - 1)
-                    align_offset = 0
-                else:
-                    justify_per_child = 0
-                    align_offset = int(remaining * box_align)
-
-                i = 0
-                for (child, x, y, w, h, surf) in line:
-                    y += align_offset + int(i * justify_per_child)
-                    placements.append((child, x, y, w, h, surf))
-                    i += 1
-
-        # Handle box reverse.
         if self.style.box_reverse and not renpy.config.simple_box_reverse:
             new_placements = [ ]
 
             for child, x, y, w, h, surf in placements:
-                if layout == "horizontal":
-                    new_placements.append((child, width - x - w, y, w, h, surf))
-                else:
+                if layout == "vertical":
                     new_placements.append((child, x, height - y - h, w, h, surf))
+                else:
+                    new_placements.append((child, width - x - w, y, w, h, surf))
 
             placements = new_placements
 
-
-        # Place the children.
         rv = renpy.display.render.Render(width, height)
 
         if self.style.order_reverse ^ (self.style.box_reverse and renpy.config.simple_box_reverse):
@@ -1451,7 +1356,6 @@ class Window(Container):
                     new_target.take_execution_state(old_target)
 
             self.current_child = child
-
 
         # Render the child.
         surf = render(child,
@@ -2354,30 +2258,13 @@ class AlphaMask(Container):
 
     invert = False
 
-    _duplicatable = False
-
     def __init__(self, child, mask, invert=False, **properties):
         super(AlphaMask, self).__init__(**properties)
 
-
         self.mask = renpy.easy.displayable(mask)
-        self._duplicatable = self.mask._duplicatable
-
         self.add(self.mask)
         self.add(child)
         self.invert = invert
-
-    def _duplicate(self, args):
-        rv = super(AlphaMask, self)._duplicate(args)
-
-        if (rv is not self) and rv.mask._duplicatable:
-            rv.mask = self.mask._duplicate(args)
-
-        return rv
-
-    def _unique(self):
-        super(AlphaMask, self)._unique()
-        self.mask._unique()
 
     def visit(self):
         return [ self.mask, self.child ]

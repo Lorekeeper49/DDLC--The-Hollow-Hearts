@@ -38,64 +38,6 @@ TAG_RE = re.compile(r'(\{\{)|(\{(p|w|nw|fast|done)(?:\=([^}]*))?\})', re.S)
 less_pauses = ("RENPY_LESS_PAUSES" in os.environ)
 
 
-class Callbacks(object):
-    """
-    This stores and calls the character callbacks.
-    """
-
-    def __init__(self, callbacks, interact, type, cb_args, multiple):
-        self.callbacks = callbacks
-        self.interact = interact
-        self.type = type
-        self.cb_args = cb_args
-        self.multiple = multiple # type: tuple[int, int]|None
-
-        self.what = None # type: str|None
-        self.start = None # type: int|None
-        self.end = None # type: int|None
-        self.delay = None # type: float|None
-        self.last_segment = None # type: bool|None
-
-    def __call__(self, *args, **kwargs):
-        if not self.callbacks:
-            return
-
-        kwargs["type"] = self.type
-        kwargs["interact"] = self.interact
-
-        if renpy.config.character_callback_compat is None:
-
-            if self.what is not None:
-                kwargs["what"] = self.what
-
-            if self.start is not None:
-                kwargs["start"] = self.start
-
-            if self.end is not None:
-                kwargs["end"] = self.end
-
-            if self.delay is not None:
-                kwargs["delay"] = self.delay
-
-            if self.last_segment is not None:
-                kwargs["last_segment"] = self.last_segment
-
-            if  self.multiple is not None:
-                kwargs["multiple"] = self.multiple
-
-            kwargs["please_ignore_unknown_keyword_arguments"] = None
-
-        kwargs.update(self.cb_args)
-
-        for c in self.callbacks:
-            c(*args, **kwargs)
-
-    def copy(self):
-        rv = Callbacks(self.callbacks, self.interact, self.type, self.cb_args, self.multiple)
-        rv.__dict__.update(self.__dict__)
-        return rv
-
-
 class DialogueTextTags(object):
     """
     This object parses the text tags that only make sense in dialogue,
@@ -484,7 +426,8 @@ class SlowDone(object):
             renpy.ui.pausebehavior(self.delay, True, voice=self.last_pause and not self.no_wait, self_voicing=self.last_pause)
             renpy.exports.restart_interaction()
 
-        self.callback("slow_done")
+        for c in self.callback:
+            c("slow_done", interact=self.interact, type=self.type, **self.cb_args)
 
 # This is a queue for text that's going to be passed to the say behavior to
 # set the AFM info.
@@ -570,7 +513,10 @@ def display_say(
         callback = [ callback ]
 
     callback = renpy.config.all_character_callbacks + callback
-    callback = Callbacks(callback, interact, type, cb_args, multiple)
+
+    # Call the begin callback.
+    for c in callback:
+        c("begin", interact=interact, type=type, **cb_args)
 
     roll_forward = renpy.exports.roll_forward_info()
 
@@ -610,6 +556,7 @@ def display_say(
 
     exception = None
 
+
     retain_tag = "_retain_0"
     retain_count = -1
 
@@ -622,10 +569,6 @@ def display_say(
             if not renpy.exports.get_screen(retain_tag):
                 break
 
-    # Call the begin callback.
-    callback.what = dtt.text
-    callback("begin")
-
     if dtt.fast:
         for i in renpy.config.say_sustain_callbacks:
             i()
@@ -636,13 +579,6 @@ def display_say(
 
             # True if the is the last pause in a line of dialogue.
             last_pause = (i == len(pause_start) - 1)
-
-            # Create a callback object specific to this pause.
-            pause_callback = callback.copy()
-            pause_callback.start = start
-            pause_callback.end = end
-            pause_callback.delay = delay
-            pause_callback.last_segment = last_pause
 
             # If we're going to do an interaction, then saybehavior needs
             # to be here.
@@ -692,10 +628,11 @@ def display_say(
                 ctc = None
 
             # Run the show callback.
-            pause_callback("show")
+            for c in callback:
+                c("show", interact=interact, type=type, **cb_args)
 
             # Create the callback that is called when the slow text is done.
-            slow_done = SlowDone(what_ctc, ctc_position, pause_callback, interact, type, cb_args, delay, ctc_kwargs, last_pause, dtt.no_wait)
+            slow_done = SlowDone(what_ctc, ctc_position, callback, interact, type, cb_args, delay, ctc_kwargs, last_pause, dtt.no_wait)
 
             extend_text = ""
 
@@ -794,7 +731,8 @@ def display_say(
 
                 slow = False
 
-            pause_callback("show_done")
+            for c in callback:
+                c("show_done", interact=interact, type=type, **cb_args)
 
             if not slow:
                 slow_done()
@@ -840,7 +778,8 @@ def display_say(
 
         renpy.plog(1, "after with none")
 
-    callback("end")
+    for c in callback:
+        c("end", interact=interact, type=type, **cb_args)
 
     if exception is not None:
         raise exception

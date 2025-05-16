@@ -103,7 +103,6 @@ init -1500:
         textalign 0.5
 
     screen _touch_keyboard:
-        layer config.interface_layer
         zorder 1100
         style_prefix "_touch_keyboard"
 

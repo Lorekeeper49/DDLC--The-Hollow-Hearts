@@ -51,9 +51,8 @@ init -1500 python:
     class __GalleryImage(object):
 
         show_properties = None
-        movie = False
 
-        def __init__(self, gallery, displayables, movie=False, **properties):
+        def __init__(self, gallery, displayables, **properties):
 
             # The gallery object we belong to.
             self.gallery = gallery
@@ -67,8 +66,6 @@ init -1500 python:
             # A list of transforms to apply to those displayables, or None
             # to not apply a transform.
             self.transforms = [ None ] * len(displayables)
-
-            self.movie = movie
 
             self.show_properties, = renpy.split_properties(properties, "show_")
 
@@ -106,13 +103,7 @@ init -1500 python:
 
             renpy.show_screen(self.gallery.image_screen, locked=locked, index=index + 1, count=count, displayables=displayables, gallery=self.gallery, **self.show_properties)
 
-            rv = ui.interact()
-
-            if self.movie:
-                renpy.hide_screen(self.gallery.image_screen)
-                renpy.pause(0)
-
-            return rv
+            return ui.interact()
 
 
     class __GalleryButton(object):
@@ -294,13 +285,6 @@ init -1500 python:
             Properties beginning with `show_` have that prefix stripped off,
             and are passed to the gallery.image_screen screen as additional
             keyword arguments.
-
-            This takes one keword argument:
-
-            `movie`
-                This should be set to true if one of the displayables is a
-                movie with sound. This will cause the movie to be hidden
-                during a transition.
             """
 
             self.image_ = __GalleryImage(self, displayables, **properties)

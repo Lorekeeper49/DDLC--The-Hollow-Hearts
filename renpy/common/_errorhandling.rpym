@@ -129,8 +129,6 @@ init label _errorhandling:
         # Box properties
         spacing 0
         first_spacing None
-        box_align None
-        box_justify False
         box_layout None
         box_wrap False
         box_wrap_spacing 0
@@ -284,7 +282,11 @@ init python:
 
     def _error_hyperlink_function(target):
         if target.startswith("http:") or target.startswith("https:"):
-            renpy.open_url(target)
+            try:
+                import webbrowser
+                webbrowser.open(target)
+            except Exception:
+                pass
 
         if target.startswith("edit:"):
             prefix, line, filename = target.split(":", 2)
@@ -670,10 +672,9 @@ init python:
 # added arguments.
 screen _exception_actions(traceback_fn, tt, *args):
 
-    if not renpy.mobile:
-        textbutton _("Open"):
-            action _EditFile(traceback_fn)
-            hovered tt.action(_("Opens the traceback.txt file in a text editor."))
+    textbutton _("Open"):
+        action _EditFile(traceback_fn)
+        hovered tt.action(_("Opens the traceback.txt file in a text editor."))
 
     textbutton _("Copy BBCode"):
         action _CopyFile(traceback_fn, u"[code]\n{}[/code]\n")
@@ -698,7 +699,6 @@ python early in _errorhandling:
 # The screen that is used for error handling.
 screen _exception:
     modal True
-    layer config.interface_layer
     zorder 1090
 
     default tt = __Tooltip("")
@@ -781,7 +781,6 @@ screen _exception:
 # The screen that is used for error handling.
 screen _parse_errors:
     modal True
-    layer config.interface_layer
     zorder 1090
 
     default tt = __Tooltip("")

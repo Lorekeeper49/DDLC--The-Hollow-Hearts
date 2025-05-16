@@ -80,7 +80,6 @@ init -1650 python:
 
         if tf:
             _side_image = tf(old, new)
-            _side_image._unique()
         else:
             _side_image = new
 

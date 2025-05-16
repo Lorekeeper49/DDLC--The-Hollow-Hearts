@@ -25,16 +25,16 @@ from renpy.compat import PY2, basestring, bchr, bord, chr, open, pystr, range, r
 import renpy
 
 # Layer management.
-ordered_layers = list(renpy.config.layers)
-layers = frozenset(ordered_layers)
+layers = frozenset(renpy.config.layers)
 sticky_layers = frozenset()
 
 
 def init_layers():
-    global layers, sticky_layers, ordered_layers
+    global layers, sticky_layers
 
-    ordered_layers = renpy.config.detached_layers + renpy.config.bottom_layers + renpy.config.layers +  renpy.config.top_layers
-    layers = frozenset(ordered_layers)
+    layers = frozenset(
+        renpy.config.layers + renpy.config.detached_layers +
+        renpy.config.top_layers + renpy.config.bottom_layers)
     sticky_layers = frozenset(
         renpy.config.sticky_layers + renpy.config.detached_layers)
 
@@ -302,9 +302,6 @@ class SceneLists(renpy.object.Object):
 
         if not isinstance(old_transform, renpy.display.motion.Transform):
             return new_thing
-
-        if not old_transform.active:
-            old_transform.update_state()
 
         if renpy.config.take_state_from_target:
             new_transform = new_thing._target()
@@ -740,7 +737,6 @@ class SceneLists(renpy.object.Object):
         time, at_list = camera_list
 
         old_transform = self.camera_transform.get(layer, None)
-
         new_transform = None
 
         if at_list:

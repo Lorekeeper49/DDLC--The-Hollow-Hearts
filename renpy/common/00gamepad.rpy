@@ -20,7 +20,6 @@
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 screen _gamepad_select(joysticks):
-    layer config.interface_layer
 
     modal True
     style_group ""
@@ -43,7 +42,6 @@ screen _gamepad_select(joysticks):
         textbutton _("Cancel") action Return("cancel")
 
 screen _gamepad_control(name, control, kind, mappings, back, i, total):
-    layer config.interface_layer
 
     modal True
     style_group ""

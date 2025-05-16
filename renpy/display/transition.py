@@ -383,12 +383,8 @@ class Dissolve(Transition):
         bottom = render(self.old_widget, width, height, st, at)
         top = render(self.new_widget, width, height, st, at)
 
-        if renpy.config.dissolve_shrink:
-            width = min(top.width, bottom.width)
-            height = min(top.height, bottom.height)
-        else:
-            width = max(top.width, bottom.width)
-            height = max(top.height, bottom.height)
+        width = max(top.width, bottom.width)
+        height = max(top.height, bottom.height)
 
         rv = renpy.display.render.Render(width, height)
 
@@ -552,12 +548,8 @@ class ImageDissolve(Transition):
         bottom = render(self.old_widget, width, height, st, at)
         top = render(self.new_widget, width, height, st, at)
 
-        if renpy.config.dissolve_shrink:
-            width = min(bottom.width, top.width, image.width)
-            height = min(bottom.height, top.height, image.height)
-        else:
-            width = max(bottom.width, top.width, image.width)
-            height = max(bottom.height, top.height, image.height)
+        width = min(bottom.width, top.width, image.width)
+        height = min(bottom.height, top.height, image.height)
 
         rv = renpy.display.render.Render(width, height)
 
@@ -680,12 +672,8 @@ class AlphaDissolve(Transition):
         bottom = render(self.old_widget, width, height, st, at)
         top = render(self.new_widget, width, height, st, at)
 
-        if renpy.config.dissolve_shrink:
-            width = min(bottom.width, top.width, image.width)
-            height = min(bottom.height, top.height, image.height)
-        else:
-            width = max(bottom.width, top.width)
-            height = max(bottom.height, top.height)
+        width = min(bottom.width, top.width)
+        height = min(bottom.height, top.height)
 
         control = render(self.control, width, height, st, at)
 

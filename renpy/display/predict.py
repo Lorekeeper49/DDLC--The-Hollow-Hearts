@@ -103,11 +103,7 @@ def prediction_coroutine(root_widget):
 
     # Predict displayables given to renpy.start_predict.
     for d in renpy.store._predict_set:
-        try:
-            displayable(d)
-        except Exception:
-            if renpy.config.debug_prediction:
-                raise
+        displayable(d)
 
         predicting = False
         yield True

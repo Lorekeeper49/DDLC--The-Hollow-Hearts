@@ -40,8 +40,6 @@ class SpriteCache(renpy.object.Object):
     need to be re-rendered.
     """
 
-    nosave = [ 'st', 'render' ]
-
     # Private Fields:
     #
     # child - The child displayable.
@@ -51,14 +49,13 @@ class SpriteCache(renpy.object.Object):
     #
     # render - The render of child.
     #
-    # fast - If true, then the render is simple enough it can just be appended to
+    # If true, then the render is simple enough it can just be appended to
     # the manager's render's children list.
 
     child = None # type: renpy.display.displayable.Displayable|None
     child_copy = None # type: renpy.display.displayable.Displayable|None
-    st = None # type: float|None
+    st = 0.0 # type: float|None
     render = None # type: renpy.display.render.Render|None
-    fast = False # type: bool
 
 
 class Sprite(renpy.object.Object):
@@ -299,7 +296,7 @@ class SpriteManager(renpy.display.displayable.Displayable):
                 cst = st - cache.st
 
                 cache.render = r = render(cache.child_copy, width, height, cst, cst)
-                cache.fast = (r.forward is None) and (not r.mesh) and (not r.uniforms) and (not r.shaders) and (not r.properties) and (not r.xclipping) and not (r.yclipping)
+                cache.fast = (r.operation == BLIT) and (r.forward is None) and (r.alpha == 1.0) and (r.over == 1.0)
                 rv.depends_on(r)
 
                 caches.append(cache)

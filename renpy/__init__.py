@@ -475,7 +475,6 @@ def import_all():
     import renpy.text.texwrap
     import renpy.text.text
     import renpy.text.extras
-    import renpy.text.shader
 
     sys.modules[pystr('renpy.display.text')] = renpy.text.text
 
@@ -519,7 +518,6 @@ def import_all():
     import renpy.audio.audio
     import renpy.audio.music
     import renpy.audio.sound
-    import renpy.audio.filter
 
     import renpy.ui
     import renpy.screenlang

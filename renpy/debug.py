@@ -34,7 +34,6 @@ import traceback
 import os
 import builtins
 import io
-import time
 
 if PY2:
     real_open = io.open

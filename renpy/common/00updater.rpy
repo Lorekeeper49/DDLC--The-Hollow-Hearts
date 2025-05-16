@@ -45,12 +45,12 @@ init -1500 python in updater:
 
     def urlopen(url):
         import requests
-        return io.BytesIO(requests.get(url, proxies=renpy.exports.proxies, timeout=15).content)
+        return io.BytesIO(requests.get(url).content)
 
     def urlretrieve(url, fn):
         import requests
 
-        data = requests.get(url, proxies=renpy.exports.proxies, timeout=15).content
+        data = requests.get(url).content
 
         with open(fn, "wb") as f:
             f.write(data)
@@ -546,7 +546,7 @@ init -1500 python in updater:
             url = urlparse.urljoin(self.url, self.updates[module]["rpu_url"])
 
             try:
-                resp = requests.get(url, proxies=renpy.exports.proxies, timeout=15)
+                resp = requests.get(url)
                 resp.raise_for_status()
             except Exception as e:
                 raise UpdateError(__("Could not download file list: ") + str(e))
@@ -666,8 +666,6 @@ init -1500 python in updater:
                     json.dump(version_state, f)
 
             # 8. Finish up.
-
-            self.save_state()
 
             persistent._update_version[self.url] = None
 
@@ -1051,11 +1049,7 @@ init -1500 python in updater:
 
             self.updates = json.loads(updates_json)
 
-            if "RENPY_TEST_MONKEYPATCH" in os.environ:
-                with open(os.environ["RENPY_TEST_MONKEYPATCH"], "r") as f:
-                    monkeypatch = f.read()
-                    future.utils.exec_(monkeypatch, globals(), globals())
-            elif verified and "monkeypatch" in self.updates:
+            if verified and "monkeypatch" in self.updates:
                 future.utils.exec_(self.updates["monkeypatch"], globals(), globals())
 
         def add_dlc_state(self, name):
@@ -1424,7 +1418,7 @@ init -1500 python in updater:
             self.log.write("downloading %r\n" % url)
             self.log.flush()
 
-            resp = requests.get(url, stream=True, proxies=renpy.exports.proxies, timeout=15)
+            resp = requests.get(url, stream=True)
 
             if not resp.ok:
                 raise UpdateError(_("The update file was not downloaded."))
@@ -1639,7 +1633,7 @@ init -1500 python in updater:
             fn = os.path.join(self.updatedir, "current.json")
 
             with open(fn, "w") as f:
-                json.dump(self.new_state, f, indent=2)
+                json.dump(self.new_state, f)
 
         def clean(self, fn):
             """
@@ -2009,7 +2003,6 @@ init -1500 python in updater:
 init -1500:
 
     screen updater(u):
-        layer config.interface_layer
 
         add "#000"
 
@@ -2068,7 +2061,6 @@ init -1500:
 
 
     screen downloader(u):
-        layer config.interface_layer
 
         style_prefix "downloader"
 

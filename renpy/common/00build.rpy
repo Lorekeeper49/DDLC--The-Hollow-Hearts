@@ -90,8 +90,6 @@ init -1500 python in build:
         ( "**.old", None),
         ( "**.new", None),
         ( "**.rpa", None),
-        ( "**.rpe", None),
-        ( "**.rpe.py", None),
 
         ( "**/steam_appid.txt", None),
 
@@ -163,8 +161,6 @@ init -1500 python in build:
         ("*.dll", None),
         ("*.manifest", None),
         ("*.keystore", None),
-        ( "**.rpe.py", None),
-
         ("update.pem", None),
 
         ("lib/", None),
