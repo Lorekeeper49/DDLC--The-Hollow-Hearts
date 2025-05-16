@@ -1,4 +1,4 @@
-# Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2025 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -51,7 +51,7 @@ class ImageMapCrop(renpy.display.displayable.Displayable):
         return [ self.child ]
 
     def render(self, width, height, st, at):
-        cr = render(self.child, width, height, st, at)
+        cr = render(self.child, renpy.config.screen_width, renpy.config.screen_height, st, at)
         return cr.subsurface(self.rect)
 
 

@@ -1,4 +1,4 @@
-# Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2025 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -310,7 +310,7 @@ class MultipleDict(object):
             if key in d:
                 return d[key]
 
-        raise NameError("Name '{}' is not defined.".format(key))
+        raise KeyError("Name '{}' is not defined.".format(key))
 
     def __contains__(self, key):
         for d in self.dicts:
@@ -354,21 +354,23 @@ def substitute(s, scope=None, force=False, translate=True):
     old_s = s
 
 
-    dicts = [ renpy.store.__dict__ ]
-
-    if "store.interpolate" in renpy.python.store_dicts:
-        dicts.insert(0, renpy.python.store_dicts["store.interpolate"])
+    dicts = []
 
     if scope is not None:
-        dicts.insert(0, scope)
+        dicts.append(scope)
 
-    if dicts:
-        kwargs = MultipleDict(*dicts)
+    if "store.interpolate" in renpy.python.store_dicts:
+        dicts.append(renpy.python.store_dicts["store.interpolate"])
+
+    dicts.append(renpy.store.__dict__)
+
+    if len(dicts) == 1:
+        variables = dicts[0]
     else:
-        kwargs = dicts[0]
+        variables = MultipleDict(*dicts)
 
     try:
-        s = interpolate(s, kwargs) # type: ignore
+        s = interpolate(s, variables) # type: ignore
     except Exception:
         if renpy.display.predict.predicting: # @UndefinedVariable
             return " ", True

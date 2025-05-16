@@ -1,4 +1,4 @@
-# Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2025 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -175,7 +175,7 @@ def default_tts_function(s):
 
     elif renpy.macintosh:
 
-        s = "[[volm {}]]".format(amplitude) + s
+        s = "[[volm {:.02f}]]".format(amplitude) + s
 
         if renpy.config.tts_voice is None:
             process = subprocess.Popen([ "say", fsencode(s) ])

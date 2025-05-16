@@ -1,4 +1,4 @@
-# Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2025 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -32,6 +32,7 @@ import threading
 import copy
 import gc
 import atexit
+import platform
 
 import pygame_sdl2 as pygame
 import renpy
@@ -107,6 +108,30 @@ enabled_events = {
     REDRAW,
     EVENTNAME,
     }
+
+input_events = {
+    pygame.KEYDOWN,
+    pygame.KEYUP,
+
+    pygame.TEXTEDITING,
+    pygame.TEXTINPUT,
+
+    pygame.MOUSEMOTION,
+    pygame.MOUSEBUTTONDOWN,
+    pygame.MOUSEBUTTONUP,
+    pygame.MOUSEWHEEL,
+
+    pygame.JOYAXISMOTION,
+    pygame.JOYHATMOTION,
+    pygame.JOYBALLMOTION,
+    pygame.JOYBUTTONDOWN,
+    pygame.JOYBUTTONUP,
+
+    pygame.CONTROLLERAXISMOTION,
+    pygame.CONTROLLERBUTTONDOWN,
+    pygame.CONTROLLERBUTTONUP,
+}
+
 
 # The number of msec between periodic events.
 PERIODIC_INTERVAL = 50
@@ -742,6 +767,9 @@ class Interface(object):
         # The time when the event was dispatched.
         self.event_time = 0
 
+        # The time of the last input event (mouse, keyboard, gamepad).
+        self.input_event_time = 0
+
         # The time we saw the last mouse event.
         self.mouse_event_time = None
 
@@ -967,6 +995,14 @@ class Interface(object):
         if renpy.android:
             self.check_android_start()
 
+        gc.collect()
+
+        if gc.garbage:
+            del gc.garbage[:]
+
+        # Kill off the presplash.
+        renpy.display.presplash.end()
+
         # Initialize audio.
         pygame.display.hint("SDL_APP_NAME", (renpy.config.name or "Ren'Py Game").encode("utf-8"))
         pygame.display.hint("SDL_AUDIO_DEVICE_APP_NAME", (renpy.config.name or "Ren'Py Game").encode("utf-8"))
@@ -984,15 +1020,7 @@ class Interface(object):
 
         renpy.display.emulator.init_emulator()
 
-        gc.collect()
-
-        if gc.garbage:
-            del gc.garbage[:]
-
         renpy.display.render.render_ready()
-
-        # Kill off the presplash.
-        renpy.display.presplash.end()
 
         # If we are on the web browser, start preloading the browser cache.
         if renpy.emscripten and renpy.game.preferences.web_cache_preload:
@@ -1018,7 +1046,7 @@ class Interface(object):
 
         pygame.event.get([ pygame.MOUSEMOTION, pygame.MOUSEBUTTONDOWN, pygame.MOUSEBUTTONUP ])
 
-        # Create a cache of the the mouse information.
+        # Create a cache of the mouse information.
         if renpy.config.mouse:
 
             self.cursor_cache = { }
@@ -1177,6 +1205,8 @@ class Interface(object):
             renderers = [ "gles" ]
         elif renpy.windows:
             renderers = [ "gl", "angle", "gles" ]
+        elif renpy.linux and platform.machine() == "aarch64":
+            renderers = [ "gles", "gl" ]
         else:
             renderers = [ "gl", "gles" ]
 
@@ -1278,11 +1308,12 @@ class Interface(object):
 
         self.kill_textures()
 
-        # Stop the resizing.
-        pygame.key.stop_text_input() # @UndefinedVariable
-        pygame.key.set_text_input_rect(None) # @UndefinedVariable
-        self.text_rect = None
-        self.old_text_rect = None
+        if not renpy.mobile:
+            pygame.key.stop_text_input() # @UndefinedVariable
+            pygame.key.set_text_input_rect(None) # @UndefinedVariable
+            self.text_rect = None
+            self.old_text_rect = None
+
         self.display_reset = False
 
         self.force_redraw = True
@@ -1466,6 +1497,7 @@ class Interface(object):
         window = renpy.display.draw.screenshot(self.surftree)
 
         if renpy.config.screenshot_crop:
+            window = renpy.display.scale.smoothscale(window, (renpy.config.screen_width, renpy.config.screen_height))
             window = window.subsurface(renpy.config.screenshot_crop)
 
         try:
@@ -1611,6 +1643,26 @@ class Interface(object):
                 self.instantiated_transition.pop(l, None)
                 self.transition_time.pop(l, None)
                 self.transition_from.pop(l, None)
+
+    def get_ongoing_transition(self, layer=None):
+        """
+        Gets the transition that is currently operating on `layer`, or at the top level
+        if `layer` is None.
+        """
+
+        rv = self.ongoing_transition.get(layer, None)
+        transition = self.instantiated_transition.get(layer, None)
+
+        if transition is None:
+            return None
+
+        start = self.transition_time.get(layer, self.frame_time) or self.frame_time
+        delay = getattr(transition, "delay", 0)
+
+        if (self.frame_time - start) < delay:
+            return rv
+
+        return None
 
     def set_transition(self, transition, layer=None, force=False):
         """
@@ -2293,8 +2345,21 @@ class Interface(object):
 
                 if not self.did_autosave:
                     renpy.loadsave.autosave()
-                    renpy.persistent.check_update()
                     self.did_autosave = True
+
+                step += 1
+
+            # Step 6: Persistent data.
+            elif step == 6:
+
+                if not self.did_persistent:
+
+                    if renpy.emscripten:
+                        renpy.persistent.update()
+                    else:
+                        renpy.persistent.check_update()
+
+                    self.did_persistent = True
 
                 step += 1
 
@@ -2349,13 +2414,6 @@ class Interface(object):
         """
 
         renpy.plog(1, "start interact_core")
-
-        # Process the invoke queue.
-        while self.invoke_queue:
-            fn, args, kwargs = self.invoke_queue.pop(0)
-            rv = fn(*args, **kwargs)
-            if rv is not None:
-                return False, rv
 
         # Check to see if the language has changed.
         renpy.translation.check_language()
@@ -2433,6 +2491,7 @@ class Interface(object):
         renpy.display.im.cache.tick()
         renpy.text.text.text_tick()
         renpy.display.predict.reset()
+        renpy.gl2.gl2shadercache.shader_part_filter_cache.clear()
 
         # Clear the size groups.
         renpy.display.layout.size_groups.clear()
@@ -2526,6 +2585,7 @@ class Interface(object):
             if isinstance(trans, renpy.display.transform.Transform) and isinstance(old_trans, renpy.display.transform.Transform):
                 trans.take_state(old_trans)
                 trans.take_execution_state(old_trans)
+
 
             self.instantiated_transition[layer] = trans
 
@@ -2729,6 +2789,9 @@ class Interface(object):
             # We only want to do autosave once.
             self.did_autosave = False
 
+            # We only want to save persistent once.
+            self.did_persistent = False
+
             old_timeout_time = None
             old_redraw_time = None
 
@@ -2882,6 +2945,14 @@ class Interface(object):
                     renpy.loadsave.did_autosave = False
                     renpy.exports.run(renpy.config.autosave_callback)
 
+                # End an obsolete ongoing transition.
+                if (not trans_pause) and self.ongoing_transition.get(None, None) and not self.get_ongoing_transition(None):
+                    self.transition.pop(None, None)
+                    self.ongoing_transition.pop(None, None)
+                    self.transition_time.pop(None, None)
+                    self.transition_from.pop(None, None)
+                    self.restart_interaction = True
+
                 # See if we want to restart the interaction entirely.
                 if self.restart_interaction and not self.display_reset:
                     return True, None
@@ -2944,6 +3015,13 @@ class Interface(object):
                         # Always set to at least 1ms.
                         pygame.time.set_timer(TIMEEVENT, int(time_left * 1000 + 1))
                         old_timeout_time = self.timeout_time
+
+                # Process the invoke queue.
+                while self.invoke_queue:
+                    fn, args, kwargs = self.invoke_queue.pop(0)
+                    rv = fn(*args, **kwargs)
+                    if rv is not None:
+                        return False, rv
 
                 if can_block or (frame >= renpy.config.idle_frame) or (self.force_prediction):
                     expensive = not (needs_redraw or (_redraw_in < .2) or (_timeout_in < .2) or renpy.display.video.playing())
@@ -3182,6 +3260,11 @@ class Interface(object):
                     x = -1
                     y = -1
 
+                self.event_time = end_time = get_time()
+
+                if ev.type in input_events:
+                    self.input_event_time = self.event_time
+
                 # This can set the event to None, to ignore it.
                 ev = renpy.display.controller.event(ev)
                 if not ev:
@@ -3189,8 +3272,6 @@ class Interface(object):
 
                 # Handle skipping.
                 renpy.display.behavior.skipping(ev)
-
-                self.event_time = end_time = get_time()
 
                 try:
 
