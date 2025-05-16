@@ -39,7 +39,7 @@ label act3_path13:
     a "..."
     scene bg entrance with wipeleft_scene
     $ char_perspective = "Taiyen"
-    show yuri turned zorder 2 at t11
+    show yuri turned casual zorder 2 at t11
     t "Yuri-chan?"
     t "Is this about the murderer?"
     y "Yes."
@@ -62,7 +62,18 @@ label act3_path13:
     t "The sister of someone else you killed is outside the door."
     t "I recommend you listen to what she has to say."
     "Without a word, I comply."
+    with wipeleft_scene
+    $ char_perspective = "Taiyen"
+    show yuri turned casual rup zorder 2 at t11
+    y om "Should it be me or her?"
+    "Iru's talking."
+    menu:
+        "I'll let you be the judge."
 
+        "Yuri":
+            t "Her."
+        "Iru":
+            t "You."
 
 
 
