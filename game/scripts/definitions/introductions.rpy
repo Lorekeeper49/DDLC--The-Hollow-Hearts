@@ -100,7 +100,7 @@ init python:
     name = "Luna Aoruguri",
     attr = _("- Storm: She can manipulate the weather to any extent in any location, meaning she can create storms at will."),
     bio = _("A calm and collected girl but also a shy introvert, her only friends are Akira and Taiyen, she doesn't do well with people.  However, she is starting to change that fact."),
-    img = "aoruguri crossed storm"
+    img = "aoruguri cross storm"
     )
     
 
