@@ -72,8 +72,10 @@ label act3_path13:
 
         "Yuri":
             t "Her."
+            ""
         "Iru":
             t "You."
+            ""
 
 
 
