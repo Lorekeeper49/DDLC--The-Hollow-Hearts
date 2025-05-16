@@ -1,4 +1,4 @@
-﻿# Copyright 2004-2025 Tom Rothamel <pytom@bishoujo.us>
+﻿# Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -771,8 +771,8 @@ init -1500 python in updater:
                 persistent._update_version[self.url] = None
                 return
 
-            self.pretty_version = build.version or build.directory_name
-            persistent._update_version[self.url] = self.pretty_version
+            pretty_version = build.version or build.directory_name
+            persistent._update_version[self.url] = pretty_version
 
             if self.check_only:
                 renpy.restart_interaction()

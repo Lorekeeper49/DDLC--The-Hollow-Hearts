@@ -1,4 +1,4 @@
-# Copyright 2004-2025 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -99,17 +99,13 @@ def init():
     register_shader("live2d.mask", variables="""
         uniform sampler2D tex0;
         uniform sampler2D tex1;
-        uniform vec2 u_model_size;
-        uniform float u_live2d_ppu;
-        uniform vec2 u_live2d_offset;
         attribute vec4 a_position;
         attribute vec2 a_tex_coord;
         varying vec2 v_tex_coord;
         varying vec2 v_mask_coord;
     """, vertex_200="""
         v_tex_coord = a_tex_coord;
-        v_mask_coord = (a_position.xy * u_live2d_ppu + u_live2d_offset) / u_model_size;
-        v_mask_coord.y = 1.0 - v_mask_coord.y;
+        v_mask_coord = vec2(a_position.x / 2.0 + .5, -a_position.y / 2.0 + .5);
     """, fragment_200="""
         vec4 color = texture2D(tex0, v_tex_coord);
         vec4 mask = texture2D(tex1, v_mask_coord);
@@ -119,17 +115,13 @@ def init():
     register_shader("live2d.inverted_mask", variables="""
         uniform sampler2D tex0;
         uniform sampler2D tex1;
-        uniform vec2 u_model_size;
-        uniform float u_live2d_ppu;
-        uniform vec2 u_live2d_offset;
         attribute vec4 a_position;
         attribute vec2 a_tex_coord;
         varying vec2 v_tex_coord;
         varying vec2 v_mask_coord;
     """, vertex_200="""
         v_tex_coord = a_tex_coord;
-        v_mask_coord = (a_position.xy * u_live2d_ppu + u_live2d_offset) / u_model_size;
-        v_mask_coord.y = 1.0 - v_mask_coord.y;
+        v_mask_coord = vec2(a_position.x / 2.0 + .5, -a_position.y / 2.0 + .5);
     """, fragment_200="""
         vec4 color = texture2D(tex0, v_tex_coord);
         vec4 mask = texture2D(tex1, v_mask_coord);
@@ -888,9 +880,6 @@ class Live2D(renpy.display.displayable.Displayable):
         for name, shown, hidden in state.old_expressions:
             weight = 1.0
             e = common.all_expressions[name]
-
-            if now - hidden >= e.fadeout:
-                continue
 
             if (e.fadein > 0) and (now - shown) < e.fadein:
                 weight = min(weight, (now - shown) / e.fadein)

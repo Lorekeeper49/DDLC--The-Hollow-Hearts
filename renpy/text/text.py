@@ -1,4 +1,4 @@
-# Copyright 2004-2025 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -285,12 +285,9 @@ class TextSegment(object):
     def __repr__(self):
         return "<TextSegment font={font}, size={size}, bold={bold}, italic={italic}, underline={underline}, color={color}, black_color={black_color}, hyperlink={hyperlink}, vertical={vertical}>".format(**self.__dict__)
 
-    def take_style(self, style, layout, context=None):
+    def take_style(self, style, layout):
         """
         Takes the style of this text segment from the named style object.
-
-        `context`
-            Text given the context the style is taken in. Used to produce error messages.
         """
 
         self.antialias = style.antialias
@@ -328,12 +325,7 @@ class TextSegment(object):
         self.axis = style.axis
         self.instance = style.instance
 
-        if context and style.textshader and not self.shader:
-            raise Exception("%s supplies a textshader, but the Text displayable does not use textshaders. Consider using config.default_textshader to opt-in." % (context,))
-
         self.shader = renpy.text.shader.get_textshader(style.textshader)
-
-
 
     # From here down is the public glyph API.
 
@@ -396,7 +388,7 @@ class TextSegment(object):
     def subsegment(self, s):
         """
         This is called to break the current text segment up into multiple
-        text segments. It yields one or more(TextSegment, string) tuples
+        text segments. It yields one or more(TextSegement, string) tuples
         for each sub-segment it creates.
 
         This is used by the FontGroup code to create new text segments based
@@ -683,7 +675,6 @@ class Layout(object):
         self.cps = style.slow_cps
         if self.cps is None or self.cps is True:
             self.cps = renpy.game.preferences.text_cps
-        self.cps = self.cps * style.slow_cps_multiplier
 
         width = self.scale_int(width)
         height = self.scale_int(height)
@@ -1024,10 +1015,7 @@ class Layout(object):
 
             self.textures[key] = tex
 
-        if self.textshaders:
-            for o, color, xo, yo in self.outlines:
-                tex = self.textures[(o, color)]
-
+            if self.textshaders:
                 for ts in self.textshaders:
                     mr = self.create_mesh_displayable(o, tex, lines, xo, yo, depth, max_depth, ts)
                     self.mesh_displayables.append((o, xo, yo, mr))
@@ -1238,8 +1226,6 @@ class Layout(object):
 
             line.extend(tss[-1].subsegment(u"\u200B")) # type: ignore
 
-        done = False
-
         for type, text in tokens: # @ReservedAssignment
 
             try:
@@ -1333,7 +1319,6 @@ class Layout(object):
                     pass
 
                 elif tag == "done":
-                    done = True
                     pass
 
                 elif tag == "nw":
@@ -1366,7 +1351,7 @@ class Layout(object):
                     vert_style = ts.vertical
                     size = ts.size
 
-                    ts.take_style(hls, self, "A hyperlink style")
+                    ts.take_style(hls, self)
 
                     ts.vertical = vert_style
                     ts.hyperlink = link
@@ -1400,7 +1385,7 @@ class Layout(object):
 
                 elif tag == "":
                     style = getattr(renpy.store.style, value)
-                    push().take_style(style, self, "The %s style" % value)
+                    push().take_style(style, self)
 
                 elif tag == "font":
                     value = renpy.config.font_name_map.get(value, value)
@@ -1462,7 +1447,7 @@ class Layout(object):
                     ts = push()
                     # inherit vertical style
                     vert_style = ts.vertical
-                    ts.take_style(style.ruby_style, self, "The ruby style")
+                    ts.take_style(style.ruby_style, self)
                     ts.vertical = vert_style
                     ts.ruby_top = True
                     self.has_ruby = True
@@ -1471,7 +1456,7 @@ class Layout(object):
                     ts = push()
                     # inherit vertical style
                     vert_style = ts.vertical
-                    ts.take_style(style.altruby_style, self, "The altruby style")
+                    ts.take_style(style.altruby_style, self)
                     ts.vertical = vert_style
                     ts.ruby_top = "alt"
                     self.has_ruby = True
@@ -1541,9 +1526,6 @@ class Layout(object):
                     raise Exception("Unknown text tag %r" % text)
 
             except Exception:
-                if done:
-                    break
-
                 renpy.game.exception_info = "While processing text tag {{{!s}}} in {!r}.:".format(text, text_displayable.get_all_text())
                 raise
 
@@ -1585,10 +1567,6 @@ class Layout(object):
 
         for ts, s in p:
             s, direction = log2vis(unicode(s), direction)
-
-            if s and getattr(ts, "shaper", "") == "harfbuzz":
-                s = renpy.text.extras.unmap_arabic_presentation_forms(s)
-
             l.append((ts, s))
 
         rtl = (direction == RTL or direction == WRTL)
@@ -1788,7 +1766,7 @@ class Layout(object):
             if line is not last_line:
                 bottom = min(outline + line.y + line.height + self.line_overlap_split, th)
             else:
-                bottom = th
+                bottom = min(2 * outline + line.y + line.height, th)
 
             if line.glyphs:
                 first_glyph = line.glyphs[0]
@@ -1800,7 +1778,7 @@ class Layout(object):
             left = 0
 
             if first_glyph:
-                right = max(first_glyph.x - self.add_left, 0)
+                right = first_glyph.x + self.add_left
             else:
                 right = tw
 
@@ -1808,20 +1786,21 @@ class Layout(object):
             # These pseudo-glyphs are used to make sure that outlines of lines above and below
             # are displayed.
 
-            if right > 0 and (ts == first_shader):
+            if outline:
+                if right > 0 and (ts == first_shader):
 
-                cx = 0 + right / 2
-                cy = outline + line.baseline
+                    cx = 0 + right / 2
+                    cy = outline + line.baseline
 
-                mesh.add_glyph(
-                    tw, th,
-                    cx, cy,
-                    last_index,
-                    left, top, right, bottom,
-                    last_time, last_time,
-                    line.baseline, line.height - line.baseline,
-                    self.add_left, self.add_top,
-                )
+                    mesh.add_glyph(
+                        tw, th,
+                        cx, cy,
+                        last_index,
+                        left, top, right, bottom,
+                        last_time, last_time,
+                        line.baseline, line.height - line.baseline,
+                        self.add_left, self.add_top,
+                    )
 
             # Generate the actual glyphs.
 
@@ -1878,23 +1857,25 @@ class Layout(object):
                 last_index = g.index
 
             # Handle the empty space to the right of the last glyph.
-            if right < tw and (ts == first_shader):
+            if outline:
 
-                left = right
-                right = tw
+                if right < tw and (ts == first_shader):
 
-                cx = left + right / 2
-                cy = outline + line.baseline
+                    left = right
+                    right = tw
 
-                mesh.add_glyph(
-                    tw, th,
-                    cx, cy,
-                    last_index,
-                    left, top, right, bottom,
-                    last_time, last_time,
-                    line.baseline, line.height - line.baseline,
-                    self.add_left, self.add_top,
-                )
+                    cx = left + right / 2
+                    cy = outline + line.baseline
+
+                    mesh.add_glyph(
+                        tw, th,
+                        cx, cy,
+                        last_index,
+                        left, top, right, bottom,
+                        last_time, last_time,
+                        line.baseline, line.height - line.baseline,
+                        self.add_left, self.add_top,
+                    )
 
             top = bottom
 
@@ -2022,7 +2003,6 @@ class Text(renpy.display.displayable.Displayable):
     mask = None
     last_ctc = None
     tokenized = False
-    slow_done_time = None
 
     def after_upgrade(self, version):
 
@@ -2087,9 +2067,6 @@ class Text(renpy.display.displayable.Displayable):
         # The callback to be called when slow-text mode ends.
         self.slow_done = slow_done # type:Callable|None
 
-        # The time at which the slow text was done.
-        self.slow_done_time = None # type: float|None
-
         # The ctc indicator associated with this text.
         self.ctc = None
 
@@ -2101,7 +2078,6 @@ class Text(renpy.display.displayable.Displayable):
         if isinstance(replaces, Text):
             self.slow = replaces.slow
             self.slow_done = replaces.slow_done
-            self.slow_done_time = replaces.slow_done_time
             self.ctc = replaces.ctc
             self.start = replaces.start
             self.end = replaces.end
@@ -2607,22 +2583,19 @@ class Text(renpy.display.displayable.Displayable):
             else:
                 self.slow = False
 
-        if not self.slow and self.slow_done_time is not None:
-            self.slow_done_time = st
-
         if self.dirty or self.displayables is None:
             self.update()
 
         # Render all of the child displayables.
         renders = { }
 
+        for i in self.displayables:
+            renders[i] = renpy.display.render.render(i, width, self.style.size, st, at)
+
         # Find the virtual-resolution layout.
         virtual_layout = self.get_virtual_layout()
 
         if virtual_layout is None or virtual_layout.width != width or virtual_layout.height != height:
-
-            for i in self.displayables:
-                renders[i] = renpy.display.render.render(i, width, self.style.size, 0, 0)
 
             virtual_layout = Layout(self, width, height, renders, drawable_res=False, size_only=True)
 
@@ -2636,18 +2609,12 @@ class Text(renpy.display.displayable.Displayable):
 
         if layout is None or layout.width != width or layout.height != height:
 
-            if not renders:
-                for i in self.displayables:
-                    renders[i] = renpy.display.render.render(i, width, self.style.size, 0, 0)
-
             layout = Layout(self, width, height, renders, splits_from=virtual_layout)
 
             if len(layout_cache_new) > LAYOUT_CACHE_SIZE:
                 layout_cache_new.clear()
 
             layout_cache_new[id(self)] = layout
-
-        del renders
 
         # The laid-out size of this Text.
         vw, vh = virtual_layout.size
@@ -2683,33 +2650,22 @@ class Text(renpy.display.displayable.Displayable):
             drend.forward = layout.reverse
             drend.reverse = layout.forward
 
-            for d, x, y, child_width, ascent, line_spacing, t in layout.displayable_blits:
+            for d, x, y, width, ascent, line_spacing, t in layout.displayable_blits:
 
                 if self.slow and t > st:
                     continue
 
-                if self.slow_done_time is not None:
-                    cst = st - min(self.slow_done_time, t)
-                else:
-                    cst = st - t
-
                 xo, yo = renpy.display.displayable.place(
-                    child_width,
+                    width,
                     ascent,
-                    child_width,
+                    width,
                     line_spacing,
                     d.get_placement())
 
                 xo = x + xo + layout.xoffset
                 yo = y + yo + layout.yoffset
 
-                cr = renpy.display.render.render(d, width, self.style.size, cst, at)
-
-                drend.absolute_blit(cr, (xo, yo))
-
-                if layout.reverse:
-                    xo, yo = layout.reverse.transform(xo, yo)
-
+                drend.absolute_blit(renders[d], (xo, yo))
                 self.displayable_offsets.append((d, xo, yo))
 
             rv.blit(drend, (0, 0))

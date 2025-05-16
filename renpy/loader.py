@@ -1,4 +1,4 @@
-# Copyright 2004-2025 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -47,10 +47,6 @@ u"".encode(u"utf-8")
 
 # Physical Paths
 
-try:
-    from importlib.util import spec_from_loader
-except ImportError:
-    pass
 
 def get_path(fn):
     """
@@ -845,15 +841,6 @@ class RenpyImporter(object):
 
         if self.translate(fullname):
             return self
-
-    def find_spec(self, fullname, path, target=None):
-        if path is not None:
-            for i in path:
-                if self.translate(fullname, i):
-                    return spec_from_loader(name=fullname, loader=RenpyImporter(i), origin=path)
-
-        if self.translate(fullname):
-            return spec_from_loader(name=fullname, loader=self, origin=path)
 
     def load_module(self, fullname, mode="full"):
         """

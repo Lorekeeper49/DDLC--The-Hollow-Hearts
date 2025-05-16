@@ -1,4 +1,4 @@
-# Copyright 2004-2025 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -383,7 +383,7 @@ class Dissolve(Transition):
         bottom = render(self.old_widget, width, height, st, at)
         top = render(self.new_widget, width, height, st, at)
 
-        if renpy.config.dissolve_shrinks:
+        if renpy.config.dissolve_shrink:
             width = min(top.width, bottom.width)
             height = min(top.height, bottom.height)
         else:
@@ -552,7 +552,7 @@ class ImageDissolve(Transition):
         bottom = render(self.old_widget, width, height, st, at)
         top = render(self.new_widget, width, height, st, at)
 
-        if renpy.config.dissolve_shrinks:
+        if renpy.config.dissolve_shrink:
             width = min(bottom.width, top.width, image.width)
             height = min(bottom.height, top.height, image.height)
         else:
@@ -680,7 +680,7 @@ class AlphaDissolve(Transition):
         bottom = render(self.old_widget, width, height, st, at)
         top = render(self.new_widget, width, height, st, at)
 
-        if renpy.config.dissolve_shrinks:
+        if renpy.config.dissolve_shrink:
             width = min(bottom.width, top.width, image.width)
             height = min(bottom.height, top.height, image.height)
         else:

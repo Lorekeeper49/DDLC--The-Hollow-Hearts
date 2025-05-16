@@ -1,4 +1,4 @@
-# Copyright 2004-2025 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -1504,14 +1504,7 @@ interface_layer = "screens"
 limit_transform_crop = False
 
 # Should as dissolve shrink to the size of the smallest child?
-dissolve_shrinks = False
-
-# Should arabic presentations forms be reversed to base forms?
-reverse_arabic_presentation_forms = True
-
-# Should the script be compiled with from future import annotations?
-future_annotations = False
-
+dissolve_shrink = False
 
 del os
 del collections

@@ -1,4 +1,4 @@
-# Copyright 2004-2025 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -898,15 +898,6 @@ def cycle_saves(name, count):
 unknown = renpy.object.Sentinel("unknown")
 
 
-def wrap_json(d):
-    if isinstance(d, list):
-        return [ wrap_json(i) for i in d ]
-    if isinstance(d, dict):
-        return renpy.revertable.RevertableDict({ k : wrap_json(v) for k, v in d.items() })
-    else:
-        return d
-
-
 class Cache(object):
     """
     This represents cached information about a save slot.
@@ -942,7 +933,7 @@ class Cache(object):
         if rv is unknown:
             rv = self.json = location.json(self.slotname)
 
-        return wrap_json(rv)
+        return rv
 
     def get_screenshot(self):
 

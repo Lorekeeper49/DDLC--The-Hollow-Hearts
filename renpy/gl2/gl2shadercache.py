@@ -1,4 +1,4 @@
-# Copyright 2004-2025 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -226,10 +226,10 @@ precision mediump float;
 #version 120
 """)
 
+    rv.extend(functions)
+
     for storage, type_, name in sorted(variables):
         rv.append("{} {} {};\n".format(storage, type_, name))
-
-    rv.extend(functions)
 
     rv.append("\nvoid main() {\n")
 

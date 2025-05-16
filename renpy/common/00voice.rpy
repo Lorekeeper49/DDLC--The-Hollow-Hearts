@@ -1,4 +1,4 @@
-﻿# Copyright 2004-2025 Tom Rothamel <pytom@bishoujo.us>
+﻿# Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -183,6 +183,15 @@ init -1500 python:
         if volume is None:
             return _CharacterVolumeValue(voice_tag)
         else:
+            if volume > 0:
+                if config.quadratic_volumes:
+                    volume = volume ** 2
+                else:
+                    volume = (1 - volume) * config.volume_db_range
+                    volume = pow(10, volume / 20.0)
+
+            else:
+                volume = 0
             return SetDict(persistent._character_volume, voice_tag, volume)
 
 
@@ -467,9 +476,6 @@ init -1500 python hide:
 
             if not getattr(renpy.context(), "_menu", False):
                 store._last_voice_play = None
-
-        if config.skipping:
-            renpy.sound.stop(channel="voice")
 
         _voice.play = None
         _voice.sustain = False

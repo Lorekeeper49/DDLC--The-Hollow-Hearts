@@ -1,4 +1,4 @@
-﻿# Copyright 2004-2025 Tom Rothamel <pytom@bishoujo.us>
+﻿# Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -69,37 +69,6 @@ init -1500 python:
         else:
             return false
 
-
-    class _ActionList(Action, DictEquality):
-        """
-        :undocumented:
-
-        Encapsulates a list of actions, so that they can be treated as a single action,
-        for the purposes of SelectedIf and SensitiveIf.
-        """
-
-        def __init__(self, actions):
-            self.actions = actions
-
-        def get_selected(self):
-            return renpy.display.behavior.is_selected(self.actions)
-
-        def get_sensitive(self):
-            return renpy.display.behavior.is_sensitive(self.actions)
-
-        def get_tooltip(self):
-            return renpy.display.behavior.get_tooltip(self.actions)
-
-        def periodic(self, st):
-            return renpy.display.behavior.run_periodic(self.actions, st)
-
-        def unhovered(self):
-            return renpy.display.behavior.run_unhovered(self.actions)
-
-        def __call__(self):
-            return renpy.run(self.actions)
-
-
     @renpy.pure
     class SelectedIf(Action, DictEquality):
         """
@@ -120,13 +89,10 @@ init -1500 python:
         # Note: This had been documented to take a boolean.
 
         def __init__(self, expression):
-            if isinstance(expression, (list, tuple)):
-                expression = _ActionList(expression)
-
             self.expression = expression
 
             if isinstance(expression, Action):
-                for i in ("get_selected", "get_sensitive", "get_tooltip", "periodic", "unhovered", "alt"):
+                for i in ("get_selected", "get_sensitive", "get_tooltip", "periodic", "unhovered"):
                     setattr(self, i, getattr(expression, i, None))
 
         def __call__(self):
@@ -157,13 +123,10 @@ init -1500 python:
         # Note: This had been documented to take a boolean.
 
         def __init__(self, expression):
-            if isinstance(expression, (list, tuple)):
-                expression = _ActionList(expression)
-
             self.expression = expression
 
             if isinstance(expression, Action):
-                for i in ("get_selected", "get_sensitive", "get_tooltip", "periodic", "unhovered", "alt"):
+                for i in ("get_selected", "get_sensitive", "get_tooltip", "periodic", "unhovered"):
                     setattr(self, i, getattr(expression, i, None))
 
         def __call__(self):

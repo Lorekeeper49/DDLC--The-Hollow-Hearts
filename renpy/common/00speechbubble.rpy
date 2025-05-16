@@ -1,4 +1,4 @@
-﻿# Copyright 2004-2025 Tom Rothamel <pytom@bishoujo.us>
+﻿# Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -36,7 +36,7 @@ init -1150 python in bubble:
 
     # This becomes true when the screen is shown.
     shown = NoRollback()
-    shown.value = renpy.session.get('speechbubble_shown', False)
+    shown.value = False
 
     # The path to the json file the bubble database is stored in.
     db_filename = "bubble.json"
@@ -95,7 +95,6 @@ init -1150 python in bubble:
                 return
 
             shown.value = not shown.value
-            renpy.session['speechbubble_shown'] = shown.value
             renpy.restart_interaction()
 
         def get_selected(self):
@@ -341,9 +340,6 @@ init -1150 python in bubble:
         rv = [ ]
 
         for image_tag, tlid in current_dialogue:
-            if image_tag not in tag_properties:
-                continue
-
             property_list = [ ]
 
             property_list.append((

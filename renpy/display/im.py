@@ -1,4 +1,4 @@
-# Copyright 2004-2025 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -1965,8 +1965,6 @@ class UnoptimizedTexture(ImageBase):
     This is used by unoptimized_texture to force a texture to load without
     optimizing the bounds.
     """
-
-    obsolete = False
 
     def __init__(self, im, **properties):
         super(UnoptimizedTexture, self).__init__(im, optimize_bounds=False, **properties)

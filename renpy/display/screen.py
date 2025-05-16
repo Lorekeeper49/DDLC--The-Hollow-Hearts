@@ -1,4 +1,4 @@
-# Copyright 2004-2025 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -502,7 +502,7 @@ class ScreenDisplayable(renpy.display.layout.Container):
 
         hiding = (self.phase == OLD) or (self.phase == HIDE)
 
-        if self.modal and not callable(self.modal) and not hiding:
+        if self.modal and not callable(self.modal):
             renpy.display.focus.mark_modal()
 
         try:
@@ -570,9 +570,6 @@ class ScreenDisplayable(renpy.display.layout.Container):
                     i.set_transform_event(kind)
             finally:
                 pop_current_screen()
-
-            if self.modal:
-                renpy.display.render.redraw(self, 0)
 
 
         hid.phase = HIDE

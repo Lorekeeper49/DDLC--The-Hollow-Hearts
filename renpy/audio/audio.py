@@ -1,4 +1,4 @@
-# Copyright 2004-2025 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -458,11 +458,7 @@ class Channel(object):
 
         # Update the channel volume.
 
-        if self.mixer:
-            mixer_volume = renpy.game.preferences.volumes.get(self.mixer, 1.0)
-        else:
-            mixer_volume = 1.0
-
+        mixer_volume = renpy.game.preferences.volumes.get(self.mixer, 1.0)
         main_volume = renpy.game.preferences.volumes.get("main", 1.0)
 
         if renpy.game.preferences.self_voicing:
@@ -934,10 +930,6 @@ def register_channel(name,
     if not force and not renpy.game.context().init_phase and (" " not in name):
         raise Exception("Can't register channel outside of init phase.")
 
-    if name in channels:
-        all_channels.remove(channels[name])
-        del channels[name]
-
     c = Channel(name, loop, stop_on_mute, tight, file_prefix, file_suffix, buffer_queue, movie=movie, framedrop=framedrop, synchro_start=synchro_start)
 
     c.mixer = mixer
@@ -1274,7 +1266,11 @@ def interact():
 
                 c.interact()
 
+                # if _music_volumes.get(i, 1.0) != c.chan_volume:
+                #    c.set_volume(_music_volumes.get(i, 1.0))
+
                 ctx = c.context
+
 
                 # If we're in the same music change, then do nothing with the
                 # music.

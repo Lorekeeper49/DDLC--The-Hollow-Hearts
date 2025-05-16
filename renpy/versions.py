@@ -1,4 +1,4 @@
-# Copyright 2004-2025 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -51,8 +51,8 @@ class Version(object):
 
 Version("main", 3, "8.4.0", "TBD")
 
-Version("fix", 3, "8.3.7", "Second Star to the Right")
-Version("fix", 2, "7.8.7", "Straight on Till Morning")
+Version("fix", 3, "8.3.4", "Second Star to the Right")
+Version("fix", 2, "7.8.4", "Straight on Till Morning")
 
 
 def make_dict(branch, suffix="00000000", official=False, nightly=False):

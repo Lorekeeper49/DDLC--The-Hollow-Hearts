@@ -1,4 +1,4 @@
-# Copyright 2004-2025 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -1104,6 +1104,7 @@ class RollbackLog(renpy.object.Object):
         renpy.game.log = self
 
         renpy.python.clean_stores()
+        renpy.translation.init_translation()
 
         store_dicts = renpy.python.store_dicts
 

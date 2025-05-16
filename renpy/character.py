@@ -1,4 +1,4 @@
-# Copyright 2004-2025 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -677,7 +677,6 @@ def display_say(
                 what_ctc = None
 
             what_ctc = renpy.easy.displayable_or_none(what_ctc)
-            ctc = renpy.easy.displayable_or_none(ctc)
 
             if (what_ctc is not None) and what_ctc._duplicatable:
                 what_ctc = what_ctc._duplicate(None)
@@ -688,6 +687,9 @@ def display_say(
                     ctc = ctc._duplicate(None)
                     ctc._unique()
 
+            if delay == 0:
+                what_ctc = None
+                ctc = None
 
             # Run the show callback.
             pause_callback("show")
@@ -705,16 +707,14 @@ def display_say(
 
                 if scry is not None:
                     scry = scry.next()
+
                 scry_count = 0
 
                 while scry and scry_count < 64:
                     if scry.extend_text is renpy.ast.DoesNotExtend:
                         break
                     elif scry.extend_text is not None:
-                        try:
-                            extend_text += renpy.substitutions.substitute(scry.extend_text, scope=None, force=False, translate=True)[0]
-                        except Exception:
-                            pass
+                        extend_text += scry.extend_text
 
                     scry = scry.next()
                     scry_count += 1
@@ -753,11 +753,6 @@ def display_say(
             else:
                 afm_text_queue.append(what_text)
 
-            if delay == 0:
-                what_ctc = None
-                if not extend_text:
-                    ctc = None
-
             if interact or what_string or (what_ctc is not None) or (behavior and afm):
 
                 if not isinstance(what_text, renpy.text.text.Text): # @UndefinedVariable
@@ -765,22 +760,16 @@ def display_say(
 
                 if what_ctc:
 
-
-                    if extend_text or not last_pause:
-                        if ctc_position == "nestled" or ctc_position == "nestled-close":
-                                what_ctc = renpy.store.Fixed(what_ctc, xsize=0)
-
                     if ctc_position == "nestled":
                         what_text.set_ctc(what_ctc)
                     elif ctc_position == "nestled-close":
                         what_text.set_ctc([ u"\ufeff", what_ctc, ])
 
-                if (extend_text or not last_pause) and ctc:
+                if (not last_pause) and ctc:
                     if ctc_position == "nestled":
                         what_text.set_last_ctc(ctc)
                     elif ctc_position == "nestled-close":
                         what_text.set_last_ctc([ u"\ufeff", ctc, ])
-
 
                 if what_text.text[0] == what_string:
 
@@ -1317,16 +1306,12 @@ class ADVCharacter(object):
     def __repr__(self):
         return "<Character: {!r}>".format(self.name)
 
-    def empty_window(self, multiple=None):
-        if renpy.config.fast_empty_window and (self.name is None) and not (self.what_prefix or self.what_suffix) and (multiple is None):
+    def empty_window(self):
+        if renpy.config.fast_empty_window and (self.name is None) and not (self.what_prefix or self.what_suffix):
             self.do_show(None, "")
             return
 
-        if multiple:
-            for i in range(multiple):
-                self("", interact=False, _call_done=False, multiple=multiple)
-        else:
-            self("", interact=False, _call_done=False)
+        self("", interact=False, _call_done=False)
 
     def has_character_arguments(self, **kwargs):
         """
@@ -1403,10 +1388,9 @@ class ADVCharacter(object):
             if multiple_count == multiple[1]:
                 multiple_count = 0
 
-
-        old_attr_state = self.handle_say_attributes(False, interact)
-
         if multiple is None:
+
+            old_attr_state = self.handle_say_attributes(False, interact)
 
             old_side_image_attributes = renpy.store._side_image_attributes
 
@@ -1493,13 +1477,13 @@ class ADVCharacter(object):
             if (multiple is None) and interact:
                 renpy.store._side_image_attributes = old_side_image_attributes # type: ignore
 
-            if old_attr_state is not None: # type: ignore
-                _, images = old_attr_state # type: ignore
-                before = images.get_attributes(None, self.image_tag)
+                if old_attr_state is not None: # type: ignore
+                    _, images = old_attr_state # type: ignore
+                    before = images.get_attributes(None, self.image_tag)
 
-            if self.restore_say_attributes(False, old_attr_state, interact): # type: ignore
-                after = images.get_attributes(None, self.image_tag) # type: ignore
-                self.handle_say_transition('restore', before, after) # type: ignore
+                if self.restore_say_attributes(False, old_attr_state, interact): # type: ignore
+                    after = images.get_attributes(None, self.image_tag) # type: ignore
+                    self.handle_say_transition('restore', before, after) # type: ignore
 
     def statement_name(self):
         if not (self.condition is None or renpy.python.py_eval(self.condition)):
