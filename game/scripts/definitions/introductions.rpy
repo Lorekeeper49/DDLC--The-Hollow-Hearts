@@ -203,8 +203,8 @@ screen intro(currentintro):
         null height 40
         text "[currentintro.bio]"
         vbar value YScrollValue(viewport="vp") style "intro_vbar"
-    text _("[currentintro.kan]") style "kan_text" xpos 30 ypos 30
-    text _("[currentintro.name]") style "rom" xpos 30 ypos 120
+    text "[currentintro.kan]" style "kan_text" xpos 30 ypos 30
+    text "[currentintro.name]" style "rom" xpos 30 ypos 120
 
 
 

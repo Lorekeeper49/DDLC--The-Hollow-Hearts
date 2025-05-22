@@ -963,40 +963,12 @@ init -501 screen preferences():
                     text _("早送り") yalign 0.75 style "pref_JP_label_text"
                 textbutton _("Unseen Text") action Preference("skip", "toggle")
                 textbutton _("After Choices") action Preference("after choices", "toggle")
-            vbox:
-                xsize 440
-                style_prefix "radio"
-                hbox:
-                    label "Text Language" yalign 0.5
-                    text _("文字言語") yalign 0.75 style "pref_JP_label_text"
-                textbutton "English" action Language(None)
-                $ languages = [lang for lang in renpy.known_languages() if lang is not None]
-                $ langDisplay = ""
-                for lang in languages:
-                    python:
-                        try:
-                            with open(os.path.join(config.gamedir, "tl", lang, "display.txt"), "r", encoding="utf-8") as file:
-                                langDisplay = file.read().strip()
-                        except: 
-                            langDisplay = lang.capitalize()
-                    textbutton langDisplay action Language(lang)
-            vbox:
-                xsize 440
-                style_prefix "radio"
-                hbox:
-                    label "Voice Language" yalign 0.5
-                    text _("音声言語") yalign 0.75 style "pref_JP_label_text"
-                $ lang_list = get_langs()
-                for lang in lang_list: 
-                    textbutton lang[lang.rindex('\\')+1:] action SetVariable("persistent.voice_lang", lang[lang.rindex('\\')+1:])
-            style_prefix "slider"
-            textbutton _("Delete Save Data") action Show("confirm", message=_("Are you sure you want to delate all your save data?\n(This will restart the game.)"), yes_action=Function(delete_save_data), no_action=Hide("confirm"))
-
+            
 init -501 screen preferences_main():
     frame at navigation_transform(440):
         style "main_menu_frame"
         ysize 720
-        xsize 540
+        xsize 550
         background "#0001"
         viewport id "vp":
             mousewheel True
