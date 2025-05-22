@@ -155,15 +155,13 @@ screen credits(credit_height=256):
 
             vbox:
                 spacing 20
-                xalign 0.5
                 #xoffset credit_xoffset
-                xsize 800  # Keep all content within this width
 
                 for entry in credits_content:
                     if entry[1] == "image":
-                        add entry[0] xalign 0.5 size entry[2]
+                        add entry[0] size entry[2]
                     else:
-                        text entry[0] size entry[1] color entry[2] xalign 0.5 textalign 0.5 font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf"
+                        text entry[0] size entry[1] color entry[2] font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf"
 
     if _show_skip_prompt:
         text _("PRESS ENTER TO SKIP") at skip_prompt_dissolve:
