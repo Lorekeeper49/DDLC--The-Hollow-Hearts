@@ -38,14 +38,14 @@ init python:
         if header.startswith("~"):
             global SECTION
             SECTION += 1
-            entries.append((header.strip("~"), 60, "#fff"))
+            entries.append((header.strip("~"), 25, "#fff"))
             current_color = SECTION_COLORS[SECTION] if SECTION < len(SECTION_COLORS) else "#ffe066"
 
 
         else:
-            entries.append((header, 40, current_color))
+            entries.append((header, 20, current_color))
 
-        entries += [(name, 30, "#fff") for name in names]
+        entries += [(name, 15, "#fff") for name in names]
         entries.append(SPACER)
         
         return entries, current_color
@@ -114,13 +114,25 @@ init python:
         ("ACHIEVEMENTS", ["bobcgames"]),
         ("CREDITS CODE", ["Retronika"]),
 
-        SPACER,
-        SPACER,
-        SPACER,
-        SPACER,
+        
         ("~{u}Special Thanks{/u}~", ["DDMC Community | DDMCコミュニティ", "THH Discord | ザー・ホロー・ハーツ・ディスコード", "Team Salvato | チームサルヴァート", "You! | 貴方！"]),
 
         # Technically you can add more text using the bruteforce thing below, but it's not recommended.
+        SPACER,
+        SPACER,
+        SPACER,
+        SPACER,
+        SPACER,
+        SPACER,
+        SPACER,
+        SPACER,
+        SPACER,
+        SPACER,
+        SPACER,
+        SPACER,
+        SPACER,
+        SPACER,
+        SPACER,
         SPACER,
         SPACER,
         SPACER
@@ -182,7 +194,7 @@ label mah_credits:
     scene black
     with fade
     stop music fadeout 1.0
-    play movie "mod_assets/cutscenes/CREDITS.webm"
+    #play movie "mod_assets/cutscenes/CREDITS.webm"
     show movie zorder 1:
         alpha 0.0
         linear 5.0 alpha 1.0
