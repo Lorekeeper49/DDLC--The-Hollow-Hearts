@@ -600,19 +600,19 @@ init -501 screen main_menu():
         button:
             text "ACT SELECT" xpos 25 yalign 0.5 style "main_menu_button_text"
             text _("アクト選択へ") xpos 25 yalign 1.1 style "main_menu_kan"  
-            action [Hide("achievements_main", _layer="textbox"), Hide("preferences_main", _layer="textbox"), Hide("file_slots_main", _layer="textbox"), Show("acts", _layer="textbox")]
+            action [Hide("extras", _layer="textbox"), Hide("achievements_main", _layer="textbox"), Hide("preferences_main", _layer="textbox"), Hide("file_slots_main", _layer="textbox"), Show("acts", _layer="textbox")]
         button:
             text "BOOKMARKS" xpos 25 yalign 0.5 style "main_menu_button_text"
             text _("栞") xpos 25 yalign 1.1 style "main_menu_kan"  
-            action [Hide("acts", _layer="textbox"), Hide("achievements_main", _layer="textbox"), Hide("preferences_main", _layer="textbox"), ShowMenu("file_slots_main", _layer="textbox"), SensitiveIf(renpy.get_screen("file_slots_main") == None)]
+            action [Hide("extras", _layer="textbox"), Hide("acts", _layer="textbox"), Hide("achievements_main", _layer="textbox"), Hide("preferences_main", _layer="textbox"), ShowMenu("file_slots_main", _layer="textbox"), SensitiveIf(renpy.get_screen("file_slots_main") == None)]
         button:
             text "ACHIEVEMENTS" xpos 25 yalign 0.5 style "main_menu_button_text"
             text _("アチーブメント") xpos 25 yalign 1.1 style "main_menu_kan"  
-            action [Hide("acts", _layer="textbox"), Hide("preferences_main", _layer="textbox"), Hide("file_slots_main", _layer="textbox"), ShowMenu("achievements_main", _layer="textbox"), SensitiveIf(renpy.get_screen("achievements_main") == None)]
+            action [Hide("extras", _layer="textbox"), Hide("acts", _layer="textbox"), Hide("preferences_main", _layer="textbox"), Hide("file_slots_main", _layer="textbox"), ShowMenu("achievements_main", _layer="textbox"), SensitiveIf(renpy.get_screen("achievements_main") == None)]
         button:
             text "OPTIONS" xpos 25 yalign 0.5 style "main_menu_button_text"
             text _("オプション") xpos 25 yalign 1.1 style "main_menu_kan"  
-            action [Hide("acts", _layer="textbox"), Hide("achievements_main", _layer="textbox"), Hide("file_slots_main", _layer="textbox"), ShowMenu("preferences_main", _layer="textbox"), SensitiveIf(renpy.get_screen("preferences") == None)]
+            action [Hide("extras", _layer="textbox"), Hide("acts", _layer="textbox"), Hide("achievements_main", _layer="textbox"), Hide("file_slots_main", _layer="textbox"), ShowMenu("preferences_main", _layer="textbox"), SensitiveIf(renpy.get_screen("preferences") == None)]
         if renpy.variant("pc"):
             button:
                 text "HELP" xpos 25 yalign 0.5 style "main_menu_button_text"
@@ -625,7 +625,7 @@ init -501 screen main_menu():
         button:
             text "EXTRAS" xpos 25 yalign 0.5 style "main_menu_button_text"
             text _("エクストラー") xpos 25 yalign 1.1 style "main_menu_kan"  
-            action Function(renpy.jump_out_of_context, "extras")
+            action [Hide("acts", _layer="textbox"), Hide("achievements_main", _layer="textbox"), Hide("file_slots_main", _layer="textbox"), Hide("preferences_main", _layer="textbox"), Show("extras", _layer="textbox")]
         if renpy.variant("pc"):
             button:
                 text "QUIT" xpos 25 yalign 0.5 style "main_menu_button_text"
@@ -635,6 +635,32 @@ init -501 screen main_menu():
     add "menu_fade"
 
     timer 5.0 repeat True action SetVariable("dynamics", random_list(bgs)[0])
+
+init -501 screen extras():
+    vbox at navigation_transform(440):
+        style_prefix "main_menu"
+        spacing 0
+        frame:
+            background "#0001"
+        button:
+            text "GALLERY" xpos 25 yalign 0.5 style "main_menu_button_text"
+            text _("ギャラリー") xpos 25 yalign 1.1 style "main_menu_kan"  
+            action Show("gallery", _layer="textbox")
+        button:
+            text "MUSIC" xpos 25 yalign 0.5 style "main_menu_button_text"
+            text _("音楽") xpos 25 yalign 1.1 style "main_menu_kan"  
+            action If(achievement.has("act1fin"), [Hide("acts", _layer="textbox"), Show("path_chooser", StaticTransition, act2_choice_filters, act2_path_list)], Show(screen="dialog", message="Complete Act 1 first.", ok_action=Hide("dialog")))
+        button:
+            text "BLOOPERS" xpos 25 yalign 0.5 style "main_menu_button_text"
+            text _("NG集") xpos 25 yalign 1.1 style "main_menu_kan"  
+            action If(achievement.has("act2fin"), [Hide("acts", _layer="textbox"), Show("path_chooser", StaticTransition, act3_choice_filters, act3_path_list)], Show(screen="dialog", message="Complete Act 2 first.", ok_action=Hide("dialog")))
+        button:
+            text "CUT CONTENT" xpos 25 yalign 0.5 style "main_menu_button_text"
+            text _("カットされた内容") xpos 25 yalign 1.1 style "main_menu_kan"  
+            action If(achievement.has("act2fin"), [Hide("acts", _layer="textbox"), Show("path_chooser", StaticTransition, act3_choice_filters, act3_path_list)], Show(screen="dialog", message="Complete Act 2 first.", ok_action=Hide("dialog")))
+        frame:
+            ysize 720
+            background "#0001"
 
 init -1 style main_menu_button:
     size_group "navigation"
