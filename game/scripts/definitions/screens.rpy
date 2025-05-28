@@ -579,14 +579,6 @@ init -501 screen main_menu():
     style_prefix "main_menu"
     add dynamics alpha 0.75 at bg_transform
     #add Movie(play="mod_assets/menu_bg.webm", size=(1280, 720), xalign=0.5, yalign=0.5, loop=True) # commented out for now, will use later, video will have a little part at the end of it that lasts 7 seconds for smooth looping since the music isn't at 0 seconds when this screen appears
-    if gui.show_name:
-
-        vbox:
-            text "[config.name!t]":
-                style "main_menu_title"
-
-            text "[config.version]":
-                style "main_menu_version"
 
     add "mod_assets/gui/choice_bg.png" xzoom -1.0 xpos -400
 
@@ -645,19 +637,19 @@ init -501 screen extras():
         button:
             text "GALLERY" xpos 25 yalign 0.5 style "main_menu_button_text"
             text _("ギャラリー") xpos 25 yalign 1.1 style "main_menu_kan"  
-            action Show("gallery", _layer="textbox")
+            action Show("extra_selection", None, extras_dict, _layer="textbox")
         button:
             text "MUSIC" xpos 25 yalign 0.5 style "main_menu_button_text"
             text _("音楽") xpos 25 yalign 1.1 style "main_menu_kan"  
-            action If(achievement.has("act1fin"), [Hide("acts", _layer="textbox"), Show("path_chooser", StaticTransition, act2_choice_filters, act2_path_list)], Show(screen="dialog", message="Complete Act 1 first.", ok_action=Hide("dialog")))
+            action Show("extra_selection", None, extras_dict, _layer="textbox")
         button:
             text "BLOOPERS" xpos 25 yalign 0.5 style "main_menu_button_text"
             text _("NG集") xpos 25 yalign 1.1 style "main_menu_kan"  
-            action If(achievement.has("act2fin"), [Hide("acts", _layer="textbox"), Show("path_chooser", StaticTransition, act3_choice_filters, act3_path_list)], Show(screen="dialog", message="Complete Act 2 first.", ok_action=Hide("dialog")))
+            action Show("extra_selection", None, extras_dict, _layer="textbox")
         button:
             text "CUT CONTENT" xpos 25 yalign 0.5 style "main_menu_button_text"
             text _("カットされた内容") xpos 25 yalign 1.1 style "main_menu_kan"  
-            action If(achievement.has("act2fin"), [Hide("acts", _layer="textbox"), Show("path_chooser", StaticTransition, act3_choice_filters, act3_path_list)], Show(screen="dialog", message="Complete Act 2 first.", ok_action=Hide("dialog")))
+            action Show("extra_selection", None, extras_dict, _layer="textbox")
         frame:
             ysize 720
             background "#0001"
