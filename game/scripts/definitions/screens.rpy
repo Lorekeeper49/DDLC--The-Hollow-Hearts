@@ -578,7 +578,7 @@ init -501 screen main_menu():
     tag menu
     style_prefix "main_menu"
     add dynamics alpha 0.75 at bg_transform
-
+    #add Movie(play="mod_assets/menu_bg.webm", size=(1280, 720), xalign=0.5, yalign=0.5, loop=True) # commented out for now, will use later, video will have a little part at the end of it that lasts 7 seconds for smooth looping since the music isn't at 0 seconds when this screen appears
     if gui.show_name:
 
         vbox:
