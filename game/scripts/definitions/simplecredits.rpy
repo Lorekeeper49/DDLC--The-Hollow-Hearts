@@ -115,7 +115,7 @@ init python:
         ("CREDITS CODE", ["Retronika"]),
 
         
-        ("~{u}Special Thanks | スペシャルサンクス{/u}~", ["DDMC Community | DDMCコミュニティ", "THH Discord | ザー・ホロー・ハーツ・ディスコード", "Team Salvato | チームサルヴァート", "You! | 貴方！"]),
+        ("~{u}Special Thanks | スペシャルサンクス{/u}~", ["DDMC Community | DDMCコミュニティ", "THH Discord | ハロハ・ディスコード", "Team Salvato | チームサルヴァート", "You! | 貴方！"]),
 
         # Technically you can add more text using the bruteforce thing below, but it's not recommended.
         SPACER,
