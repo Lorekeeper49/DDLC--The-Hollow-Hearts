@@ -1065,6 +1065,7 @@ init -501 screen preferences_main():
                     label "Voice Language" yalign 0.5
                     text _("音声言語") yalign 0.75 style "pref_main_JP_label_text"
                 $ lang_list = get_langs()
+                $ print(lang_list)
                 for lang in lang_list: 
                     textbutton lang[lang.rindex('\\')+1:] action SetVariable("persistent.voice_lang", lang[lang.rindex('\\')+1:])
             style_prefix "slider"

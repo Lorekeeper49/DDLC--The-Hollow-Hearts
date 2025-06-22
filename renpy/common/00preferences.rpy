@@ -1,4 +1,4 @@
-﻿# Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
+﻿# Copyright 2004-2025 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -219,6 +219,8 @@ init -1500 python:
         * Preference("font transform", "opendyslexic") - Sets the accessibility font transform to opendyslexic.
         * Preference("font transform", "dejavusans") - Sets the accessibility font transform to deja vu sans.
         * Preference("font transform", None) - Disables the accessibility font transform.
+
+        See :var:`config.font_transforms` for how to add font transforms.
 
         * Preference("font size", 1.0) - Sets the accessibility font size scaling factor.
         * Preference("font line spacing", 1.0) - Sets the accessibility font vertical spacing scaling factor.
@@ -692,6 +694,7 @@ init -1500:
 
     # The screen that we use to indicate that self-voicing is enabled.
     screen _self_voicing():
+        layer config.interface_layer
         zorder 1500
 
         if _preferences.self_voicing == "clipboard":

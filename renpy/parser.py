@@ -1,4 +1,4 @@
-# Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2025 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -81,7 +81,7 @@ def parse_image_name(l, string=False, nodash=False):
     if string:
         points.append(l.checkpoint())
 
-        s = l.simple_expression()
+        s = l.simple_expression(image=True)
 
         if s is not None:
             rv.append(str(s))
@@ -98,20 +98,20 @@ def parse_image_name(l, string=False, nodash=False):
     return tuple(rv)
 
 
-def parse_simple_expression_list(l):
+def parse_simple_expression_list(l, image=False):
     """
     This parses a comma-separated list of simple_expressions, and
     returns a list of strings. It requires at least one
     simple_expression be present.
     """
 
-    rv = [ l.require(l.simple_expression) ]
+    rv = [ l.require(l.simple_expression, image=image) ]
 
     while True:
         if not l.match(','):
             break
 
-        e = l.simple_expression()
+        e = l.simple_expression(image=image)
 
         if not e:
             break
@@ -133,7 +133,7 @@ def parse_image_specifier(l):
     behind = [ ]
 
     if l.keyword("expression") or l.keyword("image"):
-        expression = l.require(l.simple_expression)
+        expression = l.require(l.simple_expression, image=True)
         image_name = (expression.strip(),)
     else:
         image_name = parse_image_name(l, True)
@@ -145,7 +145,7 @@ def parse_image_specifier(l):
             if layer:
                 l.error("multiple onlayer clauses are prohibited.")
             else:
-                layer = l.require(l.name)
+                layer = l.require(l.image_name_component)
 
             continue
 
@@ -154,7 +154,7 @@ def parse_image_specifier(l):
             if at_list:
                 l.error("multiple at clauses are prohibited.")
             else:
-                at_list = parse_simple_expression_list(l)
+                at_list = parse_simple_expression_list(l, image=True)
 
             continue
 
@@ -172,7 +172,7 @@ def parse_image_specifier(l):
             if zorder is not None:
                 l.error("multiple zorder clauses are prohibited.")
             else:
-                zorder = l.require(l.simple_expression)
+                zorder = l.require(l.simple_expression, image=True)
 
             continue
 
@@ -270,6 +270,12 @@ def parse_menu(stmtl, loc, arguments):
                 l.error("Only one say menuitem may exist per menu.")
 
             say_ast = finish_say(l, l.get_location(), who, what, attributes, temporary_attributes, interact=False)
+
+            if isinstance(say_ast, list):
+                if len(say_ast) == 1:
+                    say_ast = say_ast[0]
+                else:
+                    l.error("Monologue mode cannot be used in a menu.")
 
             l.expect_eol()
             l.expect_noblock("say menuitem")
@@ -792,7 +798,7 @@ def call_statement(l, loc):
 def scene_statement(l, loc):
     layer = None
     if l.keyword('onlayer'):
-        layer = l.require(l.name)
+        layer = l.require(l.image_name_component)
         l.expect_eol()
 
     if layer or l.eol():
@@ -837,7 +843,7 @@ def show_statement(l, loc):
 @statement("show layer")
 def show_layer_statement(l, loc):
 
-    layer = l.require(l.name)
+    layer = l.require(l.image_name_component)
 
     if l.keyword("at"):
         at_list = parse_simple_expression_list(l)
@@ -862,7 +868,7 @@ def show_layer_statement(l, loc):
 @statement("camera")
 def camera_statement(l, loc):
 
-    layer = l.name() or 'master'
+    layer = l.image_name_component() or 'master'
 
     if l.keyword("at"):
         at_list = parse_simple_expression_list(l)
@@ -1238,7 +1244,10 @@ def testcase_statement(l, loc):
     l.expect_eol()
     l.expect_block('testcase statement')
 
-    test = renpy.test.testparser.parse_block(l.subblock_lexer(), loc)
+    ll = l.subblock_lexer()
+    ll.set_global_label(name)
+
+    test = renpy.test.testparser.parse_block(ll, loc)
 
     l.advance()
 
@@ -1517,6 +1526,9 @@ def finish_say(l, loc, who, what, attributes=None, temporary_attributes=None, in
 
     if isinstance(what, list):
 
+        if len(what) > 1 and identifier is not None:
+            l.error("Monologue mode say statements cannot have an id clause.")
+
         rv = [ ]
 
         for i in what:
@@ -1750,6 +1762,9 @@ def report_parse_errors():
 
     if not parse_errors:
         return False
+
+    # The sound system may not be ready during exception handling.
+    renpy.config.debug_sound = False
 
     full_text = ""
 

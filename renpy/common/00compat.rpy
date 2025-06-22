@@ -1,4 +1,4 @@
-﻿# Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
+﻿# Copyright 2004-2025 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -207,7 +207,6 @@ init -1100 python:
 
         if version <= (7, 3, 5):
             config.side_image_requires_attributes = False
-            config.window_functions_set_auto = False
             config.who_what_sub_compat = 0
 
         if version <= (7, 4, 0):
@@ -295,11 +294,13 @@ init -1100 python:
         if _compat_versions(version, (7, 6, 1), (8, 1, 1)):
             config.tts_front_to_back = False
             _greedy_rollback = False
+            config.dissolve_shrinks = True
 
         if _compat_versions(version, (7, 6, 99), (8, 1, 99)):
             config.simple_box_reverse = True
             build.itch_channels = list(build.itch_channels.items())
             config.atl_pos_only = True
+            config.atl_pos_only_as_pos_or_kw = True
             style.default.shaper = "freetype"
             config.mixed_position = False
             config.drag_group_add_top = False
@@ -308,9 +309,21 @@ init -1100 python:
             config.containers_pass_transform_events.clear()
             config.say_replace_event = False
             config.screens_never_cancel_hide = False
+            config.limit_transform_crop = "only_float"
 
         if _compat_versions(version, (7, 7, 1), (8, 2, 1)):
             config.fill_shrinks_frame = True
+
+        if ((7, 4, 0) <= version) and _compat_versions(version, (7, 7, 99), (8, 2, 99)):
+            config.window_functions_set_auto = True
+
+        if _compat_versions(version, (7, 7, 99), (8, 2, 99)):
+            config.character_callback_compat = True
+            bubble.clear_retain_statements = [ ]
+            bubble.layer = None
+            if not _compat_versions(version, (7, 6, 99), (8, 1, 99)):
+                config.box_reverse_align = True
+                config.limit_transform_crop = True
 
 
     # The version of Ren'Py this script is intended for, or
@@ -329,6 +342,9 @@ python early hide:
 
         if script_version <= (7, 2, 2):
             config.keyword_after_python = True
+
+        if script_version >= (8, 0, 0) and script_version < (8, 2, 0):
+            config.future_annotations = True
 
     except Exception:
         config.early_script_version = None

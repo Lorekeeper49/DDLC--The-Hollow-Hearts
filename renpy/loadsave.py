@@ -1,4 +1,4 @@
-# Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2025 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -488,9 +488,7 @@ def autosave_thread_function(take_screenshot):
 
     try:
 
-        try:
-
-            cycle_saves(prefix, renpy.config.autosave_slots)
+        with renpy.savelocation.SyncfsLock():
 
             if renpy.config.auto_save_extra_info:
                 extra_info = renpy.config.auto_save_extra_info()
@@ -500,19 +498,18 @@ def autosave_thread_function(take_screenshot):
             if take_screenshot:
                 renpy.exports.take_screenshot(background=True)
 
-            save(prefix + "1", mutate_flag=True, extra_info=extra_info)
-            autosave_counter = 0
+            save("_auto", mutate_flag=True, extra_info=extra_info)
+            cycle_saves(prefix, renpy.config.autosave_slots)
+            rename_save("_auto", prefix + "1")
 
+            autosave_counter = 0
             did_autosave = True
 
-        except Exception:
-            pass
+    except Exception:
+        pass
 
     finally:
         autosave_not_running.set()
-        if renpy.emscripten:
-            import emscripten
-            emscripten.syncfs()
 
 
 def autosave():
@@ -722,6 +719,10 @@ def list_slots(regexp=None):
     return slots
 
 
+# The set of slots that have been accessed, such that clearing the slot
+# should restart the interaction.
+accessed_slots = set()
+
 # A cache for newest slot info.
 newest_slot_cache = { }
 
@@ -768,6 +769,8 @@ def slot_mtime(slotname):
     Returns the modification time for `slot`, or None if the slot is empty.
     """
 
+    accessed_slots.add(slotname)
+
     return get_cache(slotname).get_mtime()
 
 
@@ -783,6 +786,8 @@ def slot_json(slotname):
     dictionary will contain the same data as it did when the game was saved.
     """
 
+    accessed_slots.add(slotname)
+
     return get_cache(slotname).get_json()
 
 
@@ -794,6 +799,8 @@ def slot_screenshot(slotname):
     or None if the slot is empty.
     """
 
+    accessed_slots.add(slotname)
+
     return get_cache(slotname).get_screenshot()
 
 
@@ -803,6 +810,8 @@ def can_load(filename, test=False):
 
     Returns true if `filename` exists as a save slot, and False otherwise.
     """
+
+    accessed_slots.add(filename)
 
     c = get_cache(filename)
 
@@ -889,6 +898,15 @@ def cycle_saves(name, count):
 unknown = renpy.object.Sentinel("unknown")
 
 
+def wrap_json(d):
+    if isinstance(d, list):
+        return [ wrap_json(i) for i in d ]
+    if isinstance(d, dict):
+        return renpy.revertable.RevertableDict({ k : wrap_json(v) for k, v in d.items() })
+    else:
+        return d
+
+
 class Cache(object):
     """
     This represents cached information about a save slot.
@@ -924,7 +942,7 @@ class Cache(object):
         if rv is unknown:
             rv = self.json = location.json(self.slotname)
 
-        return rv
+        return wrap_json(rv)
 
     def get_screenshot(self):
 
@@ -969,13 +987,17 @@ def clear_slot(slotname):
 
     newest_slot_cache.clear()
 
-    renpy.exports.restart_interaction()
+    if slotname in accessed_slots:
+        accessed_slots.discard(slotname)
+        renpy.exports.restart_interaction()
 
 
 def clear_cache():
     """
     Clears the entire cache.
     """
+
+    accessed_slots.clear()
 
     for c in cache.values():
         c.clear()

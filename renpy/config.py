@@ -1,4 +1,4 @@
-# Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2025 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -26,7 +26,7 @@
 from __future__ import division, absolute_import, with_statement, print_function, unicode_literals
 from renpy.compat import PY2, basestring, bchr, bord, chr, open, pystr, range, round, str, tobytes, unicode # *
 
-from typing import Optional, List
+from typing import Optional, List, Callable
 
 
 import collections
@@ -57,7 +57,7 @@ sound = True
 debug = False
 
 # Ditto, but for sound operations
-debug_sound = None
+debug_sound = os.environ.get("RENPY_DEBUG_SOUND", False)
 
 # Is rollback enabled? (This only controls if the user-invoked
 # rollback command does anything)
@@ -274,6 +274,9 @@ default_developer = False
 
 # A logfile that logging messages are sent to.
 log = None
+
+# Clear config.log at startup
+clear_log = False
 
 # Lint hooks.
 lint_hooks = [ ]
@@ -853,7 +856,7 @@ character_id_prefixes = [ ]
 nw_voice = True
 
 # If not None, a function that's used to process say arguments.
-say_arguments_callback = None
+say_arguments_callback = None # type: Callable|None
 
 # Should we show an atl interpolation for one frame?
 atl_one_frame = True
@@ -883,7 +886,7 @@ loadable_callback = None
 
 # How many frames should be drawn fast each time the screen needs to be
 # updated?
-fast_redraw_frames = 4
+fast_redraw_frames = 12
 
 # The color passed to glClearColor when clearing the screen.
 gl_clear_color = "#000"
@@ -980,14 +983,14 @@ menu_include_disabled = False
 # Should we report extraneous attributes?
 report_extraneous_attributes = True
 
-# Should we play non-loooped music when skipping?
+# Should we avoid playing non-loooped music when skipping?
 skip_sounds = False
 
 # Should we lint screens without parameters?
 lint_screens_without_parameters = True
 
 # If not None, a function that's used to process and modify menu arguments.
-menu_arguments_callback = None
+menu_arguments_callback = None # type: Callable|None
 
 # Should Ren'PY automatically clear the screenshot?
 auto_clear_screenshot = True
@@ -1408,8 +1411,14 @@ ex_rollback_classes = [ ]
 # Should we revert to the old behavior of box_reverse?
 simple_box_reverse = False
 
+# Should we revert to the right/bottom-alignment for non-simple reversed boxes?
+box_reverse_align = False
+
 # If True, positional-only parameters are allowed in ATL transform signatures.
 atl_pos_only = False
+
+# If True, positional-only parameters in ATL transform signatures are treated as pos-or-keyword.
+atl_pos_only_as_pos_or_kw = False
 
 # A map from font name to the hinting for the font.
 font_hinting = { None : "auto" }
@@ -1466,6 +1475,43 @@ python_exit_callbacks = [ ]
 raise_image_load_exceptions = None
 
 # 8.2.2
+
+# A map from name to text shader object.
+textshaders = { } # type: dict[str, renpy.text.shader.TextShader]
+
+# A map from names to functions that return text shaders.
+textshader_callbacks = { } # type: dict[str, Callable[[], str]]
+
+# The default textshader
+default_textshader = None # type: str | None
+
+# A function that is called with a tuple of shader parts, and returns a tuple of shader parts.
+shader_part_filter = None # type: Optional[Callable[[tuple[str]], tuple[str]]]
+
+# Should munging occur everywhere in strings.
+munge_in_strings = True
+
+# The version of the character callback.
+character_callback_compat = None
+
+# A list of who arguments to translate that will not be translated.
+translate_ignore_who = [ ]
+
+# The layer built-in screens exist on.
+interface_layer = "screens"
+
+# Should Transform crop be limited to the width and height of the image being cropped?
+limit_transform_crop = False
+
+# Should as dissolve shrink to the size of the smallest child?
+dissolve_shrinks = False
+
+# Should arabic presentations forms be reversed to base forms?
+reverse_arabic_presentation_forms = True
+
+# Should the script be compiled with from future import annotations?
+future_annotations = False
+
 
 del os
 del collections

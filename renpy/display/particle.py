@@ -1,4 +1,4 @@
-# Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2025 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -40,6 +40,8 @@ class SpriteCache(renpy.object.Object):
     need to be re-rendered.
     """
 
+    nosave = [ 'st', 'render' ]
+
     # Private Fields:
     #
     # child - The child displayable.
@@ -49,13 +51,14 @@ class SpriteCache(renpy.object.Object):
     #
     # render - The render of child.
     #
-    # If true, then the render is simple enough it can just be appended to
+    # fast - If true, then the render is simple enough it can just be appended to
     # the manager's render's children list.
 
     child = None # type: renpy.display.displayable.Displayable|None
     child_copy = None # type: renpy.display.displayable.Displayable|None
-    st = 0.0 # type: float|None
+    st = None # type: float|None
     render = None # type: renpy.display.render.Render|None
+    fast = False # type: bool
 
 
 class Sprite(renpy.object.Object):
@@ -127,8 +130,7 @@ class Sprite(renpy.object.Object):
                 sc.child_copy._unique()
             else:
                 sc.child_copy = d
-
-            self.manager.displayable_map[id_d] = sc
+                self.manager.displayable_map[id_d] = sc
 
         self.cache = sc
 
@@ -296,7 +298,7 @@ class SpriteManager(renpy.display.displayable.Displayable):
                 cst = st - cache.st
 
                 cache.render = r = render(cache.child_copy, width, height, cst, cst)
-                cache.fast = (r.operation == BLIT) and (r.forward is None) and (r.alpha == 1.0) and (r.over == 1.0)
+                cache.fast = (r.forward is None) and (not r.mesh) and (not r.uniforms) and (not r.shaders) and (not r.properties) and (not r.xclipping) and not (r.yclipping)
                 rv.depends_on(r)
 
                 caches.append(cache)

@@ -1,4 +1,4 @@
-# Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2025 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -244,8 +244,14 @@ def create_store(name):
     eval("1", d)
 
     for k, v in renpy.minstore.__dict__.items():
-        if (k not in d) and k != "__all__":
-            d[k] = v
+
+        if k in ("__all__", "__name__", "__doc__", "__package__", "__loader__", "__spec__", "__file__", "__cached__"):
+            continue
+
+        if k in d:
+            continue
+
+        d[k] = v
 
     # Create or reuse the corresponding module.
     if name in store_modules:
@@ -1067,6 +1073,9 @@ def py_compile(source, mode, filename='<none>', lineno=1, ast_node=False, cache=
         if (not PY2) or flags:
 
             flags |= new_compile_flags
+
+            if renpy.config.future_annotations:
+                flags |= __future__.annotations.compiler_flag
 
             try:
                 with save_warnings():

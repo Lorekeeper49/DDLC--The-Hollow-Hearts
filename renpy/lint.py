@@ -1,4 +1,4 @@
-# Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2025 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -343,6 +343,9 @@ check_file_cache = { }
 
 def check_file(what, fn, directory=None):
 
+    if not isinstance(fn, basestring):
+        return
+
     present = check_file_cache.get(fn, None)
     if present is True:
         return
@@ -457,8 +460,8 @@ def check_user(node):
 
     try:
         node.get_next()
-    except Exception:
-        report("Didn't properly report what the next statement should be.")
+    except Exception as e:
+        report("Didn't properly report what the next statement should be : {!r}".format(e))
 
 
 def quote_text(s):
@@ -882,7 +885,7 @@ def report_character_stats(charastats):
     Returns a list of character stat lines.
     """
 
-    rv = [ "", "Character Statistics (for default language):", ]
+    rv = [ "", "Character Statistics (for default language):", ] # type: list[str|list[str]]
 
     bullets = [ ]
 
@@ -898,6 +901,18 @@ def report_character_stats(charastats):
     rv.append(bullets)
 
     return rv
+
+
+def check_image_manipulators():
+
+    problems = [ ]
+
+    for filename, linenumber, classname in renpy.display.im.ImageBase.obsolete_list:
+        problems.append((filename, linenumber, "im.%s" % classname))
+
+    if problems:
+        problem_listing("Obsolete Image Manipulators:", problems)
+
 
 def check_unreachables(all_nodes):
 
@@ -1019,16 +1034,8 @@ def check_unreachables(all_nodes):
 
 def check_orphan_translations(none_lang_identifiers, translation_identifiers):
 
-    def header():
-        print("")
-        print("")
-        print("Orphan Translations:")
-        print()
-
-
     problems = [ ]
 
-    faulty = collections.defaultdict(list) # filename : [linenumbers]
     for id, nodes in translation_identifiers.items():
         if id not in none_lang_identifiers:
             for node in nodes:
@@ -1055,7 +1062,7 @@ def check_python_warnings():
 
     warnings.sort()
 
-    for filename, line, text in warnings:
+    for _filename, _line, text in warnings:
         print("\n" + text, end='')
 
 
@@ -1217,6 +1224,8 @@ def lint():
     report_node = None
 
     check_styles()
+    check_image_manipulators()
+
     check_filename_encodings()
 
     check_unreachables(all_stmts)

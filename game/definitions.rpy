@@ -81,9 +81,9 @@ init python:
     def get_langs():
         import os
         try:
-            return [f.path for f in os.scandir("game/voicelines/") if f.is_dir()]
+            return [f.path for f in os.scandir(config.gamedir + "/voicelines") if f.is_dir()]
         except:
-            return ["\\NO VOICE\\"]
+            return ["\\NO VOICE"]
     config.say_allow_dismiss = say_blocking
 default filepathFound = ""
 

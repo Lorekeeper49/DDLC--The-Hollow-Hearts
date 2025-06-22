@@ -1,4 +1,4 @@
-# Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2025 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -36,6 +36,64 @@ import collections
 TAG_RE = re.compile(r'(\{\{)|(\{(p|w|nw|fast|done)(?:\=([^}]*))?\})', re.S)
 
 less_pauses = ("RENPY_LESS_PAUSES" in os.environ)
+
+
+class Callbacks(object):
+    """
+    This stores and calls the character callbacks.
+    """
+
+    def __init__(self, callbacks, interact, type, cb_args, multiple):
+        self.callbacks = callbacks
+        self.interact = interact
+        self.type = type
+        self.cb_args = cb_args
+        self.multiple = multiple # type: tuple[int, int]|None
+
+        self.what = None # type: str|None
+        self.start = None # type: int|None
+        self.end = None # type: int|None
+        self.delay = None # type: float|None
+        self.last_segment = None # type: bool|None
+
+    def __call__(self, *args, **kwargs):
+        if not self.callbacks:
+            return
+
+        kwargs["type"] = self.type
+        kwargs["interact"] = self.interact
+
+        if renpy.config.character_callback_compat is None:
+
+            if self.what is not None:
+                kwargs["what"] = self.what
+
+            if self.start is not None:
+                kwargs["start"] = self.start
+
+            if self.end is not None:
+                kwargs["end"] = self.end
+
+            if self.delay is not None:
+                kwargs["delay"] = self.delay
+
+            if self.last_segment is not None:
+                kwargs["last_segment"] = self.last_segment
+
+            if  self.multiple is not None:
+                kwargs["multiple"] = self.multiple
+
+            kwargs["please_ignore_unknown_keyword_arguments"] = None
+
+        kwargs.update(self.cb_args)
+
+        for c in self.callbacks:
+            c(*args, **kwargs)
+
+    def copy(self):
+        rv = Callbacks(self.callbacks, self.interact, self.type, self.cb_args, self.multiple)
+        rv.__dict__.update(self.__dict__)
+        return rv
 
 
 class DialogueTextTags(object):
@@ -426,8 +484,7 @@ class SlowDone(object):
             renpy.ui.pausebehavior(self.delay, True, voice=self.last_pause and not self.no_wait, self_voicing=self.last_pause)
             renpy.exports.restart_interaction()
 
-        for c in self.callback:
-            c("slow_done", interact=self.interact, type=self.type, **self.cb_args)
+        self.callback("slow_done")
 
 # This is a queue for text that's going to be passed to the say behavior to
 # set the AFM info.
@@ -513,10 +570,7 @@ def display_say(
         callback = [ callback ]
 
     callback = renpy.config.all_character_callbacks + callback
-
-    # Call the begin callback.
-    for c in callback:
-        c("begin", interact=interact, type=type, **cb_args)
+    callback = Callbacks(callback, interact, type, cb_args, multiple)
 
     roll_forward = renpy.exports.roll_forward_info()
 
@@ -556,7 +610,6 @@ def display_say(
 
     exception = None
 
-
     retain_tag = "_retain_0"
     retain_count = -1
 
@@ -569,6 +622,10 @@ def display_say(
             if not renpy.exports.get_screen(retain_tag):
                 break
 
+    # Call the begin callback.
+    callback.what = dtt.text
+    callback("begin")
+
     if dtt.fast:
         for i in renpy.config.say_sustain_callbacks:
             i()
@@ -579,6 +636,13 @@ def display_say(
 
             # True if the is the last pause in a line of dialogue.
             last_pause = (i == len(pause_start) - 1)
+
+            # Create a callback object specific to this pause.
+            pause_callback = callback.copy()
+            pause_callback.start = start
+            pause_callback.end = end
+            pause_callback.delay = delay
+            pause_callback.last_segment = last_pause
 
             # If we're going to do an interaction, then saybehavior needs
             # to be here.
@@ -613,6 +677,7 @@ def display_say(
                 what_ctc = None
 
             what_ctc = renpy.easy.displayable_or_none(what_ctc)
+            ctc = renpy.easy.displayable_or_none(ctc)
 
             if (what_ctc is not None) and what_ctc._duplicatable:
                 what_ctc = what_ctc._duplicate(None)
@@ -623,16 +688,12 @@ def display_say(
                     ctc = ctc._duplicate(None)
                     ctc._unique()
 
-            if delay == 0:
-                what_ctc = None
-                ctc = None
 
             # Run the show callback.
-            for c in callback:
-                c("show", interact=interact, type=type, **cb_args)
+            pause_callback("show")
 
             # Create the callback that is called when the slow text is done.
-            slow_done = SlowDone(what_ctc, ctc_position, callback, interact, type, cb_args, delay, ctc_kwargs, last_pause, dtt.no_wait)
+            slow_done = SlowDone(what_ctc, ctc_position, pause_callback, interact, type, cb_args, delay, ctc_kwargs, last_pause, dtt.no_wait)
 
             extend_text = ""
 
@@ -644,14 +705,16 @@ def display_say(
 
                 if scry is not None:
                     scry = scry.next()
-
                 scry_count = 0
 
                 while scry and scry_count < 64:
                     if scry.extend_text is renpy.ast.DoesNotExtend:
                         break
                     elif scry.extend_text is not None:
-                        extend_text += scry.extend_text
+                        try:
+                            extend_text += renpy.substitutions.substitute(scry.extend_text, scope=None, force=False, translate=True)[0]
+                        except Exception:
+                            pass
 
                     scry = scry.next()
                     scry_count += 1
@@ -690,6 +753,11 @@ def display_say(
             else:
                 afm_text_queue.append(what_text)
 
+            if delay == 0:
+                what_ctc = None
+                if not extend_text:
+                    ctc = None
+
             if interact or what_string or (what_ctc is not None) or (behavior and afm):
 
                 if not isinstance(what_text, renpy.text.text.Text): # @UndefinedVariable
@@ -697,16 +765,22 @@ def display_say(
 
                 if what_ctc:
 
+
+                    if extend_text or not last_pause:
+                        if ctc_position == "nestled" or ctc_position == "nestled-close":
+                                what_ctc = renpy.store.Fixed(what_ctc, xsize=0)
+
                     if ctc_position == "nestled":
                         what_text.set_ctc(what_ctc)
                     elif ctc_position == "nestled-close":
                         what_text.set_ctc([ u"\ufeff", what_ctc, ])
 
-                if (not last_pause) and ctc:
+                if (extend_text or not last_pause) and ctc:
                     if ctc_position == "nestled":
                         what_text.set_last_ctc(ctc)
                     elif ctc_position == "nestled-close":
                         what_text.set_last_ctc([ u"\ufeff", ctc, ])
+
 
                 if what_text.text[0] == what_string:
 
@@ -731,8 +805,7 @@ def display_say(
 
                 slow = False
 
-            for c in callback:
-                c("show_done", interact=interact, type=type, **cb_args)
+            pause_callback("show_done")
 
             if not slow:
                 slow_done()
@@ -778,8 +851,7 @@ def display_say(
 
         renpy.plog(1, "after with none")
 
-    for c in callback:
-        c("end", interact=interact, type=type, **cb_args)
+    callback("end")
 
     if exception is not None:
         raise exception
@@ -1245,12 +1317,16 @@ class ADVCharacter(object):
     def __repr__(self):
         return "<Character: {!r}>".format(self.name)
 
-    def empty_window(self):
-        if renpy.config.fast_empty_window and (self.name is None) and not (self.what_prefix or self.what_suffix):
+    def empty_window(self, multiple=None):
+        if renpy.config.fast_empty_window and (self.name is None) and not (self.what_prefix or self.what_suffix) and (multiple is None):
             self.do_show(None, "")
             return
 
-        self("", interact=False, _call_done=False)
+        if multiple:
+            for i in range(multiple):
+                self("", interact=False, _call_done=False, multiple=multiple)
+        else:
+            self("", interact=False, _call_done=False)
 
     def has_character_arguments(self, **kwargs):
         """
@@ -1327,9 +1403,10 @@ class ADVCharacter(object):
             if multiple_count == multiple[1]:
                 multiple_count = 0
 
-        if multiple is None:
 
-            old_attr_state = self.handle_say_attributes(False, interact)
+        old_attr_state = self.handle_say_attributes(False, interact)
+
+        if multiple is None:
 
             old_side_image_attributes = renpy.store._side_image_attributes
 
@@ -1416,13 +1493,13 @@ class ADVCharacter(object):
             if (multiple is None) and interact:
                 renpy.store._side_image_attributes = old_side_image_attributes # type: ignore
 
-                if old_attr_state is not None: # type: ignore
-                    _, images = old_attr_state # type: ignore
-                    before = images.get_attributes(None, self.image_tag)
+            if old_attr_state is not None: # type: ignore
+                _, images = old_attr_state # type: ignore
+                before = images.get_attributes(None, self.image_tag)
 
-                if self.restore_say_attributes(False, old_attr_state, interact): # type: ignore
-                    after = images.get_attributes(None, self.image_tag) # type: ignore
-                    self.handle_say_transition('restore', before, after) # type: ignore
+            if self.restore_say_attributes(False, old_attr_state, interact): # type: ignore
+                after = images.get_attributes(None, self.image_tag) # type: ignore
+                self.handle_say_transition('restore', before, after) # type: ignore
 
     def statement_name(self):
         if not (self.condition is None or renpy.python.py_eval(self.condition)):

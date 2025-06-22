@@ -1,4 +1,4 @@
-# Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2025 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -190,6 +190,10 @@ def write_translates(filename, language, filter): # @ReservedAssignment
 
         if is_empty_extend(t):
             continue
+
+        if isinstance(t, renpy.ast.TranslateSay):
+            if t.who and str(t.who) in renpy.config.translate_ignore_who:
+                continue
 
         f = open_tl_file(tl_filename)
 
