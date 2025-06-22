@@ -56,6 +56,7 @@ transform BumpTransition(new_widget, old_widget, t=1.0, z=1.75):
 
 transform StaticTransition(new_widget, old_widget): 
     subpixel True
+    delay 1.1
     old_widget
     function noise_start
     "noise"
@@ -83,6 +84,7 @@ transform StaticTransition(new_widget, old_widget):
 
 transform StaticTransitionLong(new_widget, old_widget, t=1.0): 
     subpixel True
+    delay t
     old_widget
     function noise_start
     "noise"
