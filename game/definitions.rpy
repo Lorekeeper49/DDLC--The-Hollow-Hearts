@@ -17,9 +17,6 @@ init python:
     config.keymap['self_voicing'] = []
     config.keymap['clipboard_voicing'] = []
     config.keymap['toggle_skip'] = []
-    renpy.music.register_channel("ambience", mixer="ambience", loop=True, tight=True)
-    renpy.music.register_channel("ambience2", mixer="ambience", loop=True, tight=True)
-    renpy.music.register_channel("ambience3", mixer="ambience", loop=True, tight=True)
     renpy.music.register_channel("music_swap", mixer="music", loop=True, tight=True)
     renpy.music.register_channel("music_poem", mixer="music", loop=True, tight=True)
     renpy.music.register_channel("cutscene_voice", mixer="voice", loop=False, tight=True)
