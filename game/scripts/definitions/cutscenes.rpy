@@ -1,3 +1,5 @@
+default persistent.cutscenes_watched = []
+
 label playcutscene(vid, *, back="black", starttransition=None, endtransition=None):
     $ _show_skip_prompt = False
     play movie ("mod_assets/cutscenes/" + vid + "/movie.webm")
@@ -8,7 +10,10 @@ label playcutscene(vid, *, back="black", starttransition=None, endtransition=Non
     scene black
     show movie 
     with starttransition
-    show screen skipper onlayer textbox
+    if vid in persistent.cutscenes_watched:
+        show screen skipper onlayer textbox
+    else:
+        $ persistent.cutscenes_watched.append(vid)
     $ can_cont = False
     call expression (vid + "_subtitle")
     $ can_cont = True
