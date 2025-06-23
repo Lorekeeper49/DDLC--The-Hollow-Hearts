@@ -42,7 +42,7 @@ init python:
             
             # Регистрируем каналы в RenPy
             for channel in self.ambient_channels:
-                renpy.music.register_channel(channel, "ambience", loop=True)
+                renpy.music.register_channel(channel, mixer="ambience", loop=True)
             
             # Отдельный канал для основной темы
             renpy.music.register_channel("main_theme", "music", loop=False)
