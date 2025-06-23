@@ -113,6 +113,7 @@ init python:
         ("SILHOUETTE CODE", ["Ren'Py cookbook"]),
         ("ACHIEVEMENTS", ["bobcgames"]),
         ("CREDITS CODE", ["Retronika"]),
+        ("DYNAMIC AMBIENCE", ["Elysium Development Team"]),
 
         
         ("~{u}Special Thanks | スペシャルサンクス{/u}~", ["DDMC Community | DDMCコミュニティ", "THH Discord | ハロハ・ディスコード", "Team Salvato | チームサルヴァート", "You! | 貴方！"]),
