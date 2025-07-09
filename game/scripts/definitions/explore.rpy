@@ -78,7 +78,7 @@ init -1 python:
                 self.y = y
                 renpy.redraw(self, 0)
 
-label explore(start, *args, transition=None, limited_time=-1, fail_label="", **kwargs):
+label explore(start, *args, transition=None, return_label=None, limited_time=-1, fail_label="", **kwargs):
     if start.startswith("deep_forest"):
         scene bg deep_forest
     else:
@@ -93,7 +93,7 @@ label explore(start, *args, transition=None, limited_time=-1, fail_label="", **k
     $ explored = []
     $ renpy.call_screen(start, args, kwargs)
     hide screen quick_menu onlayer textbox
-    return
+    return return_label
 
 default jumpnum = 0
 label next_location(loc, *args, transition=Fade(0.25, 0.0, 0.25), j=False, f=False, hide_f=False, w=False, **kwargs):
