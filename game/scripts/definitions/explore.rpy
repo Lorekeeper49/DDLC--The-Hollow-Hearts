@@ -21,8 +21,6 @@ init -1 python:
         remaining_sec -= 1
         if remaining_sec <= 0:
             renpy.call(oot)
-    def get_length(s):
-        return len(s)
     # Only use this when adding items to the inventory, it makes sure the items are in the same place for each list so the inventory view can work correctly
     def add_to_inv(EN_name, JP_name, desc, chara=None):
         if chara is None:
@@ -209,7 +207,7 @@ screen code_input:
     text "8" xcenter 640 ycenter 250
     button xcenter 750 ycenter 250 xysize (100, 100) action SetVariable("dial", dial + "9")
     text "9" xcenter 750 ycenter 250
-    text "[get_length(code)]桁コード\n[get_length(code)]-DIGIT CODE" xcenter 640 ycenter 40
+    text "[len(code)]桁コード\n[len(code)]-DIGIT CODE" xcenter 640 ycenter 40
 
 
 image flashlight:
