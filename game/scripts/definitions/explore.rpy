@@ -78,21 +78,20 @@ init -1 python:
                 self.y = y
                 renpy.redraw(self, 0)
 
-label explore(start, *, transition=False, limited_time=-1, fail_label=""):
+label explore(start, *args, transition=None, limited_time=-1, fail_label="", **kwargs):
     if start.startswith("deep_forest"):
         scene bg deep_forest
     else:
         scene expression "bg [start]"
     show screen quick_menu onlayer textbox
-    if transition:
-        with wipeleft_scene
+    with transition
     if limited_time > -1:
         $ remaining_sec = limited_time
         $ oot = fail_label
         show screen timer
     $ codes = []
     $ explored = []
-    $ renpy.call_screen(start)
+    $ renpy.call_screen(start, args, kwargs)
     hide screen quick_menu onlayer textbox
     return
 
