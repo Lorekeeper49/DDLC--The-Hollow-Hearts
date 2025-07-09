@@ -97,7 +97,7 @@ label explore(start, *, transition=False, limited_time=-1, fail_label=""):
     return
 
 default jumpnum = 0
-label next_location(loc, *, transition=True, j=False, f=False, w=False):
+label next_location(loc, *, transition=Fade(0.25, 0.0, 0.25), j=False, f=False, hide_f=False, w=False):
     if loc.startswith("deep_forest"):
         scene bg deep_forest
     else:
@@ -113,8 +113,9 @@ label next_location(loc, *, transition=True, j=False, f=False, w=False):
             $ jumpnum += 1
     if f:
         show flashlight onlayer foreground
-    if transition:
-        with Fade(0.25, 0.0, 0.25)
+    if hide_f:
+        hide flashlight onlayer foreground
+    with transition
     if w:
         $ wraith_beaten = False
         if random_chance(50):
