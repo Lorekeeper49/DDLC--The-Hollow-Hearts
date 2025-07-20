@@ -861,12 +861,12 @@ init -501 screen inventory_view(item_action=None):
                     text item_desc
             viewport id "vp":
                 grid 5 100:
-                    for item in range(len(inventory[char_perspective])):
+                    for item in inventory[char_perspective]:
                         button:
-                            background "mod_assets/inventory/" + inventory[char_perspective][item] + ".png"
+                            background "mod_assets/inventory/" + item["EN_name"] + ".png"
                             hover_foreground "#ffffff59"
                             xysize (100, 100)
-                            action [SetVariable("selected_item", inventory[char_perspective][item]), SetVariable("JP_item_name", JPitems[char_perspective][item]), SetVariable("item_desc", items_desc[char_perspective][item])]
+                            action [SetVariable("selected_item", item["EN_name"]), SetVariable("JP_item_name", item["JP_name"]), SetVariable("item_desc", item["desc"])]
         if item_action is not None:
             textbutton _("Use [selected_item]\n{size=15}[JP_item_name]を使用する{/size}") yalign 0.98 action [SetVariable("used_item", selected_item), SetVariable("selected_item", "Nothing"), SetVariable("JP_item_name", "何も無い"), SetVariable("item_desc", ""), item_action]
 

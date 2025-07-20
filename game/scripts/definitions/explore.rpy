@@ -25,28 +25,27 @@ init -1 python:
     def add_to_inv(EN_name, JP_name, desc, chara=None):
         if chara is None:
             chara = char_perspective
-        inventory[chara].append(EN_name)
-        JPitems[chara].append(JP_name)
-        items_desc[chara].append(desc)
-    def remove_from_inv(EN_name, chara=None):
+        inventory[chara].append({"EN_name": EN_name, "JP_name": JP_name, "desc": desc})
+    def remove_from_inv(item, chara=None):
         if chara is None:
             chara = char_perspective
         try:
-            i = inventory[chara].index(EN_name)
+            i = find_in_inv(item, chara)
             del inventory[chara][i]
-            del JPitems[chara][i]
-            del items_desc[chara][i]
         except: pass
     def clear_inv(chara=None):
         if chara is None:
             chara = char_perspective
         inventory[chara].clear()
-        JPitems[chara].clear()
-        items_desc[chara].clear()
     def item_in_inv(item, chara=None):
+        return find_in_inv(item, chara) != -1
+    def find_in_inv(item, chara=None):
         if chara is None:
             chara = char_perspective
-        return item in inventory[chara]
+        for i in range(len(inventory[chara])):
+            if item == inventory[chara][i]["EN_name"] or item == inventory[chara][i]["JP_name"] or item == inventory[chara][i]["desc"]:
+                return i
+        return -1
     class TrackCursor(renpy.Displayable):
         #class from here: https://lemmasoft.renai.us/forums/viewtopic.php?p=340355&sid=4540fae3b4ed740ce81e66660e093648#p340355
         def __init__(self, child):
@@ -122,26 +121,6 @@ label next_location(loc, *args, transition=Fade(0.25, 0.0, 0.25), j=False, f=Fal
     return
 
 default inventory = {
-    "Taiyen": [],
-    "Aoruguri": [],
-    "Monika": [],
-    "Sayori": [],
-    "Natsuki": [],
-    "Yuri": [],
-    "Kotonoha": [],
-    "Lilly": []
-    }
-default JPitems = {
-    "Taiyen": [],
-    "Aoruguri": [],
-    "Monika": [],
-    "Sayori": [],
-    "Natsuki": [],
-    "Yuri": [],
-    "Kotonoha": [],
-    "Lilly": []
-    }
-default items_desc = {
     "Taiyen": [],
     "Aoruguri": [],
     "Monika": [],
