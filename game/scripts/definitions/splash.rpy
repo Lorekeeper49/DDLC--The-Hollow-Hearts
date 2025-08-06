@@ -198,6 +198,8 @@ label splashscreen:
         "I, and the team that helped me out, hope you enjoy this mod."
         pause 1.0
         scene black
+
+    if not persistent.interviewed:
         $ startnow = True
 
     $ basedir = config.basedir.replace('\\', '/')
@@ -261,7 +263,7 @@ label autoload:
     $ allow_skipping = True
     $ config.allow_skipping = True
     $ af_enabled = True
-    jump start
+    jump start_inter
 
 label before_main_menu:
     $ config.main_menu_music = audio.t1

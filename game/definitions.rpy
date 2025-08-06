@@ -474,22 +474,6 @@ define _dismiss_pause = config.developer
 
 
 default persistent.playthrough = 0
-# - endings
-default persistent.endings = 0
-default persistent.strueending = False
-default persistent.mtrueending = False
-default persistent.ntrueending = False
-default persistent.ytrueending = False
-default persistent.suicide = False
-default persistent.noone = False
-default persistent.sgood = False
-default persistent.sbad = False
-default persistent.mgood = False
-default persistent.mbad = False
-default persistent.ngood = False
-default persistent.nbad = False
-default persistent.ygood = False
-default persistent.ybad = False
 
 default persistent.end_questions_asked = 0
 
@@ -502,6 +486,8 @@ default chapter = 0
 default act = 0
 default currentpos = 0
 default faint_effect = None
+
+default persistent.interviewed = False
 
 
 # - names

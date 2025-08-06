@@ -33,15 +33,7 @@ label start:
 
     achieve newfriends
     scene black with dissolve_scene_full
-    $ kirinani = "???"
-    ak "The test has been completed."
-    ak "Huh?  Looks like he and his sister might be able to hear us.  I will need to fix that."
-    ak "*Pencil scratching*"
-    ak "Hey Boss, do you mind if we keep them on the man?"
-    kiri "Not at all."
-    kiri "It is my intention that the man follows us from now on."
-    ak "Understood."
-    ak "(Taiyen, hang in there.)"
+    call pro_inter
     return
 
 label act1:
