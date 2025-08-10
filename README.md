@@ -56,7 +56,7 @@ SAKURA KOTONOHA | 桜言葉 - ???
 
 KAMIYAMA ITSOMI | 神山イツォミ - ???
 
-KAMIYAMA KIRINANI | 神山霧何 - ???
+KAMIYAMA KIRINANI | 神山霧何 - George PowerNineLord
 
 KAMIYAMA HANATO | 神山華翔 - ???
 

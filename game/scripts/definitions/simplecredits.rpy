@@ -62,7 +62,7 @@ init python:
         ("YANDERE LILLY | ヤンデレリリー", ["???"]),
         ("SAKURA KOTONOHA | 桜言葉", ["???"]),
         ("KAMIYAMA ITSOMI | 神山イツォミ", ["???"]),
-        ("KAMIYAMA KIRINANI | 神山霧何", ["???"]),
+        ("KAMIYAMA KIRINANI | 神山霧何", ["George PowerNineLord"]),
         ("KAMIYAMA HANATO | 神山華翔", ["???"]),
         ("KAMIYAMA INARI | 神山稲荷", ["???"]),
         ("KAMIYAMA AKIRA | 神山秋羅", ["LRKade"]),
