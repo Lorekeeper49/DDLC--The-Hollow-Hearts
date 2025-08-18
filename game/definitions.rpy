@@ -305,8 +305,6 @@ init -501 python:
         bgs.append("bg kitchen")
 
     capture_images("bg", lambda x: x.startswith("mod_assets/bg/"))
-    
-    print(renpy.display.image.list_images())
 
 image bg vision_background:
     function sound_start
