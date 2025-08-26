@@ -102,7 +102,7 @@ init python:
 
         ("~{u}SOUNDS & AMBIENCE | 物音と環境音{/u}~", ["Fesliyan Studios", "Pixabay", "KENNEY"]),
 
-        ("~{u}FONTS | フォント{/u}~", ["Noto Serif JP", "TypeSETit (Alex Brush)", "Krafti Lab", "Unitblock", "That Sounds Great by GraphicSauce", "FOT-RodinNTLG Pro EB"]),
+        ("~{u}FONTS | フォント{/u}~", ["Noto Serif JP", "TypeSETit (Alex Brush)", "Krafti Lab", "Unitblock", "That Sounds Great by GraphicSauce", "FOT-RodinNTLG Pro Family"]),
 
         ("~{u}MISC | その他{/u}~", []),
         ("Mood Pose Tool", ["Chronos", "Yagamirai", "Terra", "DiabloGraves"]),
