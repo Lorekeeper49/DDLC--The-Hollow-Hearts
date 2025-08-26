@@ -270,7 +270,7 @@ THUNDER2 - Sound Effect by [Mikhail](https://pixabay.com/users/soundsforyou-4861
 
 [That Sounds Great - GraphicSauce](https://www.fontspace.com/that-sounds-great-font-f115095)
 
-[FOT-RodinNTLG Pro EB](https://fontsgeek.com/fonts/fot-rodinntlg-pro-eb?ref=readme)
+[FOT-RodinNTLG Pro Family](https://fontsgeek.com/fot-rodinntlg-pro-font)
 
 
 ### MISC | その他
