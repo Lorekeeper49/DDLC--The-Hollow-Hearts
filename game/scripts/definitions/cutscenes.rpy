@@ -61,16 +61,19 @@ init python:
             if _preferences.language is None:
                 with open("game/mod_assets/cutscenes/" + vid + "/subtitles.json", "r", encoding="utf-8") as f:
                     subtitle_data = json.load(f)
+            else:
+                with open("game/tl/" + _preferences.language + "/cutscenes/" + vid + "/subtitles.json", "r", encoding="utf-8") as f:
+                    subtitle_data = json.load(f)
         except FileNotFoundError:
             subtitle_data = []
             renpy.log("No subtitles found for cutscene: " + vid)
 
 default subtitle_timer = 0.0
 screen subtitles():
-    timer 0.1 action SetVariable("subtitle_timer", 0)
+    timer 0.1 action SetVariable("subtitle_timer", 0.0)
     if subtitle_data:
         for entry in subtitle_data:
-            if renpy.get_time() >= entry["start"] and renpy.get_time() <= entry["end"]:
+            if subtitle_timer >= entry["start"] and subtitle_timer <= entry["end"]:
                 frame:
                     style "default"
                     background "#0008"
