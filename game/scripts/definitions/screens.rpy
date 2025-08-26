@@ -937,26 +937,26 @@ init -501 screen preferences():
                 style_prefix "slider"
                 hbox:
                     label "Music Volume" yalign 0.5
-                    text _("音楽ボリューム") yalign 0.75 style "pref_JP_label_text"
+                    text _("音楽音量") yalign 0.75 style "pref_JP_label_text"
                 hbox:
                     bar value Preference("music volume")
                 hbox:
                     label "Ambience Volume" yalign 0.5
-                    text _("環境音ボリューム") yalign 0.75 style "pref_JP_label_text"
+                    text _("環境音音量") yalign 0.75 style "pref_JP_label_text"
                 hbox:
                     bar value Preference("ambience volume")
             if config.has_sound:
                 style_prefix "slider"
                 hbox:
                     label "Sound Volume" yalign 0.5
-                    text _("物音ボリューム") yalign 0.75 style "pref_JP_label_text"
+                    text _("物音音量") yalign 0.75 style "pref_JP_label_text"
                 hbox:
                     bar value Preference("sound volume")
             if config.has_voice:
                 style_prefix "slider"
                 hbox:
                     label "Voice Volume" yalign 0.5
-                    text _("声ボリューム") yalign 0.75 style "pref_JP_label_text"
+                    text _("声音量") yalign 0.75 style "pref_JP_label_text"
                 hbox:
                     bar value Preference("voice volume")
                     if config.sample_voice:
@@ -997,26 +997,26 @@ init -501 screen preferences_main():
                 style_prefix "slider_main"
                 hbox:
                     label "Music Volume" yalign 0.5
-                    text _("音楽ボリューム") yalign 0.75 style "pref_main_JP_label_text"
+                    text _("音楽音量") yalign 0.75 style "pref_main_JP_label_text"
                 hbox:
                     bar value Preference("music volume")
                 hbox:
                     label "Ambience Volume" yalign 0.5
-                    text _("環境音ボリューム") yalign 0.75 style "pref_main_JP_label_text"
+                    text _("環境音音量") yalign 0.75 style "pref_main_JP_label_text"
                 hbox:
                     bar value Preference("ambience volume")
             if config.has_sound:
                 style_prefix "slider_main"
                 hbox:
                     label "Sound Volume" yalign 0.5
-                    text _("物音ボリューム") yalign 0.75 style "pref_main_JP_label_text"
+                    text _("物音音量") yalign 0.75 style "pref_main_JP_label_text"
                 hbox:
                     bar value Preference("sound volume")
             if config.has_voice:
                 style_prefix "slider_main"
                 hbox:
                     label "Voice Volume" yalign 0.5
-                    text _("声ボリューム") yalign 0.75 style "pref_main_JP_label_text"
+                    text _("声音量") yalign 0.75 style "pref_main_JP_label_text"
                 hbox:
                     bar value Preference("voice volume")
                     if config.sample_voice:
