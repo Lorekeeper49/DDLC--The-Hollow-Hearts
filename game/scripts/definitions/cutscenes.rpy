@@ -11,6 +11,7 @@ label playcutscene(vid, *, back="black", starttransition=None, endtransition=Non
     $ video_length = renpy.sound.get_duration("mod_assets/cutscenes/" + vid + "/movie.webm")
     scene black
     show movie 
+    show screen subtitles onlayer textbox
     with starttransition
     if vid in persistent.cutscenes_watched:
         show screen skipper onlayer textbox
@@ -24,7 +25,9 @@ label playcutscene(vid, *, back="black", starttransition=None, endtransition=Non
     stop music
     stop ambience
     stop cutscene_voice
-    scene expression back with endtransition
+    scene expression back 
+    hide screen subtitles onlayer textbox
+    with endtransition
     $ _show_skip_prompt = False
     hide screen skipper onlayer textbox
     return
@@ -73,7 +76,7 @@ init python:
             renpy.log("No subtitles found for cutscene: " + vid)
 
 default subtitle_timer = 0.0
-screen subtitles():
+screen subtitles:
     timer 0.1 action SetVariable("subtitle_timer", 0.0)
     if subtitle_data:
         for entry in subtitle_data:
