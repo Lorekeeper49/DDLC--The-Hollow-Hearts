@@ -20,6 +20,10 @@ label playcutscene(vid, *, back="black", starttransition=None, endtransition=Non
     call play_video
     $ can_cont = True
     stop movie 
+    stop sound
+    stop music
+    stop ambience
+    stop cutscene_voice
     scene expression back with endtransition
     $ _show_skip_prompt = False
     hide screen skipper onlayer textbox
