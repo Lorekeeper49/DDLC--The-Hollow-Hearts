@@ -21,7 +21,7 @@ label start:
     $ pause(1.0)
     hide show_logo with Dissolve(2.0)
 
-    window hide
+    call wonder(_("To meet so many people all doomed to know your darkest secret?"))
 
     $ act = 0
 
@@ -37,6 +37,7 @@ label start:
     return
 
 label act1:
+    call wonder(_("To be controlled and have every single one of your choices be that of somone else?"))
     $ act = 1
     call act_trans
     $ chapter = 1
@@ -71,6 +72,7 @@ label act1:
     return
 
 label act2:
+    call wonder(_("To hide in the darkness and want to be drawn out?"))
     $ known = True
     $ act = 2
     call act_trans
@@ -98,6 +100,7 @@ label act2:
     jump act2_end
 
 label act2_alt:
+    call wonder(_("To have emotions so broken, you lose control of yourself?"))
     $ known = False
     $ act = 2
     call act_trans
@@ -323,3 +326,20 @@ label dev:
                     "The Blame Faults":
                         call act3_path32
         jump dev_loop
+
+default wonder_prefix = _("Is it weird to wonder what it is like...?")
+label wonder(question):
+    scene black with dissolve_scene_full
+    show location_text "{size=25}[wonder_prefix]{/size}" as w_text zorder 10000 with Dissolve(2.0):
+        xalign 0.5
+        yalign 0.25
+    $ pause(3.0)
+    show location_text "{size=25}[question]{/size}" as q_text zorder 10000 with Dissolve(2.0):
+        xalign 0.5
+        yalign 0.75
+    $ pause(3.0)
+    hide w_text
+    hide q_text
+    with Dissolve(2.0)
+    $ pause(3.0)
+    return

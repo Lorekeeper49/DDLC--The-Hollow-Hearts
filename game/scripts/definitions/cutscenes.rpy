@@ -87,7 +87,7 @@ screen subtitles:
                     xalign 0.5
                     yalign 0.9
                     padding (10, 5)
-                    text "[entry["name"]]" size 22 color "#fff" font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf"
-                    text "[entry["text"]]" size 20 color "#fff" font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf"
+                    text entry["name"] size 22 color "#fff" font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf"
+                    text entry["text"] size 20 color "#fff" font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf"
                 break
         timer 0.001 action IncrementVariable("subtitle_timer", 0.001)
