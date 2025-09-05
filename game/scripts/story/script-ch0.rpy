@@ -1130,7 +1130,7 @@ label ch0_main:
     show natsuki turned casual happ rhip zorder 4 at t22
     m ldown om "Sure!"
     show monika cm
-    call showpoem(poem_t, False)
+    call showpoem("poem_t", False)
     t "I think it speaks for itself."
     s laug ce om lup "Pfft!  That's hilarious!"
     t "Laugh at it all you want, it only promotes how bad it is."
@@ -1142,7 +1142,7 @@ label ch0_main:
     show monika ldown cm at t41
     show kotonoha at t11
     k lup om "I'd love to."
-    call showpoem(poem_k, False)
+    call showpoem("poem_k", False)
     k "What do you all think?"
     show kotonoha cm
     t "Koto-chan, when did you become a symbolistic writer?"
@@ -1158,7 +1158,7 @@ label ch0_main:
     show monika at t11
     show kotonoha cm at t41
     m lpoint om "Good ol' me!"
-    call showpoem(poem_m)
+    call showpoem("poem_m")
     show monika cm
     t "The hard truth of everything..."
     s e1b om "Yeah, it sucks to know that even you've made yourself the best you can be, there's still a lot of flaws that are just waiting to be pointed out."
@@ -1176,7 +1176,7 @@ label ch0_main:
     show yuri at t11
     show monika ldown cm at t44
     y rup om "Sure!"
-    call showpoem(poem_y)
+    call showpoem("poem_y")
     k curi om "What's this about?"
     t "She hasn't told you?"
     y curi "I thought I did.  Must've slipped my mind."
@@ -1199,7 +1199,7 @@ label ch0_main:
     show natsuki at t11
     m lpoint om "Go ahead!"
     show monika cm
-    call showpoem(poem_n)
+    call showpoem("poem_n")
     y curi om "Who are you talking about now?"
     n cross dist "Someone whom I presume is dead; my sister."
     n neut "A lot happened and I really should talk about it."
@@ -1210,7 +1210,7 @@ label ch0_main:
     show natsuki cm at t21
     show sayori at t11
     s om "Sure am!"
-    call showpoem(poem_s)
+    call showpoem("poem_s")
     t "Don't remind me.  WE WENT THROUGH HELL!"
     s laug "Yeah, but we survived in the end, didn't we?"
     s rdown "Besides, we're the only ones who remember that life, right?"

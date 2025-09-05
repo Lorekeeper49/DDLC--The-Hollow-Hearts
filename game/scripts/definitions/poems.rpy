@@ -5,161 +5,6 @@ init python:
             self.title = title
             self.text = text
 
-    poem_y = Poem(
-    author = "yuri",
-    title = _("Dead Life"),
-    text = _("""\
-Oh life so tangent,
-why did you hurt me so?
-why art thou have a pure life
-for great myths of old?
-
-I may be broken.
-I may be oblivious.
-Yandere life.
-Yandere way.
-
-Dead life.
-Dead wars.
-Dead promises.
-
-I just have one question,
-why?""")
-    )
-
-    poem_n = Poem(
-    author = "natsuki",
-    title = _("Unknown Feelings"),
-    text = _("""\
-Where is she?
-I may be lost but...
-she's in the woods.
-She is death.
-She is forgotten.
-She is broken.
-She is storming.
-She is...
-Nothing.
-Nothing to help her.
-Nothing to lead her.
-Nothing to guide her.
-She is gone.
-And she doesn't know it.""")
-    )
-
-    poem_s = Poem(
-    author = "sayori",
-    title = _("Before the Past"),
-    text = _("""\
-Before the past,
-what is there?
-After the future,
-what exists?
-
-Nothing can exist
-before the past.
-Nothing can exist
-after the future.
-
-So what is there?
-
-I know the prefix
-before the prefix.
-I know the suffix
-after the suffix.
-
-Before life
-we were none.
-Before the past
-we were war
-
-After life
-we are none.
-After the future
-we are war.
-
-It's all the same
-in an endless cycle.""")
-    )
-
-    poem_m = Poem(
-    author = "monika",
-    title = _("A Perfect Girl"),
-    text = _("""\
-A perfect girl is supposed to be stable.
-A perfect girl is supposed to be calm.
-A perfect girl is supposed to be happy.
-A perfect girl is supposed to be pretty.
-A perfect girl is supposed to be perfect.
-
-Perfection doesn't exist.
-
-A perfect girl is not stable.
-A perfect girl is not calm.
-A perfect girl is not happy.
-A perfect girl is not pretty.
-A perfect girl is not perfect.
-
-Nobody is.""")
-    )
-
-    poem_k = Poem(
-    author = "kotonoha",
-    title = _("Contradicting Correlation"),
-    text = _("""\
-What do you get while your asleep?
-Nightmares.
-What do you get while your awake?
-Halluncinations.
-They may be different, but they're the same.
-
-What is amazing, but unbelievable?
-Myths.
-What is amazing and believable?
-Legends.
-They may be different, but they're the same.
-
-What stays hidden while afar?
-Snipers.
-What stays hidden while up close?
-Spies.
-They may be different, but they're the same.
-
-What is at the front of a coin?
-Heads.
-What is at the back of a coin?
-Tails.
-They may be different, but they're the same.""")
-    )
-
-    poem_t = Poem(
-    author = "taiyen",
-    title = _("I am Stupid"),
-    text = _("""\
-I call myself that
-all the time.
-I am not a that,
-it is my prime.
-
-I am not a sage.
-I don't know a page.
-I'm not in a cage.
-Someone got a guage?
-
-I need some help
-for a phase.
-I've only dealt
-with a daze.
-
-My mind goes dead.
-I've been sped.
-I'm just bread.
-I need a head.
-
-I can do stories.
-I can't do poems.""")
-    )
-
 image paper = "images/bg/poem.jpg"
 
 
@@ -255,6 +100,13 @@ style tai_text:
 label showpoem(poem=None, music=True, track=None, revert_music=True, img=None, where=i11, paper=None):
     if poem == None:
         return
+    if isinstance(poem, str):
+        if preferences.language is None:
+            $ filepath = f"poems/{poem}.txt"
+        else:
+            $ filepath = f"tl/{preferences.language}/poems/{poem}.txt"
+        if filepath:
+            $ poem = parse_poem(filepath)
     play sound page_turn
     if music:
         $ currentpos = get_pos()
