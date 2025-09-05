@@ -1,6 +1,5 @@
 init python:
     def parse_poem(file):
-        body = ""
         with open(f"{renpy.config.gamedir}/{file}", encoding="utf-8") as f:
                     lines = f.readlines()
                     author = ""
@@ -33,3 +32,32 @@ init python:
                             del lines[0]
                             continue
                     return Poem(author, title, "".join(lines).strip())
+    
+    def parse_intro(file):
+        with open(f"{renpy.config.gamedir}/{file}", encoding="utf-8") as f:
+            lines = f.readlines()
+            kan = ""
+            name = ""
+            attr = ""
+            img = ""
+            while True:
+                line = lines[0].strip()
+                if not line:
+                    break
+                if line.startswith("# "):
+                    kan = line[2:].strip()
+                    del lines[0]
+                    continue
+                if line.startswith("$ "):
+                    name = line[2:].strip()
+                    del lines[0]
+                    continue
+                if line.startswith("- "):
+                    attr += line.strip() + "\n"
+                    del lines[0]
+                    continue
+                if line.startswith("! "):
+                    img = line[2:].strip()
+                    del lines[0]
+                    continue
+            return Intro(kan, name, attr, "".join(lines).strip(), img)
