@@ -740,8 +740,8 @@ init -1 style about_text is gui_text
 init -1 style about_label_text:
     size gui.label_text_size
 
+# TODO: Bookmarks need to be fixed... apparently.
 init -501 default slot_selected = 0
-
 init -501 screen file_slots():
     use game_menu
 
@@ -759,7 +759,7 @@ init -501 screen file_slots():
             for i in range(99):
                 $ slot = i + 1
                 button:
-                    action SetVariable("slot_selected", slot)
+                    action [SetVariable("save_name", FileSaveName(slot)), SetVariable("slot_selected", slot)]
                     has vbox
                     add FileScreenshot(slot) 
                     text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("EMPTY")):
@@ -776,7 +776,7 @@ init -501 screen file_slots():
                 vbox:
                     xalign 0.5
                     text _("栞の名前\nNAME OF BOOKMARK") font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf" size 10 xalign 0.5 text_align 0.5
-                    input default FileSaveName(slot_selected) value VariableInputValue("save_name") length 24 font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf"
+                    input value VariableInputValue("save_name") length 24 font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf"
                     hbox:
                         xalign 0.5
                         if not main_menu:
@@ -809,7 +809,7 @@ init -501 screen file_slots_main():
             for i in range(99):
                 $ slot = i + 1
                 button:
-                    action SetVariable("slot_selected", slot)
+                    action [SetVariable("save_name", FileSaveName(slot)), SetVariable("slot_selected", slot)]
                     has vbox
                     add FileScreenshot(slot) 
                     text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("EMPTY")):
@@ -826,7 +826,7 @@ init -501 screen file_slots_main():
                 vbox:
                     xalign 0.5
                     text _("栞の名前\nNAME OF BOOKMARK") font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf" size 10 xalign 0.5 text_align 0.5
-                    input default FileSaveName(slot_selected) value VariableInputValue("save_name") length 24 font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf"
+                    text save_name font "mod_assets/fonts/FOT-RodinNTLG Pro EB.otf" size 10 xalign 0.5 text_align 0.5
                     hbox:
                         xalign 0.5
                         if not main_menu:
