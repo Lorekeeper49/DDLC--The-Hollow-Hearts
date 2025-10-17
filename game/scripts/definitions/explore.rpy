@@ -88,7 +88,7 @@ label explore(start, *args, transition=None, return_label=None, limited_time=-1,
         show screen timer
     $ codes = []
     $ explored = []
-    $ renpy.call_screen(start, args, kwargs)
+    $ renpy.call_screen(start, *args, **kwargs)
     hide screen quick_menu onlayer textbox
     return return_label
 
@@ -117,7 +117,7 @@ label next_location(loc, *args, transition=Fade(0.25, 0.0, 0.25), j=False, f=Fal
         if random_chance(50):
             play sound "sfx/giggle.ogg"
             show screen wraith
-    $ renpy.call_screen(loc, args, kwargs)
+    $ renpy.call_screen(loc, *args, **kwargs)
     return
 
 default inventory = {
