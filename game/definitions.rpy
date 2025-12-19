@@ -36,6 +36,9 @@ init python:
     renpy.music.register_channel("jump13", mixer="music", loop=True, tight=True)
     renpy.music.register_channel("jump14", mixer="music", loop=True, tight=True)
     renpy.music.register_channel("jump15", mixer="music", loop=True, tight=True)
+    renpy.music.register_channel("ambience", mixer="ambience", loop=True, tight=True)
+    renpy.music.register_channel("ambience2", mixer="ambience", loop=True, tight=True)
+    renpy.music.register_channel("ambience3", mixer="ambience", loop=True, tight=True)
     config.tag_layer['bg'] = 'background'
     config.tag_layer['fg'] = 'foreground'
     def get_pos(channel='music'):

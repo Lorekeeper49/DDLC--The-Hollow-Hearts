@@ -534,7 +534,7 @@ label act2_ch2_follow:
     scene bg kotoroom
     show dark zorder 1
     with wipeleft_scene
-    show aoruguri crossed casual zorder 2 at t11
+    show aoruguri cross casual zorder 2 at t11
     "Not bad."
     "Feels nice to have different clothes on for once."
     hide aoruguri

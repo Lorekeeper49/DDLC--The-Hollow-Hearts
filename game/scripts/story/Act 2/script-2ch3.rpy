@@ -70,8 +70,8 @@ label act2_ch3_main:
     k ldown "Then we'll search there.  Everyone, use your GPS's to find your way to each other if you're lost."
     everyone "Got it!"
     $ start_loc = random_list(["0_0", "1_0", "2_0", "3_0", "4_0", "5_0", "6_0", "7_0", "8_0", "9_0"])[0]
-    $ randomize_blockages(start_loc)
-    call explore("deep_forest_" + start_loc, transition=True, limited_time=3600, fail_label="no_shed")
+    #$ randomize_blockages(start_loc)
+    call explore("deep_forest_" + start_loc, transition=wipeleft_scene, limited_time=3600, fail_label="no_shed")
     $ renpy.save_persistent()
     $ renpy.music.set_volume(1.0, delay=0, channel="ambience")
     stop ambience fadeout 1.0

@@ -81,7 +81,7 @@ label act2_ch1_main:
     a "Fuck it, take me there!"
     ak b "Come on then!"
     scene bg kamihallnight with wipeleft_scene
-    call showlocation("Kamiyama Academy 3F\n{size=25}神山学園高校の3階{/size}","October 8, 2023\n{size=15}2023年10月8日{/size}",659.95,"bg kamihallnight")
+    call showlocation("Kamiyama Academy 3F\n{size=25}神山学園高校の3階{/size}","October 8, 2023\n{size=15}2023年10月8日{/size}",15*60+59+57/60.0,"bg kamihallnight")
     "Why do they always put the night atmosphere on during clubtime?"
     "I mean, I like the the illusion, but most find it unusual."
     show akira uniform turned lpock rpock b zorder 2 at t11
