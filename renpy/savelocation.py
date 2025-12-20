@@ -1,4 +1,4 @@
-# Copyright 2004-2025 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -25,7 +25,7 @@
 # The current save location is stored in the location variable in loadsave.py.
 
 from __future__ import division, absolute_import, with_statement, print_function, unicode_literals
-from renpy.compat import PY2, basestring, bchr, bord, chr, open, pystr, range, round, str, tobytes, unicode  # *
+from renpy.compat import PY2, basestring, bchr, bord, chr, open, pystr, range, round, str, tobytes, unicode # *
 
 import os
 import zipfile
@@ -42,63 +42,7 @@ disk_lock = threading.RLock()
 # A suffix used to disambguate temporary files being written by multiple
 # processes.
 import time
-
 tmp = "." + str(int(time.time())) + ".tmp"
-
-
-# The number of times pause_syncfs has been called, without a corresponding
-# resume_syncfs
-pause_syncfs_count = 0
-
-
-def pause_syncfs():
-    """
-    Pauses the filesystem sync. This should be called before doing a large
-    number of file operations.
-    """
-
-    global pause_syncfs_count
-    pause_syncfs_count += 1
-
-
-def resume_syncfs():
-    """
-    Resumes the filesystem sync. This should be called after a corresponding
-    pause_syncfs.
-    """
-
-    global pause_syncfs_count
-    pause_syncfs_count -= 1
-
-    if pause_syncfs_count == 0:
-        syncfs()
-
-
-class SyncfsLock(object):
-    """
-    Context to pause then resume the filesystem sync.
-    """
-
-    def __enter__(self):
-        pause_syncfs()
-        return self
-
-    def __exit__(self, exception_type, exception_value, exception_traceback):
-        resume_syncfs()
-
-
-def syncfs():
-    """
-    Syncs the filesystem.
-    """
-
-    if pause_syncfs_count > 0:
-        return
-
-    if renpy.emscripten:
-        import emscripten  # type: ignore
-
-        emscripten.syncfs()
 
 
 class FileLocation(object):
@@ -131,13 +75,13 @@ class FileLocation(object):
             self.active = False
 
         # A map from slotname to the mtime of that slot.
-        self.mtimes = {}
+        self.mtimes = { }
 
         # The persistent file.
         self.persistent = os.path.join(self.directory, "persistent")
 
-        # The minumum mtime at which it makes sense to load the persistent file.
-        self.persistent_mtime = renpy.persistent.persistent_mtime
+        # The mtime of the persistent file.
+        self.persistent_mtime = 0
 
         # The data loaded from the persistent file.
         self.persistent_data = None
@@ -154,7 +98,9 @@ class FileLocation(object):
         Called to indicate that the HOME filesystem was changed.
         """
 
-        syncfs()
+        if renpy.emscripten:
+            import emscripten # type: ignore
+            emscripten.syncfs()
 
     def scan(self):
         """
@@ -165,8 +111,9 @@ class FileLocation(object):
             return
 
         with disk_lock:
+
             old_mtimes = self.mtimes
-            new_mtimes = {}
+            new_mtimes = { }
 
             suffix = renpy.savegame_suffix
             suffix_len = len(suffix)
@@ -192,11 +139,11 @@ class FileLocation(object):
                 if slotname not in new_mtimes:
                     clear_slot(slotname)
 
-            for pfn in [self.persistent + ".new", self.persistent]:
+            for pfn in [ self.persistent + ".new", self.persistent ]:
                 if os.path.exists(pfn):
                     mtime = os.path.getmtime(pfn)
 
-                    if mtime > self.persistent_mtime:
+                    if mtime != self.persistent_mtime:
                         data = renpy.persistent.load(pfn)
                         if data is not None:
                             self.persistent_mtime = mtime
@@ -231,7 +178,7 @@ class FileLocation(object):
         Returns a list of all the actual save files.
         """
 
-        rv = []
+        rv = [ ]
 
         for slotname in self.list():
             rv.append(self.filename(slotname))
@@ -255,6 +202,7 @@ class FileLocation(object):
         """
 
         with disk_lock:
+
             fn = os.path.join(self.directory, filename)
 
             try:
@@ -270,6 +218,7 @@ class FileLocation(object):
         """
 
         with disk_lock:
+
             try:
                 filename = self.filename(slotname)
                 with zipfile.ZipFile(filename, "r") as zf:
@@ -282,11 +231,11 @@ class FileLocation(object):
 
                     try:
                         extra_info = zf.read("extra_info").decode("utf-8")
-                        return {"_save_name": extra_info}
+                        return { "_save_name" : extra_info }
                     except Exception:
                         pass
 
-                    return {}
+                    return { }
             except Exception:
                 return None
 
@@ -298,6 +247,7 @@ class FileLocation(object):
         """
 
         with disk_lock:
+
             mtime = self.mtime(slotname)
 
             if mtime is None:
@@ -308,10 +258,10 @@ class FileLocation(object):
                 with zipfile.ZipFile(filename, "r") as zf:
                     try:
                         png = False
-                        zf.getinfo("screenshot.tga")
+                        zf.getinfo('screenshot.tga')
                     except Exception:
                         png = True
-                        zf.getinfo("screenshot.png")
+                        zf.getinfo('screenshot.png')
             except Exception:
                 return None
 
@@ -328,6 +278,7 @@ class FileLocation(object):
         """
 
         with disk_lock:
+
             filename = self.filename(slotname)
 
             with zipfile.ZipFile(filename, "r") as zf:
@@ -336,7 +287,7 @@ class FileLocation(object):
                 try:
                     token = zf.read("signatures").decode("utf-8")
                 except:
-                    token = ""
+                    token = ''
 
             return log, token
 
@@ -346,6 +297,7 @@ class FileLocation(object):
         """
 
         with disk_lock:
+
             filename = self.filename(slotname)
             if os.path.exists(filename):
                 os.unlink(filename)
@@ -359,6 +311,7 @@ class FileLocation(object):
         """
 
         with disk_lock:
+
             old = self.filename(old)
             new = self.filename(new)
 
@@ -391,22 +344,17 @@ class FileLocation(object):
             self.sync()
             self.scan()
 
-    def load_persistent(self, *, consume=False):
+    def load_persistent(self):
         """
         Returns a list of (mtime, persistent) tuples loaded from the
         persistent file. This should return quickly, with the actual
-        load occurring in the scan thread.
+        load occuring in the scan thread.
         """
 
-        if not self.persistent_data:
-            return []
-
-        rv = [(self.persistent_mtime, self.persistent_data)]
-
-        if consume:
-            self.persistent_data = None
-
-        return rv
+        if self.persistent_data:
+            return [ (self.persistent_mtime, self.persistent_data) ]
+        else:
+            return [ ]
 
     def save_persistent(self, data):
         """
@@ -415,14 +363,13 @@ class FileLocation(object):
         """
 
         with disk_lock:
+
             if not self.active:
                 return
 
             fn = self.persistent
             fn_tmp = fn + tmp
             fn_new = fn + ".new"
-
-            pause_syncfs()
 
             with open(fn_tmp, "wb") as f:
                 f.write(data)
@@ -435,9 +382,10 @@ class FileLocation(object):
 
             renpy.util.expose_file(fn)
 
-            resume_syncfs()
+            self.sync()
 
     def unlink_persistent(self):
+
         if not self.active:
             return
 
@@ -465,10 +413,10 @@ class MultiLocation(object):
     """
 
     def __init__(self):
-        self.locations = []
+        self.locations = [ ]
 
     def active_locations(self):
-        return [i for i in self.locations if i.active]
+        return [ i for i in self.locations if i.active ]
 
     def newest(self, slotname):
         """
@@ -506,22 +454,22 @@ class MultiLocation(object):
         self.locations.append(location)
 
     def save(self, slotname, record):
+
         if not renpy.config.save:
             return
 
         saved = False
 
-        with SyncfsLock():
-            for l in self.active_locations():
-                l.save(slotname, record)
-                saved = True
+        for l in self.active_locations():
+            l.save(slotname, record)
+            saved = True
 
         if not saved:
             raise Exception("Not saved - no valid save locations.")
 
     def list(self):
         if not renpy.config.save:
-            return []
+            return [ ]
 
         rv = set()
 
@@ -531,10 +479,11 @@ class MultiLocation(object):
         return list(rv)
 
     def list_files(self):
-        if not renpy.config.save:
-            return []
 
-        rv = []
+        if not renpy.config.save:
+            return [ ]
+
+        rv = [ ]
 
         for l in self.active_locations():
             rv.extend(l.list_files())
@@ -542,7 +491,8 @@ class MultiLocation(object):
         return rv
 
     def path(self, filename):
-        results = []
+
+        results = [ ]
 
         for i in self.active_locations():
             results.append(i.path(filename))
@@ -579,49 +529,46 @@ class MultiLocation(object):
 
     def load(self, slotname):
         l = self.newest(slotname)
-        return l.load(slotname)  # type: ignore
+        return l.load(slotname) # type: ignore
 
     def unlink(self, slotname):
         if not renpy.config.save:
             return
 
-        with SyncfsLock():
-            for l in self.active_locations():
-                l.unlink(slotname)
+        for l in self.active_locations():
+            l.unlink(slotname)
 
     def rename(self, old, new):
         if not renpy.config.save:
             return
 
-        with SyncfsLock():
-            for l in self.active_locations():
-                l.rename(old, new)
+        for l in self.active_locations():
+            l.rename(old, new)
 
     def copy(self, old, new):
         if not renpy.config.save:
             return
 
-        with SyncfsLock():
-            for l in self.active_locations():
-                l.copy(old, new)
+        for l in self.active_locations():
+            l.copy(old, new)
 
-    def load_persistent(self, *, consume=False):
-        rv = []
+    def load_persistent(self):
+        rv = [ ]
 
         for l in self.active_locations():
-            rv.extend(l.load_persistent(consume=consume))
+            rv.extend(l.load_persistent())
 
         return rv
 
     def save_persistent(self, data):
-        with SyncfsLock():
-            for l in reversed(self.active_locations()):
-                l.save_persistent(data)
+
+        for l in self.active_locations():
+            l.save_persistent(data)
 
     def unlink_persistent(self):
-        with SyncfsLock():
-            for l in self.active_locations():
-                l.unlink_persistent()
+
+        for l in self.active_locations():
+            l.unlink_persistent()
 
     def scan(self):
         # This should scan everything, as a scan can help decide if a
@@ -656,8 +603,9 @@ def run_scan_thread():
     quit_scan_thread = False
 
     while not quit_scan_thread:
+
         try:
-            renpy.loadsave.location.scan()  # @UndefinedVariable
+            renpy.loadsave.location.scan() # @UndefinedVariable
         except Exception:
             pass
 
@@ -665,7 +613,7 @@ def run_scan_thread():
             scan_thread_condition.wait(5.0)
 
 
-def quit():  # @ReservedAssignment
+def quit(): # @ReservedAssignment
     global quit_scan_thread
 
     with scan_thread_condition:
@@ -685,26 +633,17 @@ def init():
 
     location = MultiLocation()
 
-    # Reuse locations when possible.
-    if current := renpy.loadsave.location:
-        reusable = {fl.directory: fl for fl in current.locations}
-    else:
-        reusable = {}
-
-    def location_add(d):
-        location.add(reusable.get(d, None) or FileLocation(d))
-
     # 1. User savedir.
-    location_add(renpy.config.savedir)
+    location.add(FileLocation(renpy.config.savedir))
 
     # 2. Game-local savedir.
     if (not renpy.mobile) and (not renpy.macapp):
         path = os.path.join(renpy.config.gamedir, "saves")
-        location_add(path)
+        location.add(FileLocation(path))
 
     # 3. Extra savedirs.
     for i in renpy.config.extra_savedirs:
-        location_add(i)
+        location.add(FileLocation(i))
 
     # Scan the location once.
     location.scan()
@@ -735,12 +674,14 @@ def zip_saves():
 
 
 def unzip_saves():
+
     import zipfile
     import pathlib
 
     p = pathlib.Path(renpy.config.savedir)  # type: ignore
 
     with zipfile.ZipFile("savegames.zip", "r") as zf:
+
         for i in zf.infolist():
             if "/" not in i.filename:
                 filename = i.filename

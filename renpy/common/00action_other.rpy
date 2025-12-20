@@ -1,4 +1,4 @@
-﻿# Copyright 2004-2025 Tom Rothamel <pytom@bishoujo.us>
+﻿# Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -56,7 +56,7 @@ init -1500 python:
     @renpy.pure
     def If(expression, true=None, false=None):
         """
-        :doc: other_action action
+        :doc: other_action
 
         This returns `true` if `expression` is true, and `false`
         otherwise. Use this to select an action based on an expression.
@@ -68,37 +68,6 @@ init -1500 python:
             return true
         else:
             return false
-
-
-    class _ActionList(Action, DictEquality):
-        """
-        :undocumented:
-
-        Encapsulates a list of actions, so that they can be treated as a single action,
-        for the purposes of SelectedIf and SensitiveIf.
-        """
-
-        def __init__(self, actions):
-            self.actions = actions
-
-        def get_selected(self):
-            return renpy.display.behavior.is_selected(self.actions)
-
-        def get_sensitive(self):
-            return renpy.display.behavior.is_sensitive(self.actions)
-
-        def get_tooltip(self):
-            return renpy.display.behavior.get_tooltip(self.actions)
-
-        def periodic(self, st):
-            return renpy.display.behavior.run_periodic(self.actions, st)
-
-        def unhovered(self):
-            return renpy.display.behavior.run_unhovered(self.actions)
-
-        def __call__(self):
-            return renpy.run(self.actions)
-
 
     @renpy.pure
     class SelectedIf(Action, DictEquality):
@@ -120,13 +89,10 @@ init -1500 python:
         # Note: This had been documented to take a boolean.
 
         def __init__(self, expression):
-            if isinstance(expression, (list, tuple)):
-                expression = _ActionList(expression)
-
             self.expression = expression
 
             if isinstance(expression, Action):
-                for i in ("get_selected", "get_sensitive", "get_tooltip", "periodic", "unhovered", "alt"):
+                for i in ("get_selected", "get_sensitive", "get_tooltip", "periodic", "unhovered"):
                     setattr(self, i, getattr(expression, i, None))
 
         def __call__(self):
@@ -157,13 +123,10 @@ init -1500 python:
         # Note: This had been documented to take a boolean.
 
         def __init__(self, expression):
-            if isinstance(expression, (list, tuple)):
-                expression = _ActionList(expression)
-
             self.expression = expression
 
             if isinstance(expression, Action):
-                for i in ("get_selected", "get_sensitive", "get_tooltip", "periodic", "unhovered", "alt"):
+                for i in ("get_selected", "get_sensitive", "get_tooltip", "periodic", "unhovered"):
                     setattr(self, i, getattr(expression, i, None))
 
         def __call__(self):
@@ -210,7 +173,11 @@ init -1500 python:
             self.url = url
 
         def __call__(self):
-            renpy.open_url(self.url)
+            try:
+                import webbrowser
+                webbrowser.open_new(self.url)
+            except Exception:
+                pass
 
     class With(Action, DictEquality):
         """
@@ -515,9 +482,6 @@ init -1500 python:
         or if the :var:`"automatic move" preference <preferences.mouse_move>`
         is False, this does nothing.
 
-        This is unlikely to work on the Linux with Wayland, Android, iOS, or Web
-        platforms.
-
         `duration`
             The time it will take to perform the move, in seconds. During
             this time, the mouse may be unresponsive.
@@ -584,8 +548,12 @@ init -1500 python:
             if type(self) is not type(other):
                 return False
 
-            if self.callable != other.callable:
-                return False
+            if PY2:
+                if self.callable is not other.callable:
+                    return False
+            else:
+                if self.callable != other.callable:
+                    return False
 
             if self.args != other.args:
                 return False
@@ -639,9 +607,6 @@ init -1500 python:
             is already selected. If false (the default), the prompt
             will not be displayed if the `yes` action is selected.
 
-        Additional keyword arguments not beginning with _ are passed to
-        the screen.
-
         The sensitivity and selectedness of this action match those
         of the `yes` action.
 
@@ -649,20 +614,17 @@ init -1500 python:
         """
 
 
-        kwargs = { }
-
-        def __init__(self, prompt, yes, no=None, confirm_selected=False, **kwargs):
+        def __init__(self, prompt, yes, no=None, confirm_selected=False):
             self.prompt = prompt
             self.yes = yes
             self.no = no
             self.confirm_selected = confirm_selected
-            self.kwargs = kwargs
 
         def __call__(self):
             if self.get_selected() and not self.confirm_selected:
                 return renpy.run(self.yes)
 
-            return layout.yesno_screen(self.prompt, self.yes, self.no, **self.kwargs)
+            return layout.yesno_screen(self.prompt, self.yes, self.no)
 
         def get_sensitive(self):
             if self.yes is None:
@@ -741,12 +703,10 @@ init -1500 python:
 
             adjustment, delta = self.get_adjustment_and_delta()
 
-
             if adjustment is None:
                 return False
 
             adjustment.restart_interaction_at_limit = True
-            adjustment.restart_interaction_at_range = True
 
             if delta > 0:
                 return adjustment.value < adjustment.range
@@ -1004,7 +964,6 @@ init -1500:
             linear .5 alpha 0.0
 
     screen notify:
-        layer config.interface_layer
         zorder 100
 
         text "[message!tq]" at _notify_transform

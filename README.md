@@ -293,5 +293,3 @@ DEADMAN AMBIENCE - (REALLY JUST THE FNAF 1 AMBIENCE)
 [ACHIEVEMENTS - bobcgames](https://bobcgames.itch.io/bobcachievements)
 
 [CURSOR TRACKING IMAGE](https://lemmasoft.renai.us/forums/viewtopic.php?p=340355&sid=4540fae3b4ed740ce81e66660e093648#p340355)
-
-[DYNAMIC AMBIENCE - Elysium Development Team](https://github.com/ElysiumTeamDevelopment/RenPyDynamicAmbient)

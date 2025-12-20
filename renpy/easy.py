@@ -1,4 +1,4 @@
-# Copyright 2004-2025 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -22,7 +22,7 @@
 """Functions that make the user's life easier."""
 
 from __future__ import division, absolute_import, with_statement, print_function, unicode_literals
-from renpy.compat import PY2, basestring, bchr, bord, chr, open, pystr, range, round, str, tobytes, unicode  # *
+from renpy.compat import PY2, basestring, bchr, bord, chr, open, pystr, range, round, str, tobytes, unicode # *
 
 from typing import Any
 
@@ -34,8 +34,10 @@ import renpy
 Color = renpy.color.Color
 color = renpy.color.Color
 
-
-from collections.abc import Iterable
+if PY2:
+    from collections import Iterable # type: ignore
+else:
+    from collections.abc import Iterable
 
 
 def lookup_displayable_prefix(d):
@@ -56,14 +58,15 @@ def lookup_displayable_prefix(d):
     return displayable(fn(arg))
 
 
-def displayable_or_none(d, scope=None, dynamic=True):  # type: (Any, dict|None, bool) -> renpy.display.displayable.Displayable|None
+def displayable_or_none(d, scope=None, dynamic=True): # type: (Any, dict|None, bool) -> renpy.display.displayable.Displayable|None
+
     if isinstance(d, renpy.display.displayable.Displayable):
         return d
 
     if d is None:
         return d
 
-    if isinstance(d, str):
+    if isinstance(d, basestring):
         if not d:
             raise Exception("An empty string cannot be used as a displayable.")
         elif ("[" in d) and renpy.config.dynamic_images and dynamic:
@@ -73,7 +76,7 @@ def displayable_or_none(d, scope=None, dynamic=True):  # type: (Any, dict|None, 
 
         if rv is not None:
             return rv
-        elif d[0] == "#":
+        elif d[0] == '#':
             return renpy.store.Solid(d)
         elif "." in d:
             return renpy.store.Image(d)
@@ -81,13 +84,13 @@ def displayable_or_none(d, scope=None, dynamic=True):  # type: (Any, dict|None, 
             return renpy.store.ImageReference(tuple(d.split()))
 
     if isinstance(d, Color):
-        return renpy.store.Solid(d)  # type: ignore
+        return renpy.store.Solid(d) # type: ignore
 
     if isinstance(d, list):
-        return renpy.display.image.DynamicImage(d, scope=scope)  # type: ignore
+        return renpy.display.image.DynamicImage(d, scope=scope) # type: ignore
 
     # We assume the user knows what he's doing in this case.
-    if hasattr(d, "_duplicate"):
+    if hasattr(d, '_duplicate'):
         return d
 
     if d is True or d is False:
@@ -96,7 +99,7 @@ def displayable_or_none(d, scope=None, dynamic=True):  # type: (Any, dict|None, 
     raise Exception("Not a displayable: %r" % (d,))
 
 
-def displayable(d, scope=None):  # type(d, dict|None=None) -> renpy.display.displayable.Displayable|None
+def displayable(d, scope=None): # type(d, dict|None=None) -> renpy.display.displayable.Displayable|None
     """
     :doc: udd_utility
     :name: renpy.displayable
@@ -109,7 +112,7 @@ def displayable(d, scope=None):  # type(d, dict|None=None) -> renpy.display.disp
     if isinstance(d, renpy.display.displayable.Displayable):
         return d
 
-    if isinstance(d, str):
+    if isinstance(d, basestring):
         if not d:
             raise Exception("An empty string cannot be used as a displayable.")
         elif ("[" in d) and renpy.config.dynamic_images:
@@ -119,7 +122,7 @@ def displayable(d, scope=None):  # type(d, dict|None=None) -> renpy.display.disp
 
         if rv is not None:
             return rv
-        elif d[0] == "#":
+        elif d[0] == '#':
             return renpy.store.Solid(d)
         elif "." in d:
             return renpy.store.Image(d)
@@ -133,7 +136,7 @@ def displayable(d, scope=None):  # type(d, dict|None=None) -> renpy.display.disp
         return renpy.display.image.DynamicImage(d, scope=scope)
 
     # We assume the user knows what he's doing in this case.
-    if hasattr(d, "_duplicate"):
+    if hasattr(d, '_duplicate'):
         return d
 
     if d is True or d is False:
@@ -142,7 +145,7 @@ def displayable(d, scope=None):  # type(d, dict|None=None) -> renpy.display.disp
     raise Exception("Not a displayable: %r" % (d,))
 
 
-def dynamic_image(d, scope=None, prefix=None, search=None):  # type: (Any, dict|None, str|None, list|None) -> renpy.display.displayable.Displayable|None
+def dynamic_image(d, scope=None, prefix=None, search=None): # type: (Any, dict|None, str|None, list|None) -> renpy.display.displayable.Displayable|None
     """
     Substitutes a scope into `d`, then returns a displayable.
 
@@ -151,9 +154,10 @@ def dynamic_image(d, scope=None, prefix=None, search=None):  # type: (Any, dict|
     """
 
     if not isinstance(d, list):
-        d = [d]
+        d = [ d ]
 
     def find(name):
+
         if renpy.exports.image_exists(name):
             return True
 
@@ -170,14 +174,16 @@ def dynamic_image(d, scope=None, prefix=None, search=None):  # type: (Any, dict|
         return False
 
     for i in d:
-        if not isinstance(i, str):
+
+        if not isinstance(i, basestring):
             continue
 
         if (prefix is not None) and ("[prefix_" in i):
+
             if scope:
                 scope = dict(scope)
             else:
-                scope = {}
+                scope = { }
 
             for p in renpy.styledata.stylesets.prefix_search[prefix]:  # @UndefinedVariable
                 scope["prefix_"] = p
@@ -191,6 +197,7 @@ def dynamic_image(d, scope=None, prefix=None, search=None):  # type: (Any, dict|
                     search.append(rv)
 
         else:
+
             rv = renpy.substitutions.substitute(i, scope=scope, force=True, translate=False)[0]
 
             if find(rv):
@@ -239,7 +246,7 @@ def split_properties(properties, *prefixes):
         text_properties, button_properties = renpy.split_properties(properties, "text_", "")
     """
 
-    rv = []
+    rv = [ ]
 
     for _i in prefixes:
         rv.append({})
@@ -252,13 +259,12 @@ def split_properties(properties, *prefixes):
     for k, v in properties.items():
         for prefix, d in prefix_d:
             if k.startswith(prefix):
-                d[k[len(prefix) :]] = v
+                d[k[len(prefix):]] = v
                 break
         else:
             raise Exception("Property {} begins with an unknown prefix.".format(k))
 
     return rv
-
 
 def to_list(value, copy=False):
     """
@@ -273,7 +279,6 @@ def to_list(value, copy=False):
 
     return [value]
 
-
 def to_tuple(value):
     """
     Same as to_list, but with tuples.
@@ -285,7 +290,6 @@ def to_tuple(value):
         return tuple(value)
 
     return (value,)
-
 
 def run_callbacks(cb, *args, **kwargs):
     """

@@ -1,4 +1,4 @@
-# Copyright 2004-2025 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -22,7 +22,7 @@
 # This file contains code to manage focus on the display.
 
 from __future__ import division, absolute_import, with_statement, print_function, unicode_literals
-from renpy.compat import PY2, basestring, bchr, bord, chr, open, pystr, range, round, str, tobytes, unicode  # *
+from renpy.compat import PY2, basestring, bchr, bord, chr, open, pystr, range, round, str, tobytes, unicode # *
 
 
 import operator
@@ -32,8 +32,7 @@ import renpy
 
 # The focus storage api.
 
-focus_storage = {}
-
+focus_storage = { }
 
 def capture_focus(name="default"):
     """
@@ -43,7 +42,7 @@ def capture_focus(name="default"):
     box of that displayable, and stores it with `name`. If not, removes any
     focus stored with `name`.
 
-    Captured focuses are not saved when the game is saved.
+    Captured focuses are not saved when the game is saveed.
 
     `name`
         Should be a string. The name "tooltip" is special, as it's
@@ -86,7 +85,9 @@ def get_focus_rect(name="default"):
 
 
 class Focus(object):
+
     def __init__(self, widget, arg, x, y, w, h, screen):
+
         self.widget = widget
         self.arg = arg
         self.x = x
@@ -96,7 +97,14 @@ class Focus(object):
         self.screen = screen
 
     def copy(self):
-        return Focus(self.widget, self.arg, self.x, self.y, self.w, self.h, self.screen)
+        return Focus(
+            self.widget,
+            self.arg,
+            self.x,
+            self.y,
+            self.w,
+            self.h,
+            self.screen)
 
     def __repr__(self):
         return "<Focus: %r %r (%r, %r, %r, %r) %r>" % (
@@ -106,8 +114,7 @@ class Focus(object):
             self.y,
             self.w,
             self.h,
-            self.screen,
-        )
+            self.screen)
 
     def inside(self, rect):
         """
@@ -123,40 +130,10 @@ class Focus(object):
         if self.x is None:
             return False
 
-        if (
-            (minx <= self.x < maxx)
-            and (miny <= self.y < maxy)
-            and (minx <= self.x + self.w < maxx)
-            and (miny <= self.y + self.h < maxy)
-        ):
+        if (minx <= self.x < maxx) and (miny <= self.y < maxy) and (minx <= self.x + self.w < maxx) and (miny <= self.y + self.h < maxy):
             return True
 
         return False
-
-    def inset_rect(self):
-        """
-        Returns the rectangle with the keyboard focus insets applied.
-        """
-
-        x = self.x
-        y = self.y
-        w = self.w
-        h = self.h
-
-        insets = self.widget.style.keyboard_focus_insets
-
-        if insets is not None:
-            x += insets[0]
-            y += insets[1]
-            w -= insets[0] + insets[2]
-            h -= insets[1] + insets[3]
-
-        if w < 1:
-            w = 1
-        if h < 1:
-            h = 1
-
-        return x, y, w, h
 
 
 # The current focus argument.
@@ -208,7 +185,7 @@ def set_focused(widget, arg, screen):
     screen_of_focused = screen
 
     if screen is not None:
-        screen_of_focused_names = {screen.screen_name[0], screen.tag}
+        screen_of_focused_names = { screen.screen_name[0], screen.tag }
     else:
         screen_of_focused_names = set()
 
@@ -250,10 +227,8 @@ def get_mouse():
     if focused is None:
         return None
     else:
-        if isinstance(
-            focused, renpy.display.behavior.Button
-        ):  # this affects Button and all its subclasses (like Imagebutton)
-            return focused.style.mouse or "button"  # prioritize button style over default keyword
+        if isinstance(focused, renpy.display.behavior.Button): # this affects Button and all its subclasses (like Imagebutton)
+            return focused.style.mouse or "button" # prioritize button style over default keyword
         return focused.style.mouse
 
 
@@ -267,6 +242,7 @@ def get_tooltip(screen=None, last=False):
             return last_tooltip
         else:
             return tooltip
+
 
     if last:
         if screen in screen_of_last_focused_names:
@@ -291,14 +267,14 @@ def get_grab():
 
 
 # The current list of focuses that we know about.
-focus_list = []
+focus_list = [ ]
 
 # This takes in a focus list from the rendering system.
 
 
 def take_focuses():
     global focus_list
-    focus_list = []
+    focus_list = [ ]
 
     renpy.display.render.take_focuses(focus_list)
 
@@ -323,6 +299,7 @@ def take_focuses():
         change_focus(global_focus, True)
 
 
+
 def focus_coordinates():
     """
     :doc: other
@@ -342,7 +319,7 @@ def focus_coordinates():
 
 
 # A map from id(displayable) to the displayable that replaces it.
-replaced_by = {}
+replaced_by = { }
 
 # The modal generation - the number of times mark_modal has been called.
 # Only displayables in the latest modal generation can gain focus.
@@ -355,11 +332,9 @@ old_max_default = 0
 # The name of the old max default focus.
 old_max_default_focus_name = None
 
-
 def mark_modal():
     global modal_generation
     modal_generation += 1
-
 
 def before_interact(roots):
     """
@@ -371,12 +346,11 @@ def before_interact(roots):
     global grab
     global modal_generation
     global old_max_default
-    global old_max_default_focus_name
 
     modal_generation = 0
 
     # a list of focusable, name, screen tuples.
-    fwn = []
+    fwn = [ ]
 
     def callback(f, n):
         fwn.append((f, n, renpy.display.screen._current_screen, modal_generation))
@@ -389,11 +363,12 @@ def before_interact(roots):
 
     # Assign a full name to each focusable.
 
-    namecount = {}
+    namecount = { }
 
-    fwn2 = []
+    fwn2 = [ ]
 
     for fwn_tuple in fwn:
+
         f, n, screen, gen = fwn_tuple
 
         serial = namecount.get(n, 0)
@@ -411,7 +386,7 @@ def before_interact(roots):
     fwn = fwn2
 
     # Determine the default, as determined by the current screen.
-    defaults = []
+    defaults = [ ]
 
     for f, n, screen, gen in fwn:
         if gen != modal_generation:
@@ -434,7 +409,7 @@ def before_interact(roots):
         max_default_focus_name = None
 
     # Should we do the max_default logic?
-    should_max_default = renpy.display.interface.input_event_time > renpy.display.interface.mouse_event_time + 0.1
+    should_max_default = (renpy.display.interface.last_event is None) or (renpy.display.interface.last_event.type not in [ pygame.MOUSEBUTTONDOWN, pygame.MOUSEBUTTONUP, pygame.MOUSEMOTION ])
 
     # Is this an explicit change, using the override operation?
     explicit = False
@@ -453,7 +428,7 @@ def before_interact(roots):
     grab = replaced_by.get(id(grab), None)
 
     if override is not None:
-        d = renpy.exports.get_displayable(*override, base=True)  # type: ignore
+        d = renpy.exports.get_displayable(*override, base=True) # type: ignore
 
         if (d is not None) and (current is not d) and not grab:
             current = d
@@ -463,19 +438,18 @@ def before_interact(roots):
 
     # When increasing the default focus, and the user is not using the mouse,
     # switch to the default.
-    if not explicit and should_max_default and (max_default > old_max_default):
+    if should_max_default and (max_default > old_max_default):
         current = max_default_focus
         set_grab(None)
         set_focused(max_default_focus, None, max_default_screen)
-        explicit = True
-
-    old_max_default = max_default
+        old_max_default = max_default
 
     # Try to find the current focus.
     if current is not None:
         current_name = current.full_focus_name
 
         for f, n, screen, gen in fwn:
+
             if gen != modal_generation:
                 continue
 
@@ -491,17 +465,12 @@ def before_interact(roots):
 
     # If nothing has focus, focus the default if the highest priority has changed,
     # or if the default is None.
-    if (
-        should_max_default
-        and (max_default > 0)
-        and (current is None)
-        and (renpy.display.interface.start_interact or (max_default_focus_name != old_max_default_focus_name))
-    ):
+    if (should_max_default and (max_default > 0) and (current is None) and
+        (renpy.display.interface.start_interact or (max_default_focus_name != old_max_default_focus_name))):
+
         explicit = True
         current = max_default_focus
         set_focused(max_default_focus, None, max_default_screen)
-
-    old_max_default_focus_name = max_default_focus_name
 
     if current is None:
         set_focused(None, None, None)
@@ -584,8 +553,8 @@ def clear_focus():
     Clears the focus when the window loses mouse focus.
     """
 
-    if not grab:
-        change_focus(None)
+    set_grab(None)
+    change_focus(None)
 
 
 def force_focus(d, arg=None):
@@ -601,6 +570,7 @@ def force_focus(d, arg=None):
     set_grab(None)
 
     if current is not None:
+
         try:
             renpy.display.screen.push_current_screen(screen_of_focused)
             current.unfocus(default=False)
@@ -646,17 +616,22 @@ def mouse_handler(ev, x, y, default=False):
 # the supplied multiplers, add them all up, and take the focus with
 # the largest value.
 def focus_extreme(xmul, ymul, wmul, hmul):
+
     max_focus = None
-    max_score = -(65536**2)
+    max_score = -(65536 ** 2)
 
     for f in focus_list:
+
         if not f.widget.style.keyboard_focus:
             continue
 
         if f.x is None:
             continue
 
-        score = f.x * xmul + f.y * ymul + f.w * wmul + f.h * hmul
+        score = (f.x * xmul +
+                 f.y * ymul +
+                 f.w * wmul +
+                 f.h * hmul)
 
         if score > max_score:
             max_score = score
@@ -666,22 +641,11 @@ def focus_extreme(xmul, ymul, wmul, hmul):
         return change_focus(max_focus)
 
 
-def check_keyboard_focus():
-    """
-    If the current widget is not keyboard focusable, clears
-    the focus.
-    """
-
-    current = get_focused()
-
-    if current and not current.style.keyboard_focus:
-        change_focus(None)
-
-
 # This calculates the distance between two points, applying
 # the given fudge factors. The distance is left squared.
 def points_dist(x0, y0, x1, y1, xfudge, yfudge):
-    return ((x0 - x1) * xfudge) ** 2 + ((y0 - y1) * yfudge) ** 2
+    return ((x0 - x1) * xfudge) ** 2 + \
+           ((y0 - y1) * yfudge) ** 2
 
 
 # This computes the distance between two horizontal lines. (So the
@@ -689,8 +653,12 @@ def points_dist(x0, y0, x1, y1, xfudge, yfudge):
 #
 # The distance is left squared.
 def horiz_line_dist(ax0, ay0, ax1, ay1, bx0, by0, bx1, by1):
+
     # The lines overlap in x.
-    if bx0 <= ax0 <= ax1 <= bx1 or ax0 <= bx0 <= bx1 <= ax1 or ax0 <= bx0 <= ax1 <= bx1 or bx0 <= ax0 <= bx1 <= ax1:
+    if bx0 <= ax0 <= ax1 <= bx1 or \
+       ax0 <= bx0 <= bx1 <= ax1 or \
+       ax0 <= bx0 <= ax1 <= bx1 or \
+       bx0 <= ax0 <= bx1 <= ax1:
         return (ay0 - by0) ** 2
 
     # The right end of a is to the left of the left end of b.
@@ -705,8 +673,12 @@ def horiz_line_dist(ax0, ay0, ax1, ay1, bx0, by0, bx1, by1):
 #
 # The distance is left squared.
 def verti_line_dist(ax0, ay0, ax1, ay1, bx0, by0, bx1, by1):
+
     # The lines overlap in x.
-    if by0 <= ay0 <= ay1 <= by1 or ay0 <= by0 <= by1 <= ay1 or ay0 <= by0 <= ay1 <= by1 or by0 <= ay0 <= by1 <= ay1:
+    if by0 <= ay0 <= ay1 <= by1 or \
+       ay0 <= by0 <= by1 <= ay1 or \
+       ay0 <= by0 <= ay1 <= by1 or \
+       by0 <= ay0 <= by1 <= ay1:
         return (ax0 - bx0) ** 2
 
     # The right end of a is to the left of the left end of b.
@@ -730,21 +702,23 @@ def verti_line_dist(ax0, ay0, ax1, ay1, bx0, by0, bx1, by1):
 #
 # If the current widget has an x of None, we pass things off to
 # focus_extreme to deal with.
-def focus_nearest(
-    from_x0, from_y0, from_x1, from_y1, to_x0, to_y0, to_x1, to_y1, line_dist, condition, xmul, ymul, wmul, hmul
-):
+def focus_nearest(from_x0, from_y0, from_x1, from_y1,
+                  to_x0, to_y0, to_x1, to_y1,
+                  line_dist,
+                  condition,
+                  xmul, ymul, wmul, hmul):
+
     global pending_focus_type
     pending_focus_type = "keyboard"
 
     if not focus_list:
         return
 
-    check_keyboard_focus()
-
     # No widget focused.
     current = get_focused()
 
     if not current:
+
         focus_extreme(xmul, ymul, wmul, hmul)
         current = get_focused()
 
@@ -752,6 +726,7 @@ def focus_nearest(
             return
 
         for f in focus_list:
+
             if f.x is False:
                 continue
 
@@ -778,12 +753,10 @@ def focus_nearest(
         focus_extreme(xmul, ymul, wmul, hmul)
         return
 
-    from_focus_x, from_focus_y, from_focus_w, from_focus_h = from_rect = from_focus.inset_rect()
-
-    fx0 = from_focus_x + from_focus_w * from_x0
-    fy0 = from_focus_y + from_focus_h * from_y0
-    fx1 = from_focus_x + from_focus_w * from_x1
-    fy1 = from_focus_y + from_focus_h * from_y1
+    fx0 = from_focus.x + from_focus.w * from_x0
+    fy0 = from_focus.y + from_focus.h * from_y0
+    fx1 = from_focus.x + from_focus.w * from_x1
+    fy1 = from_focus.y + from_focus.h * from_y1
 
     placeless = None
     new_focus = None
@@ -792,6 +765,7 @@ def focus_nearest(
     new_focus_dist = (65536.0 * renpy.config.focus_crossrange_penalty) ** 2
 
     for f in focus_list:
+
         if f is from_focus:
             continue
 
@@ -805,17 +779,16 @@ def focus_nearest(
         if f.x is False:
             continue
 
-        f_x, f_y, f_w, f_h = to_rect = f.inset_rect()
-
-        if not condition(from_rect, to_rect):
+        if not condition(from_focus, f):
             continue
 
-        tx0 = f_x + f_w * to_x0
-        ty0 = f_y + f_h * to_y0
-        tx1 = f_x + f_w * to_x1
-        ty1 = f_y + f_h * to_y1
+        tx0 = f.x + f.w * to_x0
+        ty0 = f.y + f.h * to_y0
+        tx1 = f.x + f.w * to_x1
+        ty1 = f.y + f.h * to_y1
 
-        dist = line_dist(fx0, fy0, fx1, fy1, tx0, ty0, tx1, ty1)
+        dist = line_dist(fx0, fy0, fx1, fy1,
+                         tx0, ty0, tx1, ty1)
 
         if dist < new_focus_dist:
             new_focus = f
@@ -832,20 +805,20 @@ def focus_nearest(
 
 
 def focus_ordered(delta):
+
     global pending_focus_type
     pending_focus_type = "keyboard"
 
     placeless = None
 
-    candidates = []
+    candidates = [ ]
     index = 0
-
-    check_keyboard_focus()
 
     current = get_focused()
     current_index = None
 
     for f in focus_list:
+
         if f.x is None:
             placeless = f
             continue
@@ -885,84 +858,42 @@ def focus_ordered(delta):
 
 
 def key_handler(ev):
+
     map_event = renpy.display.behavior.map_event
 
     if renpy.game.preferences.self_voicing:
-        if map_event(ev, "focus_right") or map_event(ev, "focus_down"):
+        if map_event(ev, 'focus_right') or map_event(ev, 'focus_down'):
             return focus_ordered(1)
 
-        if map_event(ev, "focus_left") or map_event(ev, "focus_up"):
+        if map_event(ev, 'focus_left') or map_event(ev, 'focus_up'):
             return focus_ordered(-1)
 
     else:
-        if map_event(ev, "focus_right"):
-            return focus_nearest(
-                0.9,
-                0.1,
-                0.9,
-                0.9,
-                0.1,
-                0.1,
-                0.1,
-                0.9,
-                verti_line_dist,
-                lambda old, new: old[0] + old[2] <= new[0],
-                -1,
-                0,
-                0,
-                0,
-            )
 
-        if map_event(ev, "focus_left"):
-            return focus_nearest(
-                0.1,
-                0.1,
-                0.1,
-                0.9,
-                0.9,
-                0.1,
-                0.9,
-                0.9,
-                verti_line_dist,
-                lambda old, new: new[0] + new[2] <= old[0],
-                1,
-                0,
-                1,
-                0,
-            )
+        if map_event(ev, 'focus_right'):
+            return focus_nearest(0.9, 0.1, 0.9, 0.9,
+                                 0.1, 0.1, 0.1, 0.9,
+                                 verti_line_dist,
+                                 lambda old, new : old.x + old.w <= new.x,
+                                 -1, 0, 0, 0)
 
-        if map_event(ev, "focus_up"):
-            return focus_nearest(
-                0.1,
-                0.1,
-                0.9,
-                0.1,
-                0.1,
-                0.9,
-                0.9,
-                0.9,
-                horiz_line_dist,
-                lambda old, new: new[1] + new[3] <= old[1],
-                0,
-                1,
-                0,
-                1,
-            )
+        if map_event(ev, 'focus_left'):
+            return focus_nearest(0.1, 0.1, 0.1, 0.9,
+                                 0.9, 0.1, 0.9, 0.9,
+                                 verti_line_dist,
+                                 lambda old, new : new.x + new.w <= old.x,
+                                 1, 0, 1, 0)
 
-        if map_event(ev, "focus_down"):
-            return focus_nearest(
-                0.1,
-                0.9,
-                0.9,
-                0.9,
-                0.1,
-                0.1,
-                0.9,
-                0.1,
-                horiz_line_dist,
-                lambda old, new: old[1] + old[3] <= new[1],
-                0,
-                -1,
-                0,
-                0,
-            )
+        if map_event(ev, 'focus_up'):
+            return focus_nearest(0.1, 0.1, 0.9, 0.1,
+                                 0.1, 0.9, 0.9, 0.9,
+                                 horiz_line_dist,
+                                 lambda old, new : new.y + new.h <= old.y,
+                                 0, 1, 0, 1)
+
+        if map_event(ev, 'focus_down'):
+            return focus_nearest(0.1, 0.9, 0.9, 0.9,
+                                 0.1, 0.1, 0.9, 0.1,
+                                 horiz_line_dist,
+                                 lambda old, new : old.y + old.h <= new.y,
+                                 0, -1, 0, 0)

@@ -1,4 +1,4 @@
-# Copyright 2004-2025 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -23,7 +23,8 @@
 # and the textual representation of Ren'Py code.
 
 from __future__ import division, absolute_import, with_statement, print_function, unicode_literals
-from renpy.compat import PY2, basestring, bchr, bord, chr, open, pystr, range, round, str, tobytes, unicode  # *
+from renpy.compat import PY2, basestring, bchr, bord, chr, open, pystr, range, round, str, tobytes, unicode # *
+
 
 
 import renpy
@@ -32,7 +33,7 @@ import codecs
 
 # A map from line loc (elided filename, line) to the Line object representing
 # that line.
-lines: dict[tuple[str, int], "Line"] = {}
+lines = { }
 
 # The set of files that have been loaded.
 files = set()
@@ -44,6 +45,7 @@ class Line(object):
     """
 
     def __init__(self, filename, number, start):
+
         filename = filename.replace("\\", "/")
 
         # The full path to the file with the line in it.
@@ -62,10 +64,11 @@ class Line(object):
         self.end_delim = start
 
         # The text of the line.
-        self.text = ""
+        self.text = ''
 
         # The full text, including any comments or delimiters.
-        self.full_text = ""
+        self.full_text = ''
+
 
     def __repr__(self):
         return "<Line {}:{} {!r}>".format(self.filename, self.number, self.text)
@@ -77,10 +80,10 @@ def ensure_loaded(filename):
     anything if the filename can't be loaded.
     """
 
-    if filename in files:
+    if not (filename.endswith(".rpy") or filename.endswith(".rpyc")):
         return
 
-    if not (filename.endswith(".rpy") or filename.endswith(".rpym")):
+    if filename in files:
         return
 
     files.add(filename)
@@ -125,9 +128,10 @@ def adjust_line_locations(filename, linenumber, char_offset, line_offset):
 
     global lines
 
-    new_lines = {}
+    new_lines = { }
 
     for key, line in lines.items():
+
         (fn, ln) = key
 
         if (fn == filename) and (linenumber <= ln):
@@ -139,8 +143,7 @@ def adjust_line_locations(filename, linenumber, char_offset, line_offset):
 
         new_lines[fn, ln] = line
 
-    lines.clear()
-    lines.update(new_lines)
+    lines = new_lines
 
 
 def insert_line_before(code, filename, linenumber):
@@ -159,13 +162,19 @@ def insert_line_before(code, filename, linenumber):
 
     old_line = lines[filename, linenumber]
 
-    if code:
-        indent = re.match(r" *", old_line.text).group(0)
+    m = re.match(r' *', old_line.text)
+    indent = m.group(0)
+
+    if not code:
+        indent = ''
+
+    if old_line.text.endswith("\r\n") or not old_line.text.endswith("\n"):
+        line_ending = "\r\n"
     else:
-        indent = ""
+        line_ending = "\n"
 
     raw_code = indent + code
-    code = indent + code + "\n"
+    code = indent + code + line_ending
 
     new_line = Line(old_line.filename, old_line.number, old_line.start)
     new_line.text = raw_code
@@ -173,15 +182,16 @@ def insert_line_before(code, filename, linenumber):
     new_line.end = new_line.start + len(raw_code)
     new_line.end_delim = new_line.start + len(code)
 
-    with open(old_line.filename, "r", encoding="utf-8") as f:
+    with codecs.open(old_line.filename, "r", "utf-8") as f:
         data = f.read()
 
-    data = data[: old_line.start] + code + data[old_line.start :]
+    data = data[:old_line.start] + code + data[old_line.start:]
 
     adjust_line_locations(filename, linenumber, len(code), code.count("\n"))
 
     with renpy.loader.auto_lock:
-        with open(old_line.filename, "w", encoding="utf-8") as f:
+
+        with codecs.open(old_line.filename, "w", "utf-8") as f:
             f.write(data)
 
         renpy.loader.add_auto(old_line.filename, force=True)
@@ -204,17 +214,18 @@ def remove_line(filename, linenumber):
 
     line = lines[filename, linenumber]
 
-    with open(line.filename, "r", encoding="utf-8") as f:
+    with codecs.open(line.filename, "r", "utf-8") as f:
         data = f.read()
 
-    code = data[line.start : line.end_delim]
-    data = data[: line.start] + data[line.end_delim :]
+    code = data[line.start:line.end_delim]
+    data = data[:line.start] + data[line.end_delim:]
 
     del lines[filename, linenumber]
     adjust_line_locations(filename, linenumber, -len(code), -code.count("\n"))
 
     with renpy.loader.auto_lock:
-        with open(line.filename, "w", encoding="utf-8") as f:
+
+        with codecs.open(line.filename, "w", "utf-8") as f:
             f.write(data)
 
         renpy.loader.add_auto(line.filename, force=True)
@@ -243,7 +254,7 @@ def nodes_on_line(filename, linenumber):
 
     ensure_loaded(filename)
 
-    rv = []
+    rv = [ ]
 
     for i in renpy.game.script.all_stmts:
         if (i.filename == filename) and (i.linenumber == linenumber) and (i.rollback != "never"):
@@ -259,16 +270,14 @@ def nodes_on_line_at_or_after(filename, linenumber):
 
     ensure_loaded(filename)
 
-    lines = [
-        i.linenumber
-        for i in renpy.game.script.all_stmts
-        if (i.filename == filename)
-        if (i.linenumber >= linenumber)
-        if (i.rollback != "never")
-    ]
+    lines = [ i.linenumber
+              for i in renpy.game.script.all_stmts
+              if (i.filename == filename)
+              if (i.linenumber >= linenumber)
+              if (i.rollback != "never") ]
 
     if not lines:
-        return []
+        return [ ]
 
     return nodes_on_line(filename, min(lines))
 
@@ -280,8 +289,8 @@ def first_and_last_nodes(nodes):
     the relevant nodes are in `nodes`.
     """
 
-    firsts = []
-    lasts = []
+    firsts = [ ]
+    lasts = [ ]
 
     for i in nodes:
         for j in nodes:
@@ -308,7 +317,7 @@ def first_and_last_nodes(nodes):
 
 def adjust_ast_linenumbers(filename, linenumber, offset):
     """
-    This adjusts the line numbers in the ast.
+    This adjusts the line numbers in the the ast.
 
     `filename`
         The filename to adjust.
@@ -384,7 +393,7 @@ def remove_from_ast(filename, linenumber):
 
     first, last = first_and_last_nodes(nodes)
 
-    new_stmts = []
+    new_stmts = [ ]
 
     for i in renpy.game.script.all_stmts:
         if i in nodes:
@@ -412,6 +421,7 @@ serial = 1
 
 
 def test_add():
+
     global serial
     s = "'Hello world %f'" % serial
     serial += 1
@@ -426,6 +436,7 @@ def test_add():
 
 
 def test_remove():
+
     node = renpy.game.script.lookup(renpy.game.context().current)
     filename = node.filename
     linenumber = node.linenumber

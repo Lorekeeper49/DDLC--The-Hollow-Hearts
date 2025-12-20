@@ -1,4 +1,4 @@
-# Copyright 2004-2025 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -20,14 +20,14 @@
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 from __future__ import division, absolute_import, with_statement, print_function, unicode_literals
-from renpy.compat import PY2, basestring, bchr, bord, chr, open, pystr, range, round, str, tobytes, unicode  # *
+from renpy.compat import PY2, basestring, bchr, bord, chr, open, pystr, range, round, str, tobytes, unicode # *
 
 
 import pygame_sdl2
 import renpy
 
 # A map from the name of a testcase to the testcase.
-testcases = {}
+testcases = { }
 
 # The root node.
 node = None
@@ -64,7 +64,7 @@ def take_name(name):
     if node is None:
         return
 
-    if isinstance(name, str):
+    if isinstance(name, basestring):
         labels.add(name)
 
 
@@ -95,6 +95,7 @@ def execute_node(now, node, state, start):
     """
 
     while True:
+
         try:
             if state is None:
                 state = node.start()
@@ -182,7 +183,7 @@ def test_command():
     """
 
     ap = renpy.arguments.ArgumentParser(description="Runs a testcase.")
-    ap.add_argument("testcase", help="The name of a testcase to run.", nargs="?", default="default")
+    ap.add_argument("testcase", help="The name of a testcase to run.", nargs='?', default="default")
 
     args = ap.parse_args()
 
@@ -195,4 +196,4 @@ def test_command():
     return True
 
 
-renpy.arguments.register_command("test", test_command, uses_display=True)
+renpy.arguments.register_command("test", test_command)

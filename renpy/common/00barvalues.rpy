@@ -1,4 +1,4 @@
-﻿# Copyright 2004-2025 Tom Rothamel <pytom@bishoujo.us>
+﻿# Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -121,16 +121,7 @@ init -1500 python:
         identity_fields = ()
         equality_fields = ('range', 'max_is_zero', 'style', 'offset', 'step', 'action', 'force_step')
 
-        _max = max
-
-        def __init__(self, range=None, max_is_zero=False, style="bar", offset=0, step=None, action=None, force_step=False, min=None, max=None):
-
-            if max is not None and min is not None:
-                range = max - min
-                offset = min
-            elif range is None:
-                raise Exception("You must specify either range, or both max and min.")
-
+        def __init__(self, range, max_is_zero=False, style="bar", offset=0, step=None, action=None, force_step=False):
             self.range = range
             self.max_is_zero = max_is_zero
             self.style = style
@@ -140,7 +131,7 @@ init -1500 python:
                 if isinstance(range, float):
                     step = range / 10.0
                 else:
-                    step = __GenericValue._max(range // 10, 1)
+                    step = max(range // 10, 1)
             self.step = step
             self.action = action
 
@@ -215,7 +206,7 @@ init -1500 python:
             try:
                 self.dict[self.key] = value
             except LookupError as e:
-                raise Exception("The {!r} {} does not exist".format(self.key, self.kind)) from e
+                raise Exception("The {!r} {} does not exist".format(self.key, self.kind)) # from e # PY3 only
 
     @renpy.pure
     class FieldValue(__GenericValue):
@@ -272,7 +263,7 @@ init -1500 python:
 
     @renpy.pure
     class ScreenVariableValue(__GenericValue):
-        r"""
+        """
         :doc: value
         :args: {args}
 
@@ -314,7 +305,7 @@ init -1500 python:
 
     # unpure
     class LocalVariableValue(DictValue):
-        r"""
+        """
         :doc: value
         :args: {args}
 
@@ -346,8 +337,7 @@ init -1500 python hide:
         generic_params = tuple(inspect.signature(__GenericValue.__init__).parameters.values())[1:]
         suffix = inspect.cleandoc("""
         `range`
-            The range to adjust over. This must be specified if `max` and `min`
-            are not given.
+            The range to adjust over.
         `max_is_zero`
             If True, then when the {kind}'s value is zero, the value of the
             bar will be `range`, and all other values will be shifted down
@@ -362,17 +352,8 @@ init -1500 python hide:
         `step`
             The amount to change the bar by. If None, defaults to 1/10th of
             the bar.
-        `force_step`
-            If True, the bar can only take discrete steps, with the steps given
-            by `step`. If False, the bar can take any value in the range.
         `action`
             If not None, an action to call when the {kind}'s value is changed.
-        `min`
-            The minimum value of the bar. If both `min` and `max` are given,
-            `range` and `offset` are calculated from them.
-        `max`
-            The maximum value of the bar. If both `min` and `max` are given,
-            `range` and `offset` are calculated from them.
         """)
 
         for value in (DictValue, FieldValue, VariableValue, ScreenVariableValue, LocalVariableValue):
@@ -402,24 +383,10 @@ init -1500 python:
             The name of the mixer to adjust. This is usually one of
             "main", "music", "sfx", or "voice". See :ref:`volume`
             for more information.
-
-        `step`
-            The amount to change the bar by. If None, defaults to 1/10th of
-            the bar. For MixerValue, this is the amount of decibels to change the
-            volume by.
-
-        `force_step`
-            If True, the bar can only take discrete steps, with the steps given
-            by `step`. If False, the bar can take any value in the range.
         """
 
-        step = None
-        force_step = False
-
-        def __init__(self, mixer, step=None, force_step=False):
+        def __init__(self, mixer):
             self.mixer = mixer
-            self.step = step
-            self.force_step = force_step
 
         def get_volume(self):
             return _preferences.get_volume(self.mixer)
@@ -470,9 +437,7 @@ init -1500 python:
             return ui.adjustment(
                 range=range,
                 value=value,
-                changed=self.set_mixer,
-                step=self.step,
-                force_step=self.force_step)
+                changed=self.set_mixer)
 
         def get_style(self):
             return "slider", "vslider"
