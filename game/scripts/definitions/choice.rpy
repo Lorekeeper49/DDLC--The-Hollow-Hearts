@@ -22,7 +22,7 @@ default choice_impact = False
 init -501 screen choice(items,title="",time=None,force=0):
     on "show" action [SetVariable("selected_choice", 0), SetVariable("choice_selected", False)]
     if choice_impact:
-        timer 0.1 Show(impacted_choice(items,title), Fade(0.1, 0, 0.5, color="#fff"))
+        timer 0.1 action Show(impacted_choice(items,title), Fade(0.1, 0, 0.5, color="#fff"))
         if choice_selected:
             timer 5.0 action [SetVariable("choice_selected", False), items[selected_choice].action]
     else:
