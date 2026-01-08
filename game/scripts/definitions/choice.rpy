@@ -20,9 +20,8 @@ init -1 style choice_text is default:
 
 default choice_impact = False
 init -501 screen choice(items,title="",time=None,force=0):
-    on "show" action [SetVariable("selected_choice", 0), SetVariable("choice_selected", False)]
     if choice_impact:
-        timer 0.1 action Show(impacted_choice(items,title), Fade(0.1, 0, 0.5, color="#fff"))
+        on "show" action [Show("dummy_dark"), SetVariable("selected_choice", 0), SetVariable("choice_selected", False), Show("impact_item", None, items[selected_choice], _transform=impact_center, _tag="selected_item"), Show("impact_item", None, items[(selected_choice+1) % len(items)], _transform=impact_right, _tag="next_item"), Show("impact_item", None, items[selected_choice-1], _transform=impact_left, _tag="prev_item"), SetVariable("choice_selected", False), Show("impacted_choice", Fade(0.1, 0, 0.5, color="#fff"), items, title)]
         if choice_selected:
             timer 5.0 action [SetVariable("choice_selected", False), items[selected_choice].action]
     else:
@@ -79,28 +78,29 @@ init -501 transform choice_menu_transform:
 define selected_choice = 0
 define choice_selected = False
 init -501 screen impacted_choice(items,title):
-    add "dark"
     fixed at impact_transform:
+        style_prefix "impact"
         # choice frames from left to right: prev, current, next
+        text title xalign 0.5 size 50
 
         button:
             xalign 1.0
             yalign 0.5
             text ">"
             background "#0008"
-            action SetVariable("selected_choice", (selected_choice + 1) % len(items))
+            action SetVariable("selected_choice", (selected_choice + 1) % len(items)) # what it's supposed to be:[SetVariable("selected_choice", (selected_choice + 1) % len(items)), Show("selected_item", None, _transform=impact_left, _tag="prev_item"), Show("next_item", None, _transform=impact_center, _tag="selected_item"), Hide("prev_item"), Show("impact_item", None, items[(selected_choice+1) % len(items)], _transform=impact_left, _tag="next_item")]
         button:
             xalign 0.0
             yalign 0.5
             text "<"
             background "#0008"
-            action SetVariable("selected_choice", (selected_choice - 1) % len(items))
+            action SetVariable("selected_choice", (selected_choice - 1) % len(items)) # what it's supposed to be [SetVariable("selected_choice", (selected_choice - 1) % len(items)), Show("selected_item", None, _transform=impact_right, _tag="next_item"), Show("prev_item", None, _transform=impact_center, _tag="selected_item"), Hide("next_item"), Show("impact_item", None, items[selected_choice-1], _transform=impact_right, _tag="prev_item")]
         button:
             xalign 0.5
             yalign 1.0
             text "SELECT"
             background "#0008"
-            action [SetVariable("choice_selected", True), Hide(impacted_choice(items,title))]
+            action [SetVariable("choice_selected", True), Hide("impacted_choice"), Hide("selected_item"), Hide("next_item"), Hide("prev_item"), Hide("dummy_dark", Dissolve(5))]
         
 init -501 transform impact_transform:
     on show:
@@ -111,13 +111,19 @@ init -501 transform impact_transform:
         easein 5.0 alpha 0.0
 
 init -501 transform impact_center:
+    on show:
+        xcenter 640 ycenter 360 zoom 2.0
+        easeout_quart 1.0 zoom 1.0
     on replace:
-        ease_quart 1.0 zoom 1.0 xcenter 640 ycenter 360 alpha 1.0
+        ease_quart 0.1 zoom 1.0 xcenter 640 ycenter 360 alpha 1.0
     on hide:
         easeout_quart 0.1 zoom 1.25
-        linear 4.9 zoom 2.0
+        linear 4.9 zoom 2.0 alpha 0.0
 
 init -501 transform impact_right:
+    on show:
+        xcenter 1380 ycenter 360 alpha 0.0 zoom 0.5
+        easeout_quart 1.0 xpos 1100 alpha 0.5 zoom 0.75
     on replace:
         ease_quart 1.0 zoom 0.75 xcenter 1100 ycenter 360 alpha 0.5
     on hide:
@@ -125,7 +131,18 @@ init -501 transform impact_right:
 
 init -501 transform impact_left:
     yanchor 1.0
+    on show:
+        zoom 0.5 xpos 0 alpha 0.0 ycenter 360 xpos 1.0
+        easeout_quart 1.0 xcenter 260 alpha 0.5 zoom 0.75
     on replace:
         ease_quart 1.0 zoom 0.75 xcenter 260 ycenter 360 alpha 0.5
     on hide:
         easein_quart 1.0 zoom 0.5 xpos 0 alpha 0.0
+
+init -501 screen impact_item(item, *, _transform):
+    style_prefix "impact"
+    frame at _transform:
+        text item.caption size 50
+
+init -501 screen dummy_dark:
+    add "dark"

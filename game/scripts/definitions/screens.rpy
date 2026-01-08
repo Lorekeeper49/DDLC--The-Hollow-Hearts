@@ -300,8 +300,8 @@ init -501 screen quick_menu():
                         imagebutton idle "mod_assets/gui/auto_on.png" action Preference("auto-forward", "disable")
                     else:
                         imagebutton idle "mod_assets/gui/auto_off.png" action Preference("auto-forward", "enable")
-        key "K_TAB" action Preference("auto-forward", "toggle")
-        key "K_ESCAPE" action [SetVariable("option_index", 0), ShowMenu("navigation", _layer="textbox"), SensitiveIf(renpy.get_screen("navigation") == None)]
+        key "K_LSHIFT" action Preference("auto-forward", "toggle")
+        key "K_TAB" action [SetVariable("option_index", 0), ShowMenu("navigation", _layer="textbox"), SensitiveIf(renpy.get_screen("navigation") == None)]
 
 default -1 quick_menu = True
 
