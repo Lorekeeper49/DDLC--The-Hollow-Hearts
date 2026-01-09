@@ -186,8 +186,8 @@ screen code_input(limit_input=False, show_code_length=True):
     text "8" xcenter 640 ycenter 250
     button xcenter 750 ycenter 250 xysize (100, 100) action [SetVariable("dial", dial + "9"), If(limit_input, If(len(dial) >= len(code), [If(dial == code, AddToSet(codes, to_input)), Call("next_location", prev_loc, transition=False)]))]
     text "9" xcenter 750 ycenter 250
-    if show_code_length:
-        text "[len(code)]桁コード\n[len(code)]-DIGIT CODE" xcenter 640 ycenter 40
+    # if show_code_length:
+    #     text "[len(code)]桁コード\n[len(code)]-DIGIT CODE" xcenter 640 ycenter 40
 
 image flashlight:
     TrackCursor("mod_assets/flashlight.png") 
