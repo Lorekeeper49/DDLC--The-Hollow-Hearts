@@ -37,7 +37,7 @@ label start:
     return
 
 label act1:
-    call wonder(_("To be controlled and have every single one of your choices be that of somone else?"))
+    call wonder(_("To be controlled and have every single one of your choices be that of someone else?"))
     $ act = 1
     call act_trans
     $ chapter = 1
