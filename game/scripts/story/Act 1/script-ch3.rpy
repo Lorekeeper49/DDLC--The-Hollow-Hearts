@@ -72,7 +72,7 @@ label act1_ch3_main:
     "As I walk toward the front door, I notice the intercom is on."
     k "And as the student council president comes from his weekly outing with a woman..."
     "Since when did Koto-chan become the anouncer?"
-    k "I'd like to mention that our new principle is setting up some new rules.  The student council will be discussing those with him pronto."
+    k "I'd like to mention that our new principal is setting up some new rules.  The student council will be discussing those with him pronto."
     "It's rare that we get new rules."
     "Guess I know what's going on today."
     scene bg security_building with wipeleft_scene
