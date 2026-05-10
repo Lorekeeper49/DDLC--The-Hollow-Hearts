@@ -2,7 +2,6 @@ label act1_ch1_main:
     $ window_style = ""
     $ nb = "namebox"
     $ aoruguri = "隠れた少女\n{size=15}Hidden Girl{/size}"
-    $ choice_impact = True
     stop music fadeout 2.0
     call showintro(intro_t)
     scene bg tlivingroom
