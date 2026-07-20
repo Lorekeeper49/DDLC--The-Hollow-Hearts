@@ -32,6 +32,8 @@ Please note: if you ever get an error detailing something about `menu` expecting
 
 LINKS ARE DIRECTED TO WHERE YOU CAN DOWNLOAD THE LISTED THING. | リンクは、リストされたものをダウンロードできる場所へのものです。
 
+PLEASE NOTE, THIS MOD IS NOW CANCELLED AND WILL BE TAKING A COMPLETELY DIFFERENT DIRECTION, MORE INFO HERE: https://www.reddit.com/r/DDLCMods/s/DYQdXB3II3
+
 ### [ORIGINAL GAME | オリジナルゲームのチーマ](https://ddlc.moe/)
 Team Salvato |  チームサルヴァート
 
